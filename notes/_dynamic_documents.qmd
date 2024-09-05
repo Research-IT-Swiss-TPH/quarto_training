@@ -1,0 +1,137 @@
+---
+title: Analytically reproducible documents
+
+author:
+  - name:
+      given: Hélène
+      family: Langet
+    affiliations:
+      - name: Swiss TPH Research-IT
+    orcid: 0000-0002-6758-2397
+license: "CC-BY"
+date: last-modified
+
+format:
+  html:
+    embed-resources: true
+    theme: cosmo
+    toc: true
+    number-sections: true
+    anchor-sections: true
+    title-block-banner: true
+    
+execute:
+  echo: false
+  warning: false
+---
+
+::: {.callout-important}
+## Learning objectives
+
+The goal of this page is to briefly present why we want to learn how to create analytically reproducible documents, the benefits, and the barriers to using it.
+
+-   Understand the concept and applications of analytically reproducible documents in global health.
+-   Explore Quarto as a tool for creating dynamic documents.
+-   Consider the benefits of using Quarto and the challenges associated with it.
+:::
+
+Define analytically reproducible documents and articulate their significance in global health research and practice.
+Objective: Develop a clear understanding of what analytically reproducible documents are, including their importance for transparency and replicability in global health studies.
+
+Identify key features and use cases of Quarto for creating dynamic, reproducible documents.
+Objective: Gain insight into how Quarto facilitates the creation of documents that integrate code, data, and analysis, and recognize practical examples of its application.
+
+Evaluate the advantages and challenges of adopting Quarto for analytical reproducibility in research.
+Objective: Assess the benefits Quarto offers for enhancing reproducibility and transparency, and analyze potential obstacles and solutions related to its implementation.
+
+
+## Introduction
+
+The output of research usually results in a report (e.g., a scientific publication), that includes a textual narrative of your findings, along with figures and tables derived from your analysis. This report not only summarizes the results but also discusses findings, with the data serving as evidence to support your conclusions and recommendations.
+
+Consider the following scenarios:
+
+1. You are informed that you used the wrong dataset just as you finalize your article for journal submission. A new dataset is provided, and you are asked to rerun the analysis with this updated data.
+2. You discover an error in your analysis and need to re-examine the code, fix the error, and re-run the analysis
+3. A PhD student needs to use your code and reproduce the results to understand your methodology as a benchmark, before developing more advanced methods.
+
+Such situations are quite common in data science.
+
+It is actually possible to keep your data science projects organized with RStudio so that re-running an analysis and recreating reports is straightforward and can be done with minimal effort. Dynamic documents can be produced to update on a routine basis (e.g. daily surveillance reports) and/or run on subsets of data (e.g. reports for each jurisdiction).
+
+## Documents
+
+Document contains 3 big types of content
+* simple text
+* code commands (Stata, R, Python, etc)
+* code outputs (results, tables, graphs, etc)
+
+Dynamic document
+Outputs get updated automatically every time the document is processed.
+
+Can be rendered into to many report formats including HTML, Word document and many more
+
+## Tools
+
+![](images/tools.png)
+
+## Background to R Markdown
+
+This is possible due to the fact that Quarto documents enable code and textual descriptions to be combined into the same document, and the figures and tables produced by the code are automatically added to the document.
+
+Quarto is a tool that allows you integrate your code, text and figures in a single file in order to make high quality, reproducible reports. A paper published with an included quarto file and data sets can be reproduced by anyone with a computer. R Markdown integrates code and natural language in a way that is called "literate programming" [@knuth_literate_1984].
+
+While it makes sense to use Quarto going forward, there are still a lot of resources written for and in R Markdown.
+
+To explain some of the concepts and packages involved:
+
+::: panel-tabset
+### Markdown
+
+Markdown is a "*language*" that allows you to write a document using plain text, that can be converted to HTML (a markup language used for structuring and presenting content on the web) and other formats. It is not specific to R.
+
+Markdown files have a `md` extension.
+
+### R Markdown
+
+It is a variation on markdown that is specific to R - it allows you to write a document using markdown to produce text and to embed R code and display their outputs. which was a variant of Markdown specifically designed to allow R code chunks to be included.
+
+R Markdown is a widely-used tool for creating automated, reproducible, and share-worthy outputs, such as reports. It can generate static or interactive outputs, in Word, pdf, html, powerpoint, and other formats.
+
+R Markdown files have `.Rmd` extension.
+
+### rmarkdown
+
+It is the R package: This is used by R to render the .Rmd file into the desired output.
+
+### Quarto
+
+Quarto is the successor to R Markdown. As a R Markdown document, a Quarto document intersperces code and text such that the script actually becomes your output document. You can create an entire formatted document, including narrative text (can be dynamic to change based on your data), tables, figures, bullets/numbers, bibliographies, etc.
+
+Quatro uses a mark-up language similar to HyperText Markup Language (HTML) or LaTeX, in comparison to a "What You See Is What You Get" (WYSIWYG) language, such as Microsoft Word. This means that all the aspects are consistent, for instance, all top-level heading will look the same. But it means that we use symbols to designate how we would like certain aspects to appear. And it is only when we build the mark-up that we get to see what it looks like. A visual editor option can also be used which hides the need for the user to do this mark-up themselves.
+
+Quarto is not tied to the R language.
+
+Quarto files have a `.Qmd` extension.
+
+https://quarto.org/docs/output-formats/all-formats.html
+
+:::
+
+::: panel-tabset
+### knitr
+
+This R package will read the code chunks, execute it, and 'knit' it back into the document. This is how tables and graphs are included alongside the text.
+
+### Pandoc
+
+Pandoc actually convert the output into word/pdf/powerpoint etc. It is a software separate from R but is installed automatically with RStudio.
+:::
+
+![](images/paste-ABFB521E.png)
+
+The process that happens in the background involves feeding the .Rmd file to knitr, which executes the R code chunks and creates a new .md (markdown) file which includes the R code and its rendered output. The .md file is then processed by Pandoc to create the final product: a Microsoft Word document, HTML file, PowerPoint document, PDF, etc.
+
+## References
+
+-   The Epidemiologist R Handbook (https://epirhandbook.com)

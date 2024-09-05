@@ -1,0 +1,70 @@
+---
+title: Creating a simple Word report with Quarto
+
+author:
+  - name:
+      given: Hélène
+      family: Langet
+    affiliations:
+      - name: Swiss TPH Research-IT
+    orcid: 0000-0002-6758-2397
+license: "CC-BY"
+date: last-modified
+
+format:
+  html:
+    embed-resources: true
+    theme: cosmo
+    toc: true
+    number-sections: true
+    anchor-sections: true
+    title-block-banner: true
+    
+execute:
+  echo: false
+  warning: false
+---
+
+
+::: {.callout-important}
+## Learning objectives
+
+1. Learn how to use Quarto
+:::
+
+## Customise the Word document
+
+If you want to customize the appearance of MS Word output, Pandoc supports a special type of template called a reference document. Here’s an example of specifying a custom reference document for docx:
+
+format:
+  docx:
+    reference-doc: custom-reference-doc.docx
+
+Reference documents include sample text that uses all of the output styles used by Pandoc.
+
+To use a reference doc template, just copy it to your document’s directory and reference it as shown above.
+
+### Add a table of content
+
+You can use a table of contents and/or section numbering to make it easier for readers to navigate your document. Do this by adding the toc and/or number-sections options to document options. Note that these options are typically specified at the root level because they are shared across all formats.
+
+## Customize the template
+
+https://quarto.org/docs/output-formats/ms-word-templates.html
+
+## Add caption
+
+## Use parameters
+
+## Practical
+
+::: {.callout-important}
+## Instructions
+
+1. Customise the Word document
+    - [ ] Add a table of content
+    - [ ] Customise the Word template
+    - [ ] Add caption
+2. Parametrise the report
+:::
+

@@ -1,0 +1,121 @@
+---
+title: "Quarto training for R - Exercise 2"
+author: "H. Langet"
+format: docx
+editor: visual
+---
+
+## About Quarto
+
+Quarto enables you to weave together content and executable code into a rendered document. It can be used for generated reports, scientific publications, reproducible reports (e.g. monthly reports that are updated with new data), dashboards.
+
+For those who were RMarkdown, Quarto is a multi-language, next-generation version of R Markdown from Posit and includes dozens of new features and capabilities while at the same being able to render most existing Rmd files without modification.
+
+To learn more about Quarto, visit the [Quarto website](https://quarto.org).
+
+A Quarto document is organized into the following components:
+
+-   **YAML header**: document parameters
+-   **text**: lightweight markup language
+-   **code**: embedded executable code
+
+You have the Quarto document and the corresponding rendered document, which can be a HTML, a DOCX, a PDF document based on the format you chose in the YAML header.
+
+## Document editing
+
+Text is written in **Markdown**, a lightweight markup language. Quarto documents can be edited in either source or visual mode.
+
+### Task 1
+
+In the image below, we can see the same document in the two modes of the RStudio editor: visual (on the left) and source (on the right). RStudio’s visual editor offers a WYSIWYM authoring experience for markdown. For formatting (e.g., bolding text), you can use the toolbar, a keyboard shortcut (⌘B), or the markdown construct (**bold**). The plain text source code underlying the document is written for you, and you can view/edit it at any point by switching to source mode for editing. You can toggle back and forth between these two modes by clicking on Source and Visual in the editor toolbar.
+
+On the left: Document in the visual editor. On the right: Same document in the source editor.
+
+Switch to *Source mode* using one of the following methods:
+
+-   use the Source or Visual toggle at the top-left of the document toolbar
+-   or alternatively the Ctrl Q Shift F4 keyboard shortcut):
+
+The visual/source editor toggle is highlighted in both documents marking their current state.
+
+### Question 1
+
+What do you notice?
+
+For users less comfortable with coding and more interested in rendered document, visual mode is recommended. For users comfortable with coding, source mode is probably preferable as it offers more control on what you are doing.
+
+### Task 2
+
+Add a level 4 header to your document. Switch the mode to check how the content will be rendered (visual mode) or what is the markdown syntax (source mode)
+
+### Task 3
+
+Write the following text in italic and bold
+
+### Useful resources
+
+-   Link To Quarto Quarto Documentation
+-   Link to markdown syntax Markdown Syntax Guide
+
+## Running R code
+
+You can embed R code in *code chunks* as is displayed below
+
+```{r}
+df <- iris
+df |> knitr::kable()
+```
+
+### Task 1
+
+Add a new code chunk here
+
+### Task 2
+
+To run the code in *notebook* mode, click the green arrow on the right.
+
+```{r}
+df <- iris
+df |> knitr::kable()
+```
+
+Obviously you may not want your final document to display code.
+
+You can add options to executable code like this
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+### Task 3
+
+Add echo to the YAML header
+
+## Render a document
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code.
+
+### Task 1
+
+Render the document to see the final output.
+
+### Task 2
+
+Change the document format to docx. Render the document again.
+
+### Task 3
+
+Change the document format to pdf. Try to render the document again.
+
+### Execute R code within the text
+
+Inline code allows you to execute code within markdown, e.g. to automatically use the most up-to-date computations in narrative. Quarto provides an inline code syntax that works across all three engines (Jupyter, Knitr and OJS).
+
+The syntax for inline code is similar to code blocks, except you use a single tick (\`) rather than triple ticks (\`\`\`), and you can use it in the middle of markdown. For example, the following code stores the variable radius in a code block and then accesses it in a sentence using inline code:
+
+You can embed R code within your text using inline code. For example, `r 2 + 2` will calculate and display the result directly in the text in the rendered document.
+
+Inline expressions are always evaluated when rendering and previewing .qmd files.
