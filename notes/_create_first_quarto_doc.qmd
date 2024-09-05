@@ -25,23 +25,24 @@ execute:
   warning: false
 ---
 
-
-::: {.callout-important}
+::: callout-important
 ## Learning objectives
 
-1. Create Quarto documents
-2. Setup the R environemnt to run Quarto documents
-3. Edit Quarto documents
-
+1.  Create a Quarto document
+2.  Setup the R environment to be able to use and render Quarto documents
+3.  Edit Quarto documents
+4.  Render Quarto documents in different formats
 :::
 
 ## Create a new Quarto document
 
-Quarto documents can be created and edited in RStudio. 
+Quarto documents can be created and edited in RStudio.
 
-In RStudio, you can create a new Quarto document by selecting **File** \> **New File** \> **Quarto Document...**
+In RStudio, you can create a new Quarto document by selecting 
 
-![](images/paste-A7DE8B60.png)
+> **File** \> **New File** \> **Quarto Document...**
+
+![](images/create_quarto.png)
 
 When you create a new Quarto document, RStudio tries to be helpful by allowing you to select a template which explains the different section of an R Markdown script. R Studio will enable you select options to pick from to generate a template Quarto document to start from.
 
@@ -59,45 +60,38 @@ You need to ensure required packages are available
 
 ![](images/quarto_packages.png)
 
-## Quarto document structure
+## Exploring the structure of the Quarto document
 
-At the top of the Quarto file, you will see something that looks a bit like this:
-
-```
----
-title: "Reproducible documents"
-author: "Your Name"
-date: "6/18/2020"
-output: html_document
----
-```
-
-
-This section is called the YAML header and it contains commands and metadata about the document. Most Markdown documents have this YAML header at the top of the document and they are always surrounded by --- on the top and bottom of the section. YAML is a data format that has the form of a key: value pairing to store data. The keys in this case are title, author, date, and output. The values are those that follow the key (e.g. “Your Name” for author). In the case of R Markdown, these key data are used to store the settings that R Markdown will use to create the output document. The keys listed above are some of many settings that R Markdown has available to use.
-
-In the case of this YAML header, the R Markdown document will generate an HTML file because of the output: html_document setting. You can also create a word document with output: word_document. While PDF documents are also able to be created, they require installing LaTeX through the R package tinytex, which can sometimes be complicated to install. So we will only cover HTML and Word documents in this session.
-
-There are three basic components to a Quarto document, similar to the components of a R Markdown document:
-
--   metadata (YAML header)
--   text (markdown formatting)
--   code (R code formatting)
-
-![](images/paste-30C30ECC.png)
+There are three basic components to a Quarto document.
 
 ::: panel-tabset
-### YAML header
+### Header
 
-The very top of the document consists of a (YAML) header surrounded by --- lines. Here you may want to edit the title of your document. The other settings in the header define the default document type produced (Microsoft Word) when the RMarkdown is "knit". the information intended to produce an html output.
+At the top of the Quarto document, you will see something that looks as follows:
 
-### Text
+```         
+---
+title: "Untitled"
+format: html
+---
+```
 
-In WHITE background areas, any text will appear as regular text in the final report. Can have formatting such as headings, italics, bold, numbers, and bullets. See the second page of this RMarkdown cheatsheet for more detail. Can display parameters derived from your data via in-line code (such as epi week of the outbreak peak, as in the example above).
+This section is called the **YAML header** and it contains commands and metadata about the Quarto document. There is only one unique header in a Quarto document and it is always surrounded by `---` lines on the top and bottom of the section.
 
-### Code chunks
+YAML is a data format that has the form of a **key: value pairing** to store data. The keys in this case are *title* and *format*. The values are those that follow the key (e.g., “Untitled” for title). These key data are used to store the settings that Quarto will use to render the output document. The keys listed above are some of many settings that Quarto has available to use.
 
-In gray background "code chunks", RMarkdown is running R commands. These commands perform data processing and cleaning steps, or could produce visual outputs in the document.
+### Formatted text
+
+In white background areas, any text will appear as regular text in the final report. Can have formatting such as headings, italics, bold, numbers, and bullets. See the second page of this RMarkdown cheatsheet for more detail. Can display parameters derived from your data via in-line code (such as epi week of the outbreak peak, as in the example above).
+
+### Code
+
+-   code (R code formatting)
+
+In gray background "code chunks", Quarto is running code. These commands perform data processing and cleaning steps, or could produce visual outputs in the document.
 :::
+
+![](images/paste-30C30ECC.png)
 
 ## Document editing
 
@@ -118,13 +112,11 @@ To write and execute code in Quarto, you will use **code chunks**. You can embed
 ### Create code chunks
 
 ::: callout-tip
-
 Here are some tips for creating code chunks in RStudio
 
-* **Backticks**: use three backticks to start and end a code chunk.
-* **Toolbar icon**: you can also start a code chunk by clicking the appropriate icon in the toolbar.
-* **Keyboard shortcut**: for a quicker method, use the keyboard shortcut `Ctrl` + `Alt` + `I`
-
+-   **Backticks**: use three backticks to start and end a code chunk.
+-   **Toolbar icon**: you can also start a code chunk by clicking the appropriate icon in the toolbar.
+-   **Keyboard shortcut**: for a quicker method, use the keyboard shortcut `Ctrl` + `Alt` + `I`
 :::
 
 ### Options
@@ -156,22 +148,28 @@ iris |>
 ```
 
 ::: callout-tip
-
 There are other R packages to make fancy tables.
-
 :::
 
 ### Multilanguage
 
 As the number of programming languages used for scientific discourse is very broad, Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia. building on the RStudio (R) and Jupyter (Python, Julia) ecosystems which are very popular. Stata is not a language supported by Quarto.
 
-## Quarto render
+## Rendering
 
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code.
 
 ![](images/paste-A8386DC4.png)
 
+In the case of this YAML header, the Quarto document will generate an HTML file because of the format: html setting.
+
+### Editing the header
+
+Here you may want to edit the title of your document.
+
+You can also create a word document with output: word_document. While PDF documents are also able to be created, they require installing LaTeX through the R package tinytex, which can sometimes be complicated to install. So we will only cover HTML and Word documents in this session.
 
 ## References
 
 -   [The Epidemiologist R Handbook](https://epirhandbook.com)
+-   [Analytically reproducible documents](https://r-cubed-v2.rostools.org/reproducible-documents)
