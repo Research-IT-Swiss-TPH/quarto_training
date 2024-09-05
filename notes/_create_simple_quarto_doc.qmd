@@ -21,7 +21,7 @@ format:
     title-block-banner: true
     
 execute:
-  echo: false
+  echo: fenced
   warning: false
 ---
 
@@ -53,6 +53,17 @@ You can use a table of contents and/or section numbering to make it easier for r
 https://quarto.org/docs/output-formats/ms-word-templates.html
 
 ## Add caption
+
+You can cross-reference your table @tbl-iris
+
+```{r}
+#| label: tbl-iris
+#| tbl-cap: Iris data set
+
+iris |>
+  head(10)  |>
+  knitr::kable()
+```
 
 ## Use parameters
 
