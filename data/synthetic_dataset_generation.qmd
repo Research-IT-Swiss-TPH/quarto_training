@@ -1,0 +1,185 @@
+---
+title: "Synthetic dataset generation"
+format: html
+---
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(lubridate)
+```
+
+```{r}
+generator <- function(start_date, end_date, n, percentage_confirmed, percentage_death) {
+  
+  # Set the seed for reproducibility
+  set.seed(123)
+  
+  dates <- seq.Date(start_date, end_date, by = "day")
+  
+  # Randomly sample n dates from the range for individual cases
+  sampled_dates <- sample(dates, n, replace = TRUE)
+  
+  # Generate ConfirmedCases column (1 = confirmed, 0 = not confirmed) based on the percentage
+  confirmed <- rbinom(n, 1, percentage_confirmed)
+  
+  # Generate ConfirmedDeaths column (1 = death, 0 = no death) based on the percentage
+  death <- rbinom(n, 1, percentage_death)
+  
+  # Create a data frame with the generated data (individual case reports)
+  df <- data.frame(
+    id        = 1:n,
+    date      = sampled_dates,
+    confirmed = confirmed,
+    death     = death
+  ) |>
+    dplyr::mutate(death = ifelse(confirmed == 0, 0, death))
+  
+}
+```
+
+```{r}
+start_date_all <- as.Date("2021-01-01")
+end_date <- as.Date("2021-03-31")
+n <- 10132
+percentage_confirmed <- 0.85
+percentage_death <- 0.06
+sdf1 <- generator(start_date_all, end_date, n, percentage_confirmed, percentage_death)
+
+start_date <- as.Date("2021-04-01")
+end_date <- as.Date("2021-05-10")
+n <- 5873
+percentage_confirmed <- 0.83
+percentage_death <- 0.04
+sdf2a <- generator(start_date, end_date, n, percentage_confirmed, percentage_death)
+
+start_date <- as.Date("2021-04-01")
+end_date <- as.Date("2021-05-10")
+n <- 6525
+percentage_confirmed <- 0.82
+percentage_death <- 0.04
+sdf2b <- generator(start_date, end_date, n, percentage_confirmed, percentage_death)
+
+start_date <- as.Date("2021-05-11")
+end_date <- as.Date("2021-09-30")
+n <- 12000
+percentage_confirmed <- 0.88
+percentage_death <- 0.05
+sdf3 <- generator(start_date, end_date, n, percentage_confirmed, percentage_death)
+
+start_date <- as.Date("2021-10-01")
+end_date <- as.Date("2022-02-28")
+n <- 14993
+percentage_confirmed <- 0.75
+percentage_death <- 0.08
+sdf4a <- generator(start_date, end_date, n, percentage_confirmed, percentage_death)
+
+start_date <- as.Date("2021-10-01")
+end_date <- as.Date("2022-02-28")
+n <- 15308
+percentage_confirmed <- 0.76
+percentage_death <- 0.07
+sdf4b <- generator(start_date, end_date, n, percentage_confirmed, percentage_death)
+
+start_date <- as.Date("2022-03-01")
+end_date <- as.Date("2022-06-03")
+n <- 14900
+percentage_confirmed <- 0.75
+percentage_death <- 0.08
+sdf5 <- generator(start_date, end_date, n, percentage_confirmed, percentage_death)
+
+start_date <- as.Date("2022-06-04")
+end_date <- as.Date("2022-07-31")
+n <- 4000
+percentage_confirmed <- 0.75
+percentage_death <- 0.02
+sdf6 <- generator(start_date, end_date, n, percentage_confirmed, percentage_death)
+
+start_date <- as.Date("2022-08-04")
+end_date <- as.Date("2022-12-31")
+n <- 4000
+percentage_confirmed <- 0.75
+percentage_death <- 0.01
+sdf7 <- generator(start_date, end_date, n, percentage_confirmed, percentage_death)
+```
+
+```{r}
+df1 <- sdf1 |>
+  dplyr::bind_rows(sdf2a) |>
+  dplyr::bind_rows(sdf3) |>
+  dplyr::bind_rows(sdf4a) |>
+  dplyr::bind_rows(sdf5) |>
+  dplyr::bind_rows(sdf6) |>
+  dplyr::bind_rows(sdf7) |>
+  dplyr::mutate(week = lubridate::floor_date(date, unit = "week")) |>
+  dplyr::filter(week >= start_date_all & week <= end_date)
+```
+
+```{r}
+df2 <- sdf1 |>
+  dplyr::bind_rows(sdf2b) |>
+  dplyr::bind_rows(sdf3) |>
+  dplyr::bind_rows(sdf4b) |>
+  dplyr::bind_rows(sdf5) |>
+  dplyr::bind_rows(sdf6) |>
+  dplyr::bind_rows(sdf7) |>
+  dplyr::mutate(week = lubridate::floor_date(date, unit = "week")) |>
+  dplyr::filter(week >= start_date_all & week <= end_date)
+```
+
+```{r}
+# Aggregate the data to get the weekly count of confirmed cases and deaths
+weekly_data <- df1 |>
+  group_by(week) |>
+  summarise(count = n(),
+            confirmed_count = sum(confirmed),
+            death_count = sum(death))
+
+# Plot the weekly confirmed cases and deaths
+ggplot(weekly_data, aes(x = week)) +
+  geom_line(aes(y = count, color           = "All cases"), size = 1) +
+  geom_line(aes(y = confirmed_count, color = "Confirmed cases"), size = 1) +
+  geom_line(aes(y = death_count, color     = "Confirmed deaths"), size = 1) +
+  labs(title = "Weekly count of all cases, confirmed cases and deaths",
+       x = "Week",
+       y = "Count",
+       color = "Legend") +
+  scale_color_manual(values = c("All cases" = "#440e54",
+                                "Confirmed cases" = "#f8766d",
+                                "Confirmed deaths" = "#128984")) +
+  theme_minimal()
+```
+
+```{r}
+# Aggregate the data to get the weekly count of confirmed cases and deaths
+weekly_data <- df2 |>
+  group_by(week) |>
+  summarise(count = n(),
+            confirmed_count = sum(confirmed),
+            death_count = sum(death))
+
+# Plot the weekly confirmed cases and deaths
+ggplot(weekly_data, aes(x = week)) +
+  geom_line(aes(y = count, color           = "All cases"), size = 1) +
+  geom_line(aes(y = confirmed_count, color = "Confirmed cases"), size = 1) +
+  geom_line(aes(y = death_count, color     = "Confirmed deaths"), size = 1) +
+  labs(title = "Weekly count of all cases, confirmed cases and deaths",
+       x = "Week",
+       y = "Count",
+       color = "Legend") +
+  scale_color_manual(values = c("All cases" = "#440e54",
+                                "Confirmed cases" = "#f8766d",
+                                "Confirmed deaths" = "#128984")) +
+  theme_minimal()
+```
+
+```{r}
+save(df1, file = "df1.RData")
+save(df2, file = "df2.RData")
+```
+
+```{r}
+nrow(df1)
+nrow(df2)
+```
+
