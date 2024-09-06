@@ -1,36 +1,90 @@
 ---
 title: "Quarto training for R - Exercise 3"
-author:
-  - name: Helene Langet
-    email: helene.langet@swisstph.ch
-    affiliations:
-      - name: Research-IT, Swiss TPH
-format: docx
+author: Helene Langet
 editor: visual
+format: html
 ---
 
-## Customise the Word document
+## Instructions
+
+### Overall objective
+
+You need to generate the following MS Word report in the section *Start of the report*. All text in bold will need to be replaced.
+
+### Task 1
+
+* Add a table of content
+
+You can use a table of contents and/or section numbering to make it easier for readers to navigate your document. Do this by adding the toc and/or number-sections options to document options. Note that these options are typically specified at the root level because they are shared across all formats.
+
+### Task 2 - Inline
+
+* Execute the automated calculation of the start and end dates within the text "The outbreak ran from **calculation of start date** to **calculation of end date**."
+* Execute the automated calculation of the number of cases, confirmed cases and deaths within the text "Over this period, there were **calculation of number of cases** cases, including **calculation of number of confirmed cases** confirmed cases and **calculation of number of deaths** confirmed deaths."
+
+### Task 3 - Table
+
+* Create a table
+
+### Task 4 - Figure
+
+* Reshape the figure
+* Add a caption for the figure
+* Add a label for the figure
+
+### Task 5 - Dataset
+
+Actually you were given the wrong dataset. Can you reload? Do you see an advantage of using Quarto over R.
+
+### Task 6 - Customise the Word document
 
 If you want to customize the appearance of MS Word output, Pandoc supports a special type of template called a reference document. Here’s an example of specifying a custom reference document for docx:
 
-format:
-  docx:
-    reference-doc: custom-reference-doc.docx
+format: docx: reference-doc: custom-reference-doc.docx
 
 Reference documents include sample text that uses all of the output styles used by Pandoc.
 
 To use a reference doc template, just copy it to your document’s directory and reference it as shown above.
+[Use Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)
 
-### Task 1
+### Task 7 - Use parameters
 
-Add a table of content
+### Task 8 - Finalise the document
 
-You can use a table of contents and/or section numbering to make it easier for readers to navigate your document. Do this by adding the toc and/or number-sections options to document options. Note that these options are typically specified at the root level because they are shared across all formats.
+* Once you are done, delete all the instructions (lines 16 to 58).
 
-## Task 2 - Customize the template
+## Start of the report
 
-https://quarto.org/docs/output-formats/ms-word-templates.html
+```{r}
+load(file = "../data/df1.RData")
+```
 
-## Task 3 - Add caption
+The outbreak ran from **calculation of start date** to **calculation of end date**. Over this period, there were **calculation of number of cases** cases, including **calculation of number of confirmed cases** confirmed cases and **calculation of number of deaths** confirmed deaths.
 
-## Use parameters
+As shown in **cross-reference to the figure below**, the outbreak can be divided into several distinct phases.
+
+```{r}
+# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
+weekly_data <- df1 |>
+  dplyr::group_by(week) |>
+  dplyr::summarise(count = dplyr::n(),
+                   confirmed_count = sum(confirmed),
+                   death_count = sum(death))
+
+# Plot the weekly cases, confirmed cases and deaths
+ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
+  ggplot2::geom_line(ggplot2::aes(y = count,
+                                  color = "All cases"),
+                     size = 1) +
+  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,
+                                  color = "Confirmed cases"),
+                     size = 1) +
+  ggplot2::geom_line(ggplot2::aes(y = death_count,
+                                  color = "Confirmed deaths"),
+                     size = 1) +
+  ggplot2::labs(title = "Weekly count of all cases, confirmed cases and deaths",
+                x = "Week",
+                y = "Count",
+                color = "Legend")
+```
+
