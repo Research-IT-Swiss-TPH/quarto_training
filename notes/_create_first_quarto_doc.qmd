@@ -8,6 +8,9 @@ author:
     affiliations:
       - name: Swiss TPH Research-IT
     orcid: 0000-0002-6758-2397
+  - name:
+      given: Zhihan
+      family: Zhu
 license: "CC-BY"
 date: last-modified
 
@@ -82,13 +85,11 @@ YAML is a data format that has the form of a **key: value pairing** to store dat
 
 ### Formatted text
 
-In white background areas, any text will appear as regular text in the final report. Can have formatting such as headings, italics, bold, numbers, and bullets. See the second page of this RMarkdown cheatsheet for more detail. Can display parameters derived from your data via in-line code (such as epi week of the outbreak peak, as in the example above).
+In white background areas, any text will appear as regular text in the final report. This is actually a markup language, which can have formatting such as headings, italics, bold, numbers, and bullets. See the second page of this RMarkdown cheatsheet for more detail. Can display parameters derived from your data via in-line code (such as epi week of the outbreak peak, as in the example above).
 
 ### Code
 
--   code (R code formatting)
-
-In gray background "code chunks", Quarto is running code. These commands perform data processing and cleaning steps, or could produce visual outputs in the document.
+In gray background "code chunks", Quarto is running code, which in our example is R code. These commands perform data processing and cleaning steps, or could produce visual outputs in the document.
 :::
 
 ![](images/paste-30C30ECC.png)
@@ -167,7 +168,22 @@ In the case of this YAML header, the Quarto document will generate an HTML file 
 
 Here you may want to edit the title of your document.
 
-You can also create a word document with output: word_document. While PDF documents are also able to be created, they require installing LaTeX through the R package tinytex, which can sometimes be complicated to install. So we will only cover HTML and Word documents in this session.
+You can also create a word document with output: word_document. While PDF documents are also able to be created, they require installing LaTeX through the R package tinytex, which can sometimes be complicated to install.
+
+```{r}
+#| eval: false
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+
+### Execute R code within the text
+
+Inline code allows you to execute code within markdown, e.g. to automatically use the most up-to-date computations in narrative. Quarto provides an inline code syntax that works across all three engines (Jupyter, Knitr and OJS).
+
+The syntax for inline code is similar to code blocks, except you use a single tick (\`) rather than triple ticks (\`\`\`), and you can use it in the middle of markdown. Please go to exercise 2.b for examples.
+
+Inline expressions are always evaluated when rendering and previewing .qmd files.
 
 ## References
 

@@ -1,6 +1,8 @@
 ---
 title: "Quarto training for R - Exercise 2"
-author: "H. Langet"
+author:
+  - H. Langet
+  - Z. Zhu
 format: docx
 editor: visual
 ---
@@ -13,11 +15,11 @@ For those who were RMarkdown, Quarto is a multi-language, next-generation versio
 
 To learn more about Quarto, visit the [Quarto website](https://quarto.org).
 
-A Quarto document is organized into the following components:
+A Quarto document is organized into the following three basic components:
 
--   **YAML header**: document parameters
--   **text**: lightweight markup language
--   **code**: embedded executable code
+-   **YAML header**: commands and metadata about the Quarto document
+-   **text**: lightweight markup language, allowing various formatting
+-   **code**: embedded executable code, in our example R code
 
 You have the Quarto document and the corresponding rendered document, which can be a HTML, a DOCX, a PDF document based on the format you chose in the YAML header.
 
@@ -62,17 +64,16 @@ Write the following text in italic and bold
 You can embed R code in *code chunks* as is displayed below
 
 ```{r}
-df <- iris
-df |> knitr::kable()
+1 + 1
 ```
 
 ### Task 1
 
-Add a new code chunk here
+Add a new code chunk here.
 
 ### Task 2
 
-To run the code in *notebook* mode, click the green arrow on the right.
+Display data. To run the code in *notebook* mode, click the green arrow on the right.
 
 ```{r}
 df <- iris
@@ -93,6 +94,7 @@ The `echo: false` option disables the printing of code (only output is displayed
 ### Task 3
 
 Add echo to the YAML header
+
 
 ## Render a document
 
@@ -119,3 +121,8 @@ The syntax for inline code is similar to code blocks, except you use a single ti
 You can embed R code within your text using inline code. For example, `r 2 + 2` will calculate and display the result directly in the text in the rendered document.
 
 Inline expressions are always evaluated when rendering and previewing .qmd files.
+
+## References
+
+-   [The Epidemiologist R Handbook](https://epirhandbook.com)
+-   [Analytically reproducible documents](https://r-cubed-v2.rostools.org/reproducible-documents)
