@@ -102,6 +102,8 @@ The RStudio Visual Editor is quite new and has features that improve your writin
 
 Here's an example showing the same file in the original Source Editor with content in markdown format and in the Visual Editor with content that looks more like it will appear in a live site. You can switch freely between these modes.
 
+![](images/Quarto_editor.PNG)
+
 ## Running R code
 
 To write and execute code in Quarto, you will use **code chunks**. You can embed R code in *code chunks* as is displayed below
@@ -169,6 +171,8 @@ In the case of this YAML header, the Quarto document will generate an HTML file 
 Here you may want to edit the title of your document.
 
 You can also create a word document with output: word_document. While PDF documents are also able to be created, they require installing LaTeX through the R package tinytex, which can sometimes be complicated to install.
+
+You can run the following chunk to get tinytex.
 
 ```{r}
 #| eval: false

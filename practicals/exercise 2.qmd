@@ -101,6 +101,7 @@ Run this chunk to set an initial value of a:
 a <- 1
 a
 ```
+
 And we update the value of a in the next chunk. Have a try on (1) clicking "Run Current Chunk" just once; (2) clicking "Run Current Chunk" several times.
 
 ```{r}
@@ -112,11 +113,21 @@ Remember how many times you clicked on the chunk above, and run the following ch
 ```{r}
 print(a)
 ```
+
 As we can see, every time we update the value of a, it iterates on the updated value rather than on the initial one. However, when we render the document, it simply runs every chunk ONCE in the order you put them. In order to avoid running the same chunk for multiple times, you can click "Run All Chunks Above". This will run every chunk before the current chunk ONCE in the order you put them.
 
 ## Render a document
 
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code.
+
+```{r}
+# this chunk will throw error
+
+something <- "HELLO WORLD!"
+print(something)
+```
+
+If you render the document with one or more chunks with errors, it will fail. It's always necessary to make sure that code chunks can successfully run in their order before rendering the document. Try to uncomment `something <- "HELLO WORLD!"` and render again.
 
 ### Task 1
 
