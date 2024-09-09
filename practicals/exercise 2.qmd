@@ -3,7 +3,7 @@ title: "Quarto training for R - Exercise 2"
 author:
   - H. Langet
   - Z. Zhu
-format: docx
+format: html
 editor: visual
 ---
 
@@ -77,14 +77,12 @@ Display data. To run the code in *notebook* mode, click the green arrow on the r
 
 ```{r}
 df <- iris
-df |> knitr::kable()
+head(df, 10) |> knitr::kable()
 ```
 
-Obviously you may not want your final document to display code.
+The chunk above will print the first 10 rows of the dataframe.
 
-You can add options to executable code like this
-
-The `echo: false` option disables the printing of code (only output is displayed).
+Obviously you may not want your final document to display code. You can add options to executable code like this. For example, the `echo: false` option disables the printing of code (only output is displayed).
 
 ```{r}
 #| echo: false
@@ -95,6 +93,26 @@ The `echo: false` option disables the printing of code (only output is displayed
 
 Add echo to the YAML header
 
+### Task 4
+
+Run this chunk to set an initial value of a:
+
+```{r}
+a <- 1
+a
+```
+And we update the value of a in the next chunk. Have a try on (1) clicking "Run Current Chunk" just once; (2) clicking "Run Current Chunk" several times.
+
+```{r}
+a <- a + 2
+```
+
+Remember how many times you clicked on the chunk above, and run the following chunk to print the value of a:
+
+```{r}
+print(a)
+```
+As we can see, every time we update the value of a, it iterates on the updated value rather than on the initial one. However, when we render the document, it simply runs every chunk ONCE in the order you put them. In order to avoid running the same chunk for multiple times, you can click "Run All Chunks Above". This will run every chunk before the current chunk ONCE in the order you put them.
 
 ## Render a document
 
@@ -111,6 +129,16 @@ Change the document format to docx. Render the document again.
 ### Task 3
 
 Change the document format to pdf. Try to render the document again.
+
+As you might see, rendering pdf fails the first time you do it. This is because you should have tinytex installed before you render pdf. Get tinytex by running the following chunk:
+
+```{r}
+#| eval: false
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+After installing tinytex, try to render the document again. This time it should work.
 
 ### Execute R code within the text
 
