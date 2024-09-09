@@ -52,12 +52,14 @@ Add a level 4 header to your document. Switch the mode to check how the content 
 
 ### Task 3
 
-Write the following text in italic and bold
+Write the following text in italic and bold:
+
+Hello Quarto!
 
 ### Useful resources
 
--   Link To Quarto Quarto Documentation
--   Link to markdown syntax Markdown Syntax Guide
+-   [Quarto Documentation](https://quarto.org/docs/guide/)
+-   [Markdown Syntax Guide](https://www.markdownguide.org/basic-syntax/)
 
 ## Running R code
 
