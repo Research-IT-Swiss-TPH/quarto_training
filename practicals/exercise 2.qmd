@@ -123,7 +123,7 @@ When you click the **Render** button a document will be generated that includes 
 ```{r}
 # this chunk will throw error
 
-something <- "HELLO WORLD!"
+# something <- "HELLO WORLD!"
 print(something)
 ```
 
