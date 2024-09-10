@@ -58,8 +58,8 @@ Hello Quarto!
 
 ### Useful resources
 
--   [Quarto Documentation](https://quarto.org/docs/guide/)
--   [Markdown Syntax Guide](https://www.markdownguide.org/basic-syntax/)
+-   [Quarto Documentation - Visual Editing in RStudio](https://quarto.org/docs/visual-editor/)
+-   [Quarto Documentation - Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
 
 ## Running R code
 
@@ -75,7 +75,7 @@ Add a new code chunk here.
 
 ### Task 2
 
-Display data. To run the code in *notebook* mode, click the green arrow on the right.
+Display data. To run the code in *notebook* mode, click the green arrow on the right side of the code chunk.
 
 ```{r}
 df <- iris
@@ -84,16 +84,20 @@ head(df, 10) |> knitr::kable()
 
 The chunk above will print the first 10 rows of the dataframe.
 
-Obviously you may not want your final document to display code. You can add options to executable code like this. For example, the `echo: false` option disables the printing of code (only output is displayed).
+In some cases, you may prefer not to show the actual code in the final document. To hide the code but still show the output, Quarto provides options such as `echo: false`, which disables the printing of code while retaining the output.
 
 ```{r}
 #| echo: false
 2 * 2
 ```
 
+This option ensures only the result (`4` in this case) is displayed without showing the code itself.
+
+Additionally, you can refine these options globally in the YAML header, which applies the settings across the entire document.
+
 ### Task 3
 
-Add echo to the YAML header
+Add echo to the YAML header.
 
 ### Task 4
 
@@ -159,7 +163,7 @@ Inline code allows you to execute code within markdown, e.g. to automatically us
 
 The syntax for inline code is similar to code blocks, except you use a single tick (\`) rather than triple ticks (\`\`\`), and you can use it in the middle of markdown. For example, the following code stores the variable radius in a code block and then accesses it in a sentence using inline code:
 
-You can embed R code within your text using inline code. For example, `r 2 + 2` will calculate and display the result directly in the text in the rendered document.
+You can embed R code within your text using inline code. For example, `{r} 2 + 2` will calculate and display the result directly in the text in the rendered document.
 
 Inline expressions are always evaluated when rendering and previewing .qmd files.
 
