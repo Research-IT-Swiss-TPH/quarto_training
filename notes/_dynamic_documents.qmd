@@ -134,4 +134,5 @@ The process that happens in the background involves feeding the .Rmd file to kni
 
 ## References
 
--   The Epidemiologist R Handbook (https://epirhandbook.com)
+-   [The Epidemiologist R Handbook](https://epirhandbook.com)
+-   [Websites and dashboards with Quarto](https://thegraphcourses.org/courses/websites-and-dashboards-with-r/)
