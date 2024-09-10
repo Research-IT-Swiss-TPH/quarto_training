@@ -98,11 +98,18 @@ In gray background "code chunks", Quarto is running code, which in our example i
 
 ### Visual Editor
 
-The RStudio Visual Editor is quite new and has features that improve your writing experience. Working in the Visual Editor feels a bit like working in a Google Doc.
+The RStudio Visual Editor is a relatively new feature designed to enhance the writing experience by providing an intuitive interface. It offers a more user-friendly experience, similar to working in a Google Doc, allowing for seamless content creation and editing.
 
-Here's an example showing the same file in the original Source Editor with content in markdown format and in the Visual Editor with content that looks more like it will appear in a live site. You can switch freely between these modes.
+In the Visual Editor, you can preview your document in a format that closely resembles its final rendered appearance. This contrasts with the Source Editor, where content is written in markdown syntax. The ability to switch between these two modes allows for flexibility, depending on your preference or task.
+
+Below is an example of the same file viewed in both the Source Editor and the Visual Editor:
 
 ![](images/Quarto_editor.PNG)
+
+### Useful resources
+
+-   [Quarto Documentation - Visual Editing in RStudio](https://quarto.org/docs/visual-editor/)
+-   [Quarto Documentation - Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
 
 ## Running R code
 
@@ -119,6 +126,7 @@ Here are some tips for creating code chunks in RStudio
 
 -   **Backticks**: use three backticks to start and end a code chunk.
 -   **Toolbar icon**: you can also start a code chunk by clicking the appropriate icon in the toolbar.
+![](images/toolbar_icon_add_chunk_1.PNG)
 -   **Keyboard shortcut**: for a quicker method, use the keyboard shortcut `Ctrl` + `Alt` + `I`
 :::
 
@@ -135,14 +143,14 @@ The `echo: false` option disables the printing of code (only output is displayed
 
 ### Tables
 
-How to display data
+Displaying data can be achieved with simple commands. For instance, to show the first 10 rows of the `iris` dataset, one can use:
 
 ```{r}
 iris |>
   head(10)
 ```
 
-This is not really beautiful.
+To improve the readability of tables, the `knitr::kable()` function provides a more structured and formatted output:
 
 ```{r}
 iris |>
@@ -151,7 +159,7 @@ iris |>
 ```
 
 ::: callout-tip
-There are other R packages to make fancy tables.
+Additional R packages can be used for more advanced and aesthetically refined tables.
 :::
 
 ### Multilanguage
@@ -185,7 +193,19 @@ tinytex::install_tinytex()
 
 Inline code allows you to execute code within markdown, e.g. to automatically use the most up-to-date computations in narrative. Quarto provides an inline code syntax that works across all three engines (Jupyter, Knitr and OJS).
 
-The syntax for inline code is similar to code blocks, except you use a single tick (\`) rather than triple ticks (\`\`\`), and you can use it in the middle of markdown. Please go to exercise 2.b for examples.
+The syntax for inline code is similar to code blocks, except you use a single tick (\`) rather than triple ticks (\`\`\`), and you can use it in the middle of markdown. Here is an example storing the variable in a code block and then print it in a sentence using inline code:
+
+
+```{r}
+comment <- "AWESOME"
+
+# This lecture is `{r} comment`!
+```
+
+
+The result of the commented code is the following output:
+
+`This lecture is `{r} comment`!`
 
 Inline expressions are always evaluated when rendering and previewing .qmd files.
 
