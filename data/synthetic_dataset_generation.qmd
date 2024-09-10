@@ -24,16 +24,41 @@ generator <- function(start_date, end_date, n, percentage_confirmed, percentage_
   confirmed <- rbinom(n, 1, percentage_confirmed)
   
   # Generate ConfirmedDeaths column (1 = death, 0 = no death) based on the percentage
-  death <- rbinom(n, 1, percentage_death)
+  #death <- rbinom(n, 1, percentage_death)
+  
+  # Generate age and weight
+  # Assume age ranges from 20 to 80 and weight ranges from 50 to 100 kg
+  age <- sample(20:80, n, replace = TRUE)
+  # Assume height ranges from 150 to 200 cm and weight ranges from 50 to 100 kg
+  height <- sample(150:200, n, replace = TRUE) # height in cm
+  weight <- sample(40:140, n, replace = TRUE)   # weight in kg
+  
+  # Calculate BMI: BMI = weight (kg) / (height (m))^2
+  height_m <- height / 100  # Convert height to meters
+  bmi <- weight / (height_m^2)
+  
+  # Adjust age and weight to be correlated with death
+  # Higher age and weight might be correlated with a higher probability of death
+  # Create a logistic model to simulate this correlation
+  disease_effect <- 0.3
+  age_effect <- 0.05
+  bmi_effect <- 0.03
+  
+  # Probability of death based on age and weight
+  death_probability <- plogis(disease_effect * confirmed) * plogis(age_effect * (age - 50) + bmi_effect * (bmi - 25))
+  
+  # Ensure death is more likely if confirmed
+  death <- rbinom(n, 1, death_probability)
   
   # Create a data frame with the generated data (individual case reports)
   df <- data.frame(
     id        = 1:n,
+    age       = age,
+    bmi       = bmi,
     date      = sampled_dates,
     confirmed = confirmed,
     death     = death
-  ) |>
-    dplyr::mutate(death = ifelse(confirmed == 0, 0, death))
+  )
   
 }
 ```
@@ -128,14 +153,14 @@ df2 <- sdf1 |>
 ```
 
 ```{r}
-# Aggregate the data to get the weekly count of confirmed cases and deaths
+# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
 weekly_data <- df1 |>
   group_by(week) |>
   summarise(count = n(),
             confirmed_count = sum(confirmed),
             death_count = sum(death))
 
-# Plot the weekly confirmed cases and deaths
+# Plot the weekly cases, confirmed cases and deaths
 ggplot(weekly_data, aes(x = week)) +
   geom_line(aes(y = count, color           = "All cases"), size = 1) +
   geom_line(aes(y = confirmed_count, color = "Confirmed cases"), size = 1) +
@@ -147,7 +172,11 @@ ggplot(weekly_data, aes(x = week)) +
   scale_color_manual(values = c("All cases" = "#440e54",
                                 "Confirmed cases" = "#f8766d",
                                 "Confirmed deaths" = "#128984")) +
-  theme_minimal()
+  ggplot2::theme_minimal() +
+  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+                 panel.grid.major.x = ggplot2::element_blank(),
+                 panel.grid.minor.x = ggplot2::element_blank())
 ```
 
 ```{r}
@@ -183,3 +212,39 @@ nrow(df1)
 nrow(df2)
 ```
 
+```{r}
+#| label: fig-1
+#| fig-cap: Weekly count of all cases, confirmed cases and deaths
+#| fig-width: 8
+#| fig-height: 4
+                
+# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
+weekly_data <- df1 |>
+  dplyr::group_by(week) |>
+  dplyr::summarise(count = dplyr::n(),
+                   confirmed_count = sum(confirmed),
+                   death_count = sum(death))
+
+# Plot the weekly cases, confirmed cases and deaths
+ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
+  ggplot2::geom_line(ggplot2::aes(y = count,
+                                  color = "All cases"),
+                     size = 1) +
+  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,
+                                  color = "Confirmed cases"),
+                     size = 1) +
+  ggplot2::geom_line(ggplot2::aes(y = death_count,
+                                  color = "Confirmed deaths"),
+                     size = 1) +
+  ggplot2::labs(x = "Week",
+                y = "Count",
+                color = "Legend") +
+  ggplot2::scale_color_manual(values = c("All cases" = "#440e54",
+                                         "Confirmed cases" = "#f8766d",
+                                         "Confirmed deaths" = "#128984")) +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+                 panel.grid.major.x = ggplot2::element_blank(),
+                 panel.grid.minor.x = ggplot2::element_blank())
+```
