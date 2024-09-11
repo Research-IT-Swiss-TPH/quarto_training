@@ -160,7 +160,7 @@ sdf7 <- generator(start_date, end_date, n, percentage_confirmed, percentage_deat
 ```
 
 ```{r}
-df1 <- sdf1 |>
+df <- sdf1 |>
   dplyr::bind_rows(sdf2a) |>
   dplyr::bind_rows(sdf3) |>
   dplyr::bind_rows(sdf4a) |>
@@ -172,20 +172,13 @@ df1 <- sdf1 |>
 ```
 
 ```{r}
-df2 <- sdf1 |>
-  dplyr::bind_rows(sdf2b) |>
-  dplyr::bind_rows(sdf3) |>
-  dplyr::bind_rows(sdf4b) |>
-  dplyr::bind_rows(sdf5) |>
-  dplyr::bind_rows(sdf6) |>
-  dplyr::bind_rows(sdf7) |>
-  dplyr::mutate(week = lubridate::floor_date(date, unit = "week")) |>
-  dplyr::filter(week >= start_date_all & week <= end_date)
+nrow(df)
+save(df, file = "df1.RData")
 ```
 
 ```{r}
 # Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
-weekly_data <- df1 |>
+weekly_data <- df |>
   group_by(week) |>
   summarise(count = n(),
             confirmed_count = sum(confirmed),
@@ -211,8 +204,24 @@ ggplot(weekly_data, aes(x = week)) +
 ```
 
 ```{r}
+df <- sdf1 |>
+  dplyr::bind_rows(sdf2b) |>
+  dplyr::bind_rows(sdf3) |>
+  dplyr::bind_rows(sdf4b) |>
+  dplyr::bind_rows(sdf5) |>
+  dplyr::bind_rows(sdf6) |>
+  dplyr::bind_rows(sdf7) |>
+  dplyr::mutate(week = lubridate::floor_date(date, unit = "week")) |>
+  dplyr::filter(week >= start_date_all & week <= end_date)
+```
+```{r}
+nrow(df)
+save(df, file = "df2.RData")
+```
+
+```{r}
 # Aggregate the data to get the weekly count of confirmed cases and deaths
-weekly_data <- df2 |>
+weekly_data <- df |>
   group_by(week) |>
   summarise(count = n(),
             confirmed_count = sum(confirmed),
@@ -234,23 +243,13 @@ ggplot(weekly_data, aes(x = week)) +
 ```
 
 ```{r}
-save(df1, file = "df1.RData")
-save(df2, file = "df2.RData")
-```
-
-```{r}
-nrow(df1)
-nrow(df2)
-```
-
-```{r}
 #| label: fig-1
 #| fig-cap: Weekly count of all cases, confirmed cases and deaths
 #| fig-width: 8
 #| fig-height: 4
                 
 # Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
-weekly_data <- df1 |>
+weekly_data <- df |>
   dplyr::group_by(week) |>
   dplyr::summarise(count = dplyr::n(),
                    confirmed_count = sum(confirmed),
