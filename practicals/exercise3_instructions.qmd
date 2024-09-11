@@ -1,5 +1,6 @@
 ---
-title: "Quarto training for R - Exercise 3 - Instructions"
+title: "Quarto training for R"
+subtitle: "Exercise 3 - Instructions"
 author:
   - name:
       given: Hélène
@@ -28,6 +29,11 @@ You are tasked with generating a Microsoft Word report on an outbreak. Open the 
 
 ## Task 1
 
+::: callout-tip
+-   See [Quarto date formatting](https://quarto.org/docs/reference/dates.html#date-formatting)
+-   See [Quarto execution options](https://quarto.org/docs/computations/execution-options.html)
+:::
+
 a.  Update the title of the Quarto document ;
 b.  Put your name as author of the Quarto document ;
 c.  Add the date `2023-12-31` to the Quarto document ;
@@ -35,54 +41,55 @@ d.  Change the output format to generate a Microsoft Word document ;
 e.  Configure the Quarto document to hide code in the rendered MS Word document ;
 f.  Configure the Quarto document to hide warnings in the rendered MS Word document.
 
-::: callout-tip
--   See [Quarto date formatting](https://quarto.org/docs/reference/dates.html#date-formatting)
--   See [Quarto execution options](https://quarto.org/docs/computations/execution-options.html)
-:::
-
-## Improve document navigation to improve readability
-
-a.  Insert a table of contents to the Quarto document ;
-b.  Automatically number the different sections of the Quarto document ;
-c.  Configure the table of contents to only display two levels of section headings.
+## Improve navigation to improve readability
 
 ::: callout-tip
 -   See [Quarto table of contents](https://quarto.org/docs/output-formats/ms-word.html#table-of-contents)
 :::
 
-## Implement dynamic calculations
+a.  Insert a table of contents to the Quarto document ;
+b.  Automatically number the different sections of the Quarto document ;
+c.  Configure the table of contents to only display two levels of section headings.
 
-a.  Change the date `2023-12-31` to the last modified date of the Quarto document, and format it to display it as `December 31, 2023`.
-b.  Automatically display the calculated start and end dates of the outbreak within the text "The outbreak ran from **calculation of start date** to **calculation of end date**."
-c.  Automatically display the clauclated number of cases, confirmed cases and deaths within the text "Over the studied period, there were **calculation of number of cases** cases, including **calculation of number of confirmed cases** confirmed cases and **calculation of number of deaths** confirmed deaths."
+## Implement dynamic calculations
 
 ::: callout-tip
 -   See [Quarto dynamic dates](https://quarto.org/docs/reference/dates.html#date-parsing)
 -   See [Quarto inline code](https://quarto.org/docs/computations/inline-code.html)
 :::
 
-## Task 4 - Table
+a.  Change the date `2023-12-31` to the date at which the Quarto document was last modified, and format this date to display it with the format `December 31, 2023` ;
+b.  Automatically display the calculated start and end dates of the outbreak within the text "*The outbreak ran from **calculation of start date** to **calculation of end date***" ;
+c.  Automatically display the clauclated number of cases, confirmed cases and deaths within the text "*Over the studied period, there were **calculation of number of cases** cases, including **calculation of number of confirmed cases** confirmed cases and **calculation of number of deaths** confirmed deaths*".
 
-a.  Create a table summarising the characteristics of the population
-b. Add a caption for the table
-c. Add a label for the table and cross-reference in the text ""
+## Table
+
+::: callout-tip
+-   See [tbl_summary](https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html)
+-   See [Quarto table cross-references](https://quarto.org/docs/authoring/tables.html#cross-references)
+:::
+
+a.  Create a table summarising the characteristics of the population with suspected cases
+b.  Add a caption for the table
+c.  Add a label for the table and cross-reference in the text *"**cross-reference table** provides a summary of the overall population characteristics"*
+
+## Figure
+
+::: callout-tip
+-   See Quarto figure cross-references
+:::
+
+a.  Add a caption for the figure
+b.  Add a label for the figure
+c.  Change the height of the figure
+d.  Change the width of the figure
+e.  Beautify the plot
+
+## Parametrise your report
 
 ::: callout-tip
 -   See
 :::
-
-## Task 5 - Figure
-
--   Change the height of the figure
--   Change the width of the figure
--   Add a caption for the figure
--   Add a label for the figure
-
-::: callout-tip
--   See
-:::
-
-## Task 6 - Parametrise your report
 
 a.  We would like to generate 2 reports - one for the period 2021, the other one for the period 2022
 b.  Actually you were given the wrong dataset. Can you reload using the dataset stored in `df2.RData` instead of `df1.RData`?
@@ -93,11 +100,11 @@ b.  Actually you were given the wrong dataset. Can you reload using the dataset 
 Do you see an advantage of using Quarto over R?
 :::
 
-::: callout-tip
--   See
-:::
+## Finalise your MS Word report
 
-## Task 7 - Finalise the MS Word report
+::: callout-tip
+See \[Quarto table of content\]
+:::
 
 -   Customise the Word document with the Swiss TPH template
 
@@ -111,12 +118,4 @@ format:
 
 Reference documents include sample text that uses all of the output styles used by Pandoc.
 
-To use a reference doc template, just copy it to your document’s directory and reference it as shown above. [Use Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)
-
-::: callout-tip
-See \[Quarto table of content\]
-:::
-
-## Task 8 - Finalise the document
-
--   Once you are done with all the tasks, delete all the instructions (lines 16 to 69).
+To use a reference doc template, just copy it to your document’s directory and reference it as shown above. [Use Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html).
