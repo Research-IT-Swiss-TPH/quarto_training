@@ -9,15 +9,15 @@ format: html
 
 ### Overall objective
 
-You are asked to generate a Microsoft Word report on an outbreak. The content of the report begins with the section titled `Start of the report`. All text formatted in bold should be replaced by an automated field. Complete the following tasks and render the document after each task to track your progress.
+You are asked to generate a Microsoft Word report on an outbreak. The content of the report begins with the section titled `Start of the report`. All text formatted in bold should be replaced with appropriate automated calculations or cross-references. Complete the following tasks and render the document after each task to track your progress.
 
 ### Task 1
 
 a. Update the title of the Quarto document
 b. Put your name as author of the Quarto document
 c. Change the output format to generate a Microsoft Word document.
-d. remove code as invisible.
-e. remove warning as invisible.
+d. Configure the Quarto document to hide code in the rendered MS Word document.
+e. Configure the Quarto document to hide warnings in the rendered MS Word document. See [Quarto execution options](https://quarto.org/docs/computations/execution-options.html)
 
 ### Task 2
 
