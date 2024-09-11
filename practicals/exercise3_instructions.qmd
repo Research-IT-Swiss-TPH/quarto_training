@@ -24,7 +24,7 @@ format:
 
 ## Overall objective
 
-You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document `exercise3.qmd` in RStudio. All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references. Complete each of the following tasks and render the document after each task to track your progress.
+You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document `exercise3.qmd` in RStudio. All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references. Complete each of the following tasks and render the document after each set of tasks to track your progress.
 
 ## Task 1
 
@@ -40,7 +40,7 @@ f.  Configure the Quarto document to hide warnings in the rendered MS Word docum
 -   See [Quarto execution options](https://quarto.org/docs/computations/execution-options.html)
 :::
 
-## Task 2 - Improve document navigation to improve readability
+## Improve document navigation to improve readability
 
 a.  Insert a table of contents to the Quarto document ;
 b.  Automatically number the different sections of the Quarto document ;
@@ -50,12 +50,11 @@ c.  Configure the table of contents to only display two levels of section headin
 -   See [Quarto table of contents](https://quarto.org/docs/output-formats/ms-word.html#table-of-contents)
 :::
 
-## Task 3 - Implement dynamic calculations
+## Implement dynamic calculations
 
 a.  Change the date `2023-12-31` to the last modified date of the Quarto document, and format it to display it as `December 31, 2023`.
-b.  Execute the automated calculation of the start and end dates within the text "The outbreak ran from **calculation of start date** to **calculation of end date**."
-
-c.   Execute the automated calculation of the number of cases, confirmed cases and deaths within the text "Over this period, there were **calculation of number of cases** cases, including **calculation of number of confirmed cases** confirmed cases and **calculation of number of deaths** confirmed deaths."
+b.  Automatically display the calculated start and end dates of the outbreak within the text "The outbreak ran from **calculation of start date** to **calculation of end date**."
+c.  Automatically display the clauclated number of cases, confirmed cases and deaths within the text "Over the studied period, there were **calculation of number of cases** cases, including **calculation of number of confirmed cases** confirmed cases and **calculation of number of deaths** confirmed deaths."
 
 ::: callout-tip
 -   See [Quarto dynamic dates](https://quarto.org/docs/reference/dates.html#date-parsing)
@@ -64,10 +63,12 @@ c.   Execute the automated calculation of the number of cases, confirmed cases a
 
 ## Task 4 - Table
 
-a.   Create a table summarising the characteristics of the
+a.  Create a table summarising the characteristics of the population
+b. Add a caption for the table
+c. Add a label for the table and cross-reference in the text ""
 
 ::: callout-tip
-* See
+-   See
 :::
 
 ## Task 5 - Figure
@@ -78,26 +79,25 @@ a.   Create a table summarising the characteristics of the
 -   Add a label for the figure
 
 ::: callout-tip
-* See
+-   See
 :::
 
-## Task 6 - Use parameters
+## Task 6 - Parametrise your report
 
-We would like to generate 2 reports - one for the period 2021, the other one for the period 2022
+a.  We would like to generate 2 reports - one for the period 2021, the other one for the period 2022
+b.  Actually you were given the wrong dataset. Can you reload using the dataset stored in `df2.RData` instead of `df1.RData`?
+
+::: callout-important
+### Question
+
+Do you see an advantage of using Quarto over R?
+:::
 
 ::: callout-tip
-* See 
+-   See
 :::
 
-## Task 7 - Dataset
-
-Actually you were given the wrong dataset. Can you reload using the dataset stored in `df2.RData` instead of `df1.RData`? Do you see an advantage of using Quarto over R.
-
-::: callout-tip
-See \[Quarto table of content\]
-:::
-
-## Task 8 -
+## Task 7 - Finalise the MS Word report
 
 -   Customise the Word document with the Swiss TPH template
 
@@ -117,6 +117,6 @@ To use a reference doc template, just copy it to your document’s directory and
 See \[Quarto table of content\]
 :::
 
-## Task 9 - Finalise the document
+## Task 8 - Finalise the document
 
 -   Once you are done with all the tasks, delete all the instructions (lines 16 to 69).
