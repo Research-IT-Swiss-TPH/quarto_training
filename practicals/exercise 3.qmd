@@ -9,19 +9,23 @@ format: html
 
 ### Overall objective
 
-You need to generate the following MS Word report in the section *Start of the report*. All text in bold will need to be replaced.
+You are asked to generate a Microsoft Word report on an outbreak. The content of the report begins with the section titled `Start of the report`. All text formatted in bold should be replaced by an automated field. Complete the following tasks and render the document after each task to track your progress.
 
 ### Task 1
 
-- Change the title
-- Change the author name
-- Change the rendered output to generate a MS Word document.
+a. Update the title of the Quarto document
+b. Put your name as author of the Quarto document
+c. Change the output format to generate a Microsoft Word document.
+d. remove code as invisible.
+e. remove warning as invisible.
 
 ### Task 2
 
--   Add a table of content
+Make it easier for readers to navigate your document.
 
-You can use a table of contents and/or section numbering to make it easier for readers to navigate your document. Do this by adding the toc and/or number-sections options to document options. Note that these options are typically specified at the root level because they are shared across all formats.
+a. Add a table of contents to the Quarto document.
+b. Automatically number the different sections of the Quarto document.
+c. Configure the table of contents to only display levels of section headings.
 
 ### Task 3 - Inline
 
@@ -39,13 +43,13 @@ You can use a table of contents and/or section numbering to make it easier for r
 -   Add a caption for the figure
 -   Add a label for the figure
 
-### Task 6 - Dataset
-
-Actually you were given the wrong dataset. Can you reload? Do you see an advantage of using Quarto over R.
-
-### Task 7 - Use parameters
+### Task 6 - Use parameters
 
 We would like to generate 2 reports - one for the period 2021, the other one for the period 2022
+
+### Task 7 - Dataset
+
+Actually you were given the wrong dataset. Can you reload using the dataset stored in `df2.RData` instead of `df1.RData`? Do you see an advantage of using Quarto over R.
 
 ### Task 8 -
 
@@ -158,11 +162,11 @@ The results of the logistic regression model are summarized in the formatted reg
 
 The dataset includes the following variables:
 
-* `age` = age of the individual (continuous variable) ;
-* `sex` = sex of the individual (binary variable: 1 = male, 2 = female) ;
-* `bmi` = Body Mass Index (BMI) of the individual (continuous variable) ;
-* `confirmed` = flag of confirmed cases (binary variable: 0 = no, 1 = yes)
-* `death` = death outcome (binary variable: 0 = alive, 1 = died)
+-   `age` = age of the individual (continuous variable) ;
+-   `sex` = sex of the individual (binary variable: 1 = male, 2 = female) ;
+-   `bmi` = Body Mass Index (BMI) of the individual (continuous variable) ;
+-   `confirmed` = flag of confirmed cases (binary variable: 0 = no, 1 = yes)
+-   `death` = death outcome (binary variable: 0 = alive, 1 = died)
 
 ```{r}
 subdf |>
