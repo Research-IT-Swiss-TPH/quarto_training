@@ -30,7 +30,7 @@ generator <- function(start_date,
   # Generate ConfirmedCases column (1 = confirmed, 0 = not confirmed) based on the percentage
   confirmed <- rbinom(n, 1, percentage_confirmed)
   
-  sex <- rbinom(n, 1, 0.5)
+  sex <- 1 + rbinom(n, 1, 0.5)
   
   # Generate ConfirmedDeaths column (1 = death, 0 = no death) based on the percentage
   #death <- rbinom(n, 1, percentage_death)
