@@ -24,57 +24,50 @@ format:
 
 ## Overall objective
 
-You are asked to generate a Microsoft Word report on an outbreak. All text formatted in bold should be replaced with appropriate automated calculations or cross-references. Complete the following tasks and render the document after each task to track your progress.
+You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document `exercise3.qmd` in RStudio. All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references. Complete each of the following tasks and render the document after each task to track your progress.
 
 ## Task 1
 
-a.  Update the title of the Quarto document
-b.  Put your name as author of the Quarto document
-c.  Add a date with the format `MMM D, YYYY`
-c.  Change the output format to generate a Microsoft Word document.
-d.  Configure the Quarto document to hide code in the rendered MS Word document.
-e.  Configure the Quarto document to hide warnings in the rendered MS Word document.
+a.  Update the title of the Quarto document ;
+b.  Put your name as author of the Quarto document ;
+c.  Add the date `2023-12-31` to the Quarto document ;
+d.  Change the output format to generate a Microsoft Word document ;
+e.  Configure the Quarto document to hide code in the rendered MS Word document ;
+f.  Configure the Quarto document to hide warnings in the rendered MS Word document.
 
 ::: callout-tip
-
-See [Quarto execution options](https://quarto.org/docs/computations/execution-options.html)
-See [Quarto date formatting](https://quarto.org/docs/reference/dates.html#date-formatting)
-
+-   See [Quarto date formatting](https://quarto.org/docs/reference/dates.html#date-formatting)
+-   See [Quarto execution options](https://quarto.org/docs/computations/execution-options.html)
 :::
 
-## Task 2
+## Task 2 - Improve document navigation to improve readability
 
-Make it easier for readers to navigate your document.
-
-a.  Add a table of contents to the Quarto document.
-b.  Automatically number the different sections of the Quarto document.
-c.  Configure the table of contents to only display levels of section headings.
+a.  Insert a table of contents to the Quarto document ;
+b.  Automatically number the different sections of the Quarto document ;
+c.  Configure the table of contents to only display two levels of section headings.
 
 ::: callout-tip
-
-See [Quarto table of content]
-
+-   See [Quarto table of contents](https://quarto.org/docs/output-formats/ms-word.html#table-of-contents)
 :::
 
-## Task 3 - Inline
+## Task 3 - Implement dynamic calculations
 
--   Execute the automated calculation of the start and end dates within the text "The outbreak ran from **calculation of start date** to **calculation of end date**."
--   Execute the automated calculation of the number of cases, confirmed cases and deaths within the text "Over this period, there were **calculation of number of cases** cases, including **calculation of number of confirmed cases** confirmed cases and **calculation of number of deaths** confirmed deaths."
+a.  Change the date `2023-12-31` to the last modified date of the Quarto document, and format it to display it as `December 31, 2023`.
+b.  Execute the automated calculation of the start and end dates within the text "The outbreak ran from **calculation of start date** to **calculation of end date**."
+
+c.   Execute the automated calculation of the number of cases, confirmed cases and deaths within the text "Over this period, there were **calculation of number of cases** cases, including **calculation of number of confirmed cases** confirmed cases and **calculation of number of deaths** confirmed deaths."
 
 ::: callout-tip
-
-See [Quarto table of content]
-
+-   See [Quarto dynamic dates](https://quarto.org/docs/reference/dates.html#date-parsing)
+-   See [Quarto inline code](https://quarto.org/docs/computations/inline-code.html)
 :::
 
 ## Task 4 - Table
 
--   Create a table summarising the characteristics of the
+a.   Create a table summarising the characteristics of the
 
 ::: callout-tip
-
-See [Quarto table of content]
-
+* See
 :::
 
 ## Task 5 - Figure
@@ -85,9 +78,7 @@ See [Quarto table of content]
 -   Add a label for the figure
 
 ::: callout-tip
-
-See [Quarto table of content]
-
+* See
 :::
 
 ## Task 6 - Use parameters
@@ -95,9 +86,7 @@ See [Quarto table of content]
 We would like to generate 2 reports - one for the period 2021, the other one for the period 2022
 
 ::: callout-tip
-
-See [Quarto table of content]
-
+* See 
 :::
 
 ## Task 7 - Dataset
@@ -105,9 +94,7 @@ See [Quarto table of content]
 Actually you were given the wrong dataset. Can you reload using the dataset stored in `df2.RData` instead of `df1.RData`? Do you see an advantage of using Quarto over R.
 
 ::: callout-tip
-
-See [Quarto table of content]
-
+See \[Quarto table of content\]
 :::
 
 ## Task 8 -
@@ -127,9 +114,7 @@ Reference documents include sample text that uses all of the output styles used 
 To use a reference doc template, just copy it to your document’s directory and reference it as shown above. [Use Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)
 
 ::: callout-tip
-
-See [Quarto table of content]
-
+See \[Quarto table of content\]
 :::
 
 ## Task 9 - Finalise the document
