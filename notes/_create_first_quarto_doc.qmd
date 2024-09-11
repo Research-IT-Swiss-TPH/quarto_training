@@ -11,6 +11,8 @@ author:
   - name:
       given: Zhihan
       family: Zhu
+    affiliations:
+      - name: Swiss TPH Research-IT
 license: "CC-BY"
 date: last-modified
 
@@ -22,6 +24,9 @@ format:
     number-sections: true
     anchor-sections: true
     title-block-banner: true
+    comments:
+      hypothesis: 
+        theme: classic
     
 execute:
   echo: fenced

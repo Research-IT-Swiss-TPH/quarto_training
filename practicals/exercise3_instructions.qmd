@@ -37,12 +37,12 @@ You are tasked with generating a Microsoft Word report on an outbreak. Open the 
 -   See [Quarto documentation about execution options](https://quarto.org/docs/computations/execution-options.html)
 :::
 
-a.  Update the title of the Quarto document ;
-b.  Put your name as author of the Quarto document ;
-c.  Add the date `2023-12-31` to the Quarto document ;
-d.  Change the output format to generate a MS Word document ;
-e.  Configure the Quarto document to hide code in the rendered MS Word document ;
-f.  Configure the Quarto document to hide warnings in the rendered MS Word document.
+a.  [ ] Update the title of the Quarto document ;
+b.  [ ] Put your name as author of the Quarto document ;
+c.  [ ] Add the date `2023-12-31` to the Quarto document ;
+d.  [ ] Change the output format to generate a MS Word document ;
+e.  [ ] Configure the Quarto document to hide code in the rendered MS Word document ;
+f.  [ ] Configure the Quarto document to hide warnings in the rendered MS Word document.
 
 ## Improve navigation and readability
 
@@ -50,9 +50,9 @@ f.  Configure the Quarto document to hide warnings in the rendered MS Word docum
 -   See [Quarto documentation about MS Word table of contents](https://quarto.org/docs/output-formats/ms-word.html#table-of-contents)
 :::
 
-a.  Insert a table of contents to the Quarto document ;
-b.  Automatically number the different sections of the Quarto document ;
-c.  Configure the table of contents to only display two levels of section headings.
+a.  [ ] Insert a table of contents to the Quarto document ;
+b.  [ ] Automatically number the different sections of the Quarto document ;
+c.  [ ] Configure the table of contents to only display two levels of section headings.
 
 ## Implement dynamic calculations
 
@@ -61,12 +61,12 @@ c.  Configure the table of contents to only display two levels of section headin
 -   See [Quarto documentation about inline code](https://quarto.org/docs/computations/inline-code.html)
 :::
 
-a.  Change the date `2023-12-31` to the date at which the Quarto document was last modified, and format this date to display it with the format `December 31, 2023` ;
-b.  Replace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;
+a.  [ ] Change the date `2023-12-31` to the date at which the Quarto document was last modified, and format this date to display it with the format `December 31, 2023` ;
+b.  [ ] Replace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;
 
 > "*The outbreak ran from **date** to **date***"
 
-c.  Replace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.
+c.  [ ] Replace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.
 
 > "*Over the studied period, there were **N** cases, including **N** confirmed cases and **N** confirmed deaths.*"
 
@@ -77,20 +77,19 @@ c.  Replace the placeholder text in bold with the automated calculation of the n
 -   See [Quarto documentation about table cross-references](https://quarto.org/docs/authoring/tables.html#cross-references)
 
 Other R packages include [flextable](https://davidgohel.github.io/flextable/) and [gt](https://gt.rstudio.com/)
-
 :::
 
-a.  Create a table summarising the demographic characteristics and outcome frequency of all cases ;
-b.  Add a caption to the table ;
-c.  Assign a label to the table ;
-d.  Replace the placeholder text in bold with a cross-reference to the table ;
+a.  [ ] Create a table summarising the demographic characteristics and outcome frequency of all cases ;
+b.  [ ] Add a caption to the table ;
+c.  [ ] Assign a label to the table ;
+d.  [ ] Replace the placeholder text in bold with a cross-reference to the table ;
 
 > "***cross-reference** provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
 
-e.  Create a table summarising the demographic characteristics of individuals who died versus those who are still alive ;
-f.  Add a caption to the table ;
-g.  Assign a label to the table ;
-h.  Replace the placeholder text in bold with a cross-reference to the table.
+e.  [ ] Create a table summarising the demographic characteristics of individuals who died versus those who are still alive ;
+f.  [ ] Add a caption to the table ;
+g.  [ ] Assign a label to the table ;
+h.  [ ] Replace the placeholder text in bold with a cross-reference to the table.
 
 > "*while **cross-reference** compares the demographic characteristics of individuals who died versus those who are still alive*"
 
@@ -98,17 +97,17 @@ h.  Replace the placeholder text in bold with a cross-reference to the table.
 
 ::: callout-tip
 -   See [Quarto documentation about figure cross-references](https://quarto.org/docs/authoring/cross-references.html#computations)
-- See [Quarto documentation about figure options](https://quarto.org/docs/computations/execution-options.html#figure-options)
+-   See [Quarto documentation about figure options](https://quarto.org/docs/computations/execution-options.html#figure-options)
 :::
 
-a.  Add a caption to the figure ;
-b.  Assign a label to the figure ;
-c.  Replace the placeholder text in bold with a cross-reference to the figure ;
+a.  [ ] Add a caption to the figure ;
+b.  [ ] Assign a label to the figure ;
+c.  [ ] Replace the placeholder text in bold with a cross-reference to the figure ;
 
 > "***cross-reference** illustrates the outbreak's progression, which can be divided into distinct phases.*"
 
-c.  Adjust the dimensions of the figure until you are happy with it
-d.  Beautify the plot using ggplot options
+c.  [ ] Adjust the dimensions of the figure until you are happy with it
+d.  [ ] Beautify the plot using ggplot options
 
 ## Code
 
@@ -117,18 +116,18 @@ d.  Beautify the plot using ggplot options
 -   See [Quarto documentation about code chunk cross-references](https://quarto.org/docs/authoring/cross-references.html#code-listings)
 :::
 
-a.  Implement a logistic regression model based on description in the Quarto document ;
-b.  Create a table summarizing the odds ratios from the logistic regression model ;
-c.  Add a caption to the table ;
-d.  Assign a label to the table ;
-e.  Replace the placeholder text in bold with a cross-reference to the table ;
+a.  [ ] Implement a logistic regression model based on description in the Quarto document ;
+b.  [ ] Create a table summarizing the odds ratios from the logistic regression model ;
+c.  [ ] Add a caption to the table ;
+d.  [ ] Assign a label to the table ;
+e.  [ ] Replace the placeholder text in bold with a cross-reference to the table ;
 
 > "The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference**."
 
-f.  Display the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;
-c.  Add a caption to the code chunk ;
-d.  Assign a label to the code chunk ;
-e.  Replace the placeholder text in bold with a cross-reference to the code chunk. 
+f.  [ ] Display the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;
+g.  [ ] Add a caption to the code chunk ;
+h.  [ ] Assign a label to the code chunk ;
+i.  [ ] Replace the placeholder text in bold with a cross-reference to the code chunk.
 
 ## Parametrise your report
 
@@ -137,11 +136,11 @@ e.  Replace the placeholder text in bold with a cross-reference to the code chun
 -   See [Quarto documentation about rendering outputs using different parameters](https://quarto.org/docs/computations/parameters.html#rendering)
 :::
 
-a.  Adjust the report to focus on data for the year 2022 only ;
-c.  You were unfortunately provided with a previous erroneous version of the dataset. Update the report to use the dataset stored in `df2.RData` instead of the one stored in `df1.RData` ;
-d. Render 3 reports using 
+a.  [ ] Adjust the report to focus on data for the year 2022 only ;
+b.  [ ] You were unfortunately provided with a previous erroneous version of the dataset. Update the report to use the dataset stored in `df2.RData` instead of the one stored in `df1.RData` ;
+c.  [ ] Render 3 reports using
 
-```
+```         
 quarto render exercise3.qmd --out report_data1.docx -P dataset:""../data/df1.RData"
 ```
 
@@ -149,7 +148,6 @@ quarto render exercise3.qmd --out report_data1.docx -P dataset:""../data/df1.RDa
 ### Discussion question
 
 Discuss the advantages and disadvantages of using R within Quarto compared to using R scripts.
-
 :::
 
 ## Finalise your MS Word report
@@ -158,5 +156,5 @@ Discuss the advantages and disadvantages of using R within Quarto compared to us
 See [Quarto documentation about Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)
 :::
 
-a.  Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report ;
-b.  Create your own template and apply it to your MS Word rendered report.
+a.  [ ] Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report ;
+b.  [ ] Create your own template and apply it to your MS Word rendered report.
