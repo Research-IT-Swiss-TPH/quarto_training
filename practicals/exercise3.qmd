@@ -32,9 +32,9 @@ subdf <- df |>
   dplyr::filter(date >= period_start & date <= period_end)
 ```
 
-The outbreak ran from **calculated date** to **calculated date**. This report covers the period **calculated date** to **calculated date**. Over the studied period, there were **calculated N** cases, including **calculated N** confirmed cases and **calculated N** confirmed deaths.
+The outbreak ran from **date** to **date**. This report covers the period **date** to **date**. Over the studied period, there were **N** cases, including **N** confirmed cases and **N** confirmed deaths.
 
-**cross-reference table** provides a summary of the overall population characteristics, while Table **cross-reference table** compares the characteristics of individuals who died versus those who are still alive.
+**cross-reference** provides a summary of the overall population characteristics, while **cross-reference** compares the characteristics of individuals who died versus those who are still alive.
 
 ```{r}
 
@@ -78,13 +78,13 @@ weekly_data |>
 
 In this section, we build and evaluate a logistic regression model to understand the relationship between certain variables and the likelihood of death among confirmed cases.
 
-The logistic regression model uses `death` as the reponse variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by **cross-reference code chunk**.
+The logistic regression model uses `death` as the reponse variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by **cross-reference**.
 
 ```{r}
 
 ```
 
-The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference table**.
+The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference**.
 
 ```{r}
 
