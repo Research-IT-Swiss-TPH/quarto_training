@@ -41,13 +41,15 @@ The outbreak ran from **date** to **date**. This report covers the period **date
 
 ## Population characteristics
 
-**cross-reference** provides a summary of the overall population characteristics, while **cross-reference** compares the characteristics of individuals who died versus those who are still alive.
+**cross-reference** provides a summary of the demographic characteristics and the outcome proportion for the overall population, while **cross-reference** compares the characteristics of individuals who died versus those who are still alive.
 
 ```{r}
-#
+# Generate a summary table displaying population characteristics
+
 ```
 
 ```{r}
+# Generate a summary table comparing the demographic characteristics of individuals who died versus those who are still alive
 
 ```
 
