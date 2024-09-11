@@ -1,0 +1,122 @@
+---
+title: "Quarto training for R - Exercise 3 - Instructions"
+author:
+  - name:
+      given: Hélène
+      family: Langet
+    affiliations:
+      - name: Swiss TPH Research-IT
+    orcid: 0000-0002-6758-2397
+license: "CC-BY"
+date: last-modified
+editor: source
+
+format:
+  html:
+    embed-resources: true
+    code-overflow: wrap
+    theme: cosmo
+    toc: true
+    number-sections: true
+    anchor-sections: true
+    title-block-banner: true
+---
+
+## Overall objective
+
+You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document `exercise3.qmd` in RStudio. All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references. Complete each of the following tasks and render the document after each task to track your progress.
+
+## Task 1
+
+a.  Update the title of the Quarto document ;
+b.  Put your name as author of the Quarto document ;
+c.  Add the date `2023-12-31` to the Quarto document ;
+d.  Change the output format to generate a Microsoft Word document ;
+e.  Configure the Quarto document to hide code in the rendered MS Word document ;
+f.  Configure the Quarto document to hide warnings in the rendered MS Word document.
+
+::: callout-tip
+-   See [Quarto date formatting](https://quarto.org/docs/reference/dates.html#date-formatting)
+-   See [Quarto execution options](https://quarto.org/docs/computations/execution-options.html)
+:::
+
+## Task 2 - Improve document navigation to improve readability
+
+a.  Insert a table of contents to the Quarto document ;
+b.  Automatically number the different sections of the Quarto document ;
+c.  Configure the table of contents to only display two levels of section headings.
+
+::: callout-tip
+-   See [Quarto table of contents](https://quarto.org/docs/output-formats/ms-word.html#table-of-contents)
+:::
+
+## Task 3 - Implement dynamic calculations
+
+a.  Change the date `2023-12-31` to the last modified date of the Quarto document, and format it to display it as `December 31, 2023`.
+b.  Execute the automated calculation of the start and end dates within the text "The outbreak ran from **calculation of start date** to **calculation of end date**."
+
+c.   Execute the automated calculation of the number of cases, confirmed cases and deaths within the text "Over this period, there were **calculation of number of cases** cases, including **calculation of number of confirmed cases** confirmed cases and **calculation of number of deaths** confirmed deaths."
+
+::: callout-tip
+-   See [Quarto dynamic dates](https://quarto.org/docs/reference/dates.html#date-parsing)
+-   See [Quarto inline code](https://quarto.org/docs/computations/inline-code.html)
+:::
+
+## Task 4 - Table
+
+a.   Create a table summarising the characteristics of the
+
+::: callout-tip
+* See
+:::
+
+## Task 5 - Figure
+
+-   Change the height of the figure
+-   Change the width of the figure
+-   Add a caption for the figure
+-   Add a label for the figure
+
+::: callout-tip
+* See
+:::
+
+## Task 6 - Use parameters
+
+We would like to generate 2 reports - one for the period 2021, the other one for the period 2022
+
+::: callout-tip
+* See 
+:::
+
+## Task 7 - Dataset
+
+Actually you were given the wrong dataset. Can you reload using the dataset stored in `df2.RData` instead of `df1.RData`? Do you see an advantage of using Quarto over R.
+
+::: callout-tip
+See \[Quarto table of content\]
+:::
+
+## Task 8 -
+
+-   Customise the Word document with the Swiss TPH template
+
+If you want to customize the appearance of MS Word output, Pandoc supports a special type of template called a reference document. Here is an example of specifying a custom reference document for docx:
+
+```         
+format:
+  docx:
+    reference-doc: custom-reference-doc.docx
+```
+
+Reference documents include sample text that uses all of the output styles used by Pandoc.
+
+To use a reference doc template, just copy it to your document’s directory and reference it as shown above. [Use Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)
+
+::: callout-tip
+See \[Quarto table of content\]
+:::
+
+## Task 9 - Finalise the document
+
+-   Once you are done with all the tasks, delete all the instructions (lines 16 to 69).
