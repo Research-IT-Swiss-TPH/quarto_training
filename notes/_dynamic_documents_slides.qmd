@@ -17,6 +17,7 @@ format:
     logo: "../Images/swisstph_logo_compact.png"
     css: logo.css
     footer: "Swiss TPH, Research-IT"
+    code-overflow: wrap
     
 execute:
   echo: fenced
@@ -55,32 +56,65 @@ It is actually possible to keep your data science projects organized with RStudi
 
 Document contains 3 big types of content
 
-::: {.panel-tabset}
+::::: {.panel-tabset}
 
 ### Formatted text
 
-Markdown, HTML, LaTeX
+:::: {.columns}
 
+::: {.column width="33%"}
+
+#### Markdown
+
+```{r}
+#| echo: false
+cat("**test**")
 ```
 
+:::
+
+::: {.column width="33%"}
+
+#### LaTeX
+
+```{r}
+#| echo: false
+cat("\\textbf{Text in bold}")
 ```
+
+:::
+
+::: {.column width="33%"}
+
+#### HTML
+
+```{r}
+#| echo: false
+cat("<b>Text in bold<\b>")
+```
+
+:::
+
+::::
 
 ### Code commands
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="33%"}
 
 #### R
 
-```{r}
-#| output: false
-print("test")
+```{{r}}
+library(ggplot2)
+data.frame(country=c("Nigeria","Kenya","India"), prevalence=c(14.5,9.2,3.5)) |>
+  ggplot(aes(x=country, y=prevalence)) +
+  geom_bar(stat="identity", fill="steelblue")
 ```
 
 :::
 
-::: {.column width="60%"}
+::: {.column width="33%"}
 
 #### Python
 
@@ -89,9 +123,20 @@ print("test")
 library(reticulate)
 ```
 
-```{python}
-#| output: false
-print("test")
+```{{python}}
+import matplotlib.pyplot as plt
+plt.bar(['Nigeria', 'Kenya', 'India'], [14.5, 9.2, 3.5], color='steelblue')
+plt.show()
+```
+
+:::
+
+::: {.column width="33%"}
+
+#### Observable JavaScript
+
+```{{ojs}}
+BarChart({x: ["Nigeria", "Kenya", "India"], y: [14.5, 9.2, 3.5], yLabel: "Prevalence (%)"})
 ```
 
 :::
@@ -101,9 +146,52 @@ print("test")
 
 ### Code outputs
 
-Results, tables, graphs, etc
+:::: {.columns}
+
+::: {.column width="33%"}
+
+```{r}
+#| echo: false
+library(ggplot2)
+data.frame(country=c("Nigeria","Kenya","India"), prevalence=c(14.5,9.2,3.5)) |>
+  ggplot(aes(x=country, y=prevalence)) +
+  geom_bar(stat="identity", fill="steelblue")
+```
 
 :::
+
+::: {.column width="33%"}
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+plt.bar(['Nigeria', 'Kenya', 'India'], [14.5, 9.2, 3.5], color='steelblue')
+plt.show()
+```
+
+:::
+
+::: {.column width="33%"}
+
+```{ojs}
+#| echo: false
+// A simple bar chart using Observable's Plot library
+Plot.plot({
+  marks: [
+    Plot.barY(
+      {x: ["Nigeria", "Kenya", "India"], y: [14.5, 9.2, 3.5]},
+      {fill: "steelblue"}
+    )
+  ],
+  y: {label: "Prevalence (%)"}
+})
+```
+
+:::
+
+::::
+
+:::::
 
 ## Rendered outputs
 
