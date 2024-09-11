@@ -24,11 +24,12 @@ You can use a table of contents and/or section numbering to make it easier for r
 
 ### Task 3 - Table
 
-* Create a table
+* Create a table summarising the characteristics of the 
 
 ### Task 4 - Figure
 
-* Reshape the figure
+* Change the height of the figure
+* Change the width of the figure
 * Add a caption for the figure
 * Add a label for the figure
 
@@ -36,18 +37,26 @@ You can use a table of contents and/or section numbering to make it easier for r
 
 Actually you were given the wrong dataset. Can you reload? Do you see an advantage of using Quarto over R.
 
-### Task 6 - Customise the Word document
+### Task 7 - Use parameters
 
-If you want to customize the appearance of MS Word output, Pandoc supports a special type of template called a reference document. Here’s an example of specifying a custom reference document for docx:
+We would like to generate 2 reports - one for the period 2021, the other one for the period 2022
 
-format: docx: reference-doc: custom-reference-doc.docx
+### Task 6 - 
+
+* Customise the Word document with the Swiss TPH template
+
+If you want to customize the appearance of MS Word output, Pandoc supports a special type of template called a reference document. Here is an example of specifying a custom reference document for docx:
+
+```
+format:
+  docx:
+    reference-doc: custom-reference-doc.docx
+```
 
 Reference documents include sample text that uses all of the output styles used by Pandoc.
 
 To use a reference doc template, just copy it to your document’s directory and reference it as shown above.
 [Use Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)
-
-### Task 7 - Use parameters
 
 ### Task 8 - Finalise the document
 
@@ -59,32 +68,40 @@ To use a reference doc template, just copy it to your document’s directory and
 load(file = "../data/df1.RData")
 ```
 
-The outbreak ran from **calculation of start date** to **calculation of end date**. Over this period, there were **calculation of number of cases** cases, including **calculation of number of confirmed cases** confirmed cases and **calculation of number of deaths** confirmed deaths.
+The outbreak ran from **automated date** to **automated date**. This report covers the period **automated date** to **automated date**. Over this period, there were **automated number** cases, including **automated number** confirmed cases and **automated number** confirmed deaths.
 
-As shown in **cross-reference to the figure below**, the outbreak can be divided into several distinct phases.
+The characteristics of the cases are displayed in **cross-reference**.
+
+As shown in **cross-reference**, the outbreak can be divided into several distinct phases.
 
 ```{r}
 # Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
 weekly_data <- df1 |>
   dplyr::group_by(week) |>
-  dplyr::summarise(count = dplyr::n(),
+  dplyr::summarise(count           = dplyr::n(),
                    confirmed_count = sum(confirmed),
-                   death_count = sum(death))
+                   death_count     = sum(death))
 
-# Plot the weekly cases, confirmed cases and deaths
-ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
-  ggplot2::geom_line(ggplot2::aes(y = count,
+# Plot the weekly count of all cases, confirmed cases and deaths
+weekly_data |>
+  ggplot2::ggplot(ggplot2::aes(x = week)) +
+  ggplot2::geom_line(ggplot2::aes(y     = count,
                                   color = "All cases"),
                      size = 1) +
-  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,
+  ggplot2::geom_line(ggplot2::aes(y     = confirmed_count,
                                   color = "Confirmed cases"),
                      size = 1) +
-  ggplot2::geom_line(ggplot2::aes(y = death_count,
+  ggplot2::geom_line(ggplot2::aes(y     = death_count,
                                   color = "Confirmed deaths"),
                      size = 1) +
   ggplot2::labs(title = "Weekly count of all cases, confirmed cases and deaths",
-                x = "Week",
-                y = "Count",
+                x     = "Week",
+                y     = "Count",
                 color = "Legend")
 ```
 
+A linear model can be built using
+
+```{r}
+
+```
