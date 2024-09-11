@@ -6,10 +6,12 @@ format: html
 ---
 
 ```{r}
+# Load the dataset stored in the "df1.RData" file located in the "../data/" directory
 load(file = "../data/df1.RData")
 ```
 
 ```{r}
+# Convert the 'sex', 'confirmed', and 'death' columns from their current data type to factors
 df <- df |>
   dplyr::mutate(dplyr::across(c(sex, confirmed, death),
                               as.factor))
@@ -18,26 +20,31 @@ df <- df |>
 ## Overview
 
 ```{r}
+# Identify the start and end dates of the outbreak by finding the minimum and maximum values in the 'date' column
 start_date <- min(df$date)
 end_date <- max(df$date)
 ```
 
 ```{r}
+# Define the period of interest for the report
 period_start <- start_date
 period_end <- end_date
 ```
 
 ```{r}
+# Filter the data frame to include only the cases that occurred within the defined period
 subdf <- df |>
   dplyr::filter(date >= period_start & date <= period_end)
 ```
 
 The outbreak ran from **date** to **date**. This report covers the period **date** to **date**. Over the studied period, there were **N** cases, including **N** confirmed cases and **N** confirmed deaths.
 
+## Population characteristics
+
 **cross-reference** provides a summary of the overall population characteristics, while **cross-reference** compares the characteristics of individuals who died versus those who are still alive.
 
 ```{r}
-
+#
 ```
 
 ```{r}
