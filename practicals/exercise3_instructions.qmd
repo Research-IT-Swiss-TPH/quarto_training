@@ -1,0 +1,93 @@
+---
+title: "Quarto training for R - Exercise 3 - Instructions"
+author:
+  - name:
+      given: Hélène
+      family: Langet
+    affiliations:
+      - name: Swiss TPH Research-IT
+    orcid: 0000-0002-6758-2397
+license: "CC-BY"
+date: last-modified
+editor: source
+
+format:
+  html:
+    embed-resources: true
+    code-overflow: wrap
+    theme: cosmo
+    toc: true
+    number-sections: true
+    anchor-sections: true
+    title-block-banner: true
+---
+
+## Overall objective
+
+You are asked to generate a Microsoft Word report on an outbreak. All text formatted in bold should be replaced with appropriate automated calculations or cross-references. Complete the following tasks and render the document after each task to track your progress.
+
+## Task 1
+
+a.  Update the title of the Quarto document
+b.  Put your name as author of the Quarto document
+c.  Change the output format to generate a Microsoft Word document.
+d.  Configure the Quarto document to hide code in the rendered MS Word document.
+e.  Configure the Quarto document to hide warnings in the rendered MS Word document.
+
+::: callout-tip
+
+See [Quarto execution options](https://quarto.org/docs/computations/execution-options.html)
+
+:::
+
+## Task 2
+
+Make it easier for readers to navigate your document.
+
+a.  Add a table of contents to the Quarto document.
+b.  Automatically number the different sections of the Quarto document.
+c.  Configure the table of contents to only display levels of section headings.
+
+## Task 3 - Inline
+
+-   Execute the automated calculation of the start and end dates within the text "The outbreak ran from **calculation of start date** to **calculation of end date**."
+-   Execute the automated calculation of the number of cases, confirmed cases and deaths within the text "Over this period, there were **calculation of number of cases** cases, including **calculation of number of confirmed cases** confirmed cases and **calculation of number of deaths** confirmed deaths."
+
+## Task 4 - Table
+
+-   Create a table summarising the characteristics of the
+
+## Task 5 - Figure
+
+-   Change the height of the figure
+-   Change the width of the figure
+-   Add a caption for the figure
+-   Add a label for the figure
+
+## Task 6 - Use parameters
+
+We would like to generate 2 reports - one for the period 2021, the other one for the period 2022
+
+## Task 7 - Dataset
+
+Actually you were given the wrong dataset. Can you reload using the dataset stored in `df2.RData` instead of `df1.RData`? Do you see an advantage of using Quarto over R.
+
+## Task 8 -
+
+-   Customise the Word document with the Swiss TPH template
+
+If you want to customize the appearance of MS Word output, Pandoc supports a special type of template called a reference document. Here is an example of specifying a custom reference document for docx:
+
+```         
+format:
+  docx:
+    reference-doc: custom-reference-doc.docx
+```
+
+Reference documents include sample text that uses all of the output styles used by Pandoc.
+
+To use a reference doc template, just copy it to your document’s directory and reference it as shown above. [Use Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)
+
+## Task 9 - Finalise the document
+
+-   Once you are done with all the tasks, delete all the instructions (lines 16 to 69).
