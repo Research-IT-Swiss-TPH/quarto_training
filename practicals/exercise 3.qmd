@@ -67,6 +67,29 @@ To use a reference doc template, just copy it to your document’s directory and
 load(file = "../data/df1.RData")
 ```
 
+```{r}
+df <- df |>
+  dplyr::mutate(dplyr::across(c(sex, confirmed, death),
+                              as.factor))
+```
+
+## Overview
+
+```{r}
+start_date <- min(df$date)
+end_date <- max(df$date)
+```
+
+```{r}
+period_start <- start_date
+period_end <- end_date
+```
+
+```{r}
+subdf <- df |>
+  dplyr::filter(date >= period_start & date <= period_end)
+```
+
 The outbreak ran from **calculated date** to **calculated date**. This report covers the period **calculated date** to **calculated date**. Over the studied period, there were **calculated N** cases, including **calculated N** confirmed cases and **calculated N** confirmed deaths.
 
 Table **cross-reference** provides a summary of the overall population characteristics, while Table **cross-reference** compares the characteristics of individuals who died versus those who are still alive.
@@ -86,7 +109,7 @@ Figure **cross-reference** illustrates the outbreak's progression, which can be 
 
 ```{r}
 # Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
-weekly_data <- df1 |>
+weekly_data <- subdf |>
   dplyr::group_by(week) |>
   dplyr::summarise(count           = dplyr::n(),
                    confirmed_count = sum(confirmed),
@@ -123,4 +146,20 @@ The logistic regression model is constructed using the following formula:
 
 ```{r}
 
+```
+
+## Appendix (Codebook)
+
+Variables:
+
+* `age` = age of the case
+* `sex` = binary variable (1 = male, 2 = female)
+* `bmi` = continuous variable coding for Body Mass Index (BMI)
+* `confirmed` = binary variable (0 = male, 1 = confirmed)
+* `death` = binary variable (0 = alive, 1 = died)
+
+
+```{r}
+subdf |>
+  skimr::skim()
 ```
