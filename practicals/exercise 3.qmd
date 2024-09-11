@@ -1,6 +1,6 @@
 ---
 title: "Quarto training for R - Exercise 3"
-author: Helene Langet
+author: Unknown author
 editor: visual
 format: html
 ---
@@ -13,27 +13,33 @@ You need to generate the following MS Word report in the section *Start of the r
 
 ### Task 1
 
+- Change the title
+- Change the author name
+- Change the rendered output to generate a MS Word document.
+
+### Task 2
+
 -   Add a table of content
 
 You can use a table of contents and/or section numbering to make it easier for readers to navigate your document. Do this by adding the toc and/or number-sections options to document options. Note that these options are typically specified at the root level because they are shared across all formats.
 
-### Task 2 - Inline
+### Task 3 - Inline
 
 -   Execute the automated calculation of the start and end dates within the text "The outbreak ran from **calculation of start date** to **calculation of end date**."
 -   Execute the automated calculation of the number of cases, confirmed cases and deaths within the text "Over this period, there were **calculation of number of cases** cases, including **calculation of number of confirmed cases** confirmed cases and **calculation of number of deaths** confirmed deaths."
 
-### Task 3 - Table
+### Task 4 - Table
 
 -   Create a table summarising the characteristics of the
 
-### Task 4 - Figure
+### Task 5 - Figure
 
 -   Change the height of the figure
 -   Change the width of the figure
 -   Add a caption for the figure
 -   Add a label for the figure
 
-### Task 5 - Dataset
+### Task 6 - Dataset
 
 Actually you were given the wrong dataset. Can you reload? Do you see an advantage of using Quarto over R.
 
@@ -41,7 +47,7 @@ Actually you were given the wrong dataset. Can you reload? Do you see an advanta
 
 We would like to generate 2 reports - one for the period 2021, the other one for the period 2022
 
-### Task 6 -
+### Task 8 -
 
 -   Customise the Word document with the Swiss TPH template
 
@@ -57,9 +63,9 @@ Reference documents include sample text that uses all of the output styles used 
 
 To use a reference doc template, just copy it to your document’s directory and reference it as shown above. [Use Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)
 
-### Task 8 - Finalise the document
+### Task 9 - Finalise the document
 
--   Once you are done, delete all the instructions (lines 16 to 58).
+-   Once you are done with all the tasks, delete all the instructions (lines 16 to 69).
 
 ## Start of the report
 
@@ -142,7 +148,7 @@ The logistic regression model uses `death` as the reponse variable, and `bmi` an
 
 ```
 
-The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference table**
+The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference table**.
 
 ```{r}
 
