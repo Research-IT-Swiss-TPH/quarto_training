@@ -89,7 +89,7 @@ In white background areas, any text will appear as regular text in the final rep
 
 ### Code
 
-In gray background "code chunks", Quarto is running code, which in our example is R code. These commands perform data processing and cleaning steps, or could produce visual outputs in the document.
+Code chunks, typically shown within gray backgrounds, execute commands in Quarto. In the example provided, R code is being run within these chunks. These commands may handle data processing, cleaning, or the generation of visual outputs that are integrated into the final document.
 :::
 
 ![](images/paste-30C30ECC.png)
@@ -130,17 +130,6 @@ Here are some tips for creating code chunks in RStudio
 -   **Keyboard shortcut**: for a quicker method, use the keyboard shortcut `Ctrl` + `Alt` + `I`
 :::
 
-### Options
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
-
 ### Tables
 
 Displaying data can be achieved with simple commands. For instance, to show the first 10 rows of the `iris` dataset, one can use:
@@ -172,13 +161,35 @@ When you click the **Render** button a document will be generated that includes 
 
 ![](images/paste-A8386DC4.png)
 
-In the case of this YAML header, the Quarto document will generate an HTML file because of the format: html setting.
+In the case of this YAML header, the Quarto document will generate an HTML file because of the `format: html` setting.
+
+### Code errors
+
+If you attempt to render the document with code chunks that contain errors, the rendering process will fail. Therefore, it's essential to ensure that all code chunks run successfully in sequence before rendering the document.
+
+### Options
+
+You can add options to executable code like this:
+
+```{{r}}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed). In this example, it will print:
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+Additionally, you can apply such options globally by specifying them in the YAML header, which configures settings for the entire document. It is important to note that the YAML header is indentation-sensitive and relies on proper whitespace formatting.
 
 ### Editing the header
 
 Here you may want to edit the title of your document.
 
-You can also create a word document with output: word_document. While PDF documents are also able to be created, they require installing LaTeX through the R package tinytex, which can sometimes be complicated to install.
+You can also create a word document with `output: word_document`. While PDF documents are also able to be created, they require installing LaTeX through the R package tinytex, which can sometimes be complicated to install.
 
 You can run the following chunk to get tinytex.
 
@@ -195,13 +206,15 @@ Inline code allows you to execute code within markdown, e.g. to automatically us
 
 The syntax for inline code is similar to code blocks, except you use a single tick (\`) rather than triple ticks (\`\`\`), and you can use it in the middle of markdown. Here is an example storing the variable in a code block and then print it in a sentence using inline code:
 
-
 ```{r}
 comment <- "AWESOME"
-
-# This lecture is `{r} comment`!
 ```
 
+You can print the sentence like this:
+
+```
+This lecture is `{{r}} comment`!
+```
 
 The result of the commented code is the following output:
 
