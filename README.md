@@ -2,7 +2,8 @@
 
 This training is ideal for researchers looking to improve their skills in reproducible research and optimizing their research analysis workflows from design to publication.
 
-📅 Thursday, September 12th in Seminarraum 1
+📅 Thursday, September 12th 2024 in Seminarraum 1 (Belo Horizonte, Allschwil)
+
 ⏳  Duration: 2 hours
 
 🎯 Learning outcomes:
