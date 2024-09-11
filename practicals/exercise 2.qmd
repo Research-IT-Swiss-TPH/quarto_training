@@ -29,14 +29,12 @@ Text is written in **Markdown**, a lightweight markup language. Quarto documents
 
 ### Task 1
 
-In the image below, we can see the same document in the two modes of the RStudio editor: visual (on the left) and source (on the right). RStudio’s visual editor offers a WYSIWYM authoring experience for markdown. For formatting (e.g., bolding text), you can use the toolbar, a keyboard shortcut (⌘B), or the markdown construct (**bold**). The plain text source code underlying the document is written for you, and you can view/edit it at any point by switching to source mode for editing. You can toggle back and forth between these two modes by clicking on Source and Visual in the editor toolbar.
-
-On the left: Document in the visual editor. On the right: Same document in the source editor.
+We can see the same document in the two modes of the RStudio editor: visual (on the left) and source (on the right). RStudio’s visual editor offers a WYSIWYM authoring experience for markdown. For formatting (e.g., bolding text), you can use the toolbar, a keyboard shortcut (⌘B), or the markdown construct (**bold**). The plain text source code underlying the document is written for you, and you can view/edit it at any point by switching to source mode for editing. You can toggle back and forth between these two modes by clicking on Source and Visual in the editor toolbar.
 
 Switch to *Source mode* using one of the following methods:
 
 -   use the Source or Visual toggle at the top-left of the document toolbar
--   or alternatively the Ctrl Q Shift F4 keyboard shortcut):
+-   or alternatively the Ctrl Q Shift F4 keyboard shortcut)
 
 The visual/source editor toggle is highlighted in both documents marking their current state.
 
@@ -48,7 +46,7 @@ For users less comfortable with coding and more interested in rendered document,
 
 ### Task 2
 
-Add a level 4 header to your document. Switch the mode to check how the content will be rendered (visual mode) or what is the markdown syntax (source mode)
+Add a level 4 header to your document. Switch the mode to check how the content will be rendered (visual mode) or what is the markdown syntax (source mode).
 
 ### Task 3
 
@@ -84,22 +82,7 @@ head(df, 10) |> knitr::kable()
 
 The chunk above will print the first 10 rows of the dataframe.
 
-In some cases, you may prefer not to show the actual code in the final document. To hide the code but still show the output, Quarto provides options such as `echo: false`, which disables the printing of code while retaining the output.
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-This option ensures only the result (`4` in this case) is displayed without showing the code itself.
-
-Additionally, you can refine these options globally in the YAML header, which applies the settings across the entire document.
-
 ### Task 3
-
-Add echo to the YAML header.
-
-### Task 4
 
 Run this chunk to set an initial value of a:
 
@@ -124,7 +107,11 @@ As we can see, every time we update the value of a, it iterates on the updated v
 
 ## Render a document
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code.
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. In the case of this YAML header, the Quarto document will generate an HTML file because of the `format: html` setting.
+
+### Code errors
+
+As a start, consider the following code chunk:
 
 ```{r}
 # this chunk will throw error
@@ -133,17 +120,36 @@ When you click the **Render** button a document will be generated that includes 
 print(something)
 ```
 
-If you render the document with one or more chunks with errors, it will fail. It's always necessary to make sure that code chunks can successfully run in their order before rendering the document. Try to uncomment `something <- "HELLO WORLD!"` and render again.
+If you attempt to render the document with code chunks that contain errors, the rendering process will fail. Therefore, it's essential to ensure that all code chunks run successfully in sequence before rendering the document. In this case, uncommenting `something <- "HELLO WORLD!"` will resolve the error, allowing the document to render correctly.
 
-### Task 1
+### Options
+
+In some cases, you may prefer not to show the actual code in the final document. To hide the code but still show the output, Quarto provides options such as `echo: false`, which disables the printing of code while retaining the output.
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+This option ensures only the result (`4` in this case) is displayed without showing the code itself.
+
+Additionally, you can apply such options globally by specifying them in the YAML header, which configures settings for the entire document. It is important to note that the YAML header is indentation-sensitive and relies on proper whitespace formatting.
+
+### Editing the header
+
+#### Task 1
+
+Add echo to the YAML header.
+
+#### Task 2
 
 Render the document to see the final output.
 
-### Task 2
+#### Task 3
 
 Change the document format to docx. Render the document again.
 
-### Task 3
+#### Task 4
 
 Change the document format to pdf. Try to render the document again.
 
