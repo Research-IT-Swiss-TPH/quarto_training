@@ -6,8 +6,8 @@ format: html
 ---
 
 ```{r}
-# Load the dataset stored in the "df1.RData" file located in the "../data/" directory
-load(file = "../data/df1.RData")
+# Load the dataset stored in the "df1.RData" file
+load(file = "df1.RData")
 ```
 
 ```{r}
