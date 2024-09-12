@@ -1,6 +1,6 @@
 ---
-title: "Getting started with Quarto"
-
+title: "Quarto training for R"
+subtitle: "Getting started with Quarto"
 author:
   - name:
       given: Hélène
@@ -8,17 +8,39 @@ author:
     affiliations:
       - name: Swiss TPH Research-IT
     orcid: 0000-0002-6758-2397
+    email: helene.langet@swisstph.ch
   - name:
       given: Zhihan
       family: Zhu
     affiliations:
       - name: Swiss TPH Research-IT
+    email: zhihan.zhu@swisstph.ch
 license: "CC-BY"
 date: last-modified
+editor: source
+lang: en-US
 
 format:
-  html:
+  pdf:
+    default: true
+    toc: true
+    number-sections: true
+  revealjs:
+    default: true
+    number-sections: true
+    output-file: _create_first_quarto_doc_slides.html
+    code-overflow: wrap
     embed-resources: true
+    logo: ../images/swisstph_logo_compact.png
+    css: ../css/logo.css
+    footer: "Quarto training for R"
+    smaller: true
+    slide-number: true
+    show-slide-number: all
+  html:
+    default: true
+    embed-resources: true
+    code-overflow: wrap
     theme: cosmo
     toc: true
     number-sections: true
@@ -27,46 +49,58 @@ format:
     comments:
       hypothesis: 
         theme: classic
+    code-links:
+      - text: exercise2.qmd
+        icon: file-code
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise2.qmd
+    format-links: [pdf]
     
 execute:
   echo: fenced
   warning: false
+  
+resources:
+  - _create_first_quarto_doc.pdf  
 ---
 
-::: callout-important
-## Learning objectives
+## 🎯 Learning objectives
 
 1.  Create a Quarto document
 2.  Setup the R environment to be able to use and render Quarto documents
 3.  Edit Quarto documents
 4.  Render Quarto documents in different formats
-:::
 
 ## Create a new Quarto document
 
 Quarto documents can be created and edited in RStudio.
 
-In RStudio, you can create a new Quarto document by selecting 
+In RStudio, you can create a new Quarto document by selecting
 
 > **File** \> **New File** \> **Quarto Document...**
 
-![](images/create_quarto.png)
+![](../images/create_quarto.png)
 
-When you create a new Quarto document, RStudio tries to be helpful by allowing you to select a template which explains the different section of an R Markdown script. R Studio will enable you select options to pick from to generate a template Quarto document to start from.
+::: {.content-visible when-format="revealjs"}
 
-The title and the author names are not important. If the output document type you want is not one of these, do not worry - you can just pick any one and change it manually later.
+---
 
-Let us select *HTML* to create an html document.
+:::
 
-Click on create to open up a new Quarto (`.Qmd`) document.
+When you create a new Quarto document, RStudio tries to be helpful by allowing you to select a template which explains the different section of an Quarto document. R Studio will enable you select options to pick from to generate a template Quarto document to start from.
 
-![](images/paste-67B97E04.png)
+The title and the author names are not important at this stage. If the output document type you want is not one of these, do not worry - you can just pick any one and change it manually later.
 
-## Setup your R environnment
+Let us select **HTML** to create an html document.
+
+Click on **Create** to open up a new Quarto (`.Qmd`) document.
+
+![](../images/paste-67B97E04.png)
+
+## Setup your R environment
 
 You need to ensure required packages are available
 
-![](images/quarto_packages.png)
+![](../images/quarto_packages.png)
 
 ## Exploring the structure of the Quarto document
 
@@ -88,41 +122,74 @@ This section is called the **YAML header** and it contains commands and metadata
 
 YAML is a data format that has the form of a **key: value pairing** to store data. The keys in this case are *title* and *format*. The values are those that follow the key (e.g., “Untitled” for title). These key data are used to store the settings that Quarto will use to render the output document. The keys listed above are some of many settings that Quarto has available to use.
 
-### Formatted text
+### Markdown text
 
-In white background areas, any text will appear as regular text in the final report. This is actually a markup language, which can have formatting such as headings, italics, bold, numbers, and bullets. See the second page of this RMarkdown cheatsheet for more detail. Can display parameters derived from your data via in-line code (such as epi week of the outbreak peak, as in the example above).
+In white background areas, any text will appear as regular text in the final report. This is actually a markup language, which can have formatting such as headings, italics, bold, numbers, and bullets.
 
 ### Code
 
 Code chunks, typically shown within gray backgrounds, execute commands in Quarto. In the example provided, R code is being run within these chunks. These commands may handle data processing, cleaning, or the generation of visual outputs that are integrated into the final document.
 :::
 
-![](images/paste-30C30ECC.png)
+![](../images/qmd_structure.png)
 
-## Document editing
+## Editing text
 
-### Visual Editor
-
-The RStudio Visual Editor is a relatively new feature designed to enhance the writing experience by providing an intuitive interface. It offers a more user-friendly experience, similar to working in a Google Doc, allowing for seamless content creation and editing.
-
-In the Visual Editor, you can preview your document in a format that closely resembles its final rendered appearance. This contrasts with the Source Editor, where content is written in markdown syntax. The ability to switch between these two modes allows for flexibility, depending on your preference or task.
-
-Below is an example of the same file viewed in both the Source Editor and the Visual Editor:
-
-![](images/Quarto_editor.PNG)
-
+::: callout-tip
 ### Useful resources
 
 -   [Quarto Documentation - Visual Editing in RStudio](https://quarto.org/docs/visual-editor/)
 -   [Quarto Documentation - Markdown Basics](https://quarto.org/docs/authoring/markdown-basics.html)
+:::
 
-## Running R code
+The **RStudio visual editor** is a relatively new feature designed to improve the editing experience by providing an intuitive interface. In the Visual Editor, you can preview your document in a format that closely resembles its final rendered appearance, similar to working in a "*What You See Is What You Get*" (WYSIWYG) languages, such as Microsoft Word, allowing for seamless content creation and editing.
 
-To write and execute code in Quarto, you will use **code chunks**. You can embed R code in *code chunks* as is displayed below
+This contrasts with the **RStudio source editor**, where content is written in **Markdown** syntax. The ability to switch between these two modes allows for flexibility, depending on your preference or task.
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+Below is an example of the same file viewed in both the source Editor and the visual Editor:
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](../images/quarto_editor1.png)
+:::
+
+::: {.column width="50%"}
+
+![](../images/quarto_editor2.png)
+
+:::
+
+::::
+
+## Running R code in notebook mode
+
+To write and execute code in Quarto, you will use **code chunks**.
+
+::: callout-note
+### Multilanguage
+
+As the number of programming languages used for scientific discourse is very broad, Quarto was developed to be multilingual, beginning with R, Python, Observable JavaScript (OJS), and Julia, building on the RStudio (R) and Jupyter (Python, Julia) ecosystems which are very popular among data scientists. Stata is not a language supported by Quarto.
+:::
+
+You can run **R code** in your Quarto document, by writing R commands within **code chunks** as is displayed below
 
 ```{r}
 1 + 1
 ```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
 
 ### Create code chunks
 
@@ -130,9 +197,14 @@ To write and execute code in Quarto, you will use **code chunks**. You can embed
 Here are some tips for creating code chunks in RStudio
 
 -   **Backticks**: use three backticks to start and end a code chunk.
--   **Toolbar icon**: you can also start a code chunk by clicking the appropriate icon in the toolbar.
-![](images/toolbar_icon_add_chunk_1.PNG)
+-   **Toolbar icon**: you can also start a code chunk by clicking the appropriate icon in the toolbar. ![](../images/toolbar_icon_add_chunk_1.PNG)
 -   **Keyboard shortcut**: for a quicker method, use the keyboard shortcut `Ctrl` + `Alt` + `I`
+:::
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
 :::
 
 ### Tables
@@ -143,6 +215,12 @@ Displaying data can be achieved with simple commands. For instance, to show the 
 iris |>
   head(10)
 ```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
 
 To improve the readability of tables, the `knitr::kable()` function provides a more structured and formatted output:
 
@@ -156,54 +234,168 @@ iris |>
 Additional R packages can be used for more advanced and aesthetically refined tables.
 :::
 
-### Multilanguage
-
-As the number of programming languages used for scientific discourse is very broad, Quarto was developed to be multilingual, beginning with R, Python, Javascript, and Julia. building on the RStudio (R) and Jupyter (Python, Julia) ecosystems which are very popular. Stata is not a language supported by Quarto.
-
 ## Rendering
 
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code.
 
-![](images/paste-A8386DC4.png)
+![](../images/paste-A8386DC4.png)
 
 In the case of this YAML header, the Quarto document will generate an HTML file because of the `format: html` setting.
 
+::: callout-warning
 ### Code errors
 
-If you attempt to render the document with code chunks that contain errors, the rendering process will fail. Therefore, it's essential to ensure that all code chunks run successfully in sequence before rendering the document.
+If you attempt to render the document with code chunks that contain errors, the rendering process will fail. Therefore, it is essential to ensure that all code chunks run successfully in sequence before rendering the document.
+:::
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
 
 ### Options
 
-You can add options to executable code like this:
+You can add options to **a specific code chunk** as is shown below:
 
 ```{{r}}
 #| echo: false
 2 * 2
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed). In this example, it will print:
+The `echo: false` option hides the code chunk in the rendered output document (only code output is displayed). In this example, rendered output document will only print:
 
 ```{r}
 #| echo: false
 2 * 2
 ```
 
-Additionally, you can apply such options globally by specifying them in the YAML header, which configures settings for the entire document. It is important to note that the YAML header is indentation-sensitive and relies on proper whitespace formatting.
+Additionally, you can apply such options **globally** by specifying them in the YAML header, which configures settings for the entire Quarto document.
 
-### Editing the header
+```
+---
+title: "Quarto training for R - Exercise 2"
+author: Unknown author
+format: html
+editor: visual
+echo: false
+---
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+::::: callout-important
+It is important to note that the YAML header is indentation-sensitive and relies on proper whitespace formatting.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](../images/clipboard-3689836965.png)
+
+:::
+
+::: {.column width="50%"}
+
+![](../images/clipboard-3407454911.png)
+
+:::
+
+::::
+
+:::::
 
 Here you may want to edit the title of your document.
 
-You can also create a word document with `output: word_document`. While PDF documents are also able to be created, they require installing LaTeX through the R package tinytex, which can sometimes be complicated to install.
+::: {.content-visible when-format="revealjs"}
 
-You can run the following chunk to get tinytex.
+---
 
-```{r}
-#| eval: false
+:::
+
+### MS Word outputs
+
+You can also render a MS Word document by modifying the global format option in the YAML header to `format: docx`
+
+```
+---
+title: "Quarto training for R - Exercise 2"
+author: Unknown author
+format: docx
+editor: visual
+---
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+### PDF outputs
+
+You can also render a PDF document by modifying the global format option in the YAML header to `format: pdf`
+
+```
+---
+title: "Quarto training for R - Exercise 2"
+author: Unknown author
+format: pdf
+editor: visual
+---
+```
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
+While PDF documents are also able to be created, they require installing LaTeX, which can sometimes be complicated to install. `TinyTeX` is a custom LaTeX distribution that is easy to install with R. It is needed to compile R Markdown or Quarto documents to PDF.
+
+Install the `TinyTeX` package:
+
+```{{r}}
 install.packages("tinytex")
+```
+
+To install `TinyTeX` from the `tinytex` package, please run the R commands as follow:
+
+```{{r}}
 tinytex::install_tinytex()
 ```
 
+::: {.content-hidden when-format="revealjs"}
+
+If specific LaTeX packages (e.g., `fancyhdr`, `lastpage`, `babel`, `tocbibind`, `worldflags`) or styles are missing, they can be installed using the following commands:
+
+```{{r}}
+tinytex::tlmgr_install("fancyhdr")
+```
+
+```{{r}}
+tinytex::parse_install(
+    text = "! LaTeX Error: File `ulem.sty' not found."
+)
+```
+
+In order to avoid the warning *No hyphenation patterns were preloaded for the language French into the format.*, please consider installing the package `hyphen-french`
+
+```{{r}}
+tinytex::tlmgr_install("hyphen-french")
+```
+
+:::
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
 
 ### Execute R code within the text
 
@@ -217,7 +409,7 @@ comment <- "AWESOME"
 
 You can print the sentence like this:
 
-```
+```         
 This lecture is `{{r}} comment`!
 ```
 
@@ -225,7 +417,7 @@ The result of the commented code is the following output:
 
 `This lecture is `{r} comment`!`
 
-Inline expressions are always evaluated when rendering and previewing .qmd files.
+Inline expressions are always evaluated when rendering and previewing `.qmd` files.
 
 ## References
 

@@ -8,16 +8,35 @@ author:
     affiliations:
       - name: Swiss TPH Research-IT
     orcid: 0000-0002-6758-2397
+    email: helene.langet@swisstph.ch
 license: "CC-BY"
 date: last-modified
 editor: source
 
 format:
   revealjs:
-    logo: "../Images/swisstph_logo_compact.png"
-    css: logo.css
+    default: true
+    embed-resources: true
+    logo: ../images/swisstph_logo_compact.png
+    css: ../css/logo.css
     footer: "Swiss TPH, Research-IT"
     code-overflow: wrap
+    smaller: true
+    slide-number: true
+    show-slide-number: all
+  html:
+    default: true
+    embed-resources: true
+    code-link: true
+    code-overflow: wrap
+    theme: cosmo
+    toc: true
+    number-sections: true
+    anchor-sections: true
+    title-block-banner: true
+    comments:
+      hypothesis: 
+        theme: classic
     
 execute:
   echo: fenced
@@ -52,23 +71,27 @@ Such situations are quite common in data science.
 
 It is actually possible to keep your data science projects organized with RStudio so that re-running an analysis and recreating reports is straightforward and can be done with minimal effort. Dynamic documents can be produced to update on a routine basis (e.g. daily surveillance reports) and/or run on subsets of data (e.g. reports for each jurisdiction).
 
-## Documents
+## Types of content
 
-Document contains 3 big types of content
+Analytically reproducible documents typically contain 3 main types of content
 
 ::::: {.panel-tabset}
 
 ### Formatted text
 
+These are languages that can be written using any plain text editor^[in comparison to "*What You See Is What You Get*" (WYSIWYG) languages, such as Microsoft Word]. They use *markup* elements to define how text should be displayed or printed.
+
 :::: {.columns}
 
 ::: {.column width="33%"}
 
-#### Markdown
+#### HTML
+
+HTML is used to structure content on the web. 
 
 ```{r}
 #| echo: false
-cat("**test**")
+cat("<b>This text will be displayed in bold</b>")
 ```
 
 :::
@@ -77,20 +100,24 @@ cat("**test**")
 
 #### LaTeX
 
+LaTeX is used for academic and technical documents.
+
 ```{r}
 #| echo: false
-cat("\\textbf{Text in bold}")
+cat("\\textbf{This text will be displayed in bold}")
 ```
 
 :::
 
 ::: {.column width="33%"}
 
-#### HTML
+#### Markdown
+
+Markdown is a lightweight markup language.
 
 ```{r}
 #| echo: false
-cat("<b>Text in bold<\b>")
+cat("**This text will be displayed in bold**")
 ```
 
 :::
@@ -98,6 +125,8 @@ cat("<b>Text in bold<\b>")
 ::::
 
 ### Code commands
+
+Different programming languages allow us to execute code to generate results or perform tasks. Here are examples of commands in various languages:
 
 :::: {.columns}
 
@@ -133,7 +162,7 @@ plt.show()
 
 ::: {.column width="33%"}
 
-#### Observable JavaScript
+#### Observable JS
 
 ```{{ojs}}
 BarChart({x: ["Nigeria", "Kenya", "India"], y: [14.5, 9.2, 3.5], yLabel: "Prevalence (%)"})
@@ -143,8 +172,9 @@ BarChart({x: ["Nigeria", "Kenya", "India"], y: [14.5, 9.2, 3.5], yLabel: "Preval
 
 ::::
 
-
 ### Code outputs
+
+The output from executing code often results in visualizations or printed results. Below are the corresponding outputs for each language:
 
 :::: {.columns}
 
@@ -193,11 +223,32 @@ Plot.plot({
 
 :::::
 
+## Quarto
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### *.Qmd
+
+![](images/qmd_structure.png)
+
+:::
+
+::: {.column width="50%"}
+
+### Rendered document
+
+![](images/qmd_rendered.png)
+
+:::
+
+::::
+
 ## Rendered outputs
 
-Outputs get updated automatically every time the document is processed.
-
-Can be rendered into to many report formats including HTML, Word document and many more
+* Outputs get updated automatically every time the document is processed.
+* Can be rendered into to many report formats including HTML, Word document and many more
 
 ## Tools
 
@@ -236,7 +287,8 @@ It is the R package: This is used by R to render the .Rmd file into the desired 
 
 ## Quarto
 
-Quarto is the successor to R Markdown. As a R Markdown document, a Quarto document intersperces code and text such that the script actually becomes your output document. You can create an entire formatted document, including narrative text (can be dynamic to change based on your data), tables, figures, bullets/numbers, bibliographies, etc.
+* Quarto is the successor to R Markdown.
+* You can create an entire formatted document, including narrative text (can be dynamic to change based on your data), tables, figures, bullets/numbers, bibliographies, etc.
 
 Quatro uses a mark-up language similar to HyperText Markup Language (HTML) or LaTeX, in comparison to a "What You See Is What You Get" (WYSIWYG) language, such as Microsoft Word. This means that all the aspects are consistent, for instance, all top-level heading will look the same. But it means that we use symbols to designate how we would like certain aspects to appear. And it is only when we build the mark-up that we get to see what it looks like. A visual editor option can also be used which hides the need for the user to do this mark-up themselves.
 

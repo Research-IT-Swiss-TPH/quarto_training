@@ -19,6 +19,18 @@ format:
     default: true
     toc: true
     number-sections: true
+  revealjs:
+    default: true
+    number-sections: true
+    output-file: exercise3_instructions_slides.html
+    code-overflow: wrap
+    embed-resources: true
+    logo: ../images/swisstph_logo_compact.png
+    css: ../css/logo.css
+    footer: "Swiss TPH, Research-IT"
+    smaller: true
+    slide-number: true
+    show-slide-number: all
   html:
     default: true
     embed-resources: true
@@ -42,12 +54,10 @@ format:
         icon: file-code
         href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise3.qmd
     format-links: [pdf]
-  revealjs:
-    default: true
-    output-file: exercise3_instructions_slides.html
-    code-overflow: wrap
-    embed-resources: true
-    smaller: true
+    
+execute:
+  echo: fenced
+  warning: false
     
 resources:
   - exercise3_instructions.pdf
@@ -57,7 +67,9 @@ resources:
 
 ## Overall objective
 
-You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document `exercise3.qmd` in RStudio. All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references. Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
+* You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document `exercise3.qmd` in RStudio.
+* All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.
+* Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
 
 ## Setup basic elements of the Quarto document
 
@@ -95,6 +107,12 @@ b.  [ ] Replace the placeholder text in bold with the automated calculation of t
 
 > "*The outbreak ran from **date** to **date***"
 
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
+
 c.  [ ] Replace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.
 
 > "*Over the studied period, there were **N** cases, including **N** confirmed cases and **N** confirmed deaths.*"
@@ -114,6 +132,12 @@ c.  [ ] Assign a label to the table ;
 d.  [ ] Replace the placeholder text in bold with a cross-reference to the table ;
 
 > "***cross-reference** provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
 
 e.  [ ] Create a table summarising the demographic characteristics of individuals who died versus those who are still alive ;
 f.  [ ] Add a caption to the table ;
@@ -152,6 +176,12 @@ d.  [ ] Assign a label to the table ;
 e.  [ ] Replace the placeholder text in bold with a cross-reference to the table ;
 
 > "The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference**."
+
+::: {.content-visible when-format="revealjs"}
+
+---
+
+:::
 
 f.  [ ] Display the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;
 g.  [ ] Add a caption to the code chunk ;

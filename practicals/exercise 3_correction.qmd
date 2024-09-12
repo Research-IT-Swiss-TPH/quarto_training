@@ -1,0 +1,165 @@
+---
+title: "My outbreak report"
+author: Helene Langet
+date: last-modified
+editor: source
+
+format:
+  docx:
+    reference-doc: swisstph_template.docx
+    toc: true
+    number-sections: true
+    toc-depth: 2
+echo: false
+warning: false
+params:
+  dataset: "df1.RData"
+  period_start: "2021-01-01"
+  period_end: "2021-12-31"
+---
+
+```{r}
+load(file = params$dataset)
+```
+
+```{r}
+df <- df |>
+  dplyr::mutate(dplyr::across(c(sex, confirmed, death),
+                              as.factor))
+```
+
+## Overview
+
+```{r}
+start_date <- min(df$date)
+end_date <- max(df$date)
+```
+
+```{r}
+period_start <- max(as.Date(params$period_start), start_date)
+period_end <- min(as.Date(params$period_end), end_date)
+```
+
+```{r}
+subdf <- df |>
+  dplyr::filter(date >= period_start & date <= period_end)
+```
+
+```{r}
+n_all <- nrow(subdf)
+n_confirmed <- nrow(subdf |> dplyr::filter(confirmed == 1))
+n_death <- nrow(subdf |> dplyr::filter(death == 1))
+```
+
+The outbreak ran from **`{r} start_date`** to **`{r} end_date`**. This report covers the period **`{r} period_start`** to **`{r} period_end`**. Over the studied period, there were **`{r} n_all`** cases, including **`{r} n_confirmed`** confirmed cases and **`{r} n_death`** confirmed deaths.
+
+## Population characteristics
+
+@tbl-1 provides a summary of the demographic characteristics and the outcome proportion for the overall population, while @tbl-2 compares the demographic characteristics of individuals who died versus those who are still alive.
+
+```{r}
+#| label: tbl-1
+#| tbl-cap: Population characteristics
+
+subdf |>
+  dplyr::select(age,
+                sex,
+                bmi,
+                confirmed,
+                death) |>
+  gtsummary::tbl_summary()
+```
+
+```{r}
+#| label: tbl-2
+#| tbl-cap: Domegraphic characteristics of deceased vs. alive
+
+subdf |>
+  dplyr::select(sex,
+                age,
+                bmi,
+                death) |>
+  gtsummary::tbl_summary(by = death) |>
+  gtsummary::add_overall()
+```
+
+## Outbreak evolution
+
+@fig-1 illustrates the outbreak's progression, which can be divided into distinct phases.
+
+```{r}
+#| label: fig-1
+#| fig-cap: Weekly count of all cases, confirmed cases and deaths
+#| fig-width: 8
+#| fig-height: 4
+                
+# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
+weekly_data <- subdf |>
+  dplyr::group_by(week) |>
+  dplyr::summarise(count = dplyr::n(),
+                   confirmed_count = sum(confirmed == "1"),
+                   death_count = sum(death == "1"))
+
+# Plot the weekly cases, confirmed cases and deaths
+ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
+  ggplot2::geom_line(ggplot2::aes(y = count,
+                                  color = "All cases"),
+                     size = 1) +
+  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,
+                                  color = "Confirmed cases"),
+                     size = 1) +
+  ggplot2::geom_line(ggplot2::aes(y = death_count,
+                                  color = "Confirmed deaths"),
+                     size = 1) +
+  ggplot2::labs(x = "Week",
+                y = "Count",
+                color = "Legend") +
+  ggplot2::scale_color_manual(values = c("All cases" = "#440e54",
+                                         "Confirmed cases" = "#f8766d",
+                                         "Confirmed deaths" = "#128984")) +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+                 panel.grid.major.x = ggplot2::element_blank(),
+                 panel.grid.minor.x = ggplot2::element_blank())
+```
+
+## Logistic regression model
+
+In this section, we build and evaluate a logistic regression model to understand the relationship between certain variables and the likelihood of death among confirmed cases.
+
+The logistic regression model uses `death` as the reponse variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by @lst-test 
+
+```{r}
+#| lst-label: lst-test
+#| lst-cap: R code
+#| echo: true
+
+coeffs <- glm(death ~ bmi + age,
+              subdf |> dplyr::filter(confirmed == "1"),
+              family = binomial)
+```
+
+The results of the logistic regression model are summarized in the formatted regression table, which is presented in @tbl-3.
+
+```{r}
+#| label: tbl-3
+#| tbl-cap: Formatted regression table
+
+gtsummary::tbl_regression(coeffs, exponentiate = TRUE)
+```
+
+## Appendix
+
+The dataset includes the following variables:
+
+* `age` = age of the individual (continuous variable) ;
+* `sex` = sex of the individual (binary variable: 1 = male, 2 = female) ;
+* `bmi` = Body Mass Index (BMI) of the individual (continuous variable) ;
+* `confirmed` = flag of confirmed cases (binary variable: 0 = no, 1 = yes)
+* `death` = death outcome (binary variable: 0 = alive, 1 = died)
+
+```{r}
+subdf |>
+  skimr::skim()
+```
