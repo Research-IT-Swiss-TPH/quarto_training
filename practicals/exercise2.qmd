@@ -1,8 +1,6 @@
 ---
 title: "Quarto training for R - Exercise 2"
-author:
-  - H. Langet
-  - Z. Zhu
+author: Unknown author
 format: html
 editor: visual
 ---
