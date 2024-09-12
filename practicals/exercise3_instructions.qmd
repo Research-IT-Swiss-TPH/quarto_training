@@ -15,6 +15,7 @@ lang: en-US
 
 format:
   html:
+    default: true
     embed-resources: true
     code-overflow: wrap
     theme: cosmo
@@ -35,6 +36,12 @@ format:
       - text: df2.RData
         href: ../data/df1.RData
     format-links: [pdf]
+  revealjs:
+    default: true
+    output-file: exercise3_instructions_slides.html
+    code-overflow: wrap
+    embed-resources: true
+    smaller: true
   pdf: default
 ---
 
