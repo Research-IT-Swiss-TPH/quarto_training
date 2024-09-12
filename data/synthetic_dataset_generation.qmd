@@ -176,7 +176,7 @@ df <- sdf1 |>
 
 ```{r}
 nrow(df)
-save(df, file = "df1.RData")
+save(df, file = "../practicals/df1.RData")
 ```
 
 ```{r}
@@ -219,7 +219,7 @@ df <- sdf1 |>
 ```
 ```{r}
 nrow(df)
-save(df, file = "df2.RData")
+save(df, file = "../practicals/df2.RData")
 ```
 
 ```{r}

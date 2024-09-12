@@ -8,15 +8,21 @@ author:
     affiliations:
       - name: Swiss TPH Research-IT
     orcid: 0000-0002-6758-2397
+    email: helene.langet@swisstph.ch
 license: "CC-BY"
 date: last-modified
 editor: source
 lang: en-US
 
 format:
+  pdf:
+    default: true
+    toc: true
+    number-sections: true
   html:
     default: true
     embed-resources: true
+    code-link: true
     code-overflow: wrap
     theme: cosmo
     toc: true
@@ -26,15 +32,15 @@ format:
     comments:
       hypothesis: 
         theme: classic
+    other-links:
+      - text: df1.RData
+        href: df1.RData
+      - text: df2.RData
+        href: df2.RData
     code-links:
       - text: exercise3.qmd
         icon: file-code
-        href: exercise3.qmd
-    other-links:
-      - text: df1.RData
-        href: ../data/df1.RData
-      - text: df2.RData
-        href: ../data/df1.RData
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise3.qmd
     format-links: [pdf]
   revealjs:
     default: true
@@ -42,7 +48,11 @@ format:
     code-overflow: wrap
     embed-resources: true
     smaller: true
-  pdf: default
+    
+resources:
+  - exercise3_instructions.pdf
+  - df1.RData
+  - df2.RData
 ---
 
 ## Overall objective
