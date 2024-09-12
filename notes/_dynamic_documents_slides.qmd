@@ -53,51 +53,40 @@ The goal of this training is to briefly present why we want to learn how to crea
 -   Consider the benefits and limitations of using analytically reproducible documents for your research and applications in global health.
 -   Practice Quarto in RStudio for creating dynamic documents.
 
-::: aside
-Some additional commentary of more peripheral interest.
-:::
+## Research = a dynamic process
 
-## Introduction
+-   Research insights are typically disseminated through reports (e.g., scientific presentations, publications, etc), including a textual narrative detailing the research context, methods, and key findings, often supplemented with figures and tables to summarize results, and a final discussion, with findings serving as evidence to support conclusions and recommendations ;
+-   Research is an **iterative** and **dynamic** process, meaning there are no **final** or **definitive** results or reports ;
+-   In addition, we continuously build upon the work of others to generate new insights and discoveries.
 
-The output of research usually results in a report (e.g., a scientific publication), that includes a textual narrative of your findings, along with figures and tables derived from your analysis. This report not only summarizes the results but also discusses findings, with the data serving as evidence to support your conclusions and recommendations.
+[![Image from Jorge Cham (PhDComics)](images/phd031214s.gif){fig-align="center"}](https://phdcomics.com/comics/archive.php?comicid=1689)
 
-Consider the following scenarios:
+## Reproducibility in research
 
-1. You are informed that you used the wrong dataset just as you finalize your article for journal submission. A new dataset is provided, and you are asked to rerun the analysis with this updated data.
-2. You discover an error in your analysis and need to re-examine the code, fix the error, and re-run the analysis
-3. A PhD student needs to use your code and reproduce the results to understand your methodology as a benchmark, before developing more advanced methods.
+![](../images/reproducibility.png){fig-align="center"}
 
-Such situations are quite common in data science.
+## Analytically reproducible documents (1)
 
-It is actually possible to keep your data science projects organized with RStudio so that re-running an analysis and recreating reports is straightforward and can be done with minimal effort. Dynamic documents can be produced to update on a routine basis (e.g. daily surveillance reports) and/or run on subsets of data (e.g. reports for each jurisdiction).
+These documents typically contain 3 main types of content, integrating code and natural language in a way that is called "*literate programming*".
 
-## Types of content
-
-Analytically reproducible documents typically contain 3 main types of content
-
-::::: {.panel-tabset}
-
+::: panel-tabset
 ### Formatted text
 
-These are languages that can be written using any plain text editor^[in comparison to "*What You See Is What You Get*" (WYSIWYG) languages, such as Microsoft Word]. They use *markup* elements to define how text should be displayed or printed.
+These are languages that can be written using any **plain text editor**. They use *markup* elements to define how text should be displayed or printed.
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="33%"}
-
 #### HTML
 
-HTML is used to structure content on the web. 
+HTML is used to structure content on the web.
 
 ```{r}
 #| echo: false
 cat("<b>This text will be displayed in bold</b>")
 ```
-
 :::
 
 ::: {.column width="33%"}
-
 #### LaTeX
 
 LaTeX is used for academic and technical documents.
@@ -106,11 +95,9 @@ LaTeX is used for academic and technical documents.
 #| echo: false
 cat("\\textbf{This text will be displayed in bold}")
 ```
-
 :::
 
 ::: {.column width="33%"}
-
 #### Markdown
 
 Markdown is a lightweight markup language.
@@ -119,19 +106,15 @@ Markdown is a lightweight markup language.
 #| echo: false
 cat("**This text will be displayed in bold**")
 ```
-
 :::
-
-::::
+:::
 
 ### Code commands
 
-Different programming languages allow us to execute code to generate results or perform tasks. Here are examples of commands in various languages:
+Different programming languages allow us to execute code to generate results or perform tasks.
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="33%"}
-
 #### R
 
 ```{{r}}
@@ -140,11 +123,9 @@ data.frame(country=c("Nigeria","Kenya","India"), prevalence=c(14.5,9.2,3.5)) |>
   ggplot(aes(x=country, y=prevalence)) +
   geom_bar(stat="identity", fill="steelblue")
 ```
-
 :::
 
 ::: {.column width="33%"}
-
 #### Python
 
 ```{r}
@@ -157,166 +138,116 @@ import matplotlib.pyplot as plt
 plt.bar(['Nigeria', 'Kenya', 'India'], [14.5, 9.2, 3.5], color='steelblue')
 plt.show()
 ```
-
 :::
 
 ::: {.column width="33%"}
-
 #### Observable JS
 
 ```{{ojs}}
 BarChart({x: ["Nigeria", "Kenya", "India"], y: [14.5, 9.2, 3.5], yLabel: "Prevalence (%)"})
 ```
-
 :::
-
-::::
+:::
 
 ### Code outputs
 
 The output from executing code often results in visualizations or printed results. Below are the corresponding outputs for each language:
 
-:::: {.columns}
+::: columns
+::: {.column width="33%"}
+```{r}
+#| echo: false
+load(file = "../practicals/df1.RData")
+df <- df |>
+  dplyr::mutate(dplyr::across(c(sex, confirmed, death),
+                              as.factor))
+glm(confirmed ~ age,
+    df,
+    family = binomial)
+```
+:::
 
 ::: {.column width="33%"}
-
 ```{r}
+#| echo: false
+iris |>
+  dplyr::select(Species, Sepal.Length) |> 
+  dplyr::rename(c1 = Species,
+                c2 = Sepal.Length) |> 
+  head(5)  |>
+  knitr::kable()
+```
+:::
+
+::: {.column width="33%"}
+```{r}
+#| fig-height: 4
+#| fig-width: 4
 #| echo: false
 library(ggplot2)
 data.frame(country=c("Nigeria","Kenya","India"), prevalence=c(14.5,9.2,3.5)) |>
   ggplot(aes(x=country, y=prevalence)) +
   geom_bar(stat="identity", fill="steelblue")
 ```
-
+:::
+:::
 :::
 
-::: {.column width="33%"}
+## Analytically reproducible documents (2)
 
-```{python}
-#| echo: false
-import matplotlib.pyplot as plt
-plt.bar(['Nigeria', 'Kenya', 'India'], [14.5, 9.2, 3.5], color='steelblue')
-plt.show()
-```
+Documents can be rendered in different type of outputs e.g., MS Word, PDF, HTML, PowerPoint, etc.
 
-:::
+**Pandoc** is one of the tool that allows this conversion.
 
-::: {.column width="33%"}
+![](../images/paste-ABFB521E.png){fig-align="center"}
 
-```{ojs}
-#| echo: false
-// A simple bar chart using Observable's Plot library
-Plot.plot({
-  marks: [
-    Plot.barY(
-      {x: ["Nigeria", "Kenya", "India"], y: [14.5, 9.2, 3.5]},
-      {fill: "steelblue"}
-    )
-  ],
-  y: {label: "Prevalence (%)"}
-})
-```
+## Existing tools for writing analytically reproducible documents
 
-:::
-
-::::
-
-:::::
+![](../images/tools.png){fig-align="center"}
 
 ## Quarto
 
-:::: {.columns}
+-   Quarto is the successor to R Markdown, but is not tied to the R language.
+-   Quarto files have a `.qmd` extension.
+
+::: columns
+::: {.column width="50%"}
+### \*.qmd document
+
+![](../images/qmd_structure.png)
+:::
 
 ::: {.column width="50%"}
+### Rendered output
 
-### *.Qmd
-
-![](images/qmd_structure.png)
-
+![](../images/qmd_rendered.png)
+:::
 :::
 
-::: {.column width="50%"}
+## Quarto rendered outputs
 
-### Rendered document
+-   Quarto documents can be rendered into to many report formats including HTML, Word document and many more
+-   [List of supported formats](https://quarto.org/docs/output-formats/all-formats.html)
 
-![](images/qmd_rendered.png)
+![](images/clipboard-1220364644.png){fig-align="center"}
 
-:::
+## Engines
 
-::::
-
-## Rendered outputs
-
-* Outputs get updated automatically every time the document is processed.
-* Can be rendered into to many report formats including HTML, Word document and many more
-
-## Tools
-
-![](images/tools.png)
-
-## Background to R Markdown
-
-This is possible due to the fact that Quarto documents enable code and textual descriptions to be combined into the same document, and the figures and tables produced by the code are automatically added to the document.
-
-Quarto is a tool that allows you integrate your code, text and figures in a single file in order to make high quality, reproducible reports. A paper published with an included quarto file and data sets can be reproduced by anyone with a computer. R Markdown integrates code and natural language in a way that is called "literate programming" [@knuth_literate_1984].
-
-While it makes sense to use Quarto going forward, there are still a lot of resources written for and in R Markdown.
-
-To explain some of the concepts and packages involved:
-
-::: panel-tabset
-### Markdown
-
-Markdown is a "*language*" that allows you to write a document using plain text, that can be converted to HTML (a markup language used for structuring and presenting content on the web) and other formats. It is not specific to R.
-
-Markdown files have a `md` extension.
-
-### R Markdown
-
-It is a variation on markdown that is specific to R - it allows you to write a document using markdown to produce text and to embed R code and display their outputs. which was a variant of Markdown specifically designed to allow R code chunks to be included.
-
-R Markdown is a widely-used tool for creating automated, reproducible, and share-worthy outputs, such as reports. It can generate static or interactive outputs, in Word, pdf, html, powerpoint, and other formats.
-
-R Markdown files have `.Rmd` extension.
-
-### rmarkdown
-
-It is the R package: This is used by R to render the .Rmd file into the desired output.
-
-:::
-
-## Quarto
-
-* Quarto is the successor to R Markdown.
-* You can create an entire formatted document, including narrative text (can be dynamic to change based on your data), tables, figures, bullets/numbers, bibliographies, etc.
-
-Quatro uses a mark-up language similar to HyperText Markup Language (HTML) or LaTeX, in comparison to a "What You See Is What You Get" (WYSIWYG) language, such as Microsoft Word. This means that all the aspects are consistent, for instance, all top-level heading will look the same. But it means that we use symbols to designate how we would like certain aspects to appear. And it is only when we build the mark-up that we get to see what it looks like. A visual editor option can also be used which hides the need for the user to do this mark-up themselves.
-
-Quarto is not tied to the R language.
-
-Quarto files have a `.Qmd` extension.
-
-https://quarto.org/docs/output-formats/all-formats.html
-
-## Engine
+Both knitr and Jupyter serve as engines to execute code embedded within a document, but they work in different programming environments.
 
 ::: panel-tabset
 ### knitr
 
 This R package will read the code chunks, execute it, and 'knit' it back into the document. This is how tables and graphs are included alongside the text.
 
+![](images/knitr-rmarkdown-logos-50-1.webp){fig-align="center" width="300"}
+
 ### Juypter
 
+Jupyter is a popular engine for running Python code interactively. It supports multiple programming languages, but Python is the most common.
+
+![](images/images.png){fig-align="center"}
 :::
-
-## Pandoc
-
-Pandoc actually convert the output into word/pdf/powerpoint etc. It is a software separate from R but is installed automatically with RStudio.
-
-
-![](images/paste-ABFB521E.png)
-
-The process that happens in the background involves feeding the .Rmd file to knitr, which executes the R code chunks and creates a new .md (markdown) file which includes the R code and its rendered output. The .md file is then processed by Pandoc to create the final product: a Microsoft Word document, HTML file, PowerPoint document, PDF, etc.
 
 ## References
 
