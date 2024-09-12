@@ -11,6 +11,7 @@ author:
 license: "CC-BY"
 date: last-modified
 editor: source
+lang: en-US
 
 format:
   html:
@@ -24,6 +25,17 @@ format:
     comments:
       hypothesis: 
         theme: classic
+    code-links:
+      - text: exercise3.qmd
+        icon: file-code
+        href: exercise3.qmd
+    other-links:
+      - text: df1.RData
+        href: ../data/df1.RData
+      - text: df2.RData
+        href: ../data/df1.RData
+    format-links: [pdf]
+  pdf: default
 ---
 
 ## Overall objective
