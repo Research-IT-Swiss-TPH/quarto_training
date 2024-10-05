@@ -2,7 +2,6 @@
 /.Rproj.user
 /notes/rsconnect
 /notes/images2
-*.html
 /practicals/exercise 3_files
 /notes/_dynamic_documents_slides_files
 /data/synthetic_dataset_generation_files
@@ -14,7 +13,6 @@
 practicals/exercise 3_correction.docx
 practicals/exercise 3-correction.qmd
 /correction
-
 /.quarto/
 /images
 /index_cache
