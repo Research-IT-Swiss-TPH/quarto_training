@@ -10,9 +10,9 @@ website:
       - icon: github
         menu:
           - text: Source Code
-            href:  https://code.com
+            href:  https://github.com/Research-IT-Swiss-TPH/quarto_training
           - text: Report a Bug
-            href:  https://bugs.com
+            href:  https://github.com/Research-IT-Swiss-TPH/quarto_training/issues
   sidebar:
     style: "docked"
     search: true
@@ -21,10 +21,13 @@ website:
         text: Home
       - href: ./notes/quarto_intro.qmd
         text: 📘 Introduction
+      - 📙 Exercise 1
       - href: ./notes/create_first_quarto_doc.qmd
         text: 📙 Exercise 2
       - href: ./practicals/exercise3_instructions.qmd
         text: 📙 Exercise 3
+      - href: ./correction/exercise 3_correction.qmd
+        text: ✅ Correction exercise 3
       - href: ./notes/python_r_short_demo.qmd
         text: 📘 R and Python
 
