@@ -45,14 +45,6 @@ execute:
 engine: knitr
 ---
 
-## 🎯 Learning objectives
-
-The goal of this training is to briefly present why we want to learn how to create **analytically reproducible documents**, the benefits, and the barriers to using it.
-
--   Understand the concept of analytically reproducible documents and where Quarto fits within the landscape of existing tools ;
--   Consider the benefits and limitations of using analytically reproducible documents for your research and applications in global health.
--   Practice Quarto in RStudio for creating dynamic documents.
-
 ## Research = a dynamic process
 
 -   Research insights are typically disseminated through reports (e.g., scientific presentations, publications, etc), including a textual narrative detailing the research context, methods, and key findings, often supplemented with figures and tables to summarize results, and a final discussion, with findings serving as evidence to support conclusions and recommendations ;
@@ -129,8 +121,8 @@ data.frame(country=c("Nigeria","Kenya","India"), prevalence=c(14.5,9.2,3.5)) |>
 #### Python
 
 ```{r}
-#| echo: false
 library(reticulate)
+Sys.setenv(RETICULATE_PYTHON = "C:/ProgramData/anaconda3/python.exe")
 ```
 
 ```{{python}}
@@ -212,7 +204,7 @@ Documents can be rendered in different type of outputs e.g., MS Word, PDF, HTML,
 
 ::: columns
 ::: {.column width="50%"}
-### \*.qmd document
+### Source document
 
 ![](../images/qmd_structure.png)
 :::

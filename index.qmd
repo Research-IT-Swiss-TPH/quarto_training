@@ -1,0 +1,54 @@
+---
+title: Analytically reproducible documents
+
+author:
+  - name:
+      given: Hélène
+      family: Langet
+    affiliations:
+      - name: Swiss TPH Research-IT
+    orcid: 0000-0002-6758-2397
+    email: helene.langet@swisstph.ch
+license: "CC-BY"
+date: last-modified
+editor: source
+
+format:
+  revealjs:
+    default: true
+    embed-resources: true
+    logo: ../images/swisstph_logo_compact.png
+    css: ../css/logo.css
+    footer: "Swiss TPH, Research-IT"
+    code-overflow: wrap
+    smaller: true
+    slide-number: true
+    show-slide-number: all
+  html:
+    default: true
+    embed-resources: true
+    code-link: true
+    code-overflow: wrap
+    theme: cosmo
+    toc: true
+    number-sections: true
+    anchor-sections: true
+    title-block-banner: true
+    comments:
+      hypothesis: 
+        theme: classic
+    
+execute:
+  echo: fenced
+  warning: false
+  
+engine: knitr
+---
+
+## 🎯 Learning objectives
+
+The goal of this training is to briefly present why we want to learn how to create **analytically reproducible documents**, the benefits, and the barriers to using it.
+
+-   Understand the concept of analytically reproducible documents and where Quarto fits within the landscape of existing tools ;
+-   Consider the benefits and limitations of using analytically reproducible documents for your research and applications in global health.
+-   Practice Quarto in RStudio for creating dynamic documents.

@@ -14,3 +14,18 @@
 practicals/exercise 3_correction.docx
 practicals/exercise 3-correction.qmd
 /correction
+
+/.quarto/
+/images
+/index_cache
+/index_files
+/notes/create_first_quarto_doc_cache
+/notes/index_cache
+/notes/python_r_short_demo_cache
+/notes/quarto_intro_cache
+/practicals/exercise-2_cache
+/site_libs
+/notes/dynamic_documents_files
+/notes/images
+/notes/index_files
+/notes/quarto_intro_files

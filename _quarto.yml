@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Quarto training"
+  
+  navbar:
+    tools:
+      - icon: github
+        menu:
+          - text: Source Code
+            href:  https://code.com
+          - text: Report a Bug
+            href:  https://bugs.com
+  sidebar:
+    style: "docked"
+    search: true
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: ./notes/quarto_intro.qmd
+        text: 📘 Introduction
+      - href: ./notes/create_first_quarto_doc.qmd
+        text: 📙 Exercise 2
+      - href: ./practicals/exercise3_instructions.qmd
+        text: 📙 Exercise 3
+      - href: ./notes/python_r_short_demo.qmd
+        text: 📘 R and Python
+
+code-line-numbers: true
+toc: true
+number-sections: true
+code-link: true
+code-overflow: wrap
+cache: true
+
+format:
+  html:
+    theme: cosmo
+    toc: true

@@ -1,6 +1,6 @@
 ---
-title: "Quarto training for R"
-subtitle: "Getting started with Quarto"
+title: Quarto training
+subtitle: 📙 Getting started
 author:
   - name:
       given: Hélène
