@@ -4657,18 +4657,6 @@ vertical-align: -.125em;
     "search-label": "Search"
   }
 }</script>
-<script type="application/json" class="js-hypothesis-config">
-{
-  "theme": "classic"
-}
-</script>
-<script>!function(){"use strict";var s={"scripts/annotator.bundle.js":"scripts/annotator.bundle.js?7085a7","styles/annotator.css":"styles/annotator.css?f1348d","styles/highlights.css":"styles/highlights.css?6b4ebd","styles/annotator.css.map":"styles/annotator.css.map?4dcebd","styles/highlights.css.map":"styles/highlights.css.map?241350","styles/katex.min.css":"styles/katex.min.css?58e394","styles/katex.min.css.map":"styles/katex.min.css.map?1785d7","styles/pdfjs-overrides.css.map":"styles/pdfjs-overrides.css.map?1d8ac6","styles/pdfjs-overrides.css":"styles/pdfjs-overrides.css?c95edf","styles/sidebar.css.map":"styles/sidebar.css.map?7780ad","styles/sidebar.css":"styles/sidebar.css?9f6cfa","styles/ui-playground.css.map":"styles/ui-playground.css.map?647144","styles/ui-playground.css":"styles/ui-playground.css?854f91","scripts/sidebar.bundle.js":"scripts/sidebar.bundle.js?93a4ec","scripts/annotator.bundle.js.map":"scripts/annotator.bundle.js.map?6bbeb2","scripts/ui-playground.bundle.js":"scripts/ui-playground.bundle.js?732680","scripts/ui-playground.bundle.js.map":"scripts/ui-playground.bundle.js.map?b1d4de","scripts/sidebar.bundle.js.map":"scripts/sidebar.bundle.js.map?aabcb2"};function t(s){s.setAttribute("data-hypothesis-asset","")}function e(s,e){var n=s.createElement("link");n.rel="stylesheet",n.type="text/css",n.href=e,t(n),s.head.appendChild(n)}function n(s,e){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:{},r=n.esModule,o=void 0===r||r,i=n.forceReload,a=void 0!==i&&i,l=s.createElement("script");o&&(l.type="module"),a&&(e+="#ts=".concat(Date.now())),l.src=e,l.async=!1,t(l),s.head.appendChild(l)}function r(s,e,n,r){var o=s.createElement("link");o.rel=e,o.href=r,o.type="application/annotator+".concat(n),t(o),s.head.appendChild(o)}function o(s,e,n){var r=s.createElement("link");r.rel="preload",r.as=e,r.href=n,"fetch"===e&&(r.crossOrigin="anonymous"),t(r),s.head.appendChild(r)}function i(s,t){return s.assetRoot+"build/"+s.manifest[t]}function a(s){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:document;if(-1===s.indexOf("{"))return s;var e=function(){var s,t,e=(arguments.length>0&&void 0!==arguments[0]?arguments[0]:document).currentScript;return e?(s=e.src,(t=s.match(/(https?):\/\/([^:/]+)/))?{protocol:t[1],hostname:t[2]}:null):null}(t);if(!e)throw new Error("Could not process URL template because script origin is unknown");return s=(s=s.replace("{current_host}",e.hostname)).replace("{current_scheme}",e.protocol)}if(function(){var s=[function(){return Object.fromEntries([])},function(){return new URL(document.location.href)},function(){return new Request("https://hypothes.is")},function(){return Element.prototype.attachShadow},function(){return CSS.supports("display: grid")},function(){return document.evaluate("/html/body",document,null,XPathResult.ANY_TYPE,null),!0}];try{return s.every((function(s){return s()}))}catch(s){return!1}}()){var l=function(s){for(var t={},e=s.querySelectorAll("script.js-hypothesis-config"),n=0;n<e.length;n++){var r=void 0;try{r=JSON.parse(e[n].textContent||"")}catch(s){console.warn("Could not parse settings from js-hypothesis-config tags",s),r={}}Object.assign(t,r)}return t}(document),p=a(l.assetRoot||"https://cdn.hypothes.is/hypothesis/1.1523.0/");if(document.querySelector("hypothesis-app")){!function(s,t){o(s,"fetch",t.apiUrl),o(s,"fetch",t.apiUrl+"links");for(var r=0,a=["scripts/sidebar.bundle.js"];r<a.length;r++)n(s,i(t,a[r]),{esModule:!0});for(var l=0,p=["styles/katex.min.css","styles/sidebar.css"];l<p.length;l++)e(s,i(t,p[l]))}(document,{assetRoot:p,manifest:s,apiUrl:l.apiUrl})}else{var c=function(){var s;return null===(s=(arguments.length>0&&void 0!==arguments[0]?arguments[0]:window).chrome)||void 0===s||null===(s=s.runtime)||void 0===s?void 0:s.id}();if(c&&!function(s){return!!(arguments.length>1&&void 0!==arguments[1]?arguments[1]:document).querySelector("script.js-hypothesis-config[data-extension-id=".concat(s,"]"))}(c))throw new Error("Could not start Hypothesis extension as configuration is missing");var u=l,d=a(u.notebookAppUrl||"https://hypothes.is/notebook"),h=a(u.profileAppUrl||"https://hypothes.is/user-profile"),y=a(u.sidebarAppUrl||"https://hypothes.is/app.html");!function(s,t){if(!s.querySelector('link[type="application/annotator+html"]')){r(s,"sidebar","html",t.sidebarAppUrl),r(s,"notebook","html",t.notebookAppUrl),r(s,"profile","html",t.profileAppUrl),o(s,"style",i(t,"styles/annotator.css")),r(s,"hypothesis-client","javascript",t.assetRoot+"build/boot.js");for(var a=0,l=["scripts/annotator.bundle.js"];a<l.length;a++)n(s,i(t,l[a]),{esModule:!1});var p=[];void 0!==window.PDFViewerApplication&&p.push("styles/pdfjs-overrides.css"),p.push("styles/highlights.css");for(var c=0,u=p;c<u.length;c++)e(s,i(t,u[c]))}}(document,{assetRoot:p,manifest:s,notebookAppUrl:d,profileAppUrl:h,sidebarAppUrl:y})}}else console.warn("The Hypothesis annotation tool is not supported in this browser. See https://web.hypothes.is/help/which-browsers-are-supported-by-hypothesis/.")}();
-</script>
-<script>
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    document.body.classList.add('hypothesis-enabled');
-  });
-</script>
 
 
 </head>
@@ -4676,7 +4664,7 @@ vertical-align: -.125em;
 <body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -4719,43 +4707,7 @@ vertical-align: -.125em;
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Quarto training</h1>
-            <p class="subtitle lead">📙 Exercise 3</p>
-                      </div>
-  </div>
-    
-  <div class="quarto-title-meta-author">
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-heading">Affiliation</div>
-    
-      <div class="quarto-title-meta-contents">
-      <p class="author">Hélène Langet <a href="mailto:helene.langet@swisstph.ch" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-6758-2397" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-    </div>
-    <div class="quarto-title-meta-contents">
-          <p class="affiliation">
-              Swiss TPH Research-IT
-            </p>
-        </div>
-    </div>
-
-  <div class="quarto-title-meta">
-
-        
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">October 5, 2024</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -4824,12 +4776,25 @@ vertical-align: -.125em;
   <li><a href="#parametrise-your-report" id="toc-parametrise-your-report" class="nav-link" data-scroll-target="#parametrise-your-report"><span class="header-section-number">8</span> Parametrise your report</a></li>
   <li><a href="#finalise-your-ms-word-report" id="toc-finalise-your-ms-word-report" class="nav-link" data-scroll-target="#finalise-your-ms-word-report"><span class="header-section-number">9</span> Finalise your MS Word report</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="exercise3_instructions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="df1.RData"><i class="bi bi-link-45deg"></i>df1.RData</a></li><li><a href="df2.RData"><i class="bi bi-link-45deg"></i>df2.RData</a></li><li><a href="swisstph_template.docx"><i class="bi bi-link-45deg"></i>swisstph_template.docx</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/practicals/exercise3.qmd"><i class="bi bi-file-code"></i>exercise3.qmd</a></li><li><a href="https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/correction/exercise3_correction.qmd"><i class="bi bi-file-code"></i>correction</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="exercise3_instructions.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="exercise3_instructions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="exercise3_instructions_slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="df1.RData"><i class="bi bi-link-45deg"></i>df1.RData</a></li><li><a href="df2.RData"><i class="bi bi-link-45deg"></i>df2.RData</a></li><li><a href="swisstph_template.docx"><i class="bi bi-link-45deg"></i>swisstph_template.docx</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/practicals/exercise3.qmd"><i class="bi bi-file-code"></i>exercise3.qmd</a></li><li><a href="https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/correction/exercise3_correction.qmd"><i class="bi bi-file-code"></i>correction</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
+<!-- 
+  This is the default Quarto title block header (customize as required) 
+  Learn more about Pandoc template syntax here: https://pandoc.org/MANUAL.html#templates
+-->
 
+<header id="title-block-header">
+  <h1 id="title">Quarto training</h1>
+  <div id="page-properties">
+    <div class="details">
+      <div>Created By Author</div>
+      <div>Yesterday at 12:00 PM • 8 min read</div>
+    </div>
+  </div>
+</header>
 
 
 

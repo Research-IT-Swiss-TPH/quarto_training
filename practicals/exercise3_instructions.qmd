@@ -34,7 +34,10 @@ format:
     code-links:
       - text: exercise3.qmd
         icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise3.qmd
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/practicals/exercise3.qmd
+      - text: correction
+        icon: file-code
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/correction/exercise3_correction.qmd
   pdf:
     default: true
     toc: true
@@ -74,7 +77,10 @@ format:
     code-links:
       - text: exercise3.qmd
         icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise3.qmd
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/practicals/exercise3.qmd
+      - text: correction
+        icon: file-code
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/correction/exercise3_correction.qmd
     format-links: [pdf]
     
 execute:
