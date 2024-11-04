@@ -51,26 +51,36 @@ formatted_date <- format(last_modified, "%B %d, %Y")
 
 ## 🎯 Learning objectives
 
-This training session introduces the purpose, benefits, and challenges of creating **analytically reproducible documents** and explores how **Quarto** facilitates this process:
+This training session introduces the purpose, benefits, and challenges of creating **analytically reproducible documents** and shows how [**Quarto**](https://quarto.org/) can facilitate this process:
 
 -   Understand the concept of analytically reproducible documents, including their benefits and limitations for public health research, and where Quarto fits within the landscape of existing tools ;
--   Gain hands-on experience using Quarto in RStudio to create dynamic, reproducible documents<br/>
-e.g., analytical reports, research manuscripts, etc.
+-   Gain hands-on experience using Quarto in RStudio to create dynamic, reproducible documents<br/> e.g., analytical reports, research manuscripts, websites, dashboards, etc.
+
+![](images/clipboard-3954680417.png)
 
 ## 🧭 Content navigation
 
 In this training, you will find the following resources to help you along your learning journey:
 
 -   📘 **Notebooks** — Reference materials and examples;
--   🌱 **Getting started** — Resources for beginners;
--   **Exercises** — Self-paced tasks to practice and apply skills:
-    - 📙 **Instructions** — Step-by-step guides to support exercises;
-    - ✅ **Corrections** — Detailed solutions with explanations for each exercise;
-    - Difficulty:
-        - *Beginner* ⭐ – Foundational exercises to build confidence;
-        - *Intermediate* ⭐⭐ – Builds on core concepts for deeper understanding 
-        - *Advanced* ⭐⭐⭐ – Challenging exercises for comprehensive mastery 
-    
+-   🌱 **Getting started** — Hands-on resources for beginners;
+-   📙 **Exercises** — Self-paced tasks to practice and apply skills:
+    -   📋 **Instructions** — Step-by-step instructions to support exercises;
+    -   ✅ **Corrections** — Detailed solutions with explanations for each exercise;
+    -   Difficulty of exercises:
+        -   *Beginner* ⭐ – Foundational exercises to build confidence;
+        -   *Intermediate* ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;
+        -   *Advanced* ⭐⭐⭐ – Challenging exercises for comprehensive mastery.
+
+## Feedback
+
+We value your input! Use Hypothesis to share your feedback and help us improve this training.
+
+- Activate *Hypothesis* and log in
+- Activate *Hypothesis*: Click on the Hypothesis icon in your browser’s toolbar or press `a` or `h`  on your keyboard to open the Hypothesis sidebar.
+
+When providing feedback, aim to be constructive and specific. 
+
 ## 📜 Update history
 
 -   `r formatted_date`: Initial release.

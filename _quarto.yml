@@ -15,25 +15,31 @@ website:
       - href: index.qmd
         text: Home
       - href: ./notes/quarto_intro.qmd
-        text: Introduction to Quarto 📘
-      - Create first Quarto doc 🌱
-      - text: Create a Word report
+        text: 📘 Introduction to Quarto
+      - 🌱 Create first Quarto doc
+      - text: 📙 Create a Word report
         contents:
           - href: ./notes/create_first_quarto_doc.qmd
             text: Exercise 2 ⭐ 
             contents:
               - href: ./practicals/exercise3_instructions.qmd
-                text: 📙 Instructions 
+                text: 📋 Instructions 
               - href: ./correction/exercise 3_correction.qmd
                 text: ✅ Correction 
           - text: Exercise 3 ⭐⭐ 
             contents:
               - href: ./practicals/exercise4_instructions.qmd
-                text: 📙 Instructions 
+                text: 📋 Instructions 
               - href: ./correction/exercise 3_correction.qmd
                 text: ✅ Correction
       - href: ./notes/python_r_short_demo.qmd
-        text: Use R and Python 📘 
+        text: 📘 Use R and Python
+      - text: 🧰 More resources
+        contents:
+          - href: https://posit-conf-2024.github.io/quarto-websites/
+            text: 🛠️ Build a Quarto website
+          - href: https://posit-conf-2024.github.io/quarto-dashboards/
+            text: 🛠️ Build a Quarto dashboard
     tools:
       - icon: github
         menu:
