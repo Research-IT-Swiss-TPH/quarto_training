@@ -1,7 +1,7 @@
 ---
 title: "Quarto training for R - Exercise 3"
 author: Unknown author
-editor: visual
+editor: source
 format: html
 ---
 

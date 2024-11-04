@@ -1,5 +1,5 @@
 ---
-title: Quarto training
+title: Swiss TPH Quarto training
 subtitle: 📙 Getting started
 author:
   - name:

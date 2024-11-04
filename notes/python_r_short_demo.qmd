@@ -33,13 +33,19 @@ execute:
   warning: false
 ---
 
+## 🎯 Learning objectives
+
+- Learn how to integrate R and Python in a Quarto document.
+
+## Instructions
+
 You need to import the R package `reticulate` if you want to interface R and Python with the `knitr` engine.
 
 ```{r}
 library(reticulate)
 ```
 
-To ensure that R uses the correct Python executable, set the path to Python in your R environment using the `Sys.setenv()` function.
+To ensure that R uses the correct Python executable, set the path to Python in your R environment using the `Sys.setenv()` function. For instance, let us assume your path is "C:/ProgramData/anaconda3/python.exe".
 
 ```{r}
 Sys.setenv(RETICULATE_PYTHON = "C:/ProgramData/anaconda3/python.exe")
