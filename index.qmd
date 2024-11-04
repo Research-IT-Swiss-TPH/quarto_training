@@ -1,5 +1,6 @@
 ---
-title: Analytically reproducible documents
+title: Swiss TPH Quarto training
+subtitle: Analytically reproducible documents
 
 author:
   - name:
@@ -9,21 +10,17 @@ author:
       - name: Swiss TPH Research-IT
     orcid: 0000-0002-6758-2397
     email: helene.langet@swisstph.ch
+  - name:
+      given: Zhihan
+      family: Zhu
+    affiliations:
+      - name: Swiss TPH Research-IT
+    email: zhihan.zhu@swisstph.ch
 license: "CC-BY"
 date: last-modified
 editor: source
 
 format:
-  revealjs:
-    default: true
-    embed-resources: true
-    logo: ../images/swisstph_logo_compact.png
-    css: ../css/logo.css
-    footer: "Swiss TPH, Research-IT"
-    code-overflow: wrap
-    smaller: true
-    slide-number: true
-    show-slide-number: all
   html:
     default: true
     embed-resources: true
@@ -39,16 +36,55 @@ format:
         theme: classic
     
 execute:
-  echo: fenced
+  echo: false
   warning: false
   
 engine: knitr
 ---
 
+```{r}
+# Get the file's last modified date
+last_modified <- file.info("./index.qmd")$mtime
+# Format the date as desired
+formatted_date <- format(last_modified, "%B %d, %Y")
+```
+
 ## 🎯 Learning objectives
 
-The goal of this training is to briefly present why we want to learn how to create **analytically reproducible documents**, the benefits, and the barriers to using it.
+This training session introduces the purpose, benefits, and challenges of creating **analytically reproducible documents** and explores how **Quarto** facilitates this process:
 
--   Understand the concept of analytically reproducible documents and where Quarto fits within the landscape of existing tools ;
--   Consider the benefits and limitations of using analytically reproducible documents for your research and applications in global health.
--   Practice Quarto in RStudio for creating dynamic documents.
+-   Understand the concept of analytically reproducible documents, including their benefits and limitations for public health research, and where Quarto fits within the landscape of existing tools ;
+-   Gain hands-on experience using Quarto in RStudio to create dynamic, reproducible documents<br/>
+e.g., analytical reports, research manuscripts, etc.
+
+## 🧭 Content navigation
+
+In this training, you will find the following resources to help you along your learning journey:
+
+-   📘 **Notebooks** — Reference materials and examples;
+-   🌱 **Getting started** — Resources for beginners;
+-   **Exercises** — Self-paced tasks to practice and apply skills:
+    - 📙 **Instructions** — Step-by-step guides to support exercises;
+    - ✅ **Corrections** — Detailed solutions with explanations for each exercise;
+    - Difficulty:
+        - *Beginner* ⭐ – Foundational exercises to build confidence;
+        - *Intermediate* ⭐⭐ – Builds on core concepts for deeper understanding 
+        - *Advanced* ⭐⭐⭐ – Challenging exercises for comprehensive mastery 
+    
+## 📜 Update history
+
+-   `r formatted_date`: Initial release.
+
+## License
+
+![](https://i.creativecommons.org/l/by/4.0/88x31.png) This content is licensed under a [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+You are free to:
+
+-   Share --- copy and redistribute the material in any medium or format
+-   Adapt --- remix, transform, and build upon the material for any purpose, even commercially.
+
+Under the following terms:
+
+-   Attribution --- You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+-   No additional restrictions --- You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
