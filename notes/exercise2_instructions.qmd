@@ -419,6 +419,8 @@ The result of the commented code is the following output:
 
 Inline expressions are always evaluated when rendering and previewing `.qmd` files.
 
+* Chunk Execution Order: Run code chunks in the correct order to avoid errors due to missing objects or incomplete definitions. Use clear and consistent chunk labels for cross-referencing.
+
 ## References
 
 -   [The Epidemiologist R Handbook](https://epirhandbook.com)

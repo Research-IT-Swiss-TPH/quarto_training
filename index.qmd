@@ -51,9 +51,10 @@ formatted_date <- format(last_modified, "%B %d, %Y")
 
 ## 🎯 Learning objectives
 
-This training session introduces the purpose, benefits, and challenges of creating **analytically reproducible documents** and shows how [**Quarto**](https://quarto.org/) can facilitate this process:
+This training session introduces the purpose and benefits of creating **analytically reproducible documents** and shows how [**Quarto**](https://quarto.org/) can facilitate this process:
 
--   Understand the concept of analytically reproducible documents, including their benefits and limitations for public health research, and where Quarto fits within the landscape of existing tools ;
+-   Understand the concept of analytically reproducible documents, including their benefits for public health research
+-   Understand where Quarto fits within the landscape of existing tools and the advantages it offers over other solutions ;
 -   Gain hands-on experience using Quarto in RStudio to create dynamic, reproducible documents<br/> e.g., analytical reports, research manuscripts, websites, dashboards, etc.
 
 ![](images/clipboard-3954680417.png)
@@ -76,9 +77,10 @@ In this training, you will find the following resources to help you along your l
 
 We value your input! The fastest way to share your feedback and help us improve this training is by using *Hypothesis*.
 
-1.  If you are new to Hypothesis, create an [Hypothesis](https://hypothes.is/signup) account
-2.  Log in
-2.  Activate *Hypothesis*: Click the right arrow icon `<` in the top right corner of the page or press `a` or `h` on your keyboard to open the Hypothesis annotation sidebar.
+1.  If you are new to Hypothesis, create an [Hypothesis](https://hypothes.is/signup) account;
+2.  Activate Hypothesis by clicking the right arrow icon `<` in the top right corner of the page or press `a` or `h` on your keyboard to open the Hypothesis annotation sidebar, and log in\
+    ![](images/clipboard-2347634306.png)\
+    ![](images/clipboard-4093132717.png)
 
 When providing feedback, please aim to be constructive and specific.
 
