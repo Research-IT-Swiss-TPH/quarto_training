@@ -8,6 +8,13 @@ website:
   navbar:
     logo: ./images/swisstph_logo_compact.png
     search: true
+    tools:
+      - icon: github
+        menu:
+          - text: Source Code
+            href:  https://github.com/Research-IT-Swiss-TPH/quarto_training
+          - text: Report a Bug
+            href:  https://github.com/Research-IT-Swiss-TPH/quarto_training/issues
   sidebar:
     style: "docked"
     search: true
@@ -16,38 +23,31 @@ website:
         text: Home
       - href: ./notes/quarto_intro.qmd
         text: 📘 Introduction to Quarto
-      - 🌱 Create first Quarto doc
-      - text: 📙 Create a Word report
+      - href: ./notes/create_first_quarto_doc.qmd
+        text: 📙 Create a Quarto notebook 🌱
+      - 📘 Structure of Quarto notebooks
+      - Running code in Quarto notebooks 🌱
+      - text: 📙 Build a Word report
         contents:
-          - href: ./notes/create_first_quarto_doc.qmd
-            text: Exercise 2 ⭐ 
-            contents:
-              - href: ./practicals/exercise3_instructions.qmd
-                text: 📋 Instructions 
-              - href: ./correction/exercise 3_correction.qmd
-                text: ✅ Correction 
-          - text: Exercise 3 ⭐⭐ 
-            contents:
-              - href: ./practicals/exercise4_instructions.qmd
-                text: 📋 Instructions 
-              - href: ./correction/exercise 3_correction.qmd
-                text: ✅ Correction
+          - href: ./practicals/exercise3_instructions.qmd
+            text: 📋 Instructions ⭐ 
+          - href: ./correction/exercise 3_step_by_step_correction.qmd
+            text: ✅ Correction 
+      - text: 📙 Parametrise a Word report
+        contents:
+          - href: ./practicals/exercise4_instructions.qmd
+            text: 📋 Instructions ⭐⭐ 
+          - href: ./correction/exercise 3_correction.qmd
+            text: ✅ Correction
       - href: ./notes/python_r_short_demo.qmd
-        text: 📘 Use R and Python
+        text: 📙 Use R and Python
       - text: 🧰 More resources
         contents:
           - href: https://posit-conf-2024.github.io/quarto-websites/
             text: 🛠️ Build a Quarto website
           - href: https://posit-conf-2024.github.io/quarto-dashboards/
             text: 🛠️ Build a Quarto dashboard
-    tools:
-      - icon: github
-        menu:
-          - text: Source Code
-            href:  https://github.com/Research-IT-Swiss-TPH/quarto_training
-          - text: Report a Bug
-            href:  https://github.com/Research-IT-Swiss-TPH/quarto_training/issues
-
+    
 code-line-numbers: true
 toc: true
 number-sections: true
