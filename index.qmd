@@ -74,12 +74,13 @@ In this training, you will find the following resources to help you along your l
 
 ## Feedback
 
-We value your input! Use Hypothesis to share your feedback and help us improve this training.
+We value your input! The fastest way to share your feedback and help us improve this training is by using *Hypothesis*.
 
-- Activate *Hypothesis* and log in
-- Activate *Hypothesis*: Click on the Hypothesis icon in your browser’s toolbar or press `a` or `h`  on your keyboard to open the Hypothesis sidebar.
+1.  If you are new to Hypothesis, create an [Hypothesis](https://hypothes.is/signup) account
+2.  Log in
+2.  Activate *Hypothesis*: Click the right arrow icon `<` in the top right corner of the page or press `a` or `h` on your keyboard to open the Hypothesis annotation sidebar.
 
-When providing feedback, aim to be constructive and specific. 
+When providing feedback, please aim to be constructive and specific.
 
 ## 📜 Update history
 
