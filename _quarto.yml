@@ -31,13 +31,13 @@ website:
         contents:
           - href: ./practicals/exercise3_instructions.qmd
             text: 📋 Instructions ⭐ 
-          - href: ./correction/exercise 3_step_by_step_correction.qmd
+          - href: ./correction/exercise3_step_by_step_correction.qmd
             text: ✅ Correction 
       - text: 📙 Parametrise a Word report
         contents:
           - href: ./practicals/exercise4_instructions.qmd
             text: 📋 Instructions ⭐⭐ 
-          - href: ./correction/exercise 3_correction.qmd
+          - href: ./correction/exercise3_correction.qmd
             text: ✅ Correction
       - href: ./notes/python_r_short_demo.qmd
         text: 📙 Use R and Python
