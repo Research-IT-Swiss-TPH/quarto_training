@@ -2,7 +2,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html",
     "href": "practicals/exercise3_instructions.html",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "",
     "text": "You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
     "crumbs": [
@@ -12,7 +12,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#overall-objective",
     "href": "practicals/exercise3_instructions.html#overall-objective",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "",
     "text": "You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
     "crumbs": [
@@ -22,7 +22,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#setup-basic-elements-of-the-quarto-document",
     "href": "practicals/exercise3_instructions.html#setup-basic-elements-of-the-quarto-document",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "2 Setup basic elements of the Quarto document",
     "text": "2 Setup basic elements of the Quarto document\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about date formatting\nSee Quarto documentation about execution options\n\n\n\n\nUpdate the title of the Quarto document ;\nPut your name as author of the Quarto document ;\nAdd the date 2023-12-31 to the Quarto document ;\nChange the output format to generate a MS Word document ;\nConfigure the Quarto document to hide code in the rendered MS Word document ;\nConfigure the Quarto document to hide warnings in the rendered MS Word document.",
     "crumbs": [
@@ -32,7 +32,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#improve-navigation-and-readability",
     "href": "practicals/exercise3_instructions.html#improve-navigation-and-readability",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "3 Improve navigation and readability",
     "text": "3 Improve navigation and readability\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about MS Word table of contents\n\n\n\n\nInsert a table of contents to the Quarto document ;\nAutomatically number the different sections of the Quarto document ;\nConfigure the table of contents to only display two levels of section headings.",
     "crumbs": [
@@ -42,7 +42,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#implement-dynamic-calculations",
     "href": "practicals/exercise3_instructions.html#implement-dynamic-calculations",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "4 Implement dynamic calculations",
     "text": "4 Implement dynamic calculations\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about dynamic dates\nSee Quarto documentation about inline code\n\n\n\n\nChange the date 2023-12-31 to the date at which the Quarto document was last modified, and format this date to display it with the format December 31, 2023 ;\nReplace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;\n\n\n“The outbreak ran from date to date”\n\n\nReplace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.\n\n\n“Over the studied period, there were N cases, including N confirmed cases and N confirmed deaths.”",
     "crumbs": [
@@ -52,7 +52,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#create-and-reference-publication-ready-tables",
     "href": "practicals/exercise3_instructions.html#create-and-reference-publication-ready-tables",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "5 Create and reference publication-ready tables",
     "text": "5 Create and reference publication-ready tables\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about summary tables\nSee Quarto documentation about table cross-references\n\nOther R packages include flextable and gt\n\n\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“cross-reference provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“while cross-reference compares the demographic characteristics of individuals who died versus those who are still alive”",
     "crumbs": [
@@ -62,7 +62,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#customise-figures",
     "href": "practicals/exercise3_instructions.html#customise-figures",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "6 Customise figures",
     "text": "6 Customise figures\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\nSee Quarto documentation about figure options\n\n\n\n\nAdd a caption to the figure ;\nAssign a label to the figure ;\nReplace the placeholder text in bold with a cross-reference to the figure ;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with it\nBeautify the plot using ggplot options",
     "crumbs": [
@@ -72,7 +72,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#code",
     "href": "practicals/exercise3_instructions.html#code",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "7 Code",
     "text": "7 Code\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about formatted table of regression model results\nSee Quarto documentation about code chunk cross-references\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”\n\n\nDisplay the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;\nAdd a caption to the code chunk ;\nAssign a label to the code chunk ;\nReplace the placeholder text in bold with a cross-reference to the code chunk.",
     "crumbs": [
@@ -82,7 +82,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#finalise-your-ms-word-report",
     "href": "practicals/exercise3_instructions.html#finalise-your-ms-word-report",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "8 Finalise your MS Word report",
     "text": "8 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.",
     "crumbs": [
@@ -298,56 +298,56 @@
   {
     "objectID": "correction/exercise3_step_by_step_correction.html",
     "href": "correction/exercise3_step_by_step_correction.html",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "",
     "text": "This page shows a step-by-step correction of Exercise 3."
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#overall-objective",
     "href": "correction/exercise3_step_by_step_correction.html#overall-objective",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "",
     "text": "This page shows a step-by-step correction of Exercise 3."
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#setup-basic-elements-of-the-quarto-document",
     "href": "correction/exercise3_step_by_step_correction.html#setup-basic-elements-of-the-quarto-document",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "2 Setup basic elements of the Quarto document",
     "text": "2 Setup basic elements of the Quarto document\nAll these basic elements are part of the YAML header.\n\nUpdate the title of the Quarto document ;\n\n---\ntitle: \"My outbreak report\"\n---\n\nPut your name as author of the Quarto document ;\n\n---\nauthor: Helene Langet\n---\n\nAdd the date 2023-12-31 to the Quarto document ;\n\n---\ndate: \"2023-12-31\"\n---\n\nChange the output format to generate a MS Word document ;\n\n---\nformat: docx\n---\n\nConfigure the Quarto document to hide code in the rendered MS Word document ;\n\n---\necho: false\n---\n\nConfigure the Quarto document to hide warnings in the rendered MS Word document.\n\n---\nwarning: false\n---\nYour YAML header should now look as follows:\n---\ntitle: \"My outbreak report\"\nauthor: Helene Langet\ndate: \"2023-12-31\"\neditor: visual\n\nformat: docx\necho: false\nwarning: false\n---"
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#improve-navigation-and-readability",
     "href": "correction/exercise3_step_by_step_correction.html#improve-navigation-and-readability",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "3 Improve navigation and readability",
     "text": "3 Improve navigation and readability\n\nInsert a table of contents to the Quarto document ;\n\n---\nformat:\n  docx:\n    toc: true\n---\n\nAutomatically number the different sections of the Quarto document ;\n\n---\nformat:\n  docx:\n    toc: true\n---\n\nConfigure the table of contents to only display two levels of section headings.\n\n---\nformat:\n  docx:\n    toc: true\n---"
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#implement-dynamic-calculations",
     "href": "correction/exercise3_step_by_step_correction.html#implement-dynamic-calculations",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "4 Implement dynamic calculations",
     "text": "4 Implement dynamic calculations\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about dynamic dates\nSee Quarto documentation about inline code\n\n\n\n\nChange the date 2023-12-31 to the date at which the Quarto document was last modified, and format this date to display it with the format December 31, 2023 ;\nReplace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;\n\n\n“The outbreak ran from date to date”\n\n\nReplace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.\n\n\n“Over the studied period, there were N cases, including N confirmed cases and N confirmed deaths.”"
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#create-and-reference-publication-ready-tables",
     "href": "correction/exercise3_step_by_step_correction.html#create-and-reference-publication-ready-tables",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "5 Create and reference publication-ready tables",
     "text": "5 Create and reference publication-ready tables\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about summary tables\nSee Quarto documentation about table cross-references\n\nOther R packages include flextable and gt\n\n\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“cross-reference provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“while cross-reference compares the demographic characteristics of individuals who died versus those who are still alive”"
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#customise-figures",
     "href": "correction/exercise3_step_by_step_correction.html#customise-figures",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "6 Customise figures",
     "text": "6 Customise figures\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\nSee Quarto documentation about figure options\n\n\n\n\nAdd a caption to the figure ;\nAssign a label to the figure ;\nReplace the placeholder text in bold with a cross-reference to the figure ;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with it\nBeautify the plot using ggplot options"
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#code",
     "href": "correction/exercise3_step_by_step_correction.html#code",
-    "title": "Quarto training",
+    "title": "⭐ Exercise 3 - Build a Word report",
     "section": "7 Code",
     "text": "7 Code\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about formatted table of regression model results\nSee Quarto documentation about code chunk cross-references\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”"
   },
