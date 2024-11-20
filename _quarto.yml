@@ -51,8 +51,6 @@ number-sections: true
 code-link: true
 code-overflow: wrap
 cache: true
-citation:
-  title: Swiss TPH Quarto training
   
 format:
   html:

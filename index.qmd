@@ -14,6 +14,9 @@ license: "CC-BY"
 date: last-modified
 editor: source
 
+citation:
+  title: Swiss TPH Quarto training
+
 format:
   html:
     default: true
