@@ -2,7 +2,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html",
     "href": "practicals/exercise3_instructions.html",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "",
     "text": "You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
     "crumbs": [
@@ -12,7 +12,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#overall-objective",
     "href": "practicals/exercise3_instructions.html#overall-objective",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "",
     "text": "You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
     "crumbs": [
@@ -22,7 +22,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#setup-basic-elements-of-the-quarto-document",
     "href": "practicals/exercise3_instructions.html#setup-basic-elements-of-the-quarto-document",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "2 Setup basic elements of the Quarto document",
     "text": "2 Setup basic elements of the Quarto document\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about date formatting\nSee Quarto documentation about execution options\n\n\n\n\nUpdate the title of the Quarto document ;\nPut your name as author of the Quarto document ;\nAdd the date 2023-12-31 to the Quarto document ;\nChange the output format to generate a MS Word document ;\nConfigure the Quarto document to hide code in the rendered MS Word document ;\nConfigure the Quarto document to hide warnings in the rendered MS Word document.",
     "crumbs": [
@@ -32,7 +32,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#improve-navigation-and-readability",
     "href": "practicals/exercise3_instructions.html#improve-navigation-and-readability",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "3 Improve navigation and readability",
     "text": "3 Improve navigation and readability\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about MS Word table of contents\n\n\n\n\nInsert a table of contents to the Quarto document ;\nAutomatically number the different sections of the Quarto document ;\nConfigure the table of contents to only display two levels of section headings.",
     "crumbs": [
@@ -42,7 +42,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#implement-dynamic-calculations",
     "href": "practicals/exercise3_instructions.html#implement-dynamic-calculations",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "4 Implement dynamic calculations",
     "text": "4 Implement dynamic calculations\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about dynamic dates\nSee Quarto documentation about inline code\n\n\n\n\nChange the date 2023-12-31 to the date at which the Quarto document was last modified, and format this date to display it with the format December 31, 2023 ;\nReplace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;\n\n\n“The outbreak ran from date to date”\n\n\nReplace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.\n\n\n“Over the studied period, there were N cases, including N confirmed cases and N confirmed deaths.”",
     "crumbs": [
@@ -52,7 +52,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#create-and-reference-publication-ready-tables",
     "href": "practicals/exercise3_instructions.html#create-and-reference-publication-ready-tables",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "5 Create and reference publication-ready tables",
     "text": "5 Create and reference publication-ready tables\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about summary tables\nSee Quarto documentation about table cross-references\n\nOther R packages include flextable and gt\n\n\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“cross-reference provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“while cross-reference compares the demographic characteristics of individuals who died versus those who are still alive”",
     "crumbs": [
@@ -62,7 +62,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#customise-figures",
     "href": "practicals/exercise3_instructions.html#customise-figures",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "6 Customise figures",
     "text": "6 Customise figures\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\nSee Quarto documentation about figure options\n\n\n\n\nAdd a caption to the figure ;\nAssign a label to the figure ;\nReplace the placeholder text in bold with a cross-reference to the figure ;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with it\nBeautify the plot using ggplot options",
     "crumbs": [
@@ -72,7 +72,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#code",
     "href": "practicals/exercise3_instructions.html#code",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "7 Code",
     "text": "7 Code\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about formatted table of regression model results\nSee Quarto documentation about code chunk cross-references\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”\n\n\nDisplay the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;\nAdd a caption to the code chunk ;\nAssign a label to the code chunk ;\nReplace the placeholder text in bold with a cross-reference to the code chunk.",
     "crumbs": [
@@ -82,7 +82,7 @@
   {
     "objectID": "practicals/exercise3_instructions.html#finalise-your-ms-word-report",
     "href": "practicals/exercise3_instructions.html#finalise-your-ms-word-report",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "8 Finalise your MS Word report",
     "text": "8 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.",
     "crumbs": [
@@ -136,7 +136,7 @@
   {
     "objectID": "notes/python_r_short_demo.html",
     "href": "notes/python_r_short_demo.html",
-    "title": "Quarto training for R",
+    "title": "📘 Integrating R and Python in a single Quarto notebook environment",
     "section": "",
     "text": "Learn how to integrate Python in a Quarto notebook primarily using R code chunks ;\nLearn how to write and execute Python code chunks in a Quarto notebook ;\nLearn how to seamlessly share data frames and other objects between R and Python code chunks for a cohesive, mixed-language workflow.",
     "crumbs": [
@@ -146,7 +146,7 @@
   {
     "objectID": "notes/python_r_short_demo.html#learning-objectives",
     "href": "notes/python_r_short_demo.html#learning-objectives",
-    "title": "Quarto training for R",
+    "title": "📘 Integrating R and Python in a single Quarto notebook environment",
     "section": "",
     "text": "Learn how to integrate Python in a Quarto notebook primarily using R code chunks ;\nLearn how to write and execute Python code chunks in a Quarto notebook ;\nLearn how to seamlessly share data frames and other objects between R and Python code chunks for a cohesive, mixed-language workflow.",
     "crumbs": [
@@ -156,7 +156,7 @@
   {
     "objectID": "notes/python_r_short_demo.html#setup-your-r-environment-for-python-integration",
     "href": "notes/python_r_short_demo.html#setup-your-r-environment-for-python-integration",
-    "title": "Quarto training for R",
+    "title": "📘 Integrating R and Python in a single Quarto notebook environment",
     "section": "\n2 Setup your R Environment for Python integration",
     "text": "2 Setup your R Environment for Python integration\nTo integrate Python within a Quarto notebook that primarily uses R code chunks (i.e., executed with the knitr engine), you will need the reticulate R package, which serves as a bridge between R and Python, allowing you to run Python code chunks alongside R and share objects between the two programming languages. This setup provides a powerful approach for combining R’s statistical capabilities with Python’s data manipulation and machine learning tools, enabling a robust, mixed-language workflow within Quarto.\nInstall reticulate if it is not already installed.\n\n```{r}\ninstall.packages(\"reticulate\")\n```\n\nTo ensure that R uses the correct Python executable, specify the path to Python using the Sys.setenv() function. This is especially important if you have multiple Python installations on your system or are using a specific environment, such as Anaconda. Replace “C:/ProgramData/anaconda3/python.exe” with the path to your Python executable.\n\n\n\n\n\n\nTip\n\n\n\nYou can also set environment variables permanently in your R environment variables by defining them in the .Renviron file.\n\n\n\n```{r}\nSys.setenv(RETICULATE_PYTHON = \"C:/ProgramData/anaconda3/python.exe\")\n```\n\n\n\n\n\n\n\nImportant\n\n\n\nConsistently using the same Python environment in reticulate helps preventing version conflicts and package incompatibilities.\n\n\nLoad reticulate at the beginning of your Quarto notebook.\n\n```{r}\nlibrary(reticulate)\nreticulate::use_python(\"C:/ProgramData/anaconda3/python.exe\")\n```\n\nUse py_config() to verify that the correct Python version is active; this also allows you to confirm that required Python packages are available within your chosen environment.\n\n```{r}\nreticulate::py_config()\n```\n\npython:         C:/ProgramData/anaconda3/python.exe\nlibpython:      C:/ProgramData/anaconda3/python311.dll\npythonhome:     C:/ProgramData/anaconda3\nversion:        3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]\nArchitecture:   64bit\nnumpy:          C:/ProgramData/anaconda3/Lib/site-packages/numpy\nnumpy_version:  1.24.3\n\nNOTE: Python version was forced by RETICULATE_PYTHON_FALLBACK",
     "crumbs": [
@@ -166,7 +166,7 @@
   {
     "objectID": "notes/python_r_short_demo.html#execute-python-code-and-access-r-objects-in-python",
     "href": "notes/python_r_short_demo.html#execute-python-code-and-access-r-objects-in-python",
-    "title": "Quarto training for R",
+    "title": "📘 Integrating R and Python in a single Quarto notebook environment",
     "section": "\n3 Execute Python code and access R objects in Python",
     "text": "3 Execute Python code and access R objects in Python\n\n```{python}\nimport sys\nprint(f\"Python executable path: {sys.executable}\")\nprint(f\"Python version: {sys.version}\")\n```\n\nPython executable path: C:\\PROGRA~3\\ANACON~1\\python.exe\nPython version: 3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]\n\n\nBelow, we create a data frame in R using the built-in iris dataset, adding a new column called Sepal.Area to illustrate data manipulation in R. We use the dplyr package for simplicity and display the first few rows of the data frame using knitr::kable() for formatted output.\n\n```{r}\n#| label: tbl-1\n#| tbl-cap: Data frame created, manipulated and displayed using R\n\nlibrary(dplyr)\ndf1 &lt;- iris |&gt;\n  dplyr::mutate(Sepal.Area = Sepal.Length * Sepal.Width)\ndf1 |&gt;\n  head(5) |&gt;\n  knitr::kable()\n```\n\n\nTable 1: Data frame created, manipulated and displayed using R\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal.Area\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n17.85\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n14.70\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n15.04\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n14.26\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n18.00\n\n\n\n\n\n\n\n\nAs illustrated in Listing 1, you can access R objects (here the data frame df1) as a Python object by calling them through the r. prefix. In this example, we access the R data frame df1 and manipulate it in Python by creating a new column, Petal.Area. Then, use {python} as the chunk language to specify Python chunks within your Quarto notebook, enabling integration and inter-language communication.\n\n\n\nListing 1: Example of Python code chunk manipulating a R object\n\n```{python}\n#| lst-label: lst-1\n#| lst-cap: Example of Python code chunk manipulating a R object\n\nimport pandas as pd\ndf2 = r.df1\ndf2[\"Petal.Area\"] = df2[\"Petal.Length\"] * df2[\"Petal.Width\"]\n```",
     "crumbs": [
@@ -176,7 +176,7 @@
   {
     "objectID": "notes/python_r_short_demo.html#access-python-objects-in-r",
     "href": "notes/python_r_short_demo.html#access-python-objects-in-r",
-    "title": "Quarto training for R",
+    "title": "📘 Integrating R and Python in a single Quarto notebook environment",
     "section": "\n4 Access Python objects in R",
     "text": "4 Access Python objects in R\nYou can also pass Python objects back to R, which allows you to integrate Python-specific data manipulations into your R workflow. For instance, after modifying df2 in Python, we can access it in an R code chunk using the As illustrated in Listing 2, you can reciprocally access Python objects (here the data frame df2) as a R object by calling them through the py$ prefix. Here, we access the Python data frame df2 in R and display the first few rows to confirm the changes.\n\n\n\nListing 2: Example of R code chunk manipulating a Python object\n\n```{r}\n#| lst-label: lst-2\n#| lst-cap: Example of R code chunk manipulating a Python object\n#| label: tbl-2\n#| tbl-cap: Data frame read from a Python object and displayed using R\n\npy$df2 |&gt;\n  head(5) |&gt;\n  knitr::kable()\n```\n\n\n\n\n\nTable 2: Data frame read from a Python object and displayed using R\n\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal.Area\nPetal.Area\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n17.85\n0.28\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n14.70\n0.28\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n15.04\n0.26\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n14.26\n0.30\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n18.00\n0.28\n\n\n\n\n\n\n\n\nIn this example, df2 created in Python is now accessible in R. The py$ prefix provides a direct way to retrieve Python objects from the global environment into R. This allows for flexible back-and-forth interactions between R and Python without needing to export or save intermediate files.",
     "crumbs": [
@@ -186,7 +186,7 @@
   {
     "objectID": "notes/python_r_short_demo.html#best-practices",
     "href": "notes/python_r_short_demo.html#best-practices",
-    "title": "Quarto training for R",
+    "title": "📘 Integrating R and Python in a single Quarto notebook environment",
     "section": "\n5 Best practices",
     "text": "5 Best practices\n\nEnsure that data structures are compatible. For example, R data frames are automatically converted to pandas data frames in Python, but other complex R objects may not be directly accessible in Python.\nKeep in mind that transferring large data frames between R and Python may introduce some overhead. Where possible, limit the size of data passed across languages.",
     "crumbs": [
@@ -298,56 +298,56 @@
   {
     "objectID": "correction/exercise3_step_by_step_correction.html",
     "href": "correction/exercise3_step_by_step_correction.html",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "",
     "text": "This page shows a step-by-step correction of Exercise 3."
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#overall-objective",
     "href": "correction/exercise3_step_by_step_correction.html#overall-objective",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "",
     "text": "This page shows a step-by-step correction of Exercise 3."
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#setup-basic-elements-of-the-quarto-document",
     "href": "correction/exercise3_step_by_step_correction.html#setup-basic-elements-of-the-quarto-document",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "2 Setup basic elements of the Quarto document",
-    "text": "2 Setup basic elements of the Quarto document\nAll these basic elements are part of the YAML header.\n\nUpdate the title of the Quarto document ;\n\n---\ntitle: \"My outbreak report\"\n---\n\nPut your name as author of the Quarto document ;\n\n---\nauthor: Helene Langet\n---\n\nAdd the date 2023-12-31 to the Quarto document ;\n\n---\ndate: \"2023-12-31\"\n---\n\nChange the output format to generate a MS Word document ;\n\n---\nformat: docx\n---\n\nConfigure the Quarto document to hide code in the rendered MS Word document ;\n\n---\necho: false\n---\n\nConfigure the Quarto document to hide warnings in the rendered MS Word document.\n\n---\nwarning: false\n---\nYour YAML header should now look as follows:\n---\ntitle: \"My outbreak report\"\nauthor: Helene Langet\ndate: \"2023-12-31\"\neditor: visual\n\nformat: docx\necho: false\nwarning: false\n---"
+    "text": "2 Setup basic elements of the Quarto document\nAll these basic elements are part of the YAML header.\n\n2.1 Update the title of the Quarto document\n---\ntitle: \"My outbreak report\"\n---\n\n\n2.2 Put your name as author of the Quarto document\n---\ntitle: \"My outbreak report\"\nauthor: Helene Langet\n---\n\n\n2.3 Add the date 2023-12-31 to the Quarto document\n---\ntitle: \"My outbreak report\"\nauthor: Helene Langet\ndate: \"2023-12-31\"\n---\n\n\n2.4 Change the output format to generate a MS Word document\n---\ntitle: \"My outbreak report\"\nauthor: Helene Langet\ndate: \"2023-12-31\"\n\nformat: docx\n---\n\n\n2.5 Configure the Quarto document to hide code in the rendered MS Word document\n---\ntitle: \"My outbreak report\"\nauthor: Helene Langet\ndate: \"2023-12-31\"\n\nformat: docx\necho: false\n---\n\n\n2.6 Configure the Quarto document to hide warnings in the rendered MS Word document.\n---\ntitle: \"My outbreak report\"\nauthor: Helene Langet\ndate: \"2023-12-31\"\neditor: visual\n\nformat: docx\necho: false\nwarning: false\n---"
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#improve-navigation-and-readability",
     "href": "correction/exercise3_step_by_step_correction.html#improve-navigation-and-readability",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "3 Improve navigation and readability",
-    "text": "3 Improve navigation and readability\n\nInsert a table of contents to the Quarto document ;\n\n---\nformat:\n  docx:\n    toc: true\n---\n\nAutomatically number the different sections of the Quarto document ;\n\n---\nformat:\n  docx:\n    toc: true\n---\n\nConfigure the table of contents to only display two levels of section headings.\n\n---\nformat:\n  docx:\n    toc: true\n---"
+    "text": "3 Improve navigation and readability\n\n3.1 Insert a table of contents to the Quarto document ;\n---\nformat:\n  docx:\n    toc: true\n---\n\n\n3.2 Automatically number the different sections of the Quarto document ;\n---\nformat:\n  docx:\n    toc: true\n    number-sections: true\n    toc-depth: 2\n---\n\n\n3.3 Configure the table of contents to only display two levels of section headings.\n---\nformat:\n  docx:\n    toc: true\n    number-sections: true\n    toc-depth: 2\n---"
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#implement-dynamic-calculations",
     "href": "correction/exercise3_step_by_step_correction.html#implement-dynamic-calculations",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "4 Implement dynamic calculations",
     "text": "4 Implement dynamic calculations\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about dynamic dates\nSee Quarto documentation about inline code\n\n\n\n\nChange the date 2023-12-31 to the date at which the Quarto document was last modified, and format this date to display it with the format December 31, 2023 ;\nReplace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;\n\n\n“The outbreak ran from date to date”\n\n\nReplace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.\n\n\n“Over the studied period, there were N cases, including N confirmed cases and N confirmed deaths.”"
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#create-and-reference-publication-ready-tables",
     "href": "correction/exercise3_step_by_step_correction.html#create-and-reference-publication-ready-tables",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "5 Create and reference publication-ready tables",
     "text": "5 Create and reference publication-ready tables\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about summary tables\nSee Quarto documentation about table cross-references\n\nOther R packages include flextable and gt\n\n\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“cross-reference provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“while cross-reference compares the demographic characteristics of individuals who died versus those who are still alive”"
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#customise-figures",
     "href": "correction/exercise3_step_by_step_correction.html#customise-figures",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "6 Customise figures",
     "text": "6 Customise figures\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\nSee Quarto documentation about figure options\n\n\n\n\nAdd a caption to the figure ;\nAssign a label to the figure ;\nReplace the placeholder text in bold with a cross-reference to the figure ;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with it\nBeautify the plot using ggplot options"
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#code",
     "href": "correction/exercise3_step_by_step_correction.html#code",
-    "title": "⭐ Exercise 3 - Build a Word report",
+    "title": "⭐ Build a MS Word report",
     "section": "7 Code",
     "text": "7 Code\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about formatted table of regression model results\nSee Quarto documentation about code chunk cross-references\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”"
   },

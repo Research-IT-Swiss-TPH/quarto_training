@@ -1,5 +1,5 @@
 ---
-title: ⭐ Exercise 3 - Build a Word report
+title:  ⭐ Build a MS Word report
 subtitle: ✅ Step-by-step correction
 author:
   - name:
@@ -62,7 +62,7 @@ This page shows a step-by-step correction of Exercise 3.
 
 All these basic elements are part of the YAML header.
 
--   [X] Update the title of the Quarto document ;
+### Update the title of the Quarto document
 
 ```{.yaml}
 ---
@@ -70,47 +70,51 @@ title: "My outbreak report"
 ---
 ```
 
--   [X] Put your name as author of the Quarto document ;
+### Put your name as author of the Quarto document
 
 ```{.yaml}
 ---
+title: "My outbreak report"
 author: Helene Langet
 ---
 ```
 
--   [X] Add the date `2023-12-31` to the Quarto document ;
+### Add the date `2023-12-31` to the Quarto document
 
 ```{.yaml}
 ---
+title: "My outbreak report"
+author: Helene Langet
 date: "2023-12-31"
 ---
 ```
 
--   [X] Change the output format to generate a MS Word document ;
+### Change the output format to generate a MS Word document
 
 ```{.yaml}
 ---
+title: "My outbreak report"
+author: Helene Langet
+date: "2023-12-31"
+
 format: docx
 ---
 ```
 
--   [X] Configure the Quarto document to hide code in the rendered MS Word document ;
+### Configure the Quarto document to hide code in the rendered MS Word document
 
 ```{.yaml}
 ---
+title: "My outbreak report"
+author: Helene Langet
+date: "2023-12-31"
+
+format: docx
 echo: false
 ---
 ```
 
--   [X] Configure the Quarto document to hide warnings in the rendered MS Word document.
-
-```{.yaml}
----
-warning: false
----
-```
-
-Your YAML header should now look as follows:
+### Configure the Quarto document to hide warnings in the rendered MS Word document.
 
 ```{.yaml}
 ---
@@ -127,7 +131,7 @@ warning: false
 
 ## Improve navigation and readability
 
--   [X] Insert a table of contents to the Quarto document ;
+### Insert a table of contents to the Quarto document ;
 
 ```{.yaml}
 ---
@@ -137,23 +141,27 @@ format:
 ---
 ```
 
--   [ ] Automatically number the different sections of the Quarto document ;
+### Automatically number the different sections of the Quarto document ;
 
 ```{.yaml}
 ---
 format:
   docx:
     toc: true
+    number-sections: true
+    toc-depth: 2
 ---
 ```
 
--   [ ] Configure the table of contents to only display two levels of section headings.
+### Configure the table of contents to only display two levels of section headings.
 
 ```{.yaml}
 ---
 format:
   docx:
     toc: true
+    number-sections: true
+    toc-depth: 2
 ---
 ```
 

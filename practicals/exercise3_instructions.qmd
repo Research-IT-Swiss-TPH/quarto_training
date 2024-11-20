@@ -1,5 +1,5 @@
 ---
-title: ⭐ Exercise 3 - Build a Word report
+title: ⭐ Build a MS Word report
 subtitle: 📋 Instructions
 author:
   - name:
