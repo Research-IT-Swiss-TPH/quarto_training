@@ -30,11 +30,6 @@ website:
       - Running code in Quarto notebooks 🌱
       - href: ./practicals/exercise3_instructions.qmd
         text: 📙 Build a Word report
-        contents:
-          - href: ./practicals/exercise3_instructions.qmd
-            text: 📋 Instructions ⭐ 
-          - href: ./correction/exercise3_step_by_step_correction.qmd
-            text: ✅ Correction 
       - text: 📙 Parametrise a Word report
         contents:
           - href: ./practicals/exercise4_instructions.qmd
@@ -57,8 +52,8 @@ code-link: true
 code-overflow: wrap
 cache: true
 citation:
-  title: ""
-
+  title: Swiss TPH Quarto training
+  
 format:
   html:
     theme: cosmo
