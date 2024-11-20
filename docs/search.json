@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Swiss TPH Quarto training",
     "section": "",
-    "text": "This training session introduces the purpose and benefits of creating analytically reproducible documents and shows how Quarto can facilitate this process:\n\nUnderstand the concept of analytically reproducible documents, including their benefits for public health research\nUnderstand where Quarto fits within the landscape of existing tools and the advantages it offers over other solutions ;\nGain hands-on experience using Quarto in RStudio to create dynamic, reproducible documents e.g., analytical reports, research manuscripts, websites, dashboards, etc.",
+    "text": "This training session introduces the purpose and benefits of creating analytically reproducible documents and shows how Quarto can facilitate this process:\n\nUnderstand the concept of analytically reproducible documents, including their benefits for public health research\nUnderstand where Quarto fits within the landscape of existing tools and the advantages it offers over other solutions ;\nGain hands-on experience using Quarto with RStudio to create dynamic, reproducible documents e.g., analytical reports, research manuscripts, websites, dashboards, etc.",
     "crumbs": [
       "Home"
     ]
@@ -14,7 +14,7 @@
     "href": "index.html#learning-objectives",
     "title": "Swiss TPH Quarto training",
     "section": "",
-    "text": "This training session introduces the purpose and benefits of creating analytically reproducible documents and shows how Quarto can facilitate this process:\n\nUnderstand the concept of analytically reproducible documents, including their benefits for public health research\nUnderstand where Quarto fits within the landscape of existing tools and the advantages it offers over other solutions ;\nGain hands-on experience using Quarto in RStudio to create dynamic, reproducible documents e.g., analytical reports, research manuscripts, websites, dashboards, etc.",
+    "text": "This training session introduces the purpose and benefits of creating analytically reproducible documents and shows how Quarto can facilitate this process:\n\nUnderstand the concept of analytically reproducible documents, including their benefits for public health research\nUnderstand where Quarto fits within the landscape of existing tools and the advantages it offers over other solutions ;\nGain hands-on experience using Quarto with RStudio to create dynamic, reproducible documents e.g., analytical reports, research manuscripts, websites, dashboards, etc.",
     "crumbs": [
       "Home"
     ]
@@ -24,7 +24,7 @@
     "href": "index.html#content-navigation",
     "title": "Swiss TPH Quarto training",
     "section": "\n2 🧭 Content navigation",
-    "text": "2 🧭 Content navigation\nIn this training, you will find the following resources to help you along your learning journey:\n\n📘 Notebooks — Reference materials and examples;\n🌱 Getting started — Hands-on resources for beginners;\n📙 Exercises — Self-paced tasks to practice and apply skills:\n\n📋 Instructions — Step-by-step instructions to support exercises;\n✅ Corrections — Detailed solutions with explanations for each exercise;\nDifficulty of exercises:\n\n\nBeginner ⭐ – Foundational exercises to build confidence;\n\nIntermediate ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;\n\nAdvanced ⭐⭐⭐ – Challenging exercises for comprehensive mastery.",
+    "text": "2 🧭 Content navigation\nIn this training, you will find the following resources to help you along your learning journey:\n\n📘 Lecture notes — Reference materials and examples;\n📙 Assignments — Self-paced exercises to practice and apply skills:\n\n📋 Instructions — Objectives and expectations of the exercise;\n✅ Corrections — Detailed solutions with step-by-step explanations;\nDifficulty of assignments:\n\n\nGetting started 🌱 — Guided exercises for complete beginners;\n\nBeginner ⭐ – Foundational exercises to build confidence;\n\nIntermediate ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;\n\nAdvanced ⭐⭐⭐ – More challenging exercises for comprehensive mastery.",
     "crumbs": [
       "Home"
     ]
@@ -34,7 +34,7 @@
     "href": "index.html#feedback",
     "title": "Swiss TPH Quarto training",
     "section": "\n3 Feedback",
-    "text": "3 Feedback\nWe value your input! The fastest way to share your feedback and help us improve this training is by using Hypothesis.\n\nIf you are new to Hypothesis, create an Hypothesis account;\nActivate Hypothesis by clicking the right arrow icon &lt; in the top right corner of the page or press a or h on your keyboard to open the Hypothesis annotation sidebar, and log in\n\n\nWhen providing feedback, please aim to be constructive and specific.",
+    "text": "3 Feedback\nWe value your input! The fastest way to share your feedback and help us improve this training is by using Hypothesis.\n\nIf you are new to Hypothesis, create an Hypothesis account;\nActivate Hypothesis by clicking the left arrow icon &gt; in the top right corner of the page to open the Hypothesis annotation sidebar, and log in\nselect the text you want to comment \n\nWhen providing feedback, please aim to be constructive and specific.",
     "crumbs": [
       "Home"
     ]
@@ -507,7 +507,7 @@
     "href": "notes/python_r_short_demo.html#setup-your-r-environment-for-python-integration",
     "title": "Quarto training for R",
     "section": "\n2 Setup your R Environment for Python integration",
-    "text": "2 Setup your R Environment for Python integration\nTo integrate Python within a Quarto notebook that primarily uses R code chunks (i.e., executed with the knitr engine), you will need the reticulate R package, which serves as a bridge between R and Python, allowing you to run Python code chunks alongside R and share objects between the two languages.\n\nInstall reticulate if it is not already installed.\n\n\n```{r}\ninstall.packages(\"reticulate\")\n```\n\n\nTo ensure that R uses the correct Python executable, specify the path to Python using the Sys.setenv() function. This is especially important if you have multiple Python installations on your system or are using a specific environment, such as Anaconda. Replace “C:/ProgramData/anaconda3/python.exe” with the path to your desired Python executable. You can also add this permanently in your R environment variables using .Renviron. Consistently use the same Python environment in reticulate, as this prevents version conflicts and package incompatibilities.\n\n\n```{r}\nSys.setenv(RETICULATE_PYTHON = \"C:/ProgramData/anaconda3/python.exe\")\n```\n\n\nLoad reticulate at the beginning of your Quarto notebook and use py_config() to verify that the correct Python version is active. This also allows you to confirm that required Python packages are available within your chosen environment.\n\n\n```{r}\nlibrary(reticulate)\nreticulate::py_config()\n```\n\npython:         C:/ProgramData/anaconda3/python.exe\nlibpython:      C:/ProgramData/anaconda3/python311.dll\npythonhome:     C:/ProgramData/anaconda3\nversion:        3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]\nArchitecture:   64bit\nnumpy:          C:/ProgramData/anaconda3/Lib/site-packages/numpy\nnumpy_version:  1.24.3\n\nNOTE: Python version was forced by RETICULATE_PYTHON_FALLBACK\n\n\nThis setup provides a powerful approach for combining R’s statistical capabilities with Python’s data manipulation and machine learning tools, enabling a robust, mixed-language workflow within Quarto.",
+    "text": "2 Setup your R Environment for Python integration\nTo integrate Python within a Quarto notebook that primarily uses R code chunks (i.e., executed with the knitr engine), you will need the reticulate R package, which serves as a bridge between R and Python, allowing you to run Python code chunks alongside R and share objects between the two programming languages. This setup provides a powerful approach for combining R’s statistical capabilities with Python’s data manipulation and machine learning tools, enabling a robust, mixed-language workflow within Quarto.\nInstall reticulate if it is not already installed.\n\n```{r}\ninstall.packages(\"reticulate\")\n```\n\nTo ensure that R uses the correct Python executable, specify the path to Python using the Sys.setenv() function. This is especially important if you have multiple Python installations on your system or are using a specific environment, such as Anaconda. Replace “C:/ProgramData/anaconda3/python.exe” with the path to your Python executable.\n\n\n\n\n\n\nTip\n\n\n\nYou can also set environment variables permanently in your R environment variables by defining them in the .Renviron file.\n\n\n\n```{r}\nSys.setenv(RETICULATE_PYTHON = \"C:/ProgramData/anaconda3/python.exe\")\n```\n\n\n\n\n\n\n\nImportant\n\n\n\nConsistently using the same Python environment in reticulate helps preventing version conflicts and package incompatibilities.\n\n\nLoad reticulate at the beginning of your Quarto notebook.\n\n```{r}\nlibrary(reticulate)\nreticulate::use_python(\"C:/ProgramData/anaconda3/python.exe\")\n```\n\nUse py_config() to verify that the correct Python version is active; this also allows you to confirm that required Python packages are available within your chosen environment.\n\n```{r}\nreticulate::py_config()\n```\n\npython:         C:/ProgramData/anaconda3/python.exe\nlibpython:      C:/ProgramData/anaconda3/python311.dll\npythonhome:     C:/ProgramData/anaconda3\nversion:        3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]\nArchitecture:   64bit\nnumpy:          C:/ProgramData/anaconda3/Lib/site-packages/numpy\nnumpy_version:  1.24.3\n\nNOTE: Python version was forced by RETICULATE_PYTHON_FALLBACK",
     "crumbs": [
       "📘 Use R and Python"
     ]
@@ -520,6 +520,79 @@
     "text": "5 Best practices\n\nEnsure that data structures are compatible. For example, R data frames are automatically converted to pandas data frames in Python, but other complex R objects may not be directly accessible in Python.\nKeep in mind that transferring large data frames between R and Python may introduce some overhead. Where possible, limit the size of data passed across languages.",
     "crumbs": [
       "📘 Use R and Python"
+    ]
+  },
+  {
+    "objectID": "notes/exercise2_instructions.html",
+    "href": "notes/exercise2_instructions.html",
+    "title": "Swiss TPH Quarto training",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats"
+  },
+  {
+    "objectID": "notes/exercise2_instructions.html#learning-objectives",
+    "href": "notes/exercise2_instructions.html#learning-objectives",
+    "title": "Swiss TPH Quarto training",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats"
+  },
+  {
+    "objectID": "notes/exercise2_instructions.html#create-a-new-quarto-document",
+    "href": "notes/exercise2_instructions.html#create-a-new-quarto-document",
+    "title": "Swiss TPH Quarto training",
+    "section": "\n2 Create a new Quarto document",
+    "text": "2 Create a new Quarto document\nQuarto documents can be created and edited in RStudio.\nIn RStudio, you can create a new Quarto document by selecting\n\nFile &gt; New File &gt; Quarto Document…\n\n\nWhen you create a new Quarto document, RStudio tries to be helpful by allowing you to select a template which explains the different section of an Quarto document. R Studio will enable you select options to pick from to generate a template Quarto document to start from.\nThe title and the author names are not important at this stage. If the output document type you want is not one of these, do not worry - you can just pick any one and change it manually later.\nLet us select HTML to create an html document.\nClick on Create to open up a new Quarto (.Qmd) document."
+  },
+  {
+    "objectID": "notes/exercise2_instructions.html#setup-your-r-environment",
+    "href": "notes/exercise2_instructions.html#setup-your-r-environment",
+    "title": "Swiss TPH Quarto training",
+    "section": "\n3 Setup your R environment",
+    "text": "3 Setup your R environment\nYou need to ensure required packages are available"
+  },
+  {
+    "objectID": "notes/exercise2_instructions.html#exploring-the-structure-of-the-quarto-document",
+    "href": "notes/exercise2_instructions.html#exploring-the-structure-of-the-quarto-document",
+    "title": "Swiss TPH Quarto training",
+    "section": "\n4 Exploring the structure of the Quarto document",
+    "text": "4 Exploring the structure of the Quarto document\nThere are three basic components to a Quarto document.\n\n\nHeader\nMarkdown text\nCode\n\n\n\nAt the top of the Quarto document, you will see something that looks as follows:\n---\ntitle: \"Untitled\"\nformat: html\n---\nThis section is called the YAML header and it contains commands and metadata about the Quarto document. There is only one unique header in a Quarto document and it is always surrounded by --- lines on the top and bottom of the section.\nYAML is a data format that has the form of a key: value pairing to store data. The keys in this case are title and format. The values are those that follow the key (e.g., “Untitled” for title). These key data are used to store the settings that Quarto will use to render the output document. The keys listed above are some of many settings that Quarto has available to use.\n\n\nIn white background areas, any text will appear as regular text in the final report. This is actually a markup language, which can have formatting such as headings, italics, bold, numbers, and bullets.\n\n\nCode chunks, typically shown within gray backgrounds, execute commands in Quarto. In the example provided, R code is being run within these chunks. These commands may handle data processing, cleaning, or the generation of visual outputs that are integrated into the final document."
+  },
+  {
+    "objectID": "notes/exercise2_instructions.html#editing-text",
+    "href": "notes/exercise2_instructions.html#editing-text",
+    "title": "Swiss TPH Quarto training",
+    "section": "\n5 Editing text",
+    "text": "5 Editing text\n\n\n\n\n\n\nUseful resources\n\n\n\n\nQuarto Documentation - Visual Editing in RStudio\nQuarto Documentation - Markdown Basics\n\n\n\nThe RStudio visual editor is a relatively new feature designed to improve the editing experience by providing an intuitive interface. In the Visual Editor, you can preview your document in a format that closely resembles its final rendered appearance, similar to working in a “What You See Is What You Get” (WYSIWYG) languages, such as Microsoft Word, allowing for seamless content creation and editing.\nThis contrasts with the RStudio source editor, where content is written in Markdown syntax. The ability to switch between these two modes allows for flexibility, depending on your preference or task.\nBelow is an example of the same file viewed in both the source Editor and the visual Editor:"
+  },
+  {
+    "objectID": "notes/exercise2_instructions.html#running-r-code-in-notebook-mode",
+    "href": "notes/exercise2_instructions.html#running-r-code-in-notebook-mode",
+    "title": "Swiss TPH Quarto training",
+    "section": "\n6 Running R code in notebook mode",
+    "text": "6 Running R code in notebook mode\nTo write and execute code in Quarto, you will use code chunks.\n\n\n\n\n\n\nMultilanguage\n\n\n\nAs the number of programming languages used for scientific discourse is very broad, Quarto was developed to be multilingual, beginning with R, Python, Observable JavaScript (OJS), and Julia, building on the RStudio (R) and Jupyter (Python, Julia) ecosystems which are very popular among data scientists. Stata is not a language supported by Quarto.\n\n\nYou can run R code in your Quarto document, by writing R commands within code chunks as is displayed below\n\n```{r}\n1 + 1\n```\n\n[1] 2\n\n\n\n6.1 Create code chunks\n\n\n\n\n\n\nTip\n\n\n\nHere are some tips for creating code chunks in RStudio\n\n\nBackticks: use three backticks to start and end a code chunk.\n\nToolbar icon: you can also start a code chunk by clicking the appropriate icon in the toolbar. \n\n\nKeyboard shortcut: for a quicker method, use the keyboard shortcut Ctrl + Alt + I\n\n\n\n\n\n6.2 Tables\nDisplaying data can be achieved with simple commands. For instance, to show the first 10 rows of the iris dataset, one can use:\n\n```{r}\niris |&gt;\n  head(10)\n```\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1           5.1         3.5          1.4         0.2  setosa\n2           4.9         3.0          1.4         0.2  setosa\n3           4.7         3.2          1.3         0.2  setosa\n4           4.6         3.1          1.5         0.2  setosa\n5           5.0         3.6          1.4         0.2  setosa\n6           5.4         3.9          1.7         0.4  setosa\n7           4.6         3.4          1.4         0.3  setosa\n8           5.0         3.4          1.5         0.2  setosa\n9           4.4         2.9          1.4         0.2  setosa\n10          4.9         3.1          1.5         0.1  setosa\n\n\nTo improve the readability of tables, the knitr::kable() function provides a more structured and formatted output:\n\n```{r}\niris |&gt;\n  head(10)  |&gt;\n  knitr::kable()\n```\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n4.6\n3.4\n1.4\n0.3\nsetosa\n\n\n5.0\n3.4\n1.5\n0.2\nsetosa\n\n\n4.4\n2.9\n1.4\n0.2\nsetosa\n\n\n4.9\n3.1\n1.5\n0.1\nsetosa\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nAdditional R packages can be used for more advanced and aesthetically refined tables."
+  },
+  {
+    "objectID": "notes/exercise2_instructions.html#rendering",
+    "href": "notes/exercise2_instructions.html#rendering",
+    "title": "Swiss TPH Quarto training",
+    "section": "\n7 Rendering",
+    "text": "7 Rendering\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code.\n\nIn the case of this YAML header, the Quarto document will generate an HTML file because of the format: html setting.\n\n\n\n\n\n\nCode errors\n\n\n\nIf you attempt to render the document with code chunks that contain errors, the rendering process will fail. Therefore, it is essential to ensure that all code chunks run successfully in sequence before rendering the document.\n\n\n\n7.1 Options\nYou can add options to a specific code chunk as is shown below:\n```{r}\n#| echo: false\n2 * 2\n```\nThe echo: false option hides the code chunk in the rendered output document (only code output is displayed). In this example, rendered output document will only print:\n\n\n[1] 4\n\n\nAdditionally, you can apply such options globally by specifying them in the YAML header, which configures settings for the entire Quarto document.\n---\ntitle: \"Quarto training for R - Exercise 2\"\nauthor: Unknown author\nformat: html\neditor: visual\necho: false\n---\n\n\n\n\n\n\nImportant\n\n\n\nIt is important to note that the YAML header is indentation-sensitive and relies on proper whitespace formatting.\n\n\n\n\n\n\n\n\n\nHere you may want to edit the title of your document.\n\n7.2 MS Word outputs\nYou can also render a MS Word document by modifying the global format option in the YAML header to format: docx\n---\ntitle: \"Quarto training for R - Exercise 2\"\nauthor: Unknown author\nformat: docx\neditor: visual\n---\n\n7.3 PDF outputs\nYou can also render a PDF document by modifying the global format option in the YAML header to format: pdf\n---\ntitle: \"Quarto training for R - Exercise 2\"\nauthor: Unknown author\nformat: pdf\neditor: visual\n---\nWhile PDF documents are also able to be created, they require installing LaTeX, which can sometimes be complicated to install. TinyTeX is a custom LaTeX distribution that is easy to install with R. It is needed to compile R Markdown or Quarto documents to PDF.\nInstall the TinyTeX package:\n```{r}\ninstall.packages(\"tinytex\")\n```\nTo install TinyTeX from the tinytex package, please run the R commands as follow:\n```{r}\ntinytex::install_tinytex()\n```\nIf specific LaTeX packages (e.g., fancyhdr, lastpage, babel, tocbibind, worldflags) or styles are missing, they can be installed using the following commands:\n```{r}\ntinytex::tlmgr_install(\"fancyhdr\")\n```\n```{r}\ntinytex::parse_install(\n    text = \"! LaTeX Error: File `ulem.sty' not found.\"\n)\n```\nIn order to avoid the warning No hyphenation patterns were preloaded for the language French into the format., please consider installing the package hyphen-french\n```{r}\ntinytex::tlmgr_install(\"hyphen-french\")\n```\n\n7.4 Execute R code within the text\nInline code allows you to execute code within markdown, e.g. to automatically use the most up-to-date computations in narrative. Quarto provides an inline code syntax that works across all three engines (Jupyter, Knitr and OJS).\nThe syntax for inline code is similar to code blocks, except you use a single tick (`) rather than triple ticks (```), and you can use it in the middle of markdown. Here is an example storing the variable in a code block and then print it in a sentence using inline code:\n\n```{r}\ncomment &lt;- \"AWESOME\"\n```\n\nYou can print the sentence like this:\nThis lecture is `{r} comment`!\nThe result of the commented code is the following output:\nThis lecture is AWESOME!\nInline expressions are always evaluated when rendering and previewing .qmd files.\n\nChunk Execution Order: Run code chunks in the correct order to avoid errors due to missing objects or incomplete definitions. Use clear and consistent chunk labels for cross-referencing."
+  },
+  {
+    "objectID": "notes/exercise2_instructions.html#references",
+    "href": "notes/exercise2_instructions.html#references",
+    "title": "Swiss TPH Quarto training",
+    "section": "\n8 References",
+    "text": "8 References\n\nThe Epidemiologist R Handbook\nAnalytically reproducible documents"
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "Swiss TPH Quarto training",
+    "section": "\n6 Contributors",
+    "text": "6 Contributors\nThis work was a collaborative effort, incorporating feedback from students and staff at Swiss TPH. Substantial contributions are acknowledged where applicable on the corresponding pages. Notable contributors include Zhihan Zhu from the Research-IT team at Swiss TPH.",
+    "crumbs": [
+      "Home"
     ]
   }
 ]

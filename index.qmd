@@ -10,12 +10,6 @@ author:
       - name: Swiss TPH Research-IT
     orcid: 0000-0002-6758-2397
     email: helene.langet@swisstph.ch
-  - name:
-      given: Zhihan
-      family: Zhu
-    affiliations:
-      - name: Swiss TPH Research-IT
-    email: zhihan.zhu@swisstph.ch
 license: "CC-BY"
 date: last-modified
 editor: source
@@ -55,7 +49,7 @@ This training session introduces the purpose and benefits of creating **analytic
 
 -   Understand the concept of analytically reproducible documents, including their benefits for public health research
 -   Understand where Quarto fits within the landscape of existing tools and the advantages it offers over other solutions ;
--   Gain hands-on experience using Quarto in RStudio to create dynamic, reproducible documents<br/> e.g., analytical reports, research manuscripts, websites, dashboards, etc.
+-   Gain hands-on experience using Quarto with RStudio to create dynamic, reproducible documents<br/> e.g., analytical reports, research manuscripts, websites, dashboards, etc.
 
 ![](images/clipboard-3954680417.png)
 
@@ -63,23 +57,25 @@ This training session introduces the purpose and benefits of creating **analytic
 
 In this training, you will find the following resources to help you along your learning journey:
 
--   📘 **Notebooks** — Reference materials and examples;
--   🌱 **Getting started** — Hands-on resources for beginners;
--   📙 **Exercises** — Self-paced tasks to practice and apply skills:
-    -   📋 **Instructions** — Step-by-step instructions to support exercises;
-    -   ✅ **Corrections** — Detailed solutions with explanations for each exercise;
-    -   Difficulty of exercises:
-        -   *Beginner* ⭐ – Foundational exercises to build confidence;
+-   📘 **Lecture notes** — Reference materials and examples;
+-   📙 **Assignments** — Self-paced exercises to practice and apply skills:
+    -   📋 **Instructions** — Objectives and expectations of the exercise;
+    -   ✅ **Corrections** — Detailed solutions with step-by-step explanations;
+    -   Difficulty of assignments:
+        -   *Getting started* 🌱 — Guided exercises for complete beginners;
+        -   *Beginner* ⭐ – Foundational exercises to build confidence; 
         -   *Intermediate* ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;
-        -   *Advanced* ⭐⭐⭐ – Challenging exercises for comprehensive mastery.
+        -   *Advanced* ⭐⭐⭐ – More challenging exercises for comprehensive mastery.
 
 ## Feedback
 
 We value your input! The fastest way to share your feedback and help us improve this training is by using *Hypothesis*.
 
 1.  If you are new to Hypothesis, create an [Hypothesis](https://hypothes.is/signup) account;
-2.  Activate Hypothesis by clicking the right arrow icon `<` in the top right corner of the page or press `a` or `h` on your keyboard to open the Hypothesis annotation sidebar, and log in\
-    ![](images/clipboard-2347634306.png)\
+2.  Activate Hypothesis by clicking the left arrow icon `>` in the top right corner of the page to open the Hypothesis annotation sidebar, and log in\
+    ![](images/clipboard-2347634306.png)
+    
+3.  select the text you want to comment
     ![](images/clipboard-4093132717.png)
 
 When providing feedback, please aim to be constructive and specific.
@@ -101,3 +97,7 @@ Under the following terms:
 
 -   Attribution --- You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 -   No additional restrictions --- You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+## Contributors
+
+This work was a collaborative effort, incorporating feedback from students and staff at Swiss TPH. Substantial contributions are acknowledged where applicable on the corresponding pages. Notable contributors include Zhihan Zhu from the Research-IT team at Swiss TPH.
