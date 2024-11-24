@@ -34,12 +34,8 @@ format:
       hypothesis: 
         theme: classic
     code-links:
-      - text: exercise3.qmd
-        icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise3.qmd
-      - text: correction
-        icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/correction/exercise3_correction.qmd
+      - text: Instructions
+        href: ../practical/exercise3_instructions.html
     format-links: [pdf]
   pdf:
     default: true
@@ -62,7 +58,7 @@ This page shows a step-by-step correction of Exercise 3.
 
 All these basic elements are part of the YAML header.
 
-### Update the title of the Quarto document
+-   [X] Update the title of the Quarto document
 
 ```{.yaml}
 ---
@@ -70,7 +66,7 @@ title: "My outbreak report"
 ---
 ```
 
-### Put your name as author of the Quarto document
+-   [X] Put your name as author of the Quarto document
 
 ```{.yaml}
 ---
@@ -79,7 +75,7 @@ author: Helene Langet
 ---
 ```
 
-### Add the date `2023-12-31` to the Quarto document
+-   [X] Add the date `2023-12-31` to the Quarto document
 
 ```{.yaml}
 ---
@@ -89,7 +85,7 @@ date: "2023-12-31"
 ---
 ```
 
-### Change the output format to generate a MS Word document
+-   [X] Change the output format to generate a MS Word document
 
 ```{.yaml}
 ---
@@ -101,7 +97,7 @@ format: docx
 ---
 ```
 
-### Configure the Quarto document to hide code in the rendered MS Word document
+-   [X] Configure the Quarto document to hide code in the rendered MS Word document
 
 ```{.yaml}
 ---
@@ -114,7 +110,7 @@ echo: false
 ---
 ```
 
-### Configure the Quarto document to hide warnings in the rendered MS Word document.
+-   [X] Configure the Quarto document to hide warnings in the rendered MS Word document.
 
 ```{.yaml}
 ---
@@ -131,17 +127,22 @@ warning: false
 
 ## Improve navigation and readability
 
-### Insert a table of contents to the Quarto document ;
+-   [X] Insert a table of contents to the Quarto document ;
 
 ```{.yaml}
 ---
+title: "My outbreak report"
+author: Helene Langet
+date: "2023-12-31"
+editor: visual
+
 format:
   docx:
     toc: true
 ---
 ```
 
-### Automatically number the different sections of the Quarto document ;
+-   [X] Automatically number the different sections of the Quarto document ;
 
 ```{.yaml}
 ---
@@ -149,11 +150,10 @@ format:
   docx:
     toc: true
     number-sections: true
-    toc-depth: 2
 ---
 ```
 
-### Configure the table of contents to only display two levels of section headings.
+-   [X] Configure the table of contents to only display two levels of section headings.
 
 ```{.yaml}
 ---
@@ -167,20 +167,55 @@ format:
 
 ## Implement dynamic calculations
 
-::: callout-tip
--   See [Quarto documentation about dynamic dates](https://quarto.org/docs/reference/dates.html#date-parsing)
--   See [Quarto documentation about inline code](https://quarto.org/docs/computations/inline-code.html)
-:::
-
 -   [ ] Change the date `2023-12-31` to the date at which the Quarto document was last modified, and format this date to display it with the format `December 31, 2023` ;
+
+```{.yaml}
+---
+title: "My outbreak report"
+author: Helene Langet
+date: last-modified
+date-format: long
+---
+```
+
+```{r}
+#| echo: false
+# Load the dataset stored in the "df1.RData" file
+load(file = "df1.RData")
+```
+
+```{r}
+#| echo: false
+# Convert the 'sex', 'confirmed', and 'death' columns from their current data type to factors
+df <- df |>
+  dplyr::mutate(dplyr::across(c(sex, confirmed, death),
+                              as.factor))
+```
+
+```{r}
+#| echo: false
+# Identify the start and end dates of the outbreak by finding the minimum and maximum values in the 'date' column
+start_date <- min(df$date)
+end_date <- max(df$date)
+```
+
+```{r}
+#| echo: false
+# Define the period of interest for the report
+period_start <- start_date
+period_end <- end_date
+```
+
+```{r}
+#| echo: false
+# Filter the data frame to include only the cases that occurred within the defined period
+subdf <- df |>
+  dplyr::filter(date >= period_start & date <= period_end)
+```
+
 -   [ ] Replace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;
 
 > "*The outbreak ran from **date** to **date***"
-
-::: {.content-visible when-format="revealjs"}
-
-------------------------------------------------------------------------
-:::
 
 -   [ ] Replace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.
 
@@ -188,19 +223,52 @@ format:
 
 ## Create and reference publication-ready tables
 
-::: callout-tip
--   See [gtsummary documentation about summary tables](https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html)
--   See [Quarto documentation about table cross-references](https://quarto.org/docs/authoring/tables.html#cross-references)
+-   [X] Create a table summarising the demographic characteristics and outcome frequency of all cases
 
-Other R packages include [flextable](https://davidgohel.github.io/flextable/) and [gt](https://gt.rstudio.com/)
-:::
+```{r}
+subdf |>
+  dplyr::select(age,
+                sex,
+                bmi,
+                confirmed,
+                death) |>
+  gtsummary::tbl_summary()
+```
 
--   [ ] Create a table summarising the demographic characteristics and outcome frequency of all cases ;
--   [ ] Add a caption to the table ;
--   [ ] Assign a label to the table ;
--   [ ] Replace the placeholder text in bold with a cross-reference to the table ;
+-   [X] Add a caption to the table
 
-> "***cross-reference** provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
+```{r}
+#| tbl-cap: Population characteristics
+
+subdf |>
+  dplyr::select(age,
+                sex,
+                bmi,
+                confirmed,
+                death) |>
+  gtsummary::tbl_summary()
+```
+
+-   [X] Assign a label to the table ;
+
+```{r}
+#| label: tbl-1
+#| tbl-cap: Population characteristics
+
+subdf |>
+  dplyr::select(age,
+                sex,
+                bmi,
+                confirmed,
+                death) |>
+  gtsummary::tbl_summary()
+```
+
+-   [X] Replace the placeholder text in bold with a cross-reference to the table ;
+
+`` @tbl-1 `` provides a summary of the demographic characteristics and the outcome proportion for the overall population.
+
+> "*@tbl-1 provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
 
 ::: {.content-visible when-format="revealjs"}
 
