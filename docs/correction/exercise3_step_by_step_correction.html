@@ -5025,19 +5025,19 @@ YAML indentation
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="14" onclick="event.preventDefault();">14</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2"></a><span class="in">#| label: tbl-1</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3"></a><span class="in">#| tbl-cap: Population characteristics</span></span>
 <span id="annotated-cell-6-4"><a href="#annotated-cell-6-4"></a></span>
-<span id="annotated-cell-6-5"><a href="#annotated-cell-6-5"></a><span class="in">subdf |&gt;</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5"></a><span class="in">subdf |&gt;</span></span>
 <span id="annotated-cell-6-6"><a href="#annotated-cell-6-6"></a><span class="in">  dplyr::select(age,</span></span>
 <span id="annotated-cell-6-7"><a href="#annotated-cell-6-7"></a><span class="in">                sex,</span></span>
 <span id="annotated-cell-6-8"><a href="#annotated-cell-6-8"></a><span class="in">                bmi,</span></span>
 <span id="annotated-cell-6-9"><a href="#annotated-cell-6-9"></a><span class="in">                confirmed,</span></span>
 <span id="annotated-cell-6-10"><a href="#annotated-cell-6-10"></a><span class="in">                death) |&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-6-11" class="code-annotation-target"><a href="#annotated-cell-6-11"></a><span class="in">  gtsummary::tbl_summary()</span></span>
+<span id="annotated-cell-6-11"><a href="#annotated-cell-6-11"></a><span class="in">  gtsummary::tbl_summary()             </span></span>
 <span id="annotated-cell-6-12"><a href="#annotated-cell-6-12"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-6" data-target-annotation="12">12</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="11" data-code-annotation="12">Create a table summarising the demographic characteristics and outcome frequency of all cases.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="12">Create a table summarising the demographic characteristics and outcome frequency of all cases.</span>
 </dd>
 <dt data-target-cell="annotated-cell-6" data-target-annotation="13">13</dt>
 <dd>
@@ -5520,98 +5520,1085 @@ text-indent: 25px;
 <blockquote class="blockquote">
 <p>“<em><a href="#tbl-1" class="quarto-xref">Table 1</a> provides a summary of the demographic characteristics and the outcome proportion for the overall population</em>”</p>
 </blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode numberSource markdown code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1"></a><span class="in">```{r}</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="17" onclick="event.preventDefault();">17</a><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2"></a><span class="in">#| label: tbl-2</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="16" onclick="event.preventDefault();">16</a><span id="annotated-cell-7-3" class="code-annotation-target"><a href="#annotated-cell-7-3"></a><span class="in">#| tbl-cap: Demographic characteristics of deceased vs. alive</span></span>
+<span id="annotated-cell-7-4"><a href="#annotated-cell-7-4"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="15" onclick="event.preventDefault();">15</a><span id="annotated-cell-7-5" class="code-annotation-target"><a href="#annotated-cell-7-5"></a><span class="in">subdf |&gt;</span></span>
+<span id="annotated-cell-7-6"><a href="#annotated-cell-7-6"></a><span class="in">  dplyr::select(sex,</span></span>
+<span id="annotated-cell-7-7"><a href="#annotated-cell-7-7"></a><span class="in">                age,</span></span>
+<span id="annotated-cell-7-8"><a href="#annotated-cell-7-8"></a><span class="in">                bmi,</span></span>
+<span id="annotated-cell-7-9"><a href="#annotated-cell-7-9"></a><span class="in">                death) |&gt;</span></span>
+<span id="annotated-cell-7-10"><a href="#annotated-cell-7-10"></a><span class="in">  gtsummary::tbl_summary(by = death) |&gt;</span></span>
+<span id="annotated-cell-7-11"><a href="#annotated-cell-7-11"></a><span class="in">  gtsummary::add_overall()</span></span>
+<span id="annotated-cell-7-12"><a href="#annotated-cell-7-12"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-7" data-target-annotation="15">15</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="5" data-code-annotation="15">Create a table summarising the demographic characteristics of individuals who died versus those who are still alive.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="16">16</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="3" data-code-annotation="16">Add a caption to the table.</span>
+</dd>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="17">17</dt>
+<dd>
+<span data-code-cell="annotated-cell-7" data-code-lines="2" data-code-annotation="17">Assign a label to the table.</span>
+</dd>
+</dl>
+</div>
+<div id="tbl-2" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 2: Demographic characteristics of deceased vs. alive
+</figcaption><div aria-describedby="tbl-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div>
+<div id="eustxbdtnm" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#eustxbdtnm table {
+font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+#eustxbdtnm thead, #eustxbdtnm tbody, #eustxbdtnm tfoot, #eustxbdtnm tr, #eustxbdtnm td, #eustxbdtnm th {
+border-style: none;
+}
+#eustxbdtnm p {
+margin: 0;
+padding: 0;
+}
+#eustxbdtnm .gt_table {
+display: table;
+border-collapse: collapse;
+line-height: normal;
+margin-left: auto;
+margin-right: auto;
+color: #333333;
+font-size: 16px;
+font-weight: normal;
+font-style: normal;
+background-color: #FFFFFF;
+width: auto;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #A8A8A8;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #A8A8A8;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+}
+#eustxbdtnm .gt_caption {
+padding-top: 4px;
+padding-bottom: 4px;
+}
+#eustxbdtnm .gt_title {
+color: #333333;
+font-size: 125%;
+font-weight: initial;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-color: #FFFFFF;
+border-bottom-width: 0;
+}
+#eustxbdtnm .gt_subtitle {
+color: #333333;
+font-size: 85%;
+font-weight: initial;
+padding-top: 3px;
+padding-bottom: 5px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-color: #FFFFFF;
+border-top-width: 0;
+}
+#eustxbdtnm .gt_heading {
+background-color: #FFFFFF;
+text-align: center;
+border-bottom-color: #FFFFFF;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}
+#eustxbdtnm .gt_bottom_border {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#eustxbdtnm .gt_col_headings {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}
+#eustxbdtnm .gt_col_heading {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 6px;
+padding-left: 5px;
+padding-right: 5px;
+overflow-x: hidden;
+}
+#eustxbdtnm .gt_column_spanner_outer {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+padding-top: 0;
+padding-bottom: 0;
+padding-left: 4px;
+padding-right: 4px;
+}
+#eustxbdtnm .gt_column_spanner_outer:first-child {
+padding-left: 0;
+}
+#eustxbdtnm .gt_column_spanner_outer:last-child {
+padding-right: 0;
+}
+#eustxbdtnm .gt_column_spanner {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 5px;
+overflow-x: hidden;
+display: inline-block;
+width: 100%;
+}
+#eustxbdtnm .gt_spanner_row {
+border-bottom-style: hidden;
+}
+#eustxbdtnm .gt_group_heading {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+text-align: left;
+}
+#eustxbdtnm .gt_empty_group_heading {
+padding: 0.5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: middle;
+}
+#eustxbdtnm .gt_from_md > :first-child {
+margin-top: 0;
+}
+#eustxbdtnm .gt_from_md > :last-child {
+margin-bottom: 0;
+}
+#eustxbdtnm .gt_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+margin: 10px;
+border-top-style: solid;
+border-top-width: 1px;
+border-top-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+overflow-x: hidden;
+}
+#eustxbdtnm .gt_stub {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+}
+#eustxbdtnm .gt_stub_row_group {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+vertical-align: top;
+}
+#eustxbdtnm .gt_row_group_first td {
+border-top-width: 2px;
+}
+#eustxbdtnm .gt_row_group_first th {
+border-top-width: 2px;
+}
+#eustxbdtnm .gt_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#eustxbdtnm .gt_first_summary_row {
+border-top-style: solid;
+border-top-color: #D3D3D3;
+}
+#eustxbdtnm .gt_first_summary_row.thick {
+border-top-width: 2px;
+}
+#eustxbdtnm .gt_last_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#eustxbdtnm .gt_grand_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#eustxbdtnm .gt_first_grand_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-style: double;
+border-top-width: 6px;
+border-top-color: #D3D3D3;
+}
+#eustxbdtnm .gt_last_grand_summary_row_top {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: double;
+border-bottom-width: 6px;
+border-bottom-color: #D3D3D3;
+}
+#eustxbdtnm .gt_striped {
+background-color: rgba(128, 128, 128, 0.05);
+}
+#eustxbdtnm .gt_table_body {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#eustxbdtnm .gt_footnotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}
+#eustxbdtnm .gt_footnote {
+margin: 0px;
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#eustxbdtnm .gt_sourcenotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}
+#eustxbdtnm .gt_sourcenote {
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#eustxbdtnm .gt_left {
+text-align: left;
+}
+#eustxbdtnm .gt_center {
+text-align: center;
+}
+#eustxbdtnm .gt_right {
+text-align: right;
+font-variant-numeric: tabular-nums;
+}
+#eustxbdtnm .gt_font_normal {
+font-weight: normal;
+}
+#eustxbdtnm .gt_font_bold {
+font-weight: bold;
+}
+#eustxbdtnm .gt_font_italic {
+font-style: italic;
+}
+#eustxbdtnm .gt_super {
+font-size: 65%;
+}
+#eustxbdtnm .gt_footnote_marks {
+font-size: 75%;
+vertical-align: 0.4em;
+position: initial;
+}
+#eustxbdtnm .gt_asterisk {
+font-size: 100%;
+vertical-align: 0;
+}
+#eustxbdtnm .gt_indent_1 {
+text-indent: 5px;
+}
+#eustxbdtnm .gt_indent_2 {
+text-indent: 10px;
+}
+#eustxbdtnm .gt_indent_3 {
+text-indent: 15px;
+}
+#eustxbdtnm .gt_indent_4 {
+text-indent: 20px;
+}
+#eustxbdtnm .gt_indent_5 {
+text-indent: 25px;
+}
+</style>
+<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead><tr class="header gt_col_headings">
+<th id="&lt;strong&gt;Characteristic&lt;/strong&gt;" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="&lt;strong&gt;Overall&lt;/strong&gt;, N = 65,669&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>Overall</strong>, N = 65,669<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+</th>
+<th id="&lt;strong&gt;0&lt;/strong&gt;, N = 64,455&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>0</strong>, N = 64,455<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+</th>
+<th id="&lt;strong&gt;1&lt;/strong&gt;, N = 1,214&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>1</strong>, N = 1,214<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">sex</td>
+<td class="gt_row gt_center" headers="stat_0"><br></td>
+<td class="gt_row gt_center" headers="stat_1"><br></td>
+<td class="gt_row gt_center" headers="stat_2"><br></td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">    1</td>
+<td class="gt_row gt_center" headers="stat_0">33,114 (50%)</td>
+<td class="gt_row gt_center" headers="stat_1">32,504 (50%)</td>
+<td class="gt_row gt_center" headers="stat_2">610 (50%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">    2</td>
+<td class="gt_row gt_center" headers="stat_0">32,555 (50%)</td>
+<td class="gt_row gt_center" headers="stat_1">31,951 (50%)</td>
+<td class="gt_row gt_center" headers="stat_2">604 (50%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">age</td>
+<td class="gt_row gt_center" headers="stat_0">50 (35, 65)</td>
+<td class="gt_row gt_center" headers="stat_1">50 (35, 65)</td>
+<td class="gt_row gt_center" headers="stat_2">52 (37, 67)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">bmi</td>
+<td class="gt_row gt_center" headers="stat_0">29 (21, 38)</td>
+<td class="gt_row gt_center" headers="stat_1">29 (21, 38)</td>
+<td class="gt_row gt_center" headers="stat_2">34 (28, 41)</td>
+</tr>
+</tbody>
+<tfoot class="gt_footnotes"><tr class="even">
+<td colspan="4" class="gt_footnote">
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> n (%); Median (IQR)</td>
+</tr></tfoot>
+</table>
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
 <ul class="task-list">
-<li><label><input type="checkbox">Create a table summarising the demographic characteristics of individuals who died versus those who are still alive ;</label></li>
-<li><label><input type="checkbox">Add a caption to the table ;</label></li>
-<li><label><input type="checkbox">Assign a label to the table ;</label></li>
 <li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the table.</label></li>
 </ul>
+<p><code>@tbl-2</code> compares the demographic characteristics of individuals who died versus those who are still alive.</p>
 <blockquote class="blockquote">
-<p>“<em>while <strong>cross-reference</strong> compares the demographic characteristics of individuals who died versus those who are still alive</em>”</p>
+<p>“<em>…, while <a href="#tbl-2" class="quarto-xref">Table 2</a> compares the demographic characteristics of individuals who died versus those who are still alive.</em>”</p>
 </blockquote>
 </section><section id="customise-figures" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="customise-figures">
 <span class="header-section-number">5</span> Customise figures</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode numberSource markdown code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1"></a><span class="in">```{r}</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="19" onclick="event.preventDefault();">19</a><span id="annotated-cell-8-2" class="code-annotation-target"><a href="#annotated-cell-8-2"></a><span class="in">#| label: fig-1</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="18" onclick="event.preventDefault();">18</a><span id="annotated-cell-8-3" class="code-annotation-target"><a href="#annotated-cell-8-3"></a><span class="in">#| fig-cap: Weekly count of all cases, confirmed cases and deaths</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="20" onclick="event.preventDefault();">20</a><span id="annotated-cell-8-4" class="code-annotation-target"><a href="#annotated-cell-8-4"></a><span class="in">#| fig-width: 8</span></span>
+<span id="annotated-cell-8-5"><a href="#annotated-cell-8-5"></a><span class="in">#| fig-height: 4</span></span>
+<span id="annotated-cell-8-6"><a href="#annotated-cell-8-6"></a></span>
+<span id="annotated-cell-8-7"><a href="#annotated-cell-8-7"></a><span class="in"># Aggregate the data to get the weekly count of all cases, confirmed cases and deaths</span></span>
+<span id="annotated-cell-8-8"><a href="#annotated-cell-8-8"></a><span class="in">weekly_data &lt;- subdf |&gt;</span></span>
+<span id="annotated-cell-8-9"><a href="#annotated-cell-8-9"></a><span class="in">  dplyr::group_by(week) |&gt;</span></span>
+<span id="annotated-cell-8-10"><a href="#annotated-cell-8-10"></a><span class="in">  dplyr::summarise(count = dplyr::n(),</span></span>
+<span id="annotated-cell-8-11"><a href="#annotated-cell-8-11"></a><span class="in">                   confirmed_count = sum(confirmed == &quot;1&quot;),</span></span>
+<span id="annotated-cell-8-12"><a href="#annotated-cell-8-12"></a><span class="in">                   death_count = sum(death == &quot;1&quot;))</span></span>
+<span id="annotated-cell-8-13"><a href="#annotated-cell-8-13"></a></span>
+<span id="annotated-cell-8-14"><a href="#annotated-cell-8-14"></a><span class="in"># Plot the weekly cases, confirmed cases and deaths</span></span>
+<span id="annotated-cell-8-15"><a href="#annotated-cell-8-15"></a><span class="in">ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +</span></span>
+<span id="annotated-cell-8-16"><a href="#annotated-cell-8-16"></a><span class="in">  ggplot2::geom_line(ggplot2::aes(y = count,</span></span>
+<span id="annotated-cell-8-17"><a href="#annotated-cell-8-17"></a><span class="in">                                  color = &quot;All cases&quot;),</span></span>
+<span id="annotated-cell-8-18"><a href="#annotated-cell-8-18"></a><span class="in">                     size = 1) +</span></span>
+<span id="annotated-cell-8-19"><a href="#annotated-cell-8-19"></a><span class="in">  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,</span></span>
+<span id="annotated-cell-8-20"><a href="#annotated-cell-8-20"></a><span class="in">                                  color = &quot;Confirmed cases&quot;),</span></span>
+<span id="annotated-cell-8-21"><a href="#annotated-cell-8-21"></a><span class="in">                     size = 1) +</span></span>
+<span id="annotated-cell-8-22"><a href="#annotated-cell-8-22"></a><span class="in">  ggplot2::geom_line(ggplot2::aes(y = death_count,</span></span>
+<span id="annotated-cell-8-23"><a href="#annotated-cell-8-23"></a><span class="in">                                  color = &quot;Confirmed deaths&quot;),</span></span>
+<span id="annotated-cell-8-24"><a href="#annotated-cell-8-24"></a><span class="in">                     size = 1) +</span></span>
+<span id="annotated-cell-8-25"><a href="#annotated-cell-8-25"></a><span class="in">  ggplot2::labs(x = &quot;Week&quot;,</span></span>
+<span id="annotated-cell-8-26"><a href="#annotated-cell-8-26"></a><span class="in">                y = &quot;Count&quot;,</span></span>
+<span id="annotated-cell-8-27"><a href="#annotated-cell-8-27"></a><span class="in">                color = &quot;Legend&quot;) +</span></span>
+<span id="annotated-cell-8-28"><a href="#annotated-cell-8-28"></a><span class="in">  ggplot2::scale_color_manual(values = c(&quot;All cases&quot; = &quot;#440e54&quot;,</span></span>
+<span id="annotated-cell-8-29"><a href="#annotated-cell-8-29"></a><span class="in">                                         &quot;Confirmed cases&quot; = &quot;#f8766d&quot;,</span></span>
+<span id="annotated-cell-8-30"><a href="#annotated-cell-8-30"></a><span class="in">                                         &quot;Confirmed deaths&quot; = &quot;#128984&quot;)) +</span></span>
+<span id="annotated-cell-8-31"><a href="#annotated-cell-8-31"></a><span class="in">  ggplot2::theme_minimal() +</span></span>
+<span id="annotated-cell-8-32"><a href="#annotated-cell-8-32"></a><span class="in">  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = &quot;dashed&quot;, color = &quot;grey&quot;),</span></span>
+<span id="annotated-cell-8-33"><a href="#annotated-cell-8-33"></a><span class="in">                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = &quot;dashed&quot;, color = &quot;grey&quot;),</span></span>
+<span id="annotated-cell-8-34"><a href="#annotated-cell-8-34"></a><span class="in">                 panel.grid.major.x = ggplot2::element_blank(),</span></span>
+<span id="annotated-cell-8-35"><a href="#annotated-cell-8-35"></a><span class="in">                 panel.grid.minor.x = ggplot2::element_blank())</span></span>
+<span id="annotated-cell-8-36"><a href="#annotated-cell-8-36"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-8" data-target-annotation="18">18</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="3" data-code-annotation="18">Add a caption to the figure.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="19">19</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="2" data-code-annotation="19">Assign a label to the figure.</span>
+</dd>
+<dt data-target-cell="annotated-cell-8" data-target-annotation="20">20</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="4,5" data-code-annotation="20">Adjust the dimensions of the figure until you are happy with it</span>
+</dd>
+</dl>
 </div>
-<div class="callout-title-container flex-fill">
-Tip
+<div class="cell-output-display">
+<div id="fig-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="data:image/png;base64,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" class="img-fluid figure-img" width="768">
 </div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure 1: Weekly count of all cases, confirmed cases and deaths
+</figcaption></figure>
 </div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>See <a href="https://quarto.org/docs/authoring/cross-references.html#computations">Quarto documentation about figure cross-references</a>
-</li>
-<li>See <a href="https://quarto.org/docs/computations/execution-options.html#figure-options">Quarto documentation about figure options</a>
-</li>
-</ul>
 </div>
 </div>
 <ul class="task-list">
-<li><label><input type="checkbox">Add a caption to the figure ;</label></li>
-<li><label><input type="checkbox">Assign a label to the figure ;</label></li>
-<li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the figure ;</label></li>
+<li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the figure.</label></li>
 </ul>
+<p><a href="#fig-1" class="quarto-xref">Figure 1</a> illustrates the outbreak’s progression, which can be divided into distinct phases.</p>
 <blockquote class="blockquote">
 <p>“<em><strong>cross-reference</strong> illustrates the outbreak’s progression, which can be divided into distinct phases.</em>”</p>
 </blockquote>
-<ul class="task-list">
-<li><label><input type="checkbox">Adjust the dimensions of the figure until you are happy with it</label></li>
-<li><label><input type="checkbox">Beautify the plot using ggplot options</label></li>
-</ul></section><section id="code" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="code">
+<ol start="21" type="1">
+<li>Beautify the plot using ggplot options</li>
+</ol></section><section id="code" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="code">
 <span class="header-section-number">6</span> Code</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>See <a href="https://www.danieldsjoberg.com/gtsummary/articles/tbl_regression.html">gtsummary documentation about formatted table of regression model results</a>
-</li>
-<li>See <a href="https://quarto.org/docs/authoring/cross-references.html#code-listings">Quarto documentation about code chunk cross-references</a>
-</li>
-</ul>
-</div>
-</div>
-<ul class="task-list">
-<li><label><input type="checkbox">Implement a logistic regression model based on description in the Quarto document ;</label></li>
-<li><label><input type="checkbox">Create a table summarizing the odds ratios from the logistic regression model ;</label></li>
-<li><label><input type="checkbox">Add a caption to the table ;</label></li>
-<li><label><input type="checkbox">Assign a label to the table ;</label></li>
-<li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the table ;</label></li>
-</ul>
-<blockquote class="blockquote">
-<p>“The results of the logistic regression model are summarized in the formatted regression table, which is presented in <strong>cross-reference</strong>.”</p>
-</blockquote>
 <ul class="task-list">
 <li><label><input type="checkbox">Display the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;</label></li>
 <li><label><input type="checkbox">Add a caption to the code chunk ;</label></li>
 <li><label><input type="checkbox">Assign a label to the code chunk ;</label></li>
 <li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the code chunk.</label></li>
-</ul></section><section id="finalise-your-ms-word-report" class="level2" data-number="7"><h2 data-number="7" class="anchored" data-anchor-id="finalise-your-ms-word-report">
-<span class="header-section-number">7</span> Finalise your MS Word report</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+</ul>
+<p>The logistic regression model uses <code>death</code> as the reponse variable, and <code>bmi</code> and <code>age</code> as predictor variables. It is implemented in R as shown in the code chunk referenced by <a href="#lst-test" class="quarto-xref">Listing 1</a></p>
+<div class="cell">
+<div id="lst-test" class="cell-code listing quarto-float">
+<figure class="quarto-float quarto-float-lst figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Listing 1: R code
+</figcaption><div aria-describedby="lst-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="sourceCode cell-code" id="lst-test"><pre class="sourceCode numberSource markdown code-annotation-code number-lines code-with-copy"><code class="sourceCode markdown"><span id="lst-test-1"><a href="#lst-test-1"></a><span class="in">```{r}</span></span>
+<span id="lst-test-2"><a href="#lst-test-2"></a><span class="in">#| lst-label: lst-test</span></span>
+<span id="lst-test-3"><a href="#lst-test-3"></a><span class="in">#| lst-cap: R code</span></span>
+<span id="lst-test-4"><a href="#lst-test-4"></a></span>
+<span id="lst-test-5"><a href="#lst-test-5"></a><span class="in">coeffs &lt;- glm(death ~ bmi + age,</span></span>
+<span id="lst-test-6"><a href="#lst-test-6"></a><span class="in">              subdf |&gt; dplyr::filter(confirmed == &quot;1&quot;),</span></span>
+<span id="lst-test-7"><a href="#lst-test-7"></a><span class="in">              family = binomial)</span></span>
+<span id="lst-test-8"><a href="#lst-test-8"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-title-container flex-fill">
-Tip
+</figure>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>See <a href="https://quarto.org/docs/output-formats/ms-word-templates.html">Quarto documentation about Word templates</a></p>
+<ol start="22" type="1">
+<li>Implement a logistic regression model based on description in the Quarto document.</li>
+</ol>
+<p>The results of the logistic regression model are summarized in the formatted regression table, which is presented in <a href="#tbl-3" class="quarto-xref">Table 3</a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource markdown code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1"></a><span class="in">```{r}</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="25" onclick="event.preventDefault();">25</a><span id="annotated-cell-9-2" class="code-annotation-target"><a href="#annotated-cell-9-2"></a><span class="in">#| label: tbl-3</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="24" onclick="event.preventDefault();">24</a><span id="annotated-cell-9-3" class="code-annotation-target"><a href="#annotated-cell-9-3"></a><span class="in">#| tbl-cap: Formatted regression table</span></span>
+<span id="annotated-cell-9-4"><a href="#annotated-cell-9-4"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="23" onclick="event.preventDefault();">23</a><span id="annotated-cell-9-5" class="code-annotation-target"><a href="#annotated-cell-9-5"></a><span class="in">gtsummary::tbl_regression(coeffs, exponentiate = TRUE)</span></span>
+<span id="annotated-cell-9-6"><a href="#annotated-cell-9-6"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-9" data-target-annotation="23">23</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="5" data-code-annotation="23">Create a table summarizing the odds ratios from the logistic regression model.</span>
+</dd>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="24">24</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="3" data-code-annotation="24">Add a caption to the table.</span>
+</dd>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="25">25</dt>
+<dd>
+<span data-code-cell="annotated-cell-9" data-code-lines="2" data-code-annotation="25">Assign a label to the table.</span>
+</dd>
+</dl>
+</div>
+<div id="tbl-3" class="cell quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table 3: Formatted regression table
+</figcaption><div aria-describedby="tbl-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div>
+<div id="croelmvzyq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#croelmvzyq table {
+font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+#croelmvzyq thead, #croelmvzyq tbody, #croelmvzyq tfoot, #croelmvzyq tr, #croelmvzyq td, #croelmvzyq th {
+border-style: none;
+}
+#croelmvzyq p {
+margin: 0;
+padding: 0;
+}
+#croelmvzyq .gt_table {
+display: table;
+border-collapse: collapse;
+line-height: normal;
+margin-left: auto;
+margin-right: auto;
+color: #333333;
+font-size: 16px;
+font-weight: normal;
+font-style: normal;
+background-color: #FFFFFF;
+width: auto;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #A8A8A8;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #A8A8A8;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+}
+#croelmvzyq .gt_caption {
+padding-top: 4px;
+padding-bottom: 4px;
+}
+#croelmvzyq .gt_title {
+color: #333333;
+font-size: 125%;
+font-weight: initial;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-color: #FFFFFF;
+border-bottom-width: 0;
+}
+#croelmvzyq .gt_subtitle {
+color: #333333;
+font-size: 85%;
+font-weight: initial;
+padding-top: 3px;
+padding-bottom: 5px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-color: #FFFFFF;
+border-top-width: 0;
+}
+#croelmvzyq .gt_heading {
+background-color: #FFFFFF;
+text-align: center;
+border-bottom-color: #FFFFFF;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}
+#croelmvzyq .gt_bottom_border {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#croelmvzyq .gt_col_headings {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+}
+#croelmvzyq .gt_col_heading {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 6px;
+padding-left: 5px;
+padding-right: 5px;
+overflow-x: hidden;
+}
+#croelmvzyq .gt_column_spanner_outer {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: normal;
+text-transform: inherit;
+padding-top: 0;
+padding-bottom: 0;
+padding-left: 4px;
+padding-right: 4px;
+}
+#croelmvzyq .gt_column_spanner_outer:first-child {
+padding-left: 0;
+}
+#croelmvzyq .gt_column_spanner_outer:last-child {
+padding-right: 0;
+}
+#croelmvzyq .gt_column_spanner {
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: bottom;
+padding-top: 5px;
+padding-bottom: 5px;
+overflow-x: hidden;
+display: inline-block;
+width: 100%;
+}
+#croelmvzyq .gt_spanner_row {
+border-bottom-style: hidden;
+}
+#croelmvzyq .gt_group_heading {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+text-align: left;
+}
+#croelmvzyq .gt_empty_group_heading {
+padding: 0.5px;
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+vertical-align: middle;
+}
+#croelmvzyq .gt_from_md > :first-child {
+margin-top: 0;
+}
+#croelmvzyq .gt_from_md > :last-child {
+margin-bottom: 0;
+}
+#croelmvzyq .gt_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+margin: 10px;
+border-top-style: solid;
+border-top-width: 1px;
+border-top-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 1px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 1px;
+border-right-color: #D3D3D3;
+vertical-align: middle;
+overflow-x: hidden;
+}
+#croelmvzyq .gt_stub {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+}
+#croelmvzyq .gt_stub_row_group {
+color: #333333;
+background-color: #FFFFFF;
+font-size: 100%;
+font-weight: initial;
+text-transform: inherit;
+border-right-style: solid;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+padding-left: 5px;
+padding-right: 5px;
+vertical-align: top;
+}
+#croelmvzyq .gt_row_group_first td {
+border-top-width: 2px;
+}
+#croelmvzyq .gt_row_group_first th {
+border-top-width: 2px;
+}
+#croelmvzyq .gt_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#croelmvzyq .gt_first_summary_row {
+border-top-style: solid;
+border-top-color: #D3D3D3;
+}
+#croelmvzyq .gt_first_summary_row.thick {
+border-top-width: 2px;
+}
+#croelmvzyq .gt_last_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#croelmvzyq .gt_grand_summary_row {
+color: #333333;
+background-color: #FFFFFF;
+text-transform: inherit;
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#croelmvzyq .gt_first_grand_summary_row {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-top-style: double;
+border-top-width: 6px;
+border-top-color: #D3D3D3;
+}
+#croelmvzyq .gt_last_grand_summary_row_top {
+padding-top: 8px;
+padding-bottom: 8px;
+padding-left: 5px;
+padding-right: 5px;
+border-bottom-style: double;
+border-bottom-width: 6px;
+border-bottom-color: #D3D3D3;
+}
+#croelmvzyq .gt_striped {
+background-color: rgba(128, 128, 128, 0.05);
+}
+#croelmvzyq .gt_table_body {
+border-top-style: solid;
+border-top-width: 2px;
+border-top-color: #D3D3D3;
+border-bottom-style: solid;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+}
+#croelmvzyq .gt_footnotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}
+#croelmvzyq .gt_footnote {
+margin: 0px;
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#croelmvzyq .gt_sourcenotes {
+color: #333333;
+background-color: #FFFFFF;
+border-bottom-style: none;
+border-bottom-width: 2px;
+border-bottom-color: #D3D3D3;
+border-left-style: none;
+border-left-width: 2px;
+border-left-color: #D3D3D3;
+border-right-style: none;
+border-right-width: 2px;
+border-right-color: #D3D3D3;
+}
+#croelmvzyq .gt_sourcenote {
+font-size: 90%;
+padding-top: 4px;
+padding-bottom: 4px;
+padding-left: 5px;
+padding-right: 5px;
+}
+#croelmvzyq .gt_left {
+text-align: left;
+}
+#croelmvzyq .gt_center {
+text-align: center;
+}
+#croelmvzyq .gt_right {
+text-align: right;
+font-variant-numeric: tabular-nums;
+}
+#croelmvzyq .gt_font_normal {
+font-weight: normal;
+}
+#croelmvzyq .gt_font_bold {
+font-weight: bold;
+}
+#croelmvzyq .gt_font_italic {
+font-style: italic;
+}
+#croelmvzyq .gt_super {
+font-size: 65%;
+}
+#croelmvzyq .gt_footnote_marks {
+font-size: 75%;
+vertical-align: 0.4em;
+position: initial;
+}
+#croelmvzyq .gt_asterisk {
+font-size: 100%;
+vertical-align: 0;
+}
+#croelmvzyq .gt_indent_1 {
+text-indent: 5px;
+}
+#croelmvzyq .gt_indent_2 {
+text-indent: 10px;
+}
+#croelmvzyq .gt_indent_3 {
+text-indent: 15px;
+}
+#croelmvzyq .gt_indent_4 {
+text-indent: 20px;
+}
+#croelmvzyq .gt_indent_5 {
+text-indent: 25px;
+}
+</style>
+<table class="gt_table do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="header gt_col_headings">
+<th id="&lt;strong&gt;Characteristic&lt;/strong&gt;" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="&lt;strong&gt;OR&lt;/strong&gt;&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>OR</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+</th>
+<th id="&lt;strong&gt;95% CI&lt;/strong&gt;&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col">
+<strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span>
+</th>
+<th id="&lt;strong&gt;p-value&lt;/strong&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">bmi</td>
+<td class="gt_row gt_center" headers="estimate">1.04</td>
+<td class="gt_row gt_center" headers="ci">1.03, 1.04</td>
+<td class="gt_row gt_center" headers="p.value">&lt;0.001</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">age</td>
+<td class="gt_row gt_center" headers="estimate">1.00</td>
+<td class="gt_row gt_center" headers="ci">1.00, 1.01</td>
+<td class="gt_row gt_center" headers="p.value">0.003</td>
+</tr>
+</tbody>
+<tfoot class="gt_footnotes"><tr class="odd">
+<td colspan="4" class="gt_footnote">
+<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> OR = Odds Ratio, CI = Confidence Interval</td>
+</tr></tfoot>
+</table>
+</div>
+</div>
+</div>
+</div>
+</figure>
 </div>
 </div>
 <ul class="task-list">
-<li><label><input type="checkbox">Apply the Swiss TPH template <code>swisstph_template.docx</code> to your MS Word rendered report ;</label></li>
+<li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the table ;</label></li>
+</ul>
+<blockquote class="blockquote">
+<p>“The results of the logistic regression model are summarized in the formatted regression table, which is presented in <strong>cross-reference</strong>.”</p>
+</blockquote>
+</section><section id="finalise-your-ms-word-report" class="level2" data-number="7"><h2 data-number="7" class="anchored" data-anchor-id="finalise-your-ms-word-report">
+<span class="header-section-number">7</span> Finalise your MS Word report</h2>
+<div class="sourceCode" id="annotated-cell-10"><pre class="sourceCode numberSource yaml code-annotation-code number-lines code-with-copy"><code class="sourceCode yaml"><span id="annotated-cell-10-1"><a href="#annotated-cell-10-1"></a><span class="pp">---</span></span>
+<span id="annotated-cell-10-2"><a href="#annotated-cell-10-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My outbreak report</span></span>
+<span id="annotated-cell-10-3"><a href="#annotated-cell-10-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
+<span id="annotated-cell-10-4"><a href="#annotated-cell-10-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> last-modified</span></span>
+<span id="annotated-cell-10-5"><a href="#annotated-cell-10-5"></a><span class="fu">date-format</span><span class="kw">:</span><span class="at"> long</span></span>
+<span id="annotated-cell-10-6"><a href="#annotated-cell-10-6"></a></span>
+<span id="annotated-cell-10-7"><a href="#annotated-cell-10-7"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="annotated-cell-10-8"><a href="#annotated-cell-10-8"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
+<span id="annotated-cell-10-9"><a href="#annotated-cell-10-9"></a><span class="at">    </span><span class="fu">reference-doc</span><span class="kw">:</span><span class="at"> swisstph_template.docx</span></span>
+<span id="annotated-cell-10-10"><a href="#annotated-cell-10-10"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="annotated-cell-10-11"><a href="#annotated-cell-10-11"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="annotated-cell-10-12"><a href="#annotated-cell-10-12"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="annotated-cell-10-13"><a href="#annotated-cell-10-13"></a><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="annotated-cell-10-14"><a href="#annotated-cell-10-14"></a><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="annotated-cell-10-15"><a href="#annotated-cell-10-15"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl></dl>
+<ul class="task-list">
 <li><label><input type="checkbox">Create your own template and apply it to your MS Word rendered report.</label></li>
 </ul>
 

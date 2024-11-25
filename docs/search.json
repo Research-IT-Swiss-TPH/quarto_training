@@ -92,45 +92,41 @@
   {
     "objectID": "practicals/exercise4_instructions.html",
     "href": "practicals/exercise4_instructions.html",
-    "title": "Quarto training",
+    "title": "⭐⭐ Parametrise a report",
     "section": "",
     "text": "You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
     "crumbs": [
-      "📙 Parametrise a Word report",
-      "📋 Instructions ⭐⭐"
+      "📙 Parametrise a Word report"
     ]
   },
   {
     "objectID": "practicals/exercise4_instructions.html#overall-objective",
     "href": "practicals/exercise4_instructions.html#overall-objective",
-    "title": "Quarto training",
+    "title": "⭐⭐ Parametrise a report",
     "section": "",
     "text": "You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
     "crumbs": [
-      "📙 Parametrise a Word report",
-      "📋 Instructions ⭐⭐"
+      "📙 Parametrise a Word report"
     ]
   },
   {
     "objectID": "practicals/exercise4_instructions.html#parametrise-your-report",
     "href": "practicals/exercise4_instructions.html#parametrise-your-report",
-    "title": "Quarto training",
+    "title": "⭐⭐ Parametrise a report",
     "section": "2 Parametrise your report",
     "text": "2 Parametrise your report\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about parameters\nSee Quarto documentation about rendering outputs using different parameters\n\n\n\n\nAdjust the report to focus on data for the year 2022 only ;\nYou were unfortunately provided with a previous erroneous version of the dataset. Update the report to use the dataset stored in df2.RData instead of the one stored in df1.RData ;\nRender 3 reports (1 report with df2.RData for the full outbreak period, 1 report with df1.RData for year 2021 only, 1 report with df2.RData for year 2021 only) adapting the following command which needs to be run in a terminal (ensure your working directory is the one where your Quarto document is stored and all file paths are correct).\n\nquarto render exercise3.qmd --out report_data1.docx -P dataset:df1.RData\n\n\n\n\n\n\nDiscussion question\n\n\n\nDiscuss the advantages and disadvantages of using R within Quarto compared to using R scripts.",
     "crumbs": [
-      "📙 Parametrise a Word report",
-      "📋 Instructions ⭐⭐"
+      "📙 Parametrise a Word report"
     ]
   },
   {
     "objectID": "practicals/exercise4_instructions.html#finalise-your-ms-word-report",
     "href": "practicals/exercise4_instructions.html#finalise-your-ms-word-report",
-    "title": "Quarto training",
+    "title": "⭐⭐ Parametrise a report",
     "section": "3 Finalise your MS Word report",
-    "text": "3 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.",
+    "text": "3 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.\n\ncontents: - text: 📋 Instructions ⭐⭐ - href: ./correction/exercise3_correction.qmd text: ✅ Correction",
     "crumbs": [
-      "📙 Parametrise a Word report",
-      "📋 Instructions ⭐⭐"
+      "📙 Parametrise a Word report"
     ]
   },
   {
@@ -335,21 +331,21 @@
     "href": "correction/exercise3_step_by_step_correction.html#create-and-reference-publication-ready-tables",
     "title": "⭐ Build a MS Word report",
     "section": "\n4 Create and reference publication-ready tables",
-    "text": "4 Create and reference publication-ready tables\nYou can use packages such as gtsummary\nTo install the package, run teh following command in your console.\n```{r}\ninstall.packages(gtsummary)\n```\n\n```{r}\nlibrary(gtsummary)\n```\n\n\n```{r}\n14#| label: tbl-1\n13#| tbl-cap: Population characteristics\n\nsubdf |&gt;\n  dplyr::select(age,\n                sex,\n                bmi,\n                confirmed,\n                death) |&gt;\n12  gtsummary::tbl_summary()\n```\n\n\n12\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases.\n\n13\n\nAdd a caption to the table.\n\n14\n\nAssign a label to the table.\n\n\n\n\n\nTable 1: Population characteristics\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n\nN = 65,6691\n\n\n\n\nage\n50 (35, 65)\n\n\nsex\n\n\n\n    1\n33,114 (50%)\n\n\n    2\n32,555 (50%)\n\n\nbmi\n29 (21, 38)\n\n\nconfirmed\n\n\n\n    0\n13,235 (20%)\n\n\n    1\n52,434 (80%)\n\n\ndeath\n\n\n\n    0\n64,455 (98%)\n\n\n    1\n1,214 (1.8%)\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n\n\n\n\n\n\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n@tbl-1 provides a summary of the demographic characteristics and the outcome proportion for the overall population.\n\n“Table 1 provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“while cross-reference compares the demographic characteristics of individuals who died versus those who are still alive”"
+    "text": "4 Create and reference publication-ready tables\nYou can use packages such as gtsummary\nTo install the package, run teh following command in your console.\n```{r}\ninstall.packages(gtsummary)\n```\n\n```{r}\nlibrary(gtsummary)\n```\n\n\n```{r}\n14#| label: tbl-1\n13#| tbl-cap: Population characteristics\n\n12subdf |&gt;\n  dplyr::select(age,\n                sex,\n                bmi,\n                confirmed,\n                death) |&gt;\n  gtsummary::tbl_summary()             \n```\n\n\n12\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases.\n\n13\n\nAdd a caption to the table.\n\n14\n\nAssign a label to the table.\n\n\n\n\n\nTable 1: Population characteristics\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n\nN = 65,6691\n\n\n\n\nage\n50 (35, 65)\n\n\nsex\n\n\n\n    1\n33,114 (50%)\n\n\n    2\n32,555 (50%)\n\n\nbmi\n29 (21, 38)\n\n\nconfirmed\n\n\n\n    0\n13,235 (20%)\n\n\n    1\n52,434 (80%)\n\n\ndeath\n\n\n\n    0\n64,455 (98%)\n\n\n    1\n1,214 (1.8%)\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n\n\n\n\n\n\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n@tbl-1 provides a summary of the demographic characteristics and the outcome proportion for the overall population.\n\n“Table 1 provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\n```{r}\n17#| label: tbl-2\n16#| tbl-cap: Demographic characteristics of deceased vs. alive\n\n15subdf |&gt;\n  dplyr::select(sex,\n                age,\n                bmi,\n                death) |&gt;\n  gtsummary::tbl_summary(by = death) |&gt;\n  gtsummary::add_overall()\n```\n\n\n15\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive.\n\n16\n\nAdd a caption to the table.\n\n17\n\nAssign a label to the table.\n\n\n\n\n\nTable 2: Demographic characteristics of deceased vs. alive\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n\nOverall, N = 65,6691\n\n\n0, N = 64,4551\n\n\n1, N = 1,2141\n\n\n\n\nsex\n\n\n\n\n\n    1\n33,114 (50%)\n32,504 (50%)\n610 (50%)\n\n\n    2\n32,555 (50%)\n31,951 (50%)\n604 (50%)\n\n\nage\n50 (35, 65)\n50 (35, 65)\n52 (37, 67)\n\n\nbmi\n29 (21, 38)\n29 (21, 38)\n34 (28, 41)\n\n\n\n\n1 n (%); Median (IQR)\n\n\n\n\n\n\n\n\n\n\nReplace the placeholder text in bold with a cross-reference to the table.\n\n@tbl-2 compares the demographic characteristics of individuals who died versus those who are still alive.\n\n“…, while Table 2 compares the demographic characteristics of individuals who died versus those who are still alive.”"
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#customise-figures",
     "href": "correction/exercise3_step_by_step_correction.html#customise-figures",
     "title": "⭐ Build a MS Word report",
     "section": "\n5 Customise figures",
-    "text": "5 Customise figures\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\n\nSee Quarto documentation about figure options\n\n\n\n\n\nAdd a caption to the figure ;\nAssign a label to the figure ;\nReplace the placeholder text in bold with a cross-reference to the figure ;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with it\nBeautify the plot using ggplot options"
+    "text": "5 Customise figures\n\n```{r}\n19#| label: fig-1\n18#| fig-cap: Weekly count of all cases, confirmed cases and deaths\n20#| fig-width: 8\n#| fig-height: 4\n\n# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths\nweekly_data &lt;- subdf |&gt;\n  dplyr::group_by(week) |&gt;\n  dplyr::summarise(count = dplyr::n(),\n                   confirmed_count = sum(confirmed == \"1\"),\n                   death_count = sum(death == \"1\"))\n\n# Plot the weekly cases, confirmed cases and deaths\nggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +\n  ggplot2::geom_line(ggplot2::aes(y = count,\n                                  color = \"All cases\"),\n                     size = 1) +\n  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,\n                                  color = \"Confirmed cases\"),\n                     size = 1) +\n  ggplot2::geom_line(ggplot2::aes(y = death_count,\n                                  color = \"Confirmed deaths\"),\n                     size = 1) +\n  ggplot2::labs(x = \"Week\",\n                y = \"Count\",\n                color = \"Legend\") +\n  ggplot2::scale_color_manual(values = c(\"All cases\" = \"#440e54\",\n                                         \"Confirmed cases\" = \"#f8766d\",\n                                         \"Confirmed deaths\" = \"#128984\")) +\n  ggplot2::theme_minimal() +\n  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = \"dashed\", color = \"grey\"),\n                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = \"dashed\", color = \"grey\"),\n                 panel.grid.major.x = ggplot2::element_blank(),\n                 panel.grid.minor.x = ggplot2::element_blank())\n```\n\n\n18\n\nAdd a caption to the figure.\n\n19\n\nAssign a label to the figure.\n\n20\n\nAdjust the dimensions of the figure until you are happy with it\n\n\n\n\n\n\n\n\n\nFigure 1: Weekly count of all cases, confirmed cases and deaths\n\n\n\n\n\nReplace the placeholder text in bold with a cross-reference to the figure.\n\nFigure 1 illustrates the outbreak’s progression, which can be divided into distinct phases.\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nBeautify the plot using ggplot options"
   },
   {
     "objectID": "correction/exercise3_step_by_step_correction.html#code",
     "href": "correction/exercise3_step_by_step_correction.html#code",
     "title": "⭐ Build a MS Word report",
     "section": "\n6 Code",
-    "text": "6 Code\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about formatted table of regression model results\n\nSee Quarto documentation about code chunk cross-references\n\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”\n\n\nDisplay the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;\nAdd a caption to the code chunk ;\nAssign a label to the code chunk ;\nReplace the placeholder text in bold with a cross-reference to the code chunk."
+    "text": "6 Code\n\nDisplay the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;\nAdd a caption to the code chunk ;\nAssign a label to the code chunk ;\nReplace the placeholder text in bold with a cross-reference to the code chunk.\n\nThe logistic regression model uses death as the reponse variable, and bmi and age as predictor variables. It is implemented in R as shown in the code chunk referenced by Listing 1\n\n\n\nListing 1: R code\n\n```{r}\n#| lst-label: lst-test\n#| lst-cap: R code\n\ncoeffs &lt;- glm(death ~ bmi + age,\n              subdf |&gt; dplyr::filter(confirmed == \"1\"),\n              family = binomial)\n```\n\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document.\n\nThe results of the logistic regression model are summarized in the formatted regression table, which is presented in Table 3.\n\n```{r}\n25#| label: tbl-3\n24#| tbl-cap: Formatted regression table\n\n23gtsummary::tbl_regression(coeffs, exponentiate = TRUE)\n```\n\n\n23\n\nCreate a table summarizing the odds ratios from the logistic regression model.\n\n24\n\nAdd a caption to the table.\n\n25\n\nAssign a label to the table.\n\n\n\n\n\nTable 3: Formatted regression table\n\n\n\n\n\n\n\nCharacteristic\n\nOR1\n\n\n95% CI1\n\np-value\n\n\n\nbmi\n1.04\n1.03, 1.04\n&lt;0.001\n\n\nage\n1.00\n1.00, 1.01\n0.003\n\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\n\n\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”"
   },
   {
     "objectID": "notes/exercise2_instructions.html",
@@ -645,6 +641,6 @@
     "href": "correction/exercise3_step_by_step_correction.html#finalise-your-ms-word-report",
     "title": "⭐ Build a MS Word report",
     "section": "\n7 Finalise your MS Word report",
-    "text": "7 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report."
+    "text": "7 Finalise your MS Word report\n---\ntitle: My outbreak report\nauthor: Helene Langet\ndate: last-modified\ndate-format: long\n\nformat:\n  docx:\n    reference-doc: swisstph_template.docx\n    toc: true\n    number-sections: true\n    toc-depth: 2\necho: false\nwarning: false\n---\n\n\nCreate your own template and apply it to your MS Word rendered report."
   }
 ]

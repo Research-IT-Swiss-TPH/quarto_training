@@ -1,6 +1,6 @@
 ---
-title: Quarto training
-subtitle: 📙 Exercise 3
+title: ⭐⭐ Parametrise a report
+subtitle: 📋 Instructions
 author:
   - name:
       given: Hélène
@@ -15,26 +15,30 @@ editor: source
 lang: en-US
 
 format:
-  confluence-html:
+  html:
     default: true
-    toc: true
-    output-file: exercise3_instructions_confluence.html
-    code-overflow: wrap
     embed-resources: true
+    code-link: true
+    theme: cosmo
+    toc: true
+    number-sections: true
+    anchor-sections: true
+    title-block-banner: true
+    comments:
+      hypothesis: 
+        theme: classic
     other-links:
       - text: df1.RData
         href: df1.RData
       - text: df2.RData
         href: df2.RData
-      - text: swisstph_template.docx
-        href: swisstph_template.docx
+      - text: ✅ Correction
+        href: ../correction/exercise3_step_by_step_correction.html
     code-links:
       - text: exercise3.qmd
         icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/practicals/exercise3.qmd
-      - text: correction
-        icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/correction/exercise3_correction.qmd
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise3.qmd
+    format-links: [pdf]
   pdf:
     default: true
     toc: true
@@ -51,41 +55,13 @@ format:
     smaller: true
     slide-number: true
     show-slide-number: all
-  html:
-    default: true
-    embed-resources: true
-    code-link: true
-    code-overflow: wrap
-    theme: cosmo
-    toc: true
-    number-sections: true
-    anchor-sections: true
-    title-block-banner: true
-    comments:
-      hypothesis: 
-        theme: classic
-    other-links:
-      - text: df1.RData
-        href: df1.RData
-      - text: df2.RData
-        href: df2.RData
-      - text: swisstph_template.docx
-        href: swisstph_template.docx
-    code-links:
-      - text: exercise3.qmd
-        icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise3.qmd
-      - text: correction
-        icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/correction/exercise3_correction.qmd
-    format-links: [pdf]
     
 execute:
   echo: fenced
   warning: false
     
 resources:
-  - exercise3_instructions.pdf
+  - exercise4_instructions.pdf
   - df1.RData
   - df2.RData
 ---
@@ -126,3 +102,8 @@ See [Quarto documentation about Word templates](https://quarto.org/docs/output-f
 -   [ ] Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report ;
 -   [ ] Create your own template and apply it to your MS Word rendered report.
 
+contents:
+          - 
+            text: 📋 Instructions ⭐⭐ 
+          - href: ./correction/exercise3_correction.qmd
+            text: ✅ Correction

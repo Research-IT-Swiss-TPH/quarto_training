@@ -185,13 +185,13 @@ library(gtsummary)
 #| label: tbl-1                        #<14>
 #| tbl-cap: Population characteristics #<13>
 
-subdf |>
+subdf |>                               #<12>
   dplyr::select(age,
                 sex,
                 bmi,
                 confirmed,
                 death) |>
-  gtsummary::tbl_summary()             #<12>
+  gtsummary::tbl_summary()             
 ```
 
 12. Create a table summarising the demographic characteristics and outcome frequency of all cases.
@@ -204,64 +204,137 @@ subdf |>
 
 > "*@tbl-1 provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
 
-::: {.content-visible when-format="revealjs"}
+```{r}
+#| label: tbl-2                                               #<17>
+#| tbl-cap: Demographic characteristics of deceased vs. alive #<16>
 
-------------------------------------------------------------------------
-:::
+subdf |>                                                      #<15>
+  dplyr::select(sex,
+                age,
+                bmi,
+                death) |>
+  gtsummary::tbl_summary(by = death) |>
+  gtsummary::add_overall()
+```
 
--   [ ] Create a table summarising the demographic characteristics of individuals who died versus those who are still alive ;
--   [ ] Add a caption to the table ;
--   [ ] Assign a label to the table ;
+15. Create a table summarising the demographic characteristics of individuals who died versus those who are still alive.
+16. Add a caption to the table.
+17. Assign a label to the table.
+
 -   [ ] Replace the placeholder text in bold with a cross-reference to the table.
 
-> "*while **cross-reference** compares the demographic characteristics of individuals who died versus those who are still alive*"
+`` @tbl-2 `` compares the demographic characteristics of individuals who died versus those who are still alive.
+
+> "*..., while @tbl-2 compares the demographic characteristics of individuals who died versus those who are still alive.*"
 
 ## Customise figures
 
-::: callout-tip
--   See [Quarto documentation about figure cross-references](https://quarto.org/docs/authoring/cross-references.html#computations)
--   See [Quarto documentation about figure options](https://quarto.org/docs/computations/execution-options.html#figure-options)
-:::
+```{r}
+#| label: fig-1                                                                       #<19>
+#| fig-cap: Weekly count of all cases, confirmed cases and deaths                     #<18>
+#| fig-width: 8                                                                       #<20>
+#| fig-height: 4                                                                      #<20>
+                
+# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
+weekly_data <- subdf |>
+  dplyr::group_by(week) |>
+  dplyr::summarise(count = dplyr::n(),
+                   confirmed_count = sum(confirmed == "1"),
+                   death_count = sum(death == "1"))
 
--   [ ] Add a caption to the figure ;
--   [ ] Assign a label to the figure ;
--   [ ] Replace the placeholder text in bold with a cross-reference to the figure ;
+# Plot the weekly cases, confirmed cases and deaths
+ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
+  ggplot2::geom_line(ggplot2::aes(y = count,
+                                  color = "All cases"),
+                     size = 1) +
+  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,
+                                  color = "Confirmed cases"),
+                     size = 1) +
+  ggplot2::geom_line(ggplot2::aes(y = death_count,
+                                  color = "Confirmed deaths"),
+                     size = 1) +
+  ggplot2::labs(x = "Week",
+                y = "Count",
+                color = "Legend") +
+  ggplot2::scale_color_manual(values = c("All cases" = "#440e54",
+                                         "Confirmed cases" = "#f8766d",
+                                         "Confirmed deaths" = "#128984")) +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+                 panel.grid.major.x = ggplot2::element_blank(),
+                 panel.grid.minor.x = ggplot2::element_blank())
+```
+
+18. Add a caption to the figure.
+19. Assign a label to the figure.
+20. Adjust the dimensions of the figure until you are happy with it
+
+-   [ ] Replace the placeholder text in bold with a cross-reference to the figure.
+
+@fig-1 illustrates the outbreak's progression, which can be divided into distinct phases.
 
 > "***cross-reference** illustrates the outbreak's progression, which can be divided into distinct phases.*"
 
--   [ ] Adjust the dimensions of the figure until you are happy with it
--   [ ] Beautify the plot using ggplot options
+21. Beautify the plot using ggplot options
 
 ## Code
-
-::: callout-tip
--   See [gtsummary documentation about formatted table of regression model results](https://www.danieldsjoberg.com/gtsummary/articles/tbl_regression.html)
--   See [Quarto documentation about code chunk cross-references](https://quarto.org/docs/authoring/cross-references.html#code-listings)
-:::
-
--   [ ] Implement a logistic regression model based on description in the Quarto document ;
--   [ ] Create a table summarizing the odds ratios from the logistic regression model ;
--   [ ] Add a caption to the table ;
--   [ ] Assign a label to the table ;
--   [ ] Replace the placeholder text in bold with a cross-reference to the table ;
-
-> "The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference**."
-
-::: {.content-visible when-format="revealjs"}
-
-------------------------------------------------------------------------
-:::
 
 -   [ ] Display the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;
 -   [ ] Add a caption to the code chunk ;
 -   [ ] Assign a label to the code chunk ;
 -   [ ] Replace the placeholder text in bold with a cross-reference to the code chunk.
 
+The logistic regression model uses `death` as the reponse variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by @lst-test
+
+```{r}
+#| lst-label: lst-test
+#| lst-cap: R code
+
+coeffs <- glm(death ~ bmi + age,                        # <22>
+              subdf |> dplyr::filter(confirmed == "1"),
+              family = binomial)
+```
+
+22. Implement a logistic regression model based on description in the Quarto document.
+
+The results of the logistic regression model are summarized in the formatted regression table, which is presented in @tbl-3.
+
+```{r}
+#| label: tbl-3                                        # <25>
+#| tbl-cap: Formatted regression table                 # <24>
+
+gtsummary::tbl_regression(coeffs, exponentiate = TRUE) # <23>
+```
+
+23. Create a table summarizing the odds ratios from the logistic regression model.
+24. Add a caption to the table.
+25. Assign a label to the table.
+
+-   [ ] Replace the placeholder text in bold with a cross-reference to the table ;
+
+> "The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference**."
+
 ## Finalise your MS Word report
 
-::: callout-tip
-See [Quarto documentation about Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)
-:::
+```{.yaml}
+---
+title: My outbreak report
+author: Helene Langet
+date: last-modified
+date-format: long
 
--   [ ] Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report ;
--   [ ] Create your own template and apply it to your MS Word rendered report.
+format:
+  docx:
+    reference-doc: swisstph_template.docx # <23>
+    toc: true
+    number-sections: true
+    toc-depth: 2
+echo: false
+warning: false
+---
+```
+
+24. Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report.
+
+- [ ] Create your own template and apply it to your MS Word rendered report.

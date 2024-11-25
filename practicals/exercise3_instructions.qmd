@@ -19,7 +19,6 @@ format:
     default: true
     embed-resources: true
     code-link: true
-    code-overflow: wrap
     theme: cosmo
     toc: true
     number-sections: true
@@ -31,8 +30,6 @@ format:
     other-links:
       - text: df1.RData
         href: df1.RData
-      - text: df2.RData
-        href: df2.RData
       - text: swisstph_template.docx
         href: swisstph_template.docx
       - text: ✅ Correction
@@ -41,9 +38,6 @@ format:
       - text: exercise3.qmd
         icon: file-code
         href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise3.qmd
-      - text: correction
-        icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/tree/main/correction/exercise3_correction.qmd
     format-links: [pdf]
   docx:
     default: true
@@ -72,7 +66,6 @@ execute:
 resources:
   - exercise3_instructions.pdf
   - df1.RData
-  - df2.RData
 ---
 
 ## Overall objective
