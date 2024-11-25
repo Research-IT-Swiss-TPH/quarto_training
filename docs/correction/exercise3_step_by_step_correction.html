@@ -5,8 +5,8 @@
 <meta name="generator" content="quarto-1.4.553">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Hélène Langet">
-<meta name="dcterms.date" content="2024-11-24">
-<title>Quarto training – ⭐ Build a MS Word report</title>
+<meta name="dcterms.date" content="2024-11-25">
+<title>Quarto training - ⭐ Build a MS Word report</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4739,7 +4739,7 @@ vertical-align: -.125em;
     </div>
   </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <div class="quarto-title-block"><div><h1 class="title">⭐ Build a MS Word report</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+      <h1 class="title">⭐ Build a MS Word report</h1>
             <p class="subtitle lead">✅ Step-by-step correction</p>
                       </div>
   </div>
@@ -4764,7 +4764,7 @@ vertical-align: -.125em;
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">November 24, 2024</p>
+        <p class="date">November 25, 2024</p>
       </div>
     </div>
     
@@ -4878,6 +4878,7 @@ vertical-align: -.125em;
   <li><a href="#create-and-reference-publication-ready-tables" id="toc-create-and-reference-publication-ready-tables" class="nav-link" data-scroll-target="#create-and-reference-publication-ready-tables"><span class="header-section-number">5</span> Create and reference publication-ready tables</a></li>
   <li><a href="#customise-figures" id="toc-customise-figures" class="nav-link" data-scroll-target="#customise-figures"><span class="header-section-number">6</span> Customise figures</a></li>
   <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code"><span class="header-section-number">7</span> Code</a></li>
+  <li><a href="#finalise-your-ms-word-report" id="toc-finalise-your-ms-word-report" class="nav-link" data-scroll-target="#finalise-your-ms-word-report"><span class="header-section-number">8</span> Finalise your MS Word report</a></li>
   </ul><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="exercise3_step_by_step_correction.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="../practical/exercise3_instructions.html"><i class="bi bi-link-45deg"></i>Instructions</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -4887,106 +4888,85 @@ vertical-align: -.125em;
 </section><section id="setup-basic-elements-of-the-quarto-document" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="setup-basic-elements-of-the-quarto-document">
 <span class="header-section-number">2</span> Setup basic elements of the Quarto document</h2>
 <p>All these basic elements are part of the YAML header.</p>
-<ul class="task-list">
-<li><label><input type="checkbox" checked>Update the title of the Quarto document</label></li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My outbreak report&quot;</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul class="task-list">
-<li><label><input type="checkbox" checked>Put your name as author of the Quarto document</label></li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1"></a><span class="pp">---</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My outbreak report&quot;</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul class="task-list">
-<li><label><input type="checkbox" checked>Add the date <code>2023-12-31</code> to the Quarto document</label></li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="pp">---</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My outbreak report&quot;</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2023-12-31&quot;</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul class="task-list">
-<li><label><input type="checkbox" checked>Change the output format to generate a MS Word document</label></li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="pp">---</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My outbreak report&quot;</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2023-12-31&quot;</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> docx</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul class="task-list">
-<li><label><input type="checkbox" checked>Configure the Quarto document to hide code in the rendered MS Word document</label></li>
-</ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="pp">---</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My outbreak report&quot;</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2023-12-31&quot;</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> docx</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul class="task-list">
-<li><label><input type="checkbox" checked>Configure the Quarto document to hide warnings in the rendered MS Word document.</label></li>
-</ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1"></a><span class="pp">---</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My outbreak report&quot;</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2023-12-31&quot;</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="fu">editor</span><span class="kw">:</span><span class="at"> visual</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> docx</span></span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="improve-navigation-and-readability" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="improve-navigation-and-readability">
+<div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode numberSource yaml code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="pp">---</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-2" class="code-annotation-target"><a href="#annotated-cell-1-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My outbreak report</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-4" class="code-annotation-target"><a href="#annotated-cell-1-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2023-12-31&quot;</span></span>
+<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-6" class="code-annotation-target"><a href="#annotated-cell-1-6"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> docx</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-7" class="code-annotation-target"><a href="#annotated-cell-1-7"></a><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-8" class="code-annotation-target"><a href="#annotated-cell-1-8"></a><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="2" data-code-annotation="1">Update the title of the Quarto document.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="3" data-code-annotation="2">Put your name as author of the Quarto document.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="4" data-code-annotation="3">Add the date <code>2023-12-31</code> to the Quarto document.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="6" data-code-annotation="4">Change the output format to generate a MS Word document.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="7" data-code-annotation="5">Configure the Quarto document to hide code in the rendered MS Word document.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="8" data-code-annotation="6">Configure the Quarto document to hide warnings in the rendered MS Word document.</span>
+</dd>
+</dl></section><section id="improve-navigation-and-readability" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="improve-navigation-and-readability">
 <span class="header-section-number">3</span> Improve navigation and readability</h2>
 <ul class="task-list">
 <li><label><input type="checkbox" checked>Insert a table of contents to the Quarto document ;</label></li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1"></a><span class="pp">---</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My outbreak report&quot;</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2023-12-31&quot;</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="fu">editor</span><span class="kw">:</span><span class="at"> visual</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a></span>
-<span id="cb7-7"><a href="#cb7-7"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb7-8"><a href="#cb7-8"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
-<span id="cb7-9"><a href="#cb7-9"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb7-10"><a href="#cb7-10"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1"></a><span class="pp">---</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My outbreak report&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;2023-12-31&quot;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">editor</span><span class="kw">:</span><span class="at"> visual</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul class="task-list">
 <li><label><input type="checkbox" checked>Automatically number the different sections of the Quarto document ;</label></li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="pp">---</span></span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
-<span id="cb8-4"><a href="#cb8-4"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb8-6"><a href="#cb8-6"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1"></a><span class="pp">---</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul class="task-list">
 <li><label><input type="checkbox" checked>Configure the table of contents to only display two levels of section headings.</label></li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1"></a><span class="pp">---</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
-<span id="cb9-4"><a href="#cb9-4"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb9-5"><a href="#cb9-5"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="cb9-6"><a href="#cb9-6"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
-<span id="cb9-7"><a href="#cb9-7"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="implement-dynamic-calculations" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="implement-dynamic-calculations">
 <span class="header-section-number">4</span> Implement dynamic calculations</h2>
 <ul class="task-list">
 <li><label><input type="checkbox">Change the date <code>2023-12-31</code> to the date at which the Quarto document was last modified, and format this date to display it with the format <code>December 31, 2023</code> ;</label></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1"></a><span class="pp">---</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My outbreak report&quot;</span></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> last-modified</span></span>
-<span id="cb10-5"><a href="#cb10-5"></a><span class="fu">date-format</span><span class="kw">:</span><span class="at"> long</span></span>
-<span id="cb10-6"><a href="#cb10-6"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource yaml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="pp">---</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">&quot;My outbreak report&quot;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> last-modified</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="fu">date-format</span><span class="kw">:</span><span class="at"> long</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul class="task-list">
 <li><label><input type="checkbox">Replace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;</label></li>
 </ul>
@@ -5005,16 +4985,16 @@ vertical-align: -.125em;
 <li><label><input type="checkbox" checked>Create a table summarising the demographic characteristics and outcome frequency of all cases</label></li>
 </ul>
 <div class="cell">
-<details class="code-fold"><summary>Show the code</summary><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="in">subdf |&gt;</span></span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="in">  dplyr::select(age,</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="in">                sex,</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="in">                bmi,</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a><span class="in">                confirmed,</span></span>
-<span id="cb11-7"><a href="#cb11-7"></a><span class="in">                death) |&gt;</span></span>
-<span id="cb11-8"><a href="#cb11-8"></a><span class="in">  gtsummary::tbl_summary()</span></span>
-<span id="cb11-9"><a href="#cb11-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="in">subdf |&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="in">  dplyr::select(age,</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="in">                sex,</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="in">                bmi,</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="in">                confirmed,</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="in">                death) |&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="in">  gtsummary::tbl_summary()</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
 <div>
 <div id="goeuvbvjfj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#goeuvbvjfj table {
@@ -5475,18 +5455,18 @@ text-indent: 25px;
 <li><label><input type="checkbox" checked>Add a caption to the table</label></li>
 </ul>
 <div class="cell">
-<details class="code-fold"><summary>Show the code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="in">#| tbl-cap: Population characteristics</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a></span>
-<span id="cb12-4"><a href="#cb12-4"></a><span class="in">subdf |&gt;</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="in">  dplyr::select(age,</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="in">                sex,</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="in">                bmi,</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="in">                confirmed,</span></span>
-<span id="cb12-9"><a href="#cb12-9"></a><span class="in">                death) |&gt;</span></span>
-<span id="cb12-10"><a href="#cb12-10"></a><span class="in">  gtsummary::tbl_summary()</span></span>
-<span id="cb12-11"><a href="#cb12-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="in">```{r}</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="in">#| tbl-cap: Population characteristics</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="in">subdf |&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="in">  dplyr::select(age,</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="in">                sex,</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="in">                bmi,</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="in">                confirmed,</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="in">                death) |&gt;</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="in">  gtsummary::tbl_summary()</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
 <div>
 <div id="ownpxnvidr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>#ownpxnvidr table {
@@ -5948,19 +5928,19 @@ text-indent: 25px;
 <li><label><input type="checkbox" checked>Assign a label to the table ;</label></li>
 </ul>
 <div class="cell">
-<details class="code-fold"><summary>Show the code</summary><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="in">#| label: tbl-1</span></span>
-<span id="cb13-3"><a href="#cb13-3"></a><span class="in">#| tbl-cap: Population characteristics</span></span>
-<span id="cb13-4"><a href="#cb13-4"></a></span>
-<span id="cb13-5"><a href="#cb13-5"></a><span class="in">subdf |&gt;</span></span>
-<span id="cb13-6"><a href="#cb13-6"></a><span class="in">  dplyr::select(age,</span></span>
-<span id="cb13-7"><a href="#cb13-7"></a><span class="in">                sex,</span></span>
-<span id="cb13-8"><a href="#cb13-8"></a><span class="in">                bmi,</span></span>
-<span id="cb13-9"><a href="#cb13-9"></a><span class="in">                confirmed,</span></span>
-<span id="cb13-10"><a href="#cb13-10"></a><span class="in">                death) |&gt;</span></span>
-<span id="cb13-11"><a href="#cb13-11"></a><span class="in">  gtsummary::tbl_summary()</span></span>
-<span id="cb13-12"><a href="#cb13-12"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div id="tbl-1" class="cell quarto-float anchored">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="in">```{r}</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="in">#| label: tbl-1</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="in">#| tbl-cap: Population characteristics</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="in">subdf |&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="in">  dplyr::select(age,</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="in">                sex,</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="in">                bmi,</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="in">                confirmed,</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="in">                death) |&gt;</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="in">  gtsummary::tbl_summary()</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-1" class="cell quarto-float anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table 1: Population characteristics
 </figcaption><div aria-describedby="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -6501,6 +6481,32 @@ Tip
 <blockquote class="blockquote">
 <p>“The results of the logistic regression model are summarized in the formatted regression table, which is presented in <strong>cross-reference</strong>.”</p>
 </blockquote>
+<ul class="task-list">
+<li><label><input type="checkbox">Display the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;</label></li>
+<li><label><input type="checkbox">Add a caption to the code chunk ;</label></li>
+<li><label><input type="checkbox">Assign a label to the code chunk ;</label></li>
+<li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the code chunk.</label></li>
+</ul></section><section id="finalise-your-ms-word-report" class="level2" data-number="8"><h2 data-number="8" class="anchored" data-anchor-id="finalise-your-ms-word-report">
+<span class="header-section-number">8</span> Finalise your MS Word report</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>See <a href="https://quarto.org/docs/output-formats/ms-word-templates.html">Quarto documentation about Word templates</a></p>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Apply the Swiss TPH template <code>swisstph_template.docx</code> to your MS Word rendered report ;</label></li>
+<li><label><input type="checkbox">Create your own template and apply it to your MS Word rendered report.</label></li>
+</ul>
+
+
 </section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC-BY</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -6580,57 +6586,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');

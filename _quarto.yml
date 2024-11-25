@@ -50,6 +50,7 @@ toc: true
 number-sections: true
 code-link: true
 code-overflow: wrap
+code-annotations: true
 cache: true
   
 format:

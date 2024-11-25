@@ -8,7 +8,6 @@
 /practicals/exercise-3_correction_files
 /practicals/exercise-3_files
 /practicals/rsconnect
-*.pdf
 practicals/exercise 3_correction.docx
 practicals/exercise 3-correction.qmd
 /.quarto/
@@ -29,3 +28,4 @@ practicals/exercise 3-correction.qmd
 /correction/exercise 3_correction_files
 /correction/exercise-3_correction_cache
 /correction/exercise3_step_by_step_correction_cache
+/correction/exercise-3_correction_files

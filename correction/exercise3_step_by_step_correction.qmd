@@ -18,11 +18,6 @@ format:
   html:
     default: true
     embed-resources: true
-    code-link: true
-    code-fold: true
-    code-tools: true
-    code-summary: "Show the code"
-    code-overflow: wrap
     code-block-bg: true
     code-block-border-left: "#c03427"
     theme: cosmo
@@ -58,72 +53,26 @@ This page shows a step-by-step correction of Exercise 3.
 
 All these basic elements are part of the YAML header.
 
--   [X] Update the title of the Quarto document
-
 ```{.yaml}
 ---
-title: "My outbreak report"
+title: My outbreak report # <1>
+author: Helene Langet     # <2>
+date: "2023-12-31"        # <3>
+
+format: docx              # <4>
+echo: false               # <5>
+warning: false            # <6>
 ---
 ```
 
--   [X] Put your name as author of the Quarto document
+1. Update the title of the Quarto document.
+2. Put your name as author of the Quarto document.
+3. Add the date `2023-12-31` to the Quarto document.
+4. Change the output format to generate a MS Word document.
+5. Configure the Quarto document to hide code in the rendered MS Word document.
+6. Configure the Quarto document to hide warnings in the rendered MS Word document.
 
-```{.yaml}
----
-title: "My outbreak report"
-author: Helene Langet
----
-```
 
--   [X] Add the date `2023-12-31` to the Quarto document
-
-```{.yaml}
----
-title: "My outbreak report"
-author: Helene Langet
-date: "2023-12-31"
----
-```
-
--   [X] Change the output format to generate a MS Word document
-
-```{.yaml}
----
-title: "My outbreak report"
-author: Helene Langet
-date: "2023-12-31"
-
-format: docx
----
-```
-
--   [X] Configure the Quarto document to hide code in the rendered MS Word document
-
-```{.yaml}
----
-title: "My outbreak report"
-author: Helene Langet
-date: "2023-12-31"
-
-format: docx
-echo: false
----
-```
-
--   [X] Configure the Quarto document to hide warnings in the rendered MS Word document.
-
-```{.yaml}
----
-title: "My outbreak report"
-author: Helene Langet
-date: "2023-12-31"
-editor: visual
-
-format: docx
-echo: false
-warning: false
----
-```
 
 ## Improve navigation and readability
 
