@@ -68,7 +68,7 @@ resources:
   - df1.RData
 ---
 
-## Overall objective
+## Exercise objective
 
 -   You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document `exercise3.qmd` in RStudio.
 -   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.

@@ -29,7 +29,7 @@ format:
       hypothesis: 
         theme: classic
     code-links:
-      - text: Instructions
+      - text: 📋 Instructions
         href: ../practical/exercise3_instructions.html
     format-links: [pdf]
   pdf:

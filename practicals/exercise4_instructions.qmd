@@ -1,5 +1,5 @@
 ---
-title: ⭐⭐ Parametrise a report
+title: ⭐⭐ Parametrise a MS Word report
 subtitle: 📋 Instructions
 author:
   - name:
@@ -66,7 +66,7 @@ resources:
   - df2.RData
 ---
 
-## Overall objective
+## Exercise objective
 
 -   You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document `exercise3.qmd` in RStudio.
 -   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.
@@ -101,9 +101,3 @@ See [Quarto documentation about Word templates](https://quarto.org/docs/output-f
 
 -   [ ] Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report ;
 -   [ ] Create your own template and apply it to your MS Word rendered report.
-
-contents:
-          - 
-            text: 📋 Instructions ⭐⭐ 
-          - href: ./correction/exercise3_correction.qmd
-            text: ✅ Correction
