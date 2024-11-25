@@ -4,9 +4,9 @@
     "href": "practicals/exercise3_instructions.html",
     "title": "⭐ Build a MS Word report",
     "section": "",
-    "text": "You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
+    "text": "1 🎯 Exercise objective\n\nYou are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.\n\n\n\n2 Setup basic elements of the Quarto document\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about date formatting\nSee Quarto documentation about execution options\n\n\n\n\nUpdate the title of the Quarto document ;\nPut your name as author of the Quarto document ;\nAdd the date 2023-12-31 to the Quarto document ;\nChange the output format to generate a MS Word document ;\nConfigure the Quarto document to hide code in the rendered MS Word document ;\nConfigure the Quarto document to hide warnings in the rendered MS Word document.\n\n\n\n3 Create and reference publication-ready tables\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about summary tables\nSee Quarto documentation about table cross-references\n\nOther R packages include flextable and gt\n\n\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“cross-reference provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“while cross-reference compares the demographic characteristics of individuals who died versus those who are still alive”\n\n\n\n4 Customise figures\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\nSee Quarto documentation about figure options\n\n\n\n\nAdd a caption to the figure ;\nAssign a label to the figure ;\nReplace the placeholder text in bold with a cross-reference to the figure ;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with it\nBeautify the plot using ggplot options\n\n\n\n5 Code\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about formatted table of regression model results\nSee Quarto documentation about code chunk cross-references\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”\n\n\nDisplay the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;\nAdd a caption to the code chunk ;\nAssign a label to the code chunk ;\nReplace the placeholder text in bold with a cross-reference to the code chunk.\n\n\n\n6 Add references\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about citations\n\n\n\n\nAdd the bibliography file my_biblio.bib to your MS Word rendered report ;\nCite the reference text in your MS Word rendered report ;\nCreate your own bibliography file and apply it to your MS Word rendered report ;\n\n\n\n7 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.\n\n\n\n\n\nReuseCC-BY",
     "crumbs": [
-      "📙 Build a Word report"
+      "📙 Build a simple Word report"
     ]
   },
   {
@@ -83,8 +83,8 @@
     "objectID": "practicals/exercise3_instructions.html#finalise-your-ms-word-report",
     "href": "practicals/exercise3_instructions.html#finalise-your-ms-word-report",
     "title": "⭐ Build a MS Word report",
-    "section": "8 Finalise your MS Word report",
-    "text": "8 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.",
+    "section": "9 Finalise your MS Word report",
+    "text": "9 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.",
     "crumbs": [
       "📙 Build a Word report"
     ]
@@ -92,11 +92,11 @@
   {
     "objectID": "practicals/exercise4_instructions.html",
     "href": "practicals/exercise4_instructions.html",
-    "title": "⭐⭐ Parametrise a MS Word report",
+    "title": "⭐⭐ Add dynamic elements to reports",
     "section": "",
-    "text": "You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
+    "text": "1 🎯 Exercise objective\n\nYou are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.\n\n\n\n2 Improve navigation and readability\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about MS Word table of contents\n\n\n\n\nInsert a table of contents to the Quarto document ;\nAutomatically number the different sections of the Quarto document ;\nConfigure the table of contents to only display two levels of section headings.\n\n\n\n3 Implement dynamic calculations\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about dynamic dates\nSee Quarto documentation about inline code\n\n\n\n\nChange the date 2023-12-31 to the date at which the Quarto document was last modified, and format this date to display it with the format December 31, 2023 ;\nReplace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;\n\n\n“The outbreak ran from date to date”\n\n\nReplace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.\n\n\n“Over the studied period, there were N cases, including N confirmed cases and N confirmed deaths.”\n\n\n\n4 Create and reference publication-ready tables\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about summary tables\nSee Quarto documentation about table cross-references\n\nOther R packages include flextable and gt\n\n\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“cross-reference provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“while cross-reference compares the demographic characteristics of individuals who died versus those who are still alive”\n\n\n\n5 Customise figures\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\nSee Quarto documentation about figure options\n\n\n\n\nAdd a caption to the figure ;\nAssign a label to the figure ;\nReplace the placeholder text in bold with a cross-reference to the figure ;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with it\nBeautify the plot using ggplot options\n\n\n\n6 Code\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about formatted table of regression model results\nSee Quarto documentation about code chunk cross-references\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”\n\n\nDisplay the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;\nAdd a caption to the code chunk ;\nAssign a label to the code chunk ;\nReplace the placeholder text in bold with a cross-reference to the code chunk.\n\n\n\n7 Add references\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about citations\n\n\n\n\nAdd the bibliography file my_biblio.bib to your MS Word rendered report ;\nCite the reference text in your MS Word rendered report ;\nCreate your own bibliography file and apply it to your MS Word rendered report ;\n\n\n\n8 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.\n\n\n\n\n\nReuseCC-BY",
     "crumbs": [
-      "📙 Parametrise a Word report"
+      "📙 Add dynamic elements to reports"
     ]
   },
   {
@@ -164,7 +164,7 @@
     "href": "notes/python_r_short_demo.html#execute-python-code-and-access-r-objects-in-python",
     "title": "📘 Integrating R and Python in a single Quarto notebook environment",
     "section": "\n3 Execute Python code and access R objects in Python",
-    "text": "3 Execute Python code and access R objects in Python\n\n```{python}\nimport sys\nprint(f\"Python executable path: {sys.executable}\")\nprint(f\"Python version: {sys.version}\")\n```\n\nPython executable path: C:\\PROGRA~3\\ANACON~1\\python.exe\nPython version: 3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]\n\n\nBelow, we create a data frame in R using the built-in iris dataset, adding a new column called Sepal.Area to illustrate data manipulation in R. We use the dplyr package for simplicity and display the first few rows of the data frame using knitr::kable() for formatted output.\n\n```{r}\n#| label: tbl-1\n#| tbl-cap: Data frame created, manipulated and displayed using R\n\nlibrary(dplyr)\ndf1 &lt;- iris |&gt;\n  dplyr::mutate(Sepal.Area = Sepal.Length * Sepal.Width)\ndf1 |&gt;\n  head(5) |&gt;\n  knitr::kable()\n```\n\n\nTable 1: Data frame created, manipulated and displayed using R\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal.Area\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n17.85\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n14.70\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n15.04\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n14.26\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n18.00\n\n\n\n\n\n\n\n\nAs illustrated below, you can access R objects (here the data frame df1) as a Python object by calling them through the r. prefix. In this example, we access the R data frame df1 and manipulate it in Python by creating a new column, Petal.Area. Then, use {python} as the chunk language to specify Python chunks within your Quarto notebook, enabling integration and inter-language communication.\n\n```{python}\nimport pandas as pd\ndf2 = r.df1\ndf2[\"Petal.Area\"] = df2[\"Petal.Length\"] * df2[\"Petal.Width\"]\n```",
+    "text": "3 Execute Python code and access R objects in Python\n\n```{python}\nimport sys\nprint(f\"Python executable path: {sys.executable}\")\nprint(f\"Python version: {sys.version}\")\n```\n\nPython executable path: C:\\PROGRA~3\\ANACON~1\\python.exe\nPython version: 3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]\n\n\nBelow, we create a data frame in R using the built-in iris dataset, adding a new column called Sepal.Area to illustrate data manipulation in R. We use the dplyr package for simplicity and display the first few rows of the data frame using knitr::kable() for formatted output.\n\n```{r}\n#| label: tbl-1\n#| tbl-cap: Data frame created, manipulated and displayed using R\n\nlibrary(dplyr)\ndf1 &lt;- iris |&gt;\n  dplyr::mutate(Sepal.Area = Sepal.Length * Sepal.Width)\ndf1 |&gt;\n  head(5) |&gt;\n  knitr::kable()\n```\n\n\nTable 1: Data frame created, manipulated and displayed using R\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal.Area\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n17.85\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n14.70\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n15.04\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n14.26\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n18.00\n\n\n\n\n\n\n\n\nAs illustrated below, you can access R objects (here the data frame df1) as a Python object by calling them through the r. prefix. In this example, we access the R data frame df1 and manipulate it in Python by creating a new column, Petal.Area. Then, use {python} as the chunk language to specify Python chunks within your Quarto notebook.\n\n```{python}\nimport pandas as pd\ndf2 = r.df1\ndf2[\"Petal.Area\"] = df2[\"Petal.Length\"] * df2[\"Petal.Width\"]\n```",
     "crumbs": [
       "📘 Use R and Python"
     ]
@@ -174,7 +174,7 @@
     "href": "notes/python_r_short_demo.html#access-python-objects-in-r",
     "title": "📘 Integrating R and Python in a single Quarto notebook environment",
     "section": "\n4 Access Python objects in R",
-    "text": "4 Access Python objects in R\nYou can also pass Python objects back to R, which allows you to integrate Python-specific data manipulations into your R workflow. For instance, after modifying df2 in Python, we can access it in an R code chunk using the. As illustrated below, you can reciprocally access Python objects (here the data frame df2) as a R object by calling them through the py$ prefix. Here, we access the Python data frame df2 in R and display the first few rows to confirm the changes.\n\n```{r}\n#| label: tbl-2\n#| tbl-cap: Data frame read from a Python object and displayed using R\n\npy$df2 |&gt;\n  head(5) |&gt;\n  knitr::kable()\n```\n\n\nTable 2: Data frame read from a Python object and displayed using R\n\n\n\n\n\n\n\n\nIn this example, df2 created in Python is now accessible in R. The py$ prefix provides a direct way to retrieve Python objects from the global environment into R. This allows for flexible back-and-forth interactions between R and Python without needing to export or save intermediate files.",
+    "text": "4 Access Python objects in R\nAs illustrated below, you can reciprocally access Python objects (here the data frame df2) as a R object by calling them through the py$ prefix. Here, we access the Python data frame df2 in R and display the first few rows to confirm the changes.\n\n```{r}\n#| label: tbl-2\n#| tbl-cap: Data frame read from a Python object and displayed using R\n\npy$df2 |&gt;\n  head(5) |&gt;\n  knitr::kable()\n```\n\n\nTable 2: Data frame read from a Python object and displayed using R\n\n\n\n\n\n\n\n\nIn this example, df2 created in Python is now accessible in R. The py$ prefix provides a direct way to retrieve Python objects from the global environment into R. This allows for flexible back-and-forth interactions between R and Python without needing to export or save intermediate files.",
     "crumbs": [
       "📘 Use R and Python"
     ]
@@ -183,8 +183,8 @@
     "objectID": "notes/python_r_short_demo.html#best-practices",
     "href": "notes/python_r_short_demo.html#best-practices",
     "title": "📘 Integrating R and Python in a single Quarto notebook environment",
-    "section": "\n5 Best practices",
-    "text": "5 Best practices\n\nEnsure that data structures are compatible. For example, R data frames are automatically converted to pandas data frames in Python, but other complex R objects may not be directly accessible in Python.\nKeep in mind that transferring large data frames between R and Python may introduce some overhead. Where possible, limit the size of data passed across languages.",
+    "section": "\n4.1 Best practices",
+    "text": "4.1 Best practices\n\nEnsure that data structures are compatible. For example, R data frames are automatically converted to pandas data frames in Python, but other complex R objects may not be directly accessible in Python.\nKeep in mind that transferring large data frames between R and Python may introduce some overhead. Where possible, limit the size of data passed across languages.",
     "crumbs": [
       "📘 Use R and Python"
     ]
@@ -562,9 +562,9 @@
   {
     "objectID": "practicals/exercise3_instructions_slides.html#finalise-your-ms-word-report",
     "href": "practicals/exercise3_instructions_slides.html#finalise-your-ms-word-report",
-    "title": "⭐ Build a MS Word report",
-    "section": "8 Finalise your MS Word report",
-    "text": "8 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\nSee Quarto documentation about Word templates\n\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.\n\n\n\n\n\nSwiss TPH, Research-IT"
+    "title": "⭐⭐ Parametrise a MS Word report",
+    "section": "3 Finalise your MS Word report",
+    "text": "3 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\nSee Quarto documentation about Word templates\n\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.\n\n\n\n\n\nSwiss TPH, Research-IT"
   },
   {
     "objectID": "index.html",
@@ -640,13 +640,13 @@
     "objectID": "correction/exercise3_step_by_step_correction.html#finalise-your-ms-word-report",
     "href": "correction/exercise3_step_by_step_correction.html#finalise-your-ms-word-report",
     "title": "⭐ Build a MS Word report",
-    "section": "\n7 Finalise your MS Word report",
-    "text": "7 Finalise your MS Word report\n---\ntitle: My outbreak report\nauthor: Helene Langet\ndate: last-modified\ndate-format: long\n\nformat:\n  docx:\n    reference-doc: swisstph_template.docx\n    toc: true\n    number-sections: true\n    toc-depth: 2\necho: false\nwarning: false\n---\n\n\nCreate your own template and apply it to your MS Word rendered report."
+    "section": "\n8 Finalise your MS Word report",
+    "text": "8 Finalise your MS Word report\n---\ntitle: My outbreak report\nauthor: Helene Langet\ndate: last-modified\ndate-format: long\n\nformat:\n  docx:\n    reference-doc: swisstph_template.docx\n    toc: true\n    number-sections: true\n    toc-depth: 2\necho: false\nwarning: false\n---\n\n\nCreate your own template and apply it to your MS Word rendered report."
   },
   {
     "objectID": "practicals/exercise3_instructions_slides.html#parametrise-your-report",
     "href": "practicals/exercise3_instructions_slides.html#parametrise-your-report",
-    "title": "⭐⭐ Parametrise a report",
+    "title": "⭐⭐ Parametrise a MS Word report",
     "section": "2 Parametrise your report",
     "text": "2 Parametrise your report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about parameters\nSee Quarto documentation about rendering outputs using different parameters\n\n\n\n\n\nAdjust the report to focus on data for the year 2022 only ;\nYou were unfortunately provided with a previous erroneous version of the dataset. Update the report to use the dataset stored in df2.RData instead of the one stored in df1.RData ;\nRender 3 reports (1 report with df2.RData for the full outbreak period, 1 report with df1.RData for year 2021 only, 1 report with df2.RData for year 2021 only) adapting the following command which needs to be run in a terminal (ensure your working directory is the one where your Quarto document is stored and all file paths are correct).\n\nquarto render exercise3.qmd --out report_data1.docx -P dataset:df1.RData\n\n\n\n\n\n\nDiscussion question\n\n\nDiscuss the advantages and disadvantages of using R within Quarto compared to using R scripts."
   },
@@ -669,5 +669,69 @@
     "crumbs": [
       "📙 Build a Word report"
     ]
+  },
+  {
+    "objectID": "correction/exercise3_step_by_step_correction.html#add-references",
+    "href": "correction/exercise3_step_by_step_correction.html#add-references",
+    "title": "⭐ Build a MS Word report",
+    "section": "\n7 Add references",
+    "text": "7 Add references"
+  },
+  {
+    "objectID": "practicals/exercise3_instructions.html#add-references",
+    "href": "practicals/exercise3_instructions.html#add-references",
+    "title": "⭐ Build a MS Word report",
+    "section": "8 Add references",
+    "text": "8 Add references\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about citations\n\n\n\n\nAdd a bibliography to your MS Word rendered report ;",
+    "crumbs": [
+      "📙 Build a Word report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise5_instructions.html",
+    "href": "practicals/exercise5_instructions.html",
+    "title": "⭐⭐ Parametrise a MS Word report",
+    "section": "",
+    "text": "You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
+    "crumbs": [
+      "📙 Parametrise Quarto-rendered reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise5_instructions.html#exercise-objective",
+    "href": "practicals/exercise5_instructions.html#exercise-objective",
+    "title": "⭐⭐ Parametrise a MS Word report",
+    "section": "",
+    "text": "You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
+    "crumbs": [
+      "📙 Parametrise Quarto-rendered reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise5_instructions.html#parametrise-your-report",
+    "href": "practicals/exercise5_instructions.html#parametrise-your-report",
+    "title": "⭐⭐ Parametrise a MS Word report",
+    "section": "2 Parametrise your report",
+    "text": "2 Parametrise your report\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about parameters\nSee Quarto documentation about rendering outputs using different parameters\n\n\n\n\nAdjust the report to focus on data for the year 2022 only ;\nYou were unfortunately provided with a previous erroneous version of the dataset. Update the report to use the dataset stored in df2.RData instead of the one stored in df1.RData ;\nRender 3 reports (1 report with df2.RData for the full outbreak period, 1 report with df1.RData for year 2021 only, 1 report with df2.RData for year 2021 only) adapting the following command which needs to be run in a terminal (ensure your working directory is the one where your Quarto document is stored and all file paths are correct).\n\nquarto render exercise3.qmd --out report_data1.docx -P dataset:df1.RData\n\n\n\n\n\n\nDiscussion question\n\n\n\nDiscuss the advantages and disadvantages of using R within Quarto compared to using R scripts.",
+    "crumbs": [
+      "📙 Parametrise Quarto-rendered reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise5_instructions.html#finalise-your-ms-word-report",
+    "href": "practicals/exercise5_instructions.html#finalise-your-ms-word-report",
+    "title": "⭐⭐ Parametrise a MS Word report",
+    "section": "3 Finalise your MS Word report",
+    "text": "3 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.",
+    "crumbs": [
+      "📙 Parametrise Quarto-rendered reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise3_instructions_slides.html#exercise-objective",
+    "href": "practicals/exercise3_instructions_slides.html#exercise-objective",
+    "title": "⭐⭐ Parametrise a MS Word report",
+    "section": "1 🎯 Exercise objective",
+    "text": "1 🎯 Exercise objective\n\nYou are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress."
   }
 ]

@@ -51,7 +51,7 @@ This page provides a step-by-step correction for completing Exercise 3. To get t
 
 All these basic elements are part of the YAML header.
 
-```{.yaml}
+``` yaml
 ---
 title: My outbreak report # <1>
 author: Helene Langet     # <2>
@@ -63,16 +63,16 @@ warning: false            # <6>
 ---
 ```
 
-1. Update the title of the Quarto document.
-2. Put your name as author of the Quarto document.
-3. Add the date `2023-12-31` to the Quarto document.
-4. Change the output format to generate a MS Word document.
-5. Configure the Quarto document to hide code in the rendered MS Word document.
-6. Configure the Quarto document to hide warnings in the rendered MS Word document.
+1.  Update the title of the Quarto document.
+2.  Put your name as author of the Quarto document.
+3.  Add the date `2023-12-31` to the Quarto document.
+4.  Change the output format to generate a MS Word document.
+5.  Configure the Quarto document to hide code in the rendered MS Word document.
+6.  Configure the Quarto document to hide warnings in the rendered MS Word document.
 
 ## Improve navigation and readability
 
-```{.yaml}
+``` yaml
 ---
 title: My outbreak report
 author: Helene Langet
@@ -88,9 +88,9 @@ warning: false
 ---
 ```
 
-7. Insert a table of contents to the Quarto document.
-8. Automatically number the different sections of the Quarto document.
-9. Configure the table of contents to only display two levels of section headings.
+7.  Insert a table of contents to the Quarto document.
+8.  Automatically number the different sections of the Quarto document.
+9.  Configure the table of contents to only display two levels of section headings.
 
 ::: callout-important
 ### YAML indentation
@@ -102,7 +102,7 @@ YAML is a whitespace-sensitive language where indentation determines the structu
 
 ### In the YAML header
 
-```{.yaml}
+``` yaml
 ---
 title: My outbreak report
 author: Helene Langet
@@ -171,7 +171,7 @@ subdf <- df |>
 
 You can use packages such as `gtsummary`
 
-To install the package, run teh following command in your console. 
+To install the package, run teh following command in your console.
 
 ```{{r}}
 install.packages(gtsummary)
@@ -198,11 +198,11 @@ subdf |>                               #<12>
 13. Add a caption to the table.
 14. Assign a label to the table.
 
--   [X] Replace the placeholder text in bold with a cross-reference to the table ;
+-   [x] Replace the placeholder text in bold with a cross-reference to the table ;
 
-`` @tbl-1 `` provides a summary of the demographic characteristics and the outcome proportion for the overall population.
+`@tbl-1` provides a summary of the demographic characteristics and the outcome proportion for the overall population.
 
-> "*@tbl-1 provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
+> "@tbl-1 *provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
 
 ```{r}
 #| label: tbl-2                                               #<17>
@@ -223,7 +223,7 @@ subdf |>                                                      #<15>
 
 -   [ ] Replace the placeholder text in bold with a cross-reference to the table.
 
-`` @tbl-2 `` compares the demographic characteristics of individuals who died versus those who are still alive.
+`@tbl-2` compares the demographic characteristics of individuals who died versus those who are still alive.
 
 > "*..., while @tbl-2 compares the demographic characteristics of individuals who died versus those who are still alive.*"
 
@@ -315,9 +315,15 @@ gtsummary::tbl_regression(coeffs, exponentiate = TRUE) # <23>
 
 > "The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference**."
 
+## Add references
+
+![](images/clipboard-3622190034.png)
+
+![](images/clipboard-1750453379.png)
+
 ## Finalise your MS Word report
 
-```{.yaml}
+``` yaml
 ---
 title: My outbreak report
 author: Helene Langet
@@ -337,4 +343,4 @@ warning: false
 
 24. Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report.
 
-- [ ] Create your own template and apply it to your MS Word rendered report.
+-   [ ] Create your own template and apply it to your MS Word rendered report.

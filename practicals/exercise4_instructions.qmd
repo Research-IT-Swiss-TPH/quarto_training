@@ -1,5 +1,5 @@
 ---
-title: ⭐⭐ Parametrise a MS Word report
+title: ⭐⭐ Add dynamic elements to reports
 subtitle: 📋 Instructions
 author:
   - name:
@@ -30,8 +30,8 @@ format:
     other-links:
       - text: df1.RData
         href: df1.RData
-      - text: df2.RData
-        href: df2.RData
+      - text: swisstph_template.docx
+        href: swisstph_template.docx
       - text: ✅ Correction
         href: ../correction/exercise3_step_by_step_correction.html
     code-links:
@@ -39,6 +39,9 @@ format:
         icon: file-code
         href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise3.qmd
     format-links: [pdf]
+  docx:
+    default: true
+    toc: true
   pdf:
     default: true
     toc: true
@@ -61,39 +64,127 @@ execute:
   warning: false
     
 resources:
-  - exercise4_instructions.pdf
+  - exercise3_instructions.pdf
   - df1.RData
-  - df2.RData
 ---
 
-## Exercise objective
+# 🎯 Exercise objective
 
 -   You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document `exercise3.qmd` in RStudio.
 -   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.
 -   Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
 
-## Parametrise your report
+# Improve navigation and readability
 
 ::: callout-tip
--   See [Quarto documentation about parameters](https://quarto.org/docs/computations/parameters.html#knitr)
--   See [Quarto documentation about rendering outputs using different parameters](https://quarto.org/docs/computations/parameters.html#rendering)
+-   See [Quarto documentation about MS Word table of contents](https://quarto.org/docs/output-formats/ms-word.html#table-of-contents)
 :::
 
--   [ ] Adjust the report to focus on data for the year 2022 only ;
--   [ ] You were unfortunately provided with a previous erroneous version of the dataset. Update the report to use the dataset stored in `df2.RData` instead of the one stored in `df1.RData` ;
--   [ ] Render 3 reports (1 report with df2.RData for the full outbreak period, 1 report with df1.RData for year 2021 only, 1 report with df2.RData for year 2021 only) adapting the following command which needs to be run in a terminal (ensure your working directory is the one where your Quarto document is stored and all file paths are correct).
+-   [ ] Insert a table of contents to the Quarto document ;
+-   [ ] Automatically number the different sections of the Quarto document ;
+-   [ ] Configure the table of contents to only display two levels of section headings.
 
-```         
-quarto render exercise3.qmd --out report_data1.docx -P dataset:df1.RData
-```
+# Implement dynamic calculations
 
-::: callout-important
-### Discussion question
-
-Discuss the advantages and disadvantages of using R within Quarto compared to using R scripts.
+::: callout-tip
+-   See [Quarto documentation about dynamic dates](https://quarto.org/docs/reference/dates.html#date-parsing)
+-   See [Quarto documentation about inline code](https://quarto.org/docs/computations/inline-code.html)
 :::
 
-## Finalise your MS Word report
+-   [ ] Change the date `2023-12-31` to the date at which the Quarto document was last modified, and format this date to display it with the format `December 31, 2023` ;
+-   [ ] Replace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;
+
+> "*The outbreak ran from **date** to **date***"
+
+::: {.content-visible when-format="revealjs"}
+
+------------------------------------------------------------------------
+:::
+
+-   [ ] Replace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.
+
+> "*Over the studied period, there were **N** cases, including **N** confirmed cases and **N** confirmed deaths.*"
+
+# Create and reference publication-ready tables
+
+::: callout-tip
+-   See [gtsummary documentation about summary tables](https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html)
+-   See [Quarto documentation about table cross-references](https://quarto.org/docs/authoring/tables.html#cross-references)
+
+Other R packages include [flextable](https://davidgohel.github.io/flextable/) and [gt](https://gt.rstudio.com/)
+:::
+
+-   [ ] Create a table summarising the demographic characteristics and outcome frequency of all cases ;
+-   [ ] Add a caption to the table ;
+-   [ ] Assign a label to the table ;
+-   [ ] Replace the placeholder text in bold with a cross-reference to the table ;
+
+> "***cross-reference** provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
+
+::: {.content-visible when-format="revealjs"}
+
+------------------------------------------------------------------------
+:::
+
+-   [ ] Create a table summarising the demographic characteristics of individuals who died versus those who are still alive ;
+-   [ ] Add a caption to the table ;
+-   [ ] Assign a label to the table ;
+-   [ ] Replace the placeholder text in bold with a cross-reference to the table.
+
+> "*while **cross-reference** compares the demographic characteristics of individuals who died versus those who are still alive*"
+
+# Customise figures
+
+::: callout-tip
+-   See [Quarto documentation about figure cross-references](https://quarto.org/docs/authoring/cross-references.html#computations)
+-   See [Quarto documentation about figure options](https://quarto.org/docs/computations/execution-options.html#figure-options)
+:::
+
+-   [ ] Add a caption to the figure ;
+-   [ ] Assign a label to the figure ;
+-   [ ] Replace the placeholder text in bold with a cross-reference to the figure ;
+
+> "***cross-reference** illustrates the outbreak's progression, which can be divided into distinct phases.*"
+
+-   [ ] Adjust the dimensions of the figure until you are happy with it
+-   [ ] Beautify the plot using ggplot options
+
+# Code
+
+::: callout-tip
+-   See [gtsummary documentation about formatted table of regression model results](https://www.danieldsjoberg.com/gtsummary/articles/tbl_regression.html)
+-   See [Quarto documentation about code chunk cross-references](https://quarto.org/docs/authoring/cross-references.html#code-listings)
+:::
+
+-   [ ] Implement a logistic regression model based on description in the Quarto document ;
+-   [ ] Create a table summarizing the odds ratios from the logistic regression model ;
+-   [ ] Add a caption to the table ;
+-   [ ] Assign a label to the table ;
+-   [ ] Replace the placeholder text in bold with a cross-reference to the table ;
+
+> "The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference**."
+
+::: {.content-visible when-format="revealjs"}
+
+------------------------------------------------------------------------
+:::
+
+-   [ ] Display the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;
+-   [ ] Add a caption to the code chunk ;
+-   [ ] Assign a label to the code chunk ;
+-   [ ] Replace the placeholder text in bold with a cross-reference to the code chunk.
+
+# Add references
+
+::: callout-tip
+-   See [Quarto documentation about citations](https://quarto.org/docs/authoring/citations.html)
+:::
+
+-   [ ] Add the bibliography file `my_biblio.bib` to your MS Word rendered report ;
+-   [ ] Cite the reference `text` in your MS Word rendered report ;
+-   [ ] Create your own bibliography file and apply it to your MS Word rendered report ;
+
+# Finalise your MS Word report
 
 ::: callout-tip
 See [Quarto documentation about Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)

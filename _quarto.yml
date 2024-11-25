@@ -29,9 +29,11 @@ website:
       - 📘 Structure of Quarto notebooks
       - Running code in Quarto notebooks 🌱
       - href: ./practicals/exercise3_instructions.qmd
-        text: 📙 Build a Word report
+        text: 📙 Build a simple Word report
       - href: ./practicals/exercise4_instructions.qmd
-        text: 📙 Parametrise a Word report
+        text: 📙 Add dynamic elements to reports
+      - href: ./practicals/exercise5_instructions.qmd
+        text: 📙 Parametrise reports
       - href: ./notes/python_r_short_demo.qmd
         text: 📘 Use R and Python
       - text: 🧰 More resources
