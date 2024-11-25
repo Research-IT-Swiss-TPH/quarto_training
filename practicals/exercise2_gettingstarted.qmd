@@ -1,6 +1,6 @@
 ---
-title: 📙 Editing and rendering Quarto notebooks
-subtitle: 🌱 Getting started
+title: 🌱 Editing and rendering Quarto notebooks
+subtitle: 📋 Guided exercise
 author:
   - name:
       given: Hélène

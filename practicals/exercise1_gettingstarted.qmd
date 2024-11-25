@@ -1,6 +1,6 @@
 ---
-title: 📙 Create a Quarto notebook
-subtitle: 🌱 Getting started
+title: 🌱 Create a Quarto notebook
+subtitle: 📋 Guided exercise
 author:
   - name:
       given: Hélène

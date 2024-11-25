@@ -4789,13 +4789,7 @@ vertical-align: -.125em;
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/quarto_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">📘 Introduction to Quarto</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practicals/exercise1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">📙 Create a Quarto notebook 🌱</span></a>
+ <span class="menu-text">📘 Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -4805,8 +4799,17 @@ vertical-align: -.125em;
   </div>
 </li>
         <li class="sidebar-item">
- <span class="menu-text">Running code in Quarto notebooks 🌱</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../practicals/exercise1_gettingstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📙 Create a Quarto notebook</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../practicals/exercise2_gettingstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📙 Editing and rendering Quarto notebooks</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../practicals/exercise3_instructions.html" class="sidebar-item-text sidebar-link">
@@ -4862,26 +4865,23 @@ vertical-align: -.125em;
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
    
   <ul>
-<li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">1</span> 🎯 Learning objectives</a></li>
-  <li><a href="#setup-your-r-environment-for-python-integration" id="toc-setup-your-r-environment-for-python-integration" class="nav-link" data-scroll-target="#setup-your-r-environment-for-python-integration"><span class="header-section-number">2</span> Setup your R Environment for Python integration</a></li>
-  <li><a href="#execute-python-code-and-access-r-objects-in-python" id="toc-execute-python-code-and-access-r-objects-in-python" class="nav-link" data-scroll-target="#execute-python-code-and-access-r-objects-in-python"><span class="header-section-number">3</span> Execute Python code and access R objects in Python</a></li>
-  <li>
-<a href="#access-python-objects-in-r" id="toc-access-python-objects-in-r" class="nav-link" data-scroll-target="#access-python-objects-in-r"><span class="header-section-number">4</span> Access Python objects in R</a>
-  <ul class="collapse">
-<li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices"><span class="header-section-number">4.1</span> Best practices</a></li>
-  </ul>
-</li>
+<li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">1</span> Learning objectives 🎯</a></li>
+  <li><a href="#setup-your-r-environment" id="toc-setup-your-r-environment" class="nav-link" data-scroll-target="#setup-your-r-environment"><span class="header-section-number">2</span> Setup your R environment</a></li>
+  <li><a href="#execute-python-code" id="toc-execute-python-code" class="nav-link" data-scroll-target="#execute-python-code"><span class="header-section-number">3</span> Execute Python code</a></li>
+  <li><a href="#access-r-objects-in-python" id="toc-access-r-objects-in-python" class="nav-link" data-scroll-target="#access-r-objects-in-python"><span class="header-section-number">4</span> Access R objects in Python</a></li>
+  <li><a href="#access-python-objects-in-r" id="toc-access-python-objects-in-r" class="nav-link" data-scroll-target="#access-python-objects-in-r"><span class="header-section-number">5</span> Access Python objects in R</a></li>
+  <li><a href="#best-practices" id="toc-best-practices" class="nav-link" data-scroll-target="#best-practices"><span class="header-section-number">6</span> Best practices</a></li>
   </ul><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="python_r_short_demo.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="learning-objectives" class="level1" data-number="1"><h1 data-number="1">
-<span class="header-section-number">1</span> 🎯 Learning objectives</h1>
+<main class="content quarto-banner-title-block" id="quarto-document-content"><section id="learning-objectives" class="level2" data-number="1"><h2 data-number="1" class="anchored" data-anchor-id="learning-objectives">
+<span class="header-section-number">1</span> Learning objectives 🎯</h2>
 <ul>
 <li>Learn how to integrate Python in a Quarto notebook primarily using R code chunks ;</li>
 <li>Learn how to write and execute Python code chunks in a Quarto notebook ;</li>
 <li>Learn how to seamlessly share data frames and other objects between R and Python code chunks for a cohesive, mixed-language workflow.</li>
-</ul></section><section id="setup-your-r-environment-for-python-integration" class="level1" data-number="2"><h1 data-number="2">
-<span class="header-section-number">2</span> Setup your R Environment for Python integration</h1>
+</ul></section><section id="setup-your-r-environment" class="level2" data-number="2"><h2 data-number="2" class="anchored" data-anchor-id="setup-your-r-environment">
+<span class="header-section-number">2</span> Setup your R environment</h2>
 <p>To integrate Python within a Quarto notebook that primarily uses R code chunks (i.e., executed with the <code>knitr</code> engine), you will need the <code>reticulate</code> R package, which serves as a bridge between R and Python, allowing you to run Python code chunks alongside R and share objects between the two programming languages. This setup provides a powerful approach for combining R’s statistical capabilities with Python’s data manipulation and machine learning tools, enabling a robust, mixed-language workflow within Quarto.</p>
 <p>Install <code>reticulate</code> if it is not already installed.</p>
 <div class="cell">
@@ -4945,8 +4945,8 @@ numpy_version:  1.24.3
 NOTE: Python version was forced by RETICULATE_PYTHON_FALLBACK</code></pre>
 </div>
 </div>
-</section><section id="execute-python-code-and-access-r-objects-in-python" class="level1" data-number="3"><h1 data-number="3">
-<span class="header-section-number">3</span> Execute Python code and access R objects in Python</h1>
+</section><section id="execute-python-code" class="level2" data-number="3"><h2 data-number="3" class="anchored" data-anchor-id="execute-python-code">
+<span class="header-section-number">3</span> Execute Python code</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="in">```{python}</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a><span class="in">import sys</span></span>
@@ -4958,6 +4958,8 @@ NOTE: Python version was forced by RETICULATE_PYTHON_FALLBACK</code></pre>
 Python version: 3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]</code></pre>
 </div>
 </div>
+</section><section id="access-r-objects-in-python" class="level2" data-number="4"><h2 data-number="4" class="anchored" data-anchor-id="access-r-objects-in-python">
+<span class="header-section-number">4</span> Access R objects in Python</h2>
 <p>Below, we create a data frame in R using the built-in iris dataset, adding a new column called Sepal.Area to illustrate data manipulation in R. We use the dplyr package for simplicity and display the first few rows of the data frame using knitr::kable() for formatted output.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="in">```{r}</span></span>
@@ -5049,8 +5051,8 @@ Table 1: Data frame created, manipulated and displayed using R
 <span id="cb9-4"><a href="#cb9-4"></a><span class="in">df2[&quot;Petal.Area&quot;] = df2[&quot;Petal.Length&quot;] * df2[&quot;Petal.Width&quot;]</span></span>
 <span id="cb9-5"><a href="#cb9-5"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="access-python-objects-in-r" class="level1" data-number="4"><h1 data-number="4">
-<span class="header-section-number">4</span> Access Python objects in R</h1>
+</section><section id="access-python-objects-in-r" class="level2" data-number="5"><h2 data-number="5" class="anchored" data-anchor-id="access-python-objects-in-r">
+<span class="header-section-number">5</span> Access Python objects in R</h2>
 <p>As illustrated below, you can reciprocally access Python objects (here the data frame <code>df2</code>) as a R object by calling them through the <code>py$</code> prefix. Here, we access the Python data frame df2 in R and display the first few rows to confirm the changes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1"></a><span class="in">```{r}</span></span>
@@ -5073,8 +5075,8 @@ Table 2: Data frame read from a Python object and displayed using R
 </div>
 </div>
 <p>In this example, df2 created in Python is now accessible in R. The py$ prefix provides a direct way to retrieve Python objects from the global environment into R. This allows for flexible back-and-forth interactions between R and Python without needing to export or save intermediate files.</p>
-<section id="best-practices" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="best-practices">
-<span class="header-section-number">4.1</span> Best practices</h2>
+</section><section id="best-practices" class="level2" data-number="6"><h2 data-number="6" class="anchored" data-anchor-id="best-practices">
+<span class="header-section-number">6</span> Best practices</h2>
 <ul>
 <li>Ensure that data structures are compatible. For example, R data frames are automatically converted to pandas data frames in Python, but other complex R objects may not be directly accessible in Python.</li>
 <li>Keep in mind that transferring large data frames between R and Python may introduce some overhead. Where possible, limit the size of data passed across languages.</li>
@@ -5083,7 +5085,7 @@ Table 2: Data frame read from a Python object and displayed using R
 
 <!-- -->
 
-</section></section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC-BY</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC-BY</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -5581,13 +5583,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb11-36"><a href="#cb11-36"></a><span class="co">  warning: false</span></span>
 <span id="cb11-37"><a href="#cb11-37"></a><span class="co">---</span></span>
 <span id="cb11-38"><a href="#cb11-38"></a></span>
-<span id="cb11-39"><a href="#cb11-39"></a><span class="fu"># 🎯 Learning objectives</span></span>
+<span id="cb11-39"><a href="#cb11-39"></a><span class="fu">## Learning objectives 🎯 </span></span>
 <span id="cb11-40"><a href="#cb11-40"></a></span>
 <span id="cb11-41"><a href="#cb11-41"></a><span class="ss">- </span>Learn how to integrate Python in a Quarto notebook primarily using R code chunks ;</span>
 <span id="cb11-42"><a href="#cb11-42"></a><span class="ss">- </span>Learn how to write and execute Python code chunks in a Quarto notebook ;</span>
 <span id="cb11-43"><a href="#cb11-43"></a><span class="ss">- </span>Learn how to seamlessly share data frames and other objects between R and Python code chunks for a cohesive, mixed-language workflow.</span>
 <span id="cb11-44"><a href="#cb11-44"></a></span>
-<span id="cb11-45"><a href="#cb11-45"></a><span class="fu"># Setup your R Environment for Python integration</span></span>
+<span id="cb11-45"><a href="#cb11-45"></a><span class="fu">## Setup your R environment</span></span>
 <span id="cb11-46"><a href="#cb11-46"></a></span>
 <span id="cb11-47"><a href="#cb11-47"></a>To integrate Python within a Quarto notebook that primarily uses R code chunks (i.e., executed with the <span class="in">`knitr`</span> engine), you will need the <span class="in">`reticulate`</span> R package, which serves as a bridge between R and Python, allowing you to run Python code chunks alongside R and share objects between the two programming languages. This setup provides a powerful approach for combining R’s statistical capabilities with Python’s data manipulation and machine learning tools, enabling a robust, mixed-language workflow within Quarto.</span>
 <span id="cb11-48"><a href="#cb11-48"></a></span>
@@ -5624,7 +5626,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb11-87"><a href="#cb11-87"></a>reticulate<span class="sc">::</span><span class="fu">py_config</span>()</span>
 <span id="cb11-88"><a href="#cb11-88"></a><span class="in">```</span></span>
 <span id="cb11-89"><a href="#cb11-89"></a></span>
-<span id="cb11-90"><a href="#cb11-90"></a><span class="fu"># Execute Python code and access R objects in Python</span></span>
+<span id="cb11-90"><a href="#cb11-90"></a><span class="fu">## Execute Python code</span></span>
 <span id="cb11-91"><a href="#cb11-91"></a></span>
 <span id="cb11-94"><a href="#cb11-94"></a><span class="in">```{python}</span></span>
 <span id="cb11-95"><a href="#cb11-95"></a><span class="im">import</span> sys</span>
@@ -5632,47 +5634,49 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb11-97"><a href="#cb11-97"></a><span class="bu">print</span>(<span class="ss">f&quot;Python version: </span><span class="sc">{</span>sys<span class="sc">.</span>version<span class="sc">}</span><span class="ss">&quot;</span>)</span>
 <span id="cb11-98"><a href="#cb11-98"></a><span class="in">```</span></span>
 <span id="cb11-99"><a href="#cb11-99"></a></span>
-<span id="cb11-100"><a href="#cb11-100"></a>Below, we create a data frame in R using the built-in iris dataset, adding a new column called Sepal.Area to illustrate data manipulation in R. We use the dplyr package for simplicity and display the first few rows of the data frame using knitr::kable() for formatted output.</span>
+<span id="cb11-100"><a href="#cb11-100"></a><span class="fu">## Access R objects in Python</span></span>
 <span id="cb11-101"><a href="#cb11-101"></a></span>
-<span id="cb11-104"><a href="#cb11-104"></a><span class="in">```{r}</span></span>
-<span id="cb11-105"><a href="#cb11-105"></a><span class="co">#| label: tbl-1</span></span>
-<span id="cb11-106"><a href="#cb11-106"></a><span class="co">#| tbl-cap: Data frame created, manipulated and displayed using R</span></span>
-<span id="cb11-107"><a href="#cb11-107"></a></span>
-<span id="cb11-108"><a href="#cb11-108"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb11-109"><a href="#cb11-109"></a>df1 <span class="ot">&lt;-</span> iris <span class="sc">|&gt;</span></span>
-<span id="cb11-110"><a href="#cb11-110"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Sepal.Area =</span> Sepal.Length <span class="sc">*</span> Sepal.Width)</span>
-<span id="cb11-111"><a href="#cb11-111"></a>df1 <span class="sc">|&gt;</span></span>
-<span id="cb11-112"><a href="#cb11-112"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-113"><a href="#cb11-113"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
-<span id="cb11-114"><a href="#cb11-114"></a><span class="in">```</span></span>
-<span id="cb11-115"><a href="#cb11-115"></a></span>
-<span id="cb11-116"><a href="#cb11-116"></a>As illustrated below, you can access R objects (here the data frame <span class="in">`df1`</span>) as a Python object by calling them through the <span class="in">`r.`</span> prefix. In this example, we access the R data frame df1 and manipulate it in Python by creating a new column, Petal.Area. Then, use <span class="in">`{python}`</span> as the chunk language to specify Python chunks within your Quarto notebook.</span>
+<span id="cb11-102"><a href="#cb11-102"></a>Below, we create a data frame in R using the built-in iris dataset, adding a new column called Sepal.Area to illustrate data manipulation in R. We use the dplyr package for simplicity and display the first few rows of the data frame using knitr::kable() for formatted output.</span>
+<span id="cb11-103"><a href="#cb11-103"></a></span>
+<span id="cb11-106"><a href="#cb11-106"></a><span class="in">```{r}</span></span>
+<span id="cb11-107"><a href="#cb11-107"></a><span class="co">#| label: tbl-1</span></span>
+<span id="cb11-108"><a href="#cb11-108"></a><span class="co">#| tbl-cap: Data frame created, manipulated and displayed using R</span></span>
+<span id="cb11-109"><a href="#cb11-109"></a></span>
+<span id="cb11-110"><a href="#cb11-110"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb11-111"><a href="#cb11-111"></a>df1 <span class="ot">&lt;-</span> iris <span class="sc">|&gt;</span></span>
+<span id="cb11-112"><a href="#cb11-112"></a>  dplyr<span class="sc">::</span><span class="fu">mutate</span>(<span class="at">Sepal.Area =</span> Sepal.Length <span class="sc">*</span> Sepal.Width)</span>
+<span id="cb11-113"><a href="#cb11-113"></a>df1 <span class="sc">|&gt;</span></span>
+<span id="cb11-114"><a href="#cb11-114"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-115"><a href="#cb11-115"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb11-116"><a href="#cb11-116"></a><span class="in">```</span></span>
 <span id="cb11-117"><a href="#cb11-117"></a></span>
-<span id="cb11-120"><a href="#cb11-120"></a><span class="in">```{python}</span></span>
-<span id="cb11-121"><a href="#cb11-121"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb11-122"><a href="#cb11-122"></a>df2 <span class="op">=</span> r.df1</span>
-<span id="cb11-123"><a href="#cb11-123"></a>df2[<span class="st">&quot;Petal.Area&quot;</span>] <span class="op">=</span> df2[<span class="st">&quot;Petal.Length&quot;</span>] <span class="op">*</span> df2[<span class="st">&quot;Petal.Width&quot;</span>]</span>
-<span id="cb11-124"><a href="#cb11-124"></a><span class="in">```</span></span>
-<span id="cb11-125"><a href="#cb11-125"></a></span>
-<span id="cb11-126"><a href="#cb11-126"></a><span class="fu"># Access Python objects in R</span></span>
+<span id="cb11-118"><a href="#cb11-118"></a>As illustrated below, you can access R objects (here the data frame <span class="in">`df1`</span>) as a Python object by calling them through the <span class="in">`r.`</span> prefix. In this example, we access the R data frame df1 and manipulate it in Python by creating a new column, Petal.Area. Then, use <span class="in">`{python}`</span> as the chunk language to specify Python chunks within your Quarto notebook.</span>
+<span id="cb11-119"><a href="#cb11-119"></a></span>
+<span id="cb11-122"><a href="#cb11-122"></a><span class="in">```{python}</span></span>
+<span id="cb11-123"><a href="#cb11-123"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb11-124"><a href="#cb11-124"></a>df2 <span class="op">=</span> r.df1</span>
+<span id="cb11-125"><a href="#cb11-125"></a>df2[<span class="st">&quot;Petal.Area&quot;</span>] <span class="op">=</span> df2[<span class="st">&quot;Petal.Length&quot;</span>] <span class="op">*</span> df2[<span class="st">&quot;Petal.Width&quot;</span>]</span>
+<span id="cb11-126"><a href="#cb11-126"></a><span class="in">```</span></span>
 <span id="cb11-127"><a href="#cb11-127"></a></span>
-<span id="cb11-128"><a href="#cb11-128"></a>As illustrated below, you can reciprocally access Python objects (here the data frame <span class="in">`df2`</span>) as a R object by calling them through the <span class="in">`py$`</span> prefix. Here, we access the Python data frame df2 in R and display the first few rows to confirm the changes.</span>
+<span id="cb11-128"><a href="#cb11-128"></a><span class="fu">## Access Python objects in R</span></span>
 <span id="cb11-129"><a href="#cb11-129"></a></span>
-<span id="cb11-132"><a href="#cb11-132"></a><span class="in">```{r}</span></span>
-<span id="cb11-133"><a href="#cb11-133"></a><span class="co">#| label: tbl-2</span></span>
-<span id="cb11-134"><a href="#cb11-134"></a><span class="co">#| tbl-cap: Data frame read from a Python object and displayed using R</span></span>
-<span id="cb11-135"><a href="#cb11-135"></a></span>
-<span id="cb11-136"><a href="#cb11-136"></a>py<span class="sc">$</span>df2 <span class="sc">|&gt;</span></span>
-<span id="cb11-137"><a href="#cb11-137"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">|&gt;</span></span>
-<span id="cb11-138"><a href="#cb11-138"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
-<span id="cb11-139"><a href="#cb11-139"></a><span class="in">```</span></span>
-<span id="cb11-140"><a href="#cb11-140"></a></span>
-<span id="cb11-141"><a href="#cb11-141"></a>In this example, df2 created in Python is now accessible in R. The py$ prefix provides a direct way to retrieve Python objects from the global environment into R. This allows for flexible back-and-forth interactions between R and Python without needing to export or save intermediate files.</span>
+<span id="cb11-130"><a href="#cb11-130"></a>As illustrated below, you can reciprocally access Python objects (here the data frame <span class="in">`df2`</span>) as a R object by calling them through the <span class="in">`py$`</span> prefix. Here, we access the Python data frame df2 in R and display the first few rows to confirm the changes.</span>
+<span id="cb11-131"><a href="#cb11-131"></a></span>
+<span id="cb11-134"><a href="#cb11-134"></a><span class="in">```{r}</span></span>
+<span id="cb11-135"><a href="#cb11-135"></a><span class="co">#| label: tbl-2</span></span>
+<span id="cb11-136"><a href="#cb11-136"></a><span class="co">#| tbl-cap: Data frame read from a Python object and displayed using R</span></span>
+<span id="cb11-137"><a href="#cb11-137"></a></span>
+<span id="cb11-138"><a href="#cb11-138"></a>py<span class="sc">$</span>df2 <span class="sc">|&gt;</span></span>
+<span id="cb11-139"><a href="#cb11-139"></a>  <span class="fu">head</span>(<span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb11-140"><a href="#cb11-140"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb11-141"><a href="#cb11-141"></a><span class="in">```</span></span>
 <span id="cb11-142"><a href="#cb11-142"></a></span>
-<span id="cb11-143"><a href="#cb11-143"></a><span class="fu">## Best practices</span></span>
+<span id="cb11-143"><a href="#cb11-143"></a>In this example, df2 created in Python is now accessible in R. The py$ prefix provides a direct way to retrieve Python objects from the global environment into R. This allows for flexible back-and-forth interactions between R and Python without needing to export or save intermediate files.</span>
 <span id="cb11-144"><a href="#cb11-144"></a></span>
-<span id="cb11-145"><a href="#cb11-145"></a><span class="ss">* </span>Ensure that data structures are compatible. For example, R data frames are automatically converted to pandas data frames in Python, but other complex R objects may not be directly accessible in Python.</span>
-<span id="cb11-146"><a href="#cb11-146"></a><span class="ss">* </span>Keep in mind that transferring large data frames between R and Python may introduce some overhead. Where possible, limit the size of data passed across languages.</span>
+<span id="cb11-145"><a href="#cb11-145"></a><span class="fu">## Best practices</span></span>
+<span id="cb11-146"><a href="#cb11-146"></a></span>
+<span id="cb11-147"><a href="#cb11-147"></a><span class="ss">* </span>Ensure that data structures are compatible. For example, R data frames are automatically converted to pandas data frames in Python, but other complex R objects may not be directly accessible in Python.</span>
+<span id="cb11-148"><a href="#cb11-148"></a><span class="ss">* </span>Keep in mind that transferring large data frames between R and Python may introduce some overhead. Where possible, limit the size of data passed across languages.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

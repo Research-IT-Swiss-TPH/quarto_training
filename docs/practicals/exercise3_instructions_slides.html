@@ -444,8 +444,8 @@
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Hélène Langet">
-  <meta name="dcterms.date" content="2024-11-20">
-  <title>Quarto training - ⭐ Build a MS Word report</title>
+  <meta name="dcterms.date" content="2024-11-25">
+  <title>Quarto training - ⭐⭐ Add dynamic elements to your report</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -1145,7 +1145,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">⭐ Build a MS Word report</h1>
+  <h1 class="title">⭐⭐ Add dynamic elements to your report</h1>
   <p class="subtitle">📋 Instructions</p>
 
 <div class="quarto-title-authors">
@@ -1162,62 +1162,43 @@ Hélène Langet <a href="https://orcid.org/0000-0002-6758-2397" class="quarto-ti
     </div>
 </div>
 
-  <p class="date">2024-11-20</p>
+  <p class="date">2024-11-25</p>
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#/overall-objective" id="/toc-overall-objective"><span class="header-section-number">1</span> Overall objective</a></li>
-<li><a href="#/setup-basic-elements-of-the-quarto-document" id="/toc-setup-basic-elements-of-the-quarto-document"><span class="header-section-number">2</span> Setup basic elements of the Quarto document</a></li>
-<li><a href="#/improve-navigation-and-readability" id="/toc-improve-navigation-and-readability"><span class="header-section-number">3</span> Improve navigation and readability</a></li>
-<li><a href="#/implement-dynamic-calculations" id="/toc-implement-dynamic-calculations"><span class="header-section-number">4</span> Implement dynamic calculations</a></li>
+<li><a href="#/exercise-objectives" id="/toc-exercise-objectives"><span class="header-section-number">1</span> 🎯 Exercise objectives</a></li>
+<li><a href="#/improve-navigation-and-readability" id="/toc-improve-navigation-and-readability"><span class="header-section-number">2</span> Improve navigation and readability</a></li>
+<li><a href="#/implement-dynamic-calculations" id="/toc-implement-dynamic-calculations"><span class="header-section-number">3</span> Implement dynamic calculations</a>
+<ul>
 <li></li>
-<li><a href="#/create-and-reference-publication-ready-tables" id="/toc-create-and-reference-publication-ready-tables"><span class="header-section-number">5</span> Create and reference publication-ready tables</a></li>
+</ul></li>
+<li><a href="#/create-and-reference-publication-ready-tables" id="/toc-create-and-reference-publication-ready-tables"><span class="header-section-number">4</span> Create and reference publication-ready tables</a>
+<ul>
 <li></li>
-<li><a href="#/customise-figures" id="/toc-customise-figures"><span class="header-section-number">6</span> Customise figures</a></li>
-<li><a href="#/code" id="/toc-code"><span class="header-section-number">7</span> Code</a></li>
+</ul></li>
+<li><a href="#/customise-figures" id="/toc-customise-figures"><span class="header-section-number">5</span> Customise figures</a></li>
+<li><a href="#/code" id="/toc-code"><span class="header-section-number">6</span> Code</a>
+<ul>
 <li></li>
+</ul></li>
+<li><a href="#/add-references" id="/toc-add-references"><span class="header-section-number">7</span> Add references</a></li>
 <li><a href="#/finalise-your-ms-word-report" id="/toc-finalise-your-ms-word-report"><span class="header-section-number">8</span> Finalise your MS Word report</a></li>
 </ul>
 </nav>
 </section>
-<section id="overall-objective" class="slide level2" data-number="1">
-<h2><span class="header-section-number">1</span> Overall objective</h2>
+<section id="exercise-objectives" class="title-slide slide level1 center" data-number="1">
+<h1><span class="header-section-number">1</span> 🎯 Exercise objectives</h1>
 <ul>
-<li>You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document <code>exercise3.qmd</code> in RStudio.</li>
+<li>This exercise builds on the previous exercise where you learnt to <a href="./exercise3_instructions.html">build a simple MS Word report ⭐</a>;</li>
+<li>Open the Quarto document <code>exercise4.qmd</code> in RStudio;</li>
 <li>All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.</li>
 <li>Complete each of the following tasks and render the document after each task or set of tasks to track your progress.</li>
 </ul>
 </section>
-<section id="setup-basic-elements-of-the-quarto-document" class="slide level2" data-number="2">
-<h2><span class="header-section-number">2</span> Setup basic elements of the Quarto document</h2>
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Tip</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li>See <a href="https://quarto.org/docs/reference/dates.html#date-formatting">Quarto documentation about date formatting</a></li>
-<li>See <a href="https://quarto.org/docs/computations/execution-options.html">Quarto documentation about execution options</a></li>
-</ul>
-</div>
-</div>
-</div>
-<ul class="task-list">
-<li><label><input type="checkbox">Update the title of the Quarto document ;</label></li>
-<li><label><input type="checkbox">Put your name as author of the Quarto document ;</label></li>
-<li><label><input type="checkbox">Add the date <code>2023-12-31</code> to the Quarto document ;</label></li>
-<li><label><input type="checkbox">Change the output format to generate a MS Word document ;</label></li>
-<li><label><input type="checkbox">Configure the Quarto document to hide code in the rendered MS Word document ;</label></li>
-<li><label><input type="checkbox">Configure the Quarto document to hide warnings in the rendered MS Word document.</label></li>
-</ul>
-</section>
-<section id="improve-navigation-and-readability" class="slide level2" data-number="3">
-<h2><span class="header-section-number">3</span> Improve navigation and readability</h2>
+
+<section id="improve-navigation-and-readability" class="title-slide slide level1 center" data-number="2">
+<h1><span class="header-section-number">2</span> Improve navigation and readability</h1>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1239,8 +1220,10 @@ Hélène Langet <a href="https://orcid.org/0000-0002-6758-2397" class="quarto-ti
 <li><label><input type="checkbox">Configure the table of contents to only display two levels of section headings.</label></li>
 </ul>
 </section>
-<section id="implement-dynamic-calculations" class="slide level2" data-number="4">
-<h2><span class="header-section-number">4</span> Implement dynamic calculations</h2>
+
+<section>
+<section id="implement-dynamic-calculations" class="title-slide slide level1 center" data-number="3">
+<h1><span class="header-section-number">3</span> Implement dynamic calculations</h1>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1273,9 +1256,10 @@ Hélène Langet <a href="https://orcid.org/0000-0002-6758-2397" class="quarto-ti
 <blockquote>
 <p>“<em>Over the studied period, there were <strong>N</strong> cases, including <strong>N</strong> confirmed cases and <strong>N</strong> confirmed deaths.</em>”</p>
 </blockquote>
-</section>
-<section id="create-and-reference-publication-ready-tables" class="slide level2" data-number="5">
-<h2><span class="header-section-number">5</span> Create and reference publication-ready tables</h2>
+</section></section>
+<section>
+<section id="create-and-reference-publication-ready-tables" class="title-slide slide level1 center" data-number="4">
+<h1><span class="header-section-number">4</span> Create and reference publication-ready tables</h1>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1314,9 +1298,9 @@ Hélène Langet <a href="https://orcid.org/0000-0002-6758-2397" class="quarto-ti
 <blockquote>
 <p>“<em>while <strong>cross-reference</strong> compares the demographic characteristics of individuals who died versus those who are still alive</em>”</p>
 </blockquote>
-</section>
-<section id="customise-figures" class="slide level2" data-number="6">
-<h2><span class="header-section-number">6</span> Customise figures</h2>
+</section></section>
+<section id="customise-figures" class="title-slide slide level1 center" data-number="5">
+<h1><span class="header-section-number">5</span> Customise figures</h1>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1346,8 +1330,10 @@ Hélène Langet <a href="https://orcid.org/0000-0002-6758-2397" class="quarto-ti
 <li><label><input type="checkbox">Beautify the plot using ggplot options</label></li>
 </ul>
 </section>
-<section id="code" class="slide level2" data-number="7">
-<h2><span class="header-section-number">7</span> Code</h2>
+
+<section>
+<section id="code" class="title-slide slide level1 center" data-number="6">
+<h1><span class="header-section-number">6</span> Code</h1>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -1383,9 +1369,33 @@ Hélène Langet <a href="https://orcid.org/0000-0002-6758-2397" class="quarto-ti
 <li><label><input type="checkbox">Assign a label to the code chunk ;</label></li>
 <li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the code chunk.</label></li>
 </ul>
+</section></section>
+<section id="add-references" class="title-slide slide level1 center" data-number="7">
+<h1><span class="header-section-number">7</span> Add references</h1>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>See <a href="https://quarto.org/docs/authoring/citations.html">Quarto documentation about citations</a></li>
+</ul>
+</div>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Add the bibliography file <code>my_biblio.bib</code> to your MS Word rendered report ;</label></li>
+<li><label><input type="checkbox">Cite the reference <code>text</code> in your MS Word rendered report ;</label></li>
+<li><label><input type="checkbox">Create your own bibliography file and apply it to your MS Word rendered report ;</label></li>
+</ul>
 </section>
-<section id="finalise-your-ms-word-report" class="slide level2" data-number="8">
-<h2><span class="header-section-number">8</span> Finalise your MS Word report</h2>
+
+<section id="finalise-your-ms-word-report" class="title-slide slide level1 center" data-number="8">
+<h1><span class="header-section-number">8</span> Finalise your MS Word report</h1>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -2603,6 +2613,119 @@ window.QuartoSupport = function () {
           }
         });
       }
+          let selectedAnnoteEl;
+          const selectorForAnnotation = ( cell, annotation) => {
+            let cellAttr = 'data-code-cell="' + cell + '"';
+            let lineAttr = 'data-code-annotation="' +  annotation + '"';
+            const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+            return selector;
+          }
+          const selectCodeLines = (annoteEl) => {
+            const doc = window.document;
+            const targetCell = annoteEl.getAttribute("data-target-cell");
+            const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+            const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+            const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+            const lineIds = lines.map((line) => {
+              return targetCell + "-" + line;
+            })
+            let top = null;
+            let height = null;
+            let parent = null;
+            if (lineIds.length > 0) {
+                //compute the position of the single el (top and bottom and make a div)
+                const el = window.document.getElementById(lineIds[0]);
+                top = el.offsetTop;
+                height = el.offsetHeight;
+                parent = el.parentElement.parentElement;
+              if (lineIds.length > 1) {
+                const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+                const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+                height = bottom - top;
+              }
+              if (top !== null && height !== null && parent !== null) {
+                // cook up a div (if necessary) and position it 
+                let div = window.document.getElementById("code-annotation-line-highlight");
+                if (div === null) {
+                  div = window.document.createElement("div");
+                  div.setAttribute("id", "code-annotation-line-highlight");
+                  div.style.position = 'absolute';
+                  parent.appendChild(div);
+                }
+                div.style.top = top - 2 + "px";
+                div.style.height = height + 4 + "px";
+                div.style.left = 0;
+                let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+                if (gutterDiv === null) {
+                  gutterDiv = window.document.createElement("div");
+                  gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                  gutterDiv.style.position = 'absolute';
+                  const codeCell = window.document.getElementById(targetCell);
+                  const gutter = codeCell.querySelector('.code-annotation-gutter');
+                  gutter.appendChild(gutterDiv);
+                }
+                gutterDiv.style.top = top - 2 + "px";
+                gutterDiv.style.height = height + 4 + "px";
+              }
+              selectedAnnoteEl = annoteEl;
+            }
+          };
+          const unselectCodeLines = () => {
+            const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+            elementsIds.forEach((elId) => {
+              const div = window.document.getElementById(elId);
+              if (div) {
+                div.remove();
+              }
+            });
+            selectedAnnoteEl = undefined;
+          };
+            // Handle positioning of the toggle
+        window.addEventListener(
+          "resize",
+          throttle(() => {
+            elRect = undefined;
+            if (selectedAnnoteEl) {
+              selectCodeLines(selectedAnnoteEl);
+            }
+          }, 10)
+        );
+        function throttle(fn, ms) {
+        let throttle = false;
+        let timer;
+          return (...args) => {
+            if(!throttle) { // first call gets through
+                fn.apply(this, args);
+                throttle = true;
+            } else { // all the others get throttled
+                if(timer) clearTimeout(timer); // cancel #2
+                timer = setTimeout(() => {
+                  fn.apply(this, args);
+                  timer = throttle = false;
+                }, ms);
+            }
+          };
+        }
+          // Attach click handler to the DT
+          const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+          for (const annoteDlNode of annoteDls) {
+            annoteDlNode.addEventListener('click', (event) => {
+              const clickedEl = event.target;
+              if (clickedEl !== selectedAnnoteEl) {
+                unselectCodeLines();
+                const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+                if (activeEl) {
+                  activeEl.classList.remove('code-annotation-active');
+                }
+                selectCodeLines(clickedEl);
+                clickedEl.classList.add('code-annotation-active');
+              } else {
+                // Unselect the line
+                unselectCodeLines();
+                clickedEl.classList.remove('code-annotation-active');
+              }
+            });
+          }
       const findCites = (el) => {
         const parentEl = el.parentElement;
         if (parentEl) {

@@ -7,7 +7,7 @@
 <meta name="author" content="Hélène Langet">
 <meta name="author" content="Zhihan Zhu">
 <meta name="dcterms.date" content="2024-11-25">
-<title>Quarto training - 📙 Editing and rendering Quarto notebooks</title>
+<title>Quarto training - 🌱 Editing and rendering Quarto notebooks</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4740,8 +4740,8 @@ vertical-align: -.125em;
     </div>
   </nav></header><!-- content --><header id="title-block-header" class="quarto-title-block default page-columns page-full"><div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">📙 Editing and rendering Quarto notebooks</h1>
-            <p class="subtitle lead">🌱 Getting started</p>
+      <h1 class="title">🌱 Editing and rendering Quarto notebooks</h1>
+            <p class="subtitle lead">📋 Guided exercise</p>
                       </div>
   </div>
     
@@ -4799,19 +4799,19 @@ vertical-align: -.125em;
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/quarto_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">📘 Introduction to Quarto</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../practicals/exercise1_gettingstarted.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">📙 Create a Quarto notebook</span></a>
+ <span class="menu-text">📘 Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/notebook_structure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">📘 Structure of Quarto notebooks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../practicals/exercise1_gettingstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📙 Create a Quarto notebook</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -5232,7 +5232,42 @@ editor: visual
 </ul>
 
 
-</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC-BY</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC-BY</div></div></section></div></main><!-- /main --><script>
+  // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+  // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+  // slide changes (different for each slide format).
+  (function () {
+    // dispatch for htmlwidgets
+    function fireSlideEnter() {
+      const event = window.document.createEvent("Event");
+      event.initEvent("slideenter", true, true);
+      window.document.dispatchEvent(event);
+    }
+
+    function fireSlideChanged(previousSlide, currentSlide) {
+      fireSlideEnter();
+
+      // dispatch for shiny
+      if (window.jQuery) {
+        if (previousSlide) {
+          window.jQuery(previousSlide).trigger("hidden");
+        }
+        if (currentSlide) {
+          window.jQuery(currentSlide).trigger("shown");
+        }
+      }
+    }
+
+    // hookup for slidy
+    if (window.w3c_slidy) {
+      window.w3c_slidy.add_observer(function (slide_num) {
+        // slide_num starts at position 1
+        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+      });
+    }
+
+  })();
+</script><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");

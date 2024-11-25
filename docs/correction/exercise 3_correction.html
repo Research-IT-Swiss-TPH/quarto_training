@@ -157,49 +157,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../notes/quarto_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">📘 Introduction to Quarto</span></a>
+ <span class="menu-text">📘 Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../notes/create_first_quarto_doc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">📙 Create a Quarto notebook 🌱</span></a>
+  <a href="../notes/notebook_structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📘 Structure of Quarto notebooks</span></a>
   </div>
 </li>
         <li class="sidebar-item">
- <span class="menu-text">📘 Structure of Quarto notebooks</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../practicals/exercise1_gettingstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📙 Create a Quarto notebook</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
- <span class="menu-text">Running code in Quarto notebooks 🌱</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../practicals/exercise2_gettingstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📙 Editing and rendering Quarto notebooks</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../practicals/exercise3_instructions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">📙 Build a Word report</span></a>
+ <span class="menu-text">📙 Create a simple Word report</span></a>
   </div>
 </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false">
- <span class="menu-text">📙 Parametrise a Word report</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../practicals/exercise4_instructions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">📋 Instructions ⭐⭐</span></a>
+ <span class="menu-text">📙 Add dynamic elements to your report</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href=".././correction/exercise3_correction.qmd" class="sidebar-item-text sidebar-link">
- <span class="menu-text">✅ Correction</span></a>
+  <a href="../practicals/exercise5_instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📙 Parametrise your report</span></a>
   </div>
-</li>
-      </ul>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
@@ -209,13 +204,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="true">
  <span class="menu-text">🧰 More resources</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="https://posit-conf-2024.github.io/quarto-websites/" class="sidebar-item-text sidebar-link">
@@ -1330,7 +1325,7 @@ Figure&nbsp;1: Weekly count of all cases, confirmed cases and deaths
 Listing&nbsp;1: R code
 </figcaption><div aria-describedby="lst-test-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="sourceCode" id="lst-test"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">coeffs</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/glm.html">glm</a></span><span class="op">(</span><span class="va">death</span> <span class="op">~</span> <span class="va">bmi</span> <span class="op">+</span> <span class="va">age</span>,</span>
-<span>              <span class="va">subdf</span> <span class="op">|&gt;</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/dplyr/man/filter.html">filter</a></span><span class="op">(</span><span class="va">confirmed</span> <span class="op">==</span> <span class="st">"1"</span><span class="op">)</span>,</span>
+<span>              <span class="va">subdf</span> <span class="op">|&gt;</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">confirmed</span> <span class="op">==</span> <span class="st">"1"</span><span class="op">)</span>,</span>
 <span>              family <span class="op">=</span> <span class="va">binomial</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </figure>
@@ -2043,16 +2038,7 @@ Table&nbsp;3: Formatted regression table
 </div>
 
 
-</section><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{langet2024,
-  author = {Langet, Helene},
-  title = {Swiss {TPH} {Quarto} Training},
-  date = {2024-09-13},
-  langid = {en}
-}
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-langet2024" class="csl-entry quarto-appendix-citeas" role="listitem">
-Langet, Helene. 2024. <span>“Swiss TPH Quarto Training.”</span>
-September 13, 2024.
-</div></div></section></div></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");

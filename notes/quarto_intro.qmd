@@ -14,16 +14,6 @@ date: last-modified
 editor: source
 
 format:
-  revealjs:
-    default: true
-    embed-resources: true
-    logo: ../images/swisstph_logo_compact.png
-    css: ../css/logo.css
-    footer: "Swiss TPH, Research-IT"
-    code-overflow: wrap
-    smaller: true
-    slide-number: true
-    show-slide-number: all
   html:
     default: true
     embed-resources: true
@@ -37,6 +27,16 @@ format:
     comments:
       hypothesis: 
         theme: classic
+  revealjs:
+    default: true
+    embed-resources: true
+    logo: ../images/swisstph_logo_compact.png
+    css: ../css/logo.css
+    footer: "Swiss TPH, Research-IT"
+    code-overflow: wrap
+    smaller: true
+    slide-number: true
+    show-slide-number: all
     
 execute:
   echo: fenced

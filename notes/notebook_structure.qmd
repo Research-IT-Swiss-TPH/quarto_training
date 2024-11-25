@@ -59,7 +59,7 @@ execute:
   warning: false
   
 resources:
-  - _create_first_quarto_doc.pdf  
+  - notebook_structure.pdf  
 ---
 
 ## 🎯 Learning objectives
