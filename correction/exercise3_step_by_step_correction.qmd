@@ -42,12 +42,10 @@ execute:
   warning: false
     
 resources:
-  - exercise3_instructions.pdf
+  - exercise3_step_by_step_correction.pdf
 ---
 
-## Overall objective
-
-This page shows a step-by-step correction of Exercise 3.
+This page provides a step-by-step correction for completing Exercise 3. To get the most out of your learning experience, attempt to solve the exercise on your own before looking at this correction. Trial and error is an essential part of the learning process, helping to strengthen your understanding and build confidence. Remember, simply copying and pasting the solution without trying to solve the exercise by yourself first will limit your long-term growth. Take your time, experiment, and learn actively!
 
 ## Setup basic elements of the Quarto document
 
@@ -72,60 +70,59 @@ warning: false            # <6>
 5. Configure the Quarto document to hide code in the rendered MS Word document.
 6. Configure the Quarto document to hide warnings in the rendered MS Word document.
 
-
-
 ## Improve navigation and readability
 
--   [X] Insert a table of contents to the Quarto document ;
-
 ```{.yaml}
 ---
-title: "My outbreak report"
+title: My outbreak report
 author: Helene Langet
 date: "2023-12-31"
-editor: visual
 
 format:
   docx:
-    toc: true
+    toc: true             # <7>
+    number-sections: true # <8>
+    toc-depth: 2          # <9>
+echo: false               
+warning: false            
 ---
 ```
 
--   [X] Automatically number the different sections of the Quarto document ;
+7. Insert a table of contents to the Quarto document.
+8. Automatically number the different sections of the Quarto document.
+9. Configure the table of contents to only display two levels of section headings.
 
-```{.yaml}
----
-format:
-  docx:
-    toc: true
-    number-sections: true
----
-```
+::: callout-important
+### YAML indentation
 
--   [X] Configure the table of contents to only display two levels of section headings.
-
-```{.yaml}
----
-format:
-  docx:
-    toc: true
-    number-sections: true
-    toc-depth: 2
----
-```
+YAML is a whitespace-sensitive language where indentation determines the structure; tabs are not recognised for indentation. The recommended practice is therefore to use **two spaces** per indentation level to ensure consistency and avoid errors.
+:::
 
 ## Implement dynamic calculations
 
--   [ ] Change the date `2023-12-31` to the date at which the Quarto document was last modified, and format this date to display it with the format `December 31, 2023` ;
+### In the YAML header
 
 ```{.yaml}
 ---
-title: "My outbreak report"
+title: My outbreak report
 author: Helene Langet
-date: last-modified
-date-format: long
+date: last-modified       # <10>
+date-format: long         # <11>
+
+format:
+  docx:
+    toc: true             
+    number-sections: true
+    toc-depth: 2
+echo: false               
+warning: false            
 ---
 ```
+
+10. Change the date `2023-12-31` to the date at which the Quarto document was last modified.
+11. Format this date to display it with the format `December 31, 2023`.
+
+### In the Quarto notebook
 
 ```{r}
 #| echo: false
@@ -172,37 +169,21 @@ subdf <- df |>
 
 ## Create and reference publication-ready tables
 
--   [X] Create a table summarising the demographic characteristics and outcome frequency of all cases
+You can use packages such as `gtsummary`
 
-```{r}
-subdf |>
-  dplyr::select(age,
-                sex,
-                bmi,
-                confirmed,
-                death) |>
-  gtsummary::tbl_summary()
+To install the package, run teh following command in your console. 
+
+```{{r}}
+install.packages(gtsummary)
 ```
 
--   [X] Add a caption to the table
-
 ```{r}
-#| tbl-cap: Population characteristics
-
-subdf |>
-  dplyr::select(age,
-                sex,
-                bmi,
-                confirmed,
-                death) |>
-  gtsummary::tbl_summary()
+library(gtsummary)
 ```
 
--   [X] Assign a label to the table ;
-
 ```{r}
-#| label: tbl-1
-#| tbl-cap: Population characteristics
+#| label: tbl-1                        #<14>
+#| tbl-cap: Population characteristics #<13>
 
 subdf |>
   dplyr::select(age,
@@ -210,8 +191,12 @@ subdf |>
                 bmi,
                 confirmed,
                 death) |>
-  gtsummary::tbl_summary()
+  gtsummary::tbl_summary()             #<12>
 ```
+
+12. Create a table summarising the demographic characteristics and outcome frequency of all cases.
+13. Add a caption to the table.
+14. Assign a label to the table.
 
 -   [X] Replace the placeholder text in bold with a cross-reference to the table ;
 
