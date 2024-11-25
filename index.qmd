@@ -62,10 +62,10 @@ In this training, you will find the following resources to help you along your l
 
 -   📘 **Lecture notes** — Reference materials and examples;
 -   📙 **Assignments** — Self-paced exercises to practice and apply skills:
+    -   🌱 **Getting started** — Guided exercises for complete beginners;
     -   📋 **Instructions** — Objectives and expectations of the exercise;
     -   ✅ **Corrections** — Detailed solutions with step-by-step explanations;
     -   Difficulty of assignments:
-        -   *Getting started* 🌱 — Guided exercises for complete beginners;
         -   *Beginner* ⭐ – Foundational exercises to build confidence; 
         -   *Intermediate* ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;
         -   *Advanced* ⭐⭐⭐ – More challenging exercises for comprehensive mastery.

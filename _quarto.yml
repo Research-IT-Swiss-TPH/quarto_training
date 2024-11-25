@@ -23,17 +23,19 @@ website:
       - href: index.qmd
         text: Home
       - href: ./notes/quarto_intro.qmd
-        text: 📘 Introduction to Quarto
-      - href: ./notes/create_first_quarto_doc.qmd
-        text: 📙 Create a Quarto notebook 🌱
-      - 📘 Structure of Quarto notebooks
-      - Running code in Quarto notebooks 🌱
+        text: 📘 Introduction
+      - href: ./notes/notebook_structure.qmd
+        text: 📘 Structure of Quarto notebooks
+      - href: ./practicals/exercise1_gettingstarted.qmd
+        text: 📙 Create a Quarto notebook
+      - href: ./practicals/exercise2_gettingstarted.qmd
+        text: 📙 Editing and rendering Quarto notebooks
       - href: ./practicals/exercise3_instructions.qmd
-        text: 📙 Build a simple Word report
+        text: 📙 Create a simple Word report
       - href: ./practicals/exercise4_instructions.qmd
-        text: 📙 Add dynamic elements to reports
+        text: 📙 Add dynamic elements to your report
       - href: ./practicals/exercise5_instructions.qmd
-        text: 📙 Parametrise reports
+        text: 📙 Parametrise your report
       - href: ./notes/python_r_short_demo.qmd
         text: 📘 Use R and Python
       - text: 🧰 More resources

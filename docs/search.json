@@ -2,11 +2,11 @@
   {
     "objectID": "practicals/exercise3_instructions.html",
     "href": "practicals/exercise3_instructions.html",
-    "title": "⭐ Build a MS Word report",
+    "title": "⭐ Create a simple Word report",
     "section": "",
-    "text": "1 🎯 Exercise objective\n\nYou are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.\n\n\n\n2 Setup basic elements of the Quarto document\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about date formatting\nSee Quarto documentation about execution options\n\n\n\n\nUpdate the title of the Quarto document ;\nPut your name as author of the Quarto document ;\nAdd the date 2023-12-31 to the Quarto document ;\nChange the output format to generate a MS Word document ;\nConfigure the Quarto document to hide code in the rendered MS Word document ;\nConfigure the Quarto document to hide warnings in the rendered MS Word document.\n\n\n\n3 Create and reference publication-ready tables\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about summary tables\nSee Quarto documentation about table cross-references\n\nOther R packages include flextable and gt\n\n\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“cross-reference provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“while cross-reference compares the demographic characteristics of individuals who died versus those who are still alive”\n\n\n\n4 Customise figures\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\nSee Quarto documentation about figure options\n\n\n\n\nAdd a caption to the figure ;\nAssign a label to the figure ;\nReplace the placeholder text in bold with a cross-reference to the figure ;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with it\nBeautify the plot using ggplot options\n\n\n\n5 Code\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about formatted table of regression model results\nSee Quarto documentation about code chunk cross-references\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”\n\n\nDisplay the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;\nAdd a caption to the code chunk ;\nAssign a label to the code chunk ;\nReplace the placeholder text in bold with a cross-reference to the code chunk.\n\n\n\n6 Add references\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about citations\n\n\n\n\nAdd the bibliography file my_biblio.bib to your MS Word rendered report ;\nCite the reference text in your MS Word rendered report ;\nCreate your own bibliography file and apply it to your MS Word rendered report ;\n\n\n\n7 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.\n\n\n\n\n\nReuseCC-BY",
+    "text": "1 🎯 Exercise objectives\n\nYou are tasked with generating a simple report on a fictitious outbreak.\nOpen the Quarto document exercise3.qmd in RStudio. Complete each of the following tasks and render the document after each task or set of tasks to track your progress.\nThe final output should be a Microsoft (MS) Word report named exercise3.docx, containing all required tables, figures and corresponding captions.\n\n\n\n2 Setup basic elements of the Quarto document\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about date formatting\nSee Quarto documentation about execution options\n\n\n\n\nUpdate the title of the Quarto document ;\nPut your name as author of the Quarto document ;\nAdd the date 2023-12-31 to the Quarto document ;\nChange the output format to generate a MS Word document ;\nConfigure the Quarto document to hide code in the rendered MS Word document ;\nConfigure the Quarto document to hide warnings in the rendered MS Word document.\n\n\n\n3 Create publication-ready tables\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation for creating formatted summary tables\nSee gtsummary documentation for creating formatted tables of regression model results\nSee tbl-cap option to add a caption to a table generated by an executable code chunk\n\nOther R packages for working with and customising tables include flextable and gt\n\n\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases ;\nAdd a caption to the table;\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table;\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table.\n\n\n\n4 Create publication-ready figures\n\n\n\n\n\n\nTip\n\n\n\n\nsee fig-cap option to add a caption to a figure generated by an executable code chunk\nSee fig-width and fig-height options to adjust figure dimensions\n\n\n\n\nAdd a caption to the figure ;\nAdjust the dimensions of the figure until you are happy with it;\nBeautify the plot using ggplot options.\n\n\n\n5 Code visibility\n\nDisplay the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document.\n\n\n\n\n\nReuseCC-BY",
     "crumbs": [
-      "📙 Build a simple Word report"
+      "📙 Create a simple Word report"
     ]
   },
   {
@@ -92,11 +92,11 @@
   {
     "objectID": "practicals/exercise4_instructions.html",
     "href": "practicals/exercise4_instructions.html",
-    "title": "⭐⭐ Add dynamic elements to reports",
+    "title": "⭐⭐ Add dynamic elements to your report",
     "section": "",
-    "text": "1 🎯 Exercise objective\n\nYou are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.\n\n\n\n2 Improve navigation and readability\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about MS Word table of contents\n\n\n\n\nInsert a table of contents to the Quarto document ;\nAutomatically number the different sections of the Quarto document ;\nConfigure the table of contents to only display two levels of section headings.\n\n\n\n3 Implement dynamic calculations\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about dynamic dates\nSee Quarto documentation about inline code\n\n\n\n\nChange the date 2023-12-31 to the date at which the Quarto document was last modified, and format this date to display it with the format December 31, 2023 ;\nReplace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;\n\n\n“The outbreak ran from date to date”\n\n\nReplace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.\n\n\n“Over the studied period, there were N cases, including N confirmed cases and N confirmed deaths.”\n\n\n\n4 Create and reference publication-ready tables\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about summary tables\nSee Quarto documentation about table cross-references\n\nOther R packages include flextable and gt\n\n\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“cross-reference provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“while cross-reference compares the demographic characteristics of individuals who died versus those who are still alive”\n\n\n\n5 Customise figures\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\nSee Quarto documentation about figure options\n\n\n\n\nAdd a caption to the figure ;\nAssign a label to the figure ;\nReplace the placeholder text in bold with a cross-reference to the figure ;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with it\nBeautify the plot using ggplot options\n\n\n\n6 Code\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about formatted table of regression model results\nSee Quarto documentation about code chunk cross-references\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”\n\n\nDisplay the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;\nAdd a caption to the code chunk ;\nAssign a label to the code chunk ;\nReplace the placeholder text in bold with a cross-reference to the code chunk.\n\n\n\n7 Add references\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about citations\n\n\n\n\nAdd the bibliography file my_biblio.bib to your MS Word rendered report ;\nCite the reference text in your MS Word rendered report ;\nCreate your own bibliography file and apply it to your MS Word rendered report ;\n\n\n\n8 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.\n\n\n\n\n\nReuseCC-BY",
+    "text": "1 🎯 Exercise objectives\n\nThis exercise builds on the previous exercise where you learnt to build a simple MS Word report ⭐;\nOpen the Quarto document exercise4.qmd in RStudio;\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.\n\n\n\n2 Improve navigation and readability\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about MS Word table of contents\n\n\n\n\nInsert a table of contents to the Quarto document ;\nAutomatically number the different sections of the Quarto document ;\nConfigure the table of contents to only display two levels of section headings.\n\n\n\n3 Implement dynamic calculations\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about dynamic dates\nSee Quarto documentation about inline code\n\n\n\n\nChange the date 2023-12-31 to the date at which the Quarto document was last modified, and format this date to display it with the format December 31, 2023 ;\nReplace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;\n\n\n“The outbreak ran from date to date”\n\n\nReplace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.\n\n\n“Over the studied period, there were N cases, including N confirmed cases and N confirmed deaths.”\n\n\n\n4 Create and reference publication-ready tables\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about summary tables\nSee Quarto documentation about table cross-references\n\nOther R packages include flextable and gt\n\n\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“cross-reference provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“while cross-reference compares the demographic characteristics of individuals who died versus those who are still alive”\n\n\n\n5 Customise figures\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\nSee Quarto documentation about figure options\n\n\n\n\nAdd a caption to the figure ;\nAssign a label to the figure ;\nReplace the placeholder text in bold with a cross-reference to the figure ;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with it\nBeautify the plot using ggplot options\n\n\n\n6 Code\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about formatted table of regression model results\nSee Quarto documentation about code chunk cross-references\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”\n\n\nDisplay the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;\nAdd a caption to the code chunk ;\nAssign a label to the code chunk ;\nReplace the placeholder text in bold with a cross-reference to the code chunk.\n\n\n\n7 Add references\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about citations\n\n\n\n\nAdd the bibliography file my_biblio.bib to your MS Word rendered report ;\nCite the reference text in your MS Word rendered report ;\nCreate your own bibliography file and apply it to your MS Word rendered report ;\n\n\n\n8 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.\n\n\n\n\n\nReuseCC-BY",
     "crumbs": [
-      "📙 Add dynamic elements to reports"
+      "📙 Add dynamic elements to your report"
     ]
   },
   {
@@ -562,7 +562,7 @@
   {
     "objectID": "practicals/exercise3_instructions_slides.html#finalise-your-ms-word-report",
     "href": "practicals/exercise3_instructions_slides.html#finalise-your-ms-word-report",
-    "title": "⭐⭐ Parametrise a MS Word report",
+    "title": "⭐⭐⭐ Parametrise your report",
     "section": "3 Finalise your MS Word report",
     "text": "3 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\nSee Quarto documentation about Word templates\n\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.\n\n\n\n\n\nSwiss TPH, Research-IT"
   },
@@ -591,7 +591,7 @@
     "href": "index.html#content-navigation",
     "title": "Swiss TPH Quarto training",
     "section": "\n2 🧭 Content navigation",
-    "text": "2 🧭 Content navigation\nIn this training, you will find the following resources to help you along your learning journey:\n\n📘 Lecture notes — Reference materials and examples;\n📙 Assignments — Self-paced exercises to practice and apply skills:\n\n📋 Instructions — Objectives and expectations of the exercise;\n✅ Corrections — Detailed solutions with step-by-step explanations;\nDifficulty of assignments:\n\n\nGetting started 🌱 — Guided exercises for complete beginners;\n\nBeginner ⭐ – Foundational exercises to build confidence;\n\nIntermediate ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;\n\nAdvanced ⭐⭐⭐ – More challenging exercises for comprehensive mastery.",
+    "text": "2 🧭 Content navigation\nIn this training, you will find the following resources to help you along your learning journey:\n\n📘 Lecture notes — Reference materials and examples;\n📙 Assignments — Self-paced exercises to practice and apply skills:\n\n🌱 Getting started — Guided exercises for complete beginners;\n📋 Instructions — Objectives and expectations of the exercise;\n✅ Corrections — Detailed solutions with step-by-step explanations;\nDifficulty of assignments:\n\n\nBeginner ⭐ – Foundational exercises to build confidence;\n\nIntermediate ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;\n\nAdvanced ⭐⭐⭐ – More challenging exercises for comprehensive mastery.",
     "crumbs": [
       "Home"
     ]
@@ -646,7 +646,7 @@
   {
     "objectID": "practicals/exercise3_instructions_slides.html#parametrise-your-report",
     "href": "practicals/exercise3_instructions_slides.html#parametrise-your-report",
-    "title": "⭐⭐ Parametrise a MS Word report",
+    "title": "⭐⭐⭐ Parametrise your report",
     "section": "2 Parametrise your report",
     "text": "2 Parametrise your report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about parameters\nSee Quarto documentation about rendering outputs using different parameters\n\n\n\n\n\nAdjust the report to focus on data for the year 2022 only ;\nYou were unfortunately provided with a previous erroneous version of the dataset. Update the report to use the dataset stored in df2.RData instead of the one stored in df1.RData ;\nRender 3 reports (1 report with df2.RData for the full outbreak period, 1 report with df1.RData for year 2021 only, 1 report with df2.RData for year 2021 only) adapting the following command which needs to be run in a terminal (ensure your working directory is the one where your Quarto document is stored and all file paths are correct).\n\nquarto render exercise3.qmd --out report_data1.docx -P dataset:df1.RData\n\n\n\n\n\n\nDiscussion question\n\n\nDiscuss the advantages and disadvantages of using R within Quarto compared to using R scripts."
   },
@@ -690,48 +690,417 @@
   {
     "objectID": "practicals/exercise5_instructions.html",
     "href": "practicals/exercise5_instructions.html",
-    "title": "⭐⭐ Parametrise a MS Word report",
+    "title": "⭐⭐⭐ Parametrise your report",
     "section": "",
-    "text": "You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
+    "text": "This exercise builds on the previous exercises where you learnt to create a simple MS Word report ⭐ and to add dynamic elements to your report ⭐⭐. Mastering these two exercises is essential for successfully completing this one;\nOpen your modified Quarto document exercise4.qmd in RStudio;\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references;\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
     "crumbs": [
-      "📙 Parametrise Quarto-rendered reports"
+      "📙 Parametrise your report"
     ]
   },
   {
     "objectID": "practicals/exercise5_instructions.html#exercise-objective",
     "href": "practicals/exercise5_instructions.html#exercise-objective",
-    "title": "⭐⭐ Parametrise a MS Word report",
+    "title": "⭐⭐⭐ Parametrise your report",
     "section": "",
-    "text": "You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
+    "text": "This exercise builds on the previous exercises where you learnt to create a simple MS Word report ⭐ and to add dynamic elements to your report ⭐⭐. Mastering these foundational exercises is essential for successfully completing this one;\nOpen your modified Quarto document exercise4.qmd in RStudio;\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references;\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
     "crumbs": [
-      "📙 Parametrise Quarto-rendered reports"
+      "📙 Parametrise your report"
     ]
   },
   {
     "objectID": "practicals/exercise5_instructions.html#parametrise-your-report",
     "href": "practicals/exercise5_instructions.html#parametrise-your-report",
-    "title": "⭐⭐ Parametrise a MS Word report",
+    "title": "⭐⭐⭐ Parametrise your report",
     "section": "2 Parametrise your report",
     "text": "2 Parametrise your report\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about parameters\nSee Quarto documentation about rendering outputs using different parameters\n\n\n\n\nAdjust the report to focus on data for the year 2022 only ;\nYou were unfortunately provided with a previous erroneous version of the dataset. Update the report to use the dataset stored in df2.RData instead of the one stored in df1.RData ;\nRender 3 reports (1 report with df2.RData for the full outbreak period, 1 report with df1.RData for year 2021 only, 1 report with df2.RData for year 2021 only) adapting the following command which needs to be run in a terminal (ensure your working directory is the one where your Quarto document is stored and all file paths are correct).\n\nquarto render exercise3.qmd --out report_data1.docx -P dataset:df1.RData\n\n\n\n\n\n\nDiscussion question\n\n\n\nDiscuss the advantages and disadvantages of using R within Quarto compared to using R scripts.",
     "crumbs": [
-      "📙 Parametrise Quarto-rendered reports"
+      "📙 Parametrise your report"
     ]
   },
   {
     "objectID": "practicals/exercise5_instructions.html#finalise-your-ms-word-report",
     "href": "practicals/exercise5_instructions.html#finalise-your-ms-word-report",
-    "title": "⭐⭐ Parametrise a MS Word report",
+    "title": "⭐⭐⭐ Parametrise your report",
     "section": "3 Finalise your MS Word report",
     "text": "3 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.",
     "crumbs": [
-      "📙 Parametrise Quarto-rendered reports"
+      "📙 Parametrise your report"
     ]
   },
   {
     "objectID": "practicals/exercise3_instructions_slides.html#exercise-objective",
     "href": "practicals/exercise3_instructions_slides.html#exercise-objective",
-    "title": "⭐⭐ Parametrise a MS Word report",
+    "title": "⭐⭐⭐ Parametrise your report",
     "section": "1 🎯 Exercise objective",
-    "text": "1 🎯 Exercise objective\n\nYou are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document exercise3.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress."
+    "text": "1 🎯 Exercise objective\n\nThis exercise builds on the previous exercises where you learnt to create a simple MS Word report and exercise to add dynamic elements in your report. You need to master these exercises to be able to do this exerOpen your modified Quarto document exercise4.qmd in RStudio.\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress."
+  },
+  {
+    "objectID": "practicals/exercise5_instructions.html#exercise-objectives",
+    "href": "practicals/exercise5_instructions.html#exercise-objectives",
+    "title": "⭐⭐⭐ Parametrise your report",
+    "section": "",
+    "text": "This exercise builds on the previous exercises where you learnt to create a simple MS Word report ⭐ and to add dynamic elements to your report ⭐⭐. Mastering these two exercises is essential for successfully completing this one;\nOpen your modified Quarto document exercise4.qmd in RStudio;\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references;\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
+    "crumbs": [
+      "📙 Parametrise your report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise3_instructions_slides.html#exercise-objectives",
+    "href": "practicals/exercise3_instructions_slides.html#exercise-objectives",
+    "title": "⭐⭐⭐ Parametrise your report",
+    "section": "1 🎯 Exercise objectives",
+    "text": "1 🎯 Exercise objectives\n\nThis exercise builds on the previous exercises where you learnt to create a simple MS Word report ⭐ and to add dynamic elements to your report ⭐⭐. Mastering these two exercises is essential for successfully completing this one;\nOpen your modified Quarto document exercise4.qmd in RStudio;\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references;\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress."
+  },
+  {
+    "objectID": "notes/notebook_structure.html",
+    "href": "notes/notebook_structure.html",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats",
+    "crumbs": [
+      "📘 Structure of Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "notes/notebook_structure.html#learning-objectives",
+    "href": "notes/notebook_structure.html#learning-objectives",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats",
+    "crumbs": [
+      "📘 Structure of Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "notes/notebook_structure.html#exploring-the-structure-of-the-quarto-document",
+    "href": "notes/notebook_structure.html#exploring-the-structure-of-the-quarto-document",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "2 Exploring the structure of the Quarto document",
+    "text": "2 Exploring the structure of the Quarto document\nThere are three basic components to a Quarto document.\n\nHeaderMarkdown textCode\n\n\nAt the top of the Quarto document, you will see something that looks as follows:\n---\ntitle: \"Untitled\"\nformat: html\n---\nThis section is called the YAML header and it contains commands and metadata about the Quarto document. There is only one unique header in a Quarto document and it is always surrounded by --- lines on the top and bottom of the section.\nYAML is a data format that has the form of a key: value pairing to store data. The keys in this case are title and format. The values are those that follow the key (e.g., “Untitled” for title). These key data are used to store the settings that Quarto will use to render the output document. The keys listed above are some of many settings that Quarto has available to use.\n\n\nIn white background areas, any text will appear as regular text in the final report. This is actually a markup language, which can have formatting such as headings, italics, bold, numbers, and bullets.\n\n\nCode chunks, typically shown within gray backgrounds, execute commands in Quarto. In the example provided, R code is being run within these chunks. These commands may handle data processing, cleaning, or the generation of visual outputs that are integrated into the final document.",
+    "crumbs": [
+      "📘 Structure of Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "notes/notebook_structure.html#references",
+    "href": "notes/notebook_structure.html#references",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "3 References",
+    "text": "3 References\n\nThe Epidemiologist R Handbook\nAnalytically reproducible documents",
+    "crumbs": [
+      "📘 Structure of Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1.html",
+    "href": "practicals/exercise1.html",
+    "title": "📙 Create a Quarto notebook 🌱",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats",
+    "crumbs": [
+      "📙 Create a Quarto notebook 🌱"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1.html#learning-objectives",
+    "href": "practicals/exercise1.html#learning-objectives",
+    "title": "📙 Create a Quarto notebook 🌱",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats",
+    "crumbs": [
+      "📙 Create a Quarto notebook 🌱"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1.html#create-a-new-quarto-document",
+    "href": "practicals/exercise1.html#create-a-new-quarto-document",
+    "title": "📙 Create a Quarto notebook 🌱",
+    "section": "2 Create a new Quarto document",
+    "text": "2 Create a new Quarto document\nQuarto documents can be created and edited in RStudio.\nIn RStudio, you can create a new Quarto document by selecting\n\nFile &gt; New File &gt; Quarto Document…\n\n\nWhen you create a new Quarto document, RStudio tries to be helpful by allowing you to select a template which explains the different section of an Quarto document. R Studio will enable you select options to pick from to generate a template Quarto document to start from.\nThe title and the author names are not important at this stage. If the output document type you want is not one of these, do not worry - you can just pick any one and change it manually later.\nLet us select HTML to create an html document.\nClick on Create to open up a new Quarto (.Qmd) document.",
+    "crumbs": [
+      "📙 Create a Quarto notebook 🌱"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1.html#setup-your-r-environment",
+    "href": "practicals/exercise1.html#setup-your-r-environment",
+    "title": "📙 Create a Quarto notebook 🌱",
+    "section": "3 Setup your R environment",
+    "text": "3 Setup your R environment\nYou need to ensure required packages are available",
+    "crumbs": [
+      "📙 Create a Quarto notebook 🌱"
+    ]
+  },
+  {
+    "objectID": "practicals/_create_first_quarto_doc_slides.html#learning-objectives",
+    "href": "practicals/_create_first_quarto_doc_slides.html#learning-objectives",
+    "title": "📙 Create a Quarto notebook",
+    "section": "1 Learning objectives 🎯",
+    "text": "1 Learning objectives 🎯\n\nCreate a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats"
+  },
+  {
+    "objectID": "practicals/_create_first_quarto_doc_slides.html#create-a-new-quarto-document",
+    "href": "practicals/_create_first_quarto_doc_slides.html#create-a-new-quarto-document",
+    "title": "📙 Create a Quarto notebook",
+    "section": "2 Create a new Quarto document",
+    "text": "2 Create a new Quarto document\nQuarto documents can be created and edited in RStudio.\nIn RStudio, you can create a new Quarto document by selecting\n\nFile &gt; New File &gt; Quarto Document…"
+  },
+  {
+    "objectID": "practicals/_create_first_quarto_doc_slides.html#setup-your-r-environment",
+    "href": "practicals/_create_first_quarto_doc_slides.html#setup-your-r-environment",
+    "title": "📙 Create a Quarto notebook",
+    "section": "3 Setup your R environment",
+    "text": "3 Setup your R environment\nYou need to ensure required packages are available\n\n\n\n\n\nQuarto training for R"
+  },
+  {
+    "objectID": "notes/_create_first_quarto_doc_slides.html#learning-objectives",
+    "href": "notes/_create_first_quarto_doc_slides.html#learning-objectives",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "1 🎯 Learning objectives",
+    "text": "1 🎯 Learning objectives\n\nCreate a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats"
+  },
+  {
+    "objectID": "notes/_create_first_quarto_doc_slides.html#exploring-the-structure-of-the-quarto-document",
+    "href": "notes/_create_first_quarto_doc_slides.html#exploring-the-structure-of-the-quarto-document",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "2 Exploring the structure of the Quarto document",
+    "text": "2 Exploring the structure of the Quarto document\nThere are three basic components to a Quarto document.\n\nHeaderMarkdown textCode\n\n\nAt the top of the Quarto document, you will see something that looks as follows:\n---\ntitle: \"Untitled\"\nformat: html\n---\nThis section is called the YAML header and it contains commands and metadata about the Quarto document. There is only one unique header in a Quarto document and it is always surrounded by --- lines on the top and bottom of the section.\nYAML is a data format that has the form of a key: value pairing to store data. The keys in this case are title and format. The values are those that follow the key (e.g., “Untitled” for title). These key data are used to store the settings that Quarto will use to render the output document. The keys listed above are some of many settings that Quarto has available to use.\n\n\nIn white background areas, any text will appear as regular text in the final report. This is actually a markup language, which can have formatting such as headings, italics, bold, numbers, and bullets.\n\n\nCode chunks, typically shown within gray backgrounds, execute commands in Quarto. In the example provided, R code is being run within these chunks. These commands may handle data processing, cleaning, or the generation of visual outputs that are integrated into the final document."
+  },
+  {
+    "objectID": "notes/_create_first_quarto_doc_slides.html#references",
+    "href": "notes/_create_first_quarto_doc_slides.html#references",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "3 References",
+    "text": "3 References\n\nThe Epidemiologist R Handbook\nAnalytically reproducible documents\n\n\n\n\n\nQuarto training for R"
+  },
+  {
+    "objectID": "practicals/exercise2_instructions.html",
+    "href": "practicals/exercise2_instructions.html",
+    "title": "📙 Editing and rendering Quarto notebooks 🌱",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats",
+    "crumbs": [
+      "📙 Editing and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_instructions.html#learning-objectives",
+    "href": "practicals/exercise2_instructions.html#learning-objectives",
+    "title": "📙 Editing and rendering Quarto notebooks 🌱",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats",
+    "crumbs": [
+      "📙 Editing and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_instructions.html#create-a-new-quarto-document",
+    "href": "practicals/exercise2_instructions.html#create-a-new-quarto-document",
+    "title": "📙 Editing and rendering Quarto notebooks 🌱",
+    "section": "\n2 Create a new Quarto document",
+    "text": "2 Create a new Quarto document\nQuarto documents can be created and edited in RStudio.\nIn RStudio, you can create a new Quarto document by selecting\n\nFile &gt; New File &gt; Quarto Document…\n\n\nWhen you create a new Quarto document, RStudio tries to be helpful by allowing you to select a template which explains the different section of an Quarto document. R Studio will enable you select options to pick from to generate a template Quarto document to start from.\nThe title and the author names are not important at this stage. If the output document type you want is not one of these, do not worry - you can just pick any one and change it manually later.\nLet us select HTML to create an html document.\nClick on Create to open up a new Quarto (.Qmd) document.",
+    "crumbs": [
+      "📙 Edicting and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_instructions.html#setup-your-r-environment",
+    "href": "practicals/exercise2_instructions.html#setup-your-r-environment",
+    "title": "📙 Editing and rendering Quarto notebooks 🌱",
+    "section": "\n3 Setup your R environment",
+    "text": "3 Setup your R environment\nYou need to ensure required packages are available",
+    "crumbs": [
+      "📙 Edicting and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_instructions.html#exploring-the-structure-of-the-quarto-document",
+    "href": "practicals/exercise2_instructions.html#exploring-the-structure-of-the-quarto-document",
+    "title": "📙 Editing and rendering Quarto notebooks 🌱",
+    "section": "\n4 Exploring the structure of the Quarto document",
+    "text": "4 Exploring the structure of the Quarto document\nThere are three basic components to a Quarto document.\n\n\nHeader\nMarkdown text\nCode\n\n\n\nAt the top of the Quarto document, you will see something that looks as follows:\n---\ntitle: \"Untitled\"\nformat: html\n---\nThis section is called the YAML header and it contains commands and metadata about the Quarto document. There is only one unique header in a Quarto document and it is always surrounded by --- lines on the top and bottom of the section.\nYAML is a data format that has the form of a key: value pairing to store data. The keys in this case are title and format. The values are those that follow the key (e.g., “Untitled” for title). These key data are used to store the settings that Quarto will use to render the output document. The keys listed above are some of many settings that Quarto has available to use.\n\n\nIn white background areas, any text will appear as regular text in the final report. This is actually a markup language, which can have formatting such as headings, italics, bold, numbers, and bullets.\n\n\nCode chunks, typically shown within gray backgrounds, execute commands in Quarto. In the example provided, R code is being run within these chunks. These commands may handle data processing, cleaning, or the generation of visual outputs that are integrated into the final document.",
+    "crumbs": [
+      "📙 Edicting and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_instructions.html#editing-text",
+    "href": "practicals/exercise2_instructions.html#editing-text",
+    "title": "📙 Editing and rendering Quarto notebooks 🌱",
+    "section": "\n2 Editing text",
+    "text": "2 Editing text\n\n\n\n\n\n\nUseful resources\n\n\n\n\nQuarto Documentation - Visual Editing in RStudio\nQuarto Documentation - Markdown Basics\n\n\n\nThe RStudio visual editor is a relatively new feature designed to improve the editing experience by providing an intuitive interface. In the Visual Editor, you can preview your document in a format that closely resembles its final rendered appearance, similar to working in a “What You See Is What You Get” (WYSIWYG) languages, such as Microsoft Word, allowing for seamless content creation and editing.\nThis contrasts with the RStudio source editor, where content is written in Markdown syntax. The ability to switch between these two modes allows for flexibility, depending on your preference or task.\nBelow is an example of the same file viewed in both the source Editor and the visual Editor:",
+    "crumbs": [
+      "📙 Editing and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_instructions.html#running-r-code-in-notebook-mode",
+    "href": "practicals/exercise2_instructions.html#running-r-code-in-notebook-mode",
+    "title": "📙 Editing and rendering Quarto notebooks 🌱",
+    "section": "\n3 Running R code in notebook mode",
+    "text": "3 Running R code in notebook mode\nTo write and execute code in Quarto, you will use code chunks.\n\n\n\n\n\n\nMultilanguage\n\n\n\nAs the number of programming languages used for scientific discourse is very broad, Quarto was developed to be multilingual, beginning with R, Python, Observable JavaScript (OJS), and Julia, building on the RStudio (R) and Jupyter (Python, Julia) ecosystems which are very popular among data scientists. Stata is not a language supported by Quarto.\n\n\nYou can run R code in your Quarto document, by writing R commands within code chunks as is displayed below\n\n```{r}\n1 + 1\n```\n\n[1] 2\n\n\n\n3.1 Create code chunks\n\n\n\n\n\n\nTip\n\n\n\nHere are some tips for creating code chunks in RStudio\n\n\nBackticks: use three backticks to start and end a code chunk.\n\nToolbar icon: you can also start a code chunk by clicking the appropriate icon in the toolbar. \n\n\nKeyboard shortcut: for a quicker method, use the keyboard shortcut Ctrl + Alt + I\n\n\n\n\n\n3.2 Tables\nDisplaying data can be achieved with simple commands. For instance, to show the first 10 rows of the iris dataset, one can use:\n\n```{r}\niris |&gt;\n  head(10)\n```\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1           5.1         3.5          1.4         0.2  setosa\n2           4.9         3.0          1.4         0.2  setosa\n3           4.7         3.2          1.3         0.2  setosa\n4           4.6         3.1          1.5         0.2  setosa\n5           5.0         3.6          1.4         0.2  setosa\n6           5.4         3.9          1.7         0.4  setosa\n7           4.6         3.4          1.4         0.3  setosa\n8           5.0         3.4          1.5         0.2  setosa\n9           4.4         2.9          1.4         0.2  setosa\n10          4.9         3.1          1.5         0.1  setosa\n\n\nTo improve the readability of tables, the knitr::kable() function provides a more structured and formatted output:\n\n```{r}\niris |&gt;\n  head(10)  |&gt;\n  knitr::kable()\n```\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n4.6\n3.4\n1.4\n0.3\nsetosa\n\n\n5.0\n3.4\n1.5\n0.2\nsetosa\n\n\n4.4\n2.9\n1.4\n0.2\nsetosa\n\n\n4.9\n3.1\n1.5\n0.1\nsetosa\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nAdditional R packages can be used for more advanced and aesthetically refined tables.",
+    "crumbs": [
+      "📙 Editing and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_instructions.html#rendering",
+    "href": "practicals/exercise2_instructions.html#rendering",
+    "title": "📙 Editing and rendering Quarto notebooks 🌱",
+    "section": "\n4 Rendering",
+    "text": "4 Rendering\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code.\n\nIn the case of this YAML header, the Quarto document will generate an HTML file because of the format: html setting.\n\n\n\n\n\n\nCode errors\n\n\n\nIf you attempt to render the document with code chunks that contain errors, the rendering process will fail. Therefore, it is essential to ensure that all code chunks run successfully in sequence before rendering the document.\n\n\n\n4.1 Options\nYou can add options to a specific code chunk as is shown below:\n```{r}\n#| echo: false\n2 * 2\n```\nThe echo: false option hides the code chunk in the rendered output document (only code output is displayed). In this example, rendered output document will only print:\n\n\n[1] 4\n\n\nAdditionally, you can apply such options globally by specifying them in the YAML header, which configures settings for the entire Quarto document.\n---\ntitle: \"Quarto training for R - Exercise 2\"\nauthor: Unknown author\nformat: html\neditor: visual\necho: false\n---\n\n\n\n\n\n\nImportant\n\n\n\nIt is important to note that the YAML header is indentation-sensitive and relies on proper whitespace formatting.\n\n\n\n\n\n\n\n\n\nHere you may want to edit the title of your document.\n\n4.2 MS Word outputs\nYou can also render a MS Word document by modifying the global format option in the YAML header to format: docx\n---\ntitle: \"Quarto training for R - Exercise 2\"\nauthor: Unknown author\nformat: docx\neditor: visual\n---\n\n4.3 PDF outputs\nYou can also render a PDF document by modifying the global format option in the YAML header to format: pdf\n---\ntitle: \"Quarto training for R - Exercise 2\"\nauthor: Unknown author\nformat: pdf\neditor: visual\n---\nWhile PDF documents are also able to be created, they require installing LaTeX, which can sometimes be complicated to install. TinyTeX is a custom LaTeX distribution that is easy to install with R. It is needed to compile R Markdown or Quarto documents to PDF.\nInstall the TinyTeX package:\n```{r}\ninstall.packages(\"tinytex\")\n```\nTo install TinyTeX from the tinytex package, please run the R commands as follow:\n```{r}\ntinytex::install_tinytex()\n```\nIf specific LaTeX packages (e.g., fancyhdr, lastpage, babel, tocbibind, worldflags) or styles are missing, they can be installed using the following commands:\n```{r}\ntinytex::tlmgr_install(\"fancyhdr\")\n```\n```{r}\ntinytex::parse_install(\n    text = \"! LaTeX Error: File `ulem.sty' not found.\"\n)\n```\nIn order to avoid the warning No hyphenation patterns were preloaded for the language French into the format., please consider installing the package hyphen-french\n```{r}\ntinytex::tlmgr_install(\"hyphen-french\")\n```\n\n4.4 Execute R code within the text\nInline code allows you to execute code within markdown, e.g. to automatically use the most up-to-date computations in narrative. Quarto provides an inline code syntax that works across all three engines (Jupyter, Knitr and OJS).\nThe syntax for inline code is similar to code blocks, except you use a single tick (`) rather than triple ticks (```), and you can use it in the middle of markdown. Here is an example storing the variable in a code block and then print it in a sentence using inline code:\n\n```{r}\ncomment &lt;- \"AWESOME\"\n```\n\nYou can print the sentence like this:\nThis lecture is `{r} comment`!\nThe result of the commented code is the following output:\nThis lecture is AWESOME!\nInline expressions are always evaluated when rendering and previewing .qmd files.\n\nChunk Execution Order: Run code chunks in the correct order to avoid errors due to missing objects or incomplete definitions. Use clear and consistent chunk labels for cross-referencing.",
+    "crumbs": [
+      "📙 Editing and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_instructions.html#references",
+    "href": "practicals/exercise2_instructions.html#references",
+    "title": "📙 Editing and rendering Quarto notebooks 🌱",
+    "section": "\n5 References",
+    "text": "5 References\n\nThe Epidemiologist R Handbook\nAnalytically reproducible documents",
+    "crumbs": [
+      "📙 Editing and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1_instructions.html",
+    "href": "practicals/exercise1_instructions.html",
+    "title": "📙 Create a Quarto notebook 🌱",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats",
+    "crumbs": [
+      "📙 Create a Quarto notebook"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1_instructions.html#learning-objectives",
+    "href": "practicals/exercise1_instructions.html#learning-objectives",
+    "title": "📙 Create a Quarto notebook 🌱",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats",
+    "crumbs": [
+      "📙 Create a Quarto notebook"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1_instructions.html#create-a-new-quarto-document",
+    "href": "practicals/exercise1_instructions.html#create-a-new-quarto-document",
+    "title": "📙 Create a Quarto notebook 🌱",
+    "section": "2 Create a new Quarto document",
+    "text": "2 Create a new Quarto document\nQuarto documents can be created and edited in RStudio.\nIn RStudio, you can create a new Quarto document by selecting\n\nFile &gt; New File &gt; Quarto Document…\n\n\nWhen you create a new Quarto document, RStudio tries to be helpful by allowing you to select a template which explains the different section of an Quarto document. R Studio will enable you select options to pick from to generate a template Quarto document to start from.\nThe title and the author names are not important at this stage. If the output document type you want is not one of these, do not worry - you can just pick any one and change it manually later.\nLet us select HTML to create an html document.\nClick on Create to open up a new Quarto (.Qmd) document.",
+    "crumbs": [
+      "📙 Create a Quarto notebook"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1_instructions.html#setup-your-r-environment",
+    "href": "practicals/exercise1_instructions.html#setup-your-r-environment",
+    "title": "📙 Create a Quarto notebook 🌱",
+    "section": "3 Setup your R environment",
+    "text": "3 Setup your R environment\nYou need to ensure required packages are available",
+    "crumbs": [
+      "📙 Create a Quarto notebook"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1_gettingstarted.html",
+    "href": "practicals/exercise1_gettingstarted.html",
+    "title": "📙 Create a Quarto notebook",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats",
+    "crumbs": [
+      "📙 Create a Quarto notebook"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1_gettingstarted.html#learning-objectives",
+    "href": "practicals/exercise1_gettingstarted.html#learning-objectives",
+    "title": "📙 Create a Quarto notebook",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats",
+    "crumbs": [
+      "📙 Create a Quarto notebook"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1_gettingstarted.html#create-a-new-quarto-document",
+    "href": "practicals/exercise1_gettingstarted.html#create-a-new-quarto-document",
+    "title": "📙 Create a Quarto notebook",
+    "section": "2 Create a new Quarto document",
+    "text": "2 Create a new Quarto document\nQuarto documents can be created and edited in RStudio.\nIn RStudio, you can create a new Quarto document by selecting\n\nFile &gt; New File &gt; Quarto Document…\n\n\nWhen you create a new Quarto document, RStudio tries to be helpful by allowing you to select a template which explains the different section of an Quarto document. R Studio will enable you select options to pick from to generate a template Quarto document to start from.\nThe title and the author names are not important at this stage. If the output document type you want is not one of these, do not worry - you can just pick any one and change it manually later.\nLet us select HTML to create an html document.\nClick on Create to open up a new Quarto (.Qmd) document.",
+    "crumbs": [
+      "📙 Create a Quarto notebook"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1_gettingstarted.html#setup-your-r-environment",
+    "href": "practicals/exercise1_gettingstarted.html#setup-your-r-environment",
+    "title": "📙 Create a Quarto notebook",
+    "section": "3 Setup your R environment",
+    "text": "3 Setup your R environment\nYou need to ensure required packages are available",
+    "crumbs": [
+      "📙 Create a Quarto notebook"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_gettingstarted.html",
+    "href": "practicals/exercise2_gettingstarted.html",
+    "title": "📙 Editing and rendering Quarto notebooks",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats",
+    "crumbs": [
+      "📙 Editing and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_gettingstarted.html#learning-objectives",
+    "href": "practicals/exercise2_gettingstarted.html#learning-objectives",
+    "title": "📙 Editing and rendering Quarto notebooks",
+    "section": "",
+    "text": "Create a Quarto document\nSetup the R environment to be able to use and render Quarto documents\nEdit Quarto documents\nRender Quarto documents in different formats",
+    "crumbs": [
+      "📙 Editing and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_gettingstarted.html#editing-text",
+    "href": "practicals/exercise2_gettingstarted.html#editing-text",
+    "title": "📙 Editing and rendering Quarto notebooks",
+    "section": "\n2 Editing text",
+    "text": "2 Editing text\n\n\n\n\n\n\nUseful resources\n\n\n\n\nQuarto Documentation - Visual Editing in RStudio\nQuarto Documentation - Markdown Basics\n\n\n\nThe RStudio visual editor is a relatively new feature designed to improve the editing experience by providing an intuitive interface. In the Visual Editor, you can preview your document in a format that closely resembles its final rendered appearance, similar to working in a “What You See Is What You Get” (WYSIWYG) languages, such as Microsoft Word, allowing for seamless content creation and editing.\nThis contrasts with the RStudio source editor, where content is written in Markdown syntax. The ability to switch between these two modes allows for flexibility, depending on your preference or task.\nBelow is an example of the same file viewed in both the source Editor and the visual Editor:",
+    "crumbs": [
+      "📙 Editing and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_gettingstarted.html#running-r-code-in-notebook-mode",
+    "href": "practicals/exercise2_gettingstarted.html#running-r-code-in-notebook-mode",
+    "title": "📙 Editing and rendering Quarto notebooks",
+    "section": "\n3 Running R code in notebook mode",
+    "text": "3 Running R code in notebook mode\nTo write and execute code in Quarto, you will use code chunks.\n\n\n\n\n\n\nMultilanguage\n\n\n\nAs the number of programming languages used for scientific discourse is very broad, Quarto was developed to be multilingual, beginning with R, Python, Observable JavaScript (OJS), and Julia, building on the RStudio (R) and Jupyter (Python, Julia) ecosystems which are very popular among data scientists. Stata is not a language supported by Quarto.\n\n\nYou can run R code in your Quarto document, by writing R commands within code chunks as is displayed below\n\n```{r}\n1 + 1\n```\n\n[1] 2\n\n\n\n3.1 Create code chunks\n\n\n\n\n\n\nTip\n\n\n\nHere are some tips for creating code chunks in RStudio\n\n\nBackticks: use three backticks to start and end a code chunk.\n\nToolbar icon: you can also start a code chunk by clicking the appropriate icon in the toolbar. \n\n\nKeyboard shortcut: for a quicker method, use the keyboard shortcut Ctrl + Alt + I\n\n\n\n\n\n3.2 Tables\nDisplaying data can be achieved with simple commands. For instance, to show the first 10 rows of the iris dataset, one can use:\n\n```{r}\niris |&gt;\n  head(10)\n```\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1           5.1         3.5          1.4         0.2  setosa\n2           4.9         3.0          1.4         0.2  setosa\n3           4.7         3.2          1.3         0.2  setosa\n4           4.6         3.1          1.5         0.2  setosa\n5           5.0         3.6          1.4         0.2  setosa\n6           5.4         3.9          1.7         0.4  setosa\n7           4.6         3.4          1.4         0.3  setosa\n8           5.0         3.4          1.5         0.2  setosa\n9           4.4         2.9          1.4         0.2  setosa\n10          4.9         3.1          1.5         0.1  setosa\n\n\nTo improve the readability of tables, the knitr::kable() function provides a more structured and formatted output:\n\n```{r}\niris |&gt;\n  head(10)  |&gt;\n  knitr::kable()\n```\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n4.6\n3.4\n1.4\n0.3\nsetosa\n\n\n5.0\n3.4\n1.5\n0.2\nsetosa\n\n\n4.4\n2.9\n1.4\n0.2\nsetosa\n\n\n4.9\n3.1\n1.5\n0.1\nsetosa\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nAdditional R packages can be used for more advanced and aesthetically refined tables.",
+    "crumbs": [
+      "📙 Editing and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_gettingstarted.html#rendering",
+    "href": "practicals/exercise2_gettingstarted.html#rendering",
+    "title": "📙 Editing and rendering Quarto notebooks",
+    "section": "\n4 Rendering",
+    "text": "4 Rendering\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code.\n\nIn the case of this YAML header, the Quarto document will generate an HTML file because of the format: html setting.\n\n\n\n\n\n\nCode errors\n\n\n\nIf you attempt to render the document with code chunks that contain errors, the rendering process will fail. Therefore, it is essential to ensure that all code chunks run successfully in sequence before rendering the document.\n\n\n\n4.1 Options\nYou can add options to a specific code chunk as is shown below:\n```{r}\n#| echo: false\n2 * 2\n```\nThe echo: false option hides the code chunk in the rendered output document (only code output is displayed). In this example, rendered output document will only print:\n\n\n[1] 4\n\n\nAdditionally, you can apply such options globally by specifying them in the YAML header, which configures settings for the entire Quarto document.\n---\ntitle: \"Quarto training for R - Exercise 2\"\nauthor: Unknown author\nformat: html\neditor: visual\necho: false\n---\n\n\n\n\n\n\nImportant\n\n\n\nIt is important to note that the YAML header is indentation-sensitive and relies on proper whitespace formatting.\n\n\n\n\n\n\n\n\n\nHere you may want to edit the title of your document.\n\n4.2 MS Word outputs\nYou can also render a MS Word document by modifying the global format option in the YAML header to format: docx\n---\ntitle: \"Quarto training for R - Exercise 2\"\nauthor: Unknown author\nformat: docx\neditor: visual\n---\n\n4.3 PDF outputs\nYou can also render a PDF document by modifying the global format option in the YAML header to format: pdf\n---\ntitle: \"Quarto training for R - Exercise 2\"\nauthor: Unknown author\nformat: pdf\neditor: visual\n---\nWhile PDF documents are also able to be created, they require installing LaTeX, which can sometimes be complicated to install. TinyTeX is a custom LaTeX distribution that is easy to install with R. It is needed to compile R Markdown or Quarto documents to PDF.\nInstall the TinyTeX package:\n```{r}\ninstall.packages(\"tinytex\")\n```\nTo install TinyTeX from the tinytex package, please run the R commands as follow:\n```{r}\ntinytex::install_tinytex()\n```\nIf specific LaTeX packages (e.g., fancyhdr, lastpage, babel, tocbibind, worldflags) or styles are missing, they can be installed using the following commands:\n```{r}\ntinytex::tlmgr_install(\"fancyhdr\")\n```\n```{r}\ntinytex::parse_install(\n    text = \"! LaTeX Error: File `ulem.sty' not found.\"\n)\n```\nIn order to avoid the warning No hyphenation patterns were preloaded for the language French into the format., please consider installing the package hyphen-french\n```{r}\ntinytex::tlmgr_install(\"hyphen-french\")\n```\n\n4.4 Execute R code within the text\nInline code allows you to execute code within markdown, e.g. to automatically use the most up-to-date computations in narrative. Quarto provides an inline code syntax that works across all three engines (Jupyter, Knitr and OJS).\nThe syntax for inline code is similar to code blocks, except you use a single tick (`) rather than triple ticks (```), and you can use it in the middle of markdown. Here is an example storing the variable in a code block and then print it in a sentence using inline code:\n\n```{r}\ncomment &lt;- \"AWESOME\"\n```\n\nYou can print the sentence like this:\nThis lecture is `{r} comment`!\nThe result of the commented code is the following output:\nThis lecture is AWESOME!\nInline expressions are always evaluated when rendering and previewing .qmd files.\n\nChunk Execution Order: Run code chunks in the correct order to avoid errors due to missing objects or incomplete definitions. Use clear and consistent chunk labels for cross-referencing.",
+    "crumbs": [
+      "📙 Editing and rendering Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_gettingstarted.html#references",
+    "href": "practicals/exercise2_gettingstarted.html#references",
+    "title": "📙 Editing and rendering Quarto notebooks",
+    "section": "\n5 References",
+    "text": "5 References\n\nThe Epidemiologist R Handbook\nAnalytically reproducible documents",
+    "crumbs": [
+      "📙 Editing and rendering Quarto notebooks"
+    ]
   }
 ]

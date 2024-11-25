@@ -1,6 +1,5 @@
 ---
-title: "Quarto training for R"
-subtitle: "📘 Integrating R and Python in a single Quarto notebook environment"
+title: 📘 Integrating R and Python in a single Quarto notebook environment
 author:
   - name:
       given: Hélène
@@ -37,38 +36,50 @@ execute:
   warning: false
 ---
 
-## 🎯 Learning objectives
+# 🎯 Learning objectives
 
 - Learn how to integrate Python in a Quarto notebook primarily using R code chunks ;
 - Learn how to write and execute Python code chunks in a Quarto notebook ;
 - Learn how to seamlessly share data frames and other objects between R and Python code chunks for a cohesive, mixed-language workflow.
 
-## Setup your R Environment for Python integration
+# Setup your R Environment for Python integration
 
-To integrate Python within a Quarto notebook that primarily uses R code chunks (i.e., executed with the `knitr` engine), you will need the `reticulate` R package, which serves as a bridge between R and Python, allowing you to run Python code chunks alongside R and share objects between the two languages.
+To integrate Python within a Quarto notebook that primarily uses R code chunks (i.e., executed with the `knitr` engine), you will need the `reticulate` R package, which serves as a bridge between R and Python, allowing you to run Python code chunks alongside R and share objects between the two programming languages. This setup provides a powerful approach for combining R’s statistical capabilities with Python’s data manipulation and machine learning tools, enabling a robust, mixed-language workflow within Quarto.
 
-1. Install `reticulate` if it is not already installed.
+Install `reticulate` if it is not already installed.
 
 ```{r}
 install.packages("reticulate")
 ```
 
-2. To ensure that R uses the correct Python executable, specify the path to Python using the `Sys.setenv()` function. This is especially important if you have multiple Python installations on your system or are using a specific environment, such as Anaconda. Replace *"C:/ProgramData/anaconda3/python.exe"* with the path to your desired Python executable. You can also add this permanently in your R environment variables using `.Renviron`. Consistently use the same Python environment in reticulate, as this prevents version conflicts and package incompatibilities.
+To ensure that R uses the correct Python executable, specify the path to Python using the `Sys.setenv()` function. This is especially important if you have multiple Python installations on your system or are using a specific environment, such as Anaconda. Replace *"C:/ProgramData/anaconda3/python.exe"* with the path to your Python executable. 
+
+::: callout-tip
+You can also set environment variables permanently in your R environment variables by defining them in the `.Renviron` file.
+:::
 
 ```{r}
 Sys.setenv(RETICULATE_PYTHON = "C:/ProgramData/anaconda3/python.exe")
 ```
 
-3. Load `reticulate` at the beginning of your Quarto notebook and use `py_config()` to verify that the correct Python version is active. This also allows you to confirm that required Python packages are available within your chosen environment.
+::: callout-important
+Consistently using the same Python environment in `reticulate` helps preventing version conflicts and package incompatibilities.
+:::
+
+Load `reticulate` at the beginning of your Quarto notebook.
 
 ```{r}
 library(reticulate)
+reticulate::use_python("C:/ProgramData/anaconda3/python.exe")
+```
+
+Use `py_config()` to verify that the correct Python version is active; this also allows you to confirm that required Python packages are available within your chosen environment.
+
+```{r}
 reticulate::py_config()
 ```
 
-This setup provides a powerful approach for combining R’s statistical capabilities with Python’s data manipulation and machine learning tools, enabling a robust, mixed-language workflow within Quarto.
-
-## Execute Python code and access R objects in Python
+# Execute Python code and access R objects in Python
 
 ```{python}
 import sys
@@ -90,24 +101,19 @@ df1 |>
   knitr::kable()
 ```
 
-As illustrated in @lst-1, you can access R objects (here the data frame `df1`) as a Python object by calling them through the `r.` prefix. In this example, we access the R data frame df1 and manipulate it in Python by creating a new column, Petal.Area. Then, use {python} as the chunk language to specify Python chunks within your Quarto notebook, enabling integration and inter-language communication.
+As illustrated below, you can access R objects (here the data frame `df1`) as a Python object by calling them through the `r.` prefix. In this example, we access the R data frame df1 and manipulate it in Python by creating a new column, Petal.Area. Then, use `{python}` as the chunk language to specify Python chunks within your Quarto notebook.
 
 ```{python}
-#| lst-label: lst-1
-#| lst-cap: Example of Python code chunk manipulating a R object
-
 import pandas as pd
 df2 = r.df1
 df2["Petal.Area"] = df2["Petal.Length"] * df2["Petal.Width"]
 ```
 
-## Access Python objects in R
+# Access Python objects in R
 
-You can also pass Python objects back to R, which allows you to integrate Python-specific data manipulations into your R workflow. For instance, after modifying df2 in Python, we can access it in an R code chunk using the As illustrated in @lst-2, you can reciprocally access Python objects (here the data frame `df2`) as a R object by calling them through the `py$` prefix. Here, we access the Python data frame df2 in R and display the first few rows to confirm the changes.
+As illustrated below, you can reciprocally access Python objects (here the data frame `df2`) as a R object by calling them through the `py$` prefix. Here, we access the Python data frame df2 in R and display the first few rows to confirm the changes.
 
 ```{r}
-#| lst-label: lst-2
-#| lst-cap: Example of R code chunk manipulating a Python object
 #| label: tbl-2
 #| tbl-cap: Data frame read from a Python object and displayed using R
 

@@ -1,5 +1,5 @@
 ---
-title: ⭐⭐⭐ Parametrise reports
+title: ⭐⭐⭐ Parametrise your report
 subtitle: 📋 Instructions
 author:
   - name:
@@ -32,8 +32,6 @@ format:
         href: df1.RData
       - text: df2.RData
         href: df2.RData
-      - text: ✅ Correction
-        href: ../correction/exercise3_step_by_step_correction.html
     code-links:
       - text: exercise3.qmd
         icon: file-code
@@ -66,10 +64,11 @@ resources:
   - df2.RData
 ---
 
-## 🎯 Exercise objective
+## 🎯 Exercise objectives
 
--   You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document `exercise3.qmd` in RStudio.
--   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.
+-   This exercise builds on the previous exercises where you learnt to [create a simple MS Word report ⭐](./exercise3_instructions.html) and to [add dynamic elements to your report ⭐⭐](./exercise4_instructions.html). Mastering these two exercises is essential for successfully completing this one;
+-   Open your modified Quarto document `exercise4.qmd` in RStudio;
+-   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references;
 -   Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
 
 ## Parametrise your report

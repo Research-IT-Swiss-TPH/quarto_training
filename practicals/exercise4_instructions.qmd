@@ -1,5 +1,5 @@
 ---
-title: ⭐⭐ Add dynamic elements to reports
+title: ⭐⭐ Add dynamic elements to your report
 subtitle: 📋 Instructions
 author:
   - name:
@@ -32,7 +32,7 @@ format:
         href: df1.RData
       - text: swisstph_template.docx
         href: swisstph_template.docx
-      - text: ✅ Correction
+      - text: ✅ Step-by-step correction
         href: ../correction/exercise3_step_by_step_correction.html
     code-links:
       - text: exercise3.qmd
@@ -68,9 +68,10 @@ resources:
   - df1.RData
 ---
 
-# 🎯 Exercise objective
+# 🎯 Exercise objectives
 
--   You are tasked with generating a Microsoft Word report on an outbreak. Open the Quarto document `exercise3.qmd` in RStudio.
+-   This exercise builds on the previous exercise where you learnt to [build a simple MS Word report ⭐](./exercise3_instructions.html);
+-   Open the Quarto document `exercise4.qmd` in RStudio;
 -   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.
 -   Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
 
