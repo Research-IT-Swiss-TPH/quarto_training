@@ -45,11 +45,15 @@ resources:
   - exercise3_step_by_step_correction.pdf
 ---
 
-This page provides a step-by-step correction for completing Exercise 3. To get the most out of your learning experience, attempt to solve the exercise on your own before looking at this correction. Trial and error is an essential part of the learning process, helping to strengthen your understanding and build confidence. Remember, simply copying and pasting the solution without trying to solve the exercise by yourself first will limit your long-term growth. Take your time, experiment, and learn actively!
+This page provides a step-by-step correction for building a simple MS Word report.
 
-## Setup basic elements of the Quarto document
+::: callout-important
+To get the most out of your learning experience, attempt to solve the exercise on your own before looking at this correction. Trial and error is an essential part of the learning process, helping to strengthen your understanding and build confidence. Remember, simply copying and pasting the solution without trying to solve the exercise by yourself first will limit your long-term growth. Take your time, experiment, and learn actively!
+:::
 
-All these basic elements are part of the YAML header.
+## Setup basic elements of the Quarto notebook
+
+All the basic elements you need to setup are defined in the YAML header at the beginning of your Quarto notebook.
 
 ``` yaml
 ---
@@ -58,71 +62,23 @@ author: Helene Langet     # <2>
 date: "2023-12-31"        # <3>
 
 format: docx              # <4>
-echo: false               # <5>
-warning: false            # <6>
+
+execute:
+  echo: false             # <5>
+  warning: false          # <6>
 ---
 ```
 
-1.  Update the title of the Quarto document.
-2.  Put your name as author of the Quarto document.
-3.  Add the date `2023-12-31` to the Quarto document.
-4.  Change the output format to generate a MS Word document.
-5.  Configure the Quarto document to hide code in the rendered MS Word document.
-6.  Configure the Quarto document to hide warnings in the rendered MS Word document.
+1.  Update the `title` option in the Quarto notebook. Quotation marks are optional.
+2.  Set the `author` option to your name. Quotation marks are optional.
+3.  Add the `date` option and set it to **"2023-12-31"**.
+4.  Set the `format` option to **docx** to generate a MS Word document.
+5.  Add the `echo` option and set it to **false** to hide code in the rendered document.
+6.  Add the `warning` option and set it to **false** to hide warnings in the rendered document.
 
-## Improve navigation and readability
+## Create publication-ready tables
 
-``` yaml
----
-title: My outbreak report
-author: Helene Langet
-date: "2023-12-31"
-
-format:
-  docx:
-    toc: true             # <7>
-    number-sections: true # <8>
-    toc-depth: 2          # <9>
-echo: false               
-warning: false            
----
-```
-
-7.  Insert a table of contents to the Quarto document.
-8.  Automatically number the different sections of the Quarto document.
-9.  Configure the table of contents to only display two levels of section headings.
-
-::: callout-important
-### YAML indentation
-
-YAML is a whitespace-sensitive language where indentation determines the structure; tabs are not recognised for indentation. The recommended practice is therefore to use **two spaces** per indentation level to ensure consistency and avoid errors.
-:::
-
-## Implement dynamic calculations
-
-### In the YAML header
-
-``` yaml
----
-title: My outbreak report
-author: Helene Langet
-date: last-modified       # <10>
-date-format: long         # <11>
-
-format:
-  docx:
-    toc: true             
-    number-sections: true
-    toc-depth: 2
-echo: false               
-warning: false            
----
-```
-
-10. Change the date `2023-12-31` to the date at which the Quarto document was last modified.
-11. Format this date to display it with the format `December 31, 2023`.
-
-### In the Quarto notebook
+Creating publication-ready tables in R often involves leveraging specialized packages. Popular options include `gtsummary`, `gt` and `flextable`. In what follows, we will use `gtsummary` which is an excellent package for creating summary statistics tables. To install it, run the command ``install.packages("gtsummary")`` in your R console. 
 
 ```{r}
 #| echo: false
@@ -159,33 +115,10 @@ subdf <- df |>
   dplyr::filter(date >= period_start & date <= period_end)
 ```
 
--   [ ] Replace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;
-
-> "*The outbreak ran from **date** to **date***"
-
--   [ ] Replace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.
-
-> "*Over the studied period, there were **N** cases, including **N** confirmed cases and **N** confirmed deaths.*"
-
-## Create and reference publication-ready tables
-
-You can use packages such as `gtsummary`
-
-To install the package, run teh following command in your console.
-
-```{{r}}
-install.packages(gtsummary)
-```
-
 ```{r}
-library(gtsummary)
-```
+#| tbl-cap: Population characteristics #<8>
 
-```{r}
-#| label: tbl-1                        #<14>
-#| tbl-cap: Population characteristics #<13>
-
-subdf |>                               #<12>
+subdf |>                               #<7>
   dplyr::select(age,
                 sex,
                 bmi,
@@ -194,21 +127,13 @@ subdf |>                               #<12>
   gtsummary::tbl_summary()             
 ```
 
-12. Create a table summarising the demographic characteristics and outcome frequency of all cases.
-13. Add a caption to the table.
-14. Assign a label to the table.
-
--   [x] Replace the placeholder text in bold with a cross-reference to the table ;
-
-`@tbl-1` provides a summary of the demographic characteristics and the outcome proportion for the overall population.
-
-> "@tbl-1 *provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
+7. Use the `gtsummary::tbl_summary()` function to create a table that summarizes the demographic characteristics (`age`, `sex`, `bmi`) and outcome frequencies (`confirmed`, `death`) for all cases.
+8. Add a caption to the table by using the `tbl-cap` chunk option. 
 
 ```{r}
-#| label: tbl-2                                               #<17>
-#| tbl-cap: Demographic characteristics of deceased vs. alive #<16>
+#| tbl-cap: Demographic characteristics of deceased vs. alive #<10>
 
-subdf |>                                                      #<15>
+subdf |>                                                      #<9>
   dplyr::select(sex,
                 age,
                 bmi,
@@ -217,20 +142,12 @@ subdf |>                                                      #<15>
   gtsummary::add_overall()
 ```
 
-15. Create a table summarising the demographic characteristics of individuals who died versus those who are still alive.
-16. Add a caption to the table.
-17. Assign a label to the table.
-
--   [ ] Replace the placeholder text in bold with a cross-reference to the table.
-
-`@tbl-2` compares the demographic characteristics of individuals who died versus those who are still alive.
-
-> "*..., while @tbl-2 compares the demographic characteristics of individuals who died versus those who are still alive.*"
+9. Create a table summarising the demographic characteristics of individuals who died versus those who are still alive.
+10. Add a caption to the table by using the `tbl-cap` chunk option.
 
 ## Customise figures
 
 ```{r}
-#| label: fig-1                                                                       #<19>
 #| fig-cap: Weekly count of all cases, confirmed cases and deaths                     #<18>
 #| fig-width: 8                                                                       #<20>
 #| fig-height: 4                                                                      #<20>
@@ -267,7 +184,6 @@ ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
 ```
 
 18. Add a caption to the figure.
-19. Assign a label to the figure.
 20. Adjust the dimensions of the figure until you are happy with it
 
 -   [ ] Replace the placeholder text in bold with a cross-reference to the figure.
@@ -296,7 +212,7 @@ coeffs <- glm(death ~ bmi + age,                        # <22>
               family = binomial)
 ```
 
-22. Implement a logistic regression model based on description in the Quarto document.
+22. Implement a logistic regression model based on description in the Quarto notebook.
 
 The results of the logistic regression model are summarized in the formatted regression table, which is presented in @tbl-3.
 

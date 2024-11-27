@@ -18,7 +18,6 @@ website:
     style: "docked"
     collapse: true
     collapse-level: 2
-    search: true
     contents:
       - href: index.qmd
         text: Home
@@ -29,7 +28,7 @@ website:
       - href: ./practicals/exercise1_gettingstarted.qmd
         text: 📙 Create a Quarto notebook
       - href: ./practicals/exercise2_gettingstarted.qmd
-        text: 📙 Editing and rendering Quarto notebooks
+        text: 📙 Edit and render Quarto notebooks
       - href: ./practicals/exercise3_instructions.qmd
         text: 📙 Create a simple Word report
       - href: ./practicals/exercise4_instructions.qmd
@@ -44,16 +43,16 @@ website:
             text: 🛠️ Build a Quarto website
           - href: https://posit-conf-2024.github.io/quarto-dashboards/
             text: 🛠️ Build a Quarto dashboard
-    
-code-line-numbers: true
-toc: true
-number-sections: true
-code-link: true
-code-overflow: wrap
-code-annotations: true
-cache: true
   
 format:
   html:
-    theme: cosmo
+    title-block-banner: true
+    embed-resources: true
     toc: true
+    number-sections: true
+    anchor-sections: true
+    theme: cosmo
+    code-overflow: wrap
+
+execute:
+  cache: true

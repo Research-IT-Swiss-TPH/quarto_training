@@ -1,5 +1,5 @@
 ---
-title: 🌱 Editing and rendering Quarto notebooks
+title: 🌱 Edit and render Quarto notebooks
 subtitle: 📋 Guided exercise
 author:
   - name:
@@ -226,7 +226,7 @@ echo: false
 :::
 
 ::::: callout-important
-It is important to note that the YAML header is indentation-sensitive and relies on proper whitespace formatting.
+Indentation is essential for defining the structure of YAML contents. It is important to note that tabulations are not recognised as valid indentation, but the YAML language is whitespace-sensitive. The recommended practice is therefore to use **two spaces** per indentation level to ensure consistency and avoid errors.
 
 :::: {.columns}
 

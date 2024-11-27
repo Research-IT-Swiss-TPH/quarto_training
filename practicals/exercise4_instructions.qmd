@@ -68,9 +68,10 @@ resources:
   - df1.RData
 ---
 
+This exercise builds on the previous exercise where you learnt to [build a simple MS Word report ⭐](./exercise3_instructions.html).
+
 # 🎯 Exercise objectives
 
--   This exercise builds on the previous exercise where you learnt to [build a simple MS Word report ⭐](./exercise3_instructions.html);
 -   Open the Quarto document `exercise4.qmd` in RStudio;
 -   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.
 -   Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
@@ -78,7 +79,7 @@ resources:
 # Improve navigation and readability
 
 ::: callout-tip
--   See [Quarto documentation about MS Word table of contents](https://quarto.org/docs/output-formats/ms-word.html#table-of-contents)
+-   See Quarto documentation about [table of contents](https://quarto.org/docs/output-formats/ms-word.html#table-of-contents)
 :::
 
 -   [ ] Insert a table of contents to the Quarto document ;
@@ -88,8 +89,9 @@ resources:
 # Implement dynamic calculations
 
 ::: callout-tip
--   See [Quarto documentation about dynamic dates](https://quarto.org/docs/reference/dates.html#date-parsing)
--   See [Quarto documentation about inline code](https://quarto.org/docs/computations/inline-code.html)
+-   See Quarto documentation about [date formatting](https://quarto.org/docs/reference/dates.html#date-formatting)
+-   See Quarto documentation about [dynamic dates](https://quarto.org/docs/reference/dates.html#date-parsing)
+-   See Quarto documentation about [inline code](https://quarto.org/docs/computations/inline-code.html)
 :::
 
 -   [ ] Change the date `2023-12-31` to the date at which the Quarto document was last modified, and format this date to display it with the format `December 31, 2023` ;
