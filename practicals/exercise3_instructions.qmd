@@ -15,6 +15,24 @@ editor: source
 lang: en-US
 
 format:
+  html:
+    default: true
+    toc-depth: 2
+    code-block-bg: true
+    code-block-border-left: "#c03427"
+    comments:
+      hypothesis: 
+        theme: classic
+    other-links:
+      - text: 🗄️ df1.RData
+        href: df1.RData
+      - text: ✅ Step-by-step correction
+        href: ../correction/exercise3_step_by_step_correction.html
+    code-links:
+      - text: exercise3.qmd
+        icon: file-code
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise3.qmd
+    format-links: [pdf]
   pdf:
     default: true
     pdf-engine: lualatex
