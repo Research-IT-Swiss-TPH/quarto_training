@@ -74,7 +74,7 @@ resources:
 ## Objectives 🎯
 
 -   You are tasked with generating a simple analytically reproducible report on a fictitious outbreak.
--   Download and open the Quarto notebook [exercise3.qmd](https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise3.qmd) in RStudio. Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
+-   Download the files `df1.RData` and `exercise3.qmd` using the links provided on the right-hand side of this page. Open the Quarto notebook in RStudio. Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
 -   The final output should be a Microsoft (MS) Word report named `exercise3.docx`, containing all required tables, figures and corresponding captions.
 
 ## Setup basic elements of the Quarto notebook

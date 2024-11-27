@@ -499,7 +499,7 @@
     "href": "practicals/exercise3_instructions.html",
     "title": "⭐ Create a simple Word report",
     "section": "",
-    "text": "You are tasked with generating a simple analytically reproducible report on a fictitious outbreak.\nDownload and open the Quarto notebook exercise3.qmd in RStudio. Complete each of the following tasks and render the document after each task or set of tasks to track your progress.\nThe final output should be a Microsoft (MS) Word report named exercise3.docx, containing all required tables, figures and corresponding captions.",
+    "text": "You are tasked with generating a simple analytically reproducible report on a fictitious outbreak.\nDownload the files df1.RData and exercise3.qmd using the links provided on the right-hand side of this page. Open the Quarto notebook in RStudio. Complete each of the following tasks and render the document after each task or set of tasks to track your progress.\nThe final output should be a Microsoft (MS) Word report named exercise3.docx, containing all required tables, figures and corresponding captions.",
     "crumbs": [
       "📙 Create a simple Word report"
     ]
@@ -675,7 +675,7 @@
     "href": "practicals/exercise3_instructions_slides.html#objectives",
     "title": "⭐ Create a simple Word report",
     "section": "Objectives 🎯",
-    "text": "Objectives 🎯\n\nYou are tasked with generating a simple analytically reproducible report on a fictitious outbreak.\nOpen the Quarto notebook exercise3.qmd in RStudio. Complete each of the following tasks and render the document after each task or set of tasks to track your progress.\nThe final output should be a Microsoft (MS) Word report named exercise3.docx, containing all required tables, figures and corresponding captions."
+    "text": "Objectives 🎯\n\nYou are tasked with generating a simple analytically reproducible report on a fictitious outbreak.\nDownload the files df1.RData and exercise3.qmd using the links provided on the right-hand side of this page. Open the Quarto notebook in RStudio. Complete each of the following tasks and render the document after each task or set of tasks to track your progress.\nThe final output should be a Microsoft (MS) Word report named exercise3.docx, containing all required tables, figures and corresponding captions."
   },
   {
     "objectID": "practicals/exercise3_instructions_slides.html#parametrise-your-report",
@@ -766,7 +766,7 @@
     "href": "practicals/exercise3_instructions.html#objectives",
     "title": "⭐ Create a simple Word report",
     "section": "",
-    "text": "You are tasked with generating a simple analytically reproducible report on a fictitious outbreak.\nDownload and open the Quarto notebook exercise3.qmd in RStudio. Complete each of the following tasks and render the document after each task or set of tasks to track your progress.\nThe final output should be a Microsoft (MS) Word report named exercise3.docx, containing all required tables, figures and corresponding captions.",
+    "text": "You are tasked with generating a simple analytically reproducible report on a fictitious outbreak.\nDownload the files df1.RData and exercise3.qmd using the links provided on the right-hand side of this page. Open the Quarto notebook in RStudio. Complete each of the following tasks and render the document after each task or set of tasks to track your progress.\nThe final output should be a Microsoft (MS) Word report named exercise3.docx, containing all required tables, figures and corresponding captions.",
     "crumbs": [
       "📙 Create a simple Word report"
     ]
