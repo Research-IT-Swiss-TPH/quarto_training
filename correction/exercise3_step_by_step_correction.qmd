@@ -17,14 +17,9 @@ lang: en-US
 format:
   html:
     default: true
-    embed-resources: true
-    code-block-bg: true
-    code-block-border-left: "#c03427"
-    theme: cosmo
-    toc: true
-    number-sections: true
-    anchor-sections: true
-    title-block-banner: true
+    toc-depth: 2
+    code-annotation: true
+    code-line-numbers: true
     comments:
       hypothesis: 
         theme: classic
@@ -34,8 +29,23 @@ format:
     format-links: [pdf]
   pdf:
     default: true
+    pdf-engine: lualatex
     toc: true
+    toc-depth: 2
     number-sections: true
+    code-annotation: true
+    code-line-numbers: true
+    include-in-header: 
+       text: |
+         \usepackage{fvextra}
+         \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+    include-before-body:
+      text: |
+        \RecustomVerbatimEnvironment{verbatim}{Verbatim}{
+        showspaces = false,
+        showtabs = false,
+        breaksymbolleft={},
+        breaklines}
     
 execute:
   echo: fenced
@@ -45,13 +55,13 @@ resources:
   - exercise3_step_by_step_correction.pdf
 ---
 
-This page provides a step-by-step correction for building a simple MS Word report.
+This page provides a step-by-step correction for building a simple MS Word report using the Quarto notebook `exercise3.qmd` as a starting point.
 
 ::: callout-important
-To get the most out of your learning experience, attempt to solve the exercise on your own before looking at this correction. Trial and error is an essential part of the learning process, helping to strengthen your understanding and build confidence. Remember, simply copying and pasting the solution without trying to solve the exercise by yourself first will limit your long-term growth. Take your time, experiment, and learn actively!
+To get the most out of your learning experience, attempt to solve the exercise on your own before looking at this correction. Remember, trials and errors are an essential part of the learning process, strengthening your understanding and helping you build confidence. Take your time, experiment, and learn actively!
 :::
 
-## Setup basic elements of the Quarto notebook
+# Setup basic elements of the Quarto notebook
 
 All the basic elements you need to setup are defined in the YAML header at the beginning of your Quarto notebook.
 
@@ -59,24 +69,31 @@ All the basic elements you need to setup are defined in the YAML header at the b
 ---
 title: My outbreak report # <1>
 author: Helene Langet     # <2>
-date: "2023-12-31"        # <3>
+date: 2023-12-31          # <3>
 
 format: docx              # <4>
 
-execute:
-  echo: false             # <5>
-  warning: false          # <6>
+execute:                  # <5>
+  echo: false             # <6>
+  warning: false          # <7>
 ---
 ```
 
 1.  Update the `title` option in the Quarto notebook. Quotation marks are optional.
 2.  Set the `author` option to your name. Quotation marks are optional.
-3.  Add the `date` option and set it to **"2023-12-31"**.
+3.  Add the `date` option and set it to **2023-12-31**. Quotation marks are optional.
 4.  Set the `format` option to **docx** to generate a MS Word document.
-5.  Add the `echo` option and set it to **false** to hide code in the rendered document.
-6.  Add the `warning` option and set it to **false** to hide warnings in the rendered document.
+5.  Add an `execute` block to customize the execution behaviour for your Quarto notebook. This block allows you to control how code, warnings, and other outputs are displayed in the rendered document.
+6.  Add the `echo` option and set it to **false** to hide code in the rendered document.
+7.  Add the `warning` option and set it to **false** to hide warnings in the rendered document.
 
-## Create publication-ready tables
+::: callout-important
+### YAML indentation
+
+Remember that YAML is a whitespace-sensitive language where indentation determines the structure; tabs are not recognised for indentation. The recommended practice is therefore to use **two spaces** per indentation level to ensure consistency and avoid errors.
+:::
+
+# Create publication-ready summary statistics tables
 
 Creating publication-ready tables in R often involves leveraging specialized packages. Popular options include `gtsummary`, `gt` and `flextable`. In what follows, we will use `gtsummary` which is an excellent package for creating summary statistics tables. To install it, run the command ``install.packages("gtsummary")`` in your R console. 
 
@@ -115,52 +132,69 @@ subdf <- df |>
   dplyr::filter(date >= period_start & date <= period_end)
 ```
 
-```{r}
-#| tbl-cap: Population characteristics #<8>
+#### Table 1 {.unnumbered}
 
-subdf |>                               #<7>
-  dplyr::select(age,
+```{r}
+#| tbl-cap: Population characteristics # <10>
+
+#Table 1
+#Generate a summary table displaying population characteristics
+subdf |>                               
+  dplyr::select(age,                   # <8>
                 sex,
                 bmi,
                 confirmed,
                 death) |>
-  gtsummary::tbl_summary()             
+  gtsummary::tbl_summary()             # <9>
 ```
 
-7. Use the `gtsummary::tbl_summary()` function to create a table that summarizes the demographic characteristics (`age`, `sex`, `bmi`) and outcome frequencies (`confirmed`, `death`) for all cases.
-8. Add a caption to the table by using the `tbl-cap` chunk option. 
+8. Use the `dplyr::select()` function to select specific columns (**age**, **sex**, **bmi**, **confirmed**, and **death**) from the **subdf** dataset.
+9. Use the `gtsummary::tbl_summary()` function to create a table that summarizes the descriptive statistics of the selected variables in the whole population.
+10. Add a caption to the table by using the `tbl-cap` chunk option. 
+
+#### Table 2 {.unnumbered}
 
 ```{r}
-#| tbl-cap: Demographic characteristics of deceased vs. alive #<10>
+#| tbl-cap: Demographic characteristics of deceased vs. alive # <12>
 
-subdf |>                                                      #<9>
+#Table 2
+#Generate a summary table comparing the demographic characteristics of individuals who died versus those who are still alive
+subdf |>                                                      
   dplyr::select(sex,
                 age,
                 bmi,
                 death) |>
-  gtsummary::tbl_summary(by = death) |>
-  gtsummary::add_overall()
+  gtsummary::tbl_summary(by = death) |>                       # <10>
+  gtsummary::add_overall()                                    # <11>
 ```
 
-9. Create a table summarising the demographic characteristics of individuals who died versus those who are still alive.
-10. Add a caption to the table by using the `tbl-cap` chunk option.
+10. Use the `gtsummary::tbl_summary()` function to create a summary table grouped by the **death** column,  showing separate statistics for individuals who have died vs. those who are still alive. 
+11. Use the `gtsummary::add_overall()` function to add a row to the table that shows overall summary statistics for the whole population, regardless of their death status.
+12. Add a caption to the table by using the `tbl-cap` chunk option.
 
-## Customise figures
+# Create publication-ready figures
+
+#### Figure 1 {.unnumbered}
 
 ```{r}
-#| fig-cap: Weekly count of all cases, confirmed cases and deaths                     #<18>
-#| fig-width: 8                                                                       #<20>
-#| fig-height: 4                                                                      #<20>
-                
+#| echo: false
+
 # Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
 weekly_data <- subdf |>
   dplyr::group_by(week) |>
   dplyr::summarise(count = dplyr::n(),
                    confirmed_count = sum(confirmed == "1"),
                    death_count = sum(death == "1"))
+```
 
+```{r}
+#| fig-cap: Weekly count of all cases, confirmed cases and deaths                                                 # <13>
+#| fig-width: 8                                                                                                   # <14>
+#| fig-height: 4                                                                                                  # <15>
+
+#Figure 1 
 # Plot the weekly cases, confirmed cases and deaths
-ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
+ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +                        
   ggplot2::geom_line(ggplot2::aes(y = count,
                                   color = "All cases"),
                      size = 1) +
@@ -173,90 +207,63 @@ ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
   ggplot2::labs(x = "Week",
                 y = "Count",
                 color = "Legend") +
-  ggplot2::scale_color_manual(values = c("All cases" = "#440e54",
+  ggplot2::scale_color_manual(values = c("All cases" = "#440e54",                                                  # <16>
                                          "Confirmed cases" = "#f8766d",
                                          "Confirmed deaths" = "#128984")) +
-  ggplot2::theme_minimal() +
-  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
-                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
-                 panel.grid.major.x = ggplot2::element_blank(),
+  ggplot2::theme_minimal() +                                                                                       # <17>
+  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5,                                       # <18>
+                                                            linetype = "dashed",
+                                                            color = "grey"), 
+                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5,
+                                                            linetype = "dashed",
+                                                            color = "grey"),
+                 panel.grid.major.x = ggplot2::element_blank(),                                                    # <19>
                  panel.grid.minor.x = ggplot2::element_blank())
 ```
 
-18. Add a caption to the figure.
-20. Adjust the dimensions of the figure until you are happy with it
+13. Add a caption to the table by using the `fig-cap` chunk option. Remove the title parameter from `ggplot2::labs` to avoid the repetition.
+14. Set the width of the figure to 8 inches by using the `fig-width` option. This option can also be specified globally in the YAML header of the Quarto notebook.
+15. Set the height of the figure to 4 inches by using the `fig-height` option. This option can also be specified globally in the YAML header of the Quarto notebook.
+16. Assigns specific colors to each line for better distinction.
+17. Apply the `ggplot2::theme_minimal()` function to set a clean and simple aesthetic for the plot. This theme removes unnecessary elements such as background shading and focuses attention on the data by displaying only grid lines and axis labels.
+18. Add dashed lines for horizontal (major and minor) grid lines.
+19. Omits vertical (major and minor) grid lines for a cleaner look.
 
--   [ ] Replace the placeholder text in bold with a cross-reference to the figure.
-
-@fig-1 illustrates the outbreak's progression, which can be divided into distinct phases.
-
-> "***cross-reference** illustrates the outbreak's progression, which can be divided into distinct phases.*"
-
-21. Beautify the plot using ggplot options
-
-## Code
-
--   [ ] Display the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;
--   [ ] Add a caption to the code chunk ;
--   [ ] Assign a label to the code chunk ;
--   [ ] Replace the placeholder text in bold with a cross-reference to the code chunk.
-
-The logistic regression model uses `death` as the reponse variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by @lst-test
+# Present statistical models and results
 
 ```{r}
-#| lst-label: lst-test
-#| lst-cap: R code
+#| echo: false
 
-coeffs <- glm(death ~ bmi + age,                        # <22>
-              subdf |> dplyr::filter(confirmed == "1"),
-              family = binomial)
+#Logistic regression model
+model <- glm(death ~ bmi + age,                        
+             subdf |> dplyr::filter(confirmed == "1"),
+             family = binomial)
 ```
 
-22. Implement a logistic regression model based on description in the Quarto notebook.
+```{{r}}
+#| echo: true                                          # <20>
 
-The results of the logistic regression model are summarized in the formatted regression table, which is presented in @tbl-3.
+#Logistic regression model
+model <- glm(death ~ bmi + age,                        # <21>
+             subdf |> dplyr::filter(confirmed == "1"), # <23>
+             family = binomial)                        # <22>
+```
+
+20. The `echo: true` option ensures that the code chunk used to generate the logistic regression model is displayed in the rendered output, which is helpful for transparency and reproducibility.
+21. The `glm()` function fits a generalised linear model to predict **death** (binary outcome) from two predictors (**bmi** and **age**). The function returns a model object containing various components, such as coefficients (effects of predictors), residuals (errors), and fitted values (predicted probabilities).
+22. Set the `family` argument to **binomial** to fit a logistic regression model. This is appropriate for binary outcomes like death, as it models the probability of the outcome occurring using a logit (*log-odds*) function (i.e. coefficients represent the effect size of each predictor on the log-odds of the binary outcome).
+23. Filter data using the `dplyr::filter()` function to subset the dataset so that the model is estimated from confirmed cases only.
+
+#### Table 3 {.unnumbered}
 
 ```{r}
-#| label: tbl-3                                        # <25>
-#| tbl-cap: Formatted regression table                 # <24>
+#| tbl-cap: Formatted regression table         # <26>
 
-gtsummary::tbl_regression(coeffs, exponentiate = TRUE) # <23>
+#Table 3
+gtsummary::tbl_regression(model,               # <24>
+                          exponentiate = TRUE) # <25>
 ```
 
-23. Create a table summarizing the odds ratios from the logistic regression model.
-24. Add a caption to the table.
-25. Assign a label to the table.
-
--   [ ] Replace the placeholder text in bold with a cross-reference to the table ;
-
-> "The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference**."
-
-## Add references
-
-![](images/clipboard-3622190034.png)
-
-![](images/clipboard-1750453379.png)
-
-## Finalise your MS Word report
-
-``` yaml
----
-title: My outbreak report
-author: Helene Langet
-date: last-modified
-date-format: long
-
-format:
-  docx:
-    reference-doc: swisstph_template.docx # <23>
-    toc: true
-    number-sections: true
-    toc-depth: 2
-echo: false
-warning: false
----
-```
-
-24. Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report.
-
--   [ ] Create your own template and apply it to your MS Word rendered report.
+24. Use `gtsummary::tbl_regression()` to create a table summary of the logistic regression results. 
+25. Set the `exponentiate` argument to **TRUE** to convert the coefficients (*log-odds*) into odds ratios, which are more interpretable and useful for understanding the strength of associations.
+26. Add a caption to the table by using the `tbl-cap` chunk option.

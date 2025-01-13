@@ -62,23 +62,31 @@ resources:
   - notebook_structure.pdf  
 ---
 
-## 🎯 Learning objectives
+## Learning objectives 🎯
 
-1.  Create a Quarto document
-2.  Setup the R environment to be able to use and render Quarto documents
-3.  Edit Quarto documents
-4.  Render Quarto documents in different formats
+1. Understand the structure of the Quarto notebook
+2. Understand the difference and relationships between notebooks and rendered documents
 
-## Exploring the structure of the Quarto document
+## Quarto notebooks vs. rendered documents
 
-There are three basic components to a Quarto document.
+A Quarto notebook and its corresponding rendered document(s) serve different purposes but are closely connected. 
+
+- The **Quarto notebook** is the **source document** where content is defined.
+- The **rendered document** is the **output** generated from the Quarto notebook. Common rendered document formats include:
+    - HTML for interactive web-based reports.
+    - PDF for professional and printable documents.
+    - Word for editable text-based outputs.
+
+## Structure of a Quarto notebook
+
+There are three basic components to a Quarto document: a header, markdown text and code.
 
 ::: panel-tabset
 ### Header
 
-At the top of the Quarto document, you will see something that looks as follows:
+At the top of the Quarto notebook, you will see something that looks as follows:
 
-```         
+```{.yaml}         
 ---
 title: "Untitled"
 format: html
@@ -87,7 +95,7 @@ format: html
 
 This section is called the **YAML header** and it contains commands and metadata about the Quarto document. There is only one unique header in a Quarto document and it is always surrounded by `---` lines on the top and bottom of the section.
 
-YAML is a data format that has the form of a **key: value pairing** to store data. The keys in this case are *title* and *format*. The values are those that follow the key (e.g., “Untitled” for title). These key data are used to store the settings that Quarto will use to render the output document. The keys listed above are some of many settings that Quarto has available to use.
+YAML is a data format that has the form of a **key: value pairing** to store data. The keys in this case are *title* and *format*; they are are some of many settings that Quarto has available to use. The values are those that follow the key (e.g., “Untitled” for *title*). These key data are used to store the settings that Quarto will use to render the output document.
 
 ### Markdown text
 
@@ -99,6 +107,10 @@ Code chunks, typically shown within gray backgrounds, execute commands in Quarto
 :::
 
 ![](../images/qmd_structure.png)
+
+## Structure of a rendered document
+
+The rendered document translates the notebook's structure, content, and code outputs into a polished, static format for presentation or sharing.
 
 ## References
 

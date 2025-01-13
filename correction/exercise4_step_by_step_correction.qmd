@@ -1,0 +1,329 @@
+---
+title:  ⭐ Build a MS Word report
+subtitle: ✅ Step-by-step correction
+author:
+  - name:
+      given: Hélène
+      family: Langet
+    affiliations:
+      - name: Swiss TPH Research-IT
+    orcid: 0000-0002-6758-2397
+    email: helene.langet@swisstph.ch
+license: "CC-BY"
+date: last-modified
+editor: source
+lang: en-US
+
+format:
+  html:
+    default: true
+    embed-resources: true
+    code-block-bg: true
+    code-block-border-left: "#c03427"
+    theme: cosmo
+    toc: true
+    number-sections: true
+    anchor-sections: true
+    title-block-banner: true
+    comments:
+      hypothesis: 
+        theme: classic
+    code-links:
+      - text: 📋 Instructions
+        href: ../practical/exercise4_instructions.html
+    format-links: [pdf]
+  pdf:
+    default: true
+    toc: true
+    number-sections: true
+    
+execute:
+  echo: fenced
+  warning: false
+    
+resources:
+  - exercise4_step_by_step_correction.pdf
+---
+
+This page provides a step-by-step correction for building a simple MS Word report. 
+
+::: callout-important
+
+To get the most out of your learning experience, attempt to solve the exercise on your own before looking at this correction. Trial and error is an essential part of the learning process, helping to strengthen your understanding and build confidence. Remember, simply copying and pasting the solution without trying to solve the exercise by yourself first will limit your long-term growth. Take your time, experiment, and learn actively!
+
+:::
+
+## Improve navigation and readability
+
+``` yaml
+---
+title: My outbreak report
+author: Helene Langet
+date: "2023-12-31"
+
+format:
+  docx:
+    toc: true             # <7>
+    number-sections: true # <8>
+    toc-depth: 2          # <9>
+echo: false               
+warning: false            
+---
+```
+
+7.  Insert a table of contents to the Quarto document.
+8.  Automatically number the different sections of the Quarto document.
+9.  Configure the table of contents to only display two levels of section headings.
+
+::: callout-important
+### YAML indentation
+
+Remember that YAML is a whitespace-sensitive language where indentation determines the structure; tabs are not recognised for indentation. The recommended practice is therefore to use **two spaces** per indentation level to ensure consistency and avoid errors.
+:::
+
+## Implement dynamic calculations
+
+### In the YAML header
+
+``` yaml
+---
+title: My outbreak report
+author: Helene Langet
+date: last-modified       # <10>
+date-format: long         # <11>
+
+format:
+  docx:
+    toc: true             
+    number-sections: true
+    toc-depth: 2
+echo: false               
+warning: false            
+---
+```
+
+10. Change the date `2023-12-31` to the date at which the Quarto document was last modified.
+11. Format this date to display it with the format `December 31, 2023`.
+
+### In the Quarto notebook
+
+```{r}
+#| echo: false
+# Load the dataset stored in the "df1.RData" file
+load(file = "df1.RData")
+```
+
+```{r}
+#| echo: false
+# Convert the 'sex', 'confirmed', and 'death' columns from their current data type to factors
+df <- df |>
+  dplyr::mutate(dplyr::across(c(sex, confirmed, death),
+                              as.factor))
+```
+
+```{r}
+#| echo: false
+# Identify the start and end dates of the outbreak by finding the minimum and maximum values in the 'date' column
+start_date <- min(df$date)
+end_date <- max(df$date)
+```
+
+```{r}
+#| echo: false
+# Define the period of interest for the report
+period_start <- start_date
+period_end <- end_date
+```
+
+```{r}
+#| echo: false
+# Filter the data frame to include only the cases that occurred within the defined period
+subdf <- df |>
+  dplyr::filter(date >= period_start & date <= period_end)
+```
+
+-   [ ] Replace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;
+
+> "*The outbreak ran from **date** to **date***"
+
+-   [ ] Replace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.
+
+> "*Over the studied period, there were **N** cases, including **N** confirmed cases and **N** confirmed deaths.*"
+
+## Create and reference publication-ready tables
+
+You can use packages such as `gtsummary`
+
+To install the package, run teh following command in your console.
+
+```{{r}}
+install.packages(gtsummary)
+```
+
+```{r}
+library(gtsummary)
+```
+
+```{r}
+#| label: tbl-1                        #<14>
+#| tbl-cap: Population characteristics #<13>
+
+subdf |>                               #<12>
+  dplyr::select(age,
+                sex,
+                bmi,
+                confirmed,
+                death) |>
+  gtsummary::tbl_summary()             
+```
+
+12. Create a table summarising the demographic characteristics and outcome frequency of all cases.
+13. Add a caption to the table.
+14. Assign a label to the table.
+
+-   [x] Replace the placeholder text in bold with a cross-reference to the table ;
+
+`@tbl-1` provides a summary of the demographic characteristics and the outcome proportion for the overall population.
+
+> "@tbl-1 *provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
+
+```{r}
+#| label: tbl-2                                               #<17>
+#| tbl-cap: Demographic characteristics of deceased vs. alive #<16>
+
+subdf |>                                                      #<15>
+  dplyr::select(sex,
+                age,
+                bmi,
+                death) |>
+  gtsummary::tbl_summary(by = death) |>
+  gtsummary::add_overall()
+```
+
+15. Create a table summarising the demographic characteristics of individuals who died versus those who are still alive.
+16. Add a caption to the table.
+17. Assign a label to the table.
+
+-   [ ] Replace the placeholder text in bold with a cross-reference to the table.
+
+`@tbl-2` compares the demographic characteristics of individuals who died versus those who are still alive.
+
+> "*..., while @tbl-2 compares the demographic characteristics of individuals who died versus those who are still alive.*"
+
+## Customise figures
+
+```{r}
+#| label: fig-1                                                                       #<19>
+#| fig-cap: Weekly count of all cases, confirmed cases and deaths                     #<18>
+#| fig-width: 8                                                                       #<20>
+#| fig-height: 4                                                                      #<20>
+                
+# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
+weekly_data <- subdf |>
+  dplyr::group_by(week) |>
+  dplyr::summarise(count = dplyr::n(),
+                   confirmed_count = sum(confirmed == "1"),
+                   death_count = sum(death == "1"))
+
+# Plot the weekly cases, confirmed cases and deaths
+ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
+  ggplot2::geom_line(ggplot2::aes(y = count,
+                                  color = "All cases"),
+                     size = 1) +
+  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,
+                                  color = "Confirmed cases"),
+                     size = 1) +
+  ggplot2::geom_line(ggplot2::aes(y = death_count,
+                                  color = "Confirmed deaths"),
+                     size = 1) +
+  ggplot2::labs(x = "Week",
+                y = "Count",
+                color = "Legend") +
+  ggplot2::scale_color_manual(values = c("All cases" = "#440e54",
+                                         "Confirmed cases" = "#f8766d",
+                                         "Confirmed deaths" = "#128984")) +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+                 panel.grid.major.x = ggplot2::element_blank(),
+                 panel.grid.minor.x = ggplot2::element_blank())
+```
+
+18. Add a caption to the figure.
+19. Assign a label to the figure.
+20. Adjust the dimensions of the figure until you are happy with it
+
+-   [ ] Replace the placeholder text in bold with a cross-reference to the figure.
+
+@fig-1 illustrates the outbreak's progression, which can be divided into distinct phases.
+
+> "***cross-reference** illustrates the outbreak's progression, which can be divided into distinct phases.*"
+
+21. Beautify the plot using ggplot options
+
+## Code
+
+-   [ ] Display the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;
+-   [ ] Add a caption to the code chunk ;
+-   [ ] Assign a label to the code chunk ;
+-   [ ] Replace the placeholder text in bold with a cross-reference to the code chunk.
+
+The logistic regression model uses `death` as the reponse variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by @lst-test
+
+```{r}
+#| lst-label: lst-test
+#| lst-cap: R code
+
+coeffs <- glm(death ~ bmi + age,                        # <22>
+              subdf |> dplyr::filter(confirmed == "1"),
+              family = binomial)
+```
+
+22. Implement a logistic regression model based on description in the Quarto document.
+
+The results of the logistic regression model are summarized in the formatted regression table, which is presented in @tbl-3.
+
+```{r}
+#| label: tbl-3                                        # <25>
+#| tbl-cap: Formatted regression table                 # <24>
+
+gtsummary::tbl_regression(coeffs, exponentiate = TRUE) # <23>
+```
+
+23. Create a table summarizing the odds ratios from the logistic regression model.
+24. Add a caption to the table.
+25. Assign a label to the table.
+
+-   [ ] Replace the placeholder text in bold with a cross-reference to the table ;
+
+> "The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference**."
+
+## Add references
+
+![](images/clipboard-3622190034.png)
+
+![](images/clipboard-1750453379.png)
+
+## Finalise your MS Word report
+
+``` yaml
+---
+title: My outbreak report
+author: Helene Langet
+date: last-modified
+date-format: long
+
+format:
+  docx:
+    reference-doc: swisstph_template.docx # <23>
+    toc: true
+    number-sections: true
+    toc-depth: 2
+echo: false
+warning: false
+---
+```
+
+24. Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report.
+
+-   [ ] Create your own template and apply it to your MS Word rendered report.

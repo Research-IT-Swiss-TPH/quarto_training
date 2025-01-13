@@ -52,7 +52,14 @@ format:
     number-sections: true
     anchor-sections: true
     theme: cosmo
+    code-block-bg: true
+    code-block-border-left: "#c03427"
     code-overflow: wrap
+  pdf:
+    toc: true
+    number-sections: true
+    code-block-bg: true
+    code-block-border-left: "#c03427"
 
 execute:
   cache: true

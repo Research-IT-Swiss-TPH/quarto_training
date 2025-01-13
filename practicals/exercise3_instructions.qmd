@@ -18,8 +18,6 @@ format:
   html:
     default: true
     toc-depth: 2
-    code-block-bg: true
-    code-block-border-left: "#c03427"
     comments:
       hypothesis: 
         theme: classic
@@ -39,6 +37,8 @@ format:
     toc: true
     toc-depth: 2
     number-sections: true
+    code-block-bg: true
+    code-block-border-left: "#c03427"
     include-in-header: 
        text: |
          \usepackage{fvextra}
@@ -96,7 +96,7 @@ resources:
 #### Table 1 {.unnumbered}
 
 - [ ] Create a table summarising the demographic characteristics and outcome frequency of all cases ;
--   [ ] Add a caption to the table.
+- [ ] Add a caption to the table.
 
 ```{r}
 #Table 1
@@ -177,13 +177,13 @@ weekly_data <- subdf |>
 #Plot the weekly count of all cases, confirmed cases and deaths
 weekly_data |>
   ggplot2::ggplot(ggplot2::aes(x = week)) +
-  ggplot2::geom_line(ggplot2::aes(y     = count,
+  ggplot2::geom_line(ggplot2::aes(y = count,
                                   color = "All cases"),
                      size = 1) +
-  ggplot2::geom_line(ggplot2::aes(y     = confirmed_count,
+  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,
                                   color = "Confirmed cases"),
                      size = 1) +
-  ggplot2::geom_line(ggplot2::aes(y     = death_count,
+  ggplot2::geom_line(ggplot2::aes(y = death_count,
                                   color = "Confirmed deaths"),
                      size = 1) +
   ggplot2::labs(title = "Weekly count of all cases, confirmed cases and deaths",
