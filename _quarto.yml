@@ -43,6 +43,8 @@ website:
             text: 🛠️ Build a Quarto website
           - href: https://posit-conf-2024.github.io/quarto-dashboards/
             text: 🛠️ Build a Quarto dashboard
+          - href: https://www.youtube.com/watch?v=R3sNVE8TYeo
+            text: 📺 Quarto tutorial
   
 format:
   html:
