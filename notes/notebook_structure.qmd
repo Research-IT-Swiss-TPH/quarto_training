@@ -79,7 +79,9 @@ A Quarto notebook and its corresponding rendered document(s) serve different pur
 
 ## Structure of a Quarto notebook
 
-There are three basic components to a Quarto document: a header, markdown text and code.
+There are three basic components to a Quarto notebook: a header, markdown text and code.
+
+![](../images/notebook_structure.png)
 
 ::: panel-tabset
 ### Header
@@ -93,9 +95,11 @@ format: html
 ---
 ```
 
-This section is called the **YAML header** and it contains commands and metadata about the Quarto document. There is only one unique header in a Quarto document and it is always surrounded by `---` lines on the top and bottom of the section.
+This section is called the **YAML header** and it contains commands and metadata about the Quarto notebook. There is only one unique header in a Quarto notebook and it is always surrounded by `---` lines on the top and bottom of the section.
 
 YAML is a data format that has the form of a **key: value pairing** to store data. The keys in this case are *title* and *format*; they are are some of many settings that Quarto has available to use. The values are those that follow the key (e.g., “Untitled” for *title*). These key data are used to store the settings that Quarto will use to render the output document.
+
+More HTML options: [HTML Options](https://quarto.org/docs/reference/formats/html.html)
 
 ### Markdown text
 
@@ -106,11 +110,12 @@ In white background areas, any text will appear as regular text in the final rep
 Code chunks, typically shown within gray backgrounds, execute commands in Quarto. In the example provided, R code is being run within these chunks. These commands may handle data processing, cleaning, or the generation of visual outputs that are integrated into the final document.
 :::
 
-![](../images/qmd_structure.png)
 
 ## Structure of a rendered document
 
 The rendered document translates the notebook's structure, content, and code outputs into a polished, static format for presentation or sharing.
+
+![](../images/document_structure.png)
 
 ## References
 
