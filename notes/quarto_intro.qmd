@@ -28,7 +28,7 @@ format:
       hypothesis: 
         theme: classic
   revealjs:
-    default: true
+    default: false
     embed-resources: true
     logo: ../images/swisstph_logo_compact.png
     css: ../css/logo.css
