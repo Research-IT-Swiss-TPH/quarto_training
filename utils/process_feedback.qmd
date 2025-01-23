@@ -1,0 +1,98 @@
+---
+title: Test
+---
+
+```{r}
+library(httr)
+library(jsonlite)
+library(dplyr)
+library(purrr)
+library(openxlsx)
+```
+
+```{r}
+extract_textquote_prefix <- function(annotation_data) {
+  # Initialize a vector to store the extracted prefixes
+  prefixes <- vector("list", length(annotation_data$target))
+  
+  # Loop through each row of the annotation data
+  for (i in seq_along(annotation_data$target)) {
+    # Extract the selectors for the current target
+    selectors <- annotation_data$target[[i]]$selector
+    
+    # Filter for "TextQuoteSelector" and extract the prefix
+    if (!is.null(selectors)) {
+      prefixes[[i]] <- selectors[[1]] |> 
+        dplyr::filter(type == "TextQuoteSelector") |> 
+        dplyr::select(prefix) |> 
+        dplyr::pull()
+    } else {
+      prefixes[[i]] <- NA  # Handle cases where target/selector is missing
+    }
+  }
+  
+  # Return a flattened vector or a list depending on requirements
+  annotation_data |> 
+    dplyr::bind_cols(as.data.frame(purrr::flatten_chr(prefixes)) |> 
+                       rename(quote = "purrr::flatten_chr(prefixes)"))
+}
+```
+
+```{r}
+# List of URLs to loop over
+urls <- c(
+  "https://research-it-swiss-tph.github.io/quarto_training/index.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/notes/quarto_intro.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/notes/notebook_structure.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/notes/python_r_short_demo.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise1_gettingstarted.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise2_gettingstarted.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise3.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise3_instructions.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise3_instructions_slides.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise4_instructions.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise5_instructions.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/correction/exercice3_test.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/correction/exercise3_correction.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/correction/exercise3_step_by_step_correction.html",
+  "https://research-it-swiss-tph.github.io/quarto_training/correction/exercise4_step_by_step_correction.html"
+)
+```
+
+```{r}
+all_annotations <- tibble()
+for (url in urls) {
+  api_url <- paste0("https://api.hypothes.is/api/search?uri=", url)
+  response <- GET(api_url)
+  
+  if (status_code(response) == 200) {
+    annotations <- fromJSON(content(response, "text"))
+    if (!is.null(annotations$rows)) {
+      annotation_data <- extract_textquote_prefix(annotations$rows)
+      all_annotations <- bind_rows(all_annotations, annotation_data)
+    }
+  } else {
+    message(paste("Failed to fetch data for URL:", url))
+  }
+}
+all_annotations <- all_annotations |> 
+  as.data.frame() |> 
+  dplyr::select(created,
+                text,
+                quote,
+                user,
+                uri) |> 
+  dplyr::rename(date = created,
+                comment = text) |> 
+  dplyr::mutate(date = as.Date(date),
+                user = sub(".*:(.*)@.*", "\\1", user))
+all_annotations
+```
+
+```{r}
+# Write the annotation data to a CSV file
+openxlsx::write.xlsx(all_annotations, 'annotations.xlsx')
+
+# Print a message to indicate completion
+cat("Annotations have been saved to 'annotations.csv'.")
+```
