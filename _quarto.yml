@@ -45,6 +45,8 @@ website:
             text: 🛠️ Build a Quarto dashboard
           - href: https://www.youtube.com/watch?v=R3sNVE8TYeo
             text: 📺 Quarto tutorial
+          - href: https://quarto.org/docs/guide/
+            text: 🛠️ Quarto official documentation
   
 format:
   html:
@@ -64,4 +66,4 @@ format:
     code-block-border-left: "#c03427"
 
 execute:
-  cache: true
+  cache: false
