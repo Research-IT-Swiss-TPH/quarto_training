@@ -67,8 +67,6 @@ resources:
 
 1.  Create a Quarto document
 2.  Setup the R environment to be able to use and render Quarto documents
-3.  Edit Quarto documents
-4.  Render Quarto documents in different formats
 
 ## Create a new Quarto document
 
@@ -98,6 +96,6 @@ Click on **Create** to open up a new Quarto (`.Qmd`) document.
 
 ## Setup your R environment
 
-You need to ensure required packages are available
+You need to ensure required packages are available.
 
 ![](../images/quarto_packages.png)
