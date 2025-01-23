@@ -36,7 +36,7 @@ format:
     code-links:
       - text: exercise2.qmd
         icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise2.qmd
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/_exercise2.qmd
     format-links: [pdf]
   pdf:
     default: true
@@ -65,10 +65,8 @@ resources:
 
 ## Learning objectives 🎯
 
-1.  Create a Quarto document
-2.  Setup the R environment to be able to use and render Quarto documents
-3.  Edit Quarto documents
-4.  Render Quarto documents in different formats
+1.  Edit Quarto notebooks
+2.  Render Quarto documents in different formats
 
 ## Editing text
 
@@ -209,7 +207,7 @@ The `echo: false` option hides the code chunk in the rendered output document (o
 
 Additionally, you can apply such options **globally** by specifying them in the YAML header, which configures settings for the entire Quarto document.
 
-```
+```{.yaml} 
 ---
 title: "Quarto training for R - Exercise 2"
 author: Unknown author
@@ -258,7 +256,7 @@ Here you may want to edit the title of your document.
 
 You can also render a MS Word document by modifying the global format option in the YAML header to `format: docx`
 
-```
+```{.yaml} 
 ---
 title: "Quarto training for R - Exercise 2"
 author: Unknown author
@@ -277,7 +275,7 @@ editor: visual
 
 You can also render a PDF document by modifying the global format option in the YAML header to `format: pdf`
 
-```
+```{.yaml} 
 ---
 title: "Quarto training for R - Exercise 2"
 author: Unknown author
@@ -294,15 +292,10 @@ editor: visual
 
 While PDF documents are also able to be created, they require installing LaTeX, which can sometimes be complicated to install. `TinyTeX` is a custom LaTeX distribution that is easy to install with R. It is needed to compile R Markdown or Quarto documents to PDF.
 
-Install the `TinyTeX` package:
+Install the `TinyTeX` package, and install `TinyTeX` from the `tinytex` package:
 
 ```{{r}}
 install.packages("tinytex")
-```
-
-To install `TinyTeX` from the `tinytex` package, please run the R commands as follow:
-
-```{{r}}
 tinytex::install_tinytex()
 ```
 

@@ -1,5 +1,5 @@
 ---
-title:  ⭐ Build a MS Word report
+title:  ⭐Create a simple Word Report
 subtitle: ✅ Step-by-step correction
 author:
   - name:
@@ -25,7 +25,7 @@ format:
         theme: classic
     code-links:
       - text: 📋 Instructions
-        href: ../practical/exercise3_instructions.html
+        href: ../practicals/exercise3_instructions.html
     format-links: [pdf]
   pdf:
     default: true
@@ -95,7 +95,7 @@ Remember that YAML is a whitespace-sensitive language where indentation determin
 
 # Create publication-ready summary statistics tables
 
-Creating publication-ready tables in R often involves leveraging specialized packages. Popular options include `gtsummary`, `gt` and `flextable`. In what follows, we will use `gtsummary` which is an excellent package for creating summary statistics tables. To install it, run the command ``install.packages("gtsummary")`` in your R console. 
+Creating publication-ready tables in R often involves leveraging specialized packages. Popular options include `gtsummary`, `gt` and `flextable`. In what follows, we will use `gtsummary` which is an excellent package for creating summary statistics tables. To install it, run the command `install.packages("gtsummary")` in your R console.
 
 ```{r}
 #| echo: false
@@ -148,9 +148,9 @@ subdf |>
   gtsummary::tbl_summary()             # <9>
 ```
 
-8. Use the `dplyr::select()` function to select specific columns (**age**, **sex**, **bmi**, **confirmed**, and **death**) from the **subdf** dataset.
-9. Use the `gtsummary::tbl_summary()` function to create a table that summarizes the descriptive statistics of the selected variables in the whole population.
-10. Add a caption to the table by using the `tbl-cap` chunk option. 
+8.  Use the `dplyr::select()` function to select specific columns (**age**, **sex**, **bmi**, **confirmed**, and **death**) from the **subdf** dataset.
+9.  Use the `gtsummary::tbl_summary()` function to create a table that summarizes the descriptive statistics of the selected variables in the whole population.
+10. Add a caption to the table by using the `tbl-cap` chunk option.
 
 #### Table 2 {.unnumbered}
 
@@ -158,7 +158,8 @@ subdf |>
 #| tbl-cap: Demographic characteristics of deceased vs. alive # <12>
 
 #Table 2
-#Generate a summary table comparing the demographic characteristics of individuals who died versus those who are still alive
+#Generate a summary table comparing the demographic characteristics
+#of individuals who died versus those who are still alive
 subdf |>                                                      
   dplyr::select(sex,
                 age,
@@ -168,7 +169,7 @@ subdf |>
   gtsummary::add_overall()                                    # <11>
 ```
 
-10. Use the `gtsummary::tbl_summary()` function to create a summary table grouped by the **death** column,  showing separate statistics for individuals who have died vs. those who are still alive. 
+10. Use the `gtsummary::tbl_summary()` function to create a summary table grouped by the **death** column, showing separate statistics for individuals who have died vs. those who are still alive.
 11. Use the `gtsummary::add_overall()` function to add a row to the table that shows overall summary statistics for the whole population, regardless of their death status.
 12. Add a caption to the table by using the `tbl-cap` chunk option.
 
@@ -264,6 +265,6 @@ gtsummary::tbl_regression(model,               # <24>
                           exponentiate = TRUE) # <25>
 ```
 
-24. Use `gtsummary::tbl_regression()` to create a table summary of the logistic regression results. 
+24. Use `gtsummary::tbl_regression()` to create a table summary of the logistic regression results.
 25. Set the `exponentiate` argument to **TRUE** to convert the coefficients (*log-odds*) into odds ratios, which are more interpretable and useful for understanding the strength of associations.
 26. Add a caption to the table by using the `tbl-cap` chunk option.

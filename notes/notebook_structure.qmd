@@ -35,7 +35,7 @@ format:
     code-links:
       - text: exercise2.qmd
         icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise2.qmd
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/_exercise2.qmd
     format-links: [pdf]
   pdf:
     default: true
