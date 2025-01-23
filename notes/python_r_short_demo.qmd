@@ -1,5 +1,6 @@
 ---
-title: 📘 Integrating R and Python in a single Quarto notebook environment
+title: 📘 Use R and Python
+subtitle: Integrating R and Python in a single Quarto notebook environment
 author:
   - name:
       given: Hélène
@@ -46,7 +47,7 @@ execute:
 :::
 
 ::: {.column width="30%"}
-![](images/Untitled.jpg){fig-align="center"}
+![](images/r_python.jpg){fig-align="center"}
 :::
 :::::
 
@@ -194,5 +195,5 @@ This allows for flexible back-and-forth interactions between R and Python withou
 
 ## Best practices
 
--   Ensure that data structures are compatible. For example, R data frames are automatically converted to [https://pandas.pydata.org/](Pandas) data frames in Python, but other complex R objects may not be directly accessible in Python.
+-   Ensure that data structures are compatible. For example, R data frames are automatically converted to [Pandas](https://pandas.pydata.org/) data frames in Python, but other complex R objects may not be directly accessible in Python.
 -   Keep in mind that transferring large data frames between R and Python may introduce some overhead. Where possible, limit the size of data passed across languages.
