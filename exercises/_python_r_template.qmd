@@ -1,0 +1,66 @@
+---
+title: Integrating R and Python in a single Quarto notebook environment
+author: Hélène Langet
+date: last-modified
+editor: source
+engine: knitr
+format: html
+execute:
+  echo: fenced
+  warning: false
+---
+
+# Setup
+
+Load reticulate at the beginning of your **Quarto notebook**.
+
+```{r}
+library(reticulate)
+```
+
+Verify your Python version
+
+```{r}
+reticulate::py_config()
+```
+
+## Execution
+
+```{python}
+import sys
+print(f"Python executable path: {sys.executable}")
+print(f"Python version: {sys.version}")
+```
+
+
+
+```{r}
+#| label: tbl-1
+#| tbl-cap: Data frame created, manipulated and displayed using R
+
+library(dplyr)
+df1 <- iris |>
+  dplyr::mutate(Sepal.Area = Sepal.Length * Sepal.Width)
+df1 |>
+  head(5) |>
+  knitr::kable()
+```
+
+Access R objects in Python
+
+```{python}
+import pandas as pd
+df2 = r.df1
+df2["Petal.Area"] = df2["Petal.Length"] * df2["Petal.Width"]
+```
+
+Access Python objects in R
+
+```{r}
+#| label: tbl-2
+#| tbl-cap: Data frame read from a Python object and displayed using R
+
+py$df2 |>
+  head(5) |>
+  knitr::kable()
+```

@@ -24,6 +24,10 @@ format:
       hypothesis: 
         theme: classic
     format-links: [pdf]
+    code-links:
+      - text: _python_r_template.qmd
+        icon: file-code
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/exercises/_python_r_template.qmd
   pdf:
     default: true
     
