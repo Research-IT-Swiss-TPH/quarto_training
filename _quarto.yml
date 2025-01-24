@@ -20,7 +20,7 @@ website:
     collapse-level: 2
     contents:
       - href: index.qmd
-        text: Home
+        text: 🔖 Home
       - href: ./notes/quarto_intro.qmd
         text: 📘 Introduction
       - href: ./notes/notebook_structure.qmd

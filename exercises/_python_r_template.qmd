@@ -1,12 +1,11 @@
 ---
 title: Integrating R and Python in a single Quarto notebook environment
 author: Hélène Langet
-date: last-modified
 editor: source
 engine: knitr
 format: html
 execute:
-  echo: fenced
+  echo: true
   warning: false
 ---
 
