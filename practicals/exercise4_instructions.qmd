@@ -35,9 +35,9 @@ format:
       - text: ✅ Step-by-step correction
         href: ../correction/exercise3_step_by_step_correction.html
     code-links:
-      - text: exercise3.qmd
+      - text: exercise4.qmd
         icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise3.qmd
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise4.qmd
     format-links: [pdf]
   docx:
     default: true

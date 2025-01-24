@@ -1,5 +1,5 @@
 ---
-title: Integrating R and Python in a single Quarto notebook environment
+title: Quarto training for R - Use R and Python
 author: Hélène Langet
 editor: source
 engine: knitr
