@@ -46,17 +46,18 @@ last_modified <- file.info("./index.qmd")$mtime
 formatted_date <- format(last_modified, "%B %d, %Y")
 ```
 
-## 🎯 Learning objectives
+## Learning objectives 🎯
 
-This training session introduces the purpose and benefits of creating **analytically reproducible documents** and shows how [**Quarto**](https://quarto.org/) can facilitate this process:
+This training introduces the purpose and benefits of creating **analytically reproducible documents** and shows how [**Quarto**](https://quarto.org/) can facilitate this process:
 
--   Understand the concept of analytically reproducible documents, including their benefits for public health research
--   Understand where Quarto fits within the landscape of existing tools and the advantages it offers over other solutions ;
+-   Understand the concept of analytically reproducible documents, including their benefits for public health research;
+-   Understand where Quarto fits within the landscape of existing tools and the advantages it offers over other technical solutions;
+- Learn the basics of the Quarto syntax;
 -   Gain hands-on experience using Quarto with RStudio to create dynamic, reproducible documents<br/> e.g., analytical reports, research manuscripts, websites, dashboards, etc.
 
 ![](images/clipboard-3954680417.png)
 
-## 🧭 Content navigation
+## Content navigation 🧭
 
 In this training, you will find the following resources to help you along your learning journey:
 
@@ -70,37 +71,50 @@ In this training, you will find the following resources to help you along your l
         -   *Intermediate* ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;
         -   *Advanced* ⭐⭐⭐ – More challenging exercises for comprehensive mastery.
 
-## Feedback
+## Feedback 💬
 
-We value your input! The fastest way to share your feedback and help us improve this training is by using *Hypothesis*.
+We value your input! The fastest way to share your feedback and help us improve this training is by using *Hypothesis*. When providing feedback, please aim to be *constructive* and *specific*.
 
 1.  If you are new to Hypothesis, create an [Hypothesis](https://hypothes.is/signup) account;
-2.  Activate Hypothesis by clicking the left arrow icon `>` in the top right corner of the page to open the Hypothesis annotation sidebar, and log in\
-    ![](images/clipboard-2347634306.png)
-    
-3.  select the text you want to comment
-    ![](images/clipboard-4093132717.png)
 
-When providing feedback, please aim to be constructive and specific.
+::::: columns
+::: {.column width="50%"}
+2.  Activate Hypothesis by clicking the left arrow icon `>` in the top right corner of the pages of this website to open the Hypothesis annotation sidebar, and log in;
+:::
+:::{.column width="5%"}
+:::
+:::{.column width="45%"}
+![](images/clipboard-2347634306.png)
+:::
+::::
 
-## 📜 Update history
+::::: columns
+::: {.column width="50%"}
+3.  select the text you want to comment.
+:::
+:::{.column width="50%"}
+![](images/clipboard-4093132717.png)
+:::
+::::
+
+## Update history 📜
 
 -   `r formatted_date`: Initial release.
 
-## License
+## Contributors 👥
+
+This work was a collaborative effort, incorporating feedback from students and staff at Swiss TPH. Substantial contributions are acknowledged where applicable on the corresponding pages. Notable contributors include **Zhihan Zhu** from the Research-IT team at Swiss TPH.
+
+## License 🏷️
 
 ![](https://i.creativecommons.org/l/by/4.0/88x31.png) This content is licensed under a [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
 You are free to:
 
--   Share --- copy and redistribute the material in any medium or format
+-   Share --- copy and redistribute the material in any medium or format.
 -   Adapt --- remix, transform, and build upon the material for any purpose, even commercially.
 
 Under the following terms:
 
 -   Attribution --- You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 -   No additional restrictions --- You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
-
-## Contributors
-
-This work was a collaborative effort, incorporating feedback from students and staff at Swiss TPH. Substantial contributions are acknowledged where applicable on the corresponding pages. Notable contributors include Zhihan Zhu from the Research-IT team at Swiss TPH.

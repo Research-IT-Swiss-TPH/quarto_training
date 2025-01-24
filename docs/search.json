@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Swiss TPH Quarto training",
     "section": "",
-    "text": "This training session introduces the purpose and benefits of creating analytically reproducible documents and shows how Quarto can facilitate this process:\n\nUnderstand the concept of analytically reproducible documents, including their benefits for public health research\nUnderstand where Quarto fits within the landscape of existing tools and the advantages it offers over other solutions ;\nGain hands-on experience using Quarto with RStudio to create dynamic, reproducible documents e.g., analytical reports, research manuscripts, websites, dashboards, etc.",
+    "text": "This training introduces the purpose and benefits of creating analytically reproducible documents and shows how Quarto can facilitate this process:\n\nUnderstand the concept of analytically reproducible documents, including their benefits for public health research;\nUnderstand where Quarto fits within the landscape of existing tools and the advantages it offers over other technical solutions;\nLearn the basics of the Quarto syntax;\nGain hands-on experience using Quarto with RStudio to create dynamic, reproducible documents e.g., analytical reports, research manuscripts, websites, dashboards, etc.",
     "crumbs": [
       "Home"
     ]
@@ -14,7 +14,7 @@
     "href": "index.html#learning-objectives",
     "title": "Swiss TPH Quarto training",
     "section": "",
-    "text": "This training session introduces the purpose and benefits of creating analytically reproducible documents and shows how Quarto can facilitate this process:\n\nUnderstand the concept of analytically reproducible documents, including their benefits for public health research\nUnderstand where Quarto fits within the landscape of existing tools and the advantages it offers over other solutions ;\nGain hands-on experience using Quarto with RStudio to create dynamic, reproducible documents e.g., analytical reports, research manuscripts, websites, dashboards, etc.",
+    "text": "This training introduces the purpose and benefits of creating analytically reproducible documents and shows how Quarto can facilitate this process:\n\nUnderstand the concept of analytically reproducible documents, including their benefits for public health research;\nUnderstand where Quarto fits within the landscape of existing tools and the advantages it offers over other technical solutions;\nLearn the basics of the Quarto syntax;\nGain hands-on experience using Quarto with RStudio to create dynamic, reproducible documents e.g., analytical reports, research manuscripts, websites, dashboards, etc.",
     "crumbs": [
       "Home"
     ]
@@ -23,8 +23,8 @@
     "objectID": "index.html#content-navigation",
     "href": "index.html#content-navigation",
     "title": "Swiss TPH Quarto training",
-    "section": "\n2 🧭 Content navigation",
-    "text": "2 🧭 Content navigation\nIn this training, you will find the following resources to help you along your learning journey:\n\n📘 Lecture notes — Reference materials and examples;\n📙 Assignments — Self-paced exercises to practice and apply skills:\n\n📋 Instructions — Objectives and expectations of the exercise;\n✅ Corrections — Detailed solutions with step-by-step explanations;\nDifficulty of assignments:\n\n\nGetting started 🌱 — Guided exercises for complete beginners;\n\nBeginner ⭐ – Foundational exercises to build confidence;\n\nIntermediate ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;\n\nAdvanced ⭐⭐⭐ – More challenging exercises for comprehensive mastery.",
+    "section": "\n2 Content navigation 🧭",
+    "text": "2 Content navigation 🧭\nIn this training, you will find the following resources to help you along your learning journey:\n\n📘 Lecture notes — Reference materials and examples;\n📙 Assignments — Self-paced exercises to practice and apply skills:\n\n📋 Instructions — Objectives and expectations of the exercise;\n✅ Corrections — Detailed solutions with step-by-step explanations;\nDifficulty of assignments:\n\n\nGetting started 🌱 — Guided exercises for complete beginners;\n\nBeginner ⭐ – Foundational exercises to build confidence;\n\nIntermediate ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;\n\nAdvanced ⭐⭐⭐ – More challenging exercises for comprehensive mastery.",
     "crumbs": [
       "Home"
     ]
@@ -33,8 +33,8 @@
     "objectID": "index.html#feedback",
     "href": "index.html#feedback",
     "title": "Swiss TPH Quarto training",
-    "section": "\n3 Feedback",
-    "text": "3 Feedback\nWe value your input! The fastest way to share your feedback and help us improve this training is by using Hypothesis.\n\nIf you are new to Hypothesis, create an Hypothesis account;\nActivate Hypothesis by clicking the left arrow icon &gt; in the top right corner of the page to open the Hypothesis annotation sidebar, and log in\nselect the text you want to comment \n\nWhen providing feedback, please aim to be constructive and specific.",
+    "section": "\n3 Feedback 💬",
+    "text": "3 Feedback 💬\nWe value your input! The fastest way to share your feedback and help us improve this training is by using Hypothesis. When providing feedback, please aim to be constructive and specific.\n\nIf you are new to Hypothesis, create an Hypothesis account;\n\n\n\n\nActivate Hypothesis by clicking the left arrow icon &gt; in the top right corner of the pages of this website to open the Hypothesis annotation sidebar, and log in;\n\n\n\n\n\n\n\n\n\n\nselect the text you want to comment.",
     "crumbs": [
       "Home"
     ]
@@ -43,8 +43,8 @@
     "objectID": "index.html#update-history",
     "href": "index.html#update-history",
     "title": "Swiss TPH Quarto training",
-    "section": "\n4 📜 Update history",
-    "text": "4 📜 Update history\n\nNovember 04, 2024: Initial release.",
+    "section": "\n4 Update history 📜",
+    "text": "4 Update history 📜\n\nJanuar 24, 2025: Initial release.",
     "crumbs": [
       "Home"
     ]
@@ -53,8 +53,8 @@
     "objectID": "index.html#license",
     "href": "index.html#license",
     "title": "Swiss TPH Quarto training",
-    "section": "\n5 License",
-    "text": "5 License\n This content is licensed under a Attribution 4.0 International (CC BY 4.0).\nYou are free to:\n\nShare — copy and redistribute the material in any medium or format\nAdapt — remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nNo additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.",
+    "section": "\n6 License 🏷️",
+    "text": "6 License 🏷️\n This content is licensed under a Attribution 4.0 International (CC BY 4.0).\nYou are free to:\n\nShare — copy and redistribute the material in any medium or format.\nAdapt — remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nNo additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.",
     "crumbs": [
       "Home"
     ]
@@ -63,8 +63,8 @@
     "objectID": "index.html#contributors",
     "href": "index.html#contributors",
     "title": "Swiss TPH Quarto training",
-    "section": "\n6 Contributors",
-    "text": "6 Contributors\nThis work was a collaborative effort, incorporating feedback from students and staff at Swiss TPH. Substantial contributions are acknowledged where applicable on the corresponding pages. Notable contributors include Zhihan Zhu from the Research-IT team at Swiss TPH.",
+    "section": "\n5 Contributors 👥",
+    "text": "5 Contributors 👥\nThis work was a collaborative effort, incorporating feedback from students and staff at Swiss TPH. Substantial contributions are acknowledged where applicable on the corresponding pages. Notable contributors include Zhihan Zhu from the Research-IT team at Swiss TPH.",
     "crumbs": [
       "Home"
     ]
@@ -287,7 +287,7 @@
   {
     "objectID": "notes/quarto_intro.html",
     "href": "notes/quarto_intro.html",
-    "title": "Analytically reproducible documents",
+    "title": "📘 Introduction",
     "section": "",
     "text": "Research insights are typically disseminated through reports (e.g., scientific presentations, publications, etc), including a textual narrative detailing the research context, methods, and key findings, often supplemented with figures and tables to summarize results, and a final discussion, with findings serving as evidence to support conclusions and recommendations ;\nResearch is an iterative and dynamic process, meaning there are no final or definitive results or reports ;\nIn addition, we continuously build upon the work of others to generate new insights and discoveries.\n\n\n\n\n\n\nImage from Jorge Cham (PhDComics)",
     "crumbs": [
@@ -297,7 +297,7 @@
   {
     "objectID": "notes/quarto_intro.html#research-a-dynamic-process",
     "href": "notes/quarto_intro.html#research-a-dynamic-process",
-    "title": "Analytically reproducible documents",
+    "title": "📘 Introduction",
     "section": "",
     "text": "Research insights are typically disseminated through reports (e.g., scientific presentations, publications, etc), including a textual narrative detailing the research context, methods, and key findings, often supplemented with figures and tables to summarize results, and a final discussion, with findings serving as evidence to support conclusions and recommendations ;\nResearch is an iterative and dynamic process, meaning there are no final or definitive results or reports ;\nIn addition, we continuously build upon the work of others to generate new insights and discoveries.\n\n\n\n\n\n\nImage from Jorge Cham (PhDComics)",
     "crumbs": [
@@ -307,7 +307,7 @@
   {
     "objectID": "notes/quarto_intro.html#reproducibility-in-research",
     "href": "notes/quarto_intro.html#reproducibility-in-research",
-    "title": "Analytically reproducible documents",
+    "title": "📘 Introduction",
     "section": "\n2 Reproducibility in research",
     "text": "2 Reproducibility in research",
     "crumbs": [
@@ -317,7 +317,7 @@
   {
     "objectID": "notes/quarto_intro.html#analytically-reproducible-documents-1",
     "href": "notes/quarto_intro.html#analytically-reproducible-documents-1",
-    "title": "Analytically reproducible documents",
+    "title": "📘 Introduction",
     "section": "\n3 Analytically reproducible documents (1)",
     "text": "3 Analytically reproducible documents (1)\nThese documents typically contain 3 main types of content, integrating code and natural language in a way that is called “literate programming”.\n\n\nFormatted text\nCode commands\nCode outputs\n\n\n\nThese are languages that can be written using any plain text editor. They use markup elements to define how text should be displayed or printed.\n\n\n\n3.0.1 HTML\nHTML is used to structure content on the web.\n\n\n&lt;b&gt;This text will be displayed in bold&lt;/b&gt;\n\n\n\n\n\n3.0.2 LaTeX\nLaTeX is used for academic and technical documents.\n\n\n\\textbf{This text will be displayed in bold}\n\n\n\n\n\n3.0.3 Markdown\nMarkdown is a lightweight markup language.\n\n\n**This text will be displayed in bold**\n\n\n\n\n\n\n\nDifferent programming languages allow us to execute code to generate results or perform tasks.\n\n\n\n3.0.4 R\n```{r}\nlibrary(ggplot2)\ndata.frame(country=c(\"Nigeria\",\"Kenya\",\"India\"), prevalence=c(14.5,9.2,3.5)) |&gt;\n  ggplot(aes(x=country, y=prevalence)) +\n  geom_bar(stat=\"identity\", fill=\"steelblue\")\n```\n\n\n\n3.0.5 Python\n\n```{r}\nlibrary(reticulate)\nSys.setenv(RETICULATE_PYTHON = \"C:/ProgramData/anaconda3/python.exe\")\n```\n\n```{python}\nimport matplotlib.pyplot as plt\nplt.bar(['Nigeria', 'Kenya', 'India'], [14.5, 9.2, 3.5], color='steelblue')\nplt.show()\n```\n\n\n\n3.0.6 Observable JS\n```{ojs}\nBarChart({x: [\"Nigeria\", \"Kenya\", \"India\"], y: [14.5, 9.2, 3.5], yLabel: \"Prevalence (%)\"})\n```\n\n\n\n\n\nThe output from executing code often results in visualizations or printed results. Below are the corresponding outputs for each language:\n\n\n\n\n\nCall:  glm(formula = confirmed ~ age, family = binomial, data = df)\n\nCoefficients:\n(Intercept)          age  \n   1.312275     0.001292  \n\nDegrees of Freedom: 65668 Total (i.e. Null);  65667 Residual\nNull Deviance:      66000 \nResidual Deviance: 66000    AIC: 66000\n\n\n\n\n\n\n\nc1\nc2\n\n\n\nsetosa\n5.1\n\n\nsetosa\n4.9\n\n\nsetosa\n4.7\n\n\nsetosa\n4.6\n\n\nsetosa\n5.0",
     "crumbs": [
@@ -327,7 +327,7 @@
   {
     "objectID": "notes/quarto_intro.html#analytically-reproducible-documents-2",
     "href": "notes/quarto_intro.html#analytically-reproducible-documents-2",
-    "title": "Analytically reproducible documents",
+    "title": "📘 Introduction",
     "section": "\n4 Analytically reproducible documents (2)",
     "text": "4 Analytically reproducible documents (2)\nDocuments can be rendered in different type of outputs e.g., MS Word, PDF, HTML, PowerPoint, etc.\nPandoc is one of the tool that allows this conversion.",
     "crumbs": [
@@ -337,7 +337,7 @@
   {
     "objectID": "notes/quarto_intro.html#existing-tools-for-writing-analytically-reproducible-documents",
     "href": "notes/quarto_intro.html#existing-tools-for-writing-analytically-reproducible-documents",
-    "title": "Analytically reproducible documents",
+    "title": "📘 Introduction",
     "section": "\n5 Existing tools for writing analytically reproducible documents",
     "text": "5 Existing tools for writing analytically reproducible documents",
     "crumbs": [
@@ -347,7 +347,7 @@
   {
     "objectID": "notes/quarto_intro.html#quarto",
     "href": "notes/quarto_intro.html#quarto",
-    "title": "Analytically reproducible documents",
+    "title": "📘 Introduction",
     "section": "\n6 Quarto",
     "text": "6 Quarto\n\nQuarto is the successor to R Markdown, but is not tied to the R language.\nQuarto files have a .qmd extension.\n\n\n\n\n6.1 Source document\n\n\n\n\n6.2 Rendered output",
     "crumbs": [
@@ -357,7 +357,7 @@
   {
     "objectID": "notes/quarto_intro.html#quarto-rendered-outputs",
     "href": "notes/quarto_intro.html#quarto-rendered-outputs",
-    "title": "Analytically reproducible documents",
+    "title": "📘 Introduction",
     "section": "\n7 Quarto rendered outputs",
     "text": "7 Quarto rendered outputs\n\nQuarto documents can be rendered into to many report formats including HTML, Word document and many more\nList of supported formats",
     "crumbs": [
@@ -367,7 +367,7 @@
   {
     "objectID": "notes/quarto_intro.html#engines",
     "href": "notes/quarto_intro.html#engines",
-    "title": "Analytically reproducible documents",
+    "title": "📘 Introduction",
     "section": "\n8 Engines",
     "text": "8 Engines\nBoth knitr and Jupyter serve as engines to execute code embedded within a document, but they work in different programming environments.\n\n\nknitr\nJuypter\n\n\n\nThis R package will read the code chunks, execute it, and ‘knit’ it back into the document. This is how tables and graphs are included alongside the text.\n\n\n\n\n\n\nJupyter is a popular engine for running Python code interactively. It supports multiple programming languages, but Python is the most common.",
     "crumbs": [
@@ -377,7 +377,7 @@
   {
     "objectID": "notes/quarto_intro.html#references",
     "href": "notes/quarto_intro.html#references",
-    "title": "Analytically reproducible documents",
+    "title": "📘 Introduction",
     "section": "\n9 References",
     "text": "9 References\n\nThe Epidemiologist R Handbook\nWebsites and dashboards with Quarto",
     "crumbs": [
