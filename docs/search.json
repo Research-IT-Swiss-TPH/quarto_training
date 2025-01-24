@@ -74,7 +74,7 @@
     "href": "practicals/exercise4_instructions.html",
     "title": "⭐⭐ Add dynamic elements to your report",
     "section": "",
-    "text": "This exercise builds on the previous exercise where you learnt to build a simple MS Word report ⭐.\n\n1 🎯 Exercise objectives\n\nOpen the Quarto document exercise4.qmd in RStudio;\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.\n\n\n\n2 Improve navigation and readability\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about table of contents\n\n\n\n\nInsert a table of contents to the Quarto document ;\nAutomatically number the different sections of the Quarto document ;\nConfigure the table of contents to only display two levels of section headings.\n\n\n\n3 Implement dynamic calculations\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about date formatting\nSee Quarto documentation about dynamic dates\nSee Quarto documentation about inline code\n\n\n\n\nChange the date 2023-12-31 to the date at which the Quarto document was last modified, and format this date to display it with the format December 31, 2023 ;\nReplace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;\n\n\n“The outbreak ran from date to date”\n\n\nReplace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.\n\n\n“Over the studied period, there were N cases, including N confirmed cases and N confirmed deaths.”\n\n\n\n4 Create and reference publication-ready tables\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about summary tables\nSee Quarto documentation about table cross-references\n\nOther R packages include flextable and gt\n\n\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“cross-reference provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“while cross-reference compares the demographic characteristics of individuals who died versus those who are still alive”\n\n\n\n5 Customise figures\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\nSee Quarto documentation about figure options\n\n\n\n\nAdd a caption to the figure ;\nAssign a label to the figure ;\nReplace the placeholder text in bold with a cross-reference to the figure ;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with it\nBeautify the plot using ggplot options\n\n\n\n6 Code\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about formatted table of regression model results\nSee Quarto documentation about code chunk cross-references\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”\n\n\nDisplay the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;\nAdd a caption to the code chunk ;\nAssign a label to the code chunk ;\nReplace the placeholder text in bold with a cross-reference to the code chunk.\n\n\n\n7 Add references\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about citations\n\n\n\n\nAdd the bibliography file my_biblio.bib to your MS Word rendered report ;\nCite the reference text in your MS Word rendered report ;\nCreate your own bibliography file and apply it to your MS Word rendered report ;\n\n\n\n8 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.\n\n\n\n\n\nReuseCC-BY",
+    "text": "This exercise builds on the previous exercise where you learnt to build a simple MS Word report ⭐.",
     "crumbs": [
       "📙 Add dynamic elements to your report"
     ]
@@ -951,6 +951,76 @@
     "text": "5.2 Rendered output",
     "crumbs": [
       "📘 Introduction"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#objectives",
+    "href": "practicals/exercise4_instructions.html#objectives",
+    "title": "⭐⭐ Add dynamic elements to your report",
+    "section": "0.1 Objectives 🎯",
+    "text": "0.1 Objectives 🎯\n\nOpen the Quarto document exercise4.qmd in RStudio;\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
+    "crumbs": [
+      "📙 Add dynamic elements to your report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#improve-navigation-and-readability",
+    "href": "practicals/exercise4_instructions.html#improve-navigation-and-readability",
+    "title": "⭐⭐ Add dynamic elements to your report",
+    "section": "0.2 Improve navigation and readability",
+    "text": "0.2 Improve navigation and readability\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about table of contents\n\n\n\n\nInsert a table of contents to the Quarto document ;\nAutomatically number the different sections of the Quarto document ;\nConfigure the table of contents to only display two levels of section headings.",
+    "crumbs": [
+      "📙 Add dynamic elements to your report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#implement-dynamic-calculations",
+    "href": "practicals/exercise4_instructions.html#implement-dynamic-calculations",
+    "title": "⭐⭐ Add dynamic elements to your report",
+    "section": "0.3 Implement dynamic calculations",
+    "text": "0.3 Implement dynamic calculations\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about date formatting\nSee Quarto documentation about dynamic dates\nSee Quarto documentation about inline code\n\n\n\n\nChange the date 2023-12-31 to the date at which the Quarto document was last modified, and format this date to display it with the format December 31, 2023 ;\nReplace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;\n\n\n“The outbreak ran from date to date”\n\n\nReplace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.\n\n\n“Over the studied period, there were N cases, including N confirmed cases and N confirmed deaths.”",
+    "crumbs": [
+      "📙 Add dynamic elements to your report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#customise-figures",
+    "href": "practicals/exercise4_instructions.html#customise-figures",
+    "title": "⭐⭐ Add dynamic elements to your report",
+    "section": "1.1 Customise figures",
+    "text": "1.1 Customise figures\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\nSee Quarto documentation about figure options\n\n\n\n\nAdd a caption to the figure ;\nAssign a label to the figure ;\nReplace the placeholder text in bold with a cross-reference to the figure ;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with it\nBeautify the plot using ggplot options",
+    "crumbs": [
+      "📙 Add dynamic elements to your report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#code",
+    "href": "practicals/exercise4_instructions.html#code",
+    "title": "⭐⭐ Add dynamic elements to your report",
+    "section": "1.2 Code",
+    "text": "1.2 Code\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation about formatted table of regression model results\nSee Quarto documentation about code chunk cross-references\n\n\n\n\nImplement a logistic regression model based on description in the Quarto document ;\nCreate a table summarizing the odds ratios from the logistic regression model ;\nAdd a caption to the table ;\nAssign a label to the table ;\nReplace the placeholder text in bold with a cross-reference to the table ;\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”\n\n\nDisplay the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;\nAdd a caption to the code chunk ;\nAssign a label to the code chunk ;\nReplace the placeholder text in bold with a cross-reference to the code chunk.",
+    "crumbs": [
+      "📙 Add dynamic elements to your report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#add-references",
+    "href": "practicals/exercise4_instructions.html#add-references",
+    "title": "⭐⭐ Add dynamic elements to your report",
+    "section": "1.3 Add references",
+    "text": "1.3 Add references\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about citations\n\n\n\n\nAdd the bibliography file my_biblio.bib to your MS Word rendered report ;\nCite the reference text in your MS Word rendered report ;\nCreate your own bibliography file and apply it to your MS Word rendered report ;",
+    "crumbs": [
+      "📙 Add dynamic elements to your report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#finalise-your-ms-word-report",
+    "href": "practicals/exercise4_instructions.html#finalise-your-ms-word-report",
+    "title": "⭐⭐ Add dynamic elements to your report",
+    "section": "1.4 Finalise your MS Word report",
+    "text": "1.4 Finalise your MS Word report\n\n\n\n\n\n\nTip\n\n\n\nSee Quarto documentation about Word templates\n\n\n\nApply the Swiss TPH template swisstph_template.docx to your MS Word rendered report ;\nCreate your own template and apply it to your MS Word rendered report.",
+    "crumbs": [
+      "📙 Add dynamic elements to your report"
     ]
   }
 ]
