@@ -338,8 +338,8 @@
     "objectID": "notes/quarto_intro.html#existing-tools-for-writing-analytically-reproducible-documents",
     "href": "notes/quarto_intro.html#existing-tools-for-writing-analytically-reproducible-documents",
     "title": "📘 Introduction",
-    "section": "\n5 Existing tools for writing analytically reproducible documents",
-    "text": "5 Existing tools for writing analytically reproducible documents",
+    "section": "\n3.1 Existing tools for writing analytically reproducible documents",
+    "text": "3.1 Existing tools for writing analytically reproducible documents",
     "crumbs": [
       "📘 Introduction"
     ]
@@ -348,8 +348,8 @@
     "objectID": "notes/quarto_intro.html#quarto",
     "href": "notes/quarto_intro.html#quarto",
     "title": "📘 Introduction",
-    "section": "\n6 Quarto",
-    "text": "6 Quarto\n\nQuarto is the successor to R Markdown, but is not tied to the R language.\nQuarto files have a .qmd extension.\n\n\n\n\n6.1 Source document\n\n\n\n\n6.2 Rendered output",
+    "section": "\n3.2 Quarto",
+    "text": "3.2 Quarto\n\nQuarto is the successor to R Markdown, but is not tied to the R language.\nQuarto files have a .qmd extension.\n\n\n\n\n3.2.1 Source document\n\n\n\n\n3.2.2 Rendered output",
     "crumbs": [
       "📘 Introduction"
     ]
@@ -358,8 +358,8 @@
     "objectID": "notes/quarto_intro.html#quarto-rendered-outputs",
     "href": "notes/quarto_intro.html#quarto-rendered-outputs",
     "title": "📘 Introduction",
-    "section": "\n7 Quarto rendered outputs",
-    "text": "7 Quarto rendered outputs\n\nQuarto documents can be rendered into to many report formats including HTML, Word document and many more\nList of supported formats",
+    "section": "\n5.3 Quarto rendered outputs",
+    "text": "5.3 Quarto rendered outputs\n\nQuarto documents can be rendered into to many report formats including HTML, Word document and many more\nList of supported formats",
     "crumbs": [
       "📘 Introduction"
     ]
@@ -368,8 +368,8 @@
     "objectID": "notes/quarto_intro.html#engines",
     "href": "notes/quarto_intro.html#engines",
     "title": "📘 Introduction",
-    "section": "\n8 Engines",
-    "text": "8 Engines\nBoth knitr and Jupyter serve as engines to execute code embedded within a document, but they work in different programming environments.\n\n\nknitr\nJuypter\n\n\n\nThis R package will read the code chunks, execute it, and ‘knit’ it back into the document. This is how tables and graphs are included alongside the text.\n\n\n\n\n\n\nJupyter is a popular engine for running Python code interactively. It supports multiple programming languages, but Python is the most common.",
+    "section": "\n5.4 Engines",
+    "text": "5.4 Engines\nBoth knitr and Jupyter serve as engines to execute code embedded within a document, but they work in different programming environments.\n\n\nknitr\nJuypter\n\n\n\nThis R package will read the code chunks, execute it, and ‘knit’ it back into the document. This is how tables and graphs are included alongside the text.\n\n\n\n\n\n\nJupyter is a popular engine for running Python code interactively. It supports multiple programming languages, but Python is the most common.",
     "crumbs": [
       "📘 Introduction"
     ]
@@ -932,5 +932,25 @@
     "title": "⭐ Build a MS Word report",
     "section": "",
     "text": "This page provides a step-by-step correction for building a simple MS Word report using the Quarto notebook exercise3.qmd as a starting point.\n\n\n\n\n\n\nImportant\n\n\n\nTo get the most out of your learning experience, attempt to solve the exercise on your own before looking at this correction. Remember, trials and errors are an essential part of the learning process, strengthening your understanding and helping you build confidence. Take your time, experiment, and learn actively!\n\n\n\n1 Setup basic elements of the Quarto notebook\nAll the basic elements you need to setup are defined in the YAML header at the beginning of your Quarto notebook.\n---\n1title: My outbreak report\n2author: Helene Langet\n3date: 2023-12-31\n\n4format: docx\n\n5execute:\n6  echo: false\n7  warning: false\n---\n\n1\n\nUpdate the title option in the Quarto notebook. Quotation marks are optional.\n\n2\n\nSet the author option to your name. Quotation marks are optional.\n\n3\n\nAdd the date option and set it to 2023-12-31. Quotation marks are optional.\n\n4\n\nSet the format option to docx to generate a MS Word document.\n\n5\n\nAdd an execute block to customize the execution behaviour for your Quarto notebook. This block allows you to control how code, warnings, and other outputs are displayed in the rendered document.\n\n6\n\nAdd the echo option and set it to false to hide code in the rendered document.\n\n7\n\nAdd the warning option and set it to false to hide warnings in the rendered document.\n\n\n\n\n\n\n\n\nYAML indentation\n\n\n\nRemember that YAML is a whitespace-sensitive language where indentation determines the structure; tabs are not recognised for indentation. The recommended practice is therefore to use two spaces per indentation level to ensure consistency and avoid errors.\n\n\n\n\n2 Create publication-ready summary statistics tables\nCreating publication-ready tables in R often involves leveraging specialized packages. Popular options include gtsummary, gt and flextable. In what follows, we will use gtsummary which is an excellent package for creating summary statistics tables. To install it, run the command install.packages(\"gtsummary\") in your R console.\n\nTable 1\n\n```{r}\n10#| tbl-cap: Population characteristics\n\n#Table 1\n#Generate a summary table displaying population characteristics\nsubdf |&gt;                               \n8  dplyr::select(age,\n                sex,\n                bmi,\n                confirmed,\n                death) |&gt;\n9  gtsummary::tbl_summary()\n```\n\n\n8\n\nUse the dplyr::select() function to select specific columns (age, sex, bmi, confirmed, and death) from the subdf dataset.\n\n9\n\nUse the gtsummary::tbl_summary() function to create a table that summarizes the descriptive statistics of the selected variables in the whole population.\n\n10\n\nAdd a caption to the table by using the tbl-cap chunk option.\n\n\n\n\n\n\n\n\n\nTable 2\n\n```{r}\n12#| tbl-cap: Demographic characteristics of deceased vs. alive\n\n#Table 2\n#Generate a summary table comparing the demographic characteristics of individuals who died versus those who are still alive\nsubdf |&gt;                                                      \n  dplyr::select(sex,\n                age,\n                bmi,\n                death) |&gt;\n10  gtsummary::tbl_summary(by = death) |&gt;\n11  gtsummary::add_overall()\n```\n\n\n10\n\nUse the gtsummary::tbl_summary() function to create a summary table grouped by the death column, showing separate statistics for individuals who have died vs. those who are still alive.\n\n11\n\nUse the gtsummary::add_overall() function to add a row to the table that shows overall summary statistics for the whole population, regardless of their death status.\n\n12\n\nAdd a caption to the table by using the tbl-cap chunk option.\n\n\n\n\n\n\n\n\n\n\n3 Create publication-ready figures\n\nFigure 1\n\n```{r}\n13#| fig-cap: Weekly count of all cases, confirmed cases and deaths\n14#| fig-width: 8\n15#| fig-height: 4\n\n#Figure 1 \n# Plot the weekly cases, confirmed cases and deaths\nggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +                        \n  ggplot2::geom_line(ggplot2::aes(y = count,\n                                  color = \"All cases\"),\n                     size = 1) +\n  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,\n                                  color = \"Confirmed cases\"),\n                     size = 1) +\n  ggplot2::geom_line(ggplot2::aes(y = death_count,\n                                  color = \"Confirmed deaths\"),\n                     size = 1) +\n  ggplot2::labs(x = \"Week\",\n                y = \"Count\",\n                color = \"Legend\") +\n16  ggplot2::scale_color_manual(values = c(\"All cases\" = \"#440e54\",\n                                         \"Confirmed cases\" = \"#f8766d\",\n                                         \"Confirmed deaths\" = \"#128984\")) +\n17  ggplot2::theme_minimal() +\n18  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5,\n                                                            linetype = \"dashed\",\n                                                            color = \"grey\"), \n                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5,\n                                                            linetype = \"dashed\",\n                                                            color = \"grey\"),\n19                 panel.grid.major.x = ggplot2::element_blank(),\n                 panel.grid.minor.x = ggplot2::element_blank())\n```\n\n\n13\n\nAdd a caption to the table by using the fig-cap chunk option. Remove the title parameter from ggplot2::labs to avoid the repetition.\n\n14\n\nSet the width of the figure to 8 inches by using the fig-width option. This option can also be specified globally in the YAML header of the Quarto notebook.\n\n15\n\nSet the height of the figure to 4 inches by using the fig-height option. This option can also be specified globally in the YAML header of the Quarto notebook.\n\n16\n\nAssigns specific colors to each line for better distinction.\n\n17\n\nApply the ggplot2::theme_minimal() function to set a clean and simple aesthetic for the plot. This theme removes unnecessary elements such as background shading and focuses attention on the data by displaying only grid lines and axis labels.\n\n18\n\nAdd dashed lines for horizontal (major and minor) grid lines.\n\n19\n\nOmits vertical (major and minor) grid lines for a cleaner look.\n\n\n\n\n\n\n\nWeekly count of all cases, confirmed cases and deaths\n\n\n\n\n\n\n\n4 Present statistical models and results\n```{r}\n20#| echo: true\n\n#Logistic regression model\n21model &lt;- glm(death ~ bmi + age,\n23             subdf |&gt; dplyr::filter(confirmed == \"1\"),\n22             family = binomial)\n```\n\n20\n\nThe echo: true option ensures that the code chunk used to generate the logistic regression model is displayed in the rendered output, which is helpful for transparency and reproducibility.\n\n21\n\nThe glm() function fits a generalised linear model to predict death (binary outcome) from two predictors (bmi and age). The function returns a model object containing various components, such as coefficients (effects of predictors), residuals (errors), and fitted values (predicted probabilities).\n\n22\n\nSet the family argument to binomial to fit a logistic regression model. This is appropriate for binary outcomes like death, as it models the probability of the outcome occurring using a logit (log-odds) function (i.e. coefficients represent the effect size of each predictor on the log-odds of the binary outcome).\n\n23\n\nFilter data using the dplyr::filter() function to subset the dataset so that the model is estimated from confirmed cases only.\n\n\n\nTable 3\n\n```{r}\n26#| tbl-cap: Formatted regression table\n\n#Table 3\n24gtsummary::tbl_regression(model,\n25                          exponentiate = TRUE)\n```\n\n\n24\n\nUse gtsummary::tbl_regression() to create a table summary of the logistic regression results.\n\n25\n\nSet the exponentiate argument to TRUE to convert the coefficients (log-odds) into odds ratios, which are more interpretable and useful for understanding the strength of associations.\n\n26\n\nAdd a caption to the table by using the tbl-cap chunk option.\n\n\n\n\n\n\n\n\n\n\n\n\nReuseCC-BY"
+  },
+  {
+    "objectID": "notes/quarto_intro.html#source-document",
+    "href": "notes/quarto_intro.html#source-document",
+    "title": "📘 Introduction",
+    "section": "\n5.1 Source document",
+    "text": "5.1 Source document",
+    "crumbs": [
+      "📘 Introduction"
+    ]
+  },
+  {
+    "objectID": "notes/quarto_intro.html#rendered-output",
+    "href": "notes/quarto_intro.html#rendered-output",
+    "title": "📘 Introduction",
+    "section": "\n5.2 Rendered output",
+    "text": "5.2 Rendered output",
+    "crumbs": [
+      "📘 Introduction"
+    ]
   }
 ]
