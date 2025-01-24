@@ -33,7 +33,7 @@ format:
       - text: swisstph_template.docx
         href: swisstph_template.docx
       - text: ✅ Step-by-step correction
-        href: ../correction/exercise3_step_by_step_correction.html
+        href: ../correction/exercise4_step_by_step_correction.html
     code-links:
       - text: exercise4.qmd
         icon: file-code
