@@ -47,3 +47,5 @@ practicals/exercise 3-correction.qmd
 .Rhistory
 /practicals/exercise3_files
 /practicals/exercise3_instructions_files
+.Renviron
+_environment
