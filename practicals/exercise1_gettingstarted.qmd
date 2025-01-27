@@ -18,7 +18,6 @@ author:
 license: "CC-BY"
 date: last-modified
 editor: source
-lang: en-GB
 
 format:
   html:
@@ -42,18 +41,6 @@ format:
     default: true
     toc: true
     number-sections: true
-  revealjs:
-    default: true
-    number-sections: true
-    output-file: _create_first_quarto_doc_slides.html
-    code-overflow: wrap
-    embed-resources: true
-    logo: ../images/swisstph_logo_compact.png
-    css: ../css/logo.css
-    footer: "Quarto training for R"
-    smaller: true
-    slide-number: true
-    show-slide-number: all
     
 execute:
   echo: fenced

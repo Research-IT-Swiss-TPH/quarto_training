@@ -65,5 +65,7 @@ format:
     code-block-bg: true
     code-block-border-left: "#c03427"
 
+lang: en-US
+
 execute:
   cache: false

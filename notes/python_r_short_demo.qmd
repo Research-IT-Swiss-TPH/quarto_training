@@ -12,7 +12,6 @@ author:
 license: "CC-BY"
 date: last-modified
 editor: source
-lang: en-US
 engine: knitr
 
 format:
@@ -55,7 +54,7 @@ execute:
 
 To integrate Python within a Quarto notebook that primarily uses R code chunks (i.e., executed with the `knitr` engine), you will need the `reticulate` R package, which serves as a bridge between R and Python, allowing you to run Python code chunks alongside R and share objects between the two programming languages. This setup provides a powerful approach for combining R’s statistical capabilities with Python’s data manipulation and machine learning tools, enabling a robust, mixed-language workflow within Quarto.
 
-### Install and load
+### Install and load reticulate
 
 ::::: columns
 ::: {.column width="80%"}
@@ -89,6 +88,7 @@ Use `py_config()` to verify what Python version is active. This also allows you 
 #| echo: true
 reticulate::py_config()
 ```
+
 ::: callout-important
 
 If the `r-reticulate` does not exist, you can try to remove and recreate this environment using the following commands in your **R console**:

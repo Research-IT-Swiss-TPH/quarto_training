@@ -12,7 +12,6 @@ author:
 license: "CC-BY"
 date: last-modified
 editor: source
-lang: en-US
 
 format:
   html:
@@ -46,18 +45,6 @@ format:
     default: true
     toc: true
     number-sections: true
-  revealjs:
-    default: true
-    number-sections: true
-    output-file: exercise3_instructions_slides.html
-    code-overflow: wrap
-    embed-resources: true
-    logo: ../images/swisstph_logo_compact.png
-    css: ../css/logo.css
-    footer: "Swiss TPH, Research-IT"
-    smaller: true
-    slide-number: true
-    show-slide-number: all
     
 execute:
   echo: fenced

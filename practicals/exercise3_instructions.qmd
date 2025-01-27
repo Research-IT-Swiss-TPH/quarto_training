@@ -12,7 +12,6 @@ author:
 license: "CC-BY"
 date: last-modified
 editor: source
-lang: en-US
 
 format:
   html:
@@ -33,7 +32,6 @@ format:
     format-links: [pdf]
   pdf:
     default: true
-    pdf-engine: lualatex
     toc: true
     toc-depth: 2
     number-sections: true
@@ -50,17 +48,6 @@ format:
         showtabs = false,
         breaksymbolleft={},
         breaklines}
-  revealjs:
-    default: false
-    output-file: exercise3_instructions_slides.html
-    code-overflow: wrap
-    embed-resources: true
-    logo: ../images/swisstph_logo_compact.png
-    css: ../css/logo.css
-    footer: "Swiss TPH, Research-IT"
-    smaller: true
-    slide-number: true
-    show-slide-number: all
     
 execute:
   echo: fenced

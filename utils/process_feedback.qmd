@@ -49,7 +49,6 @@ urls <- c(
   "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise2_gettingstarted.html",
   "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise3.html",
   "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise3_instructions.html",
-  "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise3_instructions_slides.html",
   "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise4_instructions.html",
   "https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise5_instructions.html",
   "https://research-it-swiss-tph.github.io/quarto_training/correction/exercice3_test.html",
