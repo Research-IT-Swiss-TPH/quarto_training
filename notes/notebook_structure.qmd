@@ -88,12 +88,7 @@ There are three basic components to a Quarto notebook: a header, markdown text a
 
 At the top of the Quarto notebook, you will see something that looks as follows:
 
-```{.yaml}         
----
-title: "Untitled"
-format: html
----
-```
+![](../images/notebook_structure_header.png)
 
 This section is called the **YAML header** and it contains commands and metadata about the Quarto notebook. There is only one unique header in a Quarto notebook and it is always surrounded by `---` lines on the top and bottom of the section.
 
@@ -103,9 +98,13 @@ More HTML options: [HTML Options](https://quarto.org/docs/reference/formats/html
 
 ### Markdown text
 
+![](../images/notebook_structure_markdown.png)
+
 In white background areas, any text will appear as regular text in the final report. This is actually a markup language, which can have formatting such as headings, italics, bold, numbers, and bullets.
 
 ### Code
+
+![](../images/notebook_structure_code.png)
 
 Code chunks, typically shown within gray backgrounds, execute commands in Quarto. In the example provided, R code is being run within these chunks. These commands may handle data processing, cleaning, or the generation of visual outputs that are integrated into the final document.
 :::
