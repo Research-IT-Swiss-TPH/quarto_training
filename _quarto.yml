@@ -39,12 +39,14 @@ website:
         text: 📘 Use R and Python
       - text: 🧰 More resources
         contents:
+          - href: https://rstudio.github.io/cheatsheets/quarto.pdf
+            text: 📄 Quarto cheat sheet
           - href: https://quarto.org/docs/guide/
             text: 🛠️ Quarto official documentation
           - href: https://posit-conf-2024.github.io/quarto-websites/
-            text: 🗣️️ Build a Quarto website
+            text: 🗣️️ Build a Quarto website (presentation)
           - href: https://posit-conf-2024.github.io/quarto-dashboards/
-            text: 🗣️️ Build a Quarto dashboard
+            text: 🗣️️ Build a Quarto dashboard (presentation)
           - href: https://www.youtube.com/watch?v=R3sNVE8TYeo
             text: 📺  Build a Quarto dashboard (tutorial)
   

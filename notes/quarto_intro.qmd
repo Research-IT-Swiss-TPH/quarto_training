@@ -179,7 +179,7 @@ Documents can be rendered in different type of outputs e.g., MS Word, PDF, HTML,
 
 **Pandoc** is one of the tool that allows this conversion.
 
-![](../images/paste-ABFB521E.png){fig-align="center"}
+![Artwork by Allison Horst.](../images/qmd_render_schema.png)
 
 # Existing tools for writing analytically reproducible documents
 
@@ -189,6 +189,8 @@ Documents can be rendered in different type of outputs e.g., MS Word, PDF, HTML,
 
 -   Quarto is the successor to R Markdown, but is not tied to the R language.
 -   Quarto files have a `.qmd` extension.
+
+![Artwork by Allison Horst.](../images/quarto_schematic.png)
 
 ::: columns
 ::: {.column width="50%"}
@@ -212,6 +214,8 @@ Documents can be rendered in different type of outputs e.g., MS Word, PDF, HTML,
 ![](images/clipboard-1220364644.png){fig-align="center"}
 
 ## Engines
+
+An engine refers to the software or system that executes the embedded code within a document. The engine takes the code chunks written in a specific programming language (e.g., R, Python, or Julia), runs them, and returns the output, which is then incorporated into the rendered document.
 
 Both knitr and Jupyter serve as engines to execute code embedded within a document, but they work in different programming environments.
 

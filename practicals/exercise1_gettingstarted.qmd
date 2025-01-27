@@ -52,12 +52,18 @@ resources:
 
 ## Learning objectives 🎯 
 
-1.  Create a Quarto document
-2.  Setup the R environment to be able to use and render Quarto documents
+1.  Create a Quarto notebook;
+2.  Setup your R environment to be able to use and render Quarto documents.
 
 ## Create a new Quarto document
 
-Quarto documents can be created and edited in RStudio.
+Quarto notebooks can be created and edited in RStudio.
+
+::: callout-important
+
+This is only true for RStudio v2022.07 and later. If you use older versions of RStudio on your laptop, you will not have Quarto within RStudio.
+
+:::
 
 In RStudio, you can create a new Quarto document by selecting
 
@@ -83,6 +89,6 @@ Click on **Create** to open up a new Quarto (`.Qmd`) document.
 
 ## Setup your R environment
 
-You need to ensure required packages are available.
+You need to ensure the `knitr` and `rmarkdown` packages are available.
 
 ![](../images/quarto_packages.png)

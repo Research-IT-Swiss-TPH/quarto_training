@@ -31,10 +31,6 @@ format:
     comments:
       hypothesis: 
         theme: classic
-    code-links:
-      - text: exercise2.qmd
-        icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/_exercise2.qmd
     format-links: [pdf]
   pdf:
     default: true
@@ -63,10 +59,18 @@ A Quarto notebook and its corresponding rendered document(s) serve different pur
     - HTML for interactive web-based reports.
     - PDF for professional and printable documents.
     - Word for editable text-based outputs.
+    
+A single Quarto notebook can be rendered into multiple formats. While there may be some limitations when targeting different formats, this flexibility is one of Quarto's core strengths, making it a powerful tool for creating versatile and reusable documents.
+    
+![Artwork by Allison Horst.](../images/qmd_render_schema.png)
 
 ## Structure of a Quarto notebook
 
-There are three basic components to a Quarto notebook: a header, markdown text and code.
+There are three basic components to a Quarto notebook: 
+
+- a unique (YAML) header,
+- (markdown) text areas, and
+- code areas (and their output).
 
 ![](../images/notebook_structure.png)
 
@@ -83,17 +87,22 @@ YAML is a data format that has the form of a **key: value pairing** to store dat
 
 More HTML options: [HTML Options](https://quarto.org/docs/reference/formats/html.html)
 
-### Markdown text
+### Text areas
+
+In white background areas, you find **Markdown text** which will appear as regular text in the rendered document. 
 
 ![](../images/notebook_structure_markdown.png)
 
-In white background areas, any text will appear as regular text in the final report. This is actually a markup language, which can have formatting such as headings, italics, bold, numbers, and bullets.
+Markdown is actually a markup language, which can have formatting such as headings, italics, bold, numbers, and bullets.
 
-### Code
+### Code areas
+
+Code chunks, typically shown within gray backgrounds, execute commands in Quarto.
 
 ![](../images/notebook_structure_code.png)
 
-Code chunks, typically shown within gray backgrounds, execute commands in Quarto. In the example provided, R code is being run within these chunks. These commands may handle data processing, cleaning, or the generation of visual outputs that are integrated into the final document.
+In the example provided, R code is being run and identified with the **{r}** tag. These commands may handle data processing, cleaning, or the generation of visual outputs that are integrated into the final document.
+
 :::
 
 
