@@ -1,6 +1,6 @@
 ---
-title: Analytically reproducible documents
-
+title: 📘 Introduction
+subtitle: Analytically reproducible documents
 author:
   - name:
       given: Hélène
@@ -45,7 +45,7 @@ execute:
 engine: knitr
 ---
 
-## Research = a dynamic process
+# Research = a dynamic process
 
 -   Research insights are typically disseminated through reports (e.g., scientific presentations, publications, etc), including a textual narrative detailing the research context, methods, and key findings, often supplemented with figures and tables to summarize results, and a final discussion, with findings serving as evidence to support conclusions and recommendations ;
 -   Research is an **iterative** and **dynamic** process, meaning there are no **final** or **definitive** results or reports ;
@@ -53,11 +53,11 @@ engine: knitr
 
 [![Image from Jorge Cham (PhDComics)](images/phd031214s.gif){fig-align="center"}](https://phdcomics.com/comics/archive.php?comicid=1689)
 
-## Reproducibility in research
+# Reproducibility in research
 
 ![](../images/reproducibility.png){fig-align="center"}
 
-## Analytically reproducible documents (1)
+# Analytically reproducible documents
 
 These documents typically contain 3 main types of content, integrating code and natural language in a way that is called "*literate programming*".
 
@@ -185,32 +185,30 @@ data.frame(country=c("Nigeria","Kenya","India"), prevalence=c(14.5,9.2,3.5)) |>
 :::
 :::
 
-## Analytically reproducible documents (2)
-
 Documents can be rendered in different type of outputs e.g., MS Word, PDF, HTML, PowerPoint, etc.
 
 **Pandoc** is one of the tool that allows this conversion.
 
 ![](../images/paste-ABFB521E.png){fig-align="center"}
 
-## Existing tools for writing analytically reproducible documents
+# Existing tools for writing analytically reproducible documents
 
 ![](../images/tools.png){fig-align="center"}
 
-## Quarto
+# Quarto
 
 -   Quarto is the successor to R Markdown, but is not tied to the R language.
 -   Quarto files have a `.qmd` extension.
 
 ::: columns
 ::: {.column width="50%"}
-### Source document
+## Source document
 
 ![](../images/qmd_structure.png)
 :::
 
 ::: {.column width="50%"}
-### Rendered output
+## Rendered output
 
 ![](../images/qmd_rendered.png)
 :::
@@ -241,7 +239,8 @@ Jupyter is a popular engine for running Python code interactively. It supports m
 ![](images/images.png){fig-align="center"}
 :::
 
-## References
+# References
 
+-   [The Turing Way handbook to reproducible, ethical and collaborative data science](https://book.the-turing-way.org/index.html)
 -   [The Epidemiologist R Handbook](https://epirhandbook.com)
 -   [Websites and dashboards with Quarto](https://thegraphcourses.org/courses/websites-and-dashboards-with-r/)

@@ -1,4 +1,5 @@
 /.Rproj.user
+/.Rhistory
 /notes/rsconnect
 /notes/images2
 /practicals/exercise 3_files
@@ -42,3 +43,8 @@ practicals/exercise 3-correction.qmd
 /docs/practicals/exercise3_instructions_files
 /practicals/exercise3_cache
 /practicals/exercise3_instructions_cache
+/utils/process_feedback_cache
+/exercises/_python_r_template_files
+.Rhistory
+/practicals/exercise3_files
+/practicals/exercise3_instructions_files

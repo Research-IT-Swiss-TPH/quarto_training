@@ -20,7 +20,7 @@ website:
     collapse-level: 2
     contents:
       - href: index.qmd
-        text: Home
+        text: 🔖 Home
       - href: ./notes/quarto_intro.qmd
         text: 📘 Introduction
       - href: ./notes/notebook_structure.qmd
@@ -39,12 +39,14 @@ website:
         text: 📘 Use R and Python
       - text: 🧰 More resources
         contents:
+          - href: https://quarto.org/docs/guide/
+            text: 🛠️ Quarto official documentation
           - href: https://posit-conf-2024.github.io/quarto-websites/
             text: 🛠️ Build a Quarto website
           - href: https://posit-conf-2024.github.io/quarto-dashboards/
             text: 🛠️ Build a Quarto dashboard
           - href: https://www.youtube.com/watch?v=R3sNVE8TYeo
-            text: 📺 Quarto tutorial
+            text: 📺  Build a Quarto dashboard (tutorial)
   
 format:
   html:
@@ -64,4 +66,4 @@ format:
     code-block-border-left: "#c03427"
 
 execute:
-  cache: true
+  cache: false
