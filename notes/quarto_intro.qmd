@@ -236,3 +236,8 @@ Jupyter is a popular engine for running Python code interactively. It supports m
 
 ![](images/images.png){fig-align="center"}
 :::
+
+# Other resources
+
+https://www.fun-mooc.fr/en/courses/reproducible-research-methodological-principles-transparent-scie/ (in French)
+https://www.fun-mooc.fr/en/courses/reproducible-research-ii-practices-and-tools-for-managing-comput/
