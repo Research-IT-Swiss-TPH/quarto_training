@@ -37,7 +37,7 @@ nocite: |
   @epirhandbook, @quartowebsites
 ---
 
-# Research = a dynamic process
+## Research = a dynamic process
 
 -   Research insights are typically disseminated through reports (e.g., scientific presentations, publications, etc), including a textual narrative detailing the research context, methods, and key findings, often supplemented with figures and tables to summarize results, and a final discussion, with findings serving as evidence to support conclusions and recommendations ;
 -   Research is an **iterative** and **dynamic** process, meaning there are no **final** or **definitive** results or reports ;
@@ -45,13 +45,13 @@ nocite: |
 
 ![Image reproduced from Jorge Cham at [PhDComics](https://phdcomics.com/comics/archive.php?comicid=1689).](images/phd031214s.gif){#fig-research-challenges fig-align="center"}
 
-# Reproducibility in research
+## Reproducibility in research
 
 Achieving reproducibility requires clear access to the underlying **data**, the **code** used for analysis, and the **results** produced. It also depends on documenting the **tools**, such as software and libraries, alongside the **computational environment**, including hardware configurations and operating systems [@turingway].
 
 ![ Illustration highlighting the key components of reproducibility in research, including data, code, results, tools, and the computational environment. This illustration is adapted from the one created by Scriberia with The Turing Way community, used under a CC-BY 4.0 licence. DOI: [10.5281/zenodo.3332807](https://zenodo.org/records/13882307).](../images/reproducibility.png){#fig-reproducibility fig-align="center"}
 
-# Analytically reproducible documents
+## Analytically reproducible documents
 
 Analytically reproducible documents typically contain 3 main types of content, integrating code and natural language in a way that is called "*literate programming*" [@knuth_literate_1984].
 
@@ -185,11 +185,11 @@ Documents can be rendered in different type of outputs e.g., MS Word, PDF, HTML,
 
 ![Artwork by Allison Horst.](../images/qmd_render_schema.png){#fig-render-schema}
 
-# Existing tools for writing analytically reproducible documents
+## Existing tools for writing analytically reproducible documents
 
 ![Existing tools for writing analytically reproducible documents](../images/tools.png){#fig-tools fig-align="center"}
 
-# Quarto
+## Quarto
 
 -   Quarto is the successor to R Markdown, but is not tied to the R language.
 -   Quarto files have a `.qmd` extension.
@@ -198,46 +198,46 @@ Documents can be rendered in different type of outputs e.g., MS Word, PDF, HTML,
 
 ::: columns
 ::: {.column width="50%"}
-## Source document
+### Source document
 
 ![](../images/qmd_structure.png)
 :::
 
 ::: {.column width="50%"}
-## Rendered output
+### Rendered output
 
 ![](../images/qmd_rendered.png)
 :::
 :::
 
-## Quarto rendered outputs
+### Quarto rendered outputs
 
 -   Quarto documents can be rendered into to many report formats including HTML, Word document and many more
 -   [List of supported formats](https://quarto.org/docs/output-formats/all-formats.html)
 
 ![](images/clipboard-1220364644.png){fig-align="center"}
 
-## Engines
+### Engines
 
 An engine refers to the software or system that executes the embedded code within a document. The engine takes the code chunks written in a specific programming language (e.g., R, Python, or Julia), runs them, and returns the output, which is then incorporated into the rendered document.
 
 Both knitr and Jupyter serve as engines to execute code embedded within a document, but they work in different programming environments.
 
 ::: panel-tabset
-### knitr
+#### knitr
 
 This R package will read the code chunks, execute it, and 'knit' it back into the document. This is how tables and graphs are included alongside the text.
 
 ![](images/knitr-rmarkdown-logos-50-1.webp){fig-align="center" width="300"}
 
-### Juypter
+#### Juypter
 
 Jupyter is a popular engine for running Python code interactively. It supports multiple programming languages, but Python is the most common.
 
 ![](images/images.png){fig-align="center"}
 :::
 
-# Other resources
+## To go further on reproducibility
 
-https://www.fun-mooc.fr/en/courses/reproducible-research-methodological-principles-transparent-scie/ (in French)
-https://www.fun-mooc.fr/en/courses/reproducible-research-ii-practices-and-tools-for-managing-comput/
+* [MOOC Reproducible research I - Methodological principles for transparent science (in French)](https://www.fun-mooc.fr/en/courses/reproducible-research-methodological-principles-transparent-scie/)
+* [MOOC Reproducible research II - Practices and tools for managing computations and data (](https://www.fun-mooc.fr/en/courses/reproducible-research-ii-practices-and-tools-for-managing-comput/)

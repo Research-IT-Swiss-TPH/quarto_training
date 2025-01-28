@@ -94,6 +94,13 @@ subdf |>
 #| fig-height: 4
 
 #Figure 1 
+# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
+weekly_data <- subdf |>
+  dplyr::group_by(week) |>
+  dplyr::summarise(count = dplyr::n(),
+                   confirmed_count = sum(confirmed == "1"),
+                   death_count = sum(death == "1"))
+
 # Plot the weekly cases, confirmed cases and deaths
 ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +                        
   ggplot2::geom_line(ggplot2::aes(y = count,
