@@ -5016,6 +5016,8 @@ vertical-align: -.125em;
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>reticulate<span class="sc">::</span><span class="fu">py_config</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Error in python_config_impl(python) : 
+  Error running &quot;C:/Users/langhe/AppData/Local/r-miniconda/envs/r-reticulate/python310.dll.exe&quot;: No such file.
+Error in python_config_impl(python) : 
   Error running &quot;C:/Users/langhe/AppData/Local/r-miniconda/envs/r-reticulate/python310.dll.exe&quot;: No such file.</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
@@ -5025,9 +5027,7 @@ pythonhome:     C:/Users/langhe/Documents/.virtualenvs/r-reticulate
 version:        3.10.16 | packaged by conda-forge | (main, Dec  5 2024, 14:07:43) [MSC v.1942 64 bit (AMD64)]
 Architecture:   64bit
 numpy:          C:/Users/langhe/Documents/.virtualenvs/r-reticulate/Lib/site-packages/numpy
-numpy_version:  2.2.2
-
-NOTE: Python version was forced by VIRTUAL_ENV</code></pre>
+numpy_version:  2.2.2</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -5045,7 +5045,7 @@ Important
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>reticulate<span class="sc">::</span><span class="fu">virtualenv_remove</span>(<span class="st">&quot;r-reticulate&quot;</span>, <span class="at">confirm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb6-2"><a href="#cb6-2"></a>reticulate<span class="sc">::</span><span class="fu">virtualenv_create</span>(<span class="st">&quot;r-reticulate&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>If you encounter issues setting up your Python environment, please let us know.</p>
+<p>If you encounter issues setting up your Python environment, please let us know as this is usually the tricky part of the process.</p>
 </div>
 </div>
 </section>

@@ -57,13 +57,13 @@ resources:
 
 This exercise builds on the previous exercise where you learnt to [build a simple MS Word report ⭐](./exercise3_instructions.html).
 
-## Objectives 🎯
+# Objectives 🎯
 
 -   Open the Quarto document `exercise4.qmd` in RStudio;
 -   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.
 -   Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
 
-## Improve navigation and readability
+# Improve navigation and readability
 
 ::: callout-tip
 -   See Quarto documentation about [table of contents](https://quarto.org/docs/output-formats/ms-word.html#table-of-contents)
@@ -73,7 +73,7 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 -   [ ] Automatically number the different sections of the Quarto document ;
 -   [ ] Configure the table of contents to only display two levels of section headings.
 
-## Implement dynamic calculations
+# Implement dynamic calculations
 
 ::: callout-tip
 -   See Quarto documentation about [date formatting](https://quarto.org/docs/reference/dates.html#date-formatting)
@@ -123,7 +123,7 @@ Other R packages include [flextable](https://davidgohel.github.io/flextable/) an
 
 > "*while **cross-reference** compares the demographic characteristics of individuals who died versus those who are still alive*"
 
-## Customise figures
+# Customise figures
 
 ::: callout-tip
 -   See [Quarto documentation about figure cross-references](https://quarto.org/docs/authoring/cross-references.html#computations)
@@ -139,7 +139,7 @@ Other R packages include [flextable](https://davidgohel.github.io/flextable/) an
 -   [ ] Adjust the dimensions of the figure until you are happy with it
 -   [ ] Beautify the plot using ggplot options
 
-## Code
+# Code
 
 ::: callout-tip
 -   See [gtsummary documentation about formatted table of regression model results](https://www.danieldsjoberg.com/gtsummary/articles/tbl_regression.html)
@@ -164,7 +164,7 @@ Other R packages include [flextable](https://davidgohel.github.io/flextable/) an
 -   [ ] Assign a label to the code chunk ;
 -   [ ] Replace the placeholder text in bold with a cross-reference to the code chunk.
 
-## Add references
+# Add references
 
 ::: callout-tip
 -   See [Quarto documentation about citations](https://quarto.org/docs/authoring/citations.html)
@@ -174,7 +174,7 @@ Other R packages include [flextable](https://davidgohel.github.io/flextable/) an
 -   [ ] Cite the reference `text` in your MS Word rendered report ;
 -   [ ] Create your own bibliography file and apply it to your MS Word rendered report ;
 
-## Finalise your MS Word report
+# Finalise your MS Word report
 
 ::: callout-tip
 See [Quarto documentation about Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)

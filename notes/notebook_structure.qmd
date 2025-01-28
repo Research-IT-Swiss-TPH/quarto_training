@@ -62,7 +62,7 @@ A Quarto notebook and its corresponding rendered document(s) serve different pur
     
 A single Quarto notebook can be rendered into multiple formats. While there may be some limitations when targeting different formats, this flexibility is one of Quarto's core strengths, making it a powerful tool for creating versatile and reusable documents.
     
-![Artwork by Allison Horst.](../images/qmd_render_schema.png)
+![Artwork by Allison Horst.](../images/qmd_render_schema.png){#fig-quarto-render}
 
 ## Structure of a Quarto notebook (Qmd file)
 
@@ -70,9 +70,9 @@ There are three basic components to a Quarto notebook:
 
 - a unique (YAML) header,
 - (markdown) text areas, and
-- code areas (and their output).
+- code areas (and corresponding output).
 
-![](../images/notebook_structure.png)
+![](../images/notebook_structure.png){#fig-quarto-structure}
 
 ::: panel-tabset
 ### Header

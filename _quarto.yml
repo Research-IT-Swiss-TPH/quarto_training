@@ -68,6 +68,8 @@ format:
     code-block-border-left: "#c03427"
 
 lang: en-US
+bibliography: references.bib
+csl: vancouver.csl
 
 execute:
   cache: false

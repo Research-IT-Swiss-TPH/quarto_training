@@ -100,7 +100,7 @@ reticulate::virtualenv_remove("r-reticulate", confirm = TRUE)
 reticulate::virtualenv_create("r-reticulate")
 ```
 
-If you encounter issues setting up your Python environment, please let us know.
+If you encounter issues setting up your Python environment, please let us know as this is usually the tricky part of the process.
 
 :::
 

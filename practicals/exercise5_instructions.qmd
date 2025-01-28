@@ -75,17 +75,12 @@ This exercise builds on the previous exercises where you learnt to [create a sim
 quarto render exercise3.qmd --out report_data1.docx -P dataset:df1.RData
 ```
 
+You can find a terminal in RStudio
+
+![](images/clipboard-1086723948.png)
+
 ::: callout-important
 ### Discussion question
 
 Discuss the advantages and disadvantages of using R within Quarto compared to using R scripts.
 :::
-
-## Finalise your MS Word report
-
-::: callout-tip
-See [Quarto documentation about Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)
-:::
-
--   [ ] Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report ;
--   [ ] Create your own template and apply it to your MS Word rendered report.

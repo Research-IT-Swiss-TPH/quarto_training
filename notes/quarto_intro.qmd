@@ -33,6 +33,8 @@ execute:
   warning: false
   
 engine: knitr
+nocite: |
+  @epirhandbook, @quartowebsites
 ---
 
 # Research = a dynamic process
@@ -41,15 +43,17 @@ engine: knitr
 -   Research is an **iterative** and **dynamic** process, meaning there are no **final** or **definitive** results or reports ;
 -   In addition, we continuously build upon the work of others to generate new insights and discoveries.
 
-[![Image from Jorge Cham (PhDComics)](images/phd031214s.gif){fig-align="center"}](https://phdcomics.com/comics/archive.php?comicid=1689)
+![Image reproduced from Jorge Cham at [PhDComics](https://phdcomics.com/comics/archive.php?comicid=1689).](images/phd031214s.gif){#fig-research-challenges fig-align="center"}
 
 # Reproducibility in research
 
-![](../images/reproducibility.png){fig-align="center"}
+Achieving reproducibility requires clear access to the underlying **data**, the **code** used for analysis, and the **results** produced. It also depends on documenting the **tools**, such as software and libraries, alongside the **computational environment**, including hardware configurations and operating systems [@turingway].
+
+![ Illustration highlighting the key components of reproducibility in research, including data, code, results, tools, and the computational environment. This illustration is adapted from the one created by Scriberia with The Turing Way community, used under a CC-BY 4.0 licence. DOI: [10.5281/zenodo.3332807](https://zenodo.org/records/13882307).](../images/reproducibility.png){#fig-reproducibility fig-align="center"}
 
 # Analytically reproducible documents
 
-These documents typically contain 3 main types of content, integrating code and natural language in a way that is called "*literate programming*".
+Analytically reproducible documents typically contain 3 main types of content, integrating code and natural language in a way that is called "*literate programming*" [@knuth_literate_1984].
 
 ::: panel-tabset
 ### Formatted text
@@ -177,20 +181,20 @@ data.frame(country=c("Nigeria","Kenya","India"), prevalence=c(14.5,9.2,3.5)) |>
 
 Documents can be rendered in different type of outputs e.g., MS Word, PDF, HTML, PowerPoint, etc.
 
-**Pandoc** is one of the tool that allows this conversion.
+**Pandoc** is a powerful open-source tool that enables seamless **conversion** between various document formats, making it an essential resource for working with markup languages like Markdown, HTML, and LaTeX. By using Pandoc, you can easily transform a document written in one markup language into a wide range of output formats, including MS Word, PDF, HTML, PowerPoint, and more, without needing to manually adjust formatting or structure. This versatility makes Pandoc particularly valuable in workflows that involve literate programming, where formatted text, code commands, and outputs are integrated. Pandoc also supports templates and extensions, allowing users to customize the output to meet specific stylistic or formatting requirements, simplifying the process of producing polished, professional documents.
 
-![Artwork by Allison Horst.](../images/qmd_render_schema.png)
+![Artwork by Allison Horst.](../images/qmd_render_schema.png){#fig-render-schema}
 
 # Existing tools for writing analytically reproducible documents
 
-![](../images/tools.png){fig-align="center"}
+![Existing tools for writing analytically reproducible documents](../images/tools.png){#fig-tools fig-align="center"}
 
 # Quarto
 
 -   Quarto is the successor to R Markdown, but is not tied to the R language.
 -   Quarto files have a `.qmd` extension.
 
-![Artwork by Allison Horst.](../images/quarto_schematic.png)
+![Artwork by Allison Horst.](../images/quarto_schematic.png){#fig-quarto}
 
 ::: columns
 ::: {.column width="50%"}
@@ -232,9 +236,3 @@ Jupyter is a popular engine for running Python code interactively. It supports m
 
 ![](images/images.png){fig-align="center"}
 :::
-
-# References
-
--   [The Turing Way handbook to reproducible, ethical and collaborative data science](https://book.the-turing-way.org/index.html)
--   [The Epidemiologist R Handbook](https://epirhandbook.com)
--   [Websites and dashboards with Quarto](https://thegraphcourses.org/courses/websites-and-dashboards-with-r/)
