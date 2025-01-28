@@ -52,8 +52,9 @@ resources:
 
 ## Learning objectives 🎯 
 
-1.  Create a Quarto notebook;
-2.  Setup your R environment to be able to use and render Quarto documents.
+-   Create a Quarto notebook.
+-   Initialize type of dynamic documents, header metadata, and document output format.
+-   Setup your R environment to be able to use and render Quarto documents.
 
 ## Create a new Quarto document
 

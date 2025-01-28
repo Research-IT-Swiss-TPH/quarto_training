@@ -47,8 +47,8 @@ resources:
 
 ## Learning objectives 🎯
 
-1. Understand the structure of the Quarto notebook
-2. Understand the difference and relationships between notebooks and rendered documents
+-   Understand the structure of the Quarto notebook.
+-   Understand the difference and relationships between notebooks and rendered documents.
 
 ## Quarto notebooks vs. rendered documents
 

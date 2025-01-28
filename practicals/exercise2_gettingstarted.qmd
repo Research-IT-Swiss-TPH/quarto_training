@@ -53,8 +53,10 @@ resources:
 
 ## Learning objectives 🎯
 
-1.  Edit Quarto notebooks
-2.  Render Quarto documents in different formats
+-   Edit Quarto notebooks.
+-   Learn about visual editor and source editor.
+-   Run R code in notebook mode.
+-   Render Quarto documents in different formats, and execute R code within the text.
 
 ## Editing text
 
