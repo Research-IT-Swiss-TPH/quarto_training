@@ -1,0 +1,49 @@
+---
+title: 🧰 Helpful resources
+author:
+  - name:
+      given: Hélène
+      family: Langet
+    affiliations:
+      - name: Swiss TPH Research-IT
+    orcid: 0000-0002-6758-2397
+    email: helene.langet@swisstph.ch
+license: "CC-BY"
+date: last-modified
+editor: source
+
+format:
+  html:
+    default: true
+    embed-resources: true
+    code-overflow: wrap
+    theme: cosmo
+    toc: true
+    number-sections: true
+    anchor-sections: true
+    title-block-banner: true
+    comments:
+      hypothesis: 
+        theme: classic
+    format-links: [pdf]
+  pdf:
+    default: true
+    toc: true
+    number-sections: true
+    
+execute:
+  echo: fenced
+  warning: false
+  
+resources:
+  - notebook_structure.pdf  
+---
+
+Here are some helpful resources to learn more about Quarto:
+
+- [📄 Quarto cheat sheet](https://rstudio.github.io/cheatsheets/quarto.pdf) - A quick reference for essential Quarto commands and syntax.
+- [📄️ Quarto official documentation](https://quarto.org/docs/guide/) - The go-to guide for learning Quarto in depth.
+- [📄️ PDF formatting with Quarto](https://cameronpatrick.com/post/2023/07/quarto-thesis-formatting/)
+- [🗣️️ Build a Quarto website (presentation)](https://posit-conf-2024.github.io/quarto-websites/)
+- [🗣️️ Build a Quarto dashboard (presentation)](https://posit-conf-2024.github.io/quarto-dashboards/)
+- [📺  Build a Quarto dashboard (tutorial)](href: https://www.youtube.com/watch?v=R3sNVE8TYeo)

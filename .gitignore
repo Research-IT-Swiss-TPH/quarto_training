@@ -51,3 +51,4 @@ _environment
 *.pptx
 *.xlsx
 *.tex
+/docs/site_libs/revealjs
