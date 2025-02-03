@@ -43,13 +43,15 @@ website:
             text: 📄 Quarto cheat sheet
           - href: https://quarto.org/docs/guide/
             text: 📄️ Quarto official documentation
+          - href: https://cameronpatrick.com/post/2023/07/quarto-thesis-formatting/
+            text: 📄️ PDF formatting with Quarto
           - href: https://posit-conf-2024.github.io/quarto-websites/
             text: 🗣️️ Build a Quarto website (presentation)
           - href: https://posit-conf-2024.github.io/quarto-dashboards/
             text: 🗣️️ Build a Quarto dashboard (presentation)
           - href: https://www.youtube.com/watch?v=R3sNVE8TYeo
             text: 📺  Build a Quarto dashboard (tutorial)
-  
+          
 format:
   html:
     title-block-banner: true
