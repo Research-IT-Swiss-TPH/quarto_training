@@ -32,9 +32,9 @@ website:
       - href: ./practicals/exercise3_instructions.qmd
         text: 📙 Create a simple Word report
       - href: ./practicals/exercise4_instructions.qmd
-        text: 📙 Add dynamic elements to your report
+        text: 📙 Add dynamic elements to reports
       - href: ./practicals/exercise5_instructions.qmd
-        text: 📙 Parametrise your report
+        text: 📙 Parametrise reports 🛠
       - href: ./notes/python_r_short_demo.qmd
         text: 📘 Use R and Python
       - text: 🧰 More resources
@@ -42,7 +42,7 @@ website:
           - href: https://rstudio.github.io/cheatsheets/quarto.pdf
             text: 📄 Quarto cheat sheet
           - href: https://quarto.org/docs/guide/
-            text: 🛠️ Quarto official documentation
+            text: 📄️ Quarto official documentation
           - href: https://posit-conf-2024.github.io/quarto-websites/
             text: 🗣️️ Build a Quarto website (presentation)
           - href: https://posit-conf-2024.github.io/quarto-dashboards/
