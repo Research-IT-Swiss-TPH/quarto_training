@@ -190,8 +190,6 @@ weekly_data <- subdf |>
 
 ```{r}
 #| fig-cap: Weekly count of all cases, confirmed cases and deaths                                                 # <13>
-#| fig-width: 8                                                                                                   # <14>
-#| fig-height: 4                                                                                                  # <15>
 
 #Figure 1 
 # Plot the weekly cases, confirmed cases and deaths
@@ -208,27 +206,25 @@ ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
   ggplot2::labs(x = "Week",
                 y = "Count",
                 color = "Legend") +
-  ggplot2::scale_color_manual(values = c("All cases" = "#440e54",                                                  # <16>
+  ggplot2::scale_color_manual(values = c("All cases" = "#440e54",                                                  # <14>
                                          "Confirmed cases" = "#f8766d",
                                          "Confirmed deaths" = "#128984")) +
-  ggplot2::theme_minimal() +                                                                                       # <17>
-  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5,                                       # <18>
+  ggplot2::theme_minimal() +                                                                                       # <15>
+  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5,                                       # <16>
                                                             linetype = "dashed",
                                                             color = "grey"), 
                  panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5,
                                                             linetype = "dashed",
                                                             color = "grey"),
-                 panel.grid.major.x = ggplot2::element_blank(),                                                    # <19>
+                 panel.grid.major.x = ggplot2::element_blank(),                                                    # <17>
                  panel.grid.minor.x = ggplot2::element_blank())
 ```
 
 13. Add a caption to the table by using the `fig-cap` chunk option. Remove the title parameter from `ggplot2::labs` to avoid the repetition.
-14. Set the width of the figure to 8 inches by using the `fig-width` option. This option can also be specified globally in the YAML header of the Quarto notebook.
-15. Set the height of the figure to 4 inches by using the `fig-height` option. This option can also be specified globally in the YAML header of the Quarto notebook.
-16. Assigns specific colors to each line for better distinction.
-17. Apply the `ggplot2::theme_minimal()` function to set a clean and simple aesthetic for the plot. This theme removes unnecessary elements such as background shading and focuses attention on the data by displaying only grid lines and axis labels.
-18. Add dashed lines for horizontal (major and minor) grid lines.
-19. Omits vertical (major and minor) grid lines for a cleaner look.
+14. Assigns specific colors to each line for better distinction.
+15. Apply the `ggplot2::theme_minimal()` function to set a clean and simple aesthetic for the plot. This theme removes unnecessary elements such as background shading and focuses attention on the data by displaying only grid lines and axis labels.
+16. Add dashed lines for horizontal (major and minor) grid lines.
+17. Omits vertical (major and minor) grid lines for a cleaner look.
 
 # Present statistical models and results
 
@@ -242,29 +238,29 @@ model <- glm(death ~ bmi + age,
 ```
 
 ```{{r}}
-#| echo: true                                          # <20>
+#| echo: true                                          # <18>
 
 #Logistic regression model
-model <- glm(death ~ bmi + age,                        # <21>
-             subdf |> dplyr::filter(confirmed == "1"), # <23>
-             family = binomial)                        # <22>
+model <- glm(death ~ bmi + age,                        # <19>
+             subdf |> dplyr::filter(confirmed == "1"), # <21>
+             family = binomial)                        # <20>
 ```
 
-20. The `echo: true` option ensures that the code chunk used to generate the logistic regression model is displayed in the rendered output, which is helpful for transparency and reproducibility.
-21. The `glm()` function fits a generalised linear model to predict **death** (binary outcome) from two predictors (**bmi** and **age**). The function returns a model object containing various components, such as coefficients (effects of predictors), residuals (errors), and fitted values (predicted probabilities).
-22. Set the `family` argument to **binomial** to fit a logistic regression model. This is appropriate for binary outcomes like death, as it models the probability of the outcome occurring using a logit (*log-odds*) function (i.e. coefficients represent the effect size of each predictor on the log-odds of the binary outcome).
-23. Filter data using the `dplyr::filter()` function to subset the dataset so that the model is estimated from confirmed cases only.
+18. The `echo: true` option ensures that the code chunk used to generate the logistic regression model is displayed in the rendered output, which is helpful for transparency and reproducibility.
+19. The `glm()` function fits a generalised linear model to predict **death** (binary outcome) from two predictors (**bmi** and **age**). The function returns a model object containing various components, such as coefficients (effects of predictors), residuals (errors), and fitted values (predicted probabilities).
+20. Set the `family` argument to **binomial** to fit a logistic regression model. This is appropriate for binary outcomes like death, as it models the probability of the outcome occurring using a logit (*log-odds*) function (i.e. coefficients represent the effect size of each predictor on the log-odds of the binary outcome).
+21. Filter data using the `dplyr::filter()` function to subset the dataset so that the model is estimated from confirmed cases only.
 
 #### Table 3 {.unnumbered}
 
 ```{r}
-#| tbl-cap: Formatted regression table         # <26>
+#| tbl-cap: Formatted regression table         # <24>
 
 #Table 3
-gtsummary::tbl_regression(model,               # <24>
-                          exponentiate = TRUE) # <25>
+gtsummary::tbl_regression(model,               # <22>
+                          exponentiate = TRUE) # <23>
 ```
 
-24. Use `gtsummary::tbl_regression()` to create a table summary of the logistic regression results.
-25. Set the `exponentiate` argument to **TRUE** to convert the coefficients (*log-odds*) into odds ratios, which are more interpretable and useful for understanding the strength of associations.
-26. Add a caption to the table by using the `tbl-cap` chunk option.
+22. Use `gtsummary::tbl_regression()` to create a table summary of the logistic regression results.
+23. Set the `exponentiate` argument to **TRUE** to convert the coefficients (*log-odds*) into odds ratios, which are more interpretable and useful for understanding the strength of associations.
+24. Add a caption to the table by using the `tbl-cap` chunk option.
