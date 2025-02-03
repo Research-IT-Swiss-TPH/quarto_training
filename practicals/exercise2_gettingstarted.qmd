@@ -94,6 +94,12 @@ Below is an example of the same file viewed in both the source Editor and the vi
 
 ::::
 
+In the Visual Editor, the toolbar inclues the most commonly used formatting commands:
+
+![](../images/visual_editor_toolbar.PNG)
+
+In the menus you can find available options. For example, in **Format**, you can make text **Bold**, *Italic*, or [underline]{.underline}; in **Insert**, you can insert a code chunk with available language options or a YAML block easily; and **Table** create much convenience for inserting a table.
+
 ## Running R code in notebook mode
 
 To write and execute code in Quarto, you will use **code chunks**.
