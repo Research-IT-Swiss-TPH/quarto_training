@@ -90,8 +90,6 @@ subdf |>
 
 ```{r}
 #| fig-cap: Weekly count of all cases, confirmed cases and deaths
-#| fig-width: 8
-#| fig-height: 4
 
 #Figure 1 
 # Aggregate the data to get the weekly count of all cases, confirmed cases and deaths

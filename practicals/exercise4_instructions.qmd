@@ -1,5 +1,5 @@
 ---
-title: ⭐⭐ Add dynamic elements to your report
+title: ⭐⭐ Add dynamic elements to reports
 subtitle: 📋 Instructions
 author:
   - name:
@@ -60,72 +60,73 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 
 ## Objectives 🎯
 
--   Open the Quarto document `exercise4.qmd` in RStudio;
+-   Open the Quarto document `exercise4.qmd` in RStudio, or continue working on the Quarto notebook you used to generate a simple MS Word report in the previous [exercise](./exercise3_instructions.html);
 -   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.
 -   Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
 
 ## Improve navigation and readability
 
+-   [ ] Insert a table of contents to the rendered MS Word document;
+-   [ ] Automatically number the different sections of the rendered MS Word document;
+-   [ ] Configure the table of contents to only display two levels of section headings.
+
 ::: callout-tip
 -   See Quarto documentation about [table of contents](https://quarto.org/docs/output-formats/ms-word.html#table-of-contents)
 :::
 
--   [ ] Insert a table of contents to the Quarto document ;
--   [ ] Automatically number the different sections of the Quarto document ;
--   [ ] Configure the table of contents to only display two levels of section headings.
-
 ## Implement dynamic calculations
+
+-   [ ] Change the date `2023-12-31` to the date at which the MS Word document was last rendered;
+- [ ] Format the date at which the MS Word document was last rendered to display it with the format `December 31, 2023`;
 
 ::: callout-tip
 -   See Quarto documentation about [date formatting](https://quarto.org/docs/reference/dates.html#date-formatting)
 -   See Quarto documentation about [dynamic dates](https://quarto.org/docs/reference/dates.html#date-parsing)
--   See Quarto documentation about [inline code](https://quarto.org/docs/computations/inline-code.html)
 :::
 
--   [ ] Change the date `2023-12-31` to the date at which the Quarto document was last modified, and format this date to display it with the format `December 31, 2023` ;
 -   [ ] Replace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;
 
 > "*The outbreak ran from **date** to **date***"
-
-::: {.content-visible when-format="revealjs"}
-
-------------------------------------------------------------------------
-:::
 
 -   [ ] Replace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.
 
 > "*Over the studied period, there were **N** cases, including **N** confirmed cases and **N** confirmed deaths.*"
 
-## Reference publication-ready tables
-
 ::: callout-tip
--   See [gtsummary documentation about summary tables](https://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html)
--   See [Quarto documentation about table cross-references](https://quarto.org/docs/authoring/tables.html#cross-references)
-
-Other R packages include [flextable](https://davidgohel.github.io/flextable/) and [gt](https://gt.rstudio.com/)
+-   See Quarto documentation about [inline code](https://quarto.org/docs/computations/inline-code.html)
 :::
 
--   [ ] Assign a label to the table summarising the demographic characteristics and outcome frequency of all cases ;
--   [ ] Replace the placeholder text in bold with a cross-reference to the table ;
+## Reference publication-ready tables
+
+#### Table 1 {.unnumbered}
+
+-   [ ] Assign a label to the table summarising the demographic characteristics and outcome frequency of all cases;
+-   [ ] Replace the placeholder text in bold with a cross-reference to the table.
 
 > "***cross-reference** provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
 
-::: {.content-visible when-format="revealjs"}
+#### Table 2 {.unnumbered}
 
-------------------------------------------------------------------------
-:::
-
--   [ ] Assign a label to the table summarising the demographic characteristics of individuals who died versus those who are still alive ;
+-   [ ] Assign a label to the table summarising the demographic characteristics of individuals who died versus those who are still alive;
 -   [ ] Replace the placeholder text in bold with a cross-reference to the table.
 
 > "*while **cross-reference** compares the demographic characteristics of individuals who died versus those who are still alive*"
 
-## Customise figures
+#### Table 3 {.unnumbered}
+
+-   [ ] Assign a label to the table summarizing the odds ratios from the logistic regression model;
+-   [ ] Replace the placeholder text in bold with a cross-reference to the table
+
+> "The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference**."
+
 
 ::: callout-tip
--   See [Quarto documentation about figure cross-references](https://quarto.org/docs/authoring/cross-references.html#computations)
--   See [Quarto documentation about figure options](https://quarto.org/docs/computations/execution-options.html#figure-options)
+-   See [Quarto documentation about table cross-references](https://quarto.org/docs/authoring/tables.html#cross-references)
 :::
+
+## Customise figures
+
+#### Figure 1 {.unnumbered}
 
 -   [ ] Assign a label to the figure ;
 -   [ ] Replace the placeholder text in bold with a cross-reference to the figure ;
@@ -134,26 +135,22 @@ Other R packages include [flextable](https://davidgohel.github.io/flextable/) an
 
 -   [ ] Adjust the dimensions of the figure until you are happy with them
 
+::: callout-tip
+-   See [Quarto documentation about figure cross-references](https://quarto.org/docs/authoring/cross-references.html#computations)
+-   See [Quarto documentation about figure options](https://quarto.org/docs/computations/execution-options.html#figure-options)
+:::
+
 ## Code
 
-::: callout-tip
--   See [gtsummary documentation about formatted table of regression model results](https://www.danieldsjoberg.com/gtsummary/articles/tbl_regression.html)
--   See [Quarto documentation about code chunk cross-references](https://quarto.org/docs/authoring/cross-references.html#code-listings)
-:::
-
--   [ ] Assign a label to the table summarizing the odds ratios from the logistic regression model ;
--   [ ] Replace the placeholder text in bold with a cross-reference to the table ;
-
-> "The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference**."
-
-::: {.content-visible when-format="revealjs"}
-
-------------------------------------------------------------------------
-:::
+#### Table 3 {.unnumbered}
 
 -   [ ] Add a caption to the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;
 -   [ ] Assign a label to the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;
 -   [ ] Replace the placeholder text in bold with a cross-reference to the code chunk.
+
+::: callout-tip
+-   See [Quarto documentation about code chunk cross-references](https://quarto.org/docs/authoring/cross-references.html#code-listings)
+:::
 
 ## Add references
 
