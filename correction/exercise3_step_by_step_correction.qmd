@@ -48,7 +48,7 @@ format:
         breaklines}
     
 execute:
-  echo: fenced
+  echo: true
   warning: false
     
 resources:

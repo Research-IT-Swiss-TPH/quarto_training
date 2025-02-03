@@ -47,7 +47,7 @@ format:
     number-sections: true
     
 execute:
-  echo: fenced
+  echo: true
   warning: false
     
 resources:
