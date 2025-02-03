@@ -48,3 +48,6 @@ practicals/exercise 3-correction.qmd
 /practicals/exercise3_instructions_files
 .Renviron
 _environment
+*.pptx
+*.xlsx
+*.tex
