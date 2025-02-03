@@ -209,7 +209,8 @@ title: "Quarto training for R - Exercise 2"
 author: Unknown author
 format: html
 editor: visual
-echo: false
+execute:
+  echo: true
 ---
 ```
 
