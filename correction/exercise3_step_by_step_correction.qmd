@@ -9,6 +9,12 @@ author:
       - name: Swiss TPH Research-IT
     orcid: 0000-0002-6758-2397
     email: helene.langet@swisstph.ch
+  - name:
+      given: Zhihan
+      family: Zhu
+    affiliations:
+      - name: Swiss TPH Research-IT
+    email: zhihan.zhu@swisstph.ch
 license: "CC-BY"
 date: last-modified
 editor: source
