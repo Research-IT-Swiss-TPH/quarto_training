@@ -51,7 +51,7 @@ execute:
   warning: false
     
 resources:
-  - exercise3_instructions.pdf
+  - exercise4_instructions.pdf
   - swisstph_template.docx
   - df1.RData
 ---

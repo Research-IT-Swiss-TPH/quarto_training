@@ -55,14 +55,16 @@ resources:
 A Quarto notebook and its corresponding rendered document(s) serve different purposes but are closely connected. 
 
 - The **Quarto notebook** is the **source document** (`.Qmd`) where content is edited.
-- The **rendered document** is the **output** generated from the Quarto notebook. Common rendered document formats include:
+- The **rendered document** is the **output** generated from the Quarto notebook. 
+
+Common rendered document formats include:
     - HTML for interactive web-based reports.
     - PDF for professional and printable documents.
     - Word for editable text-based outputs.
     
 A single Quarto notebook can be rendered into multiple formats. While there may be some limitations when targeting different formats, this flexibility is one of Quarto's core strengths, making it a powerful tool for creating versatile and reusable documents.
     
-![Artwork by Allison Horst.](../images/qmd_render_schema.png){#fig-quarto-render}
+![Process of transforming a Quarto document from its source format to the final rendered output. Artwork by Allison Horst.](../images/qmd_render_schema.png){#fig-quarto-render}
 
 ## Structure of a Quarto notebook (Qmd file)
 
