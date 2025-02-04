@@ -1,0 +1,278 @@
+---
+title:  ⭐Create a simple Word Report
+subtitle: ✅ Step-by-step correction
+author:
+  - name:
+      given: Hélène
+      family: Langet
+    affiliations:
+      - name: Swiss TPH Research-IT
+    orcid: 0000-0002-6758-2397
+    email: helene.langet@swisstph.ch
+  - name:
+      given: Zhihan
+      family: Zhu
+    affiliations:
+      - name: Swiss TPH Research-IT
+    email: zhihan.zhu@swisstph.ch
+license: "CC-BY"
+date: last-modified
+editor: source
+
+format:
+  html:
+    default: true
+    toc-depth: 2
+    code-annotation: true
+    code-line-numbers: true
+    comments:
+      hypothesis: 
+        theme: classic
+    code-links:
+      - text: 📋 Instructions
+        href: ../practicals/exercise3_instructions.html
+    format-links: [pdf]
+  pdf:
+    default: true
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    code-annotation: true
+    code-line-numbers: true
+    include-in-header: 
+       text: |
+         \usepackage{fvextra}
+         \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+    include-before-body:
+      text: |
+        \RecustomVerbatimEnvironment{verbatim}{Verbatim}{
+        showspaces = false,
+        showtabs = false,
+        breaksymbolleft={},
+        breaklines}
+    
+execute:
+  echo: fenced
+  warning: false
+    
+resources:
+  - exercise3_step_by_step_correction.pdf
+---
+
+This page provides a step-by-step correction for building a simple MS Word report using the Quarto notebook `exercise3.qmd` as a starting point.
+
+::: callout-important
+To get the most out of your learning experience, attempt to solve the exercise on your own before looking at this correction. Remember, trials and errors are an essential part of the learning process, strengthening your understanding and helping you build confidence. Take your time, experiment, and learn actively!
+:::
+
+# Setup basic elements of the Quarto notebook
+
+All the basic elements you need to setup are defined in the YAML header at the beginning of your Quarto notebook.
+
+``` yaml
+---
+title: My outbreak report # <1>
+author: Helene Langet     # <2>
+date: 2023-12-31          # <3>
+
+format: docx              # <4>
+
+execute:                  # <5>
+  echo: false             # <6>
+  warning: false          # <7>
+---
+```
+
+1.  Update the `title` option in the Quarto notebook. Quotation marks are optional.
+2.  Set the `author` option to your name. Quotation marks are optional.
+3.  Add the `date` option and set it to **2023-12-31**. Quotation marks are optional.
+4.  Set the `format` option to **docx** to generate a MS Word document.
+5.  Add an `execute` block to customize the execution behaviour for your Quarto notebook. This block allows you to control how code, warnings, and other outputs are displayed in the rendered document.
+6.  Add the `echo` option and set it to **false** to hide code in the rendered document.
+7.  Add the `warning` option and set it to **false** to hide warnings in the rendered document.
+
+::: callout-important
+### YAML indentation
+
+Remember that YAML is a whitespace-sensitive language where indentation determines the structure; tabs are not recognised for indentation. The recommended practice is therefore to use **two spaces** per indentation level to ensure consistency and avoid errors.
+:::
+
+# Create publication-ready summary statistics tables
+
+Creating publication-ready tables in R often involves leveraging specialized packages. Popular options include `gtsummary`, `gt` and `flextable`. In what follows, we will use `gtsummary` which is an excellent package for creating summary statistics tables. To install it, run the command `install.packages("gtsummary")` in your R console.
+
+```{r}
+#| echo: false
+# Load the dataset stored in the "df1.RData" file
+load(file = "df1.RData")
+```
+
+```{r}
+#| echo: false
+# Convert the 'sex', 'confirmed', and 'death' columns from their current data type to factors
+df <- df |>
+  dplyr::mutate(dplyr::across(c(sex, confirmed, death),
+                              as.factor))
+```
+
+```{r}
+#| echo: false
+# Identify the start and end dates of the outbreak by finding the minimum and maximum values in the 'date' column
+start_date <- min(df$date)
+end_date <- max(df$date)
+```
+
+```{r}
+#| echo: false
+# Define the period of interest for the report
+period_start <- start_date
+period_end <- end_date
+```
+
+```{r}
+#| echo: false
+# Filter the data frame to include only the cases that occurred within the defined period
+subdf <- df |>
+  dplyr::filter(date >= period_start & date <= period_end)
+```
+
+#### Table 1 {.unnumbered}
+
+```{r}
+#| tbl-cap: Population characteristics # <10>
+
+#Table 1
+#Generate a summary table displaying population characteristics
+subdf |>                               
+  dplyr::select(age,                   # <8>
+                sex,
+                bmi,
+                confirmed,
+                death) |>
+  gtsummary::tbl_summary()             # <9>
+```
+
+8.  Use the `dplyr::select()` function to select specific columns (**age**, **sex**, **bmi**, **confirmed**, and **death**) from the **subdf** dataset.
+9.  Use the `gtsummary::tbl_summary()` function to create a table that summarizes the descriptive statistics of the selected variables in the whole population.
+10. Add a caption to the table by using the `tbl-cap` chunk option.
+
+#### Table 2 {.unnumbered}
+
+```{r}
+#| tbl-cap: Demographic characteristics of deceased vs. alive # <12>
+
+#Table 2
+#Generate a summary table comparing the demographic characteristics
+#of individuals who died versus those who are still alive
+subdf |>                                                      
+  dplyr::select(sex,
+                age,
+                bmi,
+                death) |>
+  gtsummary::tbl_summary(by = death) |>                       # <10>
+  gtsummary::add_overall()                                    # <11>
+```
+
+10. Use the `gtsummary::tbl_summary()` function to create a summary table grouped by the **death** column, showing separate statistics for individuals who have died vs. those who are still alive.
+11. Use the `gtsummary::add_overall()` function to add a row to the table that shows overall summary statistics for the whole population, regardless of their death status.
+12. Add a caption to the table by using the `tbl-cap` chunk option.
+
+# Create publication-ready figures
+
+#### Figure 1 {.unnumbered}
+
+```{r}
+#| echo: false
+
+# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
+weekly_data <- subdf |>
+  dplyr::group_by(week) |>
+  dplyr::summarise(count = dplyr::n(),
+                   confirmed_count = sum(confirmed == "1"),
+                   death_count = sum(death == "1"))
+```
+
+```{r}
+#| fig-cap: Weekly count of all cases, confirmed cases and deaths                                                 # <13>
+
+#Figure 1
+# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
+weekly_data <- subdf |>
+  dplyr::group_by(week) |>
+  dplyr::summarise(count = dplyr::n(),
+                   confirmed_count = sum(confirmed == "1"),
+                   death_count = sum(death == "1"))
+
+# Plot the weekly cases, confirmed cases and deaths
+ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +                        
+  ggplot2::geom_line(ggplot2::aes(y = count,
+                                  color = "All cases"),
+                     size = 1) +
+  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,
+                                  color = "Confirmed cases"),
+                     size = 1) +
+  ggplot2::geom_line(ggplot2::aes(y = death_count,
+                                  color = "Confirmed deaths"),
+                     size = 1) +
+  ggplot2::labs(x = "Week",
+                y = "Count",
+                color = "Legend") +
+  ggplot2::scale_color_manual(values = c("All cases" = "#440e54",                                                  # <14>
+                                         "Confirmed cases" = "#f8766d",
+                                         "Confirmed deaths" = "#128984")) +
+  ggplot2::theme_minimal() +                                                                                       # <15>
+  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5,                                       # <16>
+                                                            linetype = "dashed",
+                                                            color = "grey"), 
+                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5,
+                                                            linetype = "dashed",
+                                                            color = "grey"),
+                 panel.grid.major.x = ggplot2::element_blank(),                                                    # <17>
+                 panel.grid.minor.x = ggplot2::element_blank())
+```
+
+13. Add a caption to the table by using the `fig-cap` chunk option. Remove the title parameter from `ggplot2::labs` to avoid the repetition.
+14. Assigns specific colors to each line for better distinction.
+15. Apply the `ggplot2::theme_minimal()` function to set a clean and simple aesthetic for the plot. This theme removes unnecessary elements such as background shading and focuses attention on the data by displaying only grid lines and axis labels.
+16. Add dashed lines for horizontal (major and minor) grid lines.
+17. Omits vertical (major and minor) grid lines for a cleaner look.
+
+# Present statistical models and results
+
+```{r}
+#| echo: false
+
+#Logistic regression model
+model <- glm(death ~ bmi + age,                        
+             subdf |> dplyr::filter(confirmed == "1"),
+             family = binomial)
+```
+
+```{{r}}
+#| echo: true                                          # <18>
+
+#Logistic regression model
+model <- glm(death ~ bmi + age,                        # <19>
+             subdf |> dplyr::filter(confirmed == "1"), # <21>
+             family = binomial)                        # <20>
+```
+
+18. The `echo: true` option ensures that the code chunk used to generate the logistic regression model is displayed in the rendered output, which is helpful for transparency and reproducibility.
+19. The `glm()` function fits a generalised linear model to predict **death** (binary outcome) from two predictors (**bmi** and **age**). The function returns a model object containing various components, such as coefficients (effects of predictors), residuals (errors), and fitted values (predicted probabilities).
+20. Set the `family` argument to **binomial** to fit a logistic regression model. This is appropriate for binary outcomes like death, as it models the probability of the outcome occurring using a logit (*log-odds*) function (i.e. coefficients represent the effect size of each predictor on the log-odds of the binary outcome).
+21. Filter data using the `dplyr::filter()` function to subset the dataset so that the model is estimated from confirmed cases only.
+
+#### Table 3 {.unnumbered}
+
+```{r}
+#| tbl-cap: Formatted regression table         # <24>
+
+#Table 3
+gtsummary::tbl_regression(model,               # <22>
+                          exponentiate = TRUE) # <23>
+```
+
+22. Use `gtsummary::tbl_regression()` to create a table summary of the logistic regression results.
+23. Set the `exponentiate` argument to **TRUE** to convert the coefficients (*log-odds*) into odds ratios, which are more interpretable and useful for understanding the strength of associations.
+24. Add a caption to the table by using the `tbl-cap` chunk option.
+

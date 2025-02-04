@@ -1,0 +1,2489 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.7.6" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+<meta name="author" content="Hélène Langet" />
+<meta name="author" content="Zhihan Zhu" />
+<meta name="dcterms.date" content="2025-02-03" />
+
+<title>⭐Create a simple Word Report – Quarto training</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<!-- htmldependencies:E3FAD763 -->
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "classic"
+}
+</script>
+<script async src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="/index.html" class="navbar-brand navbar-brand-logo">
+    <img src="/./images/swisstph_logo_compact.png" alt="" class="navbar-logo" />
+    </a>
+    <a class="navbar-brand" href="/index.html">
+    <span class="navbar-title">Quarto training</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+    <div class="dropdown">
+      <a href="" title="" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label=""><i class="bi bi-github"></i></a>
+      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/Research-IT-Swiss-TPH/quarto_training">
+            Source Code
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item quarto-navbar-tools-item" href="https://github.com/Research-IT-Swiss-TPH/quarto_training/issues">
+            Report a Bug
+            </a>
+          </li>
+      </ul>
+    </div>
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn"
+      data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" 
+      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
+      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <h1 class="quarto-secondary-nav-title no-breadcrumbs"></h1>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" role="link"
+        aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
+        onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🔖 Home</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/notes/quarto_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📘 Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/notes/notebook_structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📘 Structure of Quarto notebooks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/practicals/exercise1_gettingstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📙 Create a Quarto notebook</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/practicals/exercise2_gettingstarted.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📙 Edit and render Quarto notebooks</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/practicals/exercise3_instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📙 Create a simple Word report</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/practicals/exercise4_instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📙 Add dynamic elements to reports</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/practicals/exercise5_instructions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📙 Parametrise reports 🛠</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/notes/python_r_short_demo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">📘 Use R and Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/notes/advanced_features.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">🧰 Helpful resources</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <div id="quarto-toc-target"></div>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+  <div class="quarto-title-banner">
+    <div class="quarto-title column-body">
+      <h1 class="title">⭐Create a simple Word Report</h1>
+            <p class="subtitle lead">✅ Step-by-step correction</p>
+                      </div>
+  </div>
+    
+  <div class="quarto-title-meta-author">
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Affiliation</div>
+    
+      <div class="quarto-title-meta-contents">
+      <p class="author">Hélène Langet <a href="mailto:helene.langet@swisstph.ch" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-6758-2397" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              Swiss TPH Research-IT
+            </p>
+        </div>
+      <div class="quarto-title-meta-contents">
+      <p class="author">Zhihan Zhu <a href="mailto:zhihan.zhu@swisstph.ch" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+    </div>
+    <div class="quarto-title-meta-contents">
+          <p class="affiliation">
+              Swiss TPH Research-IT
+            </p>
+        </div>
+    </div>
+
+  <div class="quarto-title-meta">
+
+        
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 3, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header>
+
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#setup-basic-elements-of-the-quarto-notebook" id="toc-setup-basic-elements-of-the-quarto-notebook"><span class="header-section-number">1</span> Setup basic elements of the Quarto notebook</a></li>
+  <li><a href="#create-publication-ready-summary-statistics-tables" id="toc-create-publication-ready-summary-statistics-tables"><span class="header-section-number">2</span> Create publication-ready summary statistics tables</a></li>
+  <li><a href="#create-publication-ready-figures" id="toc-create-publication-ready-figures"><span class="header-section-number">3</span> Create publication-ready figures</a></li>
+  <li><a href="#present-statistical-models-and-results" id="toc-present-statistical-models-and-results"><span class="header-section-number">4</span> Present statistical models and results</a></li>
+  </ul>
+</nav>
+<p>This page provides a step-by-step correction for building a simple MS Word report using the Quarto notebook <code>exercise3.qmd</code> as a starting point.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class='callout-icon'></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To get the most out of your learning experience, attempt to solve the exercise on your own before looking at this correction. Remember, trials and errors are an essential part of the learning process, strengthening your understanding and helping you build confidence. Take your time, experiment, and learn actively!</p>
+</div>
+</div>
+<section id="setup-basic-elements-of-the-quarto-notebook" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Setup basic elements of the Quarto notebook</h1>
+<p>All the basic elements you need to setup are defined in the YAML header at the beginning of your Quarto notebook.</p>
+<div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode numberSource yaml code-annotation-code number-lines"><code class="sourceCode yaml"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="pp">---</span></span>
+<span id="annotated-cell-1-2"><a href="#annotated-cell-1-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My outbreak report</span></span>
+<span id="annotated-cell-1-3"><a href="#annotated-cell-1-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
+<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2023-12-31</span></span>
+<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5"></a></span>
+<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> docx</span></span>
+<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7"></a></span>
+<span id="annotated-cell-1-8"><a href="#annotated-cell-1-8"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="annotated-cell-1-10"><a href="#annotated-cell-1-10"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11"></a><span class="pp">---</span></span></code></pre></div>
+<dl>
+<dt>Line 2</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="2" data-code-annotation="1">Update the <code>title</code> option in the Quarto notebook. Quotation marks are optional.</span>
+</dd>
+<dt>Line 3</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="3" data-code-annotation="2">Set the <code>author</code> option to your name. Quotation marks are optional.</span>
+</dd>
+<dt>Line 4</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="4" data-code-annotation="3">Add the <code>date</code> option and set it to <strong>2023-12-31</strong>. Quotation marks are optional.</span>
+</dd>
+<dt>Line 6</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="6" data-code-annotation="4">Set the <code>format</code> option to <strong>docx</strong> to generate a MS Word document.</span>
+</dd>
+<dt>Line 8</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="8" data-code-annotation="5">Add an <code>execute</code> block to customize the execution behaviour for your Quarto notebook. This block allows you to control how code, warnings, and other outputs are displayed in the rendered document.</span>
+</dd>
+<dt>Line 9</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="9" data-code-annotation="6">Add the <code>echo</code> option and set it to <strong>false</strong> to hide code in the rendered document.</span>
+</dd>
+<dt>Line 10</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="10" data-code-annotation="7">Add the <code>warning</code> option and set it to <strong>false</strong> to hide warnings in the rendered document.</span>
+</dd>
+</dl>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class='callout-icon'></i>
+</div>
+<div class="callout-title-container flex-fill">
+YAML indentation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Remember that YAML is a whitespace-sensitive language where indentation determines the structure; tabs are not recognised for indentation. The recommended practice is therefore to use <strong>two spaces</strong> per indentation level to ensure consistency and avoid errors.</p>
+</div>
+</div>
+</section>
+<section id="create-publication-ready-summary-statistics-tables" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Create publication-ready summary statistics tables</h1>
+<p>Creating publication-ready tables in R often involves leveraging specialized packages. Popular options include <code>gtsummary</code>, <code>gt</code> and <code>flextable</code>. In what follows, we will use <code>gtsummary</code> which is an excellent package for creating summary statistics tables. To install it, run the command <code>install.packages("gtsummary")</code> in your R console.</p>
+<section id="table-1" class="level4 unnumbered">
+<h4 class="unnumbered">Table 1</h4>
+<div class="cell" data-tbl-cap="Population characteristics">
+<div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode numberSource markdown cell-code code-annotation-code number-lines"><code class="sourceCode markdown"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1"></a><span class="in">```{r}</span></span>
+<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2"></a><span class="co">#| tbl-cap: Population characteristics</span></span>
+<span id="annotated-cell-2-3"><a href="#annotated-cell-2-3"></a></span>
+<span id="annotated-cell-2-4"><a href="#annotated-cell-2-4"></a><span class="co">#Table 1</span></span>
+<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5"></a><span class="co">#Generate a summary table displaying population characteristics</span></span>
+<span id="annotated-cell-2-6"><a href="#annotated-cell-2-6"></a>subdf <span class="sc">|&gt;</span>                               </span>
+<span id="annotated-cell-2-7"><a href="#annotated-cell-2-7"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(age,</span>
+<span id="annotated-cell-2-8"><a href="#annotated-cell-2-8"></a>                sex,</span>
+<span id="annotated-cell-2-9"><a href="#annotated-cell-2-9"></a>                bmi,</span>
+<span id="annotated-cell-2-10"><a href="#annotated-cell-2-10"></a>                confirmed,</span>
+<span id="annotated-cell-2-11"><a href="#annotated-cell-2-11"></a>                death) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-2-12"><a href="#annotated-cell-2-12"></a>  gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>()</span>
+<span id="annotated-cell-2-13"><a href="#annotated-cell-2-13"></a><span class="in">```</span></span></code></pre></div>
+<div class="cell-annotation">
+<dl>
+<dt>Line 7</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="7" data-code-annotation="8">Use the <code>dplyr::select()</code> function to select specific columns (<strong>age</strong>, <strong>sex</strong>, <strong>bmi</strong>, <strong>confirmed</strong>, and <strong>death</strong>) from the <strong>subdf</strong> dataset.</span>
+</dd>
+<dt>Line 12</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="12" data-code-annotation="9">Use the <code>gtsummary::tbl_summary()</code> function to create a table that summarizes the descriptive statistics of the selected variables in the whole population.</span>
+</dd>
+<dt>Line 2</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="2" data-code-annotation="10">Add a caption to the table by using the <code>tbl-cap</code> chunk option.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+<div id="kmdnldmhmr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#kmdnldmhmr table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#kmdnldmhmr thead, #kmdnldmhmr tbody, #kmdnldmhmr tfoot, #kmdnldmhmr tr, #kmdnldmhmr td, #kmdnldmhmr th {
+  border-style: none;
+}
+
+#kmdnldmhmr p {
+  margin: 0;
+  padding: 0;
+}
+
+#kmdnldmhmr .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#kmdnldmhmr .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#kmdnldmhmr .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#kmdnldmhmr .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#kmdnldmhmr .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#kmdnldmhmr .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kmdnldmhmr .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#kmdnldmhmr .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#kmdnldmhmr .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#kmdnldmhmr .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#kmdnldmhmr .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#kmdnldmhmr .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#kmdnldmhmr .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#kmdnldmhmr .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#kmdnldmhmr .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#kmdnldmhmr .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#kmdnldmhmr .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#kmdnldmhmr .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#kmdnldmhmr .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kmdnldmhmr .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#kmdnldmhmr .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#kmdnldmhmr .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#kmdnldmhmr .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kmdnldmhmr .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#kmdnldmhmr .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#kmdnldmhmr .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kmdnldmhmr .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kmdnldmhmr .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#kmdnldmhmr .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kmdnldmhmr .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#kmdnldmhmr .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kmdnldmhmr .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#kmdnldmhmr .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kmdnldmhmr .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#kmdnldmhmr .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kmdnldmhmr .gt_left {
+  text-align: left;
+}
+
+#kmdnldmhmr .gt_center {
+  text-align: center;
+}
+
+#kmdnldmhmr .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#kmdnldmhmr .gt_font_normal {
+  font-weight: normal;
+}
+
+#kmdnldmhmr .gt_font_bold {
+  font-weight: bold;
+}
+
+#kmdnldmhmr .gt_font_italic {
+  font-style: italic;
+}
+
+#kmdnldmhmr .gt_super {
+  font-size: 65%;
+}
+
+#kmdnldmhmr .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#kmdnldmhmr .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#kmdnldmhmr .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#kmdnldmhmr .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#kmdnldmhmr .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#kmdnldmhmr .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#kmdnldmhmr .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Population characteristics</caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="&lt;strong&gt;Characteristic&lt;/strong&gt;" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="&lt;strong&gt;N = 65,669&lt;/strong&gt;&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 65,669</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">age</td>
+<td class="gt_row gt_center" headers="stat_0">50 (35, 65)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">sex</td>
+<td class="gt_row gt_center" headers="stat_0"><br />
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">    1</td>
+<td class="gt_row gt_center" headers="stat_0">33,114 (50%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">    2</td>
+<td class="gt_row gt_center" headers="stat_0">32,555 (50%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">bmi</td>
+<td class="gt_row gt_center" headers="stat_0">29 (21, 38)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">confirmed</td>
+<td class="gt_row gt_center" headers="stat_0"><br />
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">    0</td>
+<td class="gt_row gt_center" headers="stat_0">13,235 (20%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">    1</td>
+<td class="gt_row gt_center" headers="stat_0">52,434 (80%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">death</td>
+<td class="gt_row gt_center" headers="stat_0"><br />
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">    0</td>
+<td class="gt_row gt_center" headers="stat_0">64,455 (98%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">    1</td>
+<td class="gt_row gt_center" headers="stat_0">1,214 (1.8%)</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="2" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Median (IQR); n (%)</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="table-2" class="level4 unnumbered">
+<h4 class="unnumbered">Table 2</h4>
+<div class="cell" data-tbl-cap="Demographic characteristics of deceased vs. alive">
+<div class="sourceCode" id="annotated-cell-3"><pre class="sourceCode numberSource markdown cell-code code-annotation-code number-lines"><code class="sourceCode markdown"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1"></a><span class="in">```{r}</span></span>
+<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2"></a><span class="co">#| tbl-cap: Demographic characteristics of deceased vs. alive</span></span>
+<span id="annotated-cell-3-3"><a href="#annotated-cell-3-3"></a></span>
+<span id="annotated-cell-3-4"><a href="#annotated-cell-3-4"></a><span class="co">#Table 2</span></span>
+<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5"></a><span class="co">#Generate a summary table comparing the demographic characteristics</span></span>
+<span id="annotated-cell-3-6"><a href="#annotated-cell-3-6"></a><span class="co">#of individuals who died versus those who are still alive</span></span>
+<span id="annotated-cell-3-7"><a href="#annotated-cell-3-7"></a>subdf <span class="sc">|&gt;</span>                                                      </span>
+<span id="annotated-cell-3-8"><a href="#annotated-cell-3-8"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sex,</span>
+<span id="annotated-cell-3-9"><a href="#annotated-cell-3-9"></a>                age,</span>
+<span id="annotated-cell-3-10"><a href="#annotated-cell-3-10"></a>                bmi,</span>
+<span id="annotated-cell-3-11"><a href="#annotated-cell-3-11"></a>                death) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-3-12"><a href="#annotated-cell-3-12"></a>  gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>(<span class="at">by =</span> death) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-3-13"><a href="#annotated-cell-3-13"></a>  gtsummary<span class="sc">::</span><span class="fu">add_overall</span>()</span>
+<span id="annotated-cell-3-14"><a href="#annotated-cell-3-14"></a><span class="in">```</span></span></code></pre></div>
+<div class="cell-annotation">
+<dl>
+<dt>Line 12</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="12" data-code-annotation="10">Use the <code>gtsummary::tbl_summary()</code> function to create a summary table grouped by the <strong>death</strong> column, showing separate statistics for individuals who have died vs. those who are still alive.</span>
+</dd>
+<dt>Line 13</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="13" data-code-annotation="11">Use the <code>gtsummary::add_overall()</code> function to add a row to the table that shows overall summary statistics for the whole population, regardless of their death status.</span>
+</dd>
+<dt>Line 2</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="2" data-code-annotation="12">Add a caption to the table by using the <code>tbl-cap</code> chunk option.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+<div id="ygoqgrzwyx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ygoqgrzwyx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ygoqgrzwyx thead, #ygoqgrzwyx tbody, #ygoqgrzwyx tfoot, #ygoqgrzwyx tr, #ygoqgrzwyx td, #ygoqgrzwyx th {
+  border-style: none;
+}
+
+#ygoqgrzwyx p {
+  margin: 0;
+  padding: 0;
+}
+
+#ygoqgrzwyx .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#ygoqgrzwyx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#ygoqgrzwyx .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#ygoqgrzwyx .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#ygoqgrzwyx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ygoqgrzwyx .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ygoqgrzwyx .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ygoqgrzwyx .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#ygoqgrzwyx .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#ygoqgrzwyx .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#ygoqgrzwyx .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#ygoqgrzwyx .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#ygoqgrzwyx .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ygoqgrzwyx .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#ygoqgrzwyx .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#ygoqgrzwyx .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#ygoqgrzwyx .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#ygoqgrzwyx .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#ygoqgrzwyx .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ygoqgrzwyx .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#ygoqgrzwyx .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#ygoqgrzwyx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ygoqgrzwyx .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ygoqgrzwyx .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#ygoqgrzwyx .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#ygoqgrzwyx .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ygoqgrzwyx .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ygoqgrzwyx .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#ygoqgrzwyx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ygoqgrzwyx .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#ygoqgrzwyx .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ygoqgrzwyx .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ygoqgrzwyx .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ygoqgrzwyx .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ygoqgrzwyx .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ygoqgrzwyx .gt_left {
+  text-align: left;
+}
+
+#ygoqgrzwyx .gt_center {
+  text-align: center;
+}
+
+#ygoqgrzwyx .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#ygoqgrzwyx .gt_font_normal {
+  font-weight: normal;
+}
+
+#ygoqgrzwyx .gt_font_bold {
+  font-weight: bold;
+}
+
+#ygoqgrzwyx .gt_font_italic {
+  font-style: italic;
+}
+
+#ygoqgrzwyx .gt_super {
+  font-size: 65%;
+}
+
+#ygoqgrzwyx .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#ygoqgrzwyx .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#ygoqgrzwyx .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#ygoqgrzwyx .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#ygoqgrzwyx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ygoqgrzwyx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ygoqgrzwyx .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Demographic characteristics of deceased vs. alive</caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="&lt;strong&gt;Characteristic&lt;/strong&gt;" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="&lt;strong&gt;Overall&lt;/strong&gt;, N = 65,669&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Overall</strong>, N = 65,669<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="&lt;strong&gt;0&lt;/strong&gt;, N = 64,455&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong>, N = 64,455<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="&lt;strong&gt;1&lt;/strong&gt;, N = 1,214&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong>, N = 1,214<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">sex</td>
+<td class="gt_row gt_center" headers="stat_0"><br />
+</td>
+<td class="gt_row gt_center" headers="stat_1"><br />
+</td>
+<td class="gt_row gt_center" headers="stat_2"><br />
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">    1</td>
+<td class="gt_row gt_center" headers="stat_0">33,114 (50%)</td>
+<td class="gt_row gt_center" headers="stat_1">32,504 (50%)</td>
+<td class="gt_row gt_center" headers="stat_2">610 (50%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">    2</td>
+<td class="gt_row gt_center" headers="stat_0">32,555 (50%)</td>
+<td class="gt_row gt_center" headers="stat_1">31,951 (50%)</td>
+<td class="gt_row gt_center" headers="stat_2">604 (50%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">age</td>
+<td class="gt_row gt_center" headers="stat_0">50 (35, 65)</td>
+<td class="gt_row gt_center" headers="stat_1">50 (35, 65)</td>
+<td class="gt_row gt_center" headers="stat_2">52 (37, 67)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">bmi</td>
+<td class="gt_row gt_center" headers="stat_0">29 (21, 38)</td>
+<td class="gt_row gt_center" headers="stat_1">29 (21, 38)</td>
+<td class="gt_row gt_center" headers="stat_2">34 (28, 41)</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> n (%); Median (IQR)</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="create-publication-ready-figures" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Create publication-ready figures</h1>
+<section id="figure-1" class="level4 unnumbered">
+<h4 class="unnumbered">Figure 1</h4>
+<div class="cell">
+<div class="sourceCode" id="annotated-cell-4"><pre class="sourceCode numberSource markdown cell-code code-annotation-code number-lines"><code class="sourceCode markdown"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a><span class="in">```{r}</span></span>
+<span id="annotated-cell-4-2"><a href="#annotated-cell-4-2"></a><span class="co">#| fig-cap: Weekly count of all cases, confirmed cases and deaths</span></span>
+<span id="annotated-cell-4-3"><a href="#annotated-cell-4-3"></a></span>
+<span id="annotated-cell-4-4"><a href="#annotated-cell-4-4"></a><span class="co">#Figure 1</span></span>
+<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5"></a><span class="co"># Aggregate the data to get the weekly count of all cases, confirmed cases and deaths</span></span>
+<span id="annotated-cell-4-6"><a href="#annotated-cell-4-6"></a>weekly_data <span class="ot">&lt;-</span> subdf <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(week) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">count =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(),</span>
+<span id="annotated-cell-4-9"><a href="#annotated-cell-4-9"></a>                   <span class="at">confirmed_count =</span> <span class="fu">sum</span>(confirmed <span class="sc">==</span> <span class="st">&quot;1&quot;</span>),</span>
+<span id="annotated-cell-4-10"><a href="#annotated-cell-4-10"></a>                   <span class="at">death_count =</span> <span class="fu">sum</span>(death <span class="sc">==</span> <span class="st">&quot;1&quot;</span>))</span>
+<span id="annotated-cell-4-11"><a href="#annotated-cell-4-11"></a></span>
+<span id="annotated-cell-4-12"><a href="#annotated-cell-4-12"></a><span class="co"># Plot the weekly cases, confirmed cases and deaths</span></span>
+<span id="annotated-cell-4-13"><a href="#annotated-cell-4-13"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(weekly_data, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> week)) <span class="sc">+</span>                        </span>
+<span id="annotated-cell-4-14"><a href="#annotated-cell-4-14"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> count,</span>
+<span id="annotated-cell-4-15"><a href="#annotated-cell-4-15"></a>                                  <span class="at">color =</span> <span class="st">&quot;All cases&quot;</span>),</span>
+<span id="annotated-cell-4-16"><a href="#annotated-cell-4-16"></a>                     <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-4-17"><a href="#annotated-cell-4-17"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> confirmed_count,</span>
+<span id="annotated-cell-4-18"><a href="#annotated-cell-4-18"></a>                                  <span class="at">color =</span> <span class="st">&quot;Confirmed cases&quot;</span>),</span>
+<span id="annotated-cell-4-19"><a href="#annotated-cell-4-19"></a>                     <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-4-20"><a href="#annotated-cell-4-20"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> death_count,</span>
+<span id="annotated-cell-4-21"><a href="#annotated-cell-4-21"></a>                                  <span class="at">color =</span> <span class="st">&quot;Confirmed deaths&quot;</span>),</span>
+<span id="annotated-cell-4-22"><a href="#annotated-cell-4-22"></a>                     <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-4-23"><a href="#annotated-cell-4-23"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Week&quot;</span>,</span>
+<span id="annotated-cell-4-24"><a href="#annotated-cell-4-24"></a>                <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>,</span>
+<span id="annotated-cell-4-25"><a href="#annotated-cell-4-25"></a>                <span class="at">color =</span> <span class="st">&quot;Legend&quot;</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-4-26"><a href="#annotated-cell-4-26"></a>  ggplot2<span class="sc">::</span><span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;All cases&quot;</span> <span class="ot">=</span> <span class="st">&quot;#440e54&quot;</span>,</span>
+<span id="annotated-cell-4-27"><a href="#annotated-cell-4-27"></a>                                         <span class="st">&quot;Confirmed cases&quot;</span> <span class="ot">=</span> <span class="st">&quot;#f8766d&quot;</span>,</span>
+<span id="annotated-cell-4-28"><a href="#annotated-cell-4-28"></a>                                         <span class="st">&quot;Confirmed deaths&quot;</span> <span class="ot">=</span> <span class="st">&quot;#128984&quot;</span>)) <span class="sc">+</span></span>
+<span id="annotated-cell-4-29"><a href="#annotated-cell-4-29"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="annotated-cell-4-30"><a href="#annotated-cell-4-30"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">panel.grid.major.y =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(<span class="at">linewidth =</span> <span class="fl">0.5</span>,</span>
+<span id="annotated-cell-4-31"><a href="#annotated-cell-4-31"></a>                                                            <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
+<span id="annotated-cell-4-32"><a href="#annotated-cell-4-32"></a>                                                            <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>), </span>
+<span id="annotated-cell-4-33"><a href="#annotated-cell-4-33"></a>                 <span class="at">panel.grid.minor.y =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(<span class="at">linewidth =</span> <span class="fl">0.5</span>,</span>
+<span id="annotated-cell-4-34"><a href="#annotated-cell-4-34"></a>                                                            <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
+<span id="annotated-cell-4-35"><a href="#annotated-cell-4-35"></a>                                                            <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
+<span id="annotated-cell-4-36"><a href="#annotated-cell-4-36"></a>                 <span class="at">panel.grid.major.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>(),</span>
+<span id="annotated-cell-4-37"><a href="#annotated-cell-4-37"></a>                 <span class="at">panel.grid.minor.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>())</span>
+<span id="annotated-cell-4-38"><a href="#annotated-cell-4-38"></a><span class="in">```</span></span></code></pre></div>
+<div class="cell-annotation">
+<dl>
+<dt>Line 2</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="13">Add a caption to the table by using the <code>fig-cap</code> chunk option. Remove the title parameter from <code>ggplot2::labs</code> to avoid the repetition.</span>
+</dd>
+<dt>Line 26</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="26" data-code-annotation="14">Assigns specific colors to each line for better distinction.</span>
+</dd>
+<dt>Line 29</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="29" data-code-annotation="15">Apply the <code>ggplot2::theme_minimal()</code> function to set a clean and simple aesthetic for the plot. This theme removes unnecessary elements such as background shading and focuses attention on the data by displaying only grid lines and axis labels.</span>
+</dd>
+<dt>Line 30</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="30" data-code-annotation="16">Add dashed lines for horizontal (major and minor) grid lines.</span>
+</dd>
+<dt>Line 36</dt>
+<dd>
+<span data-code-cell="annotated-cell-4" data-code-lines="36" data-code-annotation="17">Omits vertical (major and minor) grid lines for a cleaner look.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="exercise3_step_by_step_correction_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672" /></p>
+<figcaption>Weekly count of all cases, confirmed cases and deaths</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="present-statistical-models-and-results" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Present statistical models and results</h1>
+<div class="sourceCode" id="annotated-cell-5"><pre class="sourceCode numberSource markdown code-annotation-code number-lines"><code class="sourceCode markdown"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1"></a><span class="in">```{r}</span></span>
+<span id="annotated-cell-5-2"><a href="#annotated-cell-5-2"></a><span class="co">#| echo: true</span></span>
+<span id="annotated-cell-5-3"><a href="#annotated-cell-5-3"></a></span>
+<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4"></a><span class="co">#Logistic regression model</span></span>
+<span id="annotated-cell-5-5"><a href="#annotated-cell-5-5"></a>model <span class="ot">&lt;-</span> <span class="fu">glm</span>(death <span class="sc">~</span> bmi <span class="sc">+</span> age,</span>
+<span id="annotated-cell-5-6"><a href="#annotated-cell-5-6"></a>             subdf <span class="sc">|&gt;</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(confirmed <span class="sc">==</span> <span class="st">&quot;1&quot;</span>),</span>
+<span id="annotated-cell-5-7"><a href="#annotated-cell-5-7"></a>             <span class="at">family =</span> binomial)</span>
+<span id="annotated-cell-5-8"><a href="#annotated-cell-5-8"></a><span class="in">```</span></span></code></pre></div>
+<dl>
+<dt>Line 2</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="2" data-code-annotation="18">The <code>echo: true</code> option ensures that the code chunk used to generate the logistic regression model is displayed in the rendered output, which is helpful for transparency and reproducibility.</span>
+</dd>
+<dt>Line 5</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="5" data-code-annotation="19">The <code>glm()</code> function fits a generalised linear model to predict <strong>death</strong> (binary outcome) from two predictors (<strong>bmi</strong> and <strong>age</strong>). The function returns a model object containing various components, such as coefficients (effects of predictors), residuals (errors), and fitted values (predicted probabilities).</span>
+</dd>
+<dt>Line 7</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="7" data-code-annotation="20">Set the <code>family</code> argument to <strong>binomial</strong> to fit a logistic regression model. This is appropriate for binary outcomes like death, as it models the probability of the outcome occurring using a logit (<em>log-odds</em>) function (i.e. coefficients represent the effect size of each predictor on the log-odds of the binary outcome).</span>
+</dd>
+<dt>Line 6</dt>
+<dd>
+<span data-code-cell="annotated-cell-5" data-code-lines="6" data-code-annotation="21">Filter data using the <code>dplyr::filter()</code> function to subset the dataset so that the model is estimated from confirmed cases only.</span>
+</dd>
+</dl>
+<section id="table-3" class="level4 unnumbered">
+<h4 class="unnumbered">Table 3</h4>
+<div class="cell" data-tbl-cap="Formatted regression table">
+<div class="sourceCode" id="annotated-cell-6"><pre class="sourceCode numberSource markdown cell-code code-annotation-code number-lines"><code class="sourceCode markdown"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1"></a><span class="in">```{r}</span></span>
+<span id="annotated-cell-6-2"><a href="#annotated-cell-6-2"></a><span class="co">#| tbl-cap: Formatted regression table</span></span>
+<span id="annotated-cell-6-3"><a href="#annotated-cell-6-3"></a></span>
+<span id="annotated-cell-6-4"><a href="#annotated-cell-6-4"></a><span class="co">#Table 3</span></span>
+<span id="annotated-cell-6-5"><a href="#annotated-cell-6-5"></a>gtsummary<span class="sc">::</span><span class="fu">tbl_regression</span>(model,</span>
+<span id="annotated-cell-6-6"><a href="#annotated-cell-6-6"></a>                          <span class="at">exponentiate =</span> <span class="cn">TRUE</span>)</span>
+<span id="annotated-cell-6-7"><a href="#annotated-cell-6-7"></a><span class="in">```</span></span></code></pre></div>
+<div class="cell-annotation">
+<dl>
+<dt>Line 5</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="22">Use <code>gtsummary::tbl_regression()</code> to create a table summary of the logistic regression results.</span>
+</dd>
+<dt>Line 6</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="6" data-code-annotation="23">Set the <code>exponentiate</code> argument to <strong>TRUE</strong> to convert the coefficients (<em>log-odds</em>) into odds ratios, which are more interpretable and useful for understanding the strength of associations.</span>
+</dd>
+<dt>Line 2</dt>
+<dd>
+<span data-code-cell="annotated-cell-6" data-code-lines="2" data-code-annotation="24">Add a caption to the table by using the <code>tbl-cap</code> chunk option.</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output-display">
+<div id="bnsaymvuny" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#bnsaymvuny table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#bnsaymvuny thead, #bnsaymvuny tbody, #bnsaymvuny tfoot, #bnsaymvuny tr, #bnsaymvuny td, #bnsaymvuny th {
+  border-style: none;
+}
+
+#bnsaymvuny p {
+  margin: 0;
+  padding: 0;
+}
+
+#bnsaymvuny .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bnsaymvuny .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#bnsaymvuny .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bnsaymvuny .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bnsaymvuny .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bnsaymvuny .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bnsaymvuny .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bnsaymvuny .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bnsaymvuny .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bnsaymvuny .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bnsaymvuny .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bnsaymvuny .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bnsaymvuny .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#bnsaymvuny .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#bnsaymvuny .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bnsaymvuny .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bnsaymvuny .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bnsaymvuny .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bnsaymvuny .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bnsaymvuny .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#bnsaymvuny .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bnsaymvuny .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#bnsaymvuny .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bnsaymvuny .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bnsaymvuny .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bnsaymvuny .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bnsaymvuny .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bnsaymvuny .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bnsaymvuny .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bnsaymvuny .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bnsaymvuny .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bnsaymvuny .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bnsaymvuny .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bnsaymvuny .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bnsaymvuny .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bnsaymvuny .gt_left {
+  text-align: left;
+}
+
+#bnsaymvuny .gt_center {
+  text-align: center;
+}
+
+#bnsaymvuny .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bnsaymvuny .gt_font_normal {
+  font-weight: normal;
+}
+
+#bnsaymvuny .gt_font_bold {
+  font-weight: bold;
+}
+
+#bnsaymvuny .gt_font_italic {
+  font-style: italic;
+}
+
+#bnsaymvuny .gt_super {
+  font-size: 65%;
+}
+
+#bnsaymvuny .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#bnsaymvuny .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bnsaymvuny .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#bnsaymvuny .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#bnsaymvuny .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#bnsaymvuny .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#bnsaymvuny .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
+<table class="gt_table caption-top" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<caption>Formatted regression table</caption>
+<thead>
+<tr class="gt_col_headings header">
+<th id="&lt;strong&gt;Characteristic&lt;/strong&gt;" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="&lt;strong&gt;OR&lt;/strong&gt;&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>OR</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="&lt;strong&gt;95% CI&lt;/strong&gt;&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+<th id="&lt;strong&gt;p-value&lt;/strong&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">bmi</td>
+<td class="gt_row gt_center" headers="estimate">1.04</td>
+<td class="gt_row gt_center" headers="ci">1.03, 1.04</td>
+<td class="gt_row gt_center" headers="p.value">&lt;0.001</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">age</td>
+<td class="gt_row gt_center" headers="estimate">1.00</td>
+<td class="gt_row gt_center" headers="ci">1.00, 1.01</td>
+<td class="gt_row gt_center" headers="p.value">0.003</td>
+</tr>
+</tbody><tfoot class="gt_footnotes">
+<tr class="odd">
+<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> OR = Odds Ratio, CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">Quarto training</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">Quarto training</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9pbmRleC5odG1s8J+Uli1Ib21l">🔖 Home</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9ub3Rlcy9xdWFydG9faW50cm8uaHRtbPCfk5gtSW50cm9kdWN0aW9u">📘 Introduction</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9ub3Rlcy9ub3RlYm9va19zdHJ1Y3R1cmUuaHRtbPCfk5gtU3RydWN0dXJlLW9mLVF1YXJ0by1ub3RlYm9va3M=">📘 Structure of Quarto notebooks</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wcmFjdGljYWxzL2V4ZXJjaXNlMV9nZXR0aW5nc3RhcnRlZC5odG1s8J+TmS1DcmVhdGUtYS1RdWFydG8tbm90ZWJvb2s=">📙 Create a Quarto notebook</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wcmFjdGljYWxzL2V4ZXJjaXNlMl9nZXR0aW5nc3RhcnRlZC5odG1s8J+TmS1FZGl0LWFuZC1yZW5kZXItUXVhcnRvLW5vdGVib29rcw==">📙 Edit and render Quarto notebooks</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wcmFjdGljYWxzL2V4ZXJjaXNlM19pbnN0cnVjdGlvbnMuaHRtbPCfk5ktQ3JlYXRlLWEtc2ltcGxlLVdvcmQtcmVwb3J0">📙 Create a simple Word report</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wcmFjdGljYWxzL2V4ZXJjaXNlNF9pbnN0cnVjdGlvbnMuaHRtbPCfk5ktQWRkLWR5bmFtaWMtZWxlbWVudHMtdG8tcmVwb3J0cw==">📙 Add dynamic elements to reports</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wcmFjdGljYWxzL2V4ZXJjaXNlNV9pbnN0cnVjdGlvbnMuaHRtbPCfk5ktUGFyYW1ldHJpc2UtcmVwb3J0cy3wn5ug">📙 Parametrise reports 🛠</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9ub3Rlcy9weXRob25fcl9zaG9ydF9kZW1vLmh0bWzwn5OYLVVzZS1SLWFuZC1QeXRob24=">📘 Use R and Python</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9ub3Rlcy9hZHZhbmNlZF9mZWF0dXJlcy5odG1s8J+nsC1IZWxwZnVsLXJlc291cmNlcw==">🧰 Helpful resources</span></p>
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">⭐Create a simple Word Report – Quarto training</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">⭐Create a simple Word Report – Quarto training</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">⭐Create a simple Word Report – Quarto training</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">Quarto training</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw==">✅ Step-by-step correction</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj">✅ Step-by-step correction</span></p>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id = "quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+</body>
+
+</html>
