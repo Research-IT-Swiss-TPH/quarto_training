@@ -57,25 +57,24 @@ This exercise builds on the previous exercises where you learnt to [create a sim
 ## Objectives 🎯
 
 -   Open your modified Quarto document `exercise4.qmd` in RStudio;
--   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references;
 -   Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
 
-## Use the terminal
+## Use Quarto in a terminal
 
-- [ ] Use the terminal to render your MS Word report
+- [ ] Render your MS Word report using the RStudio Terminal with the following command;
 
 ```{bash}         
 quarto render exercise3.qmd
 ```
 
-- [ ] Change the filename of the output report
+- [ ] Change the output filename when rendering the report;
 
 ```{bash}         
 quarto render exercise3.qmd --out exercise5_report1.docx
 ```
 
 ::: callout-tip
-- You can find a terminal in RStudio
+- You can access the RStudio terminal in the `Terminal` tab immediately to the right of the `Console` tab:
 
 ![](images/clipboard-1086723948.png){fig-align="center"}
 :::
