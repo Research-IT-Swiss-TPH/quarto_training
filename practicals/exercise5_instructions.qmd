@@ -12,7 +12,6 @@ author:
 license: "CC-BY"
 date: last-modified
 editor: source
-lang: en-US
 
 format:
   html:
@@ -32,6 +31,10 @@ format:
         href: df1.RData
       - text: df2.RData
         href: df2.RData
+      - text: swisstph_template.docx
+        href: swisstph_template.docx
+      - text: my_biblio.bib
+        href: my_biblio.bib
     code-links:
       - text: exercise5.qmd
         icon: file-code
@@ -61,20 +64,20 @@ This exercise builds on the previous exercises where you learnt to [create a sim
 
 ## Use Quarto in a terminal
 
-- [ ] Render your MS Word report using the RStudio Terminal with the following command;
+-   [ ] Render your MS Word report using the RStudio Terminal;
 
-```{bash}         
+```
 quarto render exercise3.qmd
 ```
 
-- [ ] Change the output filename when rendering the report;
+-   [ ] Change the output filename when rendering the report;
 
-```{bash}         
+```
 quarto render exercise3.qmd --out exercise5_report1.docx
 ```
 
 ::: callout-tip
-- You can access the RStudio terminal in the `Terminal` tab immediately to the right of the `Console` tab:
+-   You can access the RStudio terminal in the `Terminal` tab immediately to the right of the `Console` tab:
 
 ![](images/clipboard-1086723948.png){fig-align="center"}
 :::
@@ -85,7 +88,7 @@ quarto render exercise3.qmd --out exercise5_report1.docx
 -   [ ] You were unfortunately provided with a previous erroneous version of the dataset. Update the report to use the dataset stored in `df2.RData` instead of the one stored in `df1.RData` ;
 -   [ ] Render 3 reports (1 report with df2.RData for the full outbreak period, 1 report with df1.RData for year 2021 only, 1 report with df2.RData for year 2021 only) adapting the following command which needs to be run in a terminal (ensure your working directory is the one where your Quarto document is stored and all file paths are correct).
 
-```{bash}         
+```
 quarto render exercise3.qmd --out exercise5_report_df1.docx -P dataset:df1.RData
 ```
 
