@@ -171,9 +171,10 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 
 ## Format MS Word reports with styles
 
--   [ ] Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report;
--   [ ] To go further, try creating your own custom Word template and apply it to your report to explore how styles can be personalized.
+-   [ ] Apply the Swiss TPH template `swisstph_template.docx` to your rendered MS Word report;
+-   [ ] To go further, try creating your own custom Word template and apply it to your report to explore how MS Word styles can be personalized.
 
 ::: callout-tip
-See [Quarto documentation about Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)
+- See [Quarto documentation about Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html);
+- To create a template with customized MS Word styles, you will need to start with a Quarto-rendered MS Word report. This is because not all MS Word styles are supported by Quarto, and starting from a rendered report ensures better compatibility.
 :::
