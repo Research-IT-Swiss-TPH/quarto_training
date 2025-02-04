@@ -33,9 +33,9 @@ format:
       - text: df2.RData
         href: df2.RData
     code-links:
-      - text: exercise4.qmd
+      - text: exercise5.qmd
         icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise4.qmd
+        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise5.qmd
     format-links: [pdf]
   pdf:
     default: true
@@ -56,7 +56,7 @@ This exercise builds on the previous exercises where you learnt to [create a sim
 
 ## Objectives 🎯
 
--   Open your modified Quarto document `exercise4.qmd` in RStudio;
+-   If you have generated the simple MS Word report as in [Exercise 4](./exercise4_instructions.html), continue working on the same Quarto notebook you already modified. Otherwise, download the files `df1.RData`, `df2.RData`, and `exercise5.qmd` using the links provided on the right-hand side of this page. For simplicity, please put these two files under the same folder and open the Quarto notebook in RStudio.
 -   Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
 
 ## Use Quarto in a terminal
