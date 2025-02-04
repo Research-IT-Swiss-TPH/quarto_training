@@ -58,6 +58,12 @@ This training introduces the purpose and benefits of creating **analytically rep
 
 ![](images/clipboard-3954680417.png)
 
+## Pre-requisites 📋
+
+* Basic knowledge of R programming
+* Familiarity with the RStudio interface
+* Laptop with RStudio version 2022.07 or later installed
+
 ## Content navigation 🧭
 
 In this training, you will find the following resources to help you along your learning journey:
