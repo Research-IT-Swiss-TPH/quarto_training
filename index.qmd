@@ -40,6 +40,7 @@ engine: knitr
 ---
 
 ```{r}
+invisible(Sys.setlocale("LC_TIME", "en_US"))
 # Get the file's last modified date
 last_modified <- file.info("./index.qmd")$mtime
 # Format the date as desired

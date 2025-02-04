@@ -359,7 +359,7 @@ The logistic regression model uses `death` as the response variable, and `bmi` a
 
 ## Add references
 
-#### YAML header {.unnumbered}
+### To do in the YAML header
 
 ``` yaml
 ---
@@ -374,7 +374,7 @@ format:
   number-sections: true
   toc-depth: 2
   
-bibliography: my_biblio.bib # <22>
+bibliography: my_biblio.bib # <14>
 
 execute:  
  echo: false        
@@ -382,9 +382,15 @@ execute:
 ---
 ```
 
-22. Link the bibliography (BibTeX) file `my_biblio.bib` file by adding it to the YAML header of your Quarto notebook
+14. Link the bibliography (BibTeX) file `my_biblio.bib` file by adding it to the YAML header of your Quarto notebook using the `bibliography` option.
 
-#### bibTeX file {.unnumbered}
+::: callout-important
+The BibTeX file must be in the same folder as your Quarto notebook. If the BibTeX file is stored in a different folder, specify the path of the file **relative** to the Quarto notebook in the `bibliography` field.
+:::
+
+### To do in the bibTeX file
+
+Open the file `my_biblio.bib` on your computer. If the file does not exist yet, create a new text file and name it `my_biblio.bib`. Once the file is open, you will need to add the following text, which contains the reference information for the article we want to cite. This text includes all the citation details you need, such as the article's title, authors, journal name, volume, and publication date. Simply paste it exactly as shown into your `my_biblio.bib` file, and save the file.
 
 ```
 @article{Bangwen2025,
@@ -403,11 +409,15 @@ execute:
 }
 ```
 
-#### Markdown text {.unnumbered}
+### To do in the Markdown text
 
-You can refer to this citation in your Markdown text using the syntax  \[@Bangwen2025\].
+You can refer to this citation in your Markdown text using the syntax `[@Bangwen2025]`.
 
-[@Bangwen2025] describes trends in suspected and confirmed monkeypox virus cases in the Democratic Republic of Congo using epidemiological and laboratory surveillance data collected from 2010 to 2023.
+> [@Bangwen2025] describes trends in suspected and confirmed monkeypox virus cases in the Democratic Republic of Congo using epidemiological and laboratory surveillance data collected from 2010 to 2023.
+
+### Visual editor
+
+If you are not familiar with BibTeX files or programming, Quarto’s visual mode offers user-friendly tools for managing citations, allowing you to handle most of the previous steps automatically.
 
 ![](images/clipboard-3336859586.png)
 
@@ -422,7 +432,7 @@ date-format: long
 
 format:
  docx:
-  reference-doc: swisstph_template.docx # <23>
+  reference-doc: swisstph_template.docx # <15>
   toc: true
   number-sections: true
   toc-depth: 2
@@ -435,8 +445,8 @@ execute:
 ---
 ```
 
-23. Apply the Swiss TPH template `swisstph_template.docx` to your rendered MS Word report using the `reference-doc` field (specific to MS Word outputs). This ensures that your report adheres to the Swiss TPH template, maintaining consistent styling across fonts, margins, headings, and other formatting elements.
+15. Apply the Swiss TPH template `swisstph_template.docx` to your rendered MS Word report using the `reference-doc` field (specific to MS Word outputs). This ensures that your report adheres to the Swiss TPH template, maintaining consistent styling across fonts, margins, headings, and other formatting elements.
 
 ::: callout-important
-The MS Word template file must be in the same folder as your Quarto notebook. If the template is stored in a different folder, specify the path of the template file **relative** to the Quarto notebook in the `reference-doc` field.
+The MS Word template file must be in the same folder as your Quarto notebook. If the template file is stored in a different folder, specify the path of the file **relative** to the Quarto notebook in the `reference-doc` field.
 :::

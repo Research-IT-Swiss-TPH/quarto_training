@@ -53,6 +53,8 @@ resources:
   - exercise5_instructions.pdf
   - df1.RData
   - df2.RData
+  - swisstph_template.docx
+  - my_biblio.bib
 ---
 
 This exercise builds on the previous exercises where you learnt to [create a simple MS Word report ⭐](./exercise3_instructions.html) and to [add dynamic elements to your report ⭐⭐](./exercise4_instructions.html). Mastering these two exercises is essential for successfully completing the current exercise.
