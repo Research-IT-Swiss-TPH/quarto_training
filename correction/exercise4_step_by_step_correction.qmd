@@ -77,14 +77,20 @@ execute:
 ---
 ```
 
-7.  Insert a table of contents to the Quarto document.
-8.  Automatically number the different sections of the Quarto document.
-9.  Configure the table of contents to only display two levels of section headings.
+7.  This enables a table of contents (`toc`) at the beginning of your rendered MS Word report, making it easier for readers to navigate through sections.
+8.  This option automatically numbers all section headings (e.g., 1, 1.1, 1.2), providing a clear, hierarchical structure.
+9.  This limits the table of contents to display only two levels of headings.
 
 ::: callout-important
-### YAML indentation
 
-Remember that YAML is a whitespace-sensitive language where indentation determines the structure; tabs are not recognised for indentation. The recommended practice is therefore to use **two spaces** per indentation level to ensure consistency and avoid errors.
+- Remember that YAML is a *whitespace-sensitive* language where indentation determines the structure
+    - 🚫 Do NOT use tabs—they are not recognized.
+    - ✅ Use two spaces per indentation level to ensure consistency and avoid errors.
+- In this example, the TOC settings are applied specifically to the Word document output. If you want these settings to apply to all output formats (like HTML or PDF), move them to a higher level in the YAML header.
+- When you open the rendered MS Word document, you might see a warning message, as displayed below. Do not worry, this is completely normal and does not indicate an error. This message appears because the document contains dynamic fields, such as the table of contents, cross-references, or figure/table captions. Click "Yes" to ensure all references and the table of contents are properly updated. If you click "No," the document will still open, but some fields may not reflect the latest changes. This is a standard behavior in MS Word when working with dynamic content.
+
+> This document contains fields that may refer to other files. Do you want to update the fields in this document?
+
 :::
 
 ## Implement dynamic calculations
@@ -110,8 +116,8 @@ execute:
 ---
 ```
 
-10. Change the date `2023-12-31` to the date at which the Quarto document was last modified.
-11. Format this date to display it with the format `December 31, 2023`.
+10. Instead of manually entering a date (e.g., 2023-12-31), this setting automatically updates the date to the last time the MS Word document was generated (but this does not reflect when the source Quarto document was last edited).
+11. Formats the date to be displayed in a full, human-readable format `December 31, 2023`. This improves readability, making the report look more polished.
 
 ### In the Quarto notebook
 
@@ -307,7 +313,7 @@ gtsummary::tbl_regression(coeffs, exponentiate = TRUE) # <23>
 
 ![](images/clipboard-1750453379.png)
 
-## Finalise your MS Word report
+## Format MS Word reports with styles
 
 ``` yaml
 ---
@@ -322,11 +328,11 @@ format:
     toc: true
     number-sections: true
     toc-depth: 2
-echo: false
-warning: false
+
+execute:    
+  echo: false               
+  warning: false
 ---
 ```
 
-24. Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report.
-
--   [ ] Create your own template and apply it to your MS Word rendered report.
+23. Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report. Here this means the Word document and Quarto document are located in the same folder. Otherwise you need to indicate the path relative to the QUarto notebook

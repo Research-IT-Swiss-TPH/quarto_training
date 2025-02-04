@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Hélène Langet">
-<meta name="dcterms.date" content="2025-02-03">
+<meta name="dcterms.date" content="2025-02-04">
 
 <title>⭐⭐ Add dynamic elements to reports – Quarto training</title>
 <style>
@@ -4833,7 +4833,7 @@ vertical-align: -.125em;
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 3, 2025</p>
+        <p class="date">February 4, 2025</p>
       </div>
     </div>
     
@@ -4922,11 +4922,11 @@ vertical-align: -.125em;
   <li><a href="#in-the-yaml-header" id="toc-in-the-yaml-header" class="nav-link" data-scroll-target="#in-the-yaml-header"><span class="header-section-number">2.1</span> In the YAML header</a></li>
   <li><a href="#in-the-quarto-notebook" id="toc-in-the-quarto-notebook" class="nav-link" data-scroll-target="#in-the-quarto-notebook"><span class="header-section-number">2.2</span> In the Quarto notebook</a></li>
   </ul></li>
-  <li><a href="#create-and-reference-publication-ready-tables" id="toc-create-and-reference-publication-ready-tables" class="nav-link" data-scroll-target="#create-and-reference-publication-ready-tables"><span class="header-section-number">3</span> Create and reference publication-ready tables</a></li>
-  <li><a href="#customise-figures" id="toc-customise-figures" class="nav-link" data-scroll-target="#customise-figures"><span class="header-section-number">4</span> Customise figures</a></li>
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code"><span class="header-section-number">5</span> Code</a></li>
+  <li><a href="#reference-tables" id="toc-reference-tables" class="nav-link" data-scroll-target="#reference-tables"><span class="header-section-number">3</span> Reference tables</a></li>
+  <li><a href="#reference-figures" id="toc-reference-figures" class="nav-link" data-scroll-target="#reference-figures"><span class="header-section-number">4</span> Reference figures</a></li>
+  <li><a href="#reference-code-chunks" id="toc-reference-code-chunks" class="nav-link" data-scroll-target="#reference-code-chunks"><span class="header-section-number">5</span> Reference code chunks</a></li>
   <li><a href="#add-references" id="toc-add-references" class="nav-link" data-scroll-target="#add-references"><span class="header-section-number">6</span> Add references</a></li>
-  <li><a href="#finalise-your-ms-word-report" id="toc-finalise-your-ms-word-report" class="nav-link" data-scroll-target="#finalise-your-ms-word-report"><span class="header-section-number">7</span> Finalise your MS Word report</a></li>
+  <li><a href="#format-ms-word-reports-with-styles" id="toc-format-ms-word-reports-with-styles" class="nav-link" data-scroll-target="#format-ms-word-reports-with-styles"><span class="header-section-number">7</span> Format MS Word reports with styles</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="exercise4_step_by_step_correction.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="../practicals/exercise4_instructions.html"><i class="bi bi-link-45deg"></i>📋 Instructions</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise4.qmd"><i class="bi bi-file-code"></i>exercise4.qmd</a></li></ul></div></nav>
     </div>
@@ -4963,21 +4963,23 @@ Important
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-1-8" class="code-annotation-target"><a href="#annotated-cell-1-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-1-9" class="code-annotation-target"><a href="#annotated-cell-1-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-1-10" class="code-annotation-target"><a href="#annotated-cell-1-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
-<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="at">               </span></span>
-<span id="annotated-cell-1-12"><a href="#annotated-cell-1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="at">            </span></span>
-<span id="annotated-cell-1-13"><a href="#annotated-cell-1-13" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-12"><a href="#annotated-cell-1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span><span class="at">    </span></span>
+<span id="annotated-cell-1-13"><a href="#annotated-cell-1-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="at">               </span></span>
+<span id="annotated-cell-1-14"><a href="#annotated-cell-1-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="at">            </span></span>
+<span id="annotated-cell-1-15"><a href="#annotated-cell-1-15" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="7">7</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="8" data-code-annotation="7">Insert a table of contents to the Quarto document.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="8" data-code-annotation="7">This enables a table of contents (<code>toc</code>) at the beginning of your rendered MS Word report, making it easier for readers to navigate through sections.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="8">8</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="9" data-code-annotation="8">Automatically number the different sections of the Quarto document.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="9" data-code-annotation="8">This option automatically numbers all section headings (e.g., 1, 1.1, 1.2), providing a clear, hierarchical structure.</span>
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="9">9</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="10" data-code-annotation="9">Configure the table of contents to only display two levels of section headings.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="10" data-code-annotation="9">This limits the table of contents to display only two levels of headings.</span>
 </dd>
 </dl>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -4986,11 +4988,22 @@ Important
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-YAML indentation
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Remember that YAML is a whitespace-sensitive language where indentation determines the structure; tabs are not recognised for indentation. The recommended practice is therefore to use <strong>two spaces</strong> per indentation level to ensure consistency and avoid errors.</p>
+<ul>
+<li>Remember that YAML is a <em>whitespace-sensitive</em> language where indentation determines the structure
+<ul>
+<li>🚫 Do NOT use tabs—they are not recognized.</li>
+<li>✅ Use two spaces per indentation level to ensure consistency and avoid errors.</li>
+</ul></li>
+<li>In this example, the TOC settings are applied specifically to the Word document output. If you want these settings to apply to all output formats (like HTML or PDF), move them to a higher level in the YAML header.</li>
+<li>When you open the rendered MS Word document, you might see a warning message, as displayed below. Do not worry, this is completely normal and does not indicate an error. This message appears because the document contains dynamic fields, such as the table of contents, cross-references, or figure/table captions. Click “Yes” to ensure all references and the table of contents are properly updated. If you click “No,” the document will still open, but some fields may not reflect the latest changes. This is a standard behavior in MS Word when working with dynamic content.</li>
+</ul>
+<blockquote class="blockquote">
+<p>This document contains fields that may refer to other files. Do you want to update the fields in this document?</p>
+</blockquote>
 </div>
 </div>
 </section>
@@ -5009,17 +5022,19 @@ YAML indentation
 <span id="annotated-cell-2-9"><a href="#annotated-cell-2-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="at">             </span></span>
 <span id="annotated-cell-2-10"><a href="#annotated-cell-2-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
 <span id="annotated-cell-2-11"><a href="#annotated-cell-2-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
-<span id="annotated-cell-2-12"><a href="#annotated-cell-2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="at">               </span></span>
-<span id="annotated-cell-2-13"><a href="#annotated-cell-2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="at">            </span></span>
-<span id="annotated-cell-2-14"><a href="#annotated-cell-2-14" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-2-12"><a href="#annotated-cell-2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-2-13"><a href="#annotated-cell-2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span><span class="at">    </span></span>
+<span id="annotated-cell-2-14"><a href="#annotated-cell-2-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="at">               </span></span>
+<span id="annotated-cell-2-15"><a href="#annotated-cell-2-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="at">             </span></span>
+<span id="annotated-cell-2-16"><a href="#annotated-cell-2-16" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-2" data-target-annotation="10">10</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="10">Change the date <code>2023-12-31</code> to the date at which the Quarto document was last modified.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="10">Instead of manually entering a date (e.g., 2023-12-31), this setting automatically updates the date to the last time the MS Word document was generated (but this does not reflect when the source Quarto document was last edited).</span>
 </dd>
 <dt data-target-cell="annotated-cell-2" data-target-annotation="11">11</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="5" data-code-annotation="11">Format this date to display it with the format <code>December 31, 2023</code>.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="5" data-code-annotation="11">Formats the date to be displayed in a full, human-readable format <code>December 31, 2023</code>. This improves readability, making the report look more polished.</span>
 </dd>
 </dl>
 </section>
@@ -5039,44 +5054,35 @@ YAML indentation
 </blockquote>
 </section>
 </section>
-<section id="create-and-reference-publication-ready-tables" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="create-and-reference-publication-ready-tables"><span class="header-section-number">3</span> Create and reference publication-ready tables</h2>
-<p>You can use packages such as <code>gtsummary</code></p>
-<p>To install the package, run teh following command in your console.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(gtsummary)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="reference-tables" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="reference-tables"><span class="header-section-number">3</span> Reference tables</h2>
+<section id="table-1" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="table-1">Table 1</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode markdown code-annotation-code code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="14" onclick="event.preventDefault();">14</a><span id="annotated-cell-5-2" class="code-annotation-target"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-1</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-5-3" class="code-annotation-target"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Population characteristics</span></span>
-<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-5-5" class="code-annotation-target"><a href="#annotated-cell-5-5" aria-hidden="true" tabindex="-1"></a>subdf <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-5-6"><a href="#annotated-cell-5-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(age,</span>
-<span id="annotated-cell-5-7"><a href="#annotated-cell-5-7" aria-hidden="true" tabindex="-1"></a>                sex,</span>
-<span id="annotated-cell-5-8"><a href="#annotated-cell-5-8" aria-hidden="true" tabindex="-1"></a>                bmi,</span>
-<span id="annotated-cell-5-9"><a href="#annotated-cell-5-9" aria-hidden="true" tabindex="-1"></a>                confirmed,</span>
-<span id="annotated-cell-5-10"><a href="#annotated-cell-5-10" aria-hidden="true" tabindex="-1"></a>                death) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-5-11"><a href="#annotated-cell-5-11" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>()             </span>
-<span id="annotated-cell-5-12"><a href="#annotated-cell-5-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode markdown code-annotation-code code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="14" onclick="event.preventDefault();">14</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-1</span></span>
+<span id="annotated-cell-4-3"><a href="#annotated-cell-4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Population characteristics</span></span>
+<span id="annotated-cell-4-4"><a href="#annotated-cell-4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Table 1</span></span>
+<span id="annotated-cell-4-6"><a href="#annotated-cell-4-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Generate a summary table displaying population characteristics</span></span>
+<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7" aria-hidden="true" tabindex="-1"></a>subdf <span class="sc">|&gt;</span>                               </span>
+<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(age,</span>
+<span id="annotated-cell-4-9"><a href="#annotated-cell-4-9" aria-hidden="true" tabindex="-1"></a>                sex,</span>
+<span id="annotated-cell-4-10"><a href="#annotated-cell-4-10" aria-hidden="true" tabindex="-1"></a>                bmi,</span>
+<span id="annotated-cell-4-11"><a href="#annotated-cell-4-11" aria-hidden="true" tabindex="-1"></a>                confirmed,</span>
+<span id="annotated-cell-4-12"><a href="#annotated-cell-4-12" aria-hidden="true" tabindex="-1"></a>                death) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-4-13"><a href="#annotated-cell-4-13" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>()           </span>
+<span id="annotated-cell-4-14"><a href="#annotated-cell-4-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-5" data-target-annotation="12">12</dt>
+<dt data-target-cell="annotated-cell-4" data-target-annotation="14">14</dt>
 <dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="5" data-code-annotation="12">Create a table summarising the demographic characteristics and outcome frequency of all cases.</span>
-</dd>
-<dt data-target-cell="annotated-cell-5" data-target-annotation="13">13</dt>
-<dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="3" data-code-annotation="13">Add a caption to the table.</span>
-</dd>
-<dt data-target-cell="annotated-cell-5" data-target-annotation="14">14</dt>
-<dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="2" data-code-annotation="14">Assign a label to the table.</span>
+<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="14">Assign a label to the table.</span>
 </dd>
 </dl>
 </div>
@@ -5087,20 +5093,20 @@ Table 1: Population characteristics
 </figcaption>
 <div aria-describedby="tbl-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="czjzezurfr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#czjzezurfr table {
+<div id="zwxjxabcwn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#zwxjxabcwn table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#czjzezurfr thead, #czjzezurfr tbody, #czjzezurfr tfoot, #czjzezurfr tr, #czjzezurfr td, #czjzezurfr th {
+#zwxjxabcwn thead, #zwxjxabcwn tbody, #zwxjxabcwn tfoot, #zwxjxabcwn tr, #zwxjxabcwn td, #zwxjxabcwn th {
 border-style: none;
 }
-#czjzezurfr p {
+#zwxjxabcwn p {
 margin: 0;
 padding: 0;
 }
-#czjzezurfr .gt_table {
+#zwxjxabcwn .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -5125,11 +5131,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#czjzezurfr .gt_caption {
+#zwxjxabcwn .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#czjzezurfr .gt_title {
+#zwxjxabcwn .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -5140,7 +5146,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#czjzezurfr .gt_subtitle {
+#zwxjxabcwn .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -5151,7 +5157,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#czjzezurfr .gt_heading {
+#zwxjxabcwn .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -5162,12 +5168,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#czjzezurfr .gt_bottom_border {
+#zwxjxabcwn .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#czjzezurfr .gt_col_headings {
+#zwxjxabcwn .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -5181,7 +5187,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#czjzezurfr .gt_col_heading {
+#zwxjxabcwn .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5200,7 +5206,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#czjzezurfr .gt_column_spanner_outer {
+#zwxjxabcwn .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5211,13 +5217,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#czjzezurfr .gt_column_spanner_outer:first-child {
+#zwxjxabcwn .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#czjzezurfr .gt_column_spanner_outer:last-child {
+#zwxjxabcwn .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#czjzezurfr .gt_column_spanner {
+#zwxjxabcwn .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -5228,10 +5234,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#czjzezurfr .gt_spanner_row {
+#zwxjxabcwn .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#czjzezurfr .gt_group_heading {
+#zwxjxabcwn .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5256,7 +5262,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#czjzezurfr .gt_empty_group_heading {
+#zwxjxabcwn .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -5270,13 +5276,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#czjzezurfr .gt_from_md > :first-child {
+#zwxjxabcwn .gt_from_md > :first-child {
 margin-top: 0;
 }
-#czjzezurfr .gt_from_md > :last-child {
+#zwxjxabcwn .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#czjzezurfr .gt_row {
+#zwxjxabcwn .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5294,7 +5300,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#czjzezurfr .gt_stub {
+#zwxjxabcwn .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5306,7 +5312,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#czjzezurfr .gt_stub_row_group {
+#zwxjxabcwn .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5319,13 +5325,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#czjzezurfr .gt_row_group_first td {
+#zwxjxabcwn .gt_row_group_first td {
 border-top-width: 2px;
 }
-#czjzezurfr .gt_row_group_first th {
+#zwxjxabcwn .gt_row_group_first th {
 border-top-width: 2px;
 }
-#czjzezurfr .gt_summary_row {
+#zwxjxabcwn .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -5334,14 +5340,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#czjzezurfr .gt_first_summary_row {
+#zwxjxabcwn .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#czjzezurfr .gt_first_summary_row.thick {
+#zwxjxabcwn .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#czjzezurfr .gt_last_summary_row {
+#zwxjxabcwn .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5350,7 +5356,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#czjzezurfr .gt_grand_summary_row {
+#zwxjxabcwn .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -5359,7 +5365,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#czjzezurfr .gt_first_grand_summary_row {
+#zwxjxabcwn .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5368,7 +5374,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#czjzezurfr .gt_last_grand_summary_row_top {
+#zwxjxabcwn .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5377,10 +5383,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#czjzezurfr .gt_striped {
+#zwxjxabcwn .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#czjzezurfr .gt_table_body {
+#zwxjxabcwn .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -5388,7 +5394,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#czjzezurfr .gt_footnotes {
+#zwxjxabcwn .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -5401,7 +5407,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#czjzezurfr .gt_footnote {
+#zwxjxabcwn .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -5409,7 +5415,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#czjzezurfr .gt_sourcenotes {
+#zwxjxabcwn .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -5422,57 +5428,57 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#czjzezurfr .gt_sourcenote {
+#zwxjxabcwn .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#czjzezurfr .gt_left {
+#zwxjxabcwn .gt_left {
 text-align: left;
 }
-#czjzezurfr .gt_center {
+#zwxjxabcwn .gt_center {
 text-align: center;
 }
-#czjzezurfr .gt_right {
+#zwxjxabcwn .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#czjzezurfr .gt_font_normal {
+#zwxjxabcwn .gt_font_normal {
 font-weight: normal;
 }
-#czjzezurfr .gt_font_bold {
+#zwxjxabcwn .gt_font_bold {
 font-weight: bold;
 }
-#czjzezurfr .gt_font_italic {
+#zwxjxabcwn .gt_font_italic {
 font-style: italic;
 }
-#czjzezurfr .gt_super {
+#zwxjxabcwn .gt_super {
 font-size: 65%;
 }
-#czjzezurfr .gt_footnote_marks {
+#zwxjxabcwn .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#czjzezurfr .gt_asterisk {
+#zwxjxabcwn .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#czjzezurfr .gt_indent_1 {
+#zwxjxabcwn .gt_indent_1 {
 text-indent: 5px;
 }
-#czjzezurfr .gt_indent_2 {
+#zwxjxabcwn .gt_indent_2 {
 text-indent: 10px;
 }
-#czjzezurfr .gt_indent_3 {
+#zwxjxabcwn .gt_indent_3 {
 text-indent: 15px;
 }
-#czjzezurfr .gt_indent_4 {
+#zwxjxabcwn .gt_indent_4 {
 text-indent: 20px;
 }
-#czjzezurfr .gt_indent_5 {
+#zwxjxabcwn .gt_indent_5 {
 text-indent: 25px;
 }
 </style>
@@ -5557,32 +5563,35 @@ text-indent: 25px;
 <blockquote class="blockquote">
 <p>“<a href="#tbl-1" class="quarto-xref">Table 1</a> <em>provides a summary of the demographic characteristics and the outcome proportion for the overall population</em>”</p>
 </blockquote>
+</section>
+<section id="table-2" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="table-2">Table 2</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode markdown code-annotation-code code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="17" onclick="event.preventDefault();">17</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-2</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="16" onclick="event.preventDefault();">16</a><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Demographic characteristics of deceased vs. alive</span></span>
-<span id="annotated-cell-6-4"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="15" onclick="event.preventDefault();">15</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5" aria-hidden="true" tabindex="-1"></a>subdf <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-6-6"><a href="#annotated-cell-6-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sex,</span>
-<span id="annotated-cell-6-7"><a href="#annotated-cell-6-7" aria-hidden="true" tabindex="-1"></a>                age,</span>
-<span id="annotated-cell-6-8"><a href="#annotated-cell-6-8" aria-hidden="true" tabindex="-1"></a>                bmi,</span>
-<span id="annotated-cell-6-9"><a href="#annotated-cell-6-9" aria-hidden="true" tabindex="-1"></a>                death) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-6-10"><a href="#annotated-cell-6-10" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>(<span class="at">by =</span> death) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-6-11"><a href="#annotated-cell-6-11" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">add_overall</span>()</span>
-<span id="annotated-cell-6-12"><a href="#annotated-cell-6-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode markdown code-annotation-code code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="17" onclick="event.preventDefault();">17</a><span id="annotated-cell-5-2" class="code-annotation-target"><a href="#annotated-cell-5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-2</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="16" onclick="event.preventDefault();">16</a><span id="annotated-cell-5-3" class="code-annotation-target"><a href="#annotated-cell-5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Demographic characteristics of deceased vs. alive</span></span>
+<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="15" onclick="event.preventDefault();">15</a><span id="annotated-cell-5-5" class="code-annotation-target"><a href="#annotated-cell-5-5" aria-hidden="true" tabindex="-1"></a>subdf <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-5-6"><a href="#annotated-cell-5-6" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sex,</span>
+<span id="annotated-cell-5-7"><a href="#annotated-cell-5-7" aria-hidden="true" tabindex="-1"></a>                age,</span>
+<span id="annotated-cell-5-8"><a href="#annotated-cell-5-8" aria-hidden="true" tabindex="-1"></a>                bmi,</span>
+<span id="annotated-cell-5-9"><a href="#annotated-cell-5-9" aria-hidden="true" tabindex="-1"></a>                death) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-5-10"><a href="#annotated-cell-5-10" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>(<span class="at">by =</span> death) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-5-11"><a href="#annotated-cell-5-11" aria-hidden="true" tabindex="-1"></a>  gtsummary<span class="sc">::</span><span class="fu">add_overall</span>()</span>
+<span id="annotated-cell-5-12"><a href="#annotated-cell-5-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-6" data-target-annotation="15">15</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="15">15</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="15">Create a table summarising the demographic characteristics of individuals who died versus those who are still alive.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="5" data-code-annotation="15">Create a table summarising the demographic characteristics of individuals who died versus those who are still alive.</span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="16">16</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="16">16</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="3" data-code-annotation="16">Add a caption to the table.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="3" data-code-annotation="16">Add a caption to the table.</span>
 </dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="17">17</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="17">17</dt>
 <dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="2" data-code-annotation="17">Assign a label to the table.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="2" data-code-annotation="17">Assign a label to the table.</span>
 </dd>
 </dl>
 </div>
@@ -5593,20 +5602,20 @@ Table 2: Demographic characteristics of deceased vs. alive
 </figcaption>
 <div aria-describedby="tbl-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="sqefbosunx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#sqefbosunx table {
+<div id="rzyidijlwd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rzyidijlwd table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#sqefbosunx thead, #sqefbosunx tbody, #sqefbosunx tfoot, #sqefbosunx tr, #sqefbosunx td, #sqefbosunx th {
+#rzyidijlwd thead, #rzyidijlwd tbody, #rzyidijlwd tfoot, #rzyidijlwd tr, #rzyidijlwd td, #rzyidijlwd th {
 border-style: none;
 }
-#sqefbosunx p {
+#rzyidijlwd p {
 margin: 0;
 padding: 0;
 }
-#sqefbosunx .gt_table {
+#rzyidijlwd .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -5631,11 +5640,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#sqefbosunx .gt_caption {
+#rzyidijlwd .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#sqefbosunx .gt_title {
+#rzyidijlwd .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -5646,7 +5655,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#sqefbosunx .gt_subtitle {
+#rzyidijlwd .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -5657,7 +5666,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#sqefbosunx .gt_heading {
+#rzyidijlwd .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -5668,12 +5677,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#sqefbosunx .gt_bottom_border {
+#rzyidijlwd .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#sqefbosunx .gt_col_headings {
+#rzyidijlwd .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -5687,7 +5696,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#sqefbosunx .gt_col_heading {
+#rzyidijlwd .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5706,7 +5715,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#sqefbosunx .gt_column_spanner_outer {
+#rzyidijlwd .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5717,13 +5726,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#sqefbosunx .gt_column_spanner_outer:first-child {
+#rzyidijlwd .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#sqefbosunx .gt_column_spanner_outer:last-child {
+#rzyidijlwd .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#sqefbosunx .gt_column_spanner {
+#rzyidijlwd .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -5734,10 +5743,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#sqefbosunx .gt_spanner_row {
+#rzyidijlwd .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#sqefbosunx .gt_group_heading {
+#rzyidijlwd .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5762,7 +5771,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#sqefbosunx .gt_empty_group_heading {
+#rzyidijlwd .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -5776,13 +5785,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#sqefbosunx .gt_from_md > :first-child {
+#rzyidijlwd .gt_from_md > :first-child {
 margin-top: 0;
 }
-#sqefbosunx .gt_from_md > :last-child {
+#rzyidijlwd .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#sqefbosunx .gt_row {
+#rzyidijlwd .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5800,7 +5809,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#sqefbosunx .gt_stub {
+#rzyidijlwd .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5812,7 +5821,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#sqefbosunx .gt_stub_row_group {
+#rzyidijlwd .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -5825,13 +5834,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#sqefbosunx .gt_row_group_first td {
+#rzyidijlwd .gt_row_group_first td {
 border-top-width: 2px;
 }
-#sqefbosunx .gt_row_group_first th {
+#rzyidijlwd .gt_row_group_first th {
 border-top-width: 2px;
 }
-#sqefbosunx .gt_summary_row {
+#rzyidijlwd .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -5840,14 +5849,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#sqefbosunx .gt_first_summary_row {
+#rzyidijlwd .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#sqefbosunx .gt_first_summary_row.thick {
+#rzyidijlwd .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#sqefbosunx .gt_last_summary_row {
+#rzyidijlwd .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5856,7 +5865,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#sqefbosunx .gt_grand_summary_row {
+#rzyidijlwd .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -5865,7 +5874,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#sqefbosunx .gt_first_grand_summary_row {
+#rzyidijlwd .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5874,7 +5883,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#sqefbosunx .gt_last_grand_summary_row_top {
+#rzyidijlwd .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -5883,10 +5892,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#sqefbosunx .gt_striped {
+#rzyidijlwd .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#sqefbosunx .gt_table_body {
+#rzyidijlwd .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -5894,7 +5903,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#sqefbosunx .gt_footnotes {
+#rzyidijlwd .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -5907,7 +5916,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#sqefbosunx .gt_footnote {
+#rzyidijlwd .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -5915,7 +5924,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#sqefbosunx .gt_sourcenotes {
+#rzyidijlwd .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -5928,57 +5937,57 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#sqefbosunx .gt_sourcenote {
+#rzyidijlwd .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#sqefbosunx .gt_left {
+#rzyidijlwd .gt_left {
 text-align: left;
 }
-#sqefbosunx .gt_center {
+#rzyidijlwd .gt_center {
 text-align: center;
 }
-#sqefbosunx .gt_right {
+#rzyidijlwd .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#sqefbosunx .gt_font_normal {
+#rzyidijlwd .gt_font_normal {
 font-weight: normal;
 }
-#sqefbosunx .gt_font_bold {
+#rzyidijlwd .gt_font_bold {
 font-weight: bold;
 }
-#sqefbosunx .gt_font_italic {
+#rzyidijlwd .gt_font_italic {
 font-style: italic;
 }
-#sqefbosunx .gt_super {
+#rzyidijlwd .gt_super {
 font-size: 65%;
 }
-#sqefbosunx .gt_footnote_marks {
+#rzyidijlwd .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#sqefbosunx .gt_asterisk {
+#rzyidijlwd .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#sqefbosunx .gt_indent_1 {
+#rzyidijlwd .gt_indent_1 {
 text-indent: 5px;
 }
-#sqefbosunx .gt_indent_2 {
+#rzyidijlwd .gt_indent_2 {
 text-indent: 10px;
 }
-#sqefbosunx .gt_indent_3 {
+#rzyidijlwd .gt_indent_3 {
 text-indent: 15px;
 }
-#sqefbosunx .gt_indent_4 {
+#rzyidijlwd .gt_indent_4 {
 text-indent: 20px;
 }
-#sqefbosunx .gt_indent_5 {
+#rzyidijlwd .gt_indent_5 {
 text-indent: 25px;
 }
 </style>
@@ -6054,58 +6063,64 @@ text-indent: 25px;
 <p>“<em>…, while <a href="#tbl-2" class="quarto-xref">Table 2</a> compares the demographic characteristics of individuals who died versus those who are still alive.</em>”</p>
 </blockquote>
 </section>
-<section id="customise-figures" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="customise-figures"><span class="header-section-number">4</span> Customise figures</h2>
+<section id="table-3" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="table-3">Table 3</h4>
+</section>
+</section>
+<section id="reference-figures" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="reference-figures"><span class="header-section-number">4</span> Reference figures</h2>
+<section id="figure-1" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="figure-1">Figure 1</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode markdown code-annotation-code code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="18" onclick="event.preventDefault();">18</a><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-1</span></span>
-<span id="annotated-cell-7-3"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Weekly count of all cases, confirmed cases and deaths</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="19" onclick="event.preventDefault();">19</a><span id="annotated-cell-7-4" class="code-annotation-target"><a href="#annotated-cell-7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="20" onclick="event.preventDefault();">20</a><span id="annotated-cell-7-5" class="code-annotation-target"><a href="#annotated-cell-7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4</span></span>
-<span id="annotated-cell-7-6"><a href="#annotated-cell-7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-7-7"><a href="#annotated-cell-7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregate the data to get the weekly count of all cases, confirmed cases and deaths</span></span>
-<span id="annotated-cell-7-8"><a href="#annotated-cell-7-8" aria-hidden="true" tabindex="-1"></a>weekly_data <span class="ot">&lt;-</span> subdf <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-7-9"><a href="#annotated-cell-7-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(week) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-7-10"><a href="#annotated-cell-7-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">count =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(),</span>
-<span id="annotated-cell-7-11"><a href="#annotated-cell-7-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">confirmed_count =</span> <span class="fu">sum</span>(confirmed <span class="sc">==</span> <span class="st">&quot;1&quot;</span>),</span>
-<span id="annotated-cell-7-12"><a href="#annotated-cell-7-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">death_count =</span> <span class="fu">sum</span>(death <span class="sc">==</span> <span class="st">&quot;1&quot;</span>))</span>
-<span id="annotated-cell-7-13"><a href="#annotated-cell-7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-7-14"><a href="#annotated-cell-7-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the weekly cases, confirmed cases and deaths</span></span>
-<span id="annotated-cell-7-15"><a href="#annotated-cell-7-15" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(weekly_data, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> week)) <span class="sc">+</span></span>
-<span id="annotated-cell-7-16"><a href="#annotated-cell-7-16" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> count,</span>
-<span id="annotated-cell-7-17"><a href="#annotated-cell-7-17" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> <span class="st">&quot;All cases&quot;</span>),</span>
-<span id="annotated-cell-7-18"><a href="#annotated-cell-7-18" aria-hidden="true" tabindex="-1"></a>                     <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-7-19"><a href="#annotated-cell-7-19" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> confirmed_count,</span>
-<span id="annotated-cell-7-20"><a href="#annotated-cell-7-20" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> <span class="st">&quot;Confirmed cases&quot;</span>),</span>
-<span id="annotated-cell-7-21"><a href="#annotated-cell-7-21" aria-hidden="true" tabindex="-1"></a>                     <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-7-22"><a href="#annotated-cell-7-22" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> death_count,</span>
-<span id="annotated-cell-7-23"><a href="#annotated-cell-7-23" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> <span class="st">&quot;Confirmed deaths&quot;</span>),</span>
-<span id="annotated-cell-7-24"><a href="#annotated-cell-7-24" aria-hidden="true" tabindex="-1"></a>                     <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-7-25"><a href="#annotated-cell-7-25" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Week&quot;</span>,</span>
-<span id="annotated-cell-7-26"><a href="#annotated-cell-7-26" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>,</span>
-<span id="annotated-cell-7-27"><a href="#annotated-cell-7-27" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">&quot;Legend&quot;</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-7-28"><a href="#annotated-cell-7-28" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;All cases&quot;</span> <span class="ot">=</span> <span class="st">&quot;#440e54&quot;</span>,</span>
-<span id="annotated-cell-7-29"><a href="#annotated-cell-7-29" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Confirmed cases&quot;</span> <span class="ot">=</span> <span class="st">&quot;#f8766d&quot;</span>,</span>
-<span id="annotated-cell-7-30"><a href="#annotated-cell-7-30" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Confirmed deaths&quot;</span> <span class="ot">=</span> <span class="st">&quot;#128984&quot;</span>)) <span class="sc">+</span></span>
-<span id="annotated-cell-7-31"><a href="#annotated-cell-7-31" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="annotated-cell-7-32"><a href="#annotated-cell-7-32" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">panel.grid.major.y =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(<span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
-<span id="annotated-cell-7-33"><a href="#annotated-cell-7-33" aria-hidden="true" tabindex="-1"></a>                 <span class="at">panel.grid.minor.y =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(<span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
-<span id="annotated-cell-7-34"><a href="#annotated-cell-7-34" aria-hidden="true" tabindex="-1"></a>                 <span class="at">panel.grid.major.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>(),</span>
-<span id="annotated-cell-7-35"><a href="#annotated-cell-7-35" aria-hidden="true" tabindex="-1"></a>                 <span class="at">panel.grid.minor.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>())</span>
-<span id="annotated-cell-7-36"><a href="#annotated-cell-7-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode markdown code-annotation-code code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="18" onclick="event.preventDefault();">18</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-1</span></span>
+<span id="annotated-cell-6-3"><a href="#annotated-cell-6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: Weekly count of all cases, confirmed cases and deaths</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="19" onclick="event.preventDefault();">19</a><span id="annotated-cell-6-4" class="code-annotation-target"><a href="#annotated-cell-6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-width: 8</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="20" onclick="event.preventDefault();">20</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-height: 4</span></span>
+<span id="annotated-cell-6-6"><a href="#annotated-cell-6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-6-7"><a href="#annotated-cell-6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregate the data to get the weekly count of all cases, confirmed cases and deaths</span></span>
+<span id="annotated-cell-6-8"><a href="#annotated-cell-6-8" aria-hidden="true" tabindex="-1"></a>weekly_data <span class="ot">&lt;-</span> subdf <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-6-9"><a href="#annotated-cell-6-9" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(week) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-6-10"><a href="#annotated-cell-6-10" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">count =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(),</span>
+<span id="annotated-cell-6-11"><a href="#annotated-cell-6-11" aria-hidden="true" tabindex="-1"></a>                   <span class="at">confirmed_count =</span> <span class="fu">sum</span>(confirmed <span class="sc">==</span> <span class="st">&quot;1&quot;</span>),</span>
+<span id="annotated-cell-6-12"><a href="#annotated-cell-6-12" aria-hidden="true" tabindex="-1"></a>                   <span class="at">death_count =</span> <span class="fu">sum</span>(death <span class="sc">==</span> <span class="st">&quot;1&quot;</span>))</span>
+<span id="annotated-cell-6-13"><a href="#annotated-cell-6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-6-14"><a href="#annotated-cell-6-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot the weekly cases, confirmed cases and deaths</span></span>
+<span id="annotated-cell-6-15"><a href="#annotated-cell-6-15" aria-hidden="true" tabindex="-1"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(weekly_data, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> week)) <span class="sc">+</span></span>
+<span id="annotated-cell-6-16"><a href="#annotated-cell-6-16" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> count,</span>
+<span id="annotated-cell-6-17"><a href="#annotated-cell-6-17" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> <span class="st">&quot;All cases&quot;</span>),</span>
+<span id="annotated-cell-6-18"><a href="#annotated-cell-6-18" aria-hidden="true" tabindex="-1"></a>                     <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-6-19"><a href="#annotated-cell-6-19" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> confirmed_count,</span>
+<span id="annotated-cell-6-20"><a href="#annotated-cell-6-20" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> <span class="st">&quot;Confirmed cases&quot;</span>),</span>
+<span id="annotated-cell-6-21"><a href="#annotated-cell-6-21" aria-hidden="true" tabindex="-1"></a>                     <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-6-22"><a href="#annotated-cell-6-22" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> death_count,</span>
+<span id="annotated-cell-6-23"><a href="#annotated-cell-6-23" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">color =</span> <span class="st">&quot;Confirmed deaths&quot;</span>),</span>
+<span id="annotated-cell-6-24"><a href="#annotated-cell-6-24" aria-hidden="true" tabindex="-1"></a>                     <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-6-25"><a href="#annotated-cell-6-25" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Week&quot;</span>,</span>
+<span id="annotated-cell-6-26"><a href="#annotated-cell-6-26" aria-hidden="true" tabindex="-1"></a>                <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>,</span>
+<span id="annotated-cell-6-27"><a href="#annotated-cell-6-27" aria-hidden="true" tabindex="-1"></a>                <span class="at">color =</span> <span class="st">&quot;Legend&quot;</span>) <span class="sc">+</span></span>
+<span id="annotated-cell-6-28"><a href="#annotated-cell-6-28" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;All cases&quot;</span> <span class="ot">=</span> <span class="st">&quot;#440e54&quot;</span>,</span>
+<span id="annotated-cell-6-29"><a href="#annotated-cell-6-29" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Confirmed cases&quot;</span> <span class="ot">=</span> <span class="st">&quot;#f8766d&quot;</span>,</span>
+<span id="annotated-cell-6-30"><a href="#annotated-cell-6-30" aria-hidden="true" tabindex="-1"></a>                                         <span class="st">&quot;Confirmed deaths&quot;</span> <span class="ot">=</span> <span class="st">&quot;#128984&quot;</span>)) <span class="sc">+</span></span>
+<span id="annotated-cell-6-31"><a href="#annotated-cell-6-31" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="annotated-cell-6-32"><a href="#annotated-cell-6-32" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">panel.grid.major.y =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(<span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
+<span id="annotated-cell-6-33"><a href="#annotated-cell-6-33" aria-hidden="true" tabindex="-1"></a>                 <span class="at">panel.grid.minor.y =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(<span class="at">linewidth =</span> <span class="fl">0.5</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
+<span id="annotated-cell-6-34"><a href="#annotated-cell-6-34" aria-hidden="true" tabindex="-1"></a>                 <span class="at">panel.grid.major.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>(),</span>
+<span id="annotated-cell-6-35"><a href="#annotated-cell-6-35" aria-hidden="true" tabindex="-1"></a>                 <span class="at">panel.grid.minor.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>())</span>
+<span id="annotated-cell-6-36"><a href="#annotated-cell-6-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-7" data-target-annotation="18">18</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="18">18</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="2" data-code-annotation="18">Assign a label to the figure.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="2" data-code-annotation="18">Assign a label to the figure.</span>
 </dd>
-<dt data-target-cell="annotated-cell-7" data-target-annotation="19">19</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="19">19</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="4" data-code-annotation="19">Set the width of the figure to 8 inches by using the <code>fig-width</code> option. This option can also be specified globally in the YAML header of the Quarto notebook.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="4" data-code-annotation="19">Set the width of the figure to 8 inches by using the <code>fig-width</code> option. This option can also be specified globally in the YAML header of the Quarto notebook.</span>
 </dd>
-<dt data-target-cell="annotated-cell-7" data-target-annotation="20">20</dt>
+<dt data-target-cell="annotated-cell-6" data-target-annotation="20">20</dt>
 <dd>
-<span data-code-cell="annotated-cell-7" data-code-lines="5" data-code-annotation="20">Set the height of the figure to 4 inches by using the <code>fig-height</code> option. This option can also be specified globally in the YAML header of the Quarto notebook.</span>
+<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="20">Set the height of the figure to 4 inches by using the <code>fig-height</code> option. This option can also be specified globally in the YAML header of the Quarto notebook.</span>
 </dd>
 </dl>
 </div>
@@ -6133,15 +6148,10 @@ Figure 1: Weekly count of all cases, confirmed cases and deaths
 <li>Beautify the plot using ggplot options</li>
 </ol>
 </section>
-<section id="code" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="code"><span class="header-section-number">5</span> Code</h2>
-<ul class="task-list">
-<li><label><input type="checkbox">Display the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;</label></li>
-<li><label><input type="checkbox">Add a caption to the code chunk ;</label></li>
-<li><label><input type="checkbox">Assign a label to the code chunk ;</label></li>
-<li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the code chunk.</label></li>
-</ul>
-<p>The logistic regression model uses <code>death</code> as the reponse variable, and <code>bmi</code> and <code>age</code> as predictor variables. It is implemented in R as shown in the code chunk referenced by <a href="#lst-test" class="quarto-xref">Listing 1</a></p>
+</section>
+<section id="reference-code-chunks" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="reference-code-chunks"><span class="header-section-number">5</span> Reference code chunks</h2>
+<p>The logistic regression model uses <code>death</code> as the response variable, and <code>bmi</code> and <code>age</code> as predictor variables. It is implemented in R as shown in the code chunk referenced by <a href="#lst-test" class="quarto-xref">Listing 1</a></p>
 <div class="cell">
 <div id="lst-test" class="cell-code listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
@@ -6166,25 +6176,25 @@ Listing 1: R code
 </ol>
 <p>The results of the logistic regression model are summarized in the formatted regression table, which is presented in <a href="#tbl-3" class="quarto-xref">Table 3</a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode markdown code-annotation-code code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="25" onclick="event.preventDefault();">25</a><span id="annotated-cell-8-2" class="code-annotation-target"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-3</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="24" onclick="event.preventDefault();">24</a><span id="annotated-cell-8-3" class="code-annotation-target"><a href="#annotated-cell-8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Formatted regression table</span></span>
-<span id="annotated-cell-8-4"><a href="#annotated-cell-8-4" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="23" onclick="event.preventDefault();">23</a><span id="annotated-cell-8-5" class="code-annotation-target"><a href="#annotated-cell-8-5" aria-hidden="true" tabindex="-1"></a>gtsummary<span class="sc">::</span><span class="fu">tbl_regression</span>(coeffs, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>)</span>
-<span id="annotated-cell-8-6"><a href="#annotated-cell-8-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-7"><pre class="sourceCode markdown code-annotation-code code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-7-1"><a href="#annotated-cell-7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="25" onclick="event.preventDefault();">25</a><span id="annotated-cell-7-2" class="code-annotation-target"><a href="#annotated-cell-7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-3</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="24" onclick="event.preventDefault();">24</a><span id="annotated-cell-7-3" class="code-annotation-target"><a href="#annotated-cell-7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Formatted regression table</span></span>
+<span id="annotated-cell-7-4"><a href="#annotated-cell-7-4" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-7" data-target-annotation="23" onclick="event.preventDefault();">23</a><span id="annotated-cell-7-5" class="code-annotation-target"><a href="#annotated-cell-7-5" aria-hidden="true" tabindex="-1"></a>gtsummary<span class="sc">::</span><span class="fu">tbl_regression</span>(coeffs, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>)</span>
+<span id="annotated-cell-7-6"><a href="#annotated-cell-7-6" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-8" data-target-annotation="23">23</dt>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="23">23</dt>
 <dd>
-<span data-code-cell="annotated-cell-8" data-code-lines="5" data-code-annotation="23">Create a table summarizing the odds ratios from the logistic regression model.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="5" data-code-annotation="23">Create a table summarizing the odds ratios from the logistic regression model.</span>
 </dd>
-<dt data-target-cell="annotated-cell-8" data-target-annotation="24">24</dt>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="24">24</dt>
 <dd>
-<span data-code-cell="annotated-cell-8" data-code-lines="3" data-code-annotation="24">Add a caption to the table.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="3" data-code-annotation="24">Add a caption to the table.</span>
 </dd>
-<dt data-target-cell="annotated-cell-8" data-target-annotation="25">25</dt>
+<dt data-target-cell="annotated-cell-7" data-target-annotation="25">25</dt>
 <dd>
-<span data-code-cell="annotated-cell-8" data-code-lines="2" data-code-annotation="25">Assign a label to the table.</span>
+<span data-code-cell="annotated-cell-7" data-code-lines="2" data-code-annotation="25">Assign a label to the table.</span>
 </dd>
 </dl>
 </div>
@@ -6195,20 +6205,20 @@ Table 3: Formatted regression table
 </figcaption>
 <div aria-describedby="tbl-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="tfxvhpyzdf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tfxvhpyzdf table {
+<div id="abdzqcczjc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#abdzqcczjc table {
 font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 }
-#tfxvhpyzdf thead, #tfxvhpyzdf tbody, #tfxvhpyzdf tfoot, #tfxvhpyzdf tr, #tfxvhpyzdf td, #tfxvhpyzdf th {
+#abdzqcczjc thead, #abdzqcczjc tbody, #abdzqcczjc tfoot, #abdzqcczjc tr, #abdzqcczjc td, #abdzqcczjc th {
 border-style: none;
 }
-#tfxvhpyzdf p {
+#abdzqcczjc p {
 margin: 0;
 padding: 0;
 }
-#tfxvhpyzdf .gt_table {
+#abdzqcczjc .gt_table {
 display: table;
 border-collapse: collapse;
 line-height: normal;
@@ -6233,11 +6243,11 @@ border-left-style: none;
 border-left-width: 2px;
 border-left-color: #D3D3D3;
 }
-#tfxvhpyzdf .gt_caption {
+#abdzqcczjc .gt_caption {
 padding-top: 4px;
 padding-bottom: 4px;
 }
-#tfxvhpyzdf .gt_title {
+#abdzqcczjc .gt_title {
 color: #333333;
 font-size: 125%;
 font-weight: initial;
@@ -6248,7 +6258,7 @@ padding-right: 5px;
 border-bottom-color: #FFFFFF;
 border-bottom-width: 0;
 }
-#tfxvhpyzdf .gt_subtitle {
+#abdzqcczjc .gt_subtitle {
 color: #333333;
 font-size: 85%;
 font-weight: initial;
@@ -6259,7 +6269,7 @@ padding-right: 5px;
 border-top-color: #FFFFFF;
 border-top-width: 0;
 }
-#tfxvhpyzdf .gt_heading {
+#abdzqcczjc .gt_heading {
 background-color: #FFFFFF;
 text-align: center;
 border-bottom-color: #FFFFFF;
@@ -6270,12 +6280,12 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#tfxvhpyzdf .gt_bottom_border {
+#abdzqcczjc .gt_bottom_border {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#tfxvhpyzdf .gt_col_headings {
+#abdzqcczjc .gt_col_headings {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -6289,7 +6299,7 @@ border-right-style: none;
 border-right-width: 1px;
 border-right-color: #D3D3D3;
 }
-#tfxvhpyzdf .gt_col_heading {
+#abdzqcczjc .gt_col_heading {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -6308,7 +6318,7 @@ padding-left: 5px;
 padding-right: 5px;
 overflow-x: hidden;
 }
-#tfxvhpyzdf .gt_column_spanner_outer {
+#abdzqcczjc .gt_column_spanner_outer {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -6319,13 +6329,13 @@ padding-bottom: 0;
 padding-left: 4px;
 padding-right: 4px;
 }
-#tfxvhpyzdf .gt_column_spanner_outer:first-child {
+#abdzqcczjc .gt_column_spanner_outer:first-child {
 padding-left: 0;
 }
-#tfxvhpyzdf .gt_column_spanner_outer:last-child {
+#abdzqcczjc .gt_column_spanner_outer:last-child {
 padding-right: 0;
 }
-#tfxvhpyzdf .gt_column_spanner {
+#abdzqcczjc .gt_column_spanner {
 border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
@@ -6336,10 +6346,10 @@ overflow-x: hidden;
 display: inline-block;
 width: 100%;
 }
-#tfxvhpyzdf .gt_spanner_row {
+#abdzqcczjc .gt_spanner_row {
 border-bottom-style: hidden;
 }
-#tfxvhpyzdf .gt_group_heading {
+#abdzqcczjc .gt_group_heading {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -6364,7 +6374,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 text-align: left;
 }
-#tfxvhpyzdf .gt_empty_group_heading {
+#abdzqcczjc .gt_empty_group_heading {
 padding: 0.5px;
 color: #333333;
 background-color: #FFFFFF;
@@ -6378,13 +6388,13 @@ border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 vertical-align: middle;
 }
-#tfxvhpyzdf .gt_from_md > :first-child {
+#abdzqcczjc .gt_from_md > :first-child {
 margin-top: 0;
 }
-#tfxvhpyzdf .gt_from_md > :last-child {
+#abdzqcczjc .gt_from_md > :last-child {
 margin-bottom: 0;
 }
-#tfxvhpyzdf .gt_row {
+#abdzqcczjc .gt_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -6402,7 +6412,7 @@ border-right-color: #D3D3D3;
 vertical-align: middle;
 overflow-x: hidden;
 }
-#tfxvhpyzdf .gt_stub {
+#abdzqcczjc .gt_stub {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -6414,7 +6424,7 @@ border-right-color: #D3D3D3;
 padding-left: 5px;
 padding-right: 5px;
 }
-#tfxvhpyzdf .gt_stub_row_group {
+#abdzqcczjc .gt_stub_row_group {
 color: #333333;
 background-color: #FFFFFF;
 font-size: 100%;
@@ -6427,13 +6437,13 @@ padding-left: 5px;
 padding-right: 5px;
 vertical-align: top;
 }
-#tfxvhpyzdf .gt_row_group_first td {
+#abdzqcczjc .gt_row_group_first td {
 border-top-width: 2px;
 }
-#tfxvhpyzdf .gt_row_group_first th {
+#abdzqcczjc .gt_row_group_first th {
 border-top-width: 2px;
 }
-#tfxvhpyzdf .gt_summary_row {
+#abdzqcczjc .gt_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -6442,14 +6452,14 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#tfxvhpyzdf .gt_first_summary_row {
+#abdzqcczjc .gt_first_summary_row {
 border-top-style: solid;
 border-top-color: #D3D3D3;
 }
-#tfxvhpyzdf .gt_first_summary_row.thick {
+#abdzqcczjc .gt_first_summary_row.thick {
 border-top-width: 2px;
 }
-#tfxvhpyzdf .gt_last_summary_row {
+#abdzqcczjc .gt_last_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -6458,7 +6468,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#tfxvhpyzdf .gt_grand_summary_row {
+#abdzqcczjc .gt_grand_summary_row {
 color: #333333;
 background-color: #FFFFFF;
 text-transform: inherit;
@@ -6467,7 +6477,7 @@ padding-bottom: 8px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#tfxvhpyzdf .gt_first_grand_summary_row {
+#abdzqcczjc .gt_first_grand_summary_row {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -6476,7 +6486,7 @@ border-top-style: double;
 border-top-width: 6px;
 border-top-color: #D3D3D3;
 }
-#tfxvhpyzdf .gt_last_grand_summary_row_top {
+#abdzqcczjc .gt_last_grand_summary_row_top {
 padding-top: 8px;
 padding-bottom: 8px;
 padding-left: 5px;
@@ -6485,10 +6495,10 @@ border-bottom-style: double;
 border-bottom-width: 6px;
 border-bottom-color: #D3D3D3;
 }
-#tfxvhpyzdf .gt_striped {
+#abdzqcczjc .gt_striped {
 background-color: rgba(128, 128, 128, 0.05);
 }
-#tfxvhpyzdf .gt_table_body {
+#abdzqcczjc .gt_table_body {
 border-top-style: solid;
 border-top-width: 2px;
 border-top-color: #D3D3D3;
@@ -6496,7 +6506,7 @@ border-bottom-style: solid;
 border-bottom-width: 2px;
 border-bottom-color: #D3D3D3;
 }
-#tfxvhpyzdf .gt_footnotes {
+#abdzqcczjc .gt_footnotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -6509,7 +6519,7 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#tfxvhpyzdf .gt_footnote {
+#abdzqcczjc .gt_footnote {
 margin: 0px;
 font-size: 90%;
 padding-top: 4px;
@@ -6517,7 +6527,7 @@ padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#tfxvhpyzdf .gt_sourcenotes {
+#abdzqcczjc .gt_sourcenotes {
 color: #333333;
 background-color: #FFFFFF;
 border-bottom-style: none;
@@ -6530,57 +6540,57 @@ border-right-style: none;
 border-right-width: 2px;
 border-right-color: #D3D3D3;
 }
-#tfxvhpyzdf .gt_sourcenote {
+#abdzqcczjc .gt_sourcenote {
 font-size: 90%;
 padding-top: 4px;
 padding-bottom: 4px;
 padding-left: 5px;
 padding-right: 5px;
 }
-#tfxvhpyzdf .gt_left {
+#abdzqcczjc .gt_left {
 text-align: left;
 }
-#tfxvhpyzdf .gt_center {
+#abdzqcczjc .gt_center {
 text-align: center;
 }
-#tfxvhpyzdf .gt_right {
+#abdzqcczjc .gt_right {
 text-align: right;
 font-variant-numeric: tabular-nums;
 }
-#tfxvhpyzdf .gt_font_normal {
+#abdzqcczjc .gt_font_normal {
 font-weight: normal;
 }
-#tfxvhpyzdf .gt_font_bold {
+#abdzqcczjc .gt_font_bold {
 font-weight: bold;
 }
-#tfxvhpyzdf .gt_font_italic {
+#abdzqcczjc .gt_font_italic {
 font-style: italic;
 }
-#tfxvhpyzdf .gt_super {
+#abdzqcczjc .gt_super {
 font-size: 65%;
 }
-#tfxvhpyzdf .gt_footnote_marks {
+#abdzqcczjc .gt_footnote_marks {
 font-size: 75%;
 vertical-align: 0.4em;
 position: initial;
 }
-#tfxvhpyzdf .gt_asterisk {
+#abdzqcczjc .gt_asterisk {
 font-size: 100%;
 vertical-align: 0;
 }
-#tfxvhpyzdf .gt_indent_1 {
+#abdzqcczjc .gt_indent_1 {
 text-indent: 5px;
 }
-#tfxvhpyzdf .gt_indent_2 {
+#abdzqcczjc .gt_indent_2 {
 text-indent: 10px;
 }
-#tfxvhpyzdf .gt_indent_3 {
+#abdzqcczjc .gt_indent_3 {
 text-indent: 15px;
 }
-#tfxvhpyzdf .gt_indent_4 {
+#abdzqcczjc .gt_indent_4 {
 text-indent: 20px;
 }
-#tfxvhpyzdf .gt_indent_5 {
+#abdzqcczjc .gt_indent_5 {
 text-indent: 25px;
 }
 </style>
@@ -6633,28 +6643,31 @@ text-indent: 25px;
 <p><img role="img" src="data:image/png;base64,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" class="img-fluid"></p>
 <p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA50AAAJ+CAYAAAAwi2TSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAGmbSURBVHhe7d0LYBTlvf//bzZAwh0Ew00BURTxgii2CiIeECvQapUKFWt7esRqq/SitlbU9vRo8Wix/RWlYkX794Kn8VrbAl4ClSqCiiJeQTQSCLdwJwESkk3++3kys26W3dzYCSF5v9pxd56Znd2dZMN85vvMs2kVlQwAAABA9Xbv3u3dq793333XzjvvPG8uifwn7Vu9n7NL1z5jk47y2pxN9uTEnvbFz8rtVvuthYaaLS6/1c6ObT9Kj/3CblS72853bPAb3vp/OMY2ZI+0hd66I18J2cLRkWVnRTa91F9+jD0cGmbL52ywZy7vbpv+71vW82+XRtonWffKF+GJPOcd19tzvx5c+VyRliV3hGyYLbby2yNz2l709aXeJ6s/t75HH+3NHWjNunV2Yv9jvTkcSmnl5eVVEmdubq6t+vRT27Vzp+3bt89rBQAAAAAgudatW1vHjh3thBNOsH79+nmtcaFz/vz51qJFy8gKx1pGZmujAgoAAAAAqI20tDQrKd5nn3/+mYXDZTZmzBjXHnL/jVCFMz29hQ048SRrlZFJ4AQAAAAA1JoypLLkiQNPdtlSGVNCWqDp008/tWOPPc41AgAAAABQX8qWypjKmtFK586dO12XWgAAAAAADoaypTKmuNCp9KlBg3QLAAAAAMDBiM2YrnstAAAAAABBiF7TCQAAAABAKkUrnYROAAAAAECqudDp3wEAAAAAIJWilc7y8nKvqTbesft++Lxt8eZS7t0Zds0LBd5MAhuft2t697I+/vTHd7y2Gfaultf0eKfAXviht75EHtMnyPcEAAAAAM2QsmZI/zlsKp0Kh19dZ9esXW95/vSTM8x6XGIPrv2xne6tVmen/9jyHrjEjvRmAQAAAAAHL1rprHfoVIXxj8/bCz/0qo4x1cItL1wdrUbe55UUE7W9+8er7YUXImFSbf8Xuf3m3fbilMEJKo8F9sJDH9iMNxOFy3fsPlU8FUrjHv/uH73XFpkqK6Cqcg62H8+92y7xX0fkfdwXrY5GtuWtH/s6KyuokfX8ZXo+AAAAAEBS0dBZt+61ce6dZ/aryqrj8wOut796Ie62F8faMq8aOUUpMRLabrPfehXK5db7Ib976zz78Zphletd/mPL+9vNduF9yw+sPG5cHFlzrA3t4c0noopl3ONP/4lXEY0859gX/xp5ziy7+IHlNmPczfa8/9qiFEgvMvub95g377cPv/llN9wXp6yzYd62ZqycZS9s9BYAAAAAAA6Qmu61N15rF3tB8PThN1fe6TEsEg+vtyEx1cB3X/MqkK5SqErjB7bOhbaxNmPCGW6dQESvAY19ziRcsL3fvu0H0R6X2DU3fvmYC+/7tldlzbKhF57i7gEAAAAAEnOh86ArnQmpmrje8oYvrtJF9Sa/guimh6JhtVZ69LaT566zdd5s7bxj98VcA/r8jV4zAAAAACBwrntth+8+ZZsPptJZHa+764frCuzovmNt+kMHM0LsGfbt+z6wS6pc6+ldy5nMxrX24bij7Wg3844tvtfdSc6r0LouwrLxeXvw3lPs6LqEYwAAAACA4yqdLw+cbCfc86bXlCLRLq2R6Ztm11ycZUde/JC75nOI357sK0pOH2YnJxxIyNw2ll0478tt9F5swzR6bazYx6t7bPQ5F5tFK53qHhsJsJH26EBBTpZd/Ctdx+lt/6vzbGzCgYsAAAAAADVRpTNt+4d/rvjuyWvskoePtfNHX+gtAgAAAACg/nJeedEuuugiCx1x8g/sn7bCawYAAAAAIDXcNZ1btmyxzZsf8ZoAAAAAAEiN6Oi1mgAAAAAASCVX6ayoeNv+cO/bXhMAAAAAAKnhQme3bn+yoycyPisAAAAAILVc6Ny06WG7hO+hBAAAAACkmEJn2saNGyvC4bC99NJLdvbwEd4iAAAAAADqb8lri+yCCy6wtA0bNrjQ+fLLL9uEiRO9xQAAAAAA1N9T2dk2evRoC3nzAAAAAACknAudfGUKAAAAACDVvK9MIXACAAAAAIJB91oAAAAAQGDoXgsAAAAACITrXuvdBwAAAAAg5QidAAAAAIDAEDoBAAAAAIFh9FoAAAAAQGCodAIAAAAAAkPoBAAAAAAEJi0/P78iHA5bTk6OTZg40WuuXmFhoZUUF1t5ebnXAiAooVDIMjIzrX379l5L7fA5BQAAzQ3HTcGo7359KjvbRo0aVffQqR9IeuRJu3TpYunp6V4rgKDo87lt2zYLR/4I1vaDzucUAAA0Rxw3BaM++1X80Fnn7rU6A8APBGg4+qzpM6fPXm3xOQUAAM0Rx03BqM9+jVXn0KmSMz8QoGHpM1eX7h58TgEAQHPFcVMw6rpfYzGQEAAAAAAgMKEt3h0AAAAAAFIttHijdw8AAAAAgBQLrSV0AgAAAAACEvrx6d69FHli+Vqb9H9v2mVPLIlOE+cstTsWfGy7S8q8tQAcCkVFRbZq1Sp7++233aT7agMAAACCkvKBhOat3Gil4aqjGpVXVNgHm3Zb7jYOboFDZfv27fbpp5+64a5PP/10N+m+2rQMAAAA9bdv3z679tprLS0tLTotXrzYW9pw9JwXXnih+17NxiLlAwnFB05fRSR4Zr+/zu5+dWXS6cn31lo4sh6A1CorK7M1a9bYgAEDrGvXrm7Ia026r7YvvvjCrdOYrV271n7/+9/brl27vJZgNNTzJFJcXGyPPPKIew2J6DVNmzbNfvGLX9gHH3zgtQZHr0PPl+z11EUqtwUAQGOjwPmzn/3MevXq5XKPpq1bt9odd9xxSIJnYxM60ruTCpuLSmxAj8426OgjE05tW7e20rQWCacdJeX294832CNvfeFtDUCq7Ny509q3b29t2rTxWr6ktg4dOrh1aqLA8Ktf/cqFHk1z5szxljQuseHMn3JycrylB8ffdrL37u+jIEKhukT36dPH7rnnHjvllFO81oOnfZNoX/Xu3dumTp3qbhWI//SnP9X6fWk9ra/HSey2AABoavbu3etO8I8cOdJrMdej7Morr7SFCxd6Lc1XSrvXPvbeeivaX+7CZ12n0oo0y2zV0pbl76j3l44CSGz//v2WmZnpzR1Iy0pKSry5xBSmnnjiCZs8ebILPZoUgPxQ0dh06tTJbr31Vvc6dfvWW2+lLAhqf23atClh1e61114LdJ9069bNu3fw/CCpLtb/8z//E/256nfhUFR6AQA4XOkkft++fQ8ImFdccYXdfvvt3py58TROO+001/VWt5r3xXfPje0iq4qpTgzrMVpH62qZ1knWlfexxx6LLjvUhYKUhs5dJaVWVv5l99gWoTQ7Oau9nda9g2W2+PKp2rRIt9N7dLATj2zn1pH94XKL7BKr0P8SdLHVQZCqC5oSHRzrAGnKlCk2f/58r6X2VqxYYUOGDIlO9dkG0Ji1atWq2iCkZRkZGd5cct27d7esrCxvzuycc86JhtnY6qIqfbGBLLaSpnX8QKN11JX12Wefdcv8UKjbROtL7LLa/gHt2LGjfeUrX7HNmze7eT0uNoDqfvy2qnsevWf9w6KwFkvvR3+f1GU5ltr9CnH8+4ndN9VVY/UaXn75ZTfFbkPt/uNj23WrffvPf/4z6bZff/11t29+9KMfVTkpMW7cONfu/3zy8/Pdrc7gPv7449EKpp5Dzxn/+nWr9bS+X/X1txX7+mIfG7uP/XX1+uK3LdXtTwAADoXWrVu77rU6pkkW9BQSf/KTn9jMmTNd3tGt5v1g+dxzz0W756pyqmONF1980S2T999/3xYsWGCzZs1y8zqprkqq1l+5cqU7geyH2Jdeeskds2mZ/j393e9+VyXgNrSUDyQUa8QxXeyaM3vbVWccbTcOO8ZapYcsIzL9fHg/+/7pR9sPv9LHhvXu7K39pUShU9q1a2cbNmxwOzXeG2+8YUuWLPHmak+Bc/bs2e4HuGzZMneGIFEXROBwpqrf7t273R+weDt27HBdazt3PvCzGEt/uBQ09Mc0ntr1h/Ub3/iGq5SpGvrMM8+4MKBlmvxKmqqjCkI+PbcCjpapy6gCyj/+8Y9olfKCCy7w1qxcNy8vz7Vff/317r4CSKrFPo9et95HfGhTiFXojA08qnKq+2hsgNdy7Qu/Qqx9pH2lfaL3GltlVPBTUEtEZ0q1LzSpm6r2mV6Ttu8/Pnbbolst17Lzzz/ftfm0TM996qmnei3JqWv2DTfc4P7x0z9ufkjVvvd/5vp5qJqsNj2X1tP6em3xXYH13Hqd2od6rCaJ3cfxP2t/2/H7098XAAAcaieccIK99957Lsuod9h3vvOdKhVIZRj926jBHEW3mvezTWxV1O+uG2vYsGGuy67o30SNyaGCmei5FTR1K1/72tdcFVQ0hkcqe0rVR6Ch88Subb17Zke0bmVd27SyjpktrX2rFq5NNc6v9Ork7teW+knruqZYOghZvny5OygSvyqqQOnTwYsOTrRuvEGDBkUPWnSwOGLECHdf9LhJkyYlrILqfuy81p0xY0a0a5qeT2csYh+ndlVk/e35rzH2ebQ89nUqFPvrU4VFfbRo0cKOOeYYd4ZLF7WHw2E3cFBBQYELHurSrvbqKGQobEh8ZWr16tXutn///u5WAVVBV7/HetzXv/71aCUtPuRovTPPPNObqzyLpyDjfyb1e+/f17ralsQ+R030h1mh5fjjj/daqhf7PHrdw4cPd/vJD3Oi62D1uvy/R3odmmLfi2i5/tD71zL6tzoJoJCqbfv7RpVj/eNTG3ou7avYfav9r/v6uYr/2pPR8oMJbAqTfqDUz0OV8Nrwf1/0fn16nfo5+fs42c9af6P1umvzcwcA4FBRgPTDp7rGqpqpEPnggw+6ApfCqG4174dLhVO/Sjpq1KikhTjRcZvWU6A8HAQaOj8qKIqORqv/quvs7pJS21BY7OalrJqdmcjJJ5/skr9Cmk9VTh2U+JUaHZQMHjy4Sjj9+OOP3UFN/AGWDvAU/BKFOR3UTJ8+3W6++eZoFVThNjbMVqewsNB9FYUeO2bMGLe92267zZ2hV5sqRirFq12/cHfddZdr13KV2xVe/deldn87QH0cccQRdtxxx7k/eu+++647E6cqZ48ePdxy/cHzu59WR39E/cpU7EAxerzf5VG3OmvnB4PYrqrqdpmMtqXf+9oEoZoCkyplv/3tb91z6sSNzjbWdxAbPY+eL15sUNLfG4XaRK9JfzP896/XpOtBFToPNvTFP17z+vtX20Cm113bdRPR4/U7oPeln3n8GdnqxO9Tzfs//3ix71P39TuoarieV79bAAAcasoJ/rWWsWJPJuv+Nddc47KMAqU/6d81PU7HSAqpalMPThUMklHY1Ho1FQ0ai0BD57/XbLc7X/3MtuzZb3tKwrZ1b6kVl5Xb/W/m2ZwV6906723c7W5rSwdUOpv/yiuvuHkdoOis+ejRo928b+DAge4HquX+OmqLpwMZBUuFyfhKosKsqqCaRM+ta53iK63JqEta7OvSAVns9tTNUAepep5+/fq5efF/OXUA1rNnT1e1SHQgBtSVfifV7ULVOP2+676CmP87p99Rv0pWk/Hjx7sA4K+v32u/q6Q/+d1lVdHzu4Cq22V1DjYI+VQZ87vo6rnrGzhFr8evsMXSNtWuE0KqhMZXOX3qEhu7X/R6jjrqqAPeqz7nCsu1Ff94P7TFBtFk9F7090fV0vrQc+nrXRS8/fcU+w9rTfS6tQ2f5vWatD9rovenniT6+erfAgV/AAAOJY3noOMo5QqfHyT9brH+Ojr5L/6gQn73W8nNzXW3WkdFqWR0DKJQqmMQ8QcVit1WYxJo6Gyf0cIuPO5I14129jtr3Xd46n7vjpk2vM8RtmrbHnt7fd0PLocOHeoOdHWQomqKStN+YPP53bxUUdAkybp+6SBHBzB+JVNVEZ8u5o2lA1k/zNaVrkeN355PFwT7XWhVTv/www/dwacO5FW11S+rugwTPhEEdf/0A4N+TxNReIytKukz6H+29IdPvQ8SVZ1UPVVI8ANbdSHHD0KqYvlhSn9MY4NVKuj9+q9D29bzxdJnL7bbrJYnu/ZR7X//+9/de0wU9vR+/OsRY/nvNXa0Wz1nbUOnnkvvQ9fH+o/XyTXdV8+P2lBI1s8ttqu0zJ07t8Z9rr9Fei7/Pcf+PtREvy96nxrYwOdfD+v/ntSGfyIg1b8fAADUlULl888/b+vXr492kVVG0clZ/zpNrfPHP/7RrrvuOrdcIfTnP/+5O85X70edmFfPIS3TKLg6oeuH0HhaX72nFGr9brZ6vLbVGAUaOr99Sg/r2SHT7ntzja3bXXlQlNU2w743+CjL3bHX7l+6xor21/0L6XWQoyCmwX8WLVp0QJVTdDCiazPVrVaTqqM1nUHXcv0S+IFW9IsTSwdK+gWqaVvJxG/Pp77efhdaTU8++WQ0SKtLrdr0nqvrmggcDAWYE0880QWhRPQZUjDwu4nGdlnVZ1L3n3766ehyv+utrtvT58lvr4kGodEAM37XWAW2+n7ekvHDlravruznnnuut6SSf/2glut16PXED4bj037RPxr6RyUR7R9do3r//fdH94Ef8vRete/8bsnaX3WpFqo7Tuzj9fP5r//6r1oHNz1W18LH/nw0+T/TWNqm3qP+Bulnq5+J/vb670uD+2i/+bRfRK8t/mSEtq2/tfrZ+s+p3z/tj5rotfqj3mrb+n1N9rMBAKAhKQiqkBTfdTZW7GBD8csVGP12BVV/ktj7PoVYjW4bvy1tR+3+oEPxgwwdCmn5+fkVGlREowZOmDjRa06uYPNm1xU0kdsWrLJdxV+GyDYt060kXG7hmK9RCUWSeLtW6VYYCZuRfVNF0b4Sa5Nebn/8xmlu4JNYOquuEvPFF1/swpgOGG+55RZ3jeeNN97oDoD8rrH+dY86OHn00Ufd/e9973sHHESJQqsO8vyAp2uvdDB95513uoCp59A1nao46jXce++9rout5rWuKgJ6ftEy0bwOHu+++27Xb9vftv+a/e1pXtvUa9cwxjrTEV+xjeU/n6qyaH50pisrcmBeG9V9TgEAAJo6jpuCUZf9Kk9lZ7tenCmtdHZrW7Uasbc0XCVwSnkkae4uOTBwSqtQhV3Yp4MrEddE4Uwj2SoAJquCKGSqKqkpUeAU9aNW32u/a6sfOLW+nkOD+yg8apnOGviBU1TdELV///vfd7f6Wpdk4renAKrXrvarr77aXSMX+zpEQTq2TdUBAAAAADhcpLTSqZD5pzfXWN6uLweHqI1QJGP2a2M2PKuFHX1kF+vS5QgLhVKThxXU1JXOD4rA4YozdgAAALXDcVMw6lvpTGnoFG1LA+2oe6n6FtdFq1atrG3bttayZUuv5eCo++oLL7zgurgmq4YChwv+eAIAANQOx03BqG/oTPlAQunp6e5rGY488kg3gmJdJg1CkYrAqeskNdCEuq/qGlACJwAAAAAcGoGOXnuoKGRqsJ3YEWCB5kTd09XrAAAAoLnRMVBdLtXjuKl26rpfYzXJ0Ak0dxmZme5LgvkDCgAAmhMd++gYSMdCtcVxU83qs19jpfyaTgDBqGsf+sLCQispLrby8nKvBQAAoGlTJU7BSJf71QXHTdWr7379ciChv/+i4qiLyu3hh08kdAKNWF1DJwAAAHAoBTaQEAAAAAAAPkInAAAAACAwhE4AAAAAQGAInQAAAACAwBA6AQAAAACBIXQCAAAAAALToF+ZUlFRYU888YS99tprbr5Vz37Wafgl7n5tdMxoYTcN62dpaWleC9B88JUpAAAAOJwckq9M0Zetzp0717Zv3+6mnbsKbVdxWa2ntbuKLRwOe1sDAAAAADR2DRo6VeksKyvz5upH2wAAAAAAHB4atHttaWmpXX755d6cWebRJ1jn8yd5c7Xz+wuOt5YtW3pzQPNR1+61hYWFVlJc7HoYAAAAAPUVCoUsIzPT2rdv77XUjt+9Ni0/P79CXVZzcnIInUAjVpfQqcCZHvnj0KVLF0tPT/daAQAAgLpTXty2bZuFy8vrFDwPyTWdh9L8+fNt2rRpVlJSYnl5eTZ16lTbtWuXt7QqrTt79mx3X+tef/317rYxiX2NQDxVOAmcAAAASAUdU+rYUseY9dFkQqfCpELlkCFDopOCmW/MmDEuaGZkZHgttdOnTx+7//773S1wuFCXWgInAAAAUkXHlvW9bKtJVTrbtWtnzz77rC1btswWLFjgvpqlsVUoAQAAAKA5abLdazMzM10I3blzp5tP1B31vffei1ZFk3VVje+Kq9spU6YkfZzWnzRpklumyutzzz0XrbjqdsaMGa5d29C21OZvy28T/3kXLVqU9LlEbf7yFStWRNtiq7zaprYFAAAAAA2tyYbOTZs2udA5YMAAr6WqNWvW2OrVq11VdPHixVZQUFAlqCWiLrwzZ860sWPHusdpEv9xCncPPvig3XXXXW7ZFVdcYc8884xb5lu6dKlrv++++1ww3rdvn3t+rT9o0CB7+umnvTVrfo2zZs2yM8880y2/44473Heg6jWqbfny5e6+aDv1HfwJAAAAAA5GkwqdRUVFNn78eFf10+2IESOSXsPZt29fu+yyy9x9rTNu3LgqQS2RlStXutuRI0e6Wxk9erQLhnrcG2+84cKdf/2nbq+88kp336fH+sv1vJdeemn0NSosxqrpNV577bUuqMrAgQPd+y8uLnaPE92Xt99++4BtAwAAAEBDaLLXdGpS2Kqpeunr1KmTe3xNsrKyqgRZPc4Pe9KrVy93W1vqEut3j73qqqu81sSqe42xyzp27Ohepyqcqr6qQuoHUQAAAABoSE22e62ourd+/Xpvrnq69rNNmzZVAmUiCnCx1VA9TmFPXWUl/vmqe34FTnWJ9bvXPvzww96SxGr7GkUV2I8++sgFTwVQBVEAAAAAaGhNOnSq0pms8qgwpu6womqgBt+pqQuqqoUbN260hQsXei1mr7zyivXv398FQXVx1eBE/oi5uo1dN96GDRuqVE71emPV5zX6unfvbnv37nUDESmAAgAAAMCh0GSv6dQk+n7ORBQgd+zY4dYbNWqUGxzIvz4yGVUL77zzTps3b170ORRq/efQtZpXX3119DXMmTPHvvWtb7lliej6TlVO/W3Fq89r9CnI6rVpnyiAAgAAAMChkJafn18RDoctJyfHJkyc6DUnV7B5c71HQi0tLbXLL7/cmzPLPPoE63z+JG+udn5/wfHWsmVLb67x86uTtQ2LPlVJNRLuzTffXO+usf71rMmCNw4vubm5ltWtmzdXvYP5nAIAAACJ1OV4VJ7KznbFswavdLZo0cK71/Tpmk1Nh2IQH3XH1Ui3Q4cO9VoAAAAAoOE1aOhMSwvZ6AsucCOtaurYvp21b5Ve66lXu1aRbaR5W2t8VJ2cNGlStLvs3XffbTfddFODD+Kj6qrOKOgrVhhACAAAAMCh1KDdaysqKqy0tMzC4TJ3v67S09Nd19pQqEmPfwQkRPdaAAAAHEqHRfdaVSlbtWpprVu3dl/9UddJg+MQOAEAAADg8EGCAwAAAAAEhtAJAAAAAAgMoRMAAAAAEBhCJwAAAAAgMIROAAAAAEBgCJ0AAAAAgMAQOgEAAAAAgSF0AgAAAAACQ+gEAAAAAASmwUPnqvVb7OXln9qL76yKTi9FprdXr7P9ZWFvLQAAAABAU9DgoTOvYIeVl1d4c5U0t71wn+3eW1zZAAAAAABoEho8dMYHTl9FRYV9tmGbvfv5+qTTp+u3uvUAAAAAAIeHBg2d+/aX2bE9utrpx/ZIOPXr3smO6tK+6nREe+vasa21atXSVUk/WVfgbQ0AAAAA0Ng1aOgsLim2knKzzYX7az8V7bdd+8osLS3dWmdm2OadRVZeHtkIAAAAAKDRa9DQ2So9VO/useWRx6WlRe5EbhNtY8WKFTZkyJADpilTptiuXbu8tZLT46dNm2YlJSVeCwAAAADgYDX4NZ0J7dtntmNH1akaiULnoEGDbNmyZdFp8eLFdumll9rkyZOtY8eO3loAAAAAgIbUKEJn+T/mWtkPflhlOlgLFy60rKwsF0Z98+fPj1ZAJ02aZHl5edH2q666yp577jkbNmyYq3qKlmu9+Iqp2qdOnWpPPvmkW+avP3v27Oj2a1thBQAAAICmrFGEztCEb1mLp/9q6Xf91s2nnXqKu60vhcLXXnvNLrvsMq+lsvvsvHnzbMGCBa4Setddd9mDDz7oguGYMWPs4YcfdpVRVUgVVNWu5VpP66tiOnPmzGj32zVr1ljnzp3dMq2v4FpQUOAen2h9AAAAAGiOGkf3Wtm5y8K/+m8XONNvvcVrrDuFvBdeeMGuueaaaLdatc2dO7dKV9s+ffpYv379XHhM5I033nDLtZ707dvX3RYXV36XqOaHDh3q7iugKuReccUVlpGR4doGDBhg7dq1s02bNrl5AAAAAGiOGkXorPjoYyu7+hqz0lJLO+EEK3/mOW9J3T3++OPWv3//aFj0KQB26tTJm6vUq1cv27Bhgzd3oFmzZkW7y44aNco+/PBD27lzp7e0qvjtK3y2adMm6foAAAAA0Bw0jtCZ+4VZ585uKs9Z4Kb6UBdadXEdOXKk1/KloqKiAwLg+vXrrWfPnt7cge644w7XVdafdA1nfJj1xW9f1dW9e/ceEHQBAAAAoDlpHNd0fmOctfjzA1WmpPS1KQmoi2t2dnaVLq4+zQ8ePNgN9OMP7qPrPnNzc6PdZuMNHDjQdcn1BxuqjrrsqivunDlzotdwrly50gXR7t27u3kAAAAAaI4aNHTW7xs6v1RRXm5ZbVpamvvCzqqefvppe/nll238+PHRLrGxo8hqsKCxY8e6brJqnz59ut18883Razx1Dab4o9eqonn11VdX2Z5CazK6XlSj5erxWleB9cYbbzwgAAMAAABAc5KWn59fEQ6HLScnxyZMnOg1J1ewebOr6tXH/tIyW7ttt+0rLfda6qC02FqU7bOunTtbly5HWCjUeMZAAhqCKvNZ3bp5c9U7mM8pAAAAkEhdjkflqexsV/Rr0OTWqmULO+bIjta3U4Z1z6ywbhnltZ/atbIeWUdap04dCZwAAAAAcJgI/d/7u727DSM9Pd3at29vRx55pOuOWpdJg/K0bNnS2xIAAAAAoLEL/XzslfbQx94cAAAAAAApFDJ7xx7MedebBQAAAAAgddzFkVtWrnMzAAAAAACkEiPyAAAAAAACQ+gEAAAAAASG0AkAAAAACAyhEwAAAAAQGEInAAAAACAwhE4AAAAAQGAInQAAAACAwITy8/Mt708Xe7MAAAAAAKQOlU4AAAAAQGAaZ+isqLB9u7dY0fYNtZq0rh4DAAAAAGhc0vLz8yvC4bDl5OTYhIkTvebkCjZvtn79+nlzwVi1ONtyHvyBFe7aXass2bZ9ext97QN24vArvBag6cnNzbWsbt28ueo1xOcUAAAAzUtdjkflqexsGzVqVOOqdFZEEuYn/55jc/9wuX2Wv9uW5Jot/aLmadlnhfaPP1xpHy963G0DAAAAANA4NJrQ6QLn69k2977JlrulwlZvNisL127aVhgJnl9U2N/v+4F9tOjJRhE8d+3aZVOmTLEVK1a4+dmzZ9v8+fPdfQAAAABoLhpN99rS0lJbPOPbdlRWD1NkLA+XRQJl2Moj7eHI/XBZmZVGJt2WR9pdW3nYKsrL3fqV0mxXcZFdfOe/rWXLll5bpZKSErv33nvd/RtvvNEyMjLcfZ9C4m233WZjx461MWPGeK010+Nmzpxp1113nXXs2NFrPZBCZ69eveq0bSAW3WsBAABwKB323WsVfLO69LRwyR4r3bvLSvbssv1FO23/np1WHLndV7QjcrvDStztdiveE7kfWbZ/324rjU67rE1Ge7etRNq1a2cbNmywlStXei1feuONN2zJkiXeHAAAAAAgFRrVNZ2qXKqCWeZVNMNlpa662brbsdb99Ius15nftF5fvdSOOutbVl5e7j2qqpp61o4cOdLefvttb66SqpXLly+3G264wc2rKjpt2rRo11jJy8uzqVOnunVrQ+tpfT3Ot2/fPrfdIUOG2KRJk6LL/HWfe+45t0zdcNWm7rma99t8qpo++eSTbrm2N2vWrCrL/e0BAAAAwKHWuEJnuLxK4NT9sshteVk4EjIVSMPWNhJA23c/zntE3Z188sm2d+/eKmFQVc6srCzr3Lmzm1fX28GDB1cJpx9//LENHz682i60NXnmmWfsiiuusGXLltnNN99s06dPj4bYwsJC2759u1umLrhr1qyxyZMnu/lnn33W5s6dW+U1qyp75513unB59tlnu9CssCx6LF0rAQAAADQGjSp0lodLK6/ZjAmcut2R94HlLc62sv17XSlzdc5D3iPqToGyf//+9sorr7h5BbXVq1fb6NGj3bxv4MCBLpxqub+O2g7GlVdeaX369HH3BwwYYD169HABUdrra19iXsOgQYPcJN27d7fjjz/e3ffp2lM/APft29fdFhcXu1uF5TPPPNPdBwAAAIBDqXFVOsvC0S61CpyVAbTMdbnNOnmkdTr6FFv75vO2b+cm7xH1M3ToUCsoKHBVRl3f2aZNm2gY9CnoyaZNm9wkflsqKPyqupqM38VXXWuHDRtmS5cu9ZYcSOFT21KA1XvSe/ODKAAAAAAcSo0sdFZez+lXOF0320jg7DJgmHU57itund5fvcRO/dbt7n59KaSp++yCBQts0aJFB1Q5RaFwxIgRrlutJlVH40e8PRgKlaqkdurUyWv5kpZppN1x48a57rWLFy+2s846y1uamN7DRx995IKnAujBdAMGAAAAgFRpVKFTX5HiB06/wqnBhdS9ds3i7CrTwVJXWV1jWVRUlLSCqWqhutVqUnX0YM2bNy96DefChQuTPre6yWqZH0hVaf3000/d/WS0HYXYZCEaAAAAAA6FRhM609LSbH+43EpK9lcJnBqltqRwm+3e+GmVKZGycIWFLd1tqybqTquRbFVNTFbBVLVQXW81VVc53Lhxo/v+GX+kWXWLVbUyngb80XeBah0FUH23Z6Ln1nNNnDjRxo8f79Z98MEHrWfPnt7SxLQdfQ9odSEaAAAAABpaWn5+foVGhc3JybEJkaBTk6C+dF7V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zz//nIGQAAAAAKCWAg2dxxxzjLvdsGGDu42ljrTJOtMu3FTs3atex44d7c4777Tc3FxXbRTdTpo0qUpl0q+Szpo1y26//XYXJhUq/WDprxtbBX366adt7Nix0WqmaACkSy+91N36VVNtf/z48fbyyy/bqFGjotuI3bZej//6AAAAAKA5CTR09u3b13Wt1YBC+vqUWHNyi1zX2nhpkelbfSorpLWh4KkRcT/++GM3v2bNGrvrrrtcZfLhhx924bC4uNh1f7322mvtjjvusPvuu889TusqVGpdVVDnzp3rwqECo4LswIED3TarM2jQIPfYCy64wFVex4wZ40LuzJkzo9vW63nwwQfddgEAAACguRh82qBgQ+fRRx/tutgq3H366aeuTYPV3vPRLvvhm9vdfLxj27ewmwZ28OZqR1/J4hsxYoT16dPH3Vfo7dGjh7ufiAKjJunevbsdf/zx7r6oK2+nTp28ubpZuXKlux0wYIC71bY17dyZuNswAAAAADRN1wcbOrt27eq6l6rK+b/3/sHu/WC7DZu/yX75zk7bW1a18tm+Zch+Fgmby8b1sK6ZdXtZ69evt549e7r7sd1a1d1148aNrj2R2MGJhg0bZkuXLvWWmPuql4MJic8995zbpr/txx57jNAJAAAAoNlJWejUt53sj/xHYVKj0hYUl9viLfuteNR/WkUo3Va8/779et4ye3NribuWs0WagmaaHdWmhf3ylI62/lu97PdDOrsRbutC3WHVFVZVTQXOu+++22666SbXrVXdXZNVOhU47733Xhs3blx0kKCzzjrLLYvvslsf6sqr7cZOflUVAAAAAJqLlIXOrSXl9q9Nxfbn1YV2y7s77D8Xb7Wblm23t8uPsIxTh1uobL8d+/oj9ovjW9mc4V0t54Lu9s64HvbpJT3tt4M6WDul0DpS4Lzlllts4sSJLij6lUS/W6y69SardOo6T1Uz/XU3bdoU7QIso0ePtscff7zK4EIKqqpg6rY6CsAaYKguX+cCAAAAAE3P/akLnVmZIftaz9b20xM72ANndbF5o7Js6dgetmRMd/v/fvEDd41ky42fWclf77avdSi2Ed0yrH+Hlla2t8ieeeYZC4cPHFQonkKiRopVl1VN06dPtwceeCBaQdS1nMOHD3fdarVcAwPFVjr9IOl/FYrCqr89DfTjd9EVbUvbnjdvXvT5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kyZZXl6etxQAAAAA0BBS2L02EiDrPXlh05uSadeunT377LO2bNkyN2VlZdnChQu9pQe69tpro+vefPPNNn36dNu1a5e3FAAAAAAQtEbRvVZT5P81hs54Z555pq1fv96bq96AAQOsf//+tnPnThc8p0yZEq2Cxneb1by/LFE11a+i6lbU9TbZ+rHbeu6552zGjBlVKq6xj6X7LgAAAICmppEMJBSZtA1/0n9qoGA3d+5cFzzras2aNTZ58mRXAVXlVNvxg6CC3/Lly23x4sVu+bBhw1y7T+s99NBD7nGDBg1yAbZLly5uXT1G/OqrQmnstlq3bm1Lly51y8QPmf5jta4fZAEAAACgKUhdpbO8vN5TfBfbZIqKimz8+PGuKvj973/frrjiChf8akNBUI/v3r27e4z/OM0ff/zx7r6C7OrVq912MzIyXNuIESOi93fs2OG66F599dXWp08f19axY0e75JJL3H2tN3jwYHffD8Xjxo2LPn7kyJF21llnufsKq6+99pqNHj3azfuP3bBhg5sHAAAAgKagUQwk5KZahM7YazoV4F555RVvSWKzZs2Kdl1VFfHGG2904U6B0B+USJVMv/pYXFzsgmmnTp3cfLzf//73VQKrL7YL7e233+61Vr7eZNuSwsLCaIj2H1vb7sIAAAAAcDhIXeg8iCmSOSNhU8HTmyJtNbnsssssNze32hFpYwcSmjp1ajRw3nvvva4C6Xdr9auPotCp6z4T0TYKCgqqXHup+wqK/vPccccd3pIDt6VQu2nTJm/OrEePHrZgwYLoYzWp2y8AAAAANBUp7F5bUe/pgO61tUid6tY6ceJEmzNnjguStRVfzVQI/PTTT919bbNfv35Vtrlo0aLofV2Ted1119m8efOiwVOBs1evXu6+1lNFVfzusupi6z/+jTfecNeTip5Lo+8+/fTTbh4AAAAAmqKUhc6DUpvSZgIakVYef/xxd1sbflj1u7U++OCD1rNnT2+puUqjwqC63Wq5rvH0r8kUPf6mm25yz6mRZ1VxVQjVurrOVF1qfWPGjKmyrX379lWpql555ZWucqplmvguUQAAAABNTVp+fn5FOBy2nJwcmxAJYzUp2LzZVQPj/WNJvnev7or2lNhnX2xzFc+0NLNJYwbYsUd19JY2HRo8aObMma5aqvAK1IW6k2d16+bNVS/Z5xQAAACor7ocj8pT2dk2atSoFF7T6brI1m8KRZLmMb062AVn97HrJgyyfr2aZiBTV1pVPgmcAAAAAJqLlFU6cSBd9xk7mu2ll14aHUEXqCsqnQAAADiUDnmlEwfSNZ2xI9P6I+gCAAAAQHNB6AQAAAAABIbQCQAAAAAIDKETAAAAABAYQicAAAAAIDCETgAAAABAYAidAAAAAIDAEDoBAAAAAIEhdAIAAAAAAkPoBAAAAAAEJmRv3WN9+vTxZgEAAAAASJ2QDRhi3/VmAAAAAABIpZB1OMWGjPPmAAAAAABIoZDZkXbc6Sd5swAAAAAApI4bSOikM8a4GQAAAAAAUqly9NqBZ7gbAAAAAABSqTJ0ZvR3NwAAAAAApJL3PZ1HVt4AAAAAAJBCXugEAAAAACD1CJ0AAAAAgMAQOgEAAAAAgSF0AgAAAAACQ+gEAAAAAASG0AkAAAAACAyhEwAAAAAQGEInAAAAACAwhE4AAAAAQGAInQAAAACAwBA6AQAAAACBIXQCAAAAAAJD6AQAAAAABIbQCQAAAAAIDKETAAAAABAYQicAAAAAIDCETgAAAABAYAidAAAAAIDAEDoBAAAAAIEhdAIAAAAAAkPoBAAAAAAEhtAJAAAAAAgMoRMAAAAAEBhCJwAAAAAgMIROAAAAAEBgCJ0AAAAAgMAQOgEAAAAAgSF0AgAAAAACQ+gEAAAAAASG0AkAAAAACExoz549pgkAAAAAgFSj0gkAAAAACAyhEwAAAAAQGEInAAAAACAwhE4AAAAAQGAInQAAAACAwBA6AQAAAACBIXQCAAAAAAJD6AQAAAAABIbQCQAAAAAIDKETAAAAABAYQicAAAAAIDCETgAAAABAYAidAAAAAIDAEDoBAAAAAIEhdAIAAAAAAkPoBAAAAAAEhtAJAAAAAAgMoRMAAAAAEBhCJwAAAAAgMIROAAAAAEBgCJ0AAAAAgMAQOgEAAAAAgSF0AgAAAAACE5p1QlsbOLCtNwsAAAAAQOqE7Kk99vHHe7xZAAAAAABSJ3TtIO8eAAAAAAApxjWdAAAAAIDAEDoBAAAAAIEhdAIAAAAAAhOatcK7BwAAAABAioU+msBXpgAAAAAAghG6bxVfmQIAAAAACEbohBOodAIAAAAAghFaRaUTAAAAABAQRq8FAAAAAASG0AkAAAAACAyhEwAAAAAQGEInAAAAACAwhE4AAAAAQGAInQAAAACAwBA6AQAAAACBIXQCAAAAAAJD6AQAAAAABIbQCQAAAAAIDKETAAAAABAYQicAAAAAIDCETgAAAABAYAidAAAAAIDAEDoBAAAAAIEhdAIAAAAAAkPoBAAAAAAEhtAJAAAAAAgMoRMAAAAAEBhCJwAAAAAgMKG2bduaJgAAAAAAUo1KJwAAAAAgMIROAAAAAEBgCJ0AAAAAgMAQOgEAAAAAgSF0AgAAAAACQ+gEAAAAAASG0AkAAAAACAyhEwAAAAAQGEInAAAAACAwhE4AAAAAQGAInQAAAACAwBA6AQAAAACBIXQCAAAAAAJD6AQAAAAABIbQCQAAAAAIDKETAAAAABAYQicAAAAAIDCETgAAAABAYAidAAAAAIDAEDoBAAAAAIEhdAIAAAAAAkPoBAAAAAAEhtAJAAAAAAgMoRMAAAAAEBhCJwAAAAAgMIROAAAAAEBgCJ0AAAAAgMAQOgEAAAAAgSF0AgAAAAACQ+gEAAAAAASG0AkAAAAACAyhEwAAAAAQGEInAAAAACAwhE4AAAAAQGAInQAAAACAwBA6AQAAAACBIXQCAAAAAAJD6AQAAAAABIbQCQAAAAAIDKETAAAAABAYQicAAAAAIDCETgAAAABAYAidAAAAAIDAEDoBAAAAAIEhdAIAAAAAAkPoBAAAAAAEhtAJAAAAAAgMoRMAAAAAEBhCJwAAAAAgMIROAAAAAEBgCJ0AAAAAgMCEtvztauvTp483CwAAAABA6oQGr7nW8vLyvFkAAAAAAFIn9MJPz/DuAgAAAACQWqHe3h0AAAAAAFKNgYQAAAAAAIEhdAIAAAAAAkPoBAAAAAAEhtAJAAAAAAhM6EjvDgAAAAAAqUalEwAAAAAQGEInAAAAACAwhE4AAAAAQGAInQAAAACAwBA6AQAAAACBIXQCAAAAAAJD6AQAAAAABIbQCQAAAAAIDKETAAAAABAYQicAAAAAIDCETgAAAABAYAidAAAAAIDAEDoBAAAAAIEhdAIAAAAAAkPoBAAAAAAEhtAJAAAAAAgMoRMAAAAAEBhCJwAAAAAgMIROAAAAAEBgCJ0AAAAAgMAQOgEAAAAAgSF0AgAAAAACQ+gEAAAAAASG0AkAAAAACAyhEwAAAAAQGEInAAAAACAwhE4AAAAAQGAInQAAAACAwBA6AQAAAACBIXQCAAAAAAJD6AQAAAAABIbQCQAAAAAIDKETAAAAABAYQicAAAAAIDCETgAAAABAYAidAAAAAIDAEDoBAAAAAIEhdAIAAAAAAkPoBAAAAAAEhtAJAAAAAAgMoRMAAAAAEBhCJwAAAAAgMIROAAAAAEBgCJ0AAAAAgMAQOgEAAAAAgSF0AgAAAAACQ+gEAAAAAASG0AkAAAAACAyhEwAAAAAQGEInAAAAACAwhE4AAAAAQGAInQAAAACAwBA6AQAAAACBIXQCAAAAAAJD6AQAAAAABIbQCQAAAAAIDKETAAAAABAYQicAAAAAIDCETgAAAABAYAidAAAAAIDAEDoBAAAAAIEhdAIAAAAAAkPoBAAAAAAEhtAJAAAAAAgMoRMAAAAAEBhCJwAAAAAgMIROAAAAAEBgCJ0AAAAAgMAQOgEAAAAAgSF0AgAAAAACQ+gEAAAAAASG0AkAAAAACAyhEwAAAAAQGEInAAAAACAwhE4AAAAAQGAInQAAAACAwBA6AQAAAACBIXQCAAAAAAJD6AQAAAAABIbQCQAAAAAIDKETAAAAABCYOofOUChk4XDYmwPQEPSZ02evtvicAgAAIJXqejwaq86PysjMtG3btnFACzQQfdb0mdNnr7b4nAIAACBV6nM8GistPz+/QhvJycmxCRMnes3VKywstJLiYisvL/daAARFZ5T0AW/fvr3XUjt8TgEAAJAK9T0efSo720aNGlW/0AkAAAAAQHX80MlAQgAAAACAwBA6AQAAAACBIXQCAAAAAAJD6AQAAAAABIbQCQAAAAAIDKETAAAAABAYQicAAAAAIDCETgAAAABAYAidAAAAAIDApOXn51eEw2HLycmxCRMnes3VKywstJLiYisvL/daAAAAAABNUSgUsozMTGvfvr3XUjtPZWfbqFGj6h46FTjTI0/apUsXS09P91oBAAAAAE2R8uK2bdssXF5ep+Dph846d69VhZPACQAAAADNg7KfMqCyYH3UOXSqSy2BEwAAAACaD2XA+l5eyUBCAAAAAIDAEDoBAAAAAIEhdAIAAAAAAkPoBAAAAAAEhtAJAAAAAAgMoRMAAAAAEBhCJwAAAAAgMIROAAAAAEBgCJ0AAAAAgMAQOgEAAAAAgSF0AgAAAAACQ+gEAAAAAAQm5aHz3Xfftd/85jdumj59uu3YscNbktjnn39ujzzyiO3bt89rCZ5e06xZs5K+Nr2madOmRd+H3pO8+OKL9sQTT7j79aVtz5gxo8b9Ulvx70W32u96rQAAAABwqKU0dCpQvf766/bjH//Yfv3rX9sll1xiGzdu9JamXhCBVWHt+eeftx/+8IfuPWjavXu3e44LL7zQvvOd77j1avvc8esde+yxbv907tzZzaeSniM7O9tGjhzpXisAAAAAHGopDZ27du2yI444IhqoFLAGDhzo7h8OVCVcs2aNXXXVVVVC4XnnnWetW7f25hqvZ5991vr27Wunn3661wIAAAAAh1b6DTfc8N8VFRWWm5trJ518stec3J49e5JW6TIzM+21115zlcHjjjvOa/2Suqaqirho0SIrLi526yjo5eXl2SmnnGItW7ZMuI6oi+uf//xn175y5Upr06aNC1l6/OLFi61Dhw7Wo0ePpI9XBXPOnDmuvbCw0FUFT46839gw+cknn7jg/NWvftVrqUrb+OyzzywtLc1VFGOfWxVd//W98cYb1rNnT7c8fr29e/fa3/72NxswYMAB71fv66STTnLteq6PPvrIXn31VZs7d26VZbH0HrXepk2bLBwO26WXXuotqRS/P7p06WIPPfSQde3a1Z0g8NfZsGGD+7nF7uNEzwcAAACgeVKuaduunTdXM+WUfv36pTZ0KsANHjzYhRYFJT8IioKNqp6XX365C3VLlixxy8UPnQpoidbRm1uwYIH94Ac/cN1GhwwZYkceeWQ02F177bXWu3fvpM+h6uWbb77puszq8evWrbP8/HxXEYwNnStWrHBhNlFgFgVO+cpXvnLAc+t9qiKqqW3btrZ8+XJ3P3493Y99v6Lutlp369at9s4779ipp57qnuv999+3iy66yL1mvbaMjIzo/vQpSOq9bdmyxa3nB0lJtD+6devmQvP27dujoV+vdcSIEa5rtJ5P3aK1jwmcAAAAAHzKDvUJnSkfSEghTgFLQWrhwoWuQqmqYlFRkf3jH/9wA/Pcc889LvipquhTeEq2zurVq+3444+v9jrI6p6joKDAXefoP14BrF2CnZWVleWCX33o+TWgj55br0GvRW3J6P3KuHHj3K3odelx+mGKQrG6KGufqtus3kciei9Dhw51FU3/sdXtj/79+7vKptb54osv3OMVZlu1alVlGwAAAABwsAL7yhQFPAW9jz/+2M0r0GgQHn9wHk3x1x4mW0dBUIGwJtU9vjY6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" class="img-fluid"></p>
 </section>
-<section id="finalise-your-ms-word-report" class="level2" data-number="7">
-<h2 data-number="7" class="anchored" data-anchor-id="finalise-your-ms-word-report"><span class="header-section-number">7</span> Finalise your MS Word report</h2>
-<div class="sourceCode" id="annotated-cell-9"><pre class="sourceCode yaml code-annotation-code code-with-copy"><code class="sourceCode yaml"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="annotated-cell-9-2"><a href="#annotated-cell-9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My outbreak report</span></span>
-<span id="annotated-cell-9-3"><a href="#annotated-cell-9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
-<span id="annotated-cell-9-4"><a href="#annotated-cell-9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> last-modified</span></span>
-<span id="annotated-cell-9-5"><a href="#annotated-cell-9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">date-format</span><span class="kw">:</span><span class="at"> long</span></span>
-<span id="annotated-cell-9-6"><a href="#annotated-cell-9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-9-7"><a href="#annotated-cell-9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="annotated-cell-9-8"><a href="#annotated-cell-9-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
-<span id="annotated-cell-9-9"><a href="#annotated-cell-9-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">reference-doc</span><span class="kw">:</span><span class="at"> swisstph_template.docx</span></span>
-<span id="annotated-cell-9-10"><a href="#annotated-cell-9-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="annotated-cell-9-11"><a href="#annotated-cell-9-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
-<span id="annotated-cell-9-12"><a href="#annotated-cell-9-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
-<span id="annotated-cell-9-13"><a href="#annotated-cell-9-13" aria-hidden="true" tabindex="-1"></a><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="annotated-cell-9-14"><a href="#annotated-cell-9-14" aria-hidden="true" tabindex="-1"></a><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="annotated-cell-9-15"><a href="#annotated-cell-9-15" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl>
+<section id="format-ms-word-reports-with-styles" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="format-ms-word-reports-with-styles"><span class="header-section-number">7</span> Format MS Word reports with styles</h2>
+<div class="sourceCode" id="annotated-cell-8"><pre class="sourceCode yaml code-annotation-code code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="annotated-cell-8-2"><a href="#annotated-cell-8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My outbreak report</span></span>
+<span id="annotated-cell-8-3"><a href="#annotated-cell-8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
+<span id="annotated-cell-8-4"><a href="#annotated-cell-8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> last-modified</span></span>
+<span id="annotated-cell-8-5"><a href="#annotated-cell-8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">date-format</span><span class="kw">:</span><span class="at"> long</span></span>
+<span id="annotated-cell-8-6"><a href="#annotated-cell-8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-8-7"><a href="#annotated-cell-8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="annotated-cell-8-8"><a href="#annotated-cell-8-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">docx</span><span class="kw">:</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="23" onclick="event.preventDefault();">23</a><span id="annotated-cell-8-9" class="code-annotation-target"><a href="#annotated-cell-8-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">reference-doc</span><span class="kw">:</span><span class="at"> swisstph_template.docx</span></span>
+<span id="annotated-cell-8-10"><a href="#annotated-cell-8-10" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="annotated-cell-8-11"><a href="#annotated-cell-8-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="annotated-cell-8-12"><a href="#annotated-cell-8-12" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="annotated-cell-8-13"><a href="#annotated-cell-8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-8-14"><a href="#annotated-cell-8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span><span class="at">    </span></span>
+<span id="annotated-cell-8-15"><a href="#annotated-cell-8-15" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span><span class="at">               </span></span>
+<span id="annotated-cell-8-16"><a href="#annotated-cell-8-16" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="annotated-cell-8-17"><a href="#annotated-cell-8-17" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-8" data-target-annotation="23">23</dt>
+<dd>
+<span data-code-cell="annotated-cell-8" data-code-lines="9" data-code-annotation="23">Apply the Swiss TPH template <code>swisstph_template.docx</code> to your MS Word rendered report. Here this means the Word document and Quarto document are located in the same folder. Otherwise you need to indicate the path relative to the QUarto notebook</span>
+</dd>
 </dl>
-<ul class="task-list">
-<li><label><input type="checkbox">Create your own template and apply it to your MS Word rendered report.</label></li>
-</ul>
 
 
 </section>
