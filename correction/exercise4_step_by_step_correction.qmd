@@ -357,7 +357,7 @@ coeffs <- glm(death ~ bmi + age,
 
 The logistic regression model uses `death` as the response variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by @lst-1.
 
-## Add references
+## Add bibliographic references
 
 ### To do in the YAML header
 
