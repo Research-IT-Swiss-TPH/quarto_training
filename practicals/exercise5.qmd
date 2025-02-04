@@ -11,6 +11,8 @@ format:
     number-sections: true
     toc-depth: 2
 
+bibliography: my_biblio.bib
+
 execute:    
   echo: false               
   warning: false
