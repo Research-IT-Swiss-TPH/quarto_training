@@ -12,14 +12,12 @@ author:
 license: "CC-BY"
 date: last-modified
 editor: source
-lang: en-US
 
 format:
   html:
     default: true
     embed-resources: true
-    code-block-bg: true
-    code-block-border-left: "#c03427"
+    code-link: true
     theme: cosmo
     toc: true
     number-sections: true
@@ -29,32 +27,26 @@ format:
       hypothesis: 
         theme: classic
     other-links:
-      - text: 📋 Instructions
-        href: ../practicals/exercise4_instructions.html
-    code-links:
-      - text: exercise4.qmd
-        icon: file-code
-        href: https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise4.qmd
+    - text: 📋 Instructions
+      href: ../practicals/exercise4_instructions.html
     format-links: [pdf]
   pdf:
     default: true
     toc: true
     number-sections: true
-    
+  
 execute:
   echo: fenced
   warning: false
-    
+  
 resources:
   - exercise4_step_by_step_correction.pdf
 ---
 
-This page provides a step-by-step correction for adding dynamic elements to a simple MS Word report. 
+This page provides a step-by-step correction for adding dynamic elements to a simple MS Word report.
 
 ::: callout-important
-
 To get the most out of your learning experience, attempt to solve the exercise on your own before looking at this correction. Trial and error is an essential part of the learning process, helping to strengthen your understanding and build confidence. Remember, simply copying and pasting the solution without trying to solve the exercise by yourself first will limit your long-term growth. Take your time, experiment, and learn actively!
-
 :::
 
 ## Improve navigation and readability
@@ -66,31 +58,27 @@ author: Helene Langet
 date: "2023-12-31"
 
 format:
-  docx:
-    toc: true             # <7>
-    number-sections: true # <8>
-    toc-depth: 2          # <9>
+ docx:
+  toc: true       # <1>
+  number-sections: true # <2>
+  toc-depth: 2     # <3>
 
-execute:    
-  echo: false               
-  warning: false            
+execute:  
+ echo: false        
+ warning: false      
 ---
 ```
 
-7.  This enables a table of contents (`toc`) at the beginning of your rendered MS Word report, making it easier for readers to navigate through sections.
-8.  This option automatically numbers all section headings (e.g., 1, 1.1, 1.2), providing a clear, hierarchical structure.
-9.  This limits the table of contents to display only two levels of headings.
+1. Set the `toc` field to `true` to enable a table of contents (`toc`) at the beginning of your rendered MS Word report, making it easier for readers to navigate through sections.
+2. This option automatically numbers all section headings (e.g., 1, 1.1, 1.2), providing a clear, hierarchical structure.
+3. This limits the table of contents to display only two levels of headings.
 
 ::: callout-important
-
-- Remember that YAML is a *whitespace-sensitive* language where indentation determines the structure
-    - 🚫 Do NOT use tabs—they are not recognized.
-    - ✅ Use two spaces per indentation level to ensure consistency and avoid errors.
-- In this example, the TOC settings are applied specifically to the Word document output. If you want these settings to apply to all output formats (like HTML or PDF), move them to a higher level in the YAML header.
-- When you open the rendered MS Word document, you might see a warning message, as displayed below. Do not worry, this is completely normal and does not indicate an error. This message appears because the document contains dynamic fields, such as the table of contents, cross-references, or figure/table captions. Click "Yes" to ensure all references and the table of contents are properly updated. If you click "No," the document will still open, but some fields may not reflect the latest changes. This is a standard behavior in MS Word when working with dynamic content.
-
-> This document contains fields that may refer to other files. Do you want to update the fields in this document?
-
+-  Remember that YAML is a *whitespace-sensitive* language where indentation determines the structure
+  -  🚫 Do NOT use tabs—they are not recognized.
+  -  ✅ Use two spaces per indentation level to ensure consistency and avoid errors.
+-  In this example, the table of contents settings are applied specifically to the MS Word document output. If you want these settings to apply to all output formats (like HTML or PDF), move them to a higher level in the YAML header.
+-  When you open the rendered MS Word document, you might see the following warning message: *This document contains fields that may refer to other files. Do you want to update the fields in this document?*. Do not worry, this is completely normal and does not indicate an error. This message appears because the document contains dynamic fields, such as the table of contents, cross-references, or figure/table captions. Click "Yes" to ensure all references and the table of contents are properly updated. If you click "No," the document will still open, but some fields may not reflect the latest changes. This is a standard behavior in MS Word when working with dynamic content.
 :::
 
 ## Implement dynamic calculations
@@ -101,23 +89,23 @@ execute:
 ---
 title: My outbreak report
 author: Helene Langet
-date: last-modified       # <10>
-date-format: long         # <11>
+date: last-modified    # <4>
+date-format: long     # <5>
 
 format:
-  docx:
-    toc: true             
-    number-sections: true
-    toc-depth: 2
+ docx:
+  toc: true       
+  number-sections: true
+  toc-depth: 2
 
-execute:    
-  echo: false               
-  warning: false             
+execute:  
+ echo: false        
+ warning: false       
 ---
 ```
 
-10. Instead of manually entering a date (e.g., 2023-12-31), this setting automatically updates the date to the last time the MS Word document was generated (but this does not reflect when the source Quarto document was last edited).
-11. Formats the date to be displayed in a full, human-readable format `December 31, 2023`. This improves readability, making the report look more polished.
+4. Instead of manually entering a date (e.g., 2023-12-31), this setting automatically updates the date to the last time the MS Word document was generated (but this does not reflect when the source Quarto document was last edited).
+5. Formats the date to be displayed in a full, human-readable format `December 31, 2023`. This improves readability, making the report look more polished.
 
 ### In the Quarto notebook
 
@@ -131,8 +119,8 @@ load(file = "df1.RData")
 #| echo: false
 # Convert the 'sex', 'confirmed', and 'death' columns from their current data type to factors
 df <- df |>
-  dplyr::mutate(dplyr::across(c(sex, confirmed, death),
-                              as.factor))
+ dplyr::mutate(dplyr::across(c(sex, confirmed, death),
+               as.factor))
 ```
 
 ```{r}
@@ -150,168 +138,278 @@ period_end <- end_date
 ```
 
 ```{r}
-#| echo: false
 # Filter the data frame to include only the cases that occurred within the defined period
 subdf <- df |>
-  dplyr::filter(date >= period_start & date <= period_end)
+ dplyr::filter(date >= period_start & date <= period_end)
 ```
 
--   [ ] Replace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;
+```{r}
+n_all <- nrow(subdf)                     # <6>
+n_confirmed <- nrow(subdf |> dplyr::filter(confirmed == 1)) # <7>
+n_death <- nrow(subdf |> dplyr::filter(death == 1))     # <8>
+```
 
-> "*The outbreak ran from **date** to **date***"
+6. Compute the total number of cases.
+7. Compute the total number of confirmed cases.
+8. Compute the total number of death cases.
 
--   [ ] Replace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.
+To insert dynamic values directly into the text, use backticks with {r} within curly brackets. This allows you to run inline R commands within a Quarto document. For example:
 
-> "*Over the studied period, there were **N** cases, including **N** confirmed cases and **N** confirmed deaths.*"
+-  "*The outbreak ran from \`​{r} start_date\` to \`​{r} end_date\`.*"
+-  "*This report covers the period \`​{r} period_start\` to \`​{r} period_end\`.*"
+-  "*Over the studied period, there were \`​{r} n_all\` cases, including \`​{r} n_confirmed\` confirmed cases and \`​{r} n_deaths\` confirmed deaths.*"
+
+The outbreak ran from **`{r} start_date`** to **`{r} end_date`**. This report covers the period **`{r} period_start`** to **`{r} period_end`**. Over the studied period, there were **`{r} n_all`** cases, including **`{r} n_confirmed`** confirmed cases and **`{r} n_death`** confirmed deaths.
 
 ## Reference tables
 
 #### Table 1 {.unnumbered}
 
 ```{r}
+#| echo: false
 library(gtsummary)
 ```
 
 ```{r}
-#| label: tbl-1                        #<14>
+#| label: tbl-1            # <9>
 #| tbl-cap: Population characteristics
 
 #Table 1
 #Generate a summary table displaying population characteristics
-subdf |>                               
-  dplyr::select(age,
-                sex,
-                bmi,
-                confirmed,
-                death) |>
-  gtsummary::tbl_summary()           
+subdf |>                
+ dplyr::select(age,
+        sex,
+        bmi,
+        confirmed,
+        death) |>
+ gtsummary::tbl_summary()      
 ```
 
-14. Assign a label to the table.
+9. Assign a label to the table using the prefix `tbl-`. This label allows you to refer to the table later in the document, making it easier to create cross-references. After the label is defined, you can refer to this table in your text using the syntax `@tbl-1`, e.g., "*`@tbl-1` provides a summary of the demographic characteristics and the outcome proportion for the overall population*".
 
--   [x] Replace the placeholder text in bold with a cross-reference to the table ;
-
-`@tbl-1` provides a summary of the demographic characteristics and the outcome proportion for the overall population.
-
-> "@tbl-1 *provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
+@tbl-1 provides a summary of the demographic characteristics and the outcome proportion for the overall population.
 
 #### Table 2 {.unnumbered}
 
 ```{r}
-#| label: tbl-2                                               #<17>
-#| tbl-cap: Demographic characteristics of deceased vs. alive #<16>
+#| label: tbl-2                        # <10>
+#| tbl-cap: Demographic characteristics of deceased vs. alive
 
-subdf |>                                                      #<15>
-  dplyr::select(sex,
-                age,
-                bmi,
-                death) |>
-  gtsummary::tbl_summary(by = death) |>
-  gtsummary::add_overall()
+subdf |>                           
+ dplyr::select(sex,
+        age,
+        bmi,
+        death) |>
+ gtsummary::tbl_summary(by = death) |>
+ gtsummary::add_overall()
 ```
 
-15. Create a table summarising the demographic characteristics of individuals who died versus those who are still alive.
-16. Add a caption to the table.
-17. Assign a label to the table.
+10. Assign a label to the table using the prefix `tbl-`. This label allows you to refer to the table later in the document, making it easier to create cross-references. After the label is defined, you can refer to this table in your text using the syntax `@tbl-2`, e.g., "*`@tbl-2` compares the demographic characteristics of individuals who died versus those who are still alive.*".
 
--   [ ] Replace the placeholder text in bold with a cross-reference to the table.
-
-`@tbl-2` compares the demographic characteristics of individuals who died versus those who are still alive.
-
-> "*..., while @tbl-2 compares the demographic characteristics of individuals who died versus those who are still alive.*"
-
-#### Table 3 {.unnumbered}
+..., while @tbl-2 compares the demographic characteristics of individuals who died versus those who are still alive.
 
 ## Reference figures
 
 #### Figure 1 {.unnumbered}
 
 ```{r}
-#| label: fig-1                                                                       #<18>
+#| label: fig-1                                    # <11>
 #| fig-cap: Weekly count of all cases, confirmed cases and deaths
-#| fig-width: 8                                                                       #<19>
-#| fig-height: 4                                                                      #<20>
-                
+#| fig-width: 8                                    # <12>
+#| fig-height: 4                                   # <13>
+        
 # Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
 weekly_data <- subdf |>
-  dplyr::group_by(week) |>
-  dplyr::summarise(count = dplyr::n(),
-                   confirmed_count = sum(confirmed == "1"),
-                   death_count = sum(death == "1"))
+ dplyr::group_by(week) |>
+ dplyr::summarise(count = dplyr::n(),
+          confirmed_count = sum(confirmed == "1"),
+          death_count = sum(death == "1"))
 
 # Plot the weekly cases, confirmed cases and deaths
 ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
-  ggplot2::geom_line(ggplot2::aes(y = count,
-                                  color = "All cases"),
-                     size = 1) +
-  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,
-                                  color = "Confirmed cases"),
-                     size = 1) +
-  ggplot2::geom_line(ggplot2::aes(y = death_count,
-                                  color = "Confirmed deaths"),
-                     size = 1) +
-  ggplot2::labs(x = "Week",
-                y = "Count",
-                color = "Legend") +
-  ggplot2::scale_color_manual(values = c("All cases" = "#440e54",
-                                         "Confirmed cases" = "#f8766d",
-                                         "Confirmed deaths" = "#128984")) +
-  ggplot2::theme_minimal() +
-  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
-                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
-                 panel.grid.major.x = ggplot2::element_blank(),
-                 panel.grid.minor.x = ggplot2::element_blank())
+ ggplot2::geom_line(ggplot2::aes(y = count,
+                 color = "All cases"),
+           size = 1) +
+ ggplot2::geom_line(ggplot2::aes(y = confirmed_count,
+                 color = "Confirmed cases"),
+           size = 1) +
+ ggplot2::geom_line(ggplot2::aes(y = death_count,
+                 color = "Confirmed deaths"),
+           size = 1) +
+ ggplot2::labs(x = "Week",
+        y = "Count",
+        color = "Legend") +
+ ggplot2::scale_color_manual(values = c("All cases" = "#440e54",
+                     "Confirmed cases" = "#f8766d",
+                     "Confirmed deaths" = "#128984")) +
+ ggplot2::theme_minimal() +
+ ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+         panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+         panel.grid.major.x = ggplot2::element_blank(),
+         panel.grid.minor.x = ggplot2::element_blank())
 ```
 
-18. Assign a label to the figure.
-19. Set the width of the figure to 8 inches by using the `fig-width` option. This option can also be specified globally in the YAML header of the Quarto notebook.
-20. Set the height of the figure to 4 inches by using the `fig-height` option. This option can also be specified globally in the YAML header of the Quarto notebook.
-
--   [ ] Replace the placeholder text in bold with a cross-reference to the figure.
+11. Assign a label to the figure using the prefix `fig-`. This label allows you to refer to the table later in the document, making it easier to create cross-references. After the label is defined, you can refer to this table in your text using the syntax `@fig-1`, e.g., "*`@fig-1` illustrates the outbreak's progression, which can be divided into distinct phases.*".
+12. Set the width of the figure to 8 inches by using the `fig-width` option. This option can also be specified globally in the YAML header of the Quarto notebook.
+13. Set the height of the figure to 4 inches by using the `fig-height` option. This option can also be specified globally in the YAML header of the Quarto notebook.
 
 @fig-1 illustrates the outbreak's progression, which can be divided into distinct phases.
 
-> "***cross-reference** illustrates the outbreak's progression, which can be divided into distinct phases.*"
+::::: columns
+::: {.column width="50%"}
 
-21. Beautify the plot using ggplot options
+Example of rendering with `fig-width` and `fig-height` both set to 4
+
+```{r}
+#| echo: false
+#| fig-cap: Weekly count of all cases, confirmed cases and deaths
+#| fig-width: 4
+#| fig-height: 4
+        
+# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
+weekly_data <- subdf |>
+ dplyr::group_by(week) |>
+ dplyr::summarise(count = dplyr::n(),
+          confirmed_count = sum(confirmed == "1"),
+          death_count = sum(death == "1"))
+
+# Plot the weekly cases, confirmed cases and deaths
+ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
+ ggplot2::geom_line(ggplot2::aes(y = count,
+                 color = "All cases"),
+           size = 1) +
+ ggplot2::geom_line(ggplot2::aes(y = confirmed_count,
+                 color = "Confirmed cases"),
+           size = 1) +
+ ggplot2::geom_line(ggplot2::aes(y = death_count,
+                 color = "Confirmed deaths"),
+           size = 1) +
+ ggplot2::labs(x = "Week",
+        y = "Count",
+        color = "Legend") +
+ ggplot2::scale_color_manual(values = c("All cases" = "#440e54",
+                     "Confirmed cases" = "#f8766d",
+                     "Confirmed deaths" = "#128984")) +
+ ggplot2::theme_minimal() +
+ ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+         panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+         panel.grid.major.x = ggplot2::element_blank(),
+         panel.grid.minor.x = ggplot2::element_blank())
+```
+:::
+
+::: {.column width="50%"}
+
+Example of rendering with `fig-width` set to 10 and `fig-height` set to 3
+
+```{r}
+#| echo: false
+#| fig-cap: Weekly count of all cases, confirmed cases and deaths
+#| fig-width: 10
+#| fig-height: 3
+        
+# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
+weekly_data <- subdf |>
+ dplyr::group_by(week) |>
+ dplyr::summarise(count = dplyr::n(),
+          confirmed_count = sum(confirmed == "1"),
+          death_count = sum(death == "1"))
+
+# Plot the weekly cases, confirmed cases and deaths
+ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
+ ggplot2::geom_line(ggplot2::aes(y = count,
+                 color = "All cases"),
+           size = 1) +
+ ggplot2::geom_line(ggplot2::aes(y = confirmed_count,
+                 color = "Confirmed cases"),
+           size = 1) +
+ ggplot2::geom_line(ggplot2::aes(y = death_count,
+                 color = "Confirmed deaths"),
+           size = 1) +
+ ggplot2::labs(x = "Week",
+        y = "Count",
+        color = "Legend") +
+ ggplot2::scale_color_manual(values = c("All cases" = "#440e54",
+                     "Confirmed cases" = "#f8766d",
+                     "Confirmed deaths" = "#128984")) +
+ ggplot2::theme_minimal() +
+ ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+         panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = "dashed", color = "grey"),
+         panel.grid.major.x = ggplot2::element_blank(),
+         panel.grid.minor.x = ggplot2::element_blank())
+```
+:::
+:::::
 
 ## Reference code chunks
 
-The logistic regression model uses `death` as the response variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by @lst-test
-
 ```{r}
-#| lst-label: lst-test
-#| lst-cap: R code
+#| lst-label: lst-1            
+#| lst-cap: "R code for modelling"
 
-coeffs <- glm(death ~ bmi + age,                        # <22>
-              subdf |> dplyr::filter(confirmed == "1"),
-              family = binomial)
+coeffs <- glm(death ~ bmi + age,       
+       subdf |> dplyr::filter(confirmed == "1"), 
+       family = binomial)
 ```
 
-22. Implement a logistic regression model based on description in the Quarto document.
+- Assign a label to the code chunk by using the `lst-label` chunk option. After the label is defined, you can refer to this code chunk in your text using the syntax `@lst-1`, e.g., "*It is implemented in R as shown in the code chunk referenced by `@lst-1`*".
+- Add a caption to the code-chunk by using the `lst-cap` chunk option.
 
-The results of the logistic regression model are summarized in the formatted regression table, which is presented in @tbl-3.
-
-```{r}
-#| label: tbl-3                                        # <25>
-#| tbl-cap: Formatted regression table                 # <24>
-
-gtsummary::tbl_regression(coeffs, exponentiate = TRUE) # <23>
-```
-
-23. Create a table summarizing the odds ratios from the logistic regression model.
-24. Add a caption to the table.
-25. Assign a label to the table.
-
--   [ ] Replace the placeholder text in bold with a cross-reference to the table ;
-
-> "The results of the logistic regression model are summarized in the formatted regression table, which is presented in **cross-reference**."
+The logistic regression model uses `death` as the response variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by @lst-1.
 
 ## Add references
 
-![](images/clipboard-3622190034.png)
+#### YAML header {.unnumbered}
 
-![](images/clipboard-1750453379.png)
+``` yaml
+---
+title: My outbreak report
+author: Helene Langet
+date: last-modified
+date-format: long
+
+format:
+ docx:
+  toc: true
+  number-sections: true
+  toc-depth: 2
+  
+bibliography: my_biblio.bib # <22>
+
+execute:  
+ echo: false        
+ warning: false
+---
+```
+
+22. Link the bibliography (BibTeX) file `my_biblio.bib` file by adding it to the YAML header of your Quarto notebook
+
+#### bibTeX file {.unnumbered}
+
+```
+@article{Bangwen2025,
+ title = {Suspected and confirmed mpox cases in DR Congo: a retrospective analysis of national epidemiological and laboratory surveillance data, 2010–23},
+ volume = {405},
+ ISSN = {0140-6736},
+ url = {http://dx.doi.org/10.1016/S0140-6736(24)02669-2},
+ DOI = {10.1016/s0140-6736(24)02669-2},
+ number = {10476},
+ journal = {The Lancet},
+ publisher = {Elsevier BV},
+ author = {Bangwen, Eugene and Diavita, Ruth and De Vos, Elise and Vakaniaki, Emmanuel Hasivirwe and Nundu, Sabin Sabiti and Mutombo, Annie and Mulangu, Felix and Abedi, Aaron Aruna and Malembi, Emile and Kalonji, Thierry and Kacita, Cris and Kinganda-Lusamaki, Eddy and Wawina-Bokalanga, Tony and Kremer, Cécile and Brosius, Isabel and Van Dijck, Christophe and Bottieau, Emmanuel and Vercauteren, Koen and Amuri-Aziza, Adrienne and Makangara-Cigolo, Jean-Claude and Muyamuna, Elisabeth and Pukuta, Elisabeth and Nguete, Beatrice and Kaba, Didine and Kabamba, Joelle and Hughes, Christine M and Tshiani-Mbaya, Olivier and Rimoin, Anne W and Hoff, Nicole A and Kindrachuk, Jason and Hens, Niel and Peeters, Martine and Low, Nicola and McCollum, Andrea M and Shongo, Robert and Mukadi-Bamuleka, Daniel and Muyembe-Tamfum, Jean-Jacques and Ahuka-Mundeke, Steve and Liesenborghs, Laurens and Mbala-Kingebeni, Placide},
+ year = {2025},
+ month = feb,
+ pages = {408–419}
+}
+```
+
+#### Markdown text {.unnumbered}
+
+Use \`​[@Bangwen2025]\`
+
+[@Bangwen2025] describes trends in suspected and confirmed monkeypox virus cases in the Democratic Republic of Congo using epidemiological and laboratory surveillance data collected from 2010 to 2023.
+
+![](images/clipboard-3336859586.png)
 
 ## Format MS Word reports with styles
 
@@ -323,16 +421,22 @@ date: last-modified
 date-format: long
 
 format:
-  docx:
-    reference-doc: swisstph_template.docx # <23>
-    toc: true
-    number-sections: true
-    toc-depth: 2
+ docx:
+  reference-doc: swisstph_template.docx # <23>
+  toc: true
+  number-sections: true
+  toc-depth: 2
+  
+bibliography: my_biblio.bib
 
-execute:    
-  echo: false               
-  warning: false
+execute:  
+ echo: false        
+ warning: false
 ---
 ```
 
-23. Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report. Here this means the Word document and Quarto document are located in the same folder. Otherwise you need to indicate the path relative to the QUarto notebook
+23. Apply the Swiss TPH template `swisstph_template.docx` to your rendered MS Word report using the `reference-doc` field (specific to MS Word outputs). This ensures that your report adheres to the Swiss TPH template, maintaining consistent styling across fonts, margins, headings, and other formatting elements.
+
+::: callout-important
+The MS Word template file must be in the same folder as your Quarto notebook. If the template is stored in a different folder, specify the path of the template file **relative** to the Quarto notebook in the `reference-doc` field.
+:::
