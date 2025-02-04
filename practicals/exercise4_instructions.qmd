@@ -60,9 +60,10 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 
 ## Objectives 🎯
 
--   Open the Quarto document `exercise4.qmd` in RStudio, or continue working on the Quarto notebook you used to generate a simple MS Word report in the previous [exercise](./exercise3_instructions.html);
--   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references.
--   Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
+-   You are tasked with generating a simple analytically reproducible report on a fictitious outbreak;
+-   If you have generated the simple MS Word report as in [Exercise 3](./exercise3_instructions.html), continue working on the same Quarto notebook you already modified. Otherwise, download the files `df1.RData` and `exercise4.qmd` using the links provided on the right-hand side of this page. For simplicity, please put these two files under the same folder. Open the Quarto notebook in RStudio. Complete each of the following tasks and render the document after each task or set of tasks to track your progress;
+-   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references;
+-   The final output should be a Microsoft (MS) Word report, containing all required tables, figures, corresponding captions and cross-references, and formatted with the Swiss TPH template.
 
 ## Improve navigation and readability
 
@@ -84,7 +85,7 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 -   See Quarto documentation about [dynamic dates](https://quarto.org/docs/reference/dates.html#date-parsing)
 :::
 
--   [ ] Replace the placeholder text in bold with the automated calculation of the outbreak start and end dates ;
+-   [ ] Replace the placeholder text in bold with the automated calculation of the outbreak start and end dates;
 
 > "*The outbreak ran from **date** to **date***"
 
@@ -96,7 +97,7 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 -   See Quarto documentation about [inline code](https://quarto.org/docs/computations/inline-code.html)
 :::
 
-## Reference publication-ready tables
+## Reference tables
 
 #### Table 1 {.unnumbered}
 
@@ -124,28 +125,26 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 -   See [Quarto documentation about table cross-references](https://quarto.org/docs/authoring/tables.html#cross-references)
 :::
 
-## Customise figures
+## Reference figures
 
 #### Figure 1 {.unnumbered}
 
--   [ ] Assign a label to the figure ;
--   [ ] Replace the placeholder text in bold with a cross-reference to the figure ;
+-   [ ] Assign a label to the figure;
+-   [ ] Replace the placeholder text in bold with a cross-reference to the figure;
 
 > "***cross-reference** illustrates the outbreak's progression, which can be divided into distinct phases.*"
 
--   [ ] Adjust the dimensions of the figure until you are happy with them
+-   [ ] Adjust the dimensions of the figure until you are happy with them.
 
 ::: callout-tip
--   See [Quarto documentation about figure cross-references](https://quarto.org/docs/authoring/cross-references.html#computations)
--   See [Quarto documentation about figure options](https://quarto.org/docs/computations/execution-options.html#figure-options)
+- See [Quarto documentation about figure cross-references](https://quarto.org/docs/authoring/cross-references.html#computations)
+- See [`fig-width` and `fig-height`](https://quarto.org/docs/computations/execution-options.html#figure-options) options to adjust figure dimensions
 :::
 
-## Code
+## Reference code chunks
 
-#### Table 3 {.unnumbered}
-
--   [ ] Add a caption to the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;
--   [ ] Assign a label to the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;
+-   [ ] Add a caption to the code chunk for your R implementation of the logistic regression;
+-   [ ] Assign a label to the code chunk;
 -   [ ] Replace the placeholder text in bold with a cross-reference to the code chunk.
 
 ::: callout-tip
@@ -158,9 +157,9 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 -   See [Quarto documentation about citations](https://quarto.org/docs/authoring/citations.html)
 :::
 
--   [ ] Add the bibliography file `my_biblio.bib` to your MS Word rendered report ;
--   [ ] Cite the reference `text` in your MS Word rendered report ;
--   [ ] Create your own bibliography file and apply it to your MS Word rendered report ;
+-   [ ] Add the bibliography file `my_biblio.bib` to your MS Word rendered report;
+-   [ ] Cite the reference `text` in your MS Word rendered report;
+-   [ ] Create your own bibliography file and apply it to your MS Word rendered report;
 
 ## Finalise your MS Word report
 
@@ -168,5 +167,5 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 See [Quarto documentation about Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)
 :::
 
--   [ ] Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report ;
+-   [ ] Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report;
 -   [ ] Create your own template and apply it to your MS Word rendered report.
