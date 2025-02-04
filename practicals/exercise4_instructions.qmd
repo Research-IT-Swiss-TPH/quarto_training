@@ -164,7 +164,7 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 ::: callout-tip
 -   You can generate the BibTeX entry from the DOI using citation management tools;
 -   See [Quarto documentation about citations](https://quarto.org/docs/authoring/citations.html) for guidance on formatting references;
-- If you are not proficient with the source editor, Quarto’s visual mode provides user-friendly tools for managing citations.
+- If you are not familiar with BibTeX files or the source editor, Quarto’s visual mode offers user-friendly tools for managing citations, allowing you to handle most of these steps automatically.
 
 ![](images/clipboard-137319318.png){fig-align="center"}
 :::
