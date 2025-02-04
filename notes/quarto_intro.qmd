@@ -27,6 +27,11 @@ format:
     comments:
       hypothesis: 
         theme: classic
+    format-links: [pdf]
+  pdf:
+    default: true
+    toc: true
+    number-sections: true
 
 execute:
   echo: fenced
@@ -43,13 +48,13 @@ nocite: |
 -   Research is an **iterative** and **dynamic** process, meaning there are no **final** or **definitive** results or reports ;
 -   In addition, we continuously build upon the work of others to generate new insights and discoveries.
 
-![Image reproduced from Jorge Cham at [PhDComics](https://phdcomics.com/comics/archive.php?comicid=1689).](images/phd031214s.gif){#fig-research-challenges fig-align="center"}
+![Image reproduced from Jorge Cham at [PhDComics](https://phdcomics.com/comics/archive.php?comicid=1689).](images/phd031214s.png){#fig-research-challenges fig-align="center"}
 
 ## Reproducibility in research
 
 Achieving reproducibility requires clear access to the underlying **data**, the **code** used for analysis, and the **results** produced. It also depends on documenting the **tools**, such as software and libraries, alongside the **computational environment**, including hardware configurations and operating systems [@turingway].
 
-![ Illustration highlighting the key components of reproducibility in research, including data, code, results, tools, and the computational environment. This illustration is adapted from the one created by Scriberia with The Turing Way community, used under a CC-BY 4.0 licence. DOI: [10.5281/zenodo.3332807](https://zenodo.org/records/13882307).](../images/reproducibility.png){#fig-reproducibility fig-align="center"}
+![ Illustration highlighting the key components of reproducibility in research, including data, code, results, tools, and the computational environment. This illustration is adapted from the one created by Scriberia with The Turing Way community, and used under a CC-BY 4.0 licence. DOI: [10.5281/zenodo.3332807](https://zenodo.org/records/13882307).](../images/reproducibility.png){#fig-reproducibility fig-align="center"}
 
 ## Analytically reproducible documents
 
@@ -181,9 +186,11 @@ data.frame(country=c("Nigeria","Kenya","India"), prevalence=c(14.5,9.2,3.5)) |>
 
 Documents can be rendered in different type of outputs e.g., MS Word, PDF, HTML, PowerPoint, etc.
 
-**Pandoc** is a powerful open-source tool that enables seamless **conversion** between various document formats, making it an essential resource for working with markup languages like Markdown, HTML, and LaTeX. By using Pandoc, you can easily transform a document written in one markup language into a wide range of output formats, including MS Word, PDF, HTML, PowerPoint, and more, without needing to manually adjust formatting or structure. This versatility makes Pandoc particularly valuable in workflows that involve literate programming, where formatted text, code commands, and outputs are integrated. Pandoc also supports templates and extensions, allowing users to customize the output to meet specific stylistic or formatting requirements, simplifying the process of producing polished, professional documents.
+**Pandoc** is a powerful open-source tool that enables seamless **conversion** between various document formats, making it an essential resource for working with markup languages like Markdown, HTML, and LaTeX. By using Pandoc, you can easily transform a document written in one markup language into a wide range of output formats, including MS Word, PDF, HTML, PowerPoint, and more, without needing to manually adjust formatting or structure. 
 
-![Artwork by Allison Horst.](../images/qmd_render_schema.png){#fig-render-schema}
+This versatility makes Pandoc particularly valuable in workflows that involve literate programming. Pandoc also supports templates and extensions, allowing users to customize the output to meet specific stylistic or formatting requirements, simplifying the process of producing polished, professional documents.
+
+![Process of transforming a Quarto document from its source format to the final rendered output. Artwork by Allison Horst.](../images/qmd_render_schema.png){#fig-render-schema}
 
 ## Existing tools for writing analytically reproducible documents
 
@@ -240,4 +247,4 @@ Jupyter is a popular engine for running Python code interactively. It supports m
 ## To go further on reproducibility
 
 * [MOOC Reproducible research I - Methodological principles for transparent science (in French)](https://www.fun-mooc.fr/en/courses/reproducible-research-methodological-principles-transparent-scie/)
-* [MOOC Reproducible research II - Practices and tools for managing computations and data (](https://www.fun-mooc.fr/en/courses/reproducible-research-ii-practices-and-tools-for-managing-comput/)
+* [MOOC Reproducible research II - Practices and tools for managing computations and data](https://www.fun-mooc.fr/en/courses/reproducible-research-ii-practices-and-tools-for-managing-comput/)
