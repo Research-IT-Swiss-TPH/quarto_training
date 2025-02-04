@@ -153,10 +153,10 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 ## Add references
 
 -   [ ] Create a bibliography (BibTeX) file `my_biblio.bib` in the same folder as your Quarto notebook;
--   [ ] Link the bibliography file by adding it to the YAML header of your Quarto notebook;
--   [ ] Add a reference for [10.1016/S0140-6736(24)02669-2](https://doi.org/10.1016/S0140-6736(24)02669-2) in the `.bib` file;
+-   [ ] Link the BibTeX file by adding it to the YAML header of your Quarto notebook;
+-   [ ] Add a new reference for [10.1016/S0140-6736(24)02669-2](https://doi.org/10.1016/S0140-6736(24)02669-2) in the BibTeX file;
 -   [ ] Create a new section named `Background` in your Quarto notebook, after the `Overview` section and before the `Population` section;
--   [ ] Insert the following sentence into the `Background` section, and replace the placeholder text in bold with the correct citation key from your `.bib` file.
+-   [ ] Insert the following sentence into the `Background` section, and replace the placeholder text in bold with the correct citation key from your BibTeX file.
 
 > "***citation** describes trends in suspected and confirmed monkeypox virus cases in the Democratic Republic of Congo using epidemiological and laboratory surveillance data collected from 2010 to 2023.*"
 
@@ -164,13 +164,14 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 -   You can generate the BibTeX entry from the DOI using citation management tools;
 -   See [Quarto documentation about citations](https://quarto.org/docs/authoring/citations.html) for guidance on formatting references;
 - If you are not proficient with the source editor, Quarto’s visual mode provides user-friendly tools for managing citations.
+
 ![](images/clipboard-137319318.png){fig-align="center"}
 :::
 
 ## Format MS Word reports with styles
 
 -   [ ] Apply the Swiss TPH template `swisstph_template.docx` to your MS Word rendered report;
--   [ ] To go further you can try creating your own template and applying it to your MS Word rendered report.
+-   [ ] To go further, try creating your own custom Word template and apply it to your report to explore how styles can be personalized.
 
 ::: callout-tip
 See [Quarto documentation about Word templates](https://quarto.org/docs/output-formats/ms-word-templates.html)

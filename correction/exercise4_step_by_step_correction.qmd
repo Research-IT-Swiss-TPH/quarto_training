@@ -1,5 +1,5 @@
 ---
-title: ⭐⭐ Add dynamic elements to your report
+title: ⭐⭐ Add dynamic elements to reports
 subtitle: ✅ Step-by-step correction
 author:
   - name:
@@ -217,9 +217,9 @@ subdf |>                                                      #<15>
 ## Customise figures
 
 ```{r}
-#| label: fig-1                                                                       #<19>
-#| fig-cap: Weekly count of all cases, confirmed cases and deaths                     #<18>
-#| fig-width: 8                                                                       #<20>
+#| label: fig-1                                                                       #<18>
+#| fig-cap: Weekly count of all cases, confirmed cases and deaths
+#| fig-width: 8                                                                       #<19>
 #| fig-height: 4                                                                      #<20>
                 
 # Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
@@ -253,9 +253,9 @@ ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
                  panel.grid.minor.x = ggplot2::element_blank())
 ```
 
-18. Add a caption to the figure.
-19. Assign a label to the figure.
-20. Adjust the dimensions of the figure until you are happy with it
+18. Assign a label to the figure.
+19. Set the width of the figure to 8 inches by using the `fig-width` option. This option can also be specified globally in the YAML header of the Quarto notebook.
+20. Set the height of the figure to 4 inches by using the `fig-height` option. This option can also be specified globally in the YAML header of the Quarto notebook.
 
 -   [ ] Replace the placeholder text in bold with a cross-reference to the figure.
 

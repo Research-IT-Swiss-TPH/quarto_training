@@ -18,7 +18,6 @@ author:
 license: "CC-BY"
 date: last-modified
 editor: source
-lang: en-US
 
 format:
   html:
@@ -35,7 +34,6 @@ format:
     format-links: [pdf]
   pdf:
     default: true
-    pdf-engine: lualatex
     toc: true
     toc-depth: 2
     number-sections: true
@@ -197,7 +195,14 @@ weekly_data <- subdf |>
 ```{r}
 #| fig-cap: Weekly count of all cases, confirmed cases and deaths                                                 # <13>
 
-#Figure 1 
+#Figure 1
+# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths
+weekly_data <- subdf |>
+  dplyr::group_by(week) |>
+  dplyr::summarise(count = dplyr::n(),
+                   confirmed_count = sum(confirmed == "1"),
+                   death_count = sum(death == "1"))
+
 # Plot the weekly cases, confirmed cases and deaths
 ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +                        
   ggplot2::geom_line(ggplot2::aes(y = count,
