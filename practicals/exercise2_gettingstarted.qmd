@@ -342,7 +342,7 @@ This lecture is `{{r}} comment`!
 
 The result of the commented code is the following output:
 
-`This lecture is `{r} comment`!`
+> This lecture is `{r} comment`!
 
 Inline expressions are always evaluated when rendering and previewing `.qmd` files.
 
