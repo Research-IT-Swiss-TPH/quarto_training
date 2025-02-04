@@ -61,7 +61,7 @@ This exercise builds on the previous exercises where you learnt to [create a sim
 
 ## Objectives 🎯
 
--   If you have generated the simple MS Word report as in [Exercise 4](./exercise4_instructions.html), continue working on the same Quarto notebook you already modified. Otherwise, download the files `df1.RData`, `df2.RData`, and `exercise5.qmd` using the links provided on the right-hand side of this page. For simplicity, please put these two files under the same folder and open the Quarto notebook in RStudio.
+-   If you have generated the MS Word report with dynamic elements as instructed in [Exercise 4](./exercise4_instructions.html), continue working on the same Quarto notebook you already modified. Otherwise, download the files `df1.RData`, `df2.RData`, `exercise5.qmd`, `swisstph_template.docx`, and `my_biblio.bib` using the links provided on the right-hand side of this page. For simplicity, please put these two files under the same folder and open the Quarto notebook in RStudio.
 -   Complete each of the following tasks and render the document after each task or set of tasks to track your progress.
 
 ## Use Quarto in a terminal
@@ -69,13 +69,13 @@ This exercise builds on the previous exercises where you learnt to [create a sim
 -   [ ] Render your MS Word report using the RStudio Terminal;
 
 ```
-quarto render exercise3.qmd
+quarto render exercise5.qmd
 ```
 
 -   [ ] Change the output filename when rendering the report;
 
 ```
-quarto render exercise3.qmd --out exercise5_report1.docx
+quarto render exercise5.qmd --out exercise5_report1.docx
 ```
 
 ::: callout-tip
@@ -91,7 +91,7 @@ quarto render exercise3.qmd --out exercise5_report1.docx
 -   [ ] Render 3 reports (1 report with df2.RData for the full outbreak period, 1 report with df1.RData for year 2021 only, 1 report with df2.RData for year 2021 only) adapting the following command which needs to be run in a terminal (ensure your working directory is the one where your Quarto document is stored and all file paths are correct).
 
 ```
-quarto render exercise3.qmd --out exercise5_report_df1.docx -P dataset:df1.RData
+quarto render exercise5.qmd --out exercise5_report_df1.docx -P dataset:df1.RData
 ```
 
 ::: callout-tip
