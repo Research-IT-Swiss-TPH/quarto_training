@@ -151,7 +151,7 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 -   See [Quarto documentation about code chunk cross-references](https://quarto.org/docs/authoring/cross-references.html#code-listings)
 :::
 
-## Add references
+## Add bibliographic references
 
 -   [ ] Create a bibliography (BibTeX) file `my_biblio.bib` in the same folder as your Quarto notebook;
 -   [ ] Link the BibTeX file by adding it to the YAML header of your Quarto notebook;
