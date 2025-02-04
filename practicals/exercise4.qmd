@@ -131,7 +131,7 @@ ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
 
 In this section, we build and evaluate a logistic regression model to understand the relationship between certain variables and the likelihood of death among confirmed cases.
 
-The logistic regression model uses `death` as the reponse variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by **cross-reference**.
+The logistic regression model uses `death` as the response variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by **cross-reference**.
 
 ```{r}
 #| echo: true

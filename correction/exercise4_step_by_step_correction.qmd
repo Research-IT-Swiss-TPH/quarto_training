@@ -189,6 +189,8 @@ subdf |>
 
 > "@tbl-1 *provides a summary of the demographic characteristics and the outcome proportion for the overall population*"
 
+#### Table 2 {.unnumbered}
+
 ```{r}
 #| label: tbl-2                                               #<17>
 #| tbl-cap: Demographic characteristics of deceased vs. alive #<16>
@@ -212,7 +214,11 @@ subdf |>                                                      #<15>
 
 > "*..., while @tbl-2 compares the demographic characteristics of individuals who died versus those who are still alive.*"
 
-## Customise figures
+#### Table 3 {.unnumbered}
+
+## Reference figures
+
+#### Figure 1 {.unnumbered}
 
 ```{r}
 #| label: fig-1                                                                       #<18>
@@ -263,14 +269,9 @@ ggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +
 
 21. Beautify the plot using ggplot options
 
-## Code
+## Reference code chunks
 
--   [ ] Display the code chunk for your R implementation of the logistic regression (and only this code chunk) in the rendered MS Word document ;
--   [ ] Add a caption to the code chunk ;
--   [ ] Assign a label to the code chunk ;
--   [ ] Replace the placeholder text in bold with a cross-reference to the code chunk.
-
-The logistic regression model uses `death` as the reponse variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by @lst-test
+The logistic regression model uses `death` as the response variable, and `bmi` and `age` as predictor variables. It is implemented in R as shown in the code chunk referenced by @lst-test
 
 ```{r}
 #| lst-label: lst-test
