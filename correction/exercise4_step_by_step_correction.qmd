@@ -405,7 +405,7 @@ execute:
 
 #### Markdown text {.unnumbered}
 
-Use \`​[@Bangwen2025]\`
+You can refer to this citation in your Markdown text using the syntax  \[@Bangwen2025\].
 
 [@Bangwen2025] describes trends in suspected and confirmed monkeypox virus cases in the Democratic Republic of Congo using epidemiological and laboratory surveillance data collected from 2010 to 2023.
 
