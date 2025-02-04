@@ -61,7 +61,8 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 ## Objectives 🎯
 
 -   You are tasked with generating a simple analytically reproducible report on a fictitious outbreak;
--   If you have generated the simple MS Word report as in [Exercise 3](./exercise3_instructions.html), continue working on the same Quarto notebook you already modified. Otherwise, download the files `df1.RData` and `exercise4.qmd` using the links provided on the right-hand side of this page. For simplicity, please put these two files under the same folder. Open the Quarto notebook in RStudio. Complete each of the following tasks and render the document after each task or set of tasks to track your progress;
+-   If you have generated the simple MS Word report as in [Exercise 3](./exercise3_instructions.html), continue working on the same Quarto notebook you already modified. Otherwise, download the files `df1.RData` and `exercise4.qmd` using the links provided on the right-hand side of this page. For simplicity, please put these two files under the same folder and open the Quarto notebook in RStudio.
+-   Complete each of the following tasks and render the document after each task or set of tasks to track your progress;
 -   All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references;
 -   The final output should be a Microsoft (MS) Word report, containing all required tables, figures, corresponding captions and cross-references, and formatted with the Swiss TPH template.
 
