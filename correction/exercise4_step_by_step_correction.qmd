@@ -70,8 +70,10 @@ format:
     toc: true             # <7>
     number-sections: true # <8>
     toc-depth: 2          # <9>
-echo: false               
-warning: false            
+
+execute:    
+  echo: false               
+  warning: false            
 ---
 ```
 
@@ -101,8 +103,10 @@ format:
     toc: true             
     number-sections: true
     toc-depth: 2
-echo: false               
-warning: false            
+
+execute:    
+  echo: false               
+  warning: false             
 ---
 ```
 
@@ -154,15 +158,9 @@ subdf <- df |>
 
 > "*Over the studied period, there were **N** cases, including **N** confirmed cases and **N** confirmed deaths.*"
 
-## Create and reference publication-ready tables
+## Reference tables
 
-You can use packages such as `gtsummary`
-
-To install the package, run teh following command in your console.
-
-```{{r}}
-install.packages(gtsummary)
-```
+#### Table 1 {.unnumbered}
 
 ```{r}
 library(gtsummary)
@@ -170,19 +168,19 @@ library(gtsummary)
 
 ```{r}
 #| label: tbl-1                        #<14>
-#| tbl-cap: Population characteristics #<13>
+#| tbl-cap: Population characteristics
 
-subdf |>                               #<12>
+#Table 1
+#Generate a summary table displaying population characteristics
+subdf |>                               
   dplyr::select(age,
                 sex,
                 bmi,
                 confirmed,
                 death) |>
-  gtsummary::tbl_summary()             
+  gtsummary::tbl_summary()           
 ```
 
-12. Create a table summarising the demographic characteristics and outcome frequency of all cases.
-13. Add a caption to the table.
 14. Assign a label to the table.
 
 -   [x] Replace the placeholder text in bold with a cross-reference to the table ;
