@@ -75,7 +75,7 @@ quarto render exercise5.qmd
 -   [ ] Change the output filename when rendering the report;
 
 ```         
-quarto render exercise5.qmd --out exercise5_report1.docx
+quarto render exercise5.qmd -o exercise5_report1.docx
 ```
 
 ::: callout-tip
@@ -95,7 +95,7 @@ quarto render exercise5.qmd --out exercise5_report1.docx
 -   [ ] Render 3 reports (1 report with df2.RData for the full outbreak period, 1 report with df1.RData for year 2021 only, 1 report with df2.RData for year 2021 only) adapting the following command which needs to be run in a terminal (ensure your working directory is the one where your Quarto document is stored and all file paths are correct).
 
 ```         
-quarto render exercise5.qmd --out exercise5_report_df1.docx -P dataset:df1.RData
+quarto render exercise5.qmd -o exercise5_report_df1.docx -P dataset:df1.RData
 ```
 
 ::: callout-tip
