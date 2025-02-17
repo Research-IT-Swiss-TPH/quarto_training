@@ -690,5 +690,47 @@
     "crumbs": [
       "📙 Parametrise reports 🛠"
     ]
+  },
+  {
+    "objectID": "correction/exercise 3_correction.html",
+    "href": "correction/exercise 3_correction.html",
+    "title": "My outbreak report",
+    "section": "",
+    "text": "The outbreak ran from 2021-01-03 to 2022-12-31. This report covers the period 2021-01-03 to 2021-12-31. Over the studied period, there were 37024 cases, including 30950 confirmed cases and 884 confirmed deaths."
+  },
+  {
+    "objectID": "correction/exercise 3_correction.html#overview",
+    "href": "correction/exercise 3_correction.html#overview",
+    "title": "My outbreak report",
+    "section": "",
+    "text": "The outbreak ran from 2021-01-03 to 2022-12-31. This report covers the period 2021-01-03 to 2021-12-31. Over the studied period, there were 37024 cases, including 30950 confirmed cases and 884 confirmed deaths."
+  },
+  {
+    "objectID": "correction/exercise 3_correction.html#population-characteristics",
+    "href": "correction/exercise 3_correction.html#population-characteristics",
+    "title": "My outbreak report",
+    "section": "2 Population characteristics",
+    "text": "2 Population characteristics\nTable 1 provides a summary of the demographic characteristics and the outcome proportion for the overall population, while Table 2 compares the demographic characteristics of individuals who died versus those who are still alive.\n\n\n\n\nTable 1: Population characteristics\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 37,0241\n\n\n\n\nage\n50 (35, 65)\n\n\nsex\n\n\n\n\n    1\n18,754 (51%)\n\n\n    2\n18,270 (49%)\n\n\nbmi\n29 (21, 38)\n\n\nconfirmed\n\n\n\n\n    0\n6,074 (16%)\n\n\n    1\n30,950 (84%)\n\n\ndeath\n\n\n\n\n    0\n36,140 (98%)\n\n\n    1\n884 (2.4%)\n\n\n\n1 Median (Q1, Q3); n (%)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable 2: Demographic characteristics of deceased vs. alive\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOverall N = 37,0241\n0 N = 36,1401\n1 N = 8841\n\n\n\n\nsex\n\n\n\n\n\n\n\n\n    1\n18,754 (51%)\n18,299 (51%)\n455 (51%)\n\n\n    2\n18,270 (49%)\n17,841 (49%)\n429 (49%)\n\n\nage\n50 (35, 65)\n50 (35, 65)\n52 (38, 67)\n\n\nbmi\n29 (21, 38)\n29 (21, 37)\n35 (29, 42)\n\n\n\n1 n (%); Median (Q1, Q3)"
+  },
+  {
+    "objectID": "correction/exercise 3_correction.html#outbreak-evolution",
+    "href": "correction/exercise 3_correction.html#outbreak-evolution",
+    "title": "My outbreak report",
+    "section": "3 Outbreak evolution",
+    "text": "3 Outbreak evolution\nFigure 1 illustrates the outbreak’s progression, which can be divided into distinct phases.\n\n\n\n\n\n\n\n\nFigure 1: Weekly count of all cases, confirmed cases and deaths"
+  },
+  {
+    "objectID": "correction/exercise 3_correction.html#logistic-regression-model",
+    "href": "correction/exercise 3_correction.html#logistic-regression-model",
+    "title": "My outbreak report",
+    "section": "4 Logistic regression model",
+    "text": "4 Logistic regression model\nIn this section, we build and evaluate a logistic regression model to understand the relationship between certain variables and the likelihood of death among confirmed cases.\nThe logistic regression model uses death as the reponse variable, and bmi and age as predictor variables. It is implemented in R as shown in the code chunk referenced by Listing 1\n\n\n\n\nListing 1: R code\n\n\ncoeffs &lt;- glm(death ~ bmi + age,\n              subdf |&gt; dplyr::filter(confirmed == \"1\"),\n              family = binomial)\n\n\n\n\nThe results of the logistic regression model are summarized in the formatted regression table, which is presented in Table 3.\n\n\n\n\nTable 3: Formatted regression table\n\n\n\n\n\n\n\n\n\nCharacteristic\nOR1\n95% CI1\np-value\n\n\n\n\nbmi\n1.04\n1.04, 1.05\n&lt;0.001\n\n\nage\n1.01\n1.00, 1.01\n0.002\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval"
+  },
+  {
+    "objectID": "correction/exercise 3_correction.html#appendix",
+    "href": "correction/exercise 3_correction.html#appendix",
+    "title": "My outbreak report",
+    "section": "5 Appendix",
+    "text": "5 Appendix\nThe dataset includes the following variables:\n\nage = age of the individual (continuous variable) ;\nsex = sex of the individual (binary variable: 1 = male, 2 = female) ;\nbmi = Body Mass Index (BMI) of the individual (continuous variable) ;\nconfirmed = flag of confirmed cases (binary variable: 0 = no, 1 = yes)\ndeath = death outcome (binary variable: 0 = alive, 1 = died)\n\n\n\n\nData summary\n\n\nName\nsubdf\n\n\nNumber of rows\n37024\n\n\nNumber of columns\n8\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nDate\n2\n\n\nfactor\n3\n\n\nnumeric\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: Date\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nmedian\nn_unique\n\n\n\n\ndate\n0\n1\n2021-01-03\n2021-12-31\n2021-06-12\n363\n\n\nweek\n0\n1\n2021-01-03\n2021-12-26\n2021-06-06\n52\n\n\n\nVariable type: factor\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nordered\nn_unique\ntop_counts\n\n\n\n\nsex\n0\n1\nFALSE\n2\n1: 18754, 2: 18270\n\n\nconfirmed\n0\n1\nFALSE\n2\n1: 30950, 0: 6074\n\n\ndeath\n0\n1\nFALSE\n2\n0: 36140, 1: 884\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nid\n0\n1\n5633.56\n3663.18\n1\n2571.00\n5153.00\n8434.00\n14993.00\n▇▇▆▅▂\n\n\nage\n0\n1\n49.98\n17.60\n20\n35.00\n50.00\n65.00\n80.00\n▇▇▇▇▇\n\n\nbmi\n0\n1\n30.02\n11.12\n10\n20.99\n29.14\n37.59\n62.22\n▆▇▇▃▁"
   }
 ]
