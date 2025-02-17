@@ -676,7 +676,7 @@
     "href": "practicals/exercise5_instructions.html#use-quarto-in-a-terminal",
     "title": "⭐⭐⭐ Parametrise your report",
     "section": "2 Use Quarto in a terminal",
-    "text": "2 Use Quarto in a terminal\n\nRender your MS Word report using the RStudio Terminal;\n\nquarto render exercise5.qmd\n\nChange the output filename when rendering the report;\n\nquarto render exercise5.qmd --out exercise5_report1.docx\n\n\n\n\n\n\nTip\n\n\n\n\nYou can access the RStudio terminal in the Terminal tab immediately to the right of the Console tab:",
+    "text": "2 Use Quarto in a terminal\n\nRender your MS Word report using the RStudio Terminal;\n\nquarto render exercise5.qmd\n\nChange the output filename when rendering the report;\n\nquarto render exercise5.qmd --out exercise5_report1.docx\n\n\n\n\n\n\nTip\n\n\n\n\nYou can access the RStudio terminal in the Terminal tab immediately to the right of the Console tab:\n\n\n\n\n\n\n\nIf the terminal tab is not visible, go to Tools &gt; Terminal &gt; Move Focus to Terminal",
     "crumbs": [
       "📙 Parametrise reports 🛠"
     ]

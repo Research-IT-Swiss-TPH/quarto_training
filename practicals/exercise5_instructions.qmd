@@ -68,13 +68,13 @@ This exercise builds on the previous exercises where you learnt to [create a sim
 
 -   [ ] Render your MS Word report using the RStudio Terminal;
 
-```
+```         
 quarto render exercise5.qmd
 ```
 
 -   [ ] Change the output filename when rendering the report;
 
-```
+```         
 quarto render exercise5.qmd --out exercise5_report1.docx
 ```
 
@@ -82,6 +82,10 @@ quarto render exercise5.qmd --out exercise5_report1.docx
 -   You can access the RStudio terminal in the `Terminal` tab immediately to the right of the `Console` tab:
 
 ![](images/clipboard-1086723948.png){fig-align="center"}
+
+- If the terminal tab is not visible, go to **Tools** > **Terminal** > **Move Focus to Terminal**
+
+![](images/clipboard-751291778.png){fig-align="center"}
 :::
 
 ## Parametrise your report
@@ -90,7 +94,7 @@ quarto render exercise5.qmd --out exercise5_report1.docx
 -   [ ] You were unfortunately provided with a previous erroneous version of the dataset. Update the report to use the dataset stored in `df2.RData` instead of the one stored in `df1.RData` ;
 -   [ ] Render 3 reports (1 report with df2.RData for the full outbreak period, 1 report with df1.RData for year 2021 only, 1 report with df2.RData for year 2021 only) adapting the following command which needs to be run in a terminal (ensure your working directory is the one where your Quarto document is stored and all file paths are correct).
 
-```
+```         
 quarto render exercise5.qmd --out exercise5_report_df1.docx -P dataset:df1.RData
 ```
 
