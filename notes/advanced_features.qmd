@@ -47,3 +47,4 @@ Here are some helpful resources to learn more about Quarto:
 - [🗣️️ Build a Quarto website (presentation)](https://posit-conf-2024.github.io/quarto-websites/)
 - [🗣️️ Build a Quarto dashboard (presentation)](https://posit-conf-2024.github.io/quarto-dashboards/)
 - [📺  Build a Quarto dashboard (tutorial)](href: https://www.youtube.com/watch?v=R3sNVE8TYeo)
+- [⭐ Awesome Quarto](https://github.com/mcanouil/awesome-quarto) - A curated list of awesome Quarto resources.

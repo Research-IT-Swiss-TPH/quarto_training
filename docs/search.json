@@ -163,7 +163,7 @@
     "href": "notes/advanced_features.html",
     "title": "🧰 Helpful resources",
     "section": "",
-    "text": "Here are some helpful resources to learn more about Quarto:\n\n📄 Quarto cheat sheet - A quick reference for essential Quarto commands and syntax.\n📄️ Quarto official documentation - The go-to guide for learning Quarto in depth.\n📄️ PDF formatting with Quarto\n🗣️️ Build a Quarto website (presentation)\n🗣️️ Build a Quarto dashboard (presentation)\n📺 Build a Quarto dashboard (tutorial)\n\n\n\n\nReuseCC-BY",
+    "text": "Here are some helpful resources to learn more about Quarto:\n\n📄 Quarto cheat sheet - A quick reference for essential Quarto commands and syntax.\n📄️ Quarto official documentation - The go-to guide for learning Quarto in depth.\n📄️ PDF formatting with Quarto\n🗣️️ Build a Quarto website (presentation)\n🗣️️ Build a Quarto dashboard (presentation)\n📺 Build a Quarto dashboard (tutorial)\n⭐ Awesome Quarto - A curated list of awesome Quarto resources.\n\n\n\n\nReuseCC-BY",
     "crumbs": [
       "🧰 Helpful resources"
     ]
