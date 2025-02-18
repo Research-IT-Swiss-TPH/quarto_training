@@ -255,7 +255,7 @@
     "objectID": "index.html#pre-requisites",
     "href": "index.html#pre-requisites",
     "title": "Swiss TPH Quarto training",
-    "section": "\n2 Pre-requisites 📋",
+    "section": "2 Pre-requisites 📋",
     "text": "2 Pre-requisites 📋\n\nBasic knowledge of R programming\nFamiliarity with the RStudio interface\nLaptop with RStudio version 2022.07 or later installed",
     "crumbs": [
       "🔖 Home"
@@ -265,8 +265,8 @@
     "objectID": "index.html#content-navigation",
     "href": "index.html#content-navigation",
     "title": "Swiss TPH Quarto training",
-    "section": "\n3 Content navigation 🧭",
-    "text": "3 Content navigation 🧭\nIn this training, you will find the following resources to help you along your learning journey:\n\n📘 Lecture notes — Reference materials and examples;\n📙 Assignments — Self-paced exercises to practice and apply skills:\n\n📋 Instructions — Objectives and expectations of the exercise;\n✅ Corrections — Detailed solutions with step-by-step explanations;\nDifficulty of assignments:\n\n\nGetting started 🌱 — Guided exercises for complete beginners;\n\nBeginner ⭐ – Foundational exercises to build confidence;\n\nIntermediate ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;\n\nAdvanced ⭐⭐⭐ – More challenging exercises for comprehensive mastery.",
+    "section": "3 Content navigation 🧭",
+    "text": "3 Content navigation 🧭\nIn this training, you will find the following resources to help you along your learning journey:\n\n📘 Lecture notes — Reference materials and examples;\n📙 Assignments — Self-paced exercises to practice and apply skills:\n\n📋 Instructions — Objectives and expectations of the exercise;\n✅ Corrections — Detailed solutions with step-by-step explanations;\nDifficulty of assignments:\n\nGetting started 🌱 — Guided exercises for complete beginners;\nBeginner ⭐ – Foundational exercises to build confidence;\nIntermediate ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;\nAdvanced ⭐⭐⭐ – More challenging exercises for comprehensive mastery.",
     "crumbs": [
       "🔖 Home"
     ]
@@ -275,7 +275,7 @@
     "objectID": "index.html#feedback",
     "href": "index.html#feedback",
     "title": "Swiss TPH Quarto training",
-    "section": "\n4 Feedback 💬",
+    "section": "4 Feedback 💬",
     "text": "4 Feedback 💬\nWe value your input! The fastest way to share your feedback and help us improve this training is by using Hypothesis. When providing feedback, please aim to be constructive and specific.\n\nIf you are new to Hypothesis, create an Hypothesis account;\n\n\n\n\nActivate Hypothesis by clicking the left arrow icon &gt; in the top right corner of the pages of this website to open the Hypothesis annotation sidebar, and log in;\n\n\n\n\n\n\n\n\n\n\nselect the text you want to comment.",
     "crumbs": [
       "🔖 Home"
@@ -285,7 +285,7 @@
     "objectID": "index.html#update-history",
     "href": "index.html#update-history",
     "title": "Swiss TPH Quarto training",
-    "section": "\n5 Update history 📜",
+    "section": "5 Update history 📜",
     "text": "5 Update history 📜\n\nFebruary 04, 2025: Initial release.",
     "crumbs": [
       "🔖 Home"
@@ -295,7 +295,7 @@
     "objectID": "index.html#contributors",
     "href": "index.html#contributors",
     "title": "Swiss TPH Quarto training",
-    "section": "\n6 Contributors 👥",
+    "section": "6 Contributors 👥",
     "text": "6 Contributors 👥\nThis work was a collaborative effort, incorporating feedback from students and staff at Swiss TPH. Substantial contributions are acknowledged where applicable on the corresponding pages. Notable contributors include Zhihan Zhu from the Research-IT team at Swiss TPH.",
     "crumbs": [
       "🔖 Home"
@@ -305,7 +305,7 @@
     "objectID": "index.html#license",
     "href": "index.html#license",
     "title": "Swiss TPH Quarto training",
-    "section": "\n7 License 🏷️",
+    "section": "7 License 🏷️",
     "text": "7 License 🏷️\n This content is licensed under a Attribution 4.0 International (CC BY 4.0).\nYou are free to:\n\nShare — copy and redistribute the material in any medium or format.\nAdapt — remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nNo additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.",
     "crumbs": [
       "🔖 Home"
