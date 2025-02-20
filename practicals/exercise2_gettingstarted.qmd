@@ -289,7 +289,7 @@ editor: visual
 
 While PDF documents are also able to be created, they require installing LaTeX, which can sometimes be complicated to install. `TinyTeX` is a custom LaTeX distribution that is easy to install with R. It is needed to compile R Markdown or Quarto documents to PDF.
 
-Install the `TinyTeX` package, and install `TinyTeX` from the `tinytex` package:
+Install the `tinytex` package, and install `TinyTeX` from the `tinytex` package:
 
 ```{{r}}
 install.packages("tinytex")

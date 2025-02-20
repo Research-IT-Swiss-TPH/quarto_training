@@ -51,7 +51,7 @@ nocite: |
 -   Research is an **iterative** and **dynamic** process, meaning there are no **final** or **definitive** results or reports ;
 -   In addition, we continuously build upon the work of others to generate new insights and discoveries.
 
-![Image reproduced from Jorge Cham at [PhDComics](https://phdcomics.com/comics/archive.php?comicid=1689).](images/phd031214s.png){#fig-research-challenges fig-align="center"}
+![Image reproduced from Jorge Cham at [PhDComics](https://phdcomics.com/comics/archive.php?comicid=1689).](../images/phd031214s.png){#fig-research-challenges fig-align="center"}
 
 ## Reproducibility in research
 
@@ -225,7 +225,7 @@ This versatility makes Pandoc particularly valuable in workflows that involve li
 -   Quarto documents can be rendered into to many report formats including HTML, Word document and many more
 -   [List of supported formats](https://quarto.org/docs/output-formats/all-formats.html)
 
-![](images/clipboard-1220364644.png){fig-align="center"}
+![](../images/clipboard-1220364644.png){fig-align="center"}
 
 ### Engines
 
@@ -238,13 +238,13 @@ Both knitr and Jupyter serve as engines to execute code embedded within a docume
 
 This R package will read the code chunks, execute it, and 'knit' it back into the document. This is how tables and graphs are included alongside the text.
 
-![](images/knitr-rmarkdown-logos-50-1.png){fig-align="center" width="300"}
+![](../images/knitr-rmarkdown-logos-50-1.png){fig-align="center" width="300"}
 
 #### Juypter
 
 Jupyter is a popular engine for running Python code interactively. It supports multiple programming languages, but Python is the most common.
 
-![](images/images.png){fig-align="center"}
+![](../images/images.png){fig-align="center"}
 :::
 
 ## To go further on reproducibility

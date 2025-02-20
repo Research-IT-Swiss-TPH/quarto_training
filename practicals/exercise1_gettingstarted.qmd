@@ -84,7 +84,7 @@ The title and the author names are not important at this stage. If the output do
 
 Let us select **HTML** to create an html document.
 
-Click on **Create** to open up a new Quarto (`.Qmd`) document.
+Click on **Create** to open up a new Quarto (`.qmd`) document.
 
 ![](../images/paste-67B97E04.png)
 
