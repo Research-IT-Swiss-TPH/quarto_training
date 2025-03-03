@@ -197,12 +197,13 @@ subdf |>
 #| tbl-cap: Demographic characteristics of deceased vs. alive
 
 subdf |>                           
- dplyr::select(sex,
-        age,
-        bmi,
-        death) |>
- gtsummary::tbl_summary(by = death) |>
- gtsummary::add_overall()
+  dplyr::select(sex,
+                age,
+                bmi,
+                death) |>
+  gtsummary::tbl_summary(by = death) |>
+  gtsummary::add_overall() |> 
+  gtsummary::as_flex_table()
 ```
 
 10. Assign a label to the table using the prefix `tbl-`. This label allows you to refer to the table later in the document, making it easier to create cross-references. After the label is defined, you can refer to this table in your text using the syntax `@tbl-2`, e.g., "*`@tbl-2` compares the demographic characteristics of individuals who died versus those who are still alive.*".
