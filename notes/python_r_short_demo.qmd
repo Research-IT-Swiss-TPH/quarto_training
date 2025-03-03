@@ -46,7 +46,7 @@ execute:
 :::
 
 ::: {.column width="30%"}
-![](images/r_python.jpg){fig-align="center"}
+![](../images/r_python.jpg){fig-align="center"}
 :::
 :::::
 
@@ -69,7 +69,7 @@ install.packages("reticulate")
 :::
 
 ::: {.column width="20%"}
-![](images/reticulated_python.png){fig-align="center"}
+![](../images/reticulated_python.png){fig-align="center"}
 :::
 :::::
 

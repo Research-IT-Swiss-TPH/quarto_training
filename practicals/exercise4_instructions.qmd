@@ -90,7 +90,7 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 
 > "*The outbreak ran from **date** to **date***"
 
--   [ ] Replace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.
+-   [ ] Replace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths. (Hint: We suggest to calculate these numbers in chunks in order to keep inline code short.)
 
 > "*Over the studied period, there were **N** cases, including **N** confirmed cases and **N** confirmed deaths.*"
 
