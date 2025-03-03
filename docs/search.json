@@ -1,0 +1,736 @@
+[
+  {
+    "objectID": "utils/process_feedback.html",
+    "href": "utils/process_feedback.html",
+    "title": "Test",
+    "section": "",
+    "text": "library(httr)\nlibrary(jsonlite)\nlibrary(dplyr)\n\n\nAttache Paket: 'dplyr'\n\n\nDie folgenden Objekte sind maskiert von 'package:stats':\n\n    filter, lag\n\n\nDie folgenden Objekte sind maskiert von 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(purrr)\n\n\nAttache Paket: 'purrr'\n\n\nDas folgende Objekt ist maskiert 'package:jsonlite':\n\n    flatten\n\nlibrary(openxlsx)\n\n\nextract_textquote_prefix &lt;- function(annotation_data) {\n  # Initialize a vector to store the extracted prefixes\n  prefixes &lt;- vector(\"list\", length(annotation_data$target))\n  \n  # Loop through each row of the annotation data\n  for (i in seq_along(annotation_data$target)) {\n    # Extract the selectors for the current target\n    selectors &lt;- annotation_data$target[[i]]$selector\n    \n    # Filter for \"TextQuoteSelector\" and extract the prefix\n    if (!is.null(selectors)) {\n      prefixes[[i]] &lt;- selectors[[1]] |&gt; \n        dplyr::filter(type == \"TextQuoteSelector\") |&gt; \n        dplyr::select(prefix) |&gt; \n        dplyr::pull()\n    } else {\n      prefixes[[i]] &lt;- NA  # Handle cases where target/selector is missing\n    }\n  }\n  \n  # Return a flattened vector or a list depending on requirements\n  annotation_data |&gt; \n    dplyr::bind_cols(as.data.frame(purrr::flatten_chr(prefixes)) |&gt; \n                       rename(quote = \"purrr::flatten_chr(prefixes)\"))\n}\n\n\n# List of URLs to loop over\nurls &lt;- c(\n  \"https://research-it-swiss-tph.github.io/quarto_training/index.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/notes/quarto_intro.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/notes/notebook_structure.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/notes/python_r_short_demo.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise1_gettingstarted.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise2_gettingstarted.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise3.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise3_instructions.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise4_instructions.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/practicals/exercise5_instructions.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/correction/exercice3_test.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/correction/exercise3_correction.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/correction/exercise3_step_by_step_correction.html\",\n  \"https://research-it-swiss-tph.github.io/quarto_training/correction/exercise4_step_by_step_correction.html\"\n)\n\n\nall_annotations &lt;- tibble()\nfor (url in urls) {\n  api_url &lt;- paste0(\"https://api.hypothes.is/api/search?uri=\", url)\n  response &lt;- GET(api_url)\n  \n  if (status_code(response) == 200) {\n    annotations &lt;- fromJSON(content(response, \"text\"))\n    if (!is.null(annotations$rows)) {\n      annotation_data &lt;- extract_textquote_prefix(annotations$rows)\n      all_annotations &lt;- bind_rows(all_annotations, annotation_data)\n    }\n  } else {\n    message(paste(\"Failed to fetch data for URL:\", url))\n  }\n}\n\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\nNo encoding supplied: defaulting to UTF-8.\n\nall_annotations &lt;- all_annotations |&gt; \n  as.data.frame() |&gt; \n  dplyr::select(created,\n                text,\n                quote,\n                user,\n                uri) |&gt; \n  dplyr::rename(date = created,\n                comment = text) |&gt; \n  dplyr::mutate(date = as.Date(date),\n                user = sub(\".*:(.*)@.*\", \"\\\\1\", user))\nall_annotations\n\n        date           comment quote    user\n1 2025-01-23              Done  &lt;NA&gt; hlanget\n2 2025-01-23 Done, should work  &lt;NA&gt;   zhuzh\n                                                                                                        uri\n1                    https://research-it-swiss-tph.github.io/quarto_training/notes/python_r_short_demo.html\n2 https://research-it-swiss-tph.github.io/quarto_training/correction/exercise3_step_by_step_correction.html\n\n\n\n# Write the annotation data to a CSV file\nopenxlsx::write.xlsx(all_annotations, 'annotations.xlsx')\n\n# Print a message to indicate completion\ncat(\"Annotations have been saved to 'annotations.csv'.\")\n\nAnnotations have been saved to 'annotations.csv'."
+  },
+  {
+    "objectID": "practicals/exercise3.html",
+    "href": "practicals/exercise3.html",
+    "title": "Quarto training for R - Exercise 3",
+    "section": "",
+    "text": "library(dplyr)\n\n\nAttache Paket: 'dplyr'\n\n\nDie folgenden Objekte sind maskiert von 'package:stats':\n\n    filter, lag\n\n\nDie folgenden Objekte sind maskiert von 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(ggplot2)\nlibrary(skimr)\n# Load the dataset stored in the \"df1.RData\" file\nload(file = \"df1.RData\")\n# Convert the 'sex', 'confirmed', and 'death' columns from their current data type to factors\ndf &lt;- df |&gt;\n  dplyr::mutate(dplyr::across(c(sex, confirmed, death),\n                              as.factor))"
+  },
+  {
+    "objectID": "practicals/exercise3.html#overview",
+    "href": "practicals/exercise3.html#overview",
+    "title": "Quarto training for R - Exercise 3",
+    "section": "1 Overview",
+    "text": "1 Overview\n\n# Identify the start and end dates of the outbreak by finding the minimum and maximum values in the 'date' column\nstart_date &lt;- min(df$date)\nend_date &lt;- max(df$date)\n\n\n# Define the period of interest for the report\nperiod_start &lt;- start_date\nperiod_end &lt;- end_date\n\n\n# Filter the data frame to include only the cases that occurred within the defined period\nsubdf &lt;- df |&gt;\n  dplyr::filter(date &gt;= period_start & date &lt;= period_end)\n\nThe outbreak ran from date to date. This report covers the period date to date. Over the studied period, there were N cases, including N confirmed cases and N confirmed deaths."
+  },
+  {
+    "objectID": "practicals/exercise3.html#population-characteristics",
+    "href": "practicals/exercise3.html#population-characteristics",
+    "title": "Quarto training for R - Exercise 3",
+    "section": "2 Population characteristics",
+    "text": "2 Population characteristics\ncross-reference provides a summary of the demographic characteristics and the outcome proportion for the overall population, while cross-reference compares the characteristics of individuals who died versus those who are still alive.\n\n# Table 1\n# Generate a summary table displaying population characteristics\n\n\n# Table 2\n# Generate a summary table comparing the demographic characteristics of individuals who died versus those who are still alive"
+  },
+  {
+    "objectID": "practicals/exercise3.html#outbreak-evolution",
+    "href": "practicals/exercise3.html#outbreak-evolution",
+    "title": "Quarto training for R - Exercise 3",
+    "section": "3 Outbreak evolution",
+    "text": "3 Outbreak evolution\ncross-reference figure illustrates the outbreak’s progression, which can be divided into distinct phases.\n\n# Figure 1\n# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths\nweekly_data &lt;- subdf |&gt;\n  dplyr::group_by(week) |&gt;\n  dplyr::summarise(count = dplyr::n(),\n                   confirmed_count = sum(confirmed == \"1\"),\n                   death_count = sum(death == \"1\"))\n\n# Plot the weekly count of all cases, confirmed cases and deaths\nweekly_data |&gt;\n  ggplot2::ggplot(ggplot2::aes(x = week)) +\n  ggplot2::geom_line(ggplot2::aes(y     = count,\n                                  color = \"All cases\"),\n                     size = 1) +\n  ggplot2::geom_line(ggplot2::aes(y     = confirmed_count,\n                                  color = \"Confirmed cases\"),\n                     size = 1) +\n  ggplot2::geom_line(ggplot2::aes(y     = death_count,\n                                  color = \"Confirmed deaths\"),\n                     size = 1) +\n  ggplot2::labs(title = \"Weekly count of all cases, confirmed cases and deaths\",\n                x     = \"Week\",\n                y     = \"Count\",\n                color = \"Legend\")\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
+  },
+  {
+    "objectID": "practicals/exercise3.html#logistic-regression-model",
+    "href": "practicals/exercise3.html#logistic-regression-model",
+    "title": "Quarto training for R - Exercise 3",
+    "section": "4 Logistic regression model",
+    "text": "4 Logistic regression model\nIn this section, we build and evaluate a logistic regression model to understand the relationship between certain variables and the likelihood of death among confirmed cases.\nThe logistic regression model uses death as the response variable, and bmi and age as predictor variables. It is implemented in R as shown in the code chunk referenced by cross-reference.\n\n# Logistic regression model\n\nThe results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.\n\n# Table 3"
+  },
+  {
+    "objectID": "practicals/exercise3.html#appendix",
+    "href": "practicals/exercise3.html#appendix",
+    "title": "Quarto training for R - Exercise 3",
+    "section": "5 Appendix",
+    "text": "5 Appendix\nThe dataset includes the following variables:\n\nage = age of the individual (continuous variable) ;\nsex = sex of the individual (binary variable: 1 = male, 2 = female) ;\nbmi = Body Mass Index (BMI) of the individual (continuous variable) ;\nconfirmed = flag of confirmed cases (binary variable: 0 = no, 1 = yes)\ndeath = death outcome (binary variable: 0 = alive, 1 = died)\n\n\nsubdf |&gt;\n  skimr::skim()\n\n\nData summary\n\n\nName\nsubdf\n\n\nNumber of rows\n65669\n\n\nNumber of columns\n8\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nDate\n2\n\n\nfactor\n3\n\n\nnumeric\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: Date\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nmedian\nn_unique\n\n\n\n\ndate\n0\n1\n2021-01-03\n2022-12-31\n2021-11-20\n725\n\n\nweek\n0\n1\n2021-01-03\n2022-12-25\n2021-11-14\n104\n\n\n\nVariable type: factor\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nordered\nn_unique\ntop_counts\n\n\n\n\nsex\n0\n1\nFALSE\n2\n1: 33114, 2: 32555\n\n\nconfirmed\n0\n1\nFALSE\n2\n1: 52434, 0: 13235\n\n\ndeath\n0\n1\nFALSE\n2\n0: 64455, 1: 1214\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nid\n0\n1\n5768.89\n4029.27\n1\n2352\n4992.00\n8896.00\n14993.00\n▇▆▅▃▂\n\n\nage\n0\n1\n49.96\n17.58\n20\n35\n50.00\n65.00\n80.00\n▇▇▇▇▇\n\n\nbmi\n0\n1\n30.02\n11.11\n10\n21\n29.12\n37.58\n62.22\n▆▇▇▃▁"
+  },
+  {
+    "objectID": "practicals/exercise1_gettingstarted.html",
+    "href": "practicals/exercise1_gettingstarted.html",
+    "title": "🌱 Create a Quarto notebook",
+    "section": "",
+    "text": "Create a Quarto notebook.\nInitialize type of dynamic documents, header metadata, and document output format.\nSetup your R environment to be able to use and render Quarto documents.",
+    "crumbs": [
+      "📙 Create a Quarto notebook"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1_gettingstarted.html#learning-objectives",
+    "href": "practicals/exercise1_gettingstarted.html#learning-objectives",
+    "title": "🌱 Create a Quarto notebook",
+    "section": "",
+    "text": "Create a Quarto notebook.\nInitialize type of dynamic documents, header metadata, and document output format.\nSetup your R environment to be able to use and render Quarto documents.",
+    "crumbs": [
+      "📙 Create a Quarto notebook"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1_gettingstarted.html#create-a-new-quarto-document",
+    "href": "practicals/exercise1_gettingstarted.html#create-a-new-quarto-document",
+    "title": "🌱 Create a Quarto notebook",
+    "section": "2 Create a new Quarto document",
+    "text": "2 Create a new Quarto document\nQuarto notebooks can be created and edited in RStudio.\n\n\n\n\n\n\nImportant\n\n\n\nThis is only true for RStudio v2022.07 and later. If you use older versions of RStudio on your laptop, you will not have Quarto within RStudio.\n\n\nIn RStudio, you can create a new Quarto document by selecting\n\nFile &gt; New File &gt; Quarto Document…\n\n\nWhen you create a new Quarto document, RStudio tries to be helpful by allowing you to select a template which explains the different section of an Quarto document. R Studio will enable you select options to pick from to generate a template Quarto document to start from.\nThe title and the author names are not important at this stage. If the output document type you want is not one of these, do not worry - you can just pick any one and change it manually later.\nLet us select HTML to create an html document.\nClick on Create to open up a new Quarto (.Qmd) document.",
+    "crumbs": [
+      "📙 Create a Quarto notebook"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise1_gettingstarted.html#setup-your-r-environment",
+    "href": "practicals/exercise1_gettingstarted.html#setup-your-r-environment",
+    "title": "🌱 Create a Quarto notebook",
+    "section": "3 Setup your R environment",
+    "text": "3 Setup your R environment\nYou need to ensure the knitr and rmarkdown packages are available.",
+    "crumbs": [
+      "📙 Create a Quarto notebook"
+    ]
+  },
+  {
+    "objectID": "notes/python_r_short_demo.html",
+    "href": "notes/python_r_short_demo.html",
+    "title": "📘 Use R and Python",
+    "section": "",
+    "text": "Learn how to integrate Python in a Quarto notebook primarily using R code chunks ;\nLearn how to write and execute Python code chunks in a Quarto notebook ;\nLearn how to seamlessly share data frames and other objects between R and Python code chunks for a cohesive, mixed-language workflow.",
+    "crumbs": [
+      "📘 Use R and Python"
+    ]
+  },
+  {
+    "objectID": "notes/python_r_short_demo.html#learning-objectives",
+    "href": "notes/python_r_short_demo.html#learning-objectives",
+    "title": "📘 Use R and Python",
+    "section": "",
+    "text": "Learn how to integrate Python in a Quarto notebook primarily using R code chunks ;\nLearn how to write and execute Python code chunks in a Quarto notebook ;\nLearn how to seamlessly share data frames and other objects between R and Python code chunks for a cohesive, mixed-language workflow.",
+    "crumbs": [
+      "📘 Use R and Python"
+    ]
+  },
+  {
+    "objectID": "notes/python_r_short_demo.html#setup-your-r-environment",
+    "href": "notes/python_r_short_demo.html#setup-your-r-environment",
+    "title": "📘 Use R and Python",
+    "section": "2 Setup your R environment",
+    "text": "2 Setup your R environment\nTo integrate Python within a Quarto notebook that primarily uses R code chunks (i.e., executed with the knitr engine), you will need the reticulate R package, which serves as a bridge between R and Python, allowing you to run Python code chunks alongside R and share objects between the two programming languages. This setup provides a powerful approach for combining R’s statistical capabilities with Python’s data manipulation and machine learning tools, enabling a robust, mixed-language workflow within Quarto.\n\n2.1 Install and load reticulate\n\n\nIf it is not already done, install the reticulate package using the function install.packages() in your R console:\n\ninstall.packages(\"reticulate\")\n\n\n\n\n\n\n\n\n\nLoad reticulate at the beginning of your Quarto notebook.\n\nlibrary(reticulate)\n\n\n\n2.2 Verify your Python version\nUse py_config() to verify what Python version is active. This also allows you to confirm that required Python packages are available within your chosen environment. By default, reticulate uses an isolated python virtual environment named r-reticulate.\n\nreticulate::py_config()\n\nError in python_config_impl(python) : \n  Error running \"C:/Users/langhe/AppData/Local/r-miniconda/envs/r-reticulate/python310.dll.exe\": No such file.\nError in python_config_impl(python) : \n  Error running \"C:/Users/langhe/AppData/Local/r-miniconda/envs/r-reticulate/python310.dll.exe\": No such file.\n\n\npython:         C:/Users/langhe/Documents/.virtualenvs/r-reticulate/Scripts/python.exe\nlibpython:      C:/Users/langhe/AppData/Local/r-miniconda/envs/r-reticulate/python310.dll\npythonhome:     C:/Users/langhe/Documents/.virtualenvs/r-reticulate\nversion:        3.10.16 | packaged by conda-forge | (main, Dec  5 2024, 14:07:43) [MSC v.1942 64 bit (AMD64)]\nArchitecture:   64bit\nnumpy:          C:/Users/langhe/Documents/.virtualenvs/r-reticulate/Lib/site-packages/numpy\nnumpy_version:  2.2.2\n\n\n\n\n\n\n\n\nImportant\n\n\n\nIf the r-reticulate does not exist, you can try to remove and recreate this environment using the following commands in your R console:\n\nreticulate::virtualenv_remove(\"r-reticulate\", confirm = TRUE)\nreticulate::virtualenv_create(\"r-reticulate\")\n\nIf you encounter issues setting up your Python environment, please let us know as this is usually the tricky part of the process.\n\n\n\n\n2.3 Install Python packages to your active reticulate environment\nPython packages will be installed in the active Python environment as set by the RETICULATE_PYTHON_ENV environment variable. If this variable is unset, then the r-reticulate environment will be used. You can install Python packages (e.g., the pandas package, which we will need later in this page) using the function py_install() in your R console:\n\nreticulate::py_install(\"pandas\")\n\n\n\n2.4 Use of a specific Python executable\nYou can also use an alternate Python executable – if you already have one installed on your computer – by using the command use_python():\n\n1reticulate::use_python(\"C:/ProgramData/anaconda3/python.exe\")\n\n\n1\n\nReplace \"C:/ProgramData/anaconda3/python.exe\" with the path to your Python executable.\n\n\n\n\nTo ensure that R uses the correct Python executable, specify its path in the RETICULATE_PYTHON environment variable using the Sys.setenv() function. This is especially important if you have multiple Python installations on your system (e.g. those activated within Conda environments).\n\n\n\n\n\n\nTip\n\n\n\n\nConsistently using the same Python environment in reticulate helps preventing version conflicts and package incompatibilities.\nTo determine the location of your Python executable on Windows, you can open a command prompt, type the command where python, then press Enter.\nNote that you can also set environment variables permanently in R or Quarto by defining them in files that allow you to store key-value pairs, such as RETICULATE_PYTHON=\"C:/ProgramData/anaconda3/python.exe\":\n\nthe _environment file that Quarto loads automatically before rendering - see Quarto documentation;\nthe .Renviron file that R loads automatically at the start of each session and applied for R scripts or Quarto notebooks. To open and edit your .Renviron file, you can use the edit_r_environ() function from the usethis package:\n\n\n\nusethis::edit_r_environ()",
+    "crumbs": [
+      "📘 Use R and Python"
+    ]
+  },
+  {
+    "objectID": "notes/python_r_short_demo.html#execute-python-code",
+    "href": "notes/python_r_short_demo.html#execute-python-code",
+    "title": "📘 Use R and Python",
+    "section": "3 Execute Python code",
+    "text": "3 Execute Python code\nYou can execute Python code by specifying {python} as the chunk language at the beginning of a new code chunk, as is shown below:\n\n```{python}\nimport sys\nprint(f\"Python executable path: {sys.executable}\")\nprint(f\"Python version: {sys.version}\")\n```\n\nPython executable path: C:\\Users\\langhe\\DOCUME~1\\VIRTUA~1\\R-RETI~1\\Scripts\\python.exe\nPython version: 3.10.16 | packaged by conda-forge | (main, Dec  5 2024, 14:07:43) [MSC v.1942 64 bit (AMD64)]",
+    "crumbs": [
+      "📘 Use R and Python"
+    ]
+  },
+  {
+    "objectID": "notes/python_r_short_demo.html#access-r-objects-in-python",
+    "href": "notes/python_r_short_demo.html#access-r-objects-in-python",
+    "title": "📘 Use R and Python",
+    "section": "4 Access R objects in Python",
+    "text": "4 Access R objects in Python\nBelow, we create a data frame in R using the built-in iris dataset, adding a new column called Sepal.Area to illustrate data manipulation in R. We use the mutate() function from the dplyr package for simplicity and display the first five rows of the data frame, finally using the function knitr::kable() for formatted output.\n\n```{r}\n#| label: tbl-1\n#| tbl-cap: Data frame created, manipulated and displayed using R\n\nlibrary(dplyr)\ndf1 &lt;- iris |&gt;\n  dplyr::mutate(Sepal.Area = Sepal.Length * Sepal.Width)\ndf1 |&gt;\n  head(5) |&gt;\n  knitr::kable()\n```\n\n\n\nTable 1: Data frame created, manipulated and displayed using R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal.Area\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n17.85\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n14.70\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n15.04\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n14.26\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n18.00\n\n\n\n\n\n\n\n\nAs illustrated below, you can retrieve R objects (here the data frame df1) from the global environment as Python objects by calling them through the r. prefix. In this example, we access the R data frame df1 and manipulate it in Python by creating a new column, Petal.Area.\n\n```{python}\nimport pandas as pd\ndf2 = r.df1\ndf2[\"Petal.Area\"] = df2[\"Petal.Length\"] * df2[\"Petal.Width\"]\n```",
+    "crumbs": [
+      "📘 Use R and Python"
+    ]
+  },
+  {
+    "objectID": "notes/python_r_short_demo.html#access-python-objects-in-r",
+    "href": "notes/python_r_short_demo.html#access-python-objects-in-r",
+    "title": "📘 Use R and Python",
+    "section": "5 Access Python objects in R",
+    "text": "5 Access Python objects in R\nAs illustrated below, you can reciprocally retrieve Python objects (here the data frame df2) from the global environment as R objects by calling them through the py$ prefix. In this example, we use the Python data frame df2 in R and display the first five rows to confirm the change.\n\n```{r}\n#| label: tbl-2\n#| tbl-cap: Data frame read from a Python object and displayed using R\n\npy$df2 |&gt;\n  head(5) |&gt;\n  knitr::kable()\n```\n\n\n\nTable 2: Data frame read from a Python object and displayed using R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\nSepal.Area\nPetal.Area\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n17.85\n0.28\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n14.70\n0.28\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n15.04\n0.26\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n14.26\n0.30\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n18.00\n0.28\n\n\n\n\n\n\n\n\nThis allows for flexible back-and-forth interactions between R and Python without needing to export or save intermediate files, and can be handy for workflows that encompass data wrangling, statistical analysis, machine learning, and visualization, by leveraging the strengths of both languages.",
+    "crumbs": [
+      "📘 Use R and Python"
+    ]
+  },
+  {
+    "objectID": "notes/python_r_short_demo.html#best-practices",
+    "href": "notes/python_r_short_demo.html#best-practices",
+    "title": "📘 Use R and Python",
+    "section": "6 Best practices",
+    "text": "6 Best practices\n\nEnsure that data structures are compatible. For example, R data frames are automatically converted to Pandas data frames in Python, but other complex R objects may not be directly accessible in Python.\nKeep in mind that transferring large data frames between R and Python may introduce some overhead. Where possible, limit the size of data passed across languages.",
+    "crumbs": [
+      "📘 Use R and Python"
+    ]
+  },
+  {
+    "objectID": "notes/advanced_features.html",
+    "href": "notes/advanced_features.html",
+    "title": "🧰 Helpful resources",
+    "section": "",
+    "text": "Here are some helpful resources to learn more about Quarto:\n\n📄 Quarto cheat sheet - A quick reference for essential Quarto commands and syntax.\n📄️ Quarto official documentation - The go-to guide for learning Quarto in depth.\n📄️ PDF formatting with Quarto\n🗣️️ Build a Quarto website (presentation)\n🗣️️ Build a Quarto dashboard (presentation)\n📺 Build a Quarto dashboard (tutorial)\n⭐ Awesome Quarto - A curated list of awesome Quarto resources.\n\n\n\n\nReuseCC-BY",
+    "crumbs": [
+      "🧰 Helpful resources"
+    ]
+  },
+  {
+    "objectID": "correction/exercise4_step_by_step_correction.html",
+    "href": "correction/exercise4_step_by_step_correction.html",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "",
+    "text": "This page provides a step-by-step correction for adding dynamic elements to a simple MS Word report."
+  },
+  {
+    "objectID": "correction/exercise4_step_by_step_correction.html#improve-navigation-and-readability",
+    "href": "correction/exercise4_step_by_step_correction.html#improve-navigation-and-readability",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "\n1 Improve navigation and readability",
+    "text": "1 Improve navigation and readability\n---\ntitle: My outbreak report\nauthor: Helene Langet\ndate: \"2023-12-31\"\n\nformat:\n docx:\n1  toc: true\n2  number-sections: true\n3  toc-depth: 2\n\nexecute:  \n echo: false        \n warning: false      \n---\n\n1\n\nSet the toc field to true to enable a table of contents (toc) at the beginning of your rendered MS Word report, making it easier for readers to navigate through sections.\n\n2\n\nThis option automatically numbers all section headings (e.g., 1, 1.1, 1.2), providing a clear, hierarchical structure.\n\n3\n\nThis limits the table of contents to display only two levels of headings.\n\n\n\n\n\n\n\n\nImportant\n\n\n\n\nRemember that YAML is a whitespace-sensitive language where indentation determines the structure\n🚫 Do NOT use tabs—they are not recognized.\n✅ Use two spaces per indentation level to ensure consistency and avoid errors.\nIn this example, the table of contents settings are applied specifically to the MS Word document output. If you want these settings to apply to all output formats (like HTML or PDF), move them to a higher level in the YAML header.\nWhen you open the rendered MS Word document, you might see the following warning message: This document contains fields that may refer to other files. Do you want to update the fields in this document?. Do not worry, this is completely normal and does not indicate an error. This message appears because the document contains dynamic fields, such as the table of contents, cross-references, or figure/table captions. Click “Yes” to ensure all references and the table of contents are properly updated. If you click “No,” the document will still open, but some fields may not reflect the latest changes. This is a standard behavior in MS Word when working with dynamic content."
+  },
+  {
+    "objectID": "correction/exercise4_step_by_step_correction.html#implement-dynamic-calculations",
+    "href": "correction/exercise4_step_by_step_correction.html#implement-dynamic-calculations",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "\n2 Implement dynamic calculations",
+    "text": "2 Implement dynamic calculations\n\n2.1 In the YAML header\n---\ntitle: My outbreak report\nauthor: Helene Langet\n4date: last-modified\n5date-format: long\n\nformat:\n docx:\n  toc: true       \n  number-sections: true\n  toc-depth: 2\n\nexecute:  \n echo: false        \n warning: false       \n---\n\n4\n\nInstead of manually entering a date (e.g., 2023-12-31), this setting automatically updates the date to the last time the MS Word document was generated (but this does not reflect when the source Quarto document was last edited).\n\n5\n\nFormats the date to be displayed in a full, human-readable format December 31, 2023. This improves readability, making the report look more polished.\n\n\n2.2 In the Quarto notebook\n\n```{r}\n# Filter the data frame to include only the cases that occurred within the defined period\nsubdf &lt;- df |&gt;\n dplyr::filter(date &gt;= period_start & date &lt;= period_end)\n```\n\n\n```{r}\n6n_all &lt;- nrow(subdf)\n7n_confirmed &lt;- nrow(subdf |&gt; dplyr::filter(confirmed == 1))\n8n_death &lt;- nrow(subdf |&gt; dplyr::filter(death == 1))\n```\n\n\n6\n\nCompute the total number of cases.\n\n7\n\nCompute the total number of confirmed cases.\n\n8\n\nCompute the total number of death cases.\n\n\n\n\nTo insert dynamic values directly into the text, use backticks with {r} within curly brackets. This allows you to run inline R commands within a Quarto document. For example:\n\n“The outbreak ran from `​{r} start_date` to `​{r} end_date`.”\n“This report covers the period `​{r} period_start` to `​{r} period_end`.”\n“Over the studied period, there were `​{r} n_all` cases, including `​{r} n_confirmed` confirmed cases and `​{r} n_deaths` confirmed deaths.”\n\nThe outbreak ran from 2021-01-03 to 2022-12-31. This report covers the period 2021-01-03 to 2022-12-31. Over the studied period, there were 65669 cases, including 52434 confirmed cases and 1214 confirmed deaths."
+  },
+  {
+    "objectID": "correction/exercise4_step_by_step_correction.html#reference-tables",
+    "href": "correction/exercise4_step_by_step_correction.html#reference-tables",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "\n3 Reference tables",
+    "text": "3 Reference tables\nTable 1\n\n```{r}\n9#| label: tbl-1\n#| tbl-cap: Population characteristics\n\n#Table 1\n#Generate a summary table displaying population characteristics\nsubdf |&gt;                \n dplyr::select(age,\n        sex,\n        bmi,\n        confirmed,\n        death) |&gt;\n gtsummary::tbl_summary()      \n```\n\n\n9\n\nAssign a label to the table using the prefix tbl-. This label allows you to refer to the table later in the document, making it easier to create cross-references. After the label is defined, you can refer to this table in your text using the syntax @tbl-1, e.g., “@tbl-1 provides a summary of the demographic characteristics and the outcome proportion for the overall population”.\n\n\n\n\n\nTable 1: Population characteristics\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n\nN = 65,6691\n\n\n\n\nage\n50 (35, 65)\n\n\nsex\n\n\n\n    1\n33,114 (50%)\n\n\n    2\n32,555 (50%)\n\n\nbmi\n29 (21, 38)\n\n\nconfirmed\n\n\n\n    0\n13,235 (20%)\n\n\n    1\n52,434 (80%)\n\n\ndeath\n\n\n\n    0\n64,455 (98%)\n\n\n    1\n1,214 (1.8%)\n\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n\n\n\n\nTable 1 provides a summary of the demographic characteristics and the outcome proportion for the overall population.\nTable 2\n\n```{r}\n10#| label: tbl-2\n#| tbl-cap: Demographic characteristics of deceased vs. alive\n\nsubdf |&gt;                           \n dplyr::select(sex,\n        age,\n        bmi,\n        death) |&gt;\n gtsummary::tbl_summary(by = death) |&gt;\n gtsummary::add_overall()\n```\n\n\n10\n\nAssign a label to the table using the prefix tbl-. This label allows you to refer to the table later in the document, making it easier to create cross-references. After the label is defined, you can refer to this table in your text using the syntax @tbl-2, e.g., “@tbl-2 compares the demographic characteristics of individuals who died versus those who are still alive.”.\n\n\n\n\n\nTable 2: Demographic characteristics of deceased vs. alive\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\n\nOverall, N = 65,6691\n\n\n0, N = 64,4551\n\n\n1, N = 1,2141\n\n\n\n\nsex\n\n\n\n\n\n    1\n33,114 (50%)\n32,504 (50%)\n610 (50%)\n\n\n    2\n32,555 (50%)\n31,951 (50%)\n604 (50%)\n\n\nage\n50 (35, 65)\n50 (35, 65)\n52 (37, 67)\n\n\nbmi\n29 (21, 38)\n29 (21, 38)\n34 (28, 41)\n\n\n\n\n1 n (%); Median (IQR)\n\n\n\n\n\n\n\n\n…, while Table 2 compares the demographic characteristics of individuals who died versus those who are still alive."
+  },
+  {
+    "objectID": "correction/exercise4_step_by_step_correction.html#reference-figures",
+    "href": "correction/exercise4_step_by_step_correction.html#reference-figures",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "\n4 Reference figures",
+    "text": "4 Reference figures\nFigure 1\n\n```{r}\n11#| label: fig-1\n#| fig-cap: Weekly count of all cases, confirmed cases and deaths\n12#| fig-width: 8\n13#| fig-height: 4\n\n# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths\nweekly_data &lt;- subdf |&gt;\n dplyr::group_by(week) |&gt;\n dplyr::summarise(count = dplyr::n(),\n          confirmed_count = sum(confirmed == \"1\"),\n          death_count = sum(death == \"1\"))\n\n# Plot the weekly cases, confirmed cases and deaths\nggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +\n ggplot2::geom_line(ggplot2::aes(y = count,\n                 color = \"All cases\"),\n           size = 1) +\n ggplot2::geom_line(ggplot2::aes(y = confirmed_count,\n                 color = \"Confirmed cases\"),\n           size = 1) +\n ggplot2::geom_line(ggplot2::aes(y = death_count,\n                 color = \"Confirmed deaths\"),\n           size = 1) +\n ggplot2::labs(x = \"Week\",\n        y = \"Count\",\n        color = \"Legend\") +\n ggplot2::scale_color_manual(values = c(\"All cases\" = \"#440e54\",\n                     \"Confirmed cases\" = \"#f8766d\",\n                     \"Confirmed deaths\" = \"#128984\")) +\n ggplot2::theme_minimal() +\n ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5, linetype = \"dashed\", color = \"grey\"),\n         panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5, linetype = \"dashed\", color = \"grey\"),\n         panel.grid.major.x = ggplot2::element_blank(),\n         panel.grid.minor.x = ggplot2::element_blank())\n```\n\n\n11\n\nAssign a label to the figure using the prefix fig-. This label allows you to refer to the table later in the document, making it easier to create cross-references. After the label is defined, you can refer to this table in your text using the syntax @fig-1, e.g., “@fig-1 illustrates the outbreak’s progression, which can be divided into distinct phases.”.\n\n12\n\nSet the width of the figure to 8 inches by using the fig-width option. This option can also be specified globally in the YAML header of the Quarto notebook.\n\n13\n\nSet the height of the figure to 4 inches by using the fig-height option. This option can also be specified globally in the YAML header of the Quarto notebook.\n\n\n\n\n\n\n\n\n\nFigure 1: Weekly count of all cases, confirmed cases and deaths\n\n\n\n\nFigure 1 illustrates the outbreak’s progression, which can be divided into distinct phases.\n\n\nExample of rendering with fig-width and fig-height both set to 4\n\n\n\n\nWeekly count of all cases, confirmed cases and deaths\n\n\n\n\nExample of rendering with fig-width set to 10 and fig-height set to 3\n\n\n\n\nWeekly count of all cases, confirmed cases and deaths"
+  },
+  {
+    "objectID": "correction/exercise4_step_by_step_correction.html#reference-code-chunks",
+    "href": "correction/exercise4_step_by_step_correction.html#reference-code-chunks",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "\n5 Reference code chunks",
+    "text": "5 Reference code chunks\n\n\n\nListing 1: R code for modelling\n\n```{r}\n#| lst-label: lst-1\n#| lst-cap: \"R code for modelling\"\n\ncoeffs &lt;- glm(death ~ bmi + age,       \n       subdf |&gt; dplyr::filter(confirmed == \"1\"), \n       family = binomial)\n```\n\n\n\n\n\nAssign a label to the code chunk by using the lst-label chunk option. After the label is defined, you can refer to this code chunk in your text using the syntax @lst-1, e.g., “It is implemented in R as shown in the code chunk referenced by @lst-1”.\nAdd a caption to the code-chunk by using the lst-cap chunk option.\n\nThe logistic regression model uses death as the response variable, and bmi and age as predictor variables. It is implemented in R as shown in the code chunk referenced by Listing 1."
+  },
+  {
+    "objectID": "correction/exercise4_step_by_step_correction.html#add-bibliographic-references",
+    "href": "correction/exercise4_step_by_step_correction.html#add-bibliographic-references",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "\n6 Add bibliographic references",
+    "text": "6 Add bibliographic references\n\n6.1 To do in the YAML header\n---\ntitle: My outbreak report\nauthor: Helene Langet\ndate: last-modified\ndate-format: long\n\nformat:\n docx:\n  toc: true\n  number-sections: true\n  toc-depth: 2\n  \n14bibliography: my_biblio.bib\n\nexecute:  \n echo: false        \n warning: false\n---\n\n14\n\nLink the bibliography (BibTeX) file my_biblio.bib file by adding it to the YAML header of your Quarto notebook using the bibliography option.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThe BibTeX file must be in the same folder as your Quarto notebook. If the BibTeX file is stored in a different folder, specify the path of the file relative to the Quarto notebook in the bibliography field.\n\n\n\n6.2 To do in the bibTeX file\nOpen the file my_biblio.bib on your computer. If the file does not exist yet, create a new text file and name it my_biblio.bib. Once the file is open, you will need to add the following text, which contains the reference information for the article we want to cite. This text includes all the citation details you need, such as the article’s title, authors, journal name, volume, and publication date. Simply paste it exactly as shown into your my_biblio.bib file, and save the file.\n@article{Bangwen2025,\n title = {Suspected and confirmed mpox cases in DR Congo: a retrospective analysis of national epidemiological and laboratory surveillance data, 2010–23},\n volume = {405},\n ISSN = {0140-6736},\n url = {http://dx.doi.org/10.1016/S0140-6736(24)02669-2},\n DOI = {10.1016/s0140-6736(24)02669-2},\n number = {10476},\n journal = {The Lancet},\n publisher = {Elsevier BV},\n author = {Bangwen, Eugene and Diavita, Ruth and De Vos, Elise and Vakaniaki, Emmanuel Hasivirwe and Nundu, Sabin Sabiti and Mutombo, Annie and Mulangu, Felix and Abedi, Aaron Aruna and Malembi, Emile and Kalonji, Thierry and Kacita, Cris and Kinganda-Lusamaki, Eddy and Wawina-Bokalanga, Tony and Kremer, Cécile and Brosius, Isabel and Van Dijck, Christophe and Bottieau, Emmanuel and Vercauteren, Koen and Amuri-Aziza, Adrienne and Makangara-Cigolo, Jean-Claude and Muyamuna, Elisabeth and Pukuta, Elisabeth and Nguete, Beatrice and Kaba, Didine and Kabamba, Joelle and Hughes, Christine M and Tshiani-Mbaya, Olivier and Rimoin, Anne W and Hoff, Nicole A and Kindrachuk, Jason and Hens, Niel and Peeters, Martine and Low, Nicola and McCollum, Andrea M and Shongo, Robert and Mukadi-Bamuleka, Daniel and Muyembe-Tamfum, Jean-Jacques and Ahuka-Mundeke, Steve and Liesenborghs, Laurens and Mbala-Kingebeni, Placide},\n year = {2025},\n month = feb,\n pages = {408–419}\n}\n\n6.3 To do in the Markdown text\nYou can refer to this citation in your Markdown text using the syntax [@Bangwen2025].\n\n(1) describes trends in suspected and confirmed monkeypox virus cases in the Democratic Republic of Congo using epidemiological and laboratory surveillance data collected from 2010 to 2023.\n\n\n6.4 Visual editor\nIf you are not familiar with BibTeX files or programming, Quarto’s visual mode offers user-friendly tools for managing citations, allowing you to handle most of the previous steps automatically."
+  },
+  {
+    "objectID": "correction/exercise4_step_by_step_correction.html#format-ms-word-reports-with-styles",
+    "href": "correction/exercise4_step_by_step_correction.html#format-ms-word-reports-with-styles",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "\n7 Format MS Word reports with styles",
+    "text": "7 Format MS Word reports with styles\n---\ntitle: My outbreak report\nauthor: Helene Langet\ndate: last-modified\ndate-format: long\n\nformat:\n docx:\n15  reference-doc: swisstph_template.docx\n  toc: true\n  number-sections: true\n  toc-depth: 2\n  \nbibliography: my_biblio.bib\n\nexecute:  \n echo: false        \n warning: false\n---\n\n15\n\nApply the Swiss TPH template swisstph_template.docx to your rendered MS Word report using the reference-doc field (specific to MS Word outputs). This ensures that your report adheres to the Swiss TPH template, maintaining consistent styling across fonts, margins, headings, and other formatting elements.\n\n\n\n\n\n\n\n\nImportant\n\n\n\nThe MS Word template file must be in the same folder as your Quarto notebook. If the template file is stored in a different folder, specify the path of the file relative to the Quarto notebook in the reference-doc field."
+  },
+  {
+    "objectID": "correction/exercise3_step_by_step_correction.html",
+    "href": "correction/exercise3_step_by_step_correction.html",
+    "title": "⭐Create a simple Word Report",
+    "section": "",
+    "text": "This page provides a step-by-step correction for building a simple MS Word report using the Quarto notebook exercise3.qmd as a starting point.\n\n\n\n\n\n\nImportant\n\n\n\nTo get the most out of your learning experience, attempt to solve the exercise on your own before looking at this correction. Remember, trials and errors are an essential part of the learning process, strengthening your understanding and helping you build confidence. Take your time, experiment, and learn actively!\n\n\n\n1 Setup basic elements of the Quarto notebook\nAll the basic elements you need to setup are defined in the YAML header at the beginning of your Quarto notebook.\n---\n1title: My outbreak report\n2author: Helene Langet\n3date: 2023-12-31\n\n4format: docx\n\n5execute:\n6  echo: false\n7  warning: false\n---\n\n1\n\nUpdate the title option in the Quarto notebook. Quotation marks are optional.\n\n2\n\nSet the author option to your name. Quotation marks are optional.\n\n3\n\nAdd the date option and set it to 2023-12-31. Quotation marks are optional.\n\n4\n\nSet the format option to docx to generate a MS Word document.\n\n5\n\nAdd an execute block to customize the execution behaviour for your Quarto notebook. This block allows you to control how code, warnings, and other outputs are displayed in the rendered document.\n\n6\n\nAdd the echo option and set it to false to hide code in the rendered document.\n\n7\n\nAdd the warning option and set it to false to hide warnings in the rendered document.\n\n\n\n\n\n\n\n\nYAML indentation\n\n\n\nRemember that YAML is a whitespace-sensitive language where indentation determines the structure; tabs are not recognised for indentation. The recommended practice is therefore to use two spaces per indentation level to ensure consistency and avoid errors.\n\n\n\n\n2 Create publication-ready summary statistics tables\nCreating publication-ready tables in R often involves leveraging specialized packages. Popular options include gtsummary, gt and flextable. In what follows, we will use gtsummary which is an excellent package for creating summary statistics tables. To install it, run the command install.packages(\"gtsummary\") in your R console.\n\nTable 1\n\n```{r}\n10#| tbl-cap: Population characteristics\n\n#Table 1\n#Generate a summary table displaying population characteristics\nsubdf |&gt;                               \n8  dplyr::select(age,\n                sex,\n                bmi,\n                confirmed,\n                death) |&gt;\n9  gtsummary::tbl_summary()\n```\n\n\n8\n\nUse the dplyr::select() function to select specific columns (age, sex, bmi, confirmed, and death) from the subdf dataset.\n\n9\n\nUse the gtsummary::tbl_summary() function to create a table that summarizes the descriptive statistics of the selected variables in the whole population.\n\n10\n\nAdd a caption to the table by using the tbl-cap chunk option.\n\n\n\n\n\n\n\n\nPopulation characteristics\n\n\n\n\n\n\nCharacteristic\nN = 65,6691\n\n\n\n\nage\n50 (35, 65)\n\n\nsex\n\n\n\n\n    1\n33,114 (50%)\n\n\n    2\n32,555 (50%)\n\n\nbmi\n29 (21, 38)\n\n\nconfirmed\n\n\n\n\n    0\n13,235 (20%)\n\n\n    1\n52,434 (80%)\n\n\ndeath\n\n\n\n\n    0\n64,455 (98%)\n\n\n    1\n1,214 (1.8%)\n\n\n\n1 Median (IQR); n (%)\n\n\n\n\n\n\n\n\n\n\nTable 2\n\n```{r}\n12#| tbl-cap: Demographic characteristics of deceased vs. alive\n\n#Table 2\n#Generate a summary table comparing the demographic characteristics\n#of individuals who died versus those who are still alive\nsubdf |&gt;                                                      \n  dplyr::select(sex,\n                age,\n                bmi,\n                death) |&gt;\n10  gtsummary::tbl_summary(by = death) |&gt;\n11  gtsummary::add_overall()\n```\n\n\n10\n\nUse the gtsummary::tbl_summary() function to create a summary table grouped by the death column, showing separate statistics for individuals who have died vs. those who are still alive.\n\n11\n\nUse the gtsummary::add_overall() function to add a row to the table that shows overall summary statistics for the whole population, regardless of their death status.\n\n12\n\nAdd a caption to the table by using the tbl-cap chunk option.\n\n\n\n\n\n\n\n\nDemographic characteristics of deceased vs. alive\n\n\n\n\n\n\n\n\nCharacteristic\nOverall, N = 65,6691\n0, N = 64,4551\n1, N = 1,2141\n\n\n\n\nsex\n\n\n\n\n\n\n\n\n    1\n33,114 (50%)\n32,504 (50%)\n610 (50%)\n\n\n    2\n32,555 (50%)\n31,951 (50%)\n604 (50%)\n\n\nage\n50 (35, 65)\n50 (35, 65)\n52 (37, 67)\n\n\nbmi\n29 (21, 38)\n29 (21, 38)\n34 (28, 41)\n\n\n\n1 n (%); Median (IQR)\n\n\n\n\n\n\n\n\n\n\n\n3 Create publication-ready figures\n\nFigure 1\n\n```{r}\n13#| fig-cap: Weekly count of all cases, confirmed cases and deaths\n\n#Figure 1\n# Aggregate the data to get the weekly count of all cases, confirmed cases and deaths\nweekly_data &lt;- subdf |&gt;\n  dplyr::group_by(week) |&gt;\n  dplyr::summarise(count = dplyr::n(),\n                   confirmed_count = sum(confirmed == \"1\"),\n                   death_count = sum(death == \"1\"))\n\n# Plot the weekly cases, confirmed cases and deaths\nggplot2::ggplot(weekly_data, ggplot2::aes(x = week)) +                        \n  ggplot2::geom_line(ggplot2::aes(y = count,\n                                  color = \"All cases\"),\n                     size = 1) +\n  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,\n                                  color = \"Confirmed cases\"),\n                     size = 1) +\n  ggplot2::geom_line(ggplot2::aes(y = death_count,\n                                  color = \"Confirmed deaths\"),\n                     size = 1) +\n  ggplot2::labs(x = \"Week\",\n                y = \"Count\",\n                color = \"Legend\") +\n14  ggplot2::scale_color_manual(values = c(\"All cases\" = \"#440e54\",\n                                         \"Confirmed cases\" = \"#f8766d\",\n                                         \"Confirmed deaths\" = \"#128984\")) +\n15  ggplot2::theme_minimal() +\n16  ggplot2::theme(panel.grid.major.y = ggplot2::element_line(linewidth = 0.5,\n                                                            linetype = \"dashed\",\n                                                            color = \"grey\"), \n                 panel.grid.minor.y = ggplot2::element_line(linewidth = 0.5,\n                                                            linetype = \"dashed\",\n                                                            color = \"grey\"),\n17                 panel.grid.major.x = ggplot2::element_blank(),\n                 panel.grid.minor.x = ggplot2::element_blank())\n```\n\n\n13\n\nAdd a caption to the table by using the fig-cap chunk option. Remove the title parameter from ggplot2::labs to avoid the repetition.\n\n14\n\nAssigns specific colors to each line for better distinction.\n\n15\n\nApply the ggplot2::theme_minimal() function to set a clean and simple aesthetic for the plot. This theme removes unnecessary elements such as background shading and focuses attention on the data by displaying only grid lines and axis labels.\n\n16\n\nAdd dashed lines for horizontal (major and minor) grid lines.\n\n17\n\nOmits vertical (major and minor) grid lines for a cleaner look.\n\n\n\n\n\n\n\nWeekly count of all cases, confirmed cases and deaths\n\n\n\n\n\n\n\n4 Present statistical models and results\n```{r}\n18#| echo: true\n\n#Logistic regression model\n19model &lt;- glm(death ~ bmi + age,\n21             subdf |&gt; dplyr::filter(confirmed == \"1\"),\n20             family = binomial)\n```\n\n18\n\nThe echo: true option ensures that the code chunk used to generate the logistic regression model is displayed in the rendered output, which is helpful for transparency and reproducibility.\n\n19\n\nThe glm() function fits a generalised linear model to predict death (binary outcome) from two predictors (bmi and age). The function returns a model object containing various components, such as coefficients (effects of predictors), residuals (errors), and fitted values (predicted probabilities).\n\n20\n\nSet the family argument to binomial to fit a logistic regression model. This is appropriate for binary outcomes like death, as it models the probability of the outcome occurring using a logit (log-odds) function (i.e. coefficients represent the effect size of each predictor on the log-odds of the binary outcome).\n\n21\n\nFilter data using the dplyr::filter() function to subset the dataset so that the model is estimated from confirmed cases only.\n\n\n\nTable 3\n\n```{r}\n24#| tbl-cap: Formatted regression table\n\n#Table 3\n22gtsummary::tbl_regression(model,\n23                          exponentiate = TRUE)\n```\n\n\n22\n\nUse gtsummary::tbl_regression() to create a table summary of the logistic regression results.\n\n23\n\nSet the exponentiate argument to TRUE to convert the coefficients (log-odds) into odds ratios, which are more interpretable and useful for understanding the strength of associations.\n\n24\n\nAdd a caption to the table by using the tbl-cap chunk option.\n\n\n\n\n\n\n\n\nFormatted regression table\n\n\nCharacteristic\nOR1\n95% CI1\np-value\n\n\n\n\nbmi\n1.04\n1.03, 1.04\n&lt;0.001\n\n\nage\n1.00\n1.00, 1.01\n0.003\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval\n\n\n\n\n\n\n\n\n\n\n\n\n\nReuseCC-BY"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Swiss TPH Quarto training",
+    "section": "",
+    "text": "This training introduces the purpose and benefits of creating analytically reproducible documents and shows how Quarto can facilitate this process:\n\nUnderstand the concept of analytically reproducible documents, including their benefits for public health research;\nUnderstand where Quarto fits within the landscape of existing tools and the advantages it offers over other technical solutions;\nLearn the basics of the Quarto syntax;\nGain hands-on experience using Quarto with RStudio to create dynamic, reproducible documents e.g., analytical reports, research manuscripts, websites, dashboards, etc.",
+    "crumbs": [
+      "🔖 Home"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Swiss TPH Quarto training",
+    "section": "",
+    "text": "This training introduces the purpose and benefits of creating analytically reproducible documents and shows how Quarto can facilitate this process:\n\nUnderstand the concept of analytically reproducible documents, including their benefits for public health research;\nUnderstand where Quarto fits within the landscape of existing tools and the advantages it offers over other technical solutions;\nLearn the basics of the Quarto syntax;\nGain hands-on experience using Quarto with RStudio to create dynamic, reproducible documents e.g., analytical reports, research manuscripts, websites, dashboards, etc.",
+    "crumbs": [
+      "🔖 Home"
+    ]
+  },
+  {
+    "objectID": "index.html#pre-requisites",
+    "href": "index.html#pre-requisites",
+    "title": "Swiss TPH Quarto training",
+    "section": "2 Pre-requisites 📋",
+    "text": "2 Pre-requisites 📋\n\nBasic knowledge of R programming\nFamiliarity with the RStudio interface\nLaptop with RStudio version 2022.07 or later installed",
+    "crumbs": [
+      "🔖 Home"
+    ]
+  },
+  {
+    "objectID": "index.html#content-navigation",
+    "href": "index.html#content-navigation",
+    "title": "Swiss TPH Quarto training",
+    "section": "3 Content navigation 🧭",
+    "text": "3 Content navigation 🧭\nIn this training, you will find the following resources to help you along your learning journey:\n\n📘 Lecture notes — Reference materials and examples;\n📙 Assignments — Self-paced exercises to practice and apply skills:\n\n📋 Instructions — Objectives and expectations of the exercise;\n✅ Corrections — Detailed solutions with step-by-step explanations;\nDifficulty of assignments:\n\nGetting started 🌱 — Guided exercises for complete beginners;\nBeginner ⭐ – Foundational exercises to build confidence;\nIntermediate ⭐⭐ – Intermediate challenges to build on core concepts for deeper understanding;\nAdvanced ⭐⭐⭐ – More challenging exercises for comprehensive mastery.",
+    "crumbs": [
+      "🔖 Home"
+    ]
+  },
+  {
+    "objectID": "index.html#feedback",
+    "href": "index.html#feedback",
+    "title": "Swiss TPH Quarto training",
+    "section": "4 Feedback 💬",
+    "text": "4 Feedback 💬\nWe value your input! The fastest way to share your feedback and help us improve this training is by using Hypothesis. When providing feedback, please aim to be constructive and specific.\n\nIf you are new to Hypothesis, create an Hypothesis account;\n\n\n\n\nActivate Hypothesis by clicking the left arrow icon &gt; in the top right corner of the pages of this website to open the Hypothesis annotation sidebar, and log in;\n\n\n\n\n\n\n\n\n\n\nselect the text you want to comment.",
+    "crumbs": [
+      "🔖 Home"
+    ]
+  },
+  {
+    "objectID": "index.html#update-history",
+    "href": "index.html#update-history",
+    "title": "Swiss TPH Quarto training",
+    "section": "5 Update history 📜",
+    "text": "5 Update history 📜\n\nFebruary 04, 2025: Initial release.",
+    "crumbs": [
+      "🔖 Home"
+    ]
+  },
+  {
+    "objectID": "index.html#contributors",
+    "href": "index.html#contributors",
+    "title": "Swiss TPH Quarto training",
+    "section": "6 Contributors 👥",
+    "text": "6 Contributors 👥\nThis work was a collaborative effort, incorporating feedback from students and staff at Swiss TPH. Substantial contributions are acknowledged where applicable on the corresponding pages. Notable contributors include Zhihan Zhu from the Research-IT team at Swiss TPH.",
+    "crumbs": [
+      "🔖 Home"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Swiss TPH Quarto training",
+    "section": "7 License 🏷️",
+    "text": "7 License 🏷️\n This content is licensed under a Attribution 4.0 International (CC BY 4.0).\nYou are free to:\n\nShare — copy and redistribute the material in any medium or format.\nAdapt — remix, transform, and build upon the material for any purpose, even commercially.\n\nUnder the following terms:\n\nAttribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.\nNo additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.",
+    "crumbs": [
+      "🔖 Home"
+    ]
+  },
+  {
+    "objectID": "notes/notebook_structure.html",
+    "href": "notes/notebook_structure.html",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "",
+    "text": "Understand the structure of the Quarto notebook.\nUnderstand the difference and relationships between notebooks and rendered documents.",
+    "crumbs": [
+      "📘 Structure of Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "notes/notebook_structure.html#learning-objectives",
+    "href": "notes/notebook_structure.html#learning-objectives",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "",
+    "text": "Understand the structure of the Quarto notebook.\nUnderstand the difference and relationships between notebooks and rendered documents.",
+    "crumbs": [
+      "📘 Structure of Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "notes/notebook_structure.html#quarto-notebooks-vs.-rendered-documents",
+    "href": "notes/notebook_structure.html#quarto-notebooks-vs.-rendered-documents",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "2 Quarto notebooks vs. rendered documents",
+    "text": "2 Quarto notebooks vs. rendered documents\nA Quarto notebook and its corresponding rendered document(s) serve different purposes but are closely connected.\n\nThe Quarto notebook is the source document (.Qmd) where content is edited.\nThe rendered document is the output generated from the Quarto notebook.\n\nCommon rendered document formats include: - HTML for interactive web-based reports. - PDF for professional and printable documents. - Word for editable text-based outputs.\nA single Quarto notebook can be rendered into multiple formats. While there may be some limitations when targeting different formats, this flexibility is one of Quarto’s core strengths, making it a powerful tool for creating versatile and reusable documents.\n\n\n\n\n\n\nFigure 1: Process of transforming a Quarto document from its source format to the final rendered output. Artwork by Allison Horst.",
+    "crumbs": [
+      "📘 Structure of Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "notes/notebook_structure.html#structure-of-a-quarto-notebook-qmd-file",
+    "href": "notes/notebook_structure.html#structure-of-a-quarto-notebook-qmd-file",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "3 Structure of a Quarto notebook (Qmd file)",
+    "text": "3 Structure of a Quarto notebook (Qmd file)\nThere are three basic components to a Quarto notebook:\n\na unique (YAML) header,\n(markdown) text areas, and\ncode areas (and corresponding output).\n\n\n\n\n\n\n\nFigure 2\n\n\n\n\nHeaderText areasCode areas\n\n\nAt the top of the Quarto notebook, you will see something that looks as follows:\n\nThis section is called the YAML header and it contains commands and metadata about the Quarto notebook. There is only one unique header in a Quarto notebook and it is always surrounded by --- lines on the top and bottom of the section.\nYAML is a data format that has the form of a key: value pairing to store data. The keys in this case are title and format; they are are some of many settings that Quarto has available to use. The values are those that follow the key (e.g., “Untitled” for title). These key data are used to store the settings that Quarto will use to render the output document.\nMore HTML options: HTML Options\n\n\nIn white background areas, you find Markdown text which will appear as regular text in the rendered document.\n\nMarkdown is actually a markup language, which can have formatting such as headings, italics, bold, numbers, and bullets.\n\n\nCode chunks, typically shown within gray backgrounds, execute commands in Quarto.\n\nIn the example provided, R code is being run and identified with the {r} tag. These commands may handle data processing, cleaning, or the generation of visual outputs that are integrated into the final document.",
+    "crumbs": [
+      "📘 Structure of Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "notes/notebook_structure.html#structure-of-a-rendered-document",
+    "href": "notes/notebook_structure.html#structure-of-a-rendered-document",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "4 Structure of a rendered document",
+    "text": "4 Structure of a rendered document\nThe rendered document translates the notebook’s structure, content, and code outputs into a polished, static format for presentation or sharing.",
+    "crumbs": [
+      "📘 Structure of Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "notes/notebook_structure.html#references",
+    "href": "notes/notebook_structure.html#references",
+    "title": "📘 Structure of Quarto notebooks",
+    "section": "5 References",
+    "text": "5 References\n\nThe Epidemiologist R Handbook\nAnalytically reproducible documents",
+    "crumbs": [
+      "📘 Structure of Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "notes/quarto_intro.html",
+    "href": "notes/quarto_intro.html",
+    "title": "📘 Introduction",
+    "section": "",
+    "text": "Research insights are typically disseminated through reports (e.g., scientific presentations, publications, etc), including a textual narrative detailing the research context, methods, and key findings, often supplemented with figures and tables to summarize results, and a final discussion, with findings serving as evidence to support conclusions and recommendations ;\nResearch is an iterative and dynamic process, meaning there are no final or definitive results or reports ;\nIn addition, we continuously build upon the work of others to generate new insights and discoveries.\n\n\n\n\n\n\nFigure 1: Image reproduced from Jorge Cham at PhDComics.",
+    "crumbs": [
+      "📘 Introduction"
+    ]
+  },
+  {
+    "objectID": "notes/quarto_intro.html#research-a-dynamic-process",
+    "href": "notes/quarto_intro.html#research-a-dynamic-process",
+    "title": "📘 Introduction",
+    "section": "",
+    "text": "Research insights are typically disseminated through reports (e.g., scientific presentations, publications, etc), including a textual narrative detailing the research context, methods, and key findings, often supplemented with figures and tables to summarize results, and a final discussion, with findings serving as evidence to support conclusions and recommendations ;\nResearch is an iterative and dynamic process, meaning there are no final or definitive results or reports ;\nIn addition, we continuously build upon the work of others to generate new insights and discoveries.\n\n\n\n\n\n\nFigure 1: Image reproduced from Jorge Cham at PhDComics.",
+    "crumbs": [
+      "📘 Introduction"
+    ]
+  },
+  {
+    "objectID": "notes/quarto_intro.html#reproducibility-in-research",
+    "href": "notes/quarto_intro.html#reproducibility-in-research",
+    "title": "📘 Introduction",
+    "section": "\n2 Reproducibility in research",
+    "text": "2 Reproducibility in research\nAchieving reproducibility requires clear access to the underlying data, the code used for analysis, and the results produced. It also depends on documenting the tools, such as software and libraries, alongside the computational environment, including hardware configurations and operating systems (1).\n\n\n\n\n\nFigure 2: Illustration highlighting the key components of reproducibility in research, including data, code, results, tools, and the computational environment. This illustration is adapted from the one created by Scriberia with The Turing Way community, and used under a CC-BY 4.0 licence. DOI: 10.5281/zenodo.3332807.",
+    "crumbs": [
+      "📘 Introduction"
+    ]
+  },
+  {
+    "objectID": "notes/quarto_intro.html#analytically-reproducible-documents",
+    "href": "notes/quarto_intro.html#analytically-reproducible-documents",
+    "title": "📘 Introduction",
+    "section": "\n3 Analytically reproducible documents",
+    "text": "3 Analytically reproducible documents\nAnalytically reproducible documents typically contain 3 main types of content, integrating code and natural language in a way that is called “literate programming” (2).\n\n\nFormatted text\nCode commands\nCode outputs\n\n\n\nThese are languages that can be written using any plain text editor. They use markup elements to define how text should be displayed or printed.\n\n\n\n3.0.1 HTML\nHTML is used to structure content on the web.\n\n\n&lt;b&gt;This text will be displayed in bold&lt;/b&gt;\n\n\n\n\n\n3.0.2 LaTeX\nLaTeX is used for academic and technical documents.\n\n\n\\textbf{This text will be displayed in bold}\n\n\n\n\n\n3.0.3 Markdown\nMarkdown is a lightweight markup language.\n\n\n**This text will be displayed in bold**\n\n\n\n\n\n\n\nDifferent programming languages allow us to execute code to generate results or perform tasks.\n\n\n\n3.0.4 R\n```{r}\nlibrary(ggplot2)\ndata.frame(country=c(\"Nigeria\",\"Kenya\",\"India\"), prevalence=c(14.5,9.2,3.5)) |&gt;\n  ggplot(aes(x=country, y=prevalence)) +\n  geom_bar(stat=\"identity\", fill=\"steelblue\")\n```\n\n\n\n3.0.5 Python\n\n```{r}\nlibrary(reticulate)\nSys.setenv(RETICULATE_PYTHON = \"C:/ProgramData/anaconda3/python.exe\")\n```\n\n```{python}\nimport matplotlib.pyplot as plt\nplt.bar(['Nigeria', 'Kenya', 'India'], [14.5, 9.2, 3.5], color='steelblue')\nplt.show()\n```\n\n\n\n3.0.6 Observable JS\n```{ojs}\nBarChart({x: [\"Nigeria\", \"Kenya\", \"India\"], y: [14.5, 9.2, 3.5], yLabel: \"Prevalence (%)\"})\n```\n\n\n\n\n\nThe output from executing code often results in visualizations or printed results. Below are the corresponding outputs for each language:\n\n\n\n\n\nCall:  glm(formula = confirmed ~ age, family = binomial, data = df)\n\nCoefficients:\n(Intercept)          age  \n   1.312275     0.001292  \n\nDegrees of Freedom: 65668 Total (i.e. Null);  65667 Residual\nNull Deviance:      66000 \nResidual Deviance: 66000    AIC: 66000\n\n\n\n\n\n\n\nc1\nc2\n\n\n\nsetosa\n5.1\n\n\nsetosa\n4.9\n\n\nsetosa\n4.7\n\n\nsetosa\n4.6\n\n\nsetosa\n5.0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDocuments can be rendered in different type of outputs e.g., MS Word, PDF, HTML, PowerPoint, etc.\nPandoc is a powerful open-source tool that enables seamless conversion between various document formats, making it an essential resource for working with markup languages like Markdown, HTML, and LaTeX. By using Pandoc, you can easily transform a document written in one markup language into a wide range of output formats, including MS Word, PDF, HTML, PowerPoint, and more, without needing to manually adjust formatting or structure.\nThis versatility makes Pandoc particularly valuable in workflows that involve literate programming. Pandoc also supports templates and extensions, allowing users to customize the output to meet specific stylistic or formatting requirements, simplifying the process of producing polished, professional documents.\n\n\n\n\n\nFigure 3: Process of transforming a Quarto document from its source format to the final rendered output. Artwork by Allison Horst.",
+    "crumbs": [
+      "📘 Introduction"
+    ]
+  },
+  {
+    "objectID": "notes/quarto_intro.html#existing-tools-for-writing-analytically-reproducible-documents",
+    "href": "notes/quarto_intro.html#existing-tools-for-writing-analytically-reproducible-documents",
+    "title": "📘 Introduction",
+    "section": "\n4 Existing tools for writing analytically reproducible documents",
+    "text": "4 Existing tools for writing analytically reproducible documents\n\n\n\n\n\nFigure 4: Existing tools for writing analytically reproducible documents",
+    "crumbs": [
+      "📘 Introduction"
+    ]
+  },
+  {
+    "objectID": "notes/quarto_intro.html#quarto",
+    "href": "notes/quarto_intro.html#quarto",
+    "title": "📘 Introduction",
+    "section": "\n5 Quarto",
+    "text": "5 Quarto\n\nQuarto is the successor to R Markdown, but is not tied to the R language.\nQuarto files have a .qmd extension.\n\n\n\n\n\n\nFigure 5: Artwork by Allison Horst.\n\n\n\n\n\n5.1 Source document\n\n\n\n\n5.2 Rendered output\n\n\n\n\n\n5.3 Quarto rendered outputs\n\nQuarto documents can be rendered into to many report formats including HTML, Word document and many more\nList of supported formats\n\n\n\n\n\n\n5.4 Engines\nAn engine refers to the software or system that executes the embedded code within a document. The engine takes the code chunks written in a specific programming language (e.g., R, Python, or Julia), runs them, and returns the output, which is then incorporated into the rendered document.\nBoth knitr and Jupyter serve as engines to execute code embedded within a document, but they work in different programming environments.\n\n\nknitr\nJuypter\n\n\n\nThis R package will read the code chunks, execute it, and ‘knit’ it back into the document. This is how tables and graphs are included alongside the text.\n\n\n\n\n\n\nJupyter is a popular engine for running Python code interactively. It supports multiple programming languages, but Python is the most common.",
+    "crumbs": [
+      "📘 Introduction"
+    ]
+  },
+  {
+    "objectID": "notes/quarto_intro.html#to-go-further-on-reproducibility",
+    "href": "notes/quarto_intro.html#to-go-further-on-reproducibility",
+    "title": "📘 Introduction",
+    "section": "\n6 To go further on reproducibility",
+    "text": "6 To go further on reproducibility\n\nMOOC Reproducible research I - Methodological principles for transparent science (in French)\nMOOC Reproducible research II - Practices and tools for managing computations and data",
+    "crumbs": [
+      "📘 Introduction"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_gettingstarted.html",
+    "href": "practicals/exercise2_gettingstarted.html",
+    "title": "🌱 Edit and render Quarto notebooks",
+    "section": "",
+    "text": "Edit Quarto notebooks.\nLearn about visual editor and source editor.\nRun R code in notebook mode.\nRender Quarto documents in different formats, and execute R code within the text.",
+    "crumbs": [
+      "📙 Edit and render Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_gettingstarted.html#learning-objectives",
+    "href": "practicals/exercise2_gettingstarted.html#learning-objectives",
+    "title": "🌱 Edit and render Quarto notebooks",
+    "section": "",
+    "text": "Edit Quarto notebooks.\nLearn about visual editor and source editor.\nRun R code in notebook mode.\nRender Quarto documents in different formats, and execute R code within the text.",
+    "crumbs": [
+      "📙 Edit and render Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_gettingstarted.html#editing-text",
+    "href": "practicals/exercise2_gettingstarted.html#editing-text",
+    "title": "🌱 Edit and render Quarto notebooks",
+    "section": "2 Editing text",
+    "text": "2 Editing text\n\n\n\n\n\n\nUseful resources\n\n\n\n\nQuarto Documentation - Visual Editing in RStudio\nQuarto Documentation - Markdown Basics\n\n\n\nThe RStudio visual editor is a relatively new feature designed to improve the editing experience by providing an intuitive interface. In the Visual Editor, you can preview your document in a format that closely resembles its final rendered appearance, similar to working in a “What You See Is What You Get” (WYSIWYG) languages, such as Microsoft Word, allowing for seamless content creation and editing.\nThis contrasts with the RStudio source editor, where content is written in Markdown syntax. The ability to switch between these two modes allows for flexibility, depending on your preference or task.\nBelow is an example of the same file viewed in both the source Editor and the visual Editor:\n\n\n\n\n\n\n\nIn the Visual Editor, the toolbar inclues the most commonly used formatting commands:\n\nIn the menus you can find available options. For example, in Format, you can make text Bold, Italic, or underline; in Insert, you can insert a code chunk with available language options or a YAML block easily; and Table create much convenience for inserting a table.",
+    "crumbs": [
+      "📙 Edit and render Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_gettingstarted.html#running-r-code-in-notebook-mode",
+    "href": "practicals/exercise2_gettingstarted.html#running-r-code-in-notebook-mode",
+    "title": "🌱 Edit and render Quarto notebooks",
+    "section": "3 Running R code in notebook mode",
+    "text": "3 Running R code in notebook mode\nTo write and execute code in Quarto, you will use code chunks.\n\n\n\n\n\n\nMultilanguage\n\n\n\nAs the number of programming languages used for scientific discourse is very broad, Quarto was developed to be multilingual, beginning with R, Python, Observable JavaScript (OJS), and Julia, building on the RStudio (R) and Jupyter (Python, Julia) ecosystems which are very popular among data scientists. Stata is not a language supported by Quarto.\n\n\nYou can run R code in your Quarto document, by writing R commands within code chunks as is displayed below\n\n```{r}\n1 + 1\n```\n\n[1] 2\n\n\n\n3.1 Create code chunks\n\n\n\n\n\n\nTip\n\n\n\nHere are some tips for creating code chunks in RStudio\n\nBackticks: use three backticks to start and end a code chunk.\nToolbar icon: you can also start a code chunk by clicking the appropriate icon in the toolbar. \nKeyboard shortcut: for a quicker method, use the keyboard shortcut Ctrl + Alt + I\n\n\n\n\n\n3.2 Tables\nDisplaying data can be achieved with simple commands. For instance, to show the first 10 rows of the iris dataset, one can use:\n\n```{r}\niris |&gt;\n  head(10)\n```\n\n   Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n1           5.1         3.5          1.4         0.2  setosa\n2           4.9         3.0          1.4         0.2  setosa\n3           4.7         3.2          1.3         0.2  setosa\n4           4.6         3.1          1.5         0.2  setosa\n5           5.0         3.6          1.4         0.2  setosa\n6           5.4         3.9          1.7         0.4  setosa\n7           4.6         3.4          1.4         0.3  setosa\n8           5.0         3.4          1.5         0.2  setosa\n9           4.4         2.9          1.4         0.2  setosa\n10          4.9         3.1          1.5         0.1  setosa\n\n\nTo improve the readability of tables, the knitr::kable() function provides a more structured and formatted output:\n\n```{r}\niris |&gt;\n  head(10)  |&gt;\n  knitr::kable()\n```\n\n\n\n\nSepal.Length\nSepal.Width\nPetal.Length\nPetal.Width\nSpecies\n\n\n\n\n5.1\n3.5\n1.4\n0.2\nsetosa\n\n\n4.9\n3.0\n1.4\n0.2\nsetosa\n\n\n4.7\n3.2\n1.3\n0.2\nsetosa\n\n\n4.6\n3.1\n1.5\n0.2\nsetosa\n\n\n5.0\n3.6\n1.4\n0.2\nsetosa\n\n\n5.4\n3.9\n1.7\n0.4\nsetosa\n\n\n4.6\n3.4\n1.4\n0.3\nsetosa\n\n\n5.0\n3.4\n1.5\n0.2\nsetosa\n\n\n4.4\n2.9\n1.4\n0.2\nsetosa\n\n\n4.9\n3.1\n1.5\n0.1\nsetosa\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nAdditional R packages can be used for more advanced and aesthetically refined tables.",
+    "crumbs": [
+      "📙 Edit and render Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_gettingstarted.html#rendering",
+    "href": "practicals/exercise2_gettingstarted.html#rendering",
+    "title": "🌱 Edit and render Quarto notebooks",
+    "section": "4 Rendering",
+    "text": "4 Rendering\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code.\n\nIn the case of this YAML header, the Quarto document will generate an HTML file because of the format: html setting.\n\n\n\n\n\n\nCode errors\n\n\n\nIf you attempt to render the document with code chunks that contain errors, the rendering process will fail. Therefore, it is essential to ensure that all code chunks run successfully in sequence before rendering the document.\n\n\n\n4.1 Options\nYou can add options to a specific code chunk as is shown below:\n```{r}\n#| echo: false\n2 * 2\n```\nThe echo: false option hides the code chunk in the rendered output document (only code output is displayed). In this example, rendered output document will only print:\n\n\n[1] 4\n\n\nAdditionally, you can apply such options globally by specifying them in the YAML header, which configures settings for the entire Quarto document.\n---\ntitle: \"Quarto training for R - Exercise 2\"\nauthor: Unknown author\nformat: html\neditor: visual\nexecute:\n  echo: true\n---\n\n\n\n\n\n\nImportant\n\n\n\nIndentation is essential for defining the structure of YAML contents. It is important to note that tabulations are not recognised as valid indentation, but the YAML language is whitespace-sensitive. The recommended practice is therefore to use two spaces per indentation level to ensure consistency and avoid errors.\n\n\n\n\n\n\n\n\n\nHere you may want to edit the title of your document.\n\n\n4.2 MS Word outputs\nYou can also render a MS Word document by modifying the global format option in the YAML header to format: docx\n---\ntitle: \"Quarto training for R - Exercise 2\"\nauthor: Unknown author\nformat: docx\neditor: visual\n---\n\n\n4.3 PDF outputs\nYou can also render a PDF document by modifying the global format option in the YAML header to format: pdf\n---\ntitle: \"Quarto training for R - Exercise 2\"\nauthor: Unknown author\nformat: pdf\neditor: visual\n---\nWhile PDF documents are also able to be created, they require installing LaTeX, which can sometimes be complicated to install. TinyTeX is a custom LaTeX distribution that is easy to install with R. It is needed to compile R Markdown or Quarto documents to PDF.\nInstall the TinyTeX package, and install TinyTeX from the tinytex package:\n```{r}\ninstall.packages(\"tinytex\")\ntinytex::install_tinytex()\n```\nIf specific LaTeX packages (e.g., fancyhdr, lastpage, babel, tocbibind, worldflags) or styles are missing, they can be installed using the following commands:\n```{r}\ntinytex::tlmgr_install(\"fancyhdr\")\n```\n```{r}\ntinytex::parse_install(\n    text = \"! LaTeX Error: File `ulem.sty' not found.\"\n)\n```\nIn order to avoid the warning No hyphenation patterns were preloaded for the language French into the format., please consider installing the package hyphen-french\n```{r}\ntinytex::tlmgr_install(\"hyphen-french\")\n```\n\n\n4.4 Execute R code within the text\nInline code allows you to execute code within markdown, e.g. to automatically use the most up-to-date computations in narrative. Quarto provides an inline code syntax that works across all three engines (Jupyter, Knitr and OJS).\nThe syntax for inline code is similar to code blocks, except you use a single tick (`) rather than triple ticks (```), and you can use it in the middle of markdown. Here is an example storing the variable in a code block and then print it in a sentence using inline code:\n\n```{r}\ncomment &lt;- \"AWESOME\"\n```\n\nYou can print the sentence like this:\nThis lecture is `{r} comment`!\nThe result of the commented code is the following output:\n\nThis lecture is AWESOME!\n\nInline expressions are always evaluated when rendering and previewing .qmd files.\n\nChunk Execution Order: Run code chunks in the correct order to avoid errors due to missing objects or incomplete definitions. Use clear and consistent chunk labels for cross-referencing.",
+    "crumbs": [
+      "📙 Edit and render Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise2_gettingstarted.html#references",
+    "href": "practicals/exercise2_gettingstarted.html#references",
+    "title": "🌱 Edit and render Quarto notebooks",
+    "section": "5 References",
+    "text": "5 References\n\nThe Epidemiologist R Handbook\nAnalytically reproducible documents",
+    "crumbs": [
+      "📙 Edit and render Quarto notebooks"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise3_instructions.html",
+    "href": "practicals/exercise3_instructions.html",
+    "title": "⭐ Create a simple Word report",
+    "section": "",
+    "text": "You are tasked with generating a simple analytically reproducible report on a fictitious outbreak.\nDownload the files df1.RData and exercise3.qmd using the links provided on the right-hand side of this page. For simplicity, please put these two files under the same folder and open the Quarto notebook in RStudio.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.\nThe final output should be a Microsoft (MS) Word report named exercise3.docx, containing all required tables, figures and corresponding captions.",
+    "crumbs": [
+      "📙 Create a simple Word report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise3_instructions.html#objectives",
+    "href": "practicals/exercise3_instructions.html#objectives",
+    "title": "⭐ Create a simple Word report",
+    "section": "",
+    "text": "You are tasked with generating a simple analytically reproducible report on a fictitious outbreak.\nDownload the files df1.RData and exercise3.qmd using the links provided on the right-hand side of this page. For simplicity, please put these two files under the same folder and open the Quarto notebook in RStudio.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.\nThe final output should be a Microsoft (MS) Word report named exercise3.docx, containing all required tables, figures and corresponding captions.",
+    "crumbs": [
+      "📙 Create a simple Word report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise3_instructions.html#setup-basic-elements-of-the-quarto-notebook",
+    "href": "practicals/exercise3_instructions.html#setup-basic-elements-of-the-quarto-notebook",
+    "title": "⭐ Create a simple Word report",
+    "section": "2 Setup basic elements of the Quarto notebook",
+    "text": "2 Setup basic elements of the Quarto notebook\n\nUpdate the title of the Quarto notebook ;\nPut your name as author of the Quarto notebook ;\nAdd the date 2023-12-31 to the Quarto notebook ;\nChange the output format to generate a MS Word document ;\nConfigure the Quarto notebook to hide code in the rendered document ;\nConfigure the Quarto notebook to hide warnings in the rendered document.\n\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about MS Word options\nSee Quarto documentation about execution options",
+    "crumbs": [
+      "📙 Create a simple Word report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise3_instructions.html#create-publication-ready-summary-statistics-tables",
+    "href": "practicals/exercise3_instructions.html#create-publication-ready-summary-statistics-tables",
+    "title": "⭐ Create a simple Word report",
+    "section": "3 Create publication-ready summary statistics tables",
+    "text": "3 Create publication-ready summary statistics tables\n\nTable 1\n\nCreate a table summarising the demographic characteristics and outcome frequency of all cases ;\nAdd a caption to the table.\n\n\n```{r}\n#Table 1\n#Generate a summary table displaying population characteristics\n```\n\n\n\nTable 2\n\nCreate a table summarising the demographic characteristics of individuals who died versus those who are still alive ;\nAdd a caption to the table.\n\n\n```{r}\n#Table 2\n#Generate a summary table comparing the demographic characteristics of individuals who died versus those who are still alive\n```\n\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation for creating formatted summary tables\nSee tbl-cap option to add a caption to a table generated by an executable code chunk\n\nOther R packages for working with and customising tables include flextable and gt",
+    "crumbs": [
+      "📙 Create a simple Word report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise3_instructions.html#create-publication-ready-figures",
+    "href": "practicals/exercise3_instructions.html#create-publication-ready-figures",
+    "title": "⭐ Create a simple Word report",
+    "section": "4 Create publication-ready figures",
+    "text": "4 Create publication-ready figures\n\nFigure 1\n\nAdd a caption to the figure;\nBeautify the plot using ggplot options.\n\n\n```{r}\n#Figure 1\n#Aggregate the data to get the weekly count of all cases, confirmed cases and deaths\nweekly_data &lt;- subdf |&gt;\n  dplyr::group_by(week) |&gt;\n  dplyr::summarise(count = dplyr::n(),\n                   confirmed_count = sum(confirmed == \"1\"),\n                   death_count = sum(death == \"1\"))\n\n#Plot the weekly count of all cases, confirmed cases and deaths\nweekly_data |&gt;\n  ggplot2::ggplot(ggplot2::aes(x = week)) +\n  ggplot2::geom_line(ggplot2::aes(y = count,\n                                  color = \"All cases\"),\n                     size = 1) +\n  ggplot2::geom_line(ggplot2::aes(y = confirmed_count,\n                                  color = \"Confirmed cases\"),\n                     size = 1) +\n  ggplot2::geom_line(ggplot2::aes(y = death_count,\n                                  color = \"Confirmed deaths\"),\n                     size = 1) +\n  ggplot2::labs(title = \"Weekly count of all cases, confirmed cases and deaths\",\n                x     = \"Week\",\n                y     = \"Count\",\n                color = \"Legend\")\n```\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTip\n\n\n\n\nsee fig-cap option to add a caption to a figure generated by an executable code chunk;",
+    "crumbs": [
+      "📙 Create a simple Word report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise3_instructions.html#present-statistical-models-and-results",
+    "href": "practicals/exercise3_instructions.html#present-statistical-models-and-results",
+    "title": "⭐ Create a simple Word report",
+    "section": "5 Present statistical models and results",
+    "text": "5 Present statistical models and results\n\nImplement a logistic regression model based on the description provided in the Quarto notebook;\nDisplay the code chunk with your R implementation of the logistic regression (and only display this code chunk) in the rendered MS Word document.\n\n\n```{r}\n#Logistic regression model\n```\n\n\nTable 3\n\nCreate a table summarizing the odds ratios from the logistic regression model;\nAdd a caption to the table.\n\n\n```{r}\n#Table 3\n```\n\n\n\n\n\n\n\nTip\n\n\n\n\nSee gtsummary documentation for creating formatted tables of regression model results\n\n\n\nReady to take it further? Once you have completed this exercise, you can add dynamic elements to your report ⭐⭐.",
+    "crumbs": [
+      "📙 Create a simple Word report"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html",
+    "href": "practicals/exercise4_instructions.html",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "",
+    "text": "This exercise builds on the previous exercise where you learnt to build a simple MS Word report ⭐.",
+    "crumbs": [
+      "📙 Add dynamic elements to reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#objectives",
+    "href": "practicals/exercise4_instructions.html#objectives",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "1 Objectives 🎯",
+    "text": "1 Objectives 🎯\n\nYou are tasked with generating a simple analytically reproducible report on a fictitious outbreak;\nIf you have generated the simple MS Word report as in Exercise 3, continue working on the same Quarto notebook you already modified. Otherwise, download the files df1.RData and exercise4.qmd using the links provided on the right-hand side of this page. For simplicity, please put these two files under the same folder and open the Quarto notebook in RStudio.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress;\nAll text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references;\nThe final output should be a Microsoft (MS) Word report, containing all required tables, figures, corresponding captions and cross-references, and formatted with the Swiss TPH template.",
+    "crumbs": [
+      "📙 Add dynamic elements to reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#improve-navigation-and-readability",
+    "href": "practicals/exercise4_instructions.html#improve-navigation-and-readability",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "2 Improve navigation and readability",
+    "text": "2 Improve navigation and readability\n\nInsert a table of contents to the rendered MS Word document;\nAutomatically number the different sections of the rendered MS Word document;\nConfigure the table of contents to only display two levels of section headings.\n\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about table of contents",
+    "crumbs": [
+      "📙 Add dynamic elements to reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#implement-dynamic-calculations",
+    "href": "practicals/exercise4_instructions.html#implement-dynamic-calculations",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "3 Implement dynamic calculations",
+    "text": "3 Implement dynamic calculations\n\nChange the date 2023-12-31 to the date at which the MS Word document was last rendered;\nFormat the date at which the MS Word document was last rendered to display it with the format December 31, 2023;\n\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about date formatting\nSee Quarto documentation about dynamic dates\n\n\n\n\nReplace the placeholder text in bold with the automated calculation of the outbreak start and end dates;\n\n\n“The outbreak ran from date to date”\n\n\nReplace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.\n\n\n“Over the studied period, there were N cases, including N confirmed cases and N confirmed deaths.”\n\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about inline code",
+    "crumbs": [
+      "📙 Add dynamic elements to reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#reference-tables",
+    "href": "practicals/exercise4_instructions.html#reference-tables",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "4 Reference tables",
+    "text": "4 Reference tables\n\nTable 1\n\nAssign a label to the table summarising the demographic characteristics and outcome frequency of all cases;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“cross-reference provides a summary of the demographic characteristics and the outcome proportion for the overall population”\n\n\n\nTable 2\n\nAssign a label to the table summarising the demographic characteristics of individuals who died versus those who are still alive;\nReplace the placeholder text in bold with a cross-reference to the table.\n\n\n“while cross-reference compares the demographic characteristics of individuals who died versus those who are still alive”\n\n\n\nTable 3\n\nAssign a label to the table summarizing the odds ratios from the logistic regression model;\nReplace the placeholder text in bold with a cross-reference to the table\n\n\n“The results of the logistic regression model are summarized in the formatted regression table, which is presented in cross-reference.”\n\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about table cross-references",
+    "crumbs": [
+      "📙 Add dynamic elements to reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#reference-figures",
+    "href": "practicals/exercise4_instructions.html#reference-figures",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "5 Reference figures",
+    "text": "5 Reference figures\n\nFigure 1\n\nAssign a label to the figure;\nReplace the placeholder text in bold with a cross-reference to the figure;\n\n\n“cross-reference illustrates the outbreak’s progression, which can be divided into distinct phases.”\n\n\nAdjust the dimensions of the figure until you are happy with them.\n\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about figure cross-references\nSee fig-width and fig-height options to adjust figure dimensions",
+    "crumbs": [
+      "📙 Add dynamic elements to reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#reference-code-chunks",
+    "href": "practicals/exercise4_instructions.html#reference-code-chunks",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "6 Reference code chunks",
+    "text": "6 Reference code chunks\n\nAdd a caption to the code chunk for your R implementation of the logistic regression;\nAssign a label to the code chunk;\nReplace the placeholder text in bold with a cross-reference to the code chunk.\n\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about code chunk cross-references",
+    "crumbs": [
+      "📙 Add dynamic elements to reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#add-bibliographic-references",
+    "href": "practicals/exercise4_instructions.html#add-bibliographic-references",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "7 Add bibliographic references",
+    "text": "7 Add bibliographic references\n\nCreate a bibliography (BibTeX) file my_biblio.bib in the same folder as your Quarto notebook;\nLink the BibTeX file by adding it to the YAML header of your Quarto notebook;\nAdd a new reference for 10.1016/S0140-6736(24)02669-2 in the BibTeX file;\nCreate a new section named Background in your Quarto notebook, after the Overview section and before the Population section;\nInsert the following sentence into the Background section, and replace the placeholder text in bold with the correct citation key from your BibTeX file.\n\n\n“citation describes trends in suspected and confirmed monkeypox virus cases in the Democratic Republic of Congo using epidemiological and laboratory surveillance data collected from 2010 to 2023.”\n\n\n\n\n\n\n\nTip\n\n\n\n\nYou can generate the BibTeX entry from the DOI using citation management tools;\nSee Quarto documentation about citations for guidance on formatting references;\nIf you are not familiar with BibTeX files or programming, Quarto’s visual mode offers user-friendly tools for managing citations, allowing you to handle most of the previous steps automatically.",
+    "crumbs": [
+      "📙 Add dynamic elements to reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise4_instructions.html#format-ms-word-reports-with-styles",
+    "href": "practicals/exercise4_instructions.html#format-ms-word-reports-with-styles",
+    "title": "⭐⭐ Add dynamic elements to reports",
+    "section": "8 Format MS Word reports with styles",
+    "text": "8 Format MS Word reports with styles\n\nApply the Swiss TPH template swisstph_template.docx to your rendered MS Word report;\nTo go further, try creating your own custom Word template and apply it to your report to explore how MS Word styles can be personalized.\n\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about Word templates;\nTo create a template with customized MS Word styles, you will need to start with a Quarto-rendered MS Word report. This is because not all MS Word styles are supported by Quarto, and starting from a rendered report ensures better compatibility.",
+    "crumbs": [
+      "📙 Add dynamic elements to reports"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise5_instructions.html",
+    "href": "practicals/exercise5_instructions.html",
+    "title": "⭐⭐⭐ Parametrise your report",
+    "section": "",
+    "text": "This exercise builds on the previous exercises where you learnt to create a simple MS Word report ⭐ and to add dynamic elements to your report ⭐⭐. Mastering these two exercises is essential for successfully completing the current exercise.",
+    "crumbs": [
+      "📙 Parametrise reports 🛠"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise5_instructions.html#objectives",
+    "href": "practicals/exercise5_instructions.html#objectives",
+    "title": "⭐⭐⭐ Parametrise your report",
+    "section": "1 Objectives 🎯",
+    "text": "1 Objectives 🎯\n\nIf you have generated the MS Word report with dynamic elements as instructed in Exercise 4, continue working on the same Quarto notebook you already modified. Otherwise, download the files df1.RData, df2.RData, exercise5.qmd, swisstph_template.docx, and my_biblio.bib using the links provided on the right-hand side of this page. For simplicity, please put these two files under the same folder and open the Quarto notebook in RStudio.\nComplete each of the following tasks and render the document after each task or set of tasks to track your progress.",
+    "crumbs": [
+      "📙 Parametrise reports 🛠"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise5_instructions.html#use-quarto-in-a-terminal",
+    "href": "practicals/exercise5_instructions.html#use-quarto-in-a-terminal",
+    "title": "⭐⭐⭐ Parametrise your report",
+    "section": "2 Use Quarto in a terminal",
+    "text": "2 Use Quarto in a terminal\n\nRender your MS Word report using the RStudio Terminal;\n\nquarto render exercise5.qmd\n\nChange the output filename when rendering the report;\n\nquarto render exercise5.qmd -o exercise5_report1.docx\n\n\n\n\n\n\nTip\n\n\n\n\nYou can access the RStudio terminal in the Terminal tab immediately to the right of the Console tab:\n\n\n\n\n\n\n\nIf the terminal tab is not visible, go to Tools &gt; Terminal &gt; Move Focus to Terminal",
+    "crumbs": [
+      "📙 Parametrise reports 🛠"
+    ]
+  },
+  {
+    "objectID": "practicals/exercise5_instructions.html#parametrise-your-report",
+    "href": "practicals/exercise5_instructions.html#parametrise-your-report",
+    "title": "⭐⭐⭐ Parametrise your report",
+    "section": "3 Parametrise your report",
+    "text": "3 Parametrise your report\n\nAdjust the report to focus on data for the year 2022 only ;\nYou were unfortunately provided with a previous erroneous version of the dataset. Update the report to use the dataset stored in df2.RData instead of the one stored in df1.RData ;\nRender 3 reports (1 report with df2.RData for the full outbreak period, 1 report with df1.RData for year 2021 only, 1 report with df2.RData for year 2021 only) adapting the following command which needs to be run in a terminal (ensure your working directory is the one where your Quarto document is stored and all file paths are correct).\n\nquarto render exercise5.qmd -o exercise5_report_df1.docx -P dataset:df1.RData\n\n\n\n\n\n\nTip\n\n\n\n\nSee Quarto documentation about parameters\nSee Quarto documentation about rendering outputs using different parameters\n\n\n\n\n\n\n\n\n\nDiscussion question\n\n\n\nDiscuss the advantages and disadvantages of using R within Quarto compared to using R scripts.",
+    "crumbs": [
+      "📙 Parametrise reports 🛠"
+    ]
+  },
+  {
+    "objectID": "correction/exercise 3_correction.html",
+    "href": "correction/exercise 3_correction.html",
+    "title": "My outbreak report",
+    "section": "",
+    "text": "The outbreak ran from 2021-01-03 to 2022-12-31. This report covers the period 2021-01-03 to 2021-12-31. Over the studied period, there were 37024 cases, including 30950 confirmed cases and 884 confirmed deaths."
+  },
+  {
+    "objectID": "correction/exercise 3_correction.html#overview",
+    "href": "correction/exercise 3_correction.html#overview",
+    "title": "My outbreak report",
+    "section": "",
+    "text": "The outbreak ran from 2021-01-03 to 2022-12-31. This report covers the period 2021-01-03 to 2021-12-31. Over the studied period, there were 37024 cases, including 30950 confirmed cases and 884 confirmed deaths."
+  },
+  {
+    "objectID": "correction/exercise 3_correction.html#population-characteristics",
+    "href": "correction/exercise 3_correction.html#population-characteristics",
+    "title": "My outbreak report",
+    "section": "2 Population characteristics",
+    "text": "2 Population characteristics\nTable 1 provides a summary of the demographic characteristics and the outcome proportion for the overall population, while Table 2 compares the demographic characteristics of individuals who died versus those who are still alive.\n\n\n\n\nTable 1: Population characteristics\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN = 37,0241\n\n\n\n\nage\n50 (35, 65)\n\n\nsex\n\n\n\n\n    1\n18,754 (51%)\n\n\n    2\n18,270 (49%)\n\n\nbmi\n29 (21, 38)\n\n\nconfirmed\n\n\n\n\n    0\n6,074 (16%)\n\n\n    1\n30,950 (84%)\n\n\ndeath\n\n\n\n\n    0\n36,140 (98%)\n\n\n    1\n884 (2.4%)\n\n\n\n1 Median (Q1, Q3); n (%)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTable 2: Demographic characteristics of deceased vs. alive\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nOverall N = 37,0241\n0 N = 36,1401\n1 N = 8841\n\n\n\n\nsex\n\n\n\n\n\n\n\n\n    1\n18,754 (51%)\n18,299 (51%)\n455 (51%)\n\n\n    2\n18,270 (49%)\n17,841 (49%)\n429 (49%)\n\n\nage\n50 (35, 65)\n50 (35, 65)\n52 (38, 67)\n\n\nbmi\n29 (21, 38)\n29 (21, 37)\n35 (29, 42)\n\n\n\n1 n (%); Median (Q1, Q3)"
+  },
+  {
+    "objectID": "correction/exercise 3_correction.html#outbreak-evolution",
+    "href": "correction/exercise 3_correction.html#outbreak-evolution",
+    "title": "My outbreak report",
+    "section": "3 Outbreak evolution",
+    "text": "3 Outbreak evolution\nFigure 1 illustrates the outbreak’s progression, which can be divided into distinct phases.\n\n\n\n\n\n\n\n\nFigure 1: Weekly count of all cases, confirmed cases and deaths"
+  },
+  {
+    "objectID": "correction/exercise 3_correction.html#logistic-regression-model",
+    "href": "correction/exercise 3_correction.html#logistic-regression-model",
+    "title": "My outbreak report",
+    "section": "4 Logistic regression model",
+    "text": "4 Logistic regression model\nIn this section, we build and evaluate a logistic regression model to understand the relationship between certain variables and the likelihood of death among confirmed cases.\nThe logistic regression model uses death as the reponse variable, and bmi and age as predictor variables. It is implemented in R as shown in the code chunk referenced by Listing 1\n\n\n\n\nListing 1: R code\n\n\ncoeffs &lt;- glm(death ~ bmi + age,\n              subdf |&gt; dplyr::filter(confirmed == \"1\"),\n              family = binomial)\n\n\n\n\nThe results of the logistic regression model are summarized in the formatted regression table, which is presented in Table 3.\n\n\n\n\nTable 3: Formatted regression table\n\n\n\n\n\n\n\n\n\nCharacteristic\nOR1\n95% CI1\np-value\n\n\n\n\nbmi\n1.04\n1.04, 1.05\n&lt;0.001\n\n\nage\n1.01\n1.00, 1.01\n0.002\n\n\n\n1 OR = Odds Ratio, CI = Confidence Interval"
+  },
+  {
+    "objectID": "correction/exercise 3_correction.html#appendix",
+    "href": "correction/exercise 3_correction.html#appendix",
+    "title": "My outbreak report",
+    "section": "5 Appendix",
+    "text": "5 Appendix\nThe dataset includes the following variables:\n\nage = age of the individual (continuous variable) ;\nsex = sex of the individual (binary variable: 1 = male, 2 = female) ;\nbmi = Body Mass Index (BMI) of the individual (continuous variable) ;\nconfirmed = flag of confirmed cases (binary variable: 0 = no, 1 = yes)\ndeath = death outcome (binary variable: 0 = alive, 1 = died)\n\n\n\n\nData summary\n\n\nName\nsubdf\n\n\nNumber of rows\n37024\n\n\nNumber of columns\n8\n\n\n_______________________\n\n\n\nColumn type frequency:\n\n\n\nDate\n2\n\n\nfactor\n3\n\n\nnumeric\n3\n\n\n________________________\n\n\n\nGroup variables\nNone\n\n\n\nVariable type: Date\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nmedian\nn_unique\n\n\n\n\ndate\n0\n1\n2021-01-03\n2021-12-31\n2021-06-12\n363\n\n\nweek\n0\n1\n2021-01-03\n2021-12-26\n2021-06-06\n52\n\n\n\nVariable type: factor\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nordered\nn_unique\ntop_counts\n\n\n\n\nsex\n0\n1\nFALSE\n2\n1: 18754, 2: 18270\n\n\nconfirmed\n0\n1\nFALSE\n2\n1: 30950, 0: 6074\n\n\ndeath\n0\n1\nFALSE\n2\n0: 36140, 1: 884\n\n\n\nVariable type: numeric\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\n\n\n\n\nid\n0\n1\n5633.56\n3663.18\n1\n2571.00\n5153.00\n8434.00\n14993.00\n▇▇▆▅▂\n\n\nage\n0\n1\n49.98\n17.60\n20\n35.00\n50.00\n65.00\n80.00\n▇▇▇▇▇\n\n\nbmi\n0\n1\n30.02\n11.12\n10\n20.99\n29.14\n37.59\n62.22\n▆▇▇▃▁"
+  }
+]

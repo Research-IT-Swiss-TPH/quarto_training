@@ -7,10 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Hélène Langet">
-<meta name="author" content="Zhihan Zhu">
-<meta name="dcterms.date" content="2025-02-03">
+<meta name="dcterms.date" content="2025-02-04">
 
-<title>⭐Create a simple Word Report – Quarto training</title>
+<title>⭐⭐ Add dynamic elements to reports – Quarto training</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +20,6 @@ ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
-}
-
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-{ counter-reset: source-line 0; }
-pre.numberSource code > span
-{ position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-{ content: counter(source-line);
-position: relative; left: -1em; text-align: right; vertical-align: baseline;
-border: none; display: inline-block;
--webkit-touch-callout: none; -webkit-user-select: none;
--khtml-user-select: none; -moz-user-select: none;
--ms-user-select: none; user-select: none;
-padding: 0 4px; width: 4em;
-}
-pre.numberSource { margin-left: 3em; padding-left: 4px; }
-div.sourceCode
-{ }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -4799,7 +4764,7 @@ vertical-align: -.125em;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">⭐Create a simple Word Report</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../practicals/exercise4_instructions.html">📙 Add dynamic elements to reports</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -4809,25 +4774,17 @@ vertical-align: -.125em;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">⭐Create a simple Word Report</h1>
-            <p class="subtitle lead">✅ Step-by-step correction</p>
+      <h1 class="title">⭐⭐ Add dynamic elements to reports</h1>
+            <p class="subtitle lead">📋 Instructions</p>
                       </div>
   </div>
     
   <div class="quarto-title-meta-author">
-    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-heading">Affiliation</div>
     
       <div class="quarto-title-meta-contents">
       <p class="author">Hélène Langet <a href="mailto:helene.langet@swisstph.ch" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> <a href="https://orcid.org/0000-0002-6758-2397" class="quarto-title-author-orcid"> <img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
-    </div>
-    <div class="quarto-title-meta-contents">
-          <p class="affiliation">
-              Swiss TPH Research-IT
-            </p>
-        </div>
-      <div class="quarto-title-meta-contents">
-      <p class="author">Zhihan Zhu <a href="mailto:zhihan.zhu@swisstph.ch" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
     </div>
     <div class="quarto-title-meta-contents">
           <p class="affiliation">
@@ -4842,7 +4799,7 @@ vertical-align: -.125em;
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 3, 2025</p>
+        <p class="date">February 4, 2025</p>
       </div>
     </div>
     
@@ -4893,7 +4850,7 @@ vertical-align: -.125em;
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practicals/exercise4_instructions.html" class="sidebar-item-text sidebar-link">
+  <a href="../practicals/exercise4_instructions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">📙 Add dynamic elements to reports</span></a>
   </div>
 </li>
@@ -4924,13 +4881,17 @@ vertical-align: -.125em;
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
-  <ul class="collapse">
-  <li><a href="#setup-basic-elements-of-the-quarto-notebook" id="toc-setup-basic-elements-of-the-quarto-notebook" class="nav-link active" data-scroll-target="#setup-basic-elements-of-the-quarto-notebook"><span class="header-section-number">1</span> Setup basic elements of the Quarto notebook</a></li>
-  <li><a href="#create-publication-ready-summary-statistics-tables" id="toc-create-publication-ready-summary-statistics-tables" class="nav-link" data-scroll-target="#create-publication-ready-summary-statistics-tables"><span class="header-section-number">2</span> Create publication-ready summary statistics tables</a></li>
-  <li><a href="#create-publication-ready-figures" id="toc-create-publication-ready-figures" class="nav-link" data-scroll-target="#create-publication-ready-figures"><span class="header-section-number">3</span> Create publication-ready figures</a></li>
-  <li><a href="#present-statistical-models-and-results" id="toc-present-statistical-models-and-results" class="nav-link" data-scroll-target="#present-statistical-models-and-results"><span class="header-section-number">4</span> Present statistical models and results</a></li>
+  <ul>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives"><span class="header-section-number">1</span> Objectives 🎯</a></li>
+  <li><a href="#improve-navigation-and-readability" id="toc-improve-navigation-and-readability" class="nav-link" data-scroll-target="#improve-navigation-and-readability"><span class="header-section-number">2</span> Improve navigation and readability</a></li>
+  <li><a href="#implement-dynamic-calculations" id="toc-implement-dynamic-calculations" class="nav-link" data-scroll-target="#implement-dynamic-calculations"><span class="header-section-number">3</span> Implement dynamic calculations</a></li>
+  <li><a href="#reference-tables" id="toc-reference-tables" class="nav-link" data-scroll-target="#reference-tables"><span class="header-section-number">4</span> Reference tables</a></li>
+  <li><a href="#reference-figures" id="toc-reference-figures" class="nav-link" data-scroll-target="#reference-figures"><span class="header-section-number">5</span> Reference figures</a></li>
+  <li><a href="#reference-code-chunks" id="toc-reference-code-chunks" class="nav-link" data-scroll-target="#reference-code-chunks"><span class="header-section-number">6</span> Reference code chunks</a></li>
+  <li><a href="#add-bibliographic-references" id="toc-add-bibliographic-references" class="nav-link" data-scroll-target="#add-bibliographic-references"><span class="header-section-number">7</span> Add bibliographic references</a></li>
+  <li><a href="#format-ms-word-reports-with-styles" id="toc-format-ms-word-reports-with-styles" class="nav-link" data-scroll-target="#format-ms-word-reports-with-styles"><span class="header-section-number">8</span> Format MS Word reports with styles</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="exercise3_step_by_step_correction.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="../practicals/exercise3_instructions.html"><i class="bi bi-link-45deg"></i>📋 Instructions</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="exercise4_instructions.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="df1.RData"><i class="bi bi-link-45deg"></i>df1.RData</a></li><li><a href="swisstph_template.docx"><i class="bi bi-link-45deg"></i>swisstph_template.docx</a></li><li><a href="../correction/exercise4_step_by_step_correction.html"><i class="bi bi-link-45deg"></i>✅ Step-by-step correction</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/Research-IT-Swiss-TPH/quarto_training/blob/main/practicals/exercise4.qmd"><i class="bi bi-file-code"></i>exercise4.qmd</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -4939,1623 +4900,252 @@ vertical-align: -.125em;
 
 
 
-<p>This page provides a step-by-step correction for building a simple MS Word report using the Quarto notebook <code>exercise3.qmd</code> as a starting point.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>This exercise builds on the previous exercise where you learnt to <a href="./exercise3_instructions.html">build a simple MS Word report ⭐</a>.</p>
+<section id="objectives" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="objectives"><span class="header-section-number">1</span> Objectives 🎯</h2>
+<ul>
+<li>You are tasked with generating a simple analytically reproducible report on a fictitious outbreak;</li>
+<li>If you have generated the simple MS Word report as in <a href="./exercise3_instructions.html">Exercise 3</a>, continue working on the same Quarto notebook you already modified. Otherwise, download the files <code>df1.RData</code> and <code>exercise4.qmd</code> using the links provided on the right-hand side of this page. For simplicity, please put these two files under the same folder and open the Quarto notebook in RStudio.</li>
+<li>Complete each of the following tasks and render the document after each task or set of tasks to track your progress;</li>
+<li>All text formatted in bold is a placeholder and should be replaced with appropriate automated calculations or cross-references;</li>
+<li>The final output should be a Microsoft (MS) Word report, containing all required tables, figures, corresponding captions and cross-references, and formatted with the Swiss TPH template.</li>
+</ul>
+</section>
+<section id="improve-navigation-and-readability" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="improve-navigation-and-readability"><span class="header-section-number">2</span> Improve navigation and readability</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Insert a table of contents to the rendered MS Word document;</label></li>
+<li><label><input type="checkbox">Automatically number the different sections of the rendered MS Word document;</label></li>
+<li><label><input type="checkbox">Configure the table of contents to only display two levels of section headings.</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To get the most out of your learning experience, attempt to solve the exercise on your own before looking at this correction. Remember, trials and errors are an essential part of the learning process, strengthening your understanding and helping you build confidence. Take your time, experiment, and learn actively!</p>
-</div>
-</div>
-<section id="setup-basic-elements-of-the-quarto-notebook" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Setup basic elements of the Quarto notebook</h1>
-<p>All the basic elements you need to setup are defined in the YAML header at the beginning of your Quarto notebook.</p>
-<div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode numberSource yaml code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode yaml"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="pp">---</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-2" class="code-annotation-target"><a href="#annotated-cell-1-2"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My outbreak report</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> Helene Langet</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-4" class="code-annotation-target"><a href="#annotated-cell-1-4"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> 2023-12-31</span></span>
-<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-6" class="code-annotation-target"><a href="#annotated-cell-1-6"></a><span class="fu">format</span><span class="kw">:</span><span class="at"> docx</span></span>
-<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-8" class="code-annotation-target"><a href="#annotated-cell-1-8"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-9" class="code-annotation-target"><a href="#annotated-cell-1-9"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="7" onclick="event.preventDefault();">7</a><span id="annotated-cell-1-10" class="code-annotation-target"><a href="#annotated-cell-1-10"></a><span class="at">  </span><span class="fu">warning</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11"></a><span class="pp">---</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="2" data-code-annotation="1">Update the <code>title</code> option in the Quarto notebook. Quotation marks are optional.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="3" data-code-annotation="2">Set the <code>author</code> option to your name. Quotation marks are optional.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="4" data-code-annotation="3">Add the <code>date</code> option and set it to <strong>2023-12-31</strong>. Quotation marks are optional.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="6" data-code-annotation="4">Set the <code>format</code> option to <strong>docx</strong> to generate a MS Word document.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="8" data-code-annotation="5">Add an <code>execute</code> block to customize the execution behaviour for your Quarto notebook. This block allows you to control how code, warnings, and other outputs are displayed in the rendered document.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="9" data-code-annotation="6">Add the <code>echo</code> option and set it to <strong>false</strong> to hide code in the rendered document.</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="7">7</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="10" data-code-annotation="7">Add the <code>warning</code> option and set it to <strong>false</strong> to hide warnings in the rendered document.</span>
-</dd>
-</dl>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-YAML indentation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Remember that YAML is a whitespace-sensitive language where indentation determines the structure; tabs are not recognised for indentation. The recommended practice is therefore to use <strong>two spaces</strong> per indentation level to ensure consistency and avoid errors.</p>
+<ul>
+<li>See Quarto documentation about <a href="https://quarto.org/docs/output-formats/ms-word.html#table-of-contents">table of contents</a></li>
+</ul>
 </div>
 </div>
 </section>
-<section id="create-publication-ready-summary-statistics-tables" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Create publication-ready summary statistics tables</h1>
-<p>Creating publication-ready tables in R often involves leveraging specialized packages. Popular options include <code>gtsummary</code>, <code>gt</code> and <code>flextable</code>. In what follows, we will use <code>gtsummary</code> which is an excellent package for creating summary statistics tables. To install it, run the command <code>install.packages(&quot;gtsummary&quot;)</code> in your R console.</p>
+<section id="implement-dynamic-calculations" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="implement-dynamic-calculations"><span class="header-section-number">3</span> Implement dynamic calculations</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Change the date <code>2023-12-31</code> to the date at which the MS Word document was last rendered;</label></li>
+<li><label><input type="checkbox">Format the date at which the MS Word document was last rendered to display it with the format <code>December 31, 2023</code>;</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>See Quarto documentation about <a href="https://quarto.org/docs/reference/dates.html#date-formatting">date formatting</a></li>
+<li>See Quarto documentation about <a href="https://quarto.org/docs/reference/dates.html#date-parsing">dynamic dates</a></li>
+</ul>
+</div>
+</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Replace the placeholder text in bold with the automated calculation of the outbreak start and end dates;</label></li>
+</ul>
+<blockquote class="blockquote">
+<p>“<em>The outbreak ran from <strong>date</strong> to <strong>date</strong></em>”</p>
+</blockquote>
+<ul class="task-list">
+<li><label><input type="checkbox">Replace the placeholder text in bold with the automated calculation of the number of cases, confirmed cases and deaths.</label></li>
+</ul>
+<blockquote class="blockquote">
+<p>“<em>Over the studied period, there were <strong>N</strong> cases, including <strong>N</strong> confirmed cases and <strong>N</strong> confirmed deaths.</em>”</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>See Quarto documentation about <a href="https://quarto.org/docs/computations/inline-code.html">inline code</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="reference-tables" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="reference-tables"><span class="header-section-number">4</span> Reference tables</h2>
 <section id="table-1" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="table-1">Table 1</h4>
-<div class="cell" data-tbl-cap="Population characteristics">
-<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode numberSource markdown code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1"></a><span class="in">```{r}</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-2-2" class="code-annotation-target"><a href="#annotated-cell-2-2"></a><span class="co">#| tbl-cap: Population characteristics</span></span>
-<span id="annotated-cell-2-3"><a href="#annotated-cell-2-3"></a></span>
-<span id="annotated-cell-2-4"><a href="#annotated-cell-2-4"></a><span class="co">#Table 1</span></span>
-<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5"></a><span class="co">#Generate a summary table displaying population characteristics</span></span>
-<span id="annotated-cell-2-6"><a href="#annotated-cell-2-6"></a>subdf <span class="sc">|&gt;</span>                               </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="8" onclick="event.preventDefault();">8</a><span id="annotated-cell-2-7" class="code-annotation-target"><a href="#annotated-cell-2-7"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(age,</span>
-<span id="annotated-cell-2-8"><a href="#annotated-cell-2-8"></a>                sex,</span>
-<span id="annotated-cell-2-9"><a href="#annotated-cell-2-9"></a>                bmi,</span>
-<span id="annotated-cell-2-10"><a href="#annotated-cell-2-10"></a>                confirmed,</span>
-<span id="annotated-cell-2-11"><a href="#annotated-cell-2-11"></a>                death) <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="9" onclick="event.preventDefault();">9</a><span id="annotated-cell-2-12" class="code-annotation-target"><a href="#annotated-cell-2-12"></a>  gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>()</span>
-<span id="annotated-cell-2-13"><a href="#annotated-cell-2-13"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-2" data-target-annotation="8">8</dt>
-<dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="7" data-code-annotation="8">Use the <code>dplyr::select()</code> function to select specific columns (<strong>age</strong>, <strong>sex</strong>, <strong>bmi</strong>, <strong>confirmed</strong>, and <strong>death</strong>) from the <strong>subdf</strong> dataset.</span>
-</dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="9">9</dt>
-<dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="12" data-code-annotation="9">Use the <code>gtsummary::tbl_summary()</code> function to create a table that summarizes the descriptive statistics of the selected variables in the whole population.</span>
-</dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="10">10</dt>
-<dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="2" data-code-annotation="10">Add a caption to the table by using the <code>tbl-cap</code> chunk option.</span>
-</dd>
-</dl>
-</div>
-<div class="cell-output-display">
-<div id="yqowrqgluj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yqowrqgluj table {
-font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-}
-#yqowrqgluj thead, #yqowrqgluj tbody, #yqowrqgluj tfoot, #yqowrqgluj tr, #yqowrqgluj td, #yqowrqgluj th {
-border-style: none;
-}
-#yqowrqgluj p {
-margin: 0;
-padding: 0;
-}
-#yqowrqgluj .gt_table {
-display: table;
-border-collapse: collapse;
-line-height: normal;
-margin-left: auto;
-margin-right: auto;
-color: #333333;
-font-size: 16px;
-font-weight: normal;
-font-style: normal;
-background-color: #FFFFFF;
-width: auto;
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #A8A8A8;
-border-right-style: none;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #A8A8A8;
-border-left-style: none;
-border-left-width: 2px;
-border-left-color: #D3D3D3;
-}
-#yqowrqgluj .gt_caption {
-padding-top: 4px;
-padding-bottom: 4px;
-}
-#yqowrqgluj .gt_title {
-color: #333333;
-font-size: 125%;
-font-weight: initial;
-padding-top: 4px;
-padding-bottom: 4px;
-padding-left: 5px;
-padding-right: 5px;
-border-bottom-color: #FFFFFF;
-border-bottom-width: 0;
-}
-#yqowrqgluj .gt_subtitle {
-color: #333333;
-font-size: 85%;
-font-weight: initial;
-padding-top: 3px;
-padding-bottom: 5px;
-padding-left: 5px;
-padding-right: 5px;
-border-top-color: #FFFFFF;
-border-top-width: 0;
-}
-#yqowrqgluj .gt_heading {
-background-color: #FFFFFF;
-text-align: center;
-border-bottom-color: #FFFFFF;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-}
-#yqowrqgluj .gt_bottom_border {
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-}
-#yqowrqgluj .gt_col_headings {
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-}
-#yqowrqgluj .gt_col_heading {
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: normal;
-text-transform: inherit;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-vertical-align: bottom;
-padding-top: 5px;
-padding-bottom: 6px;
-padding-left: 5px;
-padding-right: 5px;
-overflow-x: hidden;
-}
-#yqowrqgluj .gt_column_spanner_outer {
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: normal;
-text-transform: inherit;
-padding-top: 0;
-padding-bottom: 0;
-padding-left: 4px;
-padding-right: 4px;
-}
-#yqowrqgluj .gt_column_spanner_outer:first-child {
-padding-left: 0;
-}
-#yqowrqgluj .gt_column_spanner_outer:last-child {
-padding-right: 0;
-}
-#yqowrqgluj .gt_column_spanner {
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-vertical-align: bottom;
-padding-top: 5px;
-padding-bottom: 5px;
-overflow-x: hidden;
-display: inline-block;
-width: 100%;
-}
-#yqowrqgluj .gt_spanner_row {
-border-bottom-style: hidden;
-}
-#yqowrqgluj .gt_group_heading {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: initial;
-text-transform: inherit;
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-vertical-align: middle;
-text-align: left;
-}
-#yqowrqgluj .gt_empty_group_heading {
-padding: 0.5px;
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: initial;
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-vertical-align: middle;
-}
-#yqowrqgluj .gt_from_md > :first-child {
-margin-top: 0;
-}
-#yqowrqgluj .gt_from_md > :last-child {
-margin-bottom: 0;
-}
-#yqowrqgluj .gt_row {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-margin: 10px;
-border-top-style: solid;
-border-top-width: 1px;
-border-top-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-vertical-align: middle;
-overflow-x: hidden;
-}
-#yqowrqgluj .gt_stub {
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: initial;
-text-transform: inherit;
-border-right-style: solid;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-padding-left: 5px;
-padding-right: 5px;
-}
-#yqowrqgluj .gt_stub_row_group {
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: initial;
-text-transform: inherit;
-border-right-style: solid;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-padding-left: 5px;
-padding-right: 5px;
-vertical-align: top;
-}
-#yqowrqgluj .gt_row_group_first td {
-border-top-width: 2px;
-}
-#yqowrqgluj .gt_row_group_first th {
-border-top-width: 2px;
-}
-#yqowrqgluj .gt_summary_row {
-color: #333333;
-background-color: #FFFFFF;
-text-transform: inherit;
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#yqowrqgluj .gt_first_summary_row {
-border-top-style: solid;
-border-top-color: #D3D3D3;
-}
-#yqowrqgluj .gt_first_summary_row.thick {
-border-top-width: 2px;
-}
-#yqowrqgluj .gt_last_summary_row {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-}
-#yqowrqgluj .gt_grand_summary_row {
-color: #333333;
-background-color: #FFFFFF;
-text-transform: inherit;
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#yqowrqgluj .gt_first_grand_summary_row {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-border-top-style: double;
-border-top-width: 6px;
-border-top-color: #D3D3D3;
-}
-#yqowrqgluj .gt_last_grand_summary_row_top {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-border-bottom-style: double;
-border-bottom-width: 6px;
-border-bottom-color: #D3D3D3;
-}
-#yqowrqgluj .gt_striped {
-background-color: rgba(128, 128, 128, 0.05);
-}
-#yqowrqgluj .gt_table_body {
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-}
-#yqowrqgluj .gt_footnotes {
-color: #333333;
-background-color: #FFFFFF;
-border-bottom-style: none;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 2px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-}
-#yqowrqgluj .gt_footnote {
-margin: 0px;
-font-size: 90%;
-padding-top: 4px;
-padding-bottom: 4px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#yqowrqgluj .gt_sourcenotes {
-color: #333333;
-background-color: #FFFFFF;
-border-bottom-style: none;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 2px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-}
-#yqowrqgluj .gt_sourcenote {
-font-size: 90%;
-padding-top: 4px;
-padding-bottom: 4px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#yqowrqgluj .gt_left {
-text-align: left;
-}
-#yqowrqgluj .gt_center {
-text-align: center;
-}
-#yqowrqgluj .gt_right {
-text-align: right;
-font-variant-numeric: tabular-nums;
-}
-#yqowrqgluj .gt_font_normal {
-font-weight: normal;
-}
-#yqowrqgluj .gt_font_bold {
-font-weight: bold;
-}
-#yqowrqgluj .gt_font_italic {
-font-style: italic;
-}
-#yqowrqgluj .gt_super {
-font-size: 65%;
-}
-#yqowrqgluj .gt_footnote_marks {
-font-size: 75%;
-vertical-align: 0.4em;
-position: initial;
-}
-#yqowrqgluj .gt_asterisk {
-font-size: 100%;
-vertical-align: 0;
-}
-#yqowrqgluj .gt_indent_1 {
-text-indent: 5px;
-}
-#yqowrqgluj .gt_indent_2 {
-text-indent: 10px;
-}
-#yqowrqgluj .gt_indent_3 {
-text-indent: 15px;
-}
-#yqowrqgluj .gt_indent_4 {
-text-indent: 20px;
-}
-#yqowrqgluj .gt_indent_5 {
-text-indent: 25px;
-}
-</style>
-
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>Population characteristics</caption>
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="gt_col_headings header">
-<th id="&lt;strong&gt;Characteristic&lt;/strong&gt;" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="&lt;strong&gt;N = 65,669&lt;/strong&gt;&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 65,669</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">age</td>
-<td class="gt_row gt_center" headers="stat_0">50 (35, 65)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">sex</td>
-<td class="gt_row gt_center" headers="stat_0"><br>
-</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">    1</td>
-<td class="gt_row gt_center" headers="stat_0">33,114 (50%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">    2</td>
-<td class="gt_row gt_center" headers="stat_0">32,555 (50%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">bmi</td>
-<td class="gt_row gt_center" headers="stat_0">29 (21, 38)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">confirmed</td>
-<td class="gt_row gt_center" headers="stat_0"><br>
-</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">    0</td>
-<td class="gt_row gt_center" headers="stat_0">13,235 (20%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">    1</td>
-<td class="gt_row gt_center" headers="stat_0">52,434 (80%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">death</td>
-<td class="gt_row gt_center" headers="stat_0"><br>
-</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">    0</td>
-<td class="gt_row gt_center" headers="stat_0">64,455 (98%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">    1</td>
-<td class="gt_row gt_center" headers="stat_0">1,214 (1.8%)</td>
-</tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
-<td colspan="2" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Median (IQR); n (%)</td>
-</tr>
-</tfoot>
-
-</table>
-
-</div>
-</div>
-</div>
+<ul class="task-list">
+<li><label><input type="checkbox">Assign a label to the table summarising the demographic characteristics and outcome frequency of all cases;</label></li>
+<li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the table.</label></li>
+</ul>
+<blockquote class="blockquote">
+<p>“<em><strong>cross-reference</strong> provides a summary of the demographic characteristics and the outcome proportion for the overall population</em>”</p>
+</blockquote>
 </section>
 <section id="table-2" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="table-2">Table 2</h4>
-<div class="cell" data-tbl-cap="Demographic characteristics of deceased vs. alive">
-<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode numberSource markdown code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1"></a><span class="in">```{r}</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="12" onclick="event.preventDefault();">12</a><span id="annotated-cell-3-2" class="code-annotation-target"><a href="#annotated-cell-3-2"></a><span class="co">#| tbl-cap: Demographic characteristics of deceased vs. alive</span></span>
-<span id="annotated-cell-3-3"><a href="#annotated-cell-3-3"></a></span>
-<span id="annotated-cell-3-4"><a href="#annotated-cell-3-4"></a><span class="co">#Table 2</span></span>
-<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5"></a><span class="co">#Generate a summary table comparing the demographic characteristics</span></span>
-<span id="annotated-cell-3-6"><a href="#annotated-cell-3-6"></a><span class="co">#of individuals who died versus those who are still alive</span></span>
-<span id="annotated-cell-3-7"><a href="#annotated-cell-3-7"></a>subdf <span class="sc">|&gt;</span>                                                      </span>
-<span id="annotated-cell-3-8"><a href="#annotated-cell-3-8"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(sex,</span>
-<span id="annotated-cell-3-9"><a href="#annotated-cell-3-9"></a>                age,</span>
-<span id="annotated-cell-3-10"><a href="#annotated-cell-3-10"></a>                bmi,</span>
-<span id="annotated-cell-3-11"><a href="#annotated-cell-3-11"></a>                death) <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="10" onclick="event.preventDefault();">10</a><span id="annotated-cell-3-12" class="code-annotation-target"><a href="#annotated-cell-3-12"></a>  gtsummary<span class="sc">::</span><span class="fu">tbl_summary</span>(<span class="at">by =</span> death) <span class="sc">|&gt;</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="11" onclick="event.preventDefault();">11</a><span id="annotated-cell-3-13" class="code-annotation-target"><a href="#annotated-cell-3-13"></a>  gtsummary<span class="sc">::</span><span class="fu">add_overall</span>()</span>
-<span id="annotated-cell-3-14"><a href="#annotated-cell-3-14"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-3" data-target-annotation="10">10</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="12" data-code-annotation="10">Use the <code>gtsummary::tbl_summary()</code> function to create a summary table grouped by the <strong>death</strong> column, showing separate statistics for individuals who have died vs. those who are still alive.</span>
-</dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="11">11</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="13" data-code-annotation="11">Use the <code>gtsummary::add_overall()</code> function to add a row to the table that shows overall summary statistics for the whole population, regardless of their death status.</span>
-</dd>
-<dt data-target-cell="annotated-cell-3" data-target-annotation="12">12</dt>
-<dd>
-<span data-code-cell="annotated-cell-3" data-code-lines="2" data-code-annotation="12">Add a caption to the table by using the <code>tbl-cap</code> chunk option.</span>
-</dd>
-</dl>
+<ul class="task-list">
+<li><label><input type="checkbox">Assign a label to the table summarising the demographic characteristics of individuals who died versus those who are still alive;</label></li>
+<li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the table.</label></li>
+</ul>
+<blockquote class="blockquote">
+<p>“<em>while <strong>cross-reference</strong> compares the demographic characteristics of individuals who died versus those who are still alive</em>”</p>
+</blockquote>
+</section>
+<section id="table-3" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="table-3">Table 3</h4>
+<ul class="task-list">
+<li><label><input type="checkbox">Assign a label to the table summarizing the odds ratios from the logistic regression model;</label></li>
+<li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the table</label></li>
+</ul>
+<blockquote class="blockquote">
+<p>“The results of the logistic regression model are summarized in the formatted regression table, which is presented in <strong>cross-reference</strong>.”</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="cell-output-display">
-<div id="hpdwfdotsl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#hpdwfdotsl table {
-font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-}
-#hpdwfdotsl thead, #hpdwfdotsl tbody, #hpdwfdotsl tfoot, #hpdwfdotsl tr, #hpdwfdotsl td, #hpdwfdotsl th {
-border-style: none;
-}
-#hpdwfdotsl p {
-margin: 0;
-padding: 0;
-}
-#hpdwfdotsl .gt_table {
-display: table;
-border-collapse: collapse;
-line-height: normal;
-margin-left: auto;
-margin-right: auto;
-color: #333333;
-font-size: 16px;
-font-weight: normal;
-font-style: normal;
-background-color: #FFFFFF;
-width: auto;
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #A8A8A8;
-border-right-style: none;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #A8A8A8;
-border-left-style: none;
-border-left-width: 2px;
-border-left-color: #D3D3D3;
-}
-#hpdwfdotsl .gt_caption {
-padding-top: 4px;
-padding-bottom: 4px;
-}
-#hpdwfdotsl .gt_title {
-color: #333333;
-font-size: 125%;
-font-weight: initial;
-padding-top: 4px;
-padding-bottom: 4px;
-padding-left: 5px;
-padding-right: 5px;
-border-bottom-color: #FFFFFF;
-border-bottom-width: 0;
-}
-#hpdwfdotsl .gt_subtitle {
-color: #333333;
-font-size: 85%;
-font-weight: initial;
-padding-top: 3px;
-padding-bottom: 5px;
-padding-left: 5px;
-padding-right: 5px;
-border-top-color: #FFFFFF;
-border-top-width: 0;
-}
-#hpdwfdotsl .gt_heading {
-background-color: #FFFFFF;
-text-align: center;
-border-bottom-color: #FFFFFF;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-}
-#hpdwfdotsl .gt_bottom_border {
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-}
-#hpdwfdotsl .gt_col_headings {
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-}
-#hpdwfdotsl .gt_col_heading {
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: normal;
-text-transform: inherit;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-vertical-align: bottom;
-padding-top: 5px;
-padding-bottom: 6px;
-padding-left: 5px;
-padding-right: 5px;
-overflow-x: hidden;
-}
-#hpdwfdotsl .gt_column_spanner_outer {
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: normal;
-text-transform: inherit;
-padding-top: 0;
-padding-bottom: 0;
-padding-left: 4px;
-padding-right: 4px;
-}
-#hpdwfdotsl .gt_column_spanner_outer:first-child {
-padding-left: 0;
-}
-#hpdwfdotsl .gt_column_spanner_outer:last-child {
-padding-right: 0;
-}
-#hpdwfdotsl .gt_column_spanner {
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-vertical-align: bottom;
-padding-top: 5px;
-padding-bottom: 5px;
-overflow-x: hidden;
-display: inline-block;
-width: 100%;
-}
-#hpdwfdotsl .gt_spanner_row {
-border-bottom-style: hidden;
-}
-#hpdwfdotsl .gt_group_heading {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: initial;
-text-transform: inherit;
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-vertical-align: middle;
-text-align: left;
-}
-#hpdwfdotsl .gt_empty_group_heading {
-padding: 0.5px;
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: initial;
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-vertical-align: middle;
-}
-#hpdwfdotsl .gt_from_md > :first-child {
-margin-top: 0;
-}
-#hpdwfdotsl .gt_from_md > :last-child {
-margin-bottom: 0;
-}
-#hpdwfdotsl .gt_row {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-margin: 10px;
-border-top-style: solid;
-border-top-width: 1px;
-border-top-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-vertical-align: middle;
-overflow-x: hidden;
-}
-#hpdwfdotsl .gt_stub {
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: initial;
-text-transform: inherit;
-border-right-style: solid;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-padding-left: 5px;
-padding-right: 5px;
-}
-#hpdwfdotsl .gt_stub_row_group {
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: initial;
-text-transform: inherit;
-border-right-style: solid;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-padding-left: 5px;
-padding-right: 5px;
-vertical-align: top;
-}
-#hpdwfdotsl .gt_row_group_first td {
-border-top-width: 2px;
-}
-#hpdwfdotsl .gt_row_group_first th {
-border-top-width: 2px;
-}
-#hpdwfdotsl .gt_summary_row {
-color: #333333;
-background-color: #FFFFFF;
-text-transform: inherit;
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#hpdwfdotsl .gt_first_summary_row {
-border-top-style: solid;
-border-top-color: #D3D3D3;
-}
-#hpdwfdotsl .gt_first_summary_row.thick {
-border-top-width: 2px;
-}
-#hpdwfdotsl .gt_last_summary_row {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-}
-#hpdwfdotsl .gt_grand_summary_row {
-color: #333333;
-background-color: #FFFFFF;
-text-transform: inherit;
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#hpdwfdotsl .gt_first_grand_summary_row {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-border-top-style: double;
-border-top-width: 6px;
-border-top-color: #D3D3D3;
-}
-#hpdwfdotsl .gt_last_grand_summary_row_top {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-border-bottom-style: double;
-border-bottom-width: 6px;
-border-bottom-color: #D3D3D3;
-}
-#hpdwfdotsl .gt_striped {
-background-color: rgba(128, 128, 128, 0.05);
-}
-#hpdwfdotsl .gt_table_body {
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-}
-#hpdwfdotsl .gt_footnotes {
-color: #333333;
-background-color: #FFFFFF;
-border-bottom-style: none;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 2px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-}
-#hpdwfdotsl .gt_footnote {
-margin: 0px;
-font-size: 90%;
-padding-top: 4px;
-padding-bottom: 4px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#hpdwfdotsl .gt_sourcenotes {
-color: #333333;
-background-color: #FFFFFF;
-border-bottom-style: none;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 2px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-}
-#hpdwfdotsl .gt_sourcenote {
-font-size: 90%;
-padding-top: 4px;
-padding-bottom: 4px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#hpdwfdotsl .gt_left {
-text-align: left;
-}
-#hpdwfdotsl .gt_center {
-text-align: center;
-}
-#hpdwfdotsl .gt_right {
-text-align: right;
-font-variant-numeric: tabular-nums;
-}
-#hpdwfdotsl .gt_font_normal {
-font-weight: normal;
-}
-#hpdwfdotsl .gt_font_bold {
-font-weight: bold;
-}
-#hpdwfdotsl .gt_font_italic {
-font-style: italic;
-}
-#hpdwfdotsl .gt_super {
-font-size: 65%;
-}
-#hpdwfdotsl .gt_footnote_marks {
-font-size: 75%;
-vertical-align: 0.4em;
-position: initial;
-}
-#hpdwfdotsl .gt_asterisk {
-font-size: 100%;
-vertical-align: 0;
-}
-#hpdwfdotsl .gt_indent_1 {
-text-indent: 5px;
-}
-#hpdwfdotsl .gt_indent_2 {
-text-indent: 10px;
-}
-#hpdwfdotsl .gt_indent_3 {
-text-indent: 15px;
-}
-#hpdwfdotsl .gt_indent_4 {
-text-indent: 20px;
-}
-#hpdwfdotsl .gt_indent_5 {
-text-indent: 25px;
-}
-</style>
-
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>Demographic characteristics of deceased vs. alive</caption>
-<colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="gt_col_headings header">
-<th id="&lt;strong&gt;Characteristic&lt;/strong&gt;" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="&lt;strong&gt;Overall&lt;/strong&gt;, N = 65,669&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Overall</strong>, N = 65,669<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="&lt;strong&gt;0&lt;/strong&gt;, N = 64,455&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>0</strong>, N = 64,455<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="&lt;strong&gt;1&lt;/strong&gt;, N = 1,214&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>1</strong>, N = 1,214<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">sex</td>
-<td class="gt_row gt_center" headers="stat_0"><br>
-</td>
-<td class="gt_row gt_center" headers="stat_1"><br>
-</td>
-<td class="gt_row gt_center" headers="stat_2"><br>
-</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">    1</td>
-<td class="gt_row gt_center" headers="stat_0">33,114 (50%)</td>
-<td class="gt_row gt_center" headers="stat_1">32,504 (50%)</td>
-<td class="gt_row gt_center" headers="stat_2">610 (50%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">    2</td>
-<td class="gt_row gt_center" headers="stat_0">32,555 (50%)</td>
-<td class="gt_row gt_center" headers="stat_1">31,951 (50%)</td>
-<td class="gt_row gt_center" headers="stat_2">604 (50%)</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">age</td>
-<td class="gt_row gt_center" headers="stat_0">50 (35, 65)</td>
-<td class="gt_row gt_center" headers="stat_1">50 (35, 65)</td>
-<td class="gt_row gt_center" headers="stat_2">52 (37, 67)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">bmi</td>
-<td class="gt_row gt_center" headers="stat_0">29 (21, 38)</td>
-<td class="gt_row gt_center" headers="stat_1">29 (21, 38)</td>
-<td class="gt_row gt_center" headers="stat_2">34 (28, 41)</td>
-</tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
-<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> n (%); Median (IQR)</td>
-</tr>
-</tfoot>
-
-</table>
-
+<div class="callout-title-container flex-fill">
+Tip
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>See <a href="https://quarto.org/docs/authoring/tables.html#cross-references">Quarto documentation about table cross-references</a></li>
+</ul>
 </div>
 </div>
 </section>
 </section>
-<section id="create-publication-ready-figures" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Create publication-ready figures</h1>
+<section id="reference-figures" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="reference-figures"><span class="header-section-number">5</span> Reference figures</h2>
 <section id="figure-1" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="figure-1">Figure 1</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource markdown code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a><span class="in">```{r}</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="13" onclick="event.preventDefault();">13</a><span id="annotated-cell-4-2" class="code-annotation-target"><a href="#annotated-cell-4-2"></a><span class="co">#| fig-cap: Weekly count of all cases, confirmed cases and deaths</span></span>
-<span id="annotated-cell-4-3"><a href="#annotated-cell-4-3"></a></span>
-<span id="annotated-cell-4-4"><a href="#annotated-cell-4-4"></a><span class="co">#Figure 1</span></span>
-<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5"></a><span class="co"># Aggregate the data to get the weekly count of all cases, confirmed cases and deaths</span></span>
-<span id="annotated-cell-4-6"><a href="#annotated-cell-4-6"></a>weekly_data <span class="ot">&lt;-</span> subdf <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7"></a>  dplyr<span class="sc">::</span><span class="fu">group_by</span>(week) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-4-8"><a href="#annotated-cell-4-8"></a>  dplyr<span class="sc">::</span><span class="fu">summarise</span>(<span class="at">count =</span> dplyr<span class="sc">::</span><span class="fu">n</span>(),</span>
-<span id="annotated-cell-4-9"><a href="#annotated-cell-4-9"></a>                   <span class="at">confirmed_count =</span> <span class="fu">sum</span>(confirmed <span class="sc">==</span> <span class="st">&quot;1&quot;</span>),</span>
-<span id="annotated-cell-4-10"><a href="#annotated-cell-4-10"></a>                   <span class="at">death_count =</span> <span class="fu">sum</span>(death <span class="sc">==</span> <span class="st">&quot;1&quot;</span>))</span>
-<span id="annotated-cell-4-11"><a href="#annotated-cell-4-11"></a></span>
-<span id="annotated-cell-4-12"><a href="#annotated-cell-4-12"></a><span class="co"># Plot the weekly cases, confirmed cases and deaths</span></span>
-<span id="annotated-cell-4-13"><a href="#annotated-cell-4-13"></a>ggplot2<span class="sc">::</span><span class="fu">ggplot</span>(weekly_data, ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">x =</span> week)) <span class="sc">+</span>                        </span>
-<span id="annotated-cell-4-14"><a href="#annotated-cell-4-14"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> count,</span>
-<span id="annotated-cell-4-15"><a href="#annotated-cell-4-15"></a>                                  <span class="at">color =</span> <span class="st">&quot;All cases&quot;</span>),</span>
-<span id="annotated-cell-4-16"><a href="#annotated-cell-4-16"></a>                     <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-4-17"><a href="#annotated-cell-4-17"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> confirmed_count,</span>
-<span id="annotated-cell-4-18"><a href="#annotated-cell-4-18"></a>                                  <span class="at">color =</span> <span class="st">&quot;Confirmed cases&quot;</span>),</span>
-<span id="annotated-cell-4-19"><a href="#annotated-cell-4-19"></a>                     <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-4-20"><a href="#annotated-cell-4-20"></a>  ggplot2<span class="sc">::</span><span class="fu">geom_line</span>(ggplot2<span class="sc">::</span><span class="fu">aes</span>(<span class="at">y =</span> death_count,</span>
-<span id="annotated-cell-4-21"><a href="#annotated-cell-4-21"></a>                                  <span class="at">color =</span> <span class="st">&quot;Confirmed deaths&quot;</span>),</span>
-<span id="annotated-cell-4-22"><a href="#annotated-cell-4-22"></a>                     <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="annotated-cell-4-23"><a href="#annotated-cell-4-23"></a>  ggplot2<span class="sc">::</span><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Week&quot;</span>,</span>
-<span id="annotated-cell-4-24"><a href="#annotated-cell-4-24"></a>                <span class="at">y =</span> <span class="st">&quot;Count&quot;</span>,</span>
-<span id="annotated-cell-4-25"><a href="#annotated-cell-4-25"></a>                <span class="at">color =</span> <span class="st">&quot;Legend&quot;</span>) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="14" onclick="event.preventDefault();">14</a><span id="annotated-cell-4-26" class="code-annotation-target"><a href="#annotated-cell-4-26"></a>  ggplot2<span class="sc">::</span><span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;All cases&quot;</span> <span class="ot">=</span> <span class="st">&quot;#440e54&quot;</span>,</span>
-<span id="annotated-cell-4-27"><a href="#annotated-cell-4-27"></a>                                         <span class="st">&quot;Confirmed cases&quot;</span> <span class="ot">=</span> <span class="st">&quot;#f8766d&quot;</span>,</span>
-<span id="annotated-cell-4-28"><a href="#annotated-cell-4-28"></a>                                         <span class="st">&quot;Confirmed deaths&quot;</span> <span class="ot">=</span> <span class="st">&quot;#128984&quot;</span>)) <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="15" onclick="event.preventDefault();">15</a><span id="annotated-cell-4-29" class="code-annotation-target"><a href="#annotated-cell-4-29"></a>  ggplot2<span class="sc">::</span><span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="16" onclick="event.preventDefault();">16</a><span id="annotated-cell-4-30" class="code-annotation-target"><a href="#annotated-cell-4-30"></a>  ggplot2<span class="sc">::</span><span class="fu">theme</span>(<span class="at">panel.grid.major.y =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(<span class="at">linewidth =</span> <span class="fl">0.5</span>,</span>
-<span id="annotated-cell-4-31"><a href="#annotated-cell-4-31"></a>                                                            <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
-<span id="annotated-cell-4-32"><a href="#annotated-cell-4-32"></a>                                                            <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>), </span>
-<span id="annotated-cell-4-33"><a href="#annotated-cell-4-33"></a>                 <span class="at">panel.grid.minor.y =</span> ggplot2<span class="sc">::</span><span class="fu">element_line</span>(<span class="at">linewidth =</span> <span class="fl">0.5</span>,</span>
-<span id="annotated-cell-4-34"><a href="#annotated-cell-4-34"></a>                                                            <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>,</span>
-<span id="annotated-cell-4-35"><a href="#annotated-cell-4-35"></a>                                                            <span class="at">color =</span> <span class="st">&quot;grey&quot;</span>),</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="17" onclick="event.preventDefault();">17</a><span id="annotated-cell-4-36" class="code-annotation-target"><a href="#annotated-cell-4-36"></a>                 <span class="at">panel.grid.major.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>(),</span>
-<span id="annotated-cell-4-37"><a href="#annotated-cell-4-37"></a>                 <span class="at">panel.grid.minor.x =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>())</span>
-<span id="annotated-cell-4-38"><a href="#annotated-cell-4-38"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-4" data-target-annotation="13">13</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="2" data-code-annotation="13">Add a caption to the table by using the <code>fig-cap</code> chunk option. Remove the title parameter from <code>ggplot2::labs</code> to avoid the repetition.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="14">14</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="26" data-code-annotation="14">Assigns specific colors to each line for better distinction.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="15">15</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="29" data-code-annotation="15">Apply the <code>ggplot2::theme_minimal()</code> function to set a clean and simple aesthetic for the plot. This theme removes unnecessary elements such as background shading and focuses attention on the data by displaying only grid lines and axis labels.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="16">16</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="30" data-code-annotation="16">Add dashed lines for horizontal (major and minor) grid lines.</span>
-</dd>
-<dt data-target-cell="annotated-cell-4" data-target-annotation="17">17</dt>
-<dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="36" data-code-annotation="17">Omits vertical (major and minor) grid lines for a cleaner look.</span>
-</dd>
-</dl>
+<ul class="task-list">
+<li><label><input type="checkbox">Assign a label to the figure;</label></li>
+<li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the figure;</label></li>
+</ul>
+<blockquote class="blockquote">
+<p>“<em><strong>cross-reference</strong> illustrates the outbreak’s progression, which can be divided into distinct phases.</em>”</p>
+</blockquote>
+<ul class="task-list">
+<li><label><input type="checkbox">Adjust the dimensions of the figure until you are happy with them.</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="cell-output-display">
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>See <a href="https://quarto.org/docs/authoring/cross-references.html#computations">Quarto documentation about figure cross-references</a></li>
+<li>See <a href="https://quarto.org/docs/computations/execution-options.html#figure-options"><code>fig-width</code> and <code>fig-height</code></a> options to adjust figure dimensions</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="reference-code-chunks" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="reference-code-chunks"><span class="header-section-number">6</span> Reference code chunks</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Add a caption to the code chunk for your R implementation of the logistic regression;</label></li>
+<li><label><input type="checkbox">Assign a label to the code chunk;</label></li>
+<li><label><input type="checkbox">Replace the placeholder text in bold with a cross-reference to the code chunk.</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>See <a href="https://quarto.org/docs/authoring/cross-references.html#code-listings">Quarto documentation about code chunk cross-references</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section id="add-bibliographic-references" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="add-bibliographic-references"><span class="header-section-number">7</span> Add bibliographic references</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Create a bibliography (BibTeX) file <code>my_biblio.bib</code> in the same folder as your Quarto notebook;</label></li>
+<li><label><input type="checkbox">Link the BibTeX file by adding it to the YAML header of your Quarto notebook;</label></li>
+<li><label><input type="checkbox">Add a new reference for <a href="https://doi.org/10.1016/S0140-6736(24)02669-2">10.1016/S0140-6736(24)02669-2</a> in the BibTeX file;</label></li>
+<li><label><input type="checkbox">Create a new section named <code>Background</code> in your Quarto notebook, after the <code>Overview</code> section and before the <code>Population</code> section;</label></li>
+<li><label><input type="checkbox">Insert the following sentence into the <code>Background</code> section, and replace the placeholder text in bold with the correct citation key from your BibTeX file.</label></li>
+</ul>
+<blockquote class="blockquote">
+<p>“<em><strong>citation</strong> describes trends in suspected and confirmed monkeypox virus cases in the Democratic Republic of Congo using epidemiological and laboratory surveillance data collected from 2010 to 2023.</em>”</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>You can generate the BibTeX entry from the DOI using citation management tools;</li>
+<li>See <a href="https://quarto.org/docs/authoring/citations.html">Quarto documentation about citations</a> for guidance on formatting references;</li>
+<li>If you are not familiar with BibTeX files or programming, Quarto’s visual mode offers user-friendly tools for managing citations, allowing you to handle most of the previous steps automatically.</li>
+</ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img role="img" src="data:image/png;base64,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" class="img-fluid figure-img" width="672"></p>
-<figcaption>Weekly count of all cases, confirmed cases and deaths</figcaption>
+<p><img role="img" src="data:image/png;base64,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" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
 </section>
-</section>
-<section id="present-statistical-models-and-results" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Present statistical models and results</h1>
-<div class="sourceCode" id="annotated-cell-5"><pre class="sourceCode numberSource markdown code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1"></a><span class="in">```{r}</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="18" onclick="event.preventDefault();">18</a><span id="annotated-cell-5-2" class="code-annotation-target"><a href="#annotated-cell-5-2"></a><span class="co">#| echo: true</span></span>
-<span id="annotated-cell-5-3"><a href="#annotated-cell-5-3"></a></span>
-<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4"></a><span class="co">#Logistic regression model</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="19" onclick="event.preventDefault();">19</a><span id="annotated-cell-5-5" class="code-annotation-target"><a href="#annotated-cell-5-5"></a>model <span class="ot">&lt;-</span> <span class="fu">glm</span>(death <span class="sc">~</span> bmi <span class="sc">+</span> age,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="21" onclick="event.preventDefault();">21</a><span id="annotated-cell-5-6" class="code-annotation-target"><a href="#annotated-cell-5-6"></a>             subdf <span class="sc">|&gt;</span> dplyr<span class="sc">::</span><span class="fu">filter</span>(confirmed <span class="sc">==</span> <span class="st">&quot;1&quot;</span>),</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="20" onclick="event.preventDefault();">20</a><span id="annotated-cell-5-7" class="code-annotation-target"><a href="#annotated-cell-5-7"></a>             <span class="at">family =</span> binomial)</span>
-<span id="annotated-cell-5-8"><a href="#annotated-cell-5-8"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-5" data-target-annotation="18">18</dt>
-<dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="2" data-code-annotation="18">The <code>echo: true</code> option ensures that the code chunk used to generate the logistic regression model is displayed in the rendered output, which is helpful for transparency and reproducibility.</span>
-</dd>
-<dt data-target-cell="annotated-cell-5" data-target-annotation="19">19</dt>
-<dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="5" data-code-annotation="19">The <code>glm()</code> function fits a generalised linear model to predict <strong>death</strong> (binary outcome) from two predictors (<strong>bmi</strong> and <strong>age</strong>). The function returns a model object containing various components, such as coefficients (effects of predictors), residuals (errors), and fitted values (predicted probabilities).</span>
-</dd>
-<dt data-target-cell="annotated-cell-5" data-target-annotation="20">20</dt>
-<dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="7" data-code-annotation="20">Set the <code>family</code> argument to <strong>binomial</strong> to fit a logistic regression model. This is appropriate for binary outcomes like death, as it models the probability of the outcome occurring using a logit (<em>log-odds</em>) function (i.e. coefficients represent the effect size of each predictor on the log-odds of the binary outcome).</span>
-</dd>
-<dt data-target-cell="annotated-cell-5" data-target-annotation="21">21</dt>
-<dd>
-<span data-code-cell="annotated-cell-5" data-code-lines="6" data-code-annotation="21">Filter data using the <code>dplyr::filter()</code> function to subset the dataset so that the model is estimated from confirmed cases only.</span>
-</dd>
-</dl>
-<section id="table-3" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="table-3">Table 3</h4>
-<div class="cell" data-tbl-cap="Formatted regression table">
-<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode numberSource markdown code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode markdown"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1"></a><span class="in">```{r}</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="24" onclick="event.preventDefault();">24</a><span id="annotated-cell-6-2" class="code-annotation-target"><a href="#annotated-cell-6-2"></a><span class="co">#| tbl-cap: Formatted regression table</span></span>
-<span id="annotated-cell-6-3"><a href="#annotated-cell-6-3"></a></span>
-<span id="annotated-cell-6-4"><a href="#annotated-cell-6-4"></a><span class="co">#Table 3</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="22" onclick="event.preventDefault();">22</a><span id="annotated-cell-6-5" class="code-annotation-target"><a href="#annotated-cell-6-5"></a>gtsummary<span class="sc">::</span><span class="fu">tbl_regression</span>(model,</span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="23" onclick="event.preventDefault();">23</a><span id="annotated-cell-6-6" class="code-annotation-target"><a href="#annotated-cell-6-6"></a>                          <span class="at">exponentiate =</span> <span class="cn">TRUE</span>)</span>
-<span id="annotated-cell-6-7"><a href="#annotated-cell-6-7"></a><span class="in">```</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-6" data-target-annotation="22">22</dt>
-<dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="5" data-code-annotation="22">Use <code>gtsummary::tbl_regression()</code> to create a table summary of the logistic regression results.</span>
-</dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="23">23</dt>
-<dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="6" data-code-annotation="23">Set the <code>exponentiate</code> argument to <strong>TRUE</strong> to convert the coefficients (<em>log-odds</em>) into odds ratios, which are more interpretable and useful for understanding the strength of associations.</span>
-</dd>
-<dt data-target-cell="annotated-cell-6" data-target-annotation="24">24</dt>
-<dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="2" data-code-annotation="24">Add a caption to the table by using the <code>tbl-cap</code> chunk option.</span>
-</dd>
-</dl>
+<section id="format-ms-word-reports-with-styles" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="format-ms-word-reports-with-styles"><span class="header-section-number">8</span> Format MS Word reports with styles</h2>
+<ul class="task-list">
+<li><label><input type="checkbox">Apply the Swiss TPH template <code>swisstph_template.docx</code> to your rendered MS Word report;</label></li>
+<li><label><input type="checkbox">To go further, try creating your own custom Word template and apply it to your report to explore how MS Word styles can be personalized.</label></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="cell-output-display">
-<div id="tdmsaamixl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#tdmsaamixl table {
-font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-}
-#tdmsaamixl thead, #tdmsaamixl tbody, #tdmsaamixl tfoot, #tdmsaamixl tr, #tdmsaamixl td, #tdmsaamixl th {
-border-style: none;
-}
-#tdmsaamixl p {
-margin: 0;
-padding: 0;
-}
-#tdmsaamixl .gt_table {
-display: table;
-border-collapse: collapse;
-line-height: normal;
-margin-left: auto;
-margin-right: auto;
-color: #333333;
-font-size: 16px;
-font-weight: normal;
-font-style: normal;
-background-color: #FFFFFF;
-width: auto;
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #A8A8A8;
-border-right-style: none;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #A8A8A8;
-border-left-style: none;
-border-left-width: 2px;
-border-left-color: #D3D3D3;
-}
-#tdmsaamixl .gt_caption {
-padding-top: 4px;
-padding-bottom: 4px;
-}
-#tdmsaamixl .gt_title {
-color: #333333;
-font-size: 125%;
-font-weight: initial;
-padding-top: 4px;
-padding-bottom: 4px;
-padding-left: 5px;
-padding-right: 5px;
-border-bottom-color: #FFFFFF;
-border-bottom-width: 0;
-}
-#tdmsaamixl .gt_subtitle {
-color: #333333;
-font-size: 85%;
-font-weight: initial;
-padding-top: 3px;
-padding-bottom: 5px;
-padding-left: 5px;
-padding-right: 5px;
-border-top-color: #FFFFFF;
-border-top-width: 0;
-}
-#tdmsaamixl .gt_heading {
-background-color: #FFFFFF;
-text-align: center;
-border-bottom-color: #FFFFFF;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-}
-#tdmsaamixl .gt_bottom_border {
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-}
-#tdmsaamixl .gt_col_headings {
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-}
-#tdmsaamixl .gt_col_heading {
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: normal;
-text-transform: inherit;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-vertical-align: bottom;
-padding-top: 5px;
-padding-bottom: 6px;
-padding-left: 5px;
-padding-right: 5px;
-overflow-x: hidden;
-}
-#tdmsaamixl .gt_column_spanner_outer {
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: normal;
-text-transform: inherit;
-padding-top: 0;
-padding-bottom: 0;
-padding-left: 4px;
-padding-right: 4px;
-}
-#tdmsaamixl .gt_column_spanner_outer:first-child {
-padding-left: 0;
-}
-#tdmsaamixl .gt_column_spanner_outer:last-child {
-padding-right: 0;
-}
-#tdmsaamixl .gt_column_spanner {
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-vertical-align: bottom;
-padding-top: 5px;
-padding-bottom: 5px;
-overflow-x: hidden;
-display: inline-block;
-width: 100%;
-}
-#tdmsaamixl .gt_spanner_row {
-border-bottom-style: hidden;
-}
-#tdmsaamixl .gt_group_heading {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: initial;
-text-transform: inherit;
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-vertical-align: middle;
-text-align: left;
-}
-#tdmsaamixl .gt_empty_group_heading {
-padding: 0.5px;
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: initial;
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-vertical-align: middle;
-}
-#tdmsaamixl .gt_from_md > :first-child {
-margin-top: 0;
-}
-#tdmsaamixl .gt_from_md > :last-child {
-margin-bottom: 0;
-}
-#tdmsaamixl .gt_row {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-margin: 10px;
-border-top-style: solid;
-border-top-width: 1px;
-border-top-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 1px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 1px;
-border-right-color: #D3D3D3;
-vertical-align: middle;
-overflow-x: hidden;
-}
-#tdmsaamixl .gt_stub {
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: initial;
-text-transform: inherit;
-border-right-style: solid;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-padding-left: 5px;
-padding-right: 5px;
-}
-#tdmsaamixl .gt_stub_row_group {
-color: #333333;
-background-color: #FFFFFF;
-font-size: 100%;
-font-weight: initial;
-text-transform: inherit;
-border-right-style: solid;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-padding-left: 5px;
-padding-right: 5px;
-vertical-align: top;
-}
-#tdmsaamixl .gt_row_group_first td {
-border-top-width: 2px;
-}
-#tdmsaamixl .gt_row_group_first th {
-border-top-width: 2px;
-}
-#tdmsaamixl .gt_summary_row {
-color: #333333;
-background-color: #FFFFFF;
-text-transform: inherit;
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#tdmsaamixl .gt_first_summary_row {
-border-top-style: solid;
-border-top-color: #D3D3D3;
-}
-#tdmsaamixl .gt_first_summary_row.thick {
-border-top-width: 2px;
-}
-#tdmsaamixl .gt_last_summary_row {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-}
-#tdmsaamixl .gt_grand_summary_row {
-color: #333333;
-background-color: #FFFFFF;
-text-transform: inherit;
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#tdmsaamixl .gt_first_grand_summary_row {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-border-top-style: double;
-border-top-width: 6px;
-border-top-color: #D3D3D3;
-}
-#tdmsaamixl .gt_last_grand_summary_row_top {
-padding-top: 8px;
-padding-bottom: 8px;
-padding-left: 5px;
-padding-right: 5px;
-border-bottom-style: double;
-border-bottom-width: 6px;
-border-bottom-color: #D3D3D3;
-}
-#tdmsaamixl .gt_striped {
-background-color: rgba(128, 128, 128, 0.05);
-}
-#tdmsaamixl .gt_table_body {
-border-top-style: solid;
-border-top-width: 2px;
-border-top-color: #D3D3D3;
-border-bottom-style: solid;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-}
-#tdmsaamixl .gt_footnotes {
-color: #333333;
-background-color: #FFFFFF;
-border-bottom-style: none;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 2px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-}
-#tdmsaamixl .gt_footnote {
-margin: 0px;
-font-size: 90%;
-padding-top: 4px;
-padding-bottom: 4px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#tdmsaamixl .gt_sourcenotes {
-color: #333333;
-background-color: #FFFFFF;
-border-bottom-style: none;
-border-bottom-width: 2px;
-border-bottom-color: #D3D3D3;
-border-left-style: none;
-border-left-width: 2px;
-border-left-color: #D3D3D3;
-border-right-style: none;
-border-right-width: 2px;
-border-right-color: #D3D3D3;
-}
-#tdmsaamixl .gt_sourcenote {
-font-size: 90%;
-padding-top: 4px;
-padding-bottom: 4px;
-padding-left: 5px;
-padding-right: 5px;
-}
-#tdmsaamixl .gt_left {
-text-align: left;
-}
-#tdmsaamixl .gt_center {
-text-align: center;
-}
-#tdmsaamixl .gt_right {
-text-align: right;
-font-variant-numeric: tabular-nums;
-}
-#tdmsaamixl .gt_font_normal {
-font-weight: normal;
-}
-#tdmsaamixl .gt_font_bold {
-font-weight: bold;
-}
-#tdmsaamixl .gt_font_italic {
-font-style: italic;
-}
-#tdmsaamixl .gt_super {
-font-size: 65%;
-}
-#tdmsaamixl .gt_footnote_marks {
-font-size: 75%;
-vertical-align: 0.4em;
-position: initial;
-}
-#tdmsaamixl .gt_asterisk {
-font-size: 100%;
-vertical-align: 0;
-}
-#tdmsaamixl .gt_indent_1 {
-text-indent: 5px;
-}
-#tdmsaamixl .gt_indent_2 {
-text-indent: 10px;
-}
-#tdmsaamixl .gt_indent_3 {
-text-indent: 15px;
-}
-#tdmsaamixl .gt_indent_4 {
-text-indent: 20px;
-}
-#tdmsaamixl .gt_indent_5 {
-text-indent: 25px;
-}
-</style>
-
-<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<caption>Formatted regression table</caption>
-<thead>
-<tr class="gt_col_headings header">
-<th id="&lt;strong&gt;Characteristic&lt;/strong&gt;" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
-<th id="&lt;strong&gt;OR&lt;/strong&gt;&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>OR</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="&lt;strong&gt;95% CI&lt;/strong&gt;&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
-<th id="&lt;strong&gt;p-value&lt;/strong&gt;" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">bmi</td>
-<td class="gt_row gt_center" headers="estimate">1.04</td>
-<td class="gt_row gt_center" headers="ci">1.03, 1.04</td>
-<td class="gt_row gt_center" headers="p.value">&lt;0.001</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">age</td>
-<td class="gt_row gt_center" headers="estimate">1.00</td>
-<td class="gt_row gt_center" headers="ci">1.00, 1.01</td>
-<td class="gt_row gt_center" headers="p.value">0.003</td>
-</tr>
-</tbody><tfoot class="gt_footnotes">
-<tr class="odd">
-<td colspan="4" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> OR = Odds Ratio, CI = Confidence Interval</td>
-</tr>
-</tfoot>
-
-</table>
-
+<div class="callout-title-container flex-fill">
+Tip
 </div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>See <a href="https://quarto.org/docs/output-formats/ms-word-templates.html">Quarto documentation about Word templates</a>;</li>
+<li>To create a template with customized MS Word styles, you will need to start with a Quarto-rendered MS Word report. This is because not all MS Word styles are supported by Quarto, and starting from a rendered report ensures better compatibility.</li>
+</ul>
 </div>
 </div>
 
 
-</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-reuse"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div class="quarto-appendix-contents"><div>CC-BY</div></div></section></div></main> <!-- /main -->
