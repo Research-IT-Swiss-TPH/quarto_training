@@ -59,12 +59,13 @@ To integrate Python within a Quarto notebook that primarily uses R code chunks (
 ::::: columns
 ::: {.column width="80%"}
 
-If it is not already done, install the `reticulate` package using the function `install.packages()` in your **R console**:
+If it is not already done, install the `reticulate` package using the function `install.packages()` in your **R console** and install a `miniconda` distribution of Python using the function `reticulate::install_miniconda()`:
 
 ```{r}
 #| echo: true
 #| eval: false
 install.packages("reticulate")
+reticulate::install_miniconda()
 ```
 :::
 
