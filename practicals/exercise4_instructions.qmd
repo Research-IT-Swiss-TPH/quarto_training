@@ -125,6 +125,10 @@ This exercise builds on the previous exercise where you learnt to [build a simpl
 -   See [Quarto documentation about table cross-references](https://quarto.org/docs/authoring/tables.html#cross-references)
 :::
 
+::: callout-important
+- There is a [known issue](https://github.com/quarto-dev/quarto-cli/issues/10587) with formatting `gt` and `gtsummary` tables in MS Word, particularly when adding captions (thank you to Zhihan for raising this). This documented bug can cause rendering problems. To avoid this, please convert your `gt` or `gtsummary` tables to `flextable` before generating the final document.
+:::
+
 ## Reference figures
 
 #### Figure 1 {.unnumbered}

@@ -177,12 +177,13 @@ library(gtsummary)
 #Table 1
 #Generate a summary table displaying population characteristics
 subdf |>                
- dplyr::select(age,
-        sex,
-        bmi,
-        confirmed,
-        death) |>
- gtsummary::tbl_summary()      
+  dplyr::select(age,
+                sex,
+                bmi,
+                confirmed,
+                death) |>
+  gtsummary::tbl_summary() |> 
+  gtsummary::as_flex_table()
 ```
 
 9. Assign a label to the table using the prefix `tbl-`. This label allows you to refer to the table later in the document, making it easier to create cross-references. After the label is defined, you can refer to this table in your text using the syntax `@tbl-1`, e.g., "*`@tbl-1` provides a summary of the demographic characteristics and the outcome proportion for the overall population*".

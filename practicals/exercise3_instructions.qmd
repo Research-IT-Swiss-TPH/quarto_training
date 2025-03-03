@@ -110,6 +110,10 @@ resources:
 Other R packages for working with and customising tables include [flextable](https://davidgohel.github.io/flextable/) and [gt](https://gt.rstudio.com/)
 :::
 
+::: callout-important
+- Table captions currently do not display correctly when rendering a Quarto document to Word due to a known bug. However, captions render properly when exporting to HTML or PDF (simply change the output format in your Quarto document to see them appear as expected). This issue is expected to be resolved in future updates. In the next exercise, we will explore how to use captions alongside cross-references, as in this case captions are displayed correctly in rendered Quarto documents.
+:::
+
 ## Create publication-ready figures
 
 #### Figure 1 {.unnumbered}
