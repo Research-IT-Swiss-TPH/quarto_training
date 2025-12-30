@@ -37,6 +37,8 @@ website:
         text: 📙 Parametrise reports 🛠
       - href: ./notes/python_r_short_demo.qmd
         text: 📘 Use R and Python
+      - href: ./notes/stph_extension.qmd
+        text: 📘 Swiss TPH Quarto Templates
       - href: ./notes/advanced_features.qmd
         text: 🧰 Helpful resources
           
