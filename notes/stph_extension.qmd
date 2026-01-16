@@ -24,8 +24,17 @@ format:
       hypothesis: 
         theme: classic
     format-links: [pdf]
-  pdf:
+  report-pdf:
     default: true
+    pdf-engine: lualatex
+    toc: true
+    toc-depth: 3
+    toc-title: \textcolor{swisstphblue}{TABLE OF CONTENTS}
+    fig-pos: 'h'
+    include-in-header:
+      - text: |
+          \usepackage{float}
+          \floatplacement{table}{H}
     
 execute:
   echo: fenced
