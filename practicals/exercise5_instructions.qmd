@@ -81,11 +81,11 @@ quarto render exercise5.qmd -o exercise5_report1.docx
 ::: callout-tip
 -   You can access the RStudio terminal in the `Terminal` tab immediately to the right of the `Console` tab:
 
-![](images/clipboard-1086723948.png){fig-align="center"}
+![](../images/clipboard-1086723948.png){fig-align="center"}
 
 - If the terminal tab is not visible, go to **Tools** > **Terminal** > **Move Focus to Terminal**
 
-![](images/clipboard-751291778.png){fig-align="center"}
+![](../images/clipboard-751291778.png){fig-align="center"}
 :::
 
 ## Parametrise your report
