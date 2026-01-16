@@ -52,3 +52,5 @@ _environment
 *.xlsx
 *.tex
 /docs/site_libs/revealjs
+
+**/*.quarto_ipynb

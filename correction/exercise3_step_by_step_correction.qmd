@@ -1,6 +1,7 @@
 ---
-title:  ⭐Create a simple Word Report
-subtitle: ✅ Step-by-step correction
+title: "⭐Create a simple Word Report"
+subtitle: "✅ Step-by-step correction"
+lang: en
 author:
   - name:
       given: Hélène
