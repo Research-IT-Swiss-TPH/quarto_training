@@ -183,11 +183,17 @@ df2["Petal.Area"] = df2["Petal.Length"] * df2["Petal.Width"]
 
 As illustrated below, you can reciprocally retrieve Python objects (here the data frame `df2`) from the global environment as R objects by calling them through the `py$` prefix. In this example, we use the Python data frame `df2` in R and display the first five rows to confirm the change.
 
+While `reticulate` attempts to convert dataframes automatically, using the dictionary-to-list method is the most robust way to ensure compatibility with R's kable and dplyr functions, especially when dealing with complex Pandas indices or data types.
+
 ```{r}
 #| label: tbl-2
 #| tbl-cap: Data frame read from a Python object and displayed using R
 
-py$df2 |>
+df_from_python <- py$df2$to_dict("list") |> 
+  reticulate::py_to_r() |> 
+  as.data.frame() 
+
+df_from_python |> 
   head(5) |>
   knitr::kable()
 ```
